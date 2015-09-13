@@ -1,0 +1,705 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EC44FE83-C4EB-4BCB-94FC-2AFF7375CB20}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PetvetPOS_Inventory_System</RootNamespace>
+    <AssemblyName>PetvetPOS_Inventory_System</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>E:\Documents\Soft Eng Project 2014\Software\Deploy\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>3</WarningLevel>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <DocumentationFile>bin\Debug\PetvetPOS_Inventory_System.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>1AC47E0E2AE6B9BDC62420B6F55E2AF791213404</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>PetvetPOS_Inventory_System_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>PetvetPOS_Inventory_System.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ListNetworkComputerNames">
+<<<<<<< HEAD
+      <HintPath>..\..\..\Desktop\0 - CAPSTONE\Software\PetvetPOS_Inventory_System-New_Architecture\PetvetPOS_Inventory_System\bin\Debug\ListNetworkComputerNames.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic">
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs">
+      <HintPath>..\..\..\Desktop\0 - CAPSTONE\Software\PetvetPOS_Inventory_System-New_Architecture\PetvetPOS_Inventory_System\bin\Debug\Microsoft.VisualBasic.PowerPacks.Vs.dll</HintPath>
+=======
+      <HintPath>..\..\ListNetworkComputerNames\ListNetworkComputerNames\bin\Debug\ListNetworkComputerNames.dll</HintPath>
+>>>>>>> parent of 8cf0fd2... With CJ revisions
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Installers (Windows)\MySql Connectors (dll)\v4.0\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Installers (Windows)\MySql Connectors (dll)\v4.0\MySql.Data.Entity.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Installers (Windows)\MySql Connectors (dll)\v4.0\MySql.Data.Entity.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Fabric.Plugin, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Installers (Windows)\MySql Connectors (dll)\v4.0\MySql.Fabric.Plugin.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Web, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\Installers (Windows)\MySql Connectors (dll)\v4.0\MySql.Web.dll</HintPath>
+    </Reference>
+<<<<<<< HEAD
+    <Reference Include="PasswordHash, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Library\PasswordHash.dll</HintPath>
+<<<<<<< HEAD
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+=======
+    <Reference Include="PasswordHash">
+      <HintPath>..\..\..\Desktop\0 - CAPSTONE\Software\PetvetPOS_Inventory_System-New_Architecture\PetvetPOS_Inventory_System\bin\Debug\PasswordHash.dll</HintPath>
+>>>>>>> origin/master
+    </Reference>
+    <Reference Include="Randy.Graphics">
+      <HintPath>..\..\..\Desktop\0 - CAPSTONE\Software\PetvetPOS_Inventory_System-New_Architecture\PetvetPOS_Inventory_System\bin\Debug\Randy.Graphics.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Windows.Forms.DataVisualization">
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+=======
+    </Reference>
+    <Reference Include="Randy.Graphics">
+      <HintPath>..\..\..\..\Library\Randy.Graphics.dll</HintPath>
+>>>>>>> parent of 8cf0fd2... With CJ revisions
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TouchlessLib">
+<<<<<<< HEAD
+      <HintPath>..\..\..\Desktop\0 - CAPSTONE\Software\PetvetPOS_Inventory_System-New_Architecture\PetvetPOS_Inventory_System\bin\Debug\TouchlessLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Control\CustomerInformation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\CustomerInformation.Designer.cs">
+      <DependentUpon>CustomerInformation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Client.cs" />
+    <Compile Include="Domain\Controller\Service.cs" />
+    <Compile Include="Domain\InventoryPersonnelMenuList.cs" />
+    <Compile Include="Domain\StaffMenuList.cs" />
+=======
+      <HintPath>..\..\..\..\Dot Net Webcam Library\Touchless\TouchlessLib.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Domain\Client.cs" />
+    <Compile Include="Domain\Controller\Service.cs" />
+>>>>>>> parent of 8cf0fd2... With CJ revisions
+    <Compile Include="Domain\GPP.cs" />
+    <Compile Include="Domain\Grooming.cs" />
+    <Compile Include="Domain\Medical.cs" />
+    <Compile Include="Enums\Petsize.cs" />
+    <Compile Include="Forms\CriticalNotif.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CriticalNotif.Designer.cs">
+      <DependentUpon>CriticalNotif.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MyExtension\ErrorLog.cs" />
+    <Compile Include="ORM\TableGateway\AuditTrailMapper.cs" />
+    <Compile Include="ORM\TableGateway\PetsizeMapper.cs" />
+    <Compile Include="ORM\ViewGateway\AuditTrailView.cs" />
+    <Compile Include="ORM\TableGateway\GppTransactionMapper.cs" />
+    <Compile Include="ORM\TableGateway\GroomingMapper.cs" />
+    <Compile Include="ORM\TableGateway\GroomingPetsizePriceMapper.cs" />
+    <Compile Include="ORM\ViewGateway\GroomingView.cs" />
+    <Compile Include="ORM\TableGateway\MedicalMapper.cs" />
+    <Compile Include="ORM\TableGateway\MedicalTransactionMapper.cs" />
+    <Compile Include="ORM\ViewGateway\LoginTrailViewMapper.cs" />
+    <Compile Include="ORM\ViewGateway\ProductReturnViewMapper.cs" />
+    <Compile Include="ORM\ViewGateway\ProductTransactionView.cs" />
+    <Compile Include="ORM\ViewGateway\ServiceRenderedMapper.cs" />
+    <Compile Include="Control\AddServices.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\AddServices.Designer.cs">
+      <DependentUpon>AddServices.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DatabaseSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DatabaseSettings.Designer.cs">
+      <DependentUpon>DatabaseSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ServiceScrollPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\ServiceScrollPane.Designer.cs">
+      <DependentUpon>ServiceScrollPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\AddUserPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\AddUserPane.Designer.cs">
+      <DependentUpon>AddUserPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\AdminMenuList.cs" />
+    <Compile Include="ORM\TableGateway\CategoryMapper.cs" />
+    <Compile Include="EventHandler\ContentArgs.cs" />
+    <Compile Include="ORM\ViewGateway\DailySalesReportMapper.cs" />
+    <Compile Include="ORM\Controller\DatabaseController.cs" />
+    <Compile Include="Domain\Employee.cs" />
+    <Compile Include="EventHandler\EmployeeArgs.cs" />
+    <Compile Include="ORM\TableGateway\EmployeeMapper.cs" />
+    <Compile Include="EventHandler\EntityArgs.cs" />
+    <Compile Include="Forms\frmWebCam.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmWebCam.Designer.cs">
+      <DependentUpon>frmWebCam.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Home.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Interface\IContentPage.cs" />
+    <Compile Include="Forms\frmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\frmMain.Designer.cs">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Entity.cs" />
+    <Compile Include="Interface\IEntity.cs" />
+    <Compile Include="Interface\IKeyController.cs" />
+    <Compile Include="Domain\Inventory.cs" />
+    <Compile Include="ORM\TableGateway\InventoryMapper.cs" />
+    <Compile Include="Control\InventoryView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\InventoryView.Designer.cs">
+      <DependentUpon>InventoryView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\KeyButton.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\KeyButton.Designer.cs">
+      <DependentUpon>KeyButton.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\LoginControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\LoginControl.Designer.cs">
+      <DependentUpon>LoginControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\LoginPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\LoginPane.Designer.cs">
+      <DependentUpon>LoginPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\LoginTrail.cs" />
+    <Compile Include="ORM\Controller\DatabaseMapper.cs" />
+    <Compile Include="ORM\TableGateway\LoginTrailMapper.cs" />
+    <Compile Include="Domain\Controller\MasterController.cs" />
+    <Compile Include="Enums\Menu.cs" />
+    <Compile Include="Control\MenuBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\MenuBar.Designer.cs">
+      <DependentUpon>MenuBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\MenuControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\MenuControl.Designer.cs">
+      <DependentUpon>MenuControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\MenuList.cs" />
+    <Compile Include="Forms\MessageBanner.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MessageBanner.Designer.cs">
+      <DependentUpon>MessageBanner.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\modalAddCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\modalAddCategory.Designer.cs">
+      <DependentUpon>modalAddCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\modalVoid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\modalVoid.Designer.cs">
+      <DependentUpon>modalVoid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\ViewGateway\MonthlySaleReportMapper.cs" />
+    <Compile Include="MyExtension\Validation.cs" />
+    <Compile Include="ORM\DatabaseInstance\MySqlDB.cs" />
+    <Compile Include="Control\MyUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\MyUserControl.Designer.cs">
+      <DependentUpon>MyUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\PawPrint.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\PawPrint.Designer.cs">
+      <DependentUpon>PawPrint.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\POS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\POS.Designer.cs">
+      <DependentUpon>POS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\POSlbl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\POSlbl.Designer.cs">
+      <DependentUpon>POSlbl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Product.cs" />
+    <Compile Include="ORM\ViewGateway\ProductInventory.cs" />
+    <Compile Include="ORM\TableGateway\ProductMapper.cs" />
+    <Compile Include="Control\ProductPaneScroll.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\ProductPaneScroll.Designer.cs">
+      <DependentUpon>ProductPaneScroll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\ProductTransaction.cs" />
+    <Compile Include="ORM\TableGateway\ProductTransactionMapper.cs" />
+    <Compile Include="Domain\Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\ViewGateway\PurchasedProductMapper.cs" />
+    <Compile Include="Control\Sales.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Sales.Designer.cs">
+      <DependentUpon>Sales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ScrollPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\ScrollPane.Designer.cs">
+      <DependentUpon>ScrollPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Slash.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Slash.Designer.cs">
+      <DependentUpon>Slash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\SystemColors.cs" />
+    <Compile Include="Control\Titlebar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Titlebar.Designer.cs">
+      <DependentUpon>Titlebar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\TodaySales.cs" />
+    <Compile Include="ORM\ViewGateway\TodaySalesMapper.cs" />
+    <Compile Include="Domain\Trail.cs" />
+    <Compile Include="Control\TrailView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\TrailView.Designer.cs">
+      <DependentUpon>TrailView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Domain\Transaction.cs" />
+    <Compile Include="ORM\TableGateway\TransactionMapper.cs" />
+    <Compile Include="Domain\TransactionResult.cs" />
+    <Compile Include="Domain\User.cs" />
+    <Compile Include="Control\UserAdministration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\UserAdministration.Designer.cs">
+      <DependentUpon>UserAdministration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EventHandler\UserArgs.cs" />
+    <Compile Include="Enums\UserLevel.cs" />
+    <Compile Include="ORM\TableGateway\UserMapper.cs" />
+    <Compile Include="Domain\UserMenuList.cs" />
+    <Compile Include="Control\UserSettingsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\UserSettingsControl.Designer.cs">
+      <DependentUpon>UserSettingsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\UserView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\UserView.Designer.cs">
+      <DependentUpon>UserView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\ValidationMarks.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\ValidationMarks.Designer.cs">
+      <DependentUpon>ValidationMarks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ORM\ViewGateway\WeeklySalesReport.cs" />
+    <EmbeddedResource Include="Control\AddServices.resx">
+      <DependentUpon>AddServices.cs</DependentUpon>
+    </EmbeddedResource>
+<<<<<<< HEAD
+    <EmbeddedResource Include="Control\CustomerInformation.resx">
+      <DependentUpon>CustomerInformation.cs</DependentUpon>
+    </EmbeddedResource>
+=======
+>>>>>>> parent of 8cf0fd2... With CJ revisions
+    <EmbeddedResource Include="Forms\CriticalNotif.resx">
+      <DependentUpon>CriticalNotif.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DatabaseSettings.resx">
+      <DependentUpon>DatabaseSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\ServiceScrollPane.resx">
+      <DependentUpon>ServiceScrollPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\AddUserPane.resx">
+      <DependentUpon>AddUserPane.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmMain.resx">
+      <DependentUpon>frmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\frmWebCam.resx">
+      <DependentUpon>frmWebCam.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\InventoryView.resx">
+      <DependentUpon>InventoryView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\KeyButton.resx">
+      <DependentUpon>KeyButton.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\LoginControl.resx">
+      <DependentUpon>LoginControl.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\LoginPane.resx">
+      <DependentUpon>LoginPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\MenuBar.resx">
+      <DependentUpon>MenuBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\MenuControl.resx">
+      <DependentUpon>MenuControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MessageBanner.resx">
+      <DependentUpon>MessageBanner.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\modalAddCategory.resx">
+      <DependentUpon>modalAddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\modalVoid.resx">
+      <DependentUpon>modalVoid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\MyUserControl.resx">
+      <DependentUpon>MyUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\PawPrint.resx">
+      <DependentUpon>PawPrint.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\POS.resx">
+      <DependentUpon>POS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\POSlbl.resx">
+      <DependentUpon>POSlbl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\ProductPaneScroll.resx">
+      <DependentUpon>ProductPaneScroll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Sales.resx">
+      <DependentUpon>Sales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\ScrollPane.resx">
+      <DependentUpon>ScrollPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Slash.resx">
+      <DependentUpon>Slash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Titlebar.resx">
+      <DependentUpon>Titlebar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\TrailView.resx">
+      <DependentUpon>TrailView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\UserAdministration.resx">
+      <DependentUpon>UserAdministration.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\UserSettingsControl.resx">
+      <DependentUpon>UserSettingsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\UserView.resx">
+      <DependentUpon>UserView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\ValidationMarks.resx">
+      <DependentUpon>ValidationMarks.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="PetvetPOS_Inventory_System_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconmonstr-archive-7-icon-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconmonstr-archive-8-icon-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconmonstr-barcode-2-icon-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconmonstr-barcode-7-icon-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconmonstr-barcode-8-icon-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconmonstr-barcode-9-icon-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconmonstr-user-14-icon-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconmonstr-document-file-2-icon-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconmonstr-home-6-icon-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\max_ini.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\max_ini_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\max_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconmonstr-eye-7-icon-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconmonstr-user-4-icon-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconmonstr-user-7-icon-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconmonstr-user-5-icon-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconmonstr-flip-chart-7-icon-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconmonstr-user-6-icon-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconmonstr-checkout-icon-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconmonstr-shop-4-icon-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconmonstr-lock-13-icon-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\iconmonstr-lock-15-icon-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PETVET LOGO2_cropped.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PETVET LOGO3_cropeed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CircularProgressAnimation.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PETVET LOGO2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PETVET LOGO3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Splash screenF4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\10981158_831912190195611_5578916076241904615_n.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\petvet.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
