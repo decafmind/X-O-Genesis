@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
+// Happy Programmer's Day (11 Sep 2015)
 [assembly: AssemblyTitle("POS_Inventory_System")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
