@@ -290,9 +290,7 @@ namespace PetvetPOS_Inventory_System
                 if (mainTab.SelectedTab == tabPage1)
                 {
                     keyButton9.updateButton();
-
-                    if (rbInventory.Checked || rbPurchased.Checked)
-                        updateProduct();
+                    updateProduct();
                 }
                 else
                 {
@@ -701,15 +699,15 @@ namespace PetvetPOS_Inventory_System
         void updateProductTransaction(string name, int transaction_id, int qty, decimal grp_price)
         {
             Product product = dbController.getProductThroughName(name);
-            Transaction transaction = new Transaction()
+            Invoice transaction = new Invoice()
             {
-                TransactionId = transaction_id,
+                InvoiceId = transaction_id,
             };
 
             ProductTransaction pt = new ProductTransaction()
             {
                 product = product,
-                transaction = transaction,
+                invoice = transaction,
                 QuantitySold = -qty,
                 GroupPrice = grp_price,
             };

@@ -255,25 +255,6 @@ namespace PetvetPOS_Inventory_System
             this.disappear();
         }
 
-        private void domainPosition_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            UserLevel level;
-
-            if (domainPosition.Text == "Manager")
-            {
-                level = UserLevel.ADMIN;
-            }
-            else if (domainPosition.Text == "Cashier")
-            {
-                level = UserLevel.CASHIER;
-            }
-            else
-            {
-                level = UserLevel.STAFF;
-            }
-             isDirty = true;
-        }
-
         private bool isAllBlank()
         {
             foreach (TextBox textbox in textboxes)

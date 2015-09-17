@@ -6,33 +6,33 @@ using System.Threading.Tasks;
 
 namespace PetvetPOS_Inventory_System
 {
-    public class TransactionMapper : DatabaseMapper
+    public class InvoiceMapper : DatabaseMapper
     {
-        public TransactionMapper(MySqlDB db):base(db)
+        public InvoiceMapper(MySqlDB db):base(db)
         {
-            tableName = "transaction_tbl";
-            id = "transaction_id";
+            tableName = "invoice_tbl";
+            id = "id";
             fieldsname = new string[] {
-                "transaction_date",
-                "transaction_time",
-                "user_id",
+                "date",
+                "time",
+                "employee_id",
             };
         }
 
-        public int getTransactionId(Transaction transaction)
+        public int getTransactionId(Invoice transaction)
         {
             string condition = String.Format("transaction_date = {0} and user_id = '{1}' ORDER BY transaction_time DESC", 
                 "CURDATE()", 
-                transaction.UserId);
+                transaction);
             return (int)readScalar("transaction_id", condition);
         }
 
-        public bool insertTransaction(Transaction transaction)
+        public bool insertTransaction(Invoice transaction)
         {
             return create(insertValues(
                 "CURDATE()",
                 "CURTIME()",
-                transaction.UserId)
+                transaction.EmployeeId)
                 );
         }
     }

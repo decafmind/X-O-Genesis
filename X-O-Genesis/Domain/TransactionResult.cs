@@ -21,13 +21,13 @@ namespace PetvetPOS_Inventory_System
             };
         }
 
-        public bool insertTransactionResult(Transaction transaction, Decimal totalPrice, Decimal cashTender)
+        public bool insertTransactionResult(Invoice transaction, Decimal totalPrice, Decimal cashTender)
         {
             if (transaction != null)
             {
                 Decimal change = cashTender - totalPrice;
                 return create(
-                    insertValues(transaction.TransactionId, totalPrice, cashTender, change)
+                    insertValues(transaction.InvoiceId, totalPrice, cashTender, change)
                 );
             }
             return false;

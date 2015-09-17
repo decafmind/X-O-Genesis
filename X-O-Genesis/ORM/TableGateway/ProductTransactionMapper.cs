@@ -22,11 +22,11 @@ namespace PetvetPOS_Inventory_System
             };
         }
 
-        public bool insertProductTransaction(Transaction transaction, Product product, int quantity)
+        public bool insertProductTransaction(Invoice transaction, Product product, int quantity)
         {
             Decimal grpPrice = product.UnitPrice * quantity;
             return create(
-                insertValues(transaction.TransactionId, product.Barcode, quantity, grpPrice)
+                insertValues(transaction.InvoiceId, product.Barcode, quantity, grpPrice)
                 );
         }
 
@@ -46,7 +46,7 @@ namespace PetvetPOS_Inventory_System
 
         public bool insertProductTransaction(ProductTransaction productTransaction)
         {
-            return insertProductTransaction(productTransaction.transaction, productTransaction.product, productTransaction.QuantitySold);
+            return insertProductTransaction(productTransaction.invoice, productTransaction.product, productTransaction.QuantitySold);
         }
 
 

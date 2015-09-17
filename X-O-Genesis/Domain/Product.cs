@@ -24,11 +24,9 @@ namespace PetvetPOS_Inventory_System
         {
             try
             {
-                 Barcode = (string)entity.getField("barcode");
-                 Description = (string)entity.getField("description");
+                 Barcode = (string)entity.getField("id");
+                 Description = (string)entity.getField("name");
                  UnitPrice = (decimal)entity.getField("unit_price");
-                 Category = (string)entity.getField("category");
-                 Company = (string)entity.getField("source_company_name");
             }
             catch (Exception ex)
             {

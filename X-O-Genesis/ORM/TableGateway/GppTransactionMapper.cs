@@ -21,11 +21,6 @@ namespace PetvetPOS_Inventory_System
             };
         }
 
-        public bool insertGpp(Transaction transaction, GPP gpp, int quantity, decimal subtotal)
-        {
-            return create(
-                insertValues(transaction.TransactionId, gpp.Id, quantity, subtotal)
-                );
-        }
+    
     }
 }

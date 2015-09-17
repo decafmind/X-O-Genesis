@@ -14,7 +14,7 @@ namespace PetvetPOS_Inventory_System
 {
     public partial class POS : MyUserControl, IContentPage, IKeyController
     {
-        Transaction currentTransaction;
+        Invoice currentTransaction;
         DatabaseController dbController;
         Product currentProduct;
         DataTable dt = new DataTable();
@@ -125,8 +125,6 @@ namespace PetvetPOS_Inventory_System
         {
             if (txtEncode.Enabled)
                 txtEncode.Focus();
-            if (addServices.Count == 0)
-                addServicePanel();
         }
 
         private void btnF1_Click(object sender, EventArgs e)
@@ -166,15 +164,15 @@ namespace PetvetPOS_Inventory_System
         {
             if (currentTransaction == null)
             {
-                currentTransaction = new Transaction()
+                currentTransaction = new Invoice()
                 {
                     TransactionDateTime = DateTime.Now,
-                    UserId = masterController.LoginEmployee.User_id
+                    EmployeeId = masterController.LoginEmployee.User_id
                 };
 
                 dbController.insertTransaction(currentTransaction);
-                currentTransaction.TransactionId = dbController.getTransactionId(currentTransaction);
-                lblTransactionno.Text = "PV-" + currentTransaction.TransactionId.ToString("00000");
+                currentTransaction.InvoiceId = dbController.getTransactionId(currentTransaction);
+                lblTransactionno.Text = "PV-" + currentTransaction.InvoiceId.ToString("00000");
                 totalAmount = 0M;
 
                 activateServices(true);
@@ -215,7 +213,7 @@ namespace PetvetPOS_Inventory_System
         public void addRowInDatagrid(int quantity)
         {
             ProductTransaction productTransaction = new ProductTransaction(){
-                transaction = currentTransaction,
+                invoice = currentTransaction,
                 product = currentProduct,
                 QuantitySold = quantity,
                 GroupPrice = (currentProduct.UnitPrice * quantity),
@@ -376,20 +374,10 @@ namespace PetvetPOS_Inventory_System
                 dbController.checkProductCriticalLevel(item.product);
         	}
 
-            concludeServiceTransaction();
-
             // audit 
             string message = string.Format("completed a transaction: {0}", lblTransactionno.Text);
             dbController.insertAuditTrail(message);
             masterController.clientClock();
-        }
-
-        void concludeServiceTransaction()
-        {
-            foreach (AddServices addService in addServices){
-                if (addService.inConlusion())
-                    addService.insertService(currentTransaction);
-            }
         }
 
         private void paymentTimer_Tick(object sender, EventArgs e)
@@ -607,12 +595,6 @@ namespace PetvetPOS_Inventory_System
 
         }
 
-        private void parentPanel_Resize(object sender, EventArgs e)
-        {
-            foreach (AddServices item in addServices)
-                item.Size = new Size(parentPanel.Width - MARGIN, item.Height);
-        }
-
         
         // Services Fields
         private const int ADDSERVICES_HEIGHT = 100;
@@ -623,23 +605,7 @@ namespace PetvetPOS_Inventory_System
         List<AddServices> addServices = new List<AddServices>();
         int Y = INITIAL_Y;
 
-        void addServicePanel()
-        {
-            updateY();
-            AddServices addService = new AddServices(masterController, parentPanel);
-            addService.Location = new Point(10, Y);
-            addService.Size = new Size(parentPanel.Width - MARGIN, addService.Height);
-
-            parentPanel.Controls.Add(addService);
-            addServices.Add(addService);
-            addService.paneClose += addService_paneClose;
-            addService.SubTotalCompute += addService_SubTotalCompute;
-            updateY();
-
-            if (currentTransaction != null)
-                addService.activate(true);
-        }
-
+ 
         void addService_SubTotalCompute(object sender, EventArgs e)
         {
             AddServices addService = sender as AddServices;
@@ -681,24 +647,17 @@ namespace PetvetPOS_Inventory_System
         }
 
         
-        private void btnAddService_Click(object sender, EventArgs e)
-        {
-            addServicePanel();
-        }
-
         private void txtQuantity_EnabledChanged(object sender, EventArgs e)
         {
             if (txtQuantity.Enabled)
             {
                 txtQuantity.Focus();
                 btnQuantity.Enabled = true;
-                btnAddService.Enabled = true;
                 masterController.setFormReturnkey = btnQuantity;
             }
             else
             {
                 btnQuantity.Enabled = false;
-                btnAddService.Enabled = false;
             }
         }
 

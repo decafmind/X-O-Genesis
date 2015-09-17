@@ -125,13 +125,7 @@ namespace PetvetPOS_Inventory_System
             cbSize.Items.AddRange(sizes);
         }
 
-        public bool insertService(Transaction transaction)
-        {
-            if (rbGrooming.Checked)
-                return dbController.insertGppTransaction(transaction, getGPP(), Qty, Subtotal);
-            else
-                return dbController.insertMedicalTransaction(transaction, getMedical(), Qty, Subtotal);
-        }
+   
 
         private void AddServices_Load(object sender, EventArgs e)
         {

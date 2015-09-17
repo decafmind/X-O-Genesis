@@ -412,7 +412,7 @@
       <DependentUpon>TrailView.cs</DependentUpon>
     </Compile>
     <Compile Include="Domain\Transaction.cs" />
-    <Compile Include="ORM\TableGateway\TransactionMapper.cs" />
+    <Compile Include="ORM\TableGateway\InvoiceMapper.cs" />
     <Compile Include="Domain\TransactionResult.cs" />
     <Compile Include="Domain\User.cs" />
     <Compile Include="Control\UserAdministration.cs">

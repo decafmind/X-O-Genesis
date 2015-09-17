@@ -20,10 +20,10 @@ namespace PetvetPOS_Inventory_System
             };
         }
 
-        public bool insertMedicalTransaction(Transaction transaction, Medical medical, int qty, decimal subtotal)
+        public bool insertMedicalTransaction(Invoice transaction, Medical medical, int qty, decimal subtotal)
         {
             return create(
-                insertValues(medical.Id, qty, subtotal, transaction.TransactionId)
+                insertValues(medical.Id, qty, subtotal, transaction.InvoiceId)
                 );
         }
     }
