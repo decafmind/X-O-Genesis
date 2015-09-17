@@ -17,7 +17,6 @@ namespace PetvetPOS_Inventory_System
     {
         //TODO
         ProductPaneScroll productPaneScroll;
-        ServiceScrollPane servicePaneScroll;
         DatabaseController dbController;
 
         DataTable inventoryTable;
@@ -47,8 +46,7 @@ namespace PetvetPOS_Inventory_System
         {
             InitializeComponent();
             productPaneScroll = new ProductPaneScroll(this, panel1, masterController);
-            servicePaneScroll = new ServiceScrollPane(this, panel1, masterController);
-
+          
             this.dbController = masterController.DataBaseController;
 
             using (Font timesNewRoman = new Font("Times New Roman", 12, FontStyle.Regular))
@@ -83,7 +81,6 @@ namespace PetvetPOS_Inventory_System
             tabPage1.Select();
             txtSearch.Enabled = false;
             productPaneScroll.switchOff();
-            servicePaneScroll.switchOff();
 
             fillgdInventory();
 
@@ -128,41 +125,11 @@ namespace PetvetPOS_Inventory_System
                 message = string.Format("New stock of product {0} has been added", nameField);
                 action = string.Format("added a new stock of product", nameField);
             }
-            else if (entity is Grooming)
-            {
-                Grooming g = entity as Grooming;
-                nameField = g.Name;
-
-                message = string.Format("New Grooming: {0} was added", nameField);
-                action = string.Format("added a new grooming: {0}", nameField);
-            }
-            else if (entity is Medical)
-            {
-                Medical m = entity as Medical;
-                nameField = m.Name;
-
-                message = string.Format("New Medical: {0} was added", nameField);
-                action = string.Format("added a new medical: {0}", nameField);
-            }
-            else if (entity is GPP)
-            {
-                GPP gpp = entity as GPP;
-                Grooming g = dbController.groomingMapper.getGroomingFromId(gpp.grooming_id);
-                nameField = g.Name;
-
-                message = string.Format("New Grooming: {0} was added", nameField);
-                action = string.Format("added a new grooming: {0}", nameField);
-                petsize = gpp.petsize.ToString();
-            }
-
+            
             MessageBanner banner = new MessageBanner(message, 2000);
             banner.Show();
             dbController.insertAuditTrail(action);
 
-            if (!rbGrooming.Checked || entity is GPP)
-                highlighRowOfDatagridView(nameField);
-            else
-                highlighRowOfDatagridView(nameField, petsize.ToLower());
             
         }
 
@@ -209,38 +176,11 @@ namespace PetvetPOS_Inventory_System
                 message = string.Format("Product {0} has been updated", nameField);
                 action = string.Format("has updated the product {0}", nameField);
             }
-            else if (entity is Grooming)
-            {
-                Grooming g = entity as Grooming;
-                nameField = g.Name;
-                message = string.Format("Grooming {0} has been updated its name", nameField);
-                action = string.Format("has changed the name of grooming {0}", nameField);
-            }
-            else if (entity is GPP)
-            {
-                GPP gpp = entity as GPP;
-                Grooming g = dbController.groomingMapper.getGroomingFromId(gpp.grooming_id);
-                nameField = g.Name;
-                message = string.Format("Grooming {0} has been updated its price", nameField);
-                action = string.Format("has updated the the price of grooming {0}", nameField);
-                petsize = gpp.petsize.ToString();
-            }
-            else if (entity is Medical)
-            {
-                Medical m = entity as Medical;
-                nameField = m.Name;
-                message = string.Format("Medical {0} has been updated", nameField);
-                action = string.Format("has updated the medical {0}", nameField);
-            }
-
+            
             MessageBanner banner = new MessageBanner(message, 3000);
             banner.Show();
             dbController.insertAuditTrail(action);
 
-            if (!rbGrooming.Checked)
-                highlighRowOfDatagridView(nameField);
-            else
-                highlighRowOfDatagridView(nameField, petsize.ToLower());
         }
 
 
@@ -252,12 +192,6 @@ namespace PetvetPOS_Inventory_System
                 dbController.readInventory(inventoryTable);
             else if (rbPurchased.Checked)
                 dbController.readPurchasedProduct(inventoryTable);
-            else if (rbGrooming.Checked)
-                dbController.getGroomingViewTable(inventoryTable);
-            else if (rbMedical.Checked)
-                dbController.loadMedical(inventoryTable);
-            else if (rbRendered.Checked)
-                dbController.getServiceRendered(inventoryTable);
 
             dgInventory.DataSource = inventoryTable;
             dgInventory.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
@@ -284,13 +218,7 @@ namespace PetvetPOS_Inventory_System
                     dbController.filterInventory(inventoryTable, token);
                 else if (rbPurchased.Checked)
                     dbController.filterPurchasedProduct(inventoryTable, token);
-                else if (rbGrooming.Checked)
-                    dbController.filterGrooming(inventoryTable, token);
-                else if (rbMedical.Checked)
-                    dbController.filterMedical(inventoryTable, token);
-                else if (rbRendered.Checked)
-                    dbController.filterServiceRendered(inventoryTable, token);
-
+ 
                 dgInventory.DataSource = inventoryTable;
 
                 if (rbInventory.Checked)
@@ -365,8 +293,6 @@ namespace PetvetPOS_Inventory_System
 
                     if (rbInventory.Checked || rbPurchased.Checked)
                         updateProduct();
-                    else if(rbMedical.Checked || rbGrooming.Checked)
-                        updateService();
                 }
                 else
                 {
@@ -377,10 +303,8 @@ namespace PetvetPOS_Inventory_System
             else if (e.KeyCode == Keys.F3)
             {
                 keyButton8.updateButton();
-                if (rbInventory.Checked || rbPurchased.Checked)
-                    addProduct();
-                else
-                    addService();
+                addProduct();
+             
             }
             else if (e.Control && e.KeyCode == Keys.P)
             {
@@ -399,46 +323,17 @@ namespace PetvetPOS_Inventory_System
                 }          
             }
 
-            if (!(productPaneScroll.checkIfVisisble || servicePaneScroll.checkIfVisisble))
+            if (!(productPaneScroll.checkIfVisisble))
             {
-                if (e.KeyCode == Keys.Right)
+                if (e.KeyCode == Keys.Right || e.KeyCode == Keys.Left)
                 {
                     if (rbInventory.Checked)
                         rbPurchased.Checked = true;
                     else if (rbPurchased.Checked)
-                        rbGrooming.Checked = true;
-                    else if (rbGrooming.Checked)
-                        rbMedical.Checked = true;
-                    else if (rbMedical.Checked)
-                        rbRendered.Checked = true;
-                    else if (rbRendered.Checked)
                         rbInventory.Checked = true;
 
                     smartFocus();
                 }
-                else if (e.KeyCode == Keys.Left)
-                {
-                    if (rbInventory.Checked)
-                        rbRendered.Checked = true;
-                    else if (rbPurchased.Checked)
-                        rbInventory.Checked = true;
-                    else if (rbGrooming.Checked)
-                        rbPurchased.Checked = true;
-                    else if (rbMedical.Checked)
-                        rbGrooming.Checked = true;
-                    else if (rbRendered.Checked)
-                        rbMedical.Checked = true;
-
-                    smartFocus();
-                }
-            }
-
-            if (servicePaneScroll.checkIfVisisble)
-            {
-                if (e.KeyCode == Keys.Up)
-                    servicePaneScroll.rbGrooming.Checked = true;
-                else if (e.KeyCode == Keys.Down)
-                    servicePaneScroll.rbMedical.Checked = true;
             }
 
 
@@ -494,21 +389,7 @@ namespace PetvetPOS_Inventory_System
             if (txtSearch.Enabled)
                 toogleSearch();
 
-            if (servicePaneScroll.Visible)
-                servicePaneScroll.switchOff();
-
             productPaneScroll.toggleInsert();
-        }
-
-        void addService()
-        {
-            if (txtSearch.Enabled)
-                toogleSearch();
-
-            if (productPaneScroll.Visible)
-                productPaneScroll.switchOff();
-
-            servicePaneScroll.toogleInsert();
         }
 
         private void txtSearch_EnabledChanged_1(object sender, EventArgs e)
@@ -576,30 +457,6 @@ namespace PetvetPOS_Inventory_System
             productPaneScroll.toggle(product);
         }
 
-        void updateService()
-        {
-            string service_name = string.Empty, petsize = string.Empty;
-            service_name = getValueFromDatagridCell(SERVICE_NAME_INDEX);
-            Service service;
-
-            if (rbGrooming.Checked || rbRendered.Checked)
-            {
-                Grooming grooming = dbController.getGroomingFromName(service_name);
-                petsize = getValueFromDatagridCell(GROOMING_PETSIZE_INDEX);
-                Petsize size = dbController.petsizeMapper.getPetsizeFromName(petsize);
-                GPP gpp = dbController.getGPPFromGroomingSize(grooming, size);
-                service = gpp;
-              
-            }
-            else
-            {
-                Medical medical = dbController.medicalMapper.getMedicalFromName(service_name);
-                service = medical;
-            }
-
-            servicePaneScroll.toogleUpdate(service);
-        }
-
         string getValueFromDatagridCell(int index)
         {
             string cellValue = string.Empty;
@@ -641,8 +498,6 @@ namespace PetvetPOS_Inventory_System
                     title = "INVENTORY REPORT";
                 else if (rbPurchased.Checked)
                     title = "PURCHASED PRODUCT REPORT";
-                else if (rbGrooming.Checked)
-                    title = "GROOMING SERVICE REPORT";
 
                 int Y = 50;
 
