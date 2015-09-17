@@ -14,17 +14,17 @@ namespace PetvetPOS_Inventory_System
             : base(mySqlDb)
         {
             tableName = "inventory_tbl";
-            id = "inventory_id";
+            id = "id";
             fieldsname = new string[] {
-                "barcode",
-                "stockin_date",
+                "product_id",
+                "stockin_datetime",
                 "qty_received",
                 "qty_onhand",
             };
 
             fieldsname_forselect = new string[]{
-                "barcode AS Barcode",
-                "stockin_date AS 'Stock since'",
+                "product_id AS Barcode",
+                "stockin_datetime AS 'Stock since'",
                 "qty_received AS 'Qty on Received'",
                 "qty_onhand AS 'Qty on Hand'"
             };

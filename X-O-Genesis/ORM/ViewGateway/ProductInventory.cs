@@ -18,6 +18,7 @@ namespace PetvetPOS_Inventory_System
             tableName = "inventory_view";
             fieldsname = new string[] {
                 "Name",
+                "Barcode",
                 "Unit_price",
                 "Qty_on_Hand",
                 "Qty_Received",

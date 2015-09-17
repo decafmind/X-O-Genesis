@@ -503,7 +503,7 @@ namespace PetvetPOS_Inventory_System
         {
             string condition = String.Format(
                 " Name LIKE '%{0}%' OR Barcode LIKE '%{0}%' " +
-                " OR Category LIKE '%{0}%' OR Source_Company LIKE '%{0}%' ", token
+                " OR Category LIKE '%{0}%'", token
                 );
             return productInventory.loadTable(dt, condition);
         }
