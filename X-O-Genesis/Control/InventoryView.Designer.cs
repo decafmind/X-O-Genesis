@@ -46,8 +46,7 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.rbPurchased = new System.Windows.Forms.RadioButton();
             this.rbInventory = new System.Windows.Forms.RadioButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel6 = new System.Windows.Forms.Panel();
+            this.productSliderPane1 = new PetvetPOS_Inventory_System.ProductSliderPane();
             this.parentPanel = new System.Windows.Forms.Panel();
             this.bottomPanel = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
@@ -106,7 +105,6 @@
             this.panel3.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel1.SuspendLayout();
             this.parentPanel.SuspendLayout();
             this.bottomPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -140,7 +138,7 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.panel2);
-            this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Controls.Add(this.productSliderPane1);
             this.tabPage1.Controls.Add(this.parentPanel);
             this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
@@ -152,13 +150,14 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.Location = new System.Drawing.Point(0, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(606, 473);
+            this.panel2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.panel2.Size = new System.Drawing.Size(839, 473);
             this.panel2.TabIndex = 5;
             // 
             // panel4
@@ -166,10 +165,10 @@
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(2)))), ((int)(((byte)(3)))));
             this.panel4.Controls.Add(this.dgInventory);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(0, 100);
+            this.panel4.Location = new System.Drawing.Point(5, 100);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(10);
-            this.panel4.Size = new System.Drawing.Size(606, 373);
+            this.panel4.Size = new System.Drawing.Size(829, 373);
             this.panel4.TabIndex = 1;
             // 
             // dgInventory
@@ -206,7 +205,7 @@
             this.dgInventory.ReadOnly = true;
             this.dgInventory.RowHeadersVisible = false;
             this.dgInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgInventory.Size = new System.Drawing.Size(586, 353);
+            this.dgInventory.Size = new System.Drawing.Size(809, 353);
             this.dgInventory.TabIndex = 0;
             this.dgInventory.Sorted += new System.EventHandler(this.dgInventory_Sorted);
             // 
@@ -216,9 +215,9 @@
             this.panel3.Controls.Add(this.panel9);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
+            this.panel3.Location = new System.Drawing.Point(5, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(606, 100);
+            this.panel3.Size = new System.Drawing.Size(829, 100);
             this.panel3.TabIndex = 0;
             // 
             // panel9
@@ -229,7 +228,7 @@
             this.panel9.Controls.Add(this.txtSearch);
             this.panel9.Controls.Add(this.textBox1);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel9.Location = new System.Drawing.Point(139, 0);
+            this.panel9.Location = new System.Drawing.Point(362, 0);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(467, 68);
             this.panel9.TabIndex = 4;
@@ -290,7 +289,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel5.Location = new System.Drawing.Point(0, 68);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(606, 32);
+            this.panel5.Size = new System.Drawing.Size(829, 32);
             this.panel5.TabIndex = 3;
             // 
             // rbPurchased
@@ -326,26 +325,19 @@
             this.rbInventory.UseVisualStyleBackColor = false;
             this.rbInventory.CheckedChanged += new System.EventHandler(this.checkChanged);
             // 
-            // panel1
+            // productSliderPane1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.panel6);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel1.Location = new System.Drawing.Point(606, 3);
-            this.panel1.Name = "panel1";
-            this.panel1.Padding = new System.Windows.Forms.Padding(5, 10, 5, 10);
-            this.panel1.Size = new System.Drawing.Size(263, 473);
-            this.panel1.TabIndex = 4;
-            // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.Transparent;
-            this.panel6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel6.Location = new System.Drawing.Point(5, 246);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(253, 217);
-            this.panel6.TabIndex = 0;
+            this.productSliderPane1.accessMasterController = null;
+            this.productSliderPane1.BackColor = System.Drawing.Color.White;
+            this.productSliderPane1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.productSliderPane1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.productSliderPane1.Location = new System.Drawing.Point(839, 3);
+            this.productSliderPane1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.productSliderPane1.MaximumSize = new System.Drawing.Size(300, 100);
+            this.productSliderPane1.MinimumSize = new System.Drawing.Size(30, 600);
+            this.productSliderPane1.Name = "productSliderPane1";
+            this.productSliderPane1.Size = new System.Drawing.Size(30, 600);
+            this.productSliderPane1.TabIndex = 6;
             // 
             // parentPanel
             // 
@@ -948,7 +940,6 @@
             this.panel9.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
-            this.panel1.ResumeLayout(false);
             this.parentPanel.ResumeLayout(false);
             this.bottomPanel.ResumeLayout(false);
             this.bottomPanel.PerformLayout();
@@ -978,12 +969,10 @@
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btnSearch;
         private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Panel panel6;
         private KeyButton keyButton1;
         private KeyButton keyButton5;
         private KeyButton keyButton4;
@@ -1040,5 +1029,6 @@
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.RadioButton rbInventory;
         public System.Windows.Forms.RadioButton rbPurchased;
+        private ProductSliderPane productSliderPane1;
     }
 }

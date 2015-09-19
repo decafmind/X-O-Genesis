@@ -15,8 +15,9 @@ namespace PetvetPOS_Inventory_System
 {
     public partial class InventoryView : MyUserControl, IContentPage, IKeyController
     {
-        //TODO
-        ProductPaneScroll productPaneScroll;
+        // TODO
+        // ProductPaneScroll productPaneScroll;
+        SliderPane sliderPane;
         DatabaseController dbController;
 
         DataTable inventoryTable;
@@ -45,9 +46,10 @@ namespace PetvetPOS_Inventory_System
             : base(masterController)
         {
             InitializeComponent();
-            productPaneScroll = new ProductPaneScroll(this, panel1, masterController);
-          
+          //  productPaneScroll = new ProductPaneScroll(this, panel1, masterController);
+
             this.dbController = masterController.DataBaseController;
+            sliderPane = productSliderPane1;
 
             using (Font timesNewRoman = new Font("Times New Roman", 12, FontStyle.Regular))
             {
@@ -80,7 +82,8 @@ namespace PetvetPOS_Inventory_System
         {
             tabPage1.Select();
             txtSearch.Enabled = false;
-            productPaneScroll.switchOff();
+           // sliderPane.hide();
+            //productPaneScroll.switchOff();
 
             fillgdInventory();
 
@@ -290,7 +293,7 @@ namespace PetvetPOS_Inventory_System
                 if (mainTab.SelectedTab == tabPage1)
                 {
                     keyButton9.updateButton();
-                    updateProduct();
+                    //updateProduct();
                 }
                 else
                 {
@@ -302,7 +305,6 @@ namespace PetvetPOS_Inventory_System
             {
                 keyButton8.updateButton();
                 addProduct();
-             
             }
             else if (e.Control && e.KeyCode == Keys.P)
             {
@@ -321,18 +323,18 @@ namespace PetvetPOS_Inventory_System
                 }          
             }
 
-            if (!(productPaneScroll.checkIfVisisble))
-            {
-                if (e.KeyCode == Keys.Right || e.KeyCode == Keys.Left)
-                {
-                    if (rbInventory.Checked)
-                        rbPurchased.Checked = true;
-                    else if (rbPurchased.Checked)
-                        rbInventory.Checked = true;
+            //if (!(productPaneScroll.checkIfVisisble))
+            //{
+            //    if (e.KeyCode == Keys.Right || e.KeyCode == Keys.Left)
+            //    {
+            //        if (rbInventory.Checked)
+            //            rbPurchased.Checked = true;
+            //        else if (rbPurchased.Checked)
+            //            rbInventory.Checked = true;
 
-                    smartFocus();
-                }
-            }
+            //        smartFocus();
+            //    }
+            //}
 
 
         }
@@ -372,7 +374,8 @@ namespace PetvetPOS_Inventory_System
             }
             else
             {
-                productPaneScroll.switchOff();
+                sliderPane.hide();
+            //    productPaneScroll.switchOff();
                 txtSearch.Enabled = true;
             }
         }
@@ -387,7 +390,9 @@ namespace PetvetPOS_Inventory_System
             if (txtSearch.Enabled)
                 toogleSearch();
 
-            productPaneScroll.toggleInsert();
+            sliderPane.toggle();
+           // sliderPane.show();
+          //  productPaneScroll.toggleInsert();
         }
 
         private void txtSearch_EnabledChanged_1(object sender, EventArgs e)
@@ -452,7 +457,7 @@ namespace PetvetPOS_Inventory_System
             string product_name = string.Empty;
             product_name = getValueFromDatagridCell(PRODUCT_NAME_INDEX);
             Product product = dbController.getProductThroughName(product_name);
-            productPaneScroll.toggle(product);
+        //    productPaneScroll.toggle(product);
         }
 
         string getValueFromDatagridCell(int index)
@@ -893,6 +898,7 @@ namespace PetvetPOS_Inventory_System
             string charAllowed = "1234567890";
             MyExtension.Validation.limitTextbox(txtQty, charAllowed);
         }
+
     }
 }
 

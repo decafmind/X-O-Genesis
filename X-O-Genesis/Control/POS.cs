@@ -409,9 +409,9 @@ namespace PetvetPOS_Inventory_System
                 receipt.PrintPage += receipt_PrintPage;
                 receipt.DefaultPageSettings = setting;
                 PrintPreviewDialog preview = new PrintPreviewDialog(){
-                    Height = 600,
+                    Width = 300,
+                    Height = 700,
                     Document = receipt,
-                    
                 };
 
                 preview.ShowDialog(this);

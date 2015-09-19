@@ -21,10 +21,10 @@ namespace PetvetPOS_Inventory_System
 
         public int getTransactionId(Invoice transaction)
         {
-            string condition = String.Format("transaction_date = {0} and user_id = '{1}' ORDER BY transaction_time DESC", 
+            string condition = String.Format(" date = {0} and employee_id = '{1}' ORDER BY time DESC", 
                 "CURDATE()", 
-                transaction);
-            return (int)readScalar("transaction_id", condition);
+                transaction.EmployeeId);
+            return (int)readScalar("id", condition);
         }
 
         public bool insertTransaction(Invoice transaction)
