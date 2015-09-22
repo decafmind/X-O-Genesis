@@ -78,16 +78,20 @@ namespace PetvetPOS_Inventory_System
                     if (width >= min_width)
                         Size = new Size(width, Height);
                     else
+                    {
                         timer1.Stop();
-                    contentPanel.Visible = true;
+                        contentPanel.Visible = true;
+                    }
                     break;
                 case VIEW_STATE.Visible:
                     width = width + 30;
                     if (width < max_width)
                         Size = new Size(width, Height);
                     else
+                    {
                         timer1.Stop();
                         contentPanel.Visible = true;
+                    }
                     break;
             }
         }
@@ -95,6 +99,20 @@ namespace PetvetPOS_Inventory_System
         private void SliderPane_Paint(object sender, PaintEventArgs e)
         {
             contentPanel.Location = new Point((this.Width - contentPanel.Width) / 2, contentPanel.Location.Y);
+        }
+
+        public bool isOpen()
+        {
+            switch (viewState)
+            {
+                case VIEW_STATE.Passive:
+                case VIEW_STATE.Hidden:
+                    return false;
+                case VIEW_STATE.Visible:
+                    return true;
+                default:
+                    return false;
+            }
         }
     }
 }

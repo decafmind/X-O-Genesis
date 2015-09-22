@@ -207,6 +207,7 @@
             this.dgInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgInventory.Size = new System.Drawing.Size(809, 353);
             this.dgInventory.TabIndex = 0;
+            this.dgInventory.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgInventory_CellMouseDoubleClick);
             this.dgInventory.Sorted += new System.EventHandler(this.dgInventory_Sorted);
             // 
             // panel3
@@ -219,6 +220,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(829, 100);
             this.panel3.TabIndex = 0;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // panel9
             // 

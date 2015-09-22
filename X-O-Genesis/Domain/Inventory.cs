@@ -12,7 +12,7 @@ namespace PetvetPOS_Inventory_System
         public string Barcode { get; set; }
         public DateTime StockinDateTime { get; set; }
         public int QtyReceived { get; set; }
-
+        public string Supplier { get; set; }
         public int QtyOnHand { get; set; }
 
         public Inventory()

@@ -17,7 +17,7 @@ namespace PetvetPOS_Inventory_System
     {
         // TODO
         // ProductPaneScroll productPaneScroll;
-        SliderPane sliderPane;
+        ProductSliderPane sliderPane;
         DatabaseController dbController;
 
         DataTable inventoryTable;
@@ -50,6 +50,9 @@ namespace PetvetPOS_Inventory_System
 
             this.dbController = masterController.DataBaseController;
             sliderPane = productSliderPane1;
+            sliderPane.accessMasterController = masterController;
+            sliderPane.dbController = masterController.DataBaseController;
+            sliderPane.inventoryView = this;
 
             using (Font timesNewRoman = new Font("Times New Roman", 12, FontStyle.Regular))
             {
@@ -293,7 +296,8 @@ namespace PetvetPOS_Inventory_System
                 if (mainTab.SelectedTab == tabPage1)
                 {
                     keyButton9.updateButton();
-                    //updateProduct();
+                    updateProduct();
+                    productSliderPane1.toggle();
                 }
                 else
                 {
@@ -457,7 +461,7 @@ namespace PetvetPOS_Inventory_System
             string product_name = string.Empty;
             product_name = getValueFromDatagridCell(PRODUCT_NAME_INDEX);
             Product product = dbController.getProductThroughName(product_name);
-        //    productPaneScroll.toggle(product);
+            productSliderPane1.mapProductToTextfield(product);
         }
 
         string getValueFromDatagridCell(int index)
@@ -897,6 +901,19 @@ namespace PetvetPOS_Inventory_System
         {
             string charAllowed = "1234567890";
             MyExtension.Validation.limitTextbox(txtQty, charAllowed);
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+        private void dgInventory_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            if (!productSliderPane1.isOpen())
+                productSliderPane1.toggle();
+            updateProduct();
         }
 
     }
