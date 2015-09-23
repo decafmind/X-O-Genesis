@@ -324,7 +324,20 @@ namespace PetvetPOS_Inventory_System
                     keyButton13.updateButton();
                     keyButton14.updateButton();
                     printReceipt();
-                }          
+                }
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                if (productSliderPane1.isOpen())
+                    productSliderPane1.toggle();
+            }
+
+            if (sliderPane.isOpen())
+            {
+                if (e.KeyCode == Keys.Enter)
+                {
+                    sliderPane.insertProduct();
+                }
             }
 
             //if (!(productPaneScroll.checkIfVisisble))
@@ -379,7 +392,6 @@ namespace PetvetPOS_Inventory_System
             else
             {
                 sliderPane.hide();
-            //    productPaneScroll.switchOff();
                 txtSearch.Enabled = true;
             }
         }
@@ -394,9 +406,11 @@ namespace PetvetPOS_Inventory_System
             if (txtSearch.Enabled)
                 toogleSearch();
 
+            if (sliderPane.isOpen())
+                sliderPane.toggle();
+
             sliderPane.toggle();
-           // sliderPane.show();
-          //  productPaneScroll.toggleInsert();
+            sliderPane.clearTexts();
         }
 
         private void txtSearch_EnabledChanged_1(object sender, EventArgs e)

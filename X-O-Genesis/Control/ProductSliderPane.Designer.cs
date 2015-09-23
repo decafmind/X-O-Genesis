@@ -63,7 +63,6 @@
             this.contentPanel.Controls.Add(this.txtQuantity);
             this.contentPanel.Location = new System.Drawing.Point(29, 19);
             this.contentPanel.Size = new System.Drawing.Size(242, 455);
-            this.contentPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.contentPanel_Paint);
             // 
             // txtQuantity
             // 
@@ -118,7 +117,6 @@
             this.txtSupplier.Name = "txtSupplier";
             this.txtSupplier.Size = new System.Drawing.Size(212, 24);
             this.txtSupplier.TabIndex = 11;
-            this.txtSupplier.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label1
             // 
@@ -185,7 +183,6 @@
             this.label6.Size = new System.Drawing.Size(89, 20);
             this.label6.TabIndex = 17;
             this.label6.Text = "SUPPLIER";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // pictureBox1
             // 
@@ -206,7 +203,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.MaximumSize = new System.Drawing.Size(300, 100);
             this.Name = "ProductSliderPane";
-            this.Load += new System.EventHandler(this.ProductSliderPane_Load);
             this.contentPanel.ResumeLayout(false);
             this.contentPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

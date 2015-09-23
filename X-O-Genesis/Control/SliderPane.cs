@@ -12,6 +12,15 @@ namespace PetvetPOS_Inventory_System
 {
     public partial class SliderPane : MyUserControl
     {
+        public event EventHandler StateChange;
+
+        public void OnStateChange(EventArgs e)
+        {
+            EventHandler onStateChanged = StateChange;
+            if (onStateChanged!= null)
+                onStateChanged(this, e);
+        }
+
         private enum VIEW_STATE
         {
             Hidden,
@@ -34,6 +43,21 @@ namespace PetvetPOS_Inventory_System
         {
             InitializeComponent();
             width = min_width;
+            StateChange += SliderPane_StateChange;
+        }
+
+        private void SliderPane_StateChange(object sender, EventArgs e)
+        {
+            switch (viewState)
+            {
+                case VIEW_STATE.Hidden:
+                case VIEW_STATE.Passive:
+                    contentPanel.Visible = false;
+                    break;
+                case VIEW_STATE.Visible:
+                    contentPanel.Visible = true;
+                    break;
+            }
         }
 
         public void toggle()
@@ -59,12 +83,6 @@ namespace PetvetPOS_Inventory_System
         {
             viewState = VIEW_STATE.Hidden;
             timer1.Start();
-        }
-
-
-        private void SliderPane_Load(object sender, EventArgs e)
-        {
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -94,6 +112,8 @@ namespace PetvetPOS_Inventory_System
                     }
                     break;
             }
+
+            OnStateChange(new EventArgs());
         }
 
         private void SliderPane_Paint(object sender, PaintEventArgs e)

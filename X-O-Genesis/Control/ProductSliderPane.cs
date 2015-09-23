@@ -40,7 +40,7 @@ namespace PetvetPOS_Inventory_System
             return false;
         }
 
-        void insertProduct()
+        public void insertProduct()
         {
             inventory = new Inventory()
             {
@@ -70,6 +70,18 @@ namespace PetvetPOS_Inventory_System
             toggle();
         }
 
+        public void clearTexts()
+        {
+            txtBarcode.Clear();
+            txtCategory.Clear();
+            txtName.Clear();
+            txtPrice.Clear();
+
+            txtQuantity.Clear();
+            txtSupplier.Clear();
+            txtBarcode.Enabled = true; // To make sure it is enabled even after update
+        }
+
         public void mapProductToTextfield(Product product)
         {
             txtBarcode.Text = product.Barcode.ToString();
@@ -78,32 +90,12 @@ namespace PetvetPOS_Inventory_System
             txtBarcode.BackColor = Color.White;
             txtName.Text = product.Description.ToString();
             txtPrice.Text = product.UnitPrice.ToString();
-            //txtSupplier.Text = product.Company.ToString();
-        }
-
-        private void ProductSliderPane_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox6_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void contentPanel_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             insertProduct();
         }
+
     }
 }
