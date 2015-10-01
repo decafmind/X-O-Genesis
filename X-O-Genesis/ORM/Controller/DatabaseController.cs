@@ -62,6 +62,9 @@ namespace PetvetPOS_Inventory_System
 
         public ProductReturnViewMapper productReturnViewMapper { get; set; }
 
+        public CustomerInformationView customerInformationView { get; set; }
+        public CustomerInformationMapper customerInformationMapper { get; set; }
+
         public DatabaseController(MasterController masterController)
         {
             this.mySqlDB = new MySqlDB();

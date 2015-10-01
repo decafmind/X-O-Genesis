@@ -66,9 +66,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ListNetworkComputerNames">
-      <HintPath>..\..\ListNetworkComputerNames\ListNetworkComputerNames\bin\Debug\ListNetworkComputerNames.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <Private>True</Private>
+      <HintPath>..\..\Capstone\cjp\X-O-Genesis\X-O-Genesis\bin\Debug\ListNetworkComputerNames.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic">
       <Private>True</Private>
@@ -90,15 +88,8 @@
       <Private>True</Private>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
-    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Installers (Windows)\MySql Connectors (dll)\v4.0\MySql.Data.Entity.EF6.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-    </Reference>
-    <Reference Include="MySql.Fabric.Plugin, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Installers (Windows)\MySql Connectors (dll)\v4.0\MySql.Fabric.Plugin.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
+    <Reference Include="MySql.Fabric.Plugin">
+      <HintPath>..\..\Capstone\cjp\X-O-Genesis\X-O-Genesis\bin\Debug\MySql.Fabric.Plugin.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Web, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -106,16 +97,11 @@
       <Private>True</Private>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
-    <Reference Include="PasswordHash, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\Library\PasswordHash.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <Private>True</Private>
+    <Reference Include="PasswordHash">
+      <HintPath>..\..\Capstone\cjp\X-O-Genesis\X-O-Genesis\bin\Debug\PasswordHash.dll</HintPath>
     </Reference>
     <Reference Include="Randy.Graphics">
-      <HintPath>..\..\..\..\Library\Randy.Graphics.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <Private>True</Private>
+      <HintPath>..\..\Capstone\cjp\X-O-Genesis\X-O-Genesis\bin\Debug\Randy.Graphics.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Private>True</Private>
@@ -162,17 +148,15 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="TouchlessLib">
-      <HintPath>..\..\..\..\Dot Net Webcam Library\Touchless\TouchlessLib.dll</HintPath>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
-      <Private>True</Private>
+      <HintPath>..\..\Capstone\cjp\X-O-Genesis\X-O-Genesis\bin\Debug\TouchlessLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Control\CustomerInformation.cs">
+    <Compile Include="Control\CustomerInformationView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\CustomerInformation.Designer.cs">
-      <DependentUpon>CustomerInformation.cs</DependentUpon>
+    <Compile Include="Control\CustomerInformationView.Designer.cs">
+      <DependentUpon>CustomerInformationView.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\ProductSliderPane.cs">
       <SubType>UserControl</SubType>
@@ -188,6 +172,7 @@
     </Compile>
     <Compile Include="Domain\Client.cs" />
     <Compile Include="Domain\Controller\Service.cs" />
+    <Compile Include="Domain\CustomerInformation.cs" />
     <Compile Include="Domain\InventoryPersonnelMenuList.cs" />
     <Compile Include="Domain\StaffMenuList.cs" />
     <Compile Include="Domain\GPP.cs" />
@@ -202,6 +187,7 @@
     </Compile>
     <Compile Include="MyExtension\ErrorLog.cs" />
     <Compile Include="ORM\TableGateway\AuditTrailMapper.cs" />
+    <Compile Include="ORM\TableGateway\CustomerInformationMapper.cs" />
     <Compile Include="ORM\TableGateway\PetsizeMapper.cs" />
     <Compile Include="ORM\TableGateway\Clock.cs">
       <SubType>UserControl</SubType>
@@ -465,8 +451,8 @@
     <EmbeddedResource Include="Control\AddServices.resx">
       <DependentUpon>AddServices.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\CustomerInformation.resx">
-      <DependentUpon>CustomerInformation.cs</DependentUpon>
+    <EmbeddedResource Include="Control\CustomerInformationView.resx">
+      <DependentUpon>CustomerInformationView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\ProductSliderPane.resx">
       <DependentUpon>ProductSliderPane.cs</DependentUpon>

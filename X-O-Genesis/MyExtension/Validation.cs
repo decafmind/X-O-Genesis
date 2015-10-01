@@ -17,7 +17,26 @@ namespace MyExtension
                     result += character;
             textbox.Text = result;
         }
+
+        public static bool isFilled(Control c)
+        {
+            bool y = false;
+            foreach (Control cn in c.Controls)
+            {
+                if (cn is TextBox)
+                {
+                    TextBox txt = (TextBox)cn;
+                    if (!string.IsNullOrWhiteSpace(txt.Text))
+                    {
+                        y = true;
+                    }
+                }
+            }
+
+            return y;
+        }
     }
+
 
     static class Barcode{
 
