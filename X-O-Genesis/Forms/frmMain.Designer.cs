@@ -38,6 +38,9 @@ namespace PetvetPOS_Inventory_System
             this.panel3 = new System.Windows.Forms.Panel();
             this.lblDate = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.outLine = new System.Windows.Forms.Panel();
+            this.outline2 = new System.Windows.Forms.Panel();
+            this.outline3 = new System.Windows.Forms.Panel();
             this.subHeader.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -56,10 +59,11 @@ namespace PetvetPOS_Inventory_System
             // 
             this.panelSidebar.BackColor = System.Drawing.Color.White;
             this.panelSidebar.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelSidebar.Location = new System.Drawing.Point(1, 80);
+            this.panelSidebar.Location = new System.Drawing.Point(1, 81);
             this.panelSidebar.Name = "panelSidebar";
-            this.panelSidebar.Size = new System.Drawing.Size(91, 655);
+            this.panelSidebar.Size = new System.Drawing.Size(91, 654);
             this.panelSidebar.TabIndex = 0;
+            this.panelSidebar.Paint += new System.Windows.Forms.PaintEventHandler(this.panelSidebar_Paint);
             // 
             // subHeader
             // 
@@ -67,9 +71,9 @@ namespace PetvetPOS_Inventory_System
             this.subHeader.Controls.Add(this.userControlPanel);
             this.subHeader.Controls.Add(this.panel3);
             this.subHeader.Dock = System.Windows.Forms.DockStyle.Top;
-            this.subHeader.Location = new System.Drawing.Point(92, 80);
+            this.subHeader.Location = new System.Drawing.Point(93, 81);
             this.subHeader.Name = "subHeader";
-            this.subHeader.Size = new System.Drawing.Size(907, 36);
+            this.subHeader.Size = new System.Drawing.Size(906, 36);
             this.subHeader.TabIndex = 0;
             // 
             // userControlPanel
@@ -77,7 +81,7 @@ namespace PetvetPOS_Inventory_System
             this.userControlPanel.BackColor = System.Drawing.Color.White;
             this.userControlPanel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.userControlPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.userControlPanel.Location = new System.Drawing.Point(584, 0);
+            this.userControlPanel.Location = new System.Drawing.Point(583, 0);
             this.userControlPanel.Name = "userControlPanel";
             this.userControlPanel.Size = new System.Drawing.Size(323, 36);
             this.userControlPanel.TabIndex = 0;
@@ -111,22 +115,53 @@ namespace PetvetPOS_Inventory_System
             // 
             this.mainPanel.BackColor = System.Drawing.Color.White;
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(92, 116);
+            this.mainPanel.Location = new System.Drawing.Point(93, 118);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(907, 619);
+            this.mainPanel.Size = new System.Drawing.Size(906, 617);
             this.mainPanel.TabIndex = 0;
+            // 
+            // outLine
+            // 
+            this.outLine.BackColor = System.Drawing.Color.White;
+            this.outLine.Dock = System.Windows.Forms.DockStyle.Top;
+            this.outLine.ForeColor = System.Drawing.Color.Green;
+            this.outLine.Location = new System.Drawing.Point(1, 80);
+            this.outLine.Name = "outLine";
+            this.outLine.Size = new System.Drawing.Size(998, 1);
+            this.outLine.TabIndex = 1;
+            // 
+            // outline2
+            // 
+            this.outline2.BackColor = System.Drawing.Color.White;
+            this.outline2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.outline2.Location = new System.Drawing.Point(92, 81);
+            this.outline2.Name = "outline2";
+            this.outline2.Size = new System.Drawing.Size(1, 654);
+            this.outline2.TabIndex = 2;
+            // 
+            // outline3
+            // 
+            this.outline3.BackColor = System.Drawing.Color.White;
+            this.outline3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.outline3.Location = new System.Drawing.Point(93, 117);
+            this.outline3.Name = "outline3";
+            this.outline3.Size = new System.Drawing.Size(906, 1);
+            this.outline3.TabIndex = 3;
             // 
             // frmMain
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1000, 736);
             this.ControlBox = false;
             this.Controls.Add(this.mainPanel);
+            this.Controls.Add(this.outline3);
             this.Controls.Add(this.subHeader);
+            this.Controls.Add(this.outline2);
             this.Controls.Add(this.panelSidebar);
+            this.Controls.Add(this.outLine);
             this.Controls.Add(this.panelHeader);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -157,6 +192,9 @@ namespace PetvetPOS_Inventory_System
         private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel userControlPanel;
+        private System.Windows.Forms.Panel outLine;
+        private System.Windows.Forms.Panel outline2;
+        private System.Windows.Forms.Panel outline3;
     }
 }
 

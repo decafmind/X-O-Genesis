@@ -33,7 +33,7 @@ namespace PetvetPOS_Inventory_System
         public ProductMapper productMapper { get; set; }
         public InventoryMapper inventoryMapper { get; set; }
         public ProductInventory productInventory { get; set; }
-        public TransactionMapper transactionMapper { get; set; }
+        public InvoiceMapper invoiceMapper { get; set; }
 
         public ProductTransactionMapper productTransactionMapper { get; set; }
         public TransactionResult transactionResult { get; set; }
@@ -74,7 +74,7 @@ namespace PetvetPOS_Inventory_System
             this.inventoryMapper = new InventoryMapper(mySqlDB);
 
             this.productInventory = new ProductInventory(mySqlDB);
-            this.transactionMapper = new TransactionMapper(mySqlDB);
+            this.invoiceMapper = new InvoiceMapper(mySqlDB);
             this.productTransactionMapper = new ProductTransactionMapper(mySqlDB);
             this.transactionResult = new TransactionResult(mySqlDB);
 
@@ -224,17 +224,8 @@ namespace PetvetPOS_Inventory_System
             return categoryMapper.getListOfCategory();
         }
 
-        public bool insertGppTransaction(Transaction transaction, GPP gpp, int qty, decimal subtotal)
-        {
-            if (gppTransactionMapper.insertGpp(transaction, gpp, qty, subtotal))
-            {
-                OnInsertEntity(new EntityArgs(transaction));
-                return true;
-            }
-            return false;
-        }
-
-        public bool insertMedicalTransaction(Transaction transaction, Medical medical, int qty, decimal subtotal)
+ 
+        public bool insertMedicalTransaction(Invoice transaction, Medical medical, int qty, decimal subtotal)
         {
             if (medicalTransactionMapper.insertMedicalTransaction(transaction, medical, qty, subtotal))
             {
@@ -503,7 +494,7 @@ namespace PetvetPOS_Inventory_System
         {
             string condition = String.Format(
                 " Name LIKE '%{0}%' OR Barcode LIKE '%{0}%' " +
-                " OR Category LIKE '%{0}%' OR Source_Company LIKE '%{0}%' ", token
+                " OR Category LIKE '%{0}%'", token
                 );
             return productInventory.loadTable(dt, condition);
         }
@@ -539,20 +530,20 @@ namespace PetvetPOS_Inventory_System
             return purchasedProductMapper.loadTable(dt, "Qty_sold > 0");
         }
 
-        public int getTransactionId(Transaction transaction)
+        public int getTransactionId(Invoice transaction)
         {
-            return transactionMapper.getTransactionId(transaction);
+            return invoiceMapper.getTransactionId(transaction);
         }
 
-        public void insertTransaction(Transaction transaction)
+        public void insertTransaction(Invoice transaction)
         {
             // This method insert a new row into transaction_tbl
-            if (transactionMapper.insertTransaction(transaction)){
+            if (invoiceMapper.insertTransaction(transaction)){
                 OnInsertEntity(new EntityArgs(transaction));
             }
         }
 
-        public bool insertTransactionResult(Transaction transaction, Decimal totalPrice, Decimal cashTender)
+        public bool insertTransactionResult(Invoice transaction, Decimal totalPrice, Decimal cashTender)
         {
             return transactionResult.insertTransactionResult(transaction, totalPrice, cashTender);
         }

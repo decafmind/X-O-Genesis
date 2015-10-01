@@ -57,7 +57,7 @@
             this.button1.FlatAppearance.BorderSize = 2;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(0, 1);
+            this.button1.Location = new System.Drawing.Point(0, 248);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(253, 50);
             this.button1.TabIndex = 0;
@@ -216,7 +216,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDescription);
             this.Name = "ProductPaneScroll";
-            this.Size = new System.Drawing.Size(253, 51);
+            this.Size = new System.Drawing.Size(253, 298);
             this.ResumeLayout(false);
             this.PerformLayout();
 

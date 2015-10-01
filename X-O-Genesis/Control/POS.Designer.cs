@@ -29,15 +29,12 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POS));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POS));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.barcodeIndicator = new System.Windows.Forms.Timer(this.components);
             this.paymentTimer = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.parentPanel = new System.Windows.Forms.Panel();
-            this.btnAddService = new System.Windows.Forms.Button();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.dgTransaction = new System.Windows.Forms.DataGridView();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -52,7 +49,6 @@
             this.clickIndicator1 = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
@@ -68,23 +64,22 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblPOSmsg = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.poSlbl2 = new PetvetPOS_Inventory_System.POSlbl();
             this.rightSidePane = new System.Windows.Forms.Panel();
             this.sidePanel = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.keyButton1 = new PetvetPOS_Inventory_System.KeyButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.keyButton4 = new PetvetPOS_Inventory_System.KeyButton();
             this.label8 = new System.Windows.Forms.Label();
+            this.keyButton3 = new PetvetPOS_Inventory_System.KeyButton();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.poSlbl2 = new PetvetPOS_Inventory_System.POSlbl();
-            this.keyButton1 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton4 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton3 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
-            this.parentPanel.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgTransaction)).BeginInit();
             this.panel8.SuspendLayout();
@@ -116,57 +111,16 @@
             this.timer1.Interval = 10;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // parentPanel
-            // 
-            this.parentPanel.AutoScroll = true;
-            this.parentPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.parentPanel.Controls.Add(this.btnAddService);
-            this.parentPanel.Controls.Add(this.label12);
-            this.parentPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.parentPanel.Location = new System.Drawing.Point(0, 119);
-            this.parentPanel.Name = "parentPanel";
-            this.parentPanel.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.parentPanel.Size = new System.Drawing.Size(485, 400);
-            this.parentPanel.TabIndex = 16;
-            this.parentPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.parentPanel_Paint);
-            this.parentPanel.Resize += new System.EventHandler(this.parentPanel_Resize);
-            // 
-            // btnAddService
-            // 
-            this.btnAddService.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddService.BackgroundImage")));
-            this.btnAddService.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAddService.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAddService.Enabled = false;
-            this.btnAddService.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnAddService.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddService.Location = new System.Drawing.Point(185, 17);
-            this.btnAddService.Name = "btnAddService";
-            this.btnAddService.Size = new System.Drawing.Size(40, 35);
-            this.btnAddService.TabIndex = 4;
-            this.btnAddService.UseVisualStyleBackColor = true;
-            this.btnAddService.Click += new System.EventHandler(this.btnAddService_Click);
-            // 
-            // label12
-            // 
-            this.label12.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(10, 0);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(168, 68);
-            this.label12.TabIndex = 15;
-            this.label12.Text = "SERVICES";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
             // panel6
             // 
             this.panel6.Controls.Add(this.dgTransaction);
             this.panel6.Controls.Add(this.panel8);
             this.panel6.Controls.Add(this.shapeContainer1);
-            this.panel6.Controls.Add(this.panel7);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel6.Location = new System.Drawing.Point(485, 119);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(0, 119);
             this.panel6.Name = "panel6";
-            this.panel6.Padding = new System.Windows.Forms.Padding(0, 10, 10, 10);
-            this.panel6.Size = new System.Drawing.Size(392, 400);
+            this.panel6.Padding = new System.Windows.Forms.Padding(10);
+            this.panel6.Size = new System.Drawing.Size(877, 400);
             this.panel6.TabIndex = 3;
             // 
             // dgTransaction
@@ -189,22 +143,22 @@
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgTransaction.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgTransaction.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgTransaction.Location = new System.Drawing.Point(0, 68);
+            this.dgTransaction.Location = new System.Drawing.Point(10, 10);
             this.dgTransaction.MultiSelect = false;
             this.dgTransaction.Name = "dgTransaction";
             this.dgTransaction.ReadOnly = true;
             this.dgTransaction.RowHeadersVisible = false;
             this.dgTransaction.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgTransaction.Size = new System.Drawing.Size(382, 230);
+            this.dgTransaction.Size = new System.Drawing.Size(857, 288);
             this.dgTransaction.TabIndex = 3;
             // 
             // panel8
             // 
             this.panel8.Controls.Add(this.panel9);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 298);
+            this.panel8.Location = new System.Drawing.Point(10, 298);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(382, 92);
+            this.panel8.Size = new System.Drawing.Size(857, 92);
             this.panel8.TabIndex = 2;
             // 
             // panel9
@@ -215,8 +169,8 @@
             this.panel9.Controls.Add(this.label11);
             this.panel9.Controls.Add(this.btnPayment);
             this.panel9.Controls.Add(this.shapeContainer2);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel9.Location = new System.Drawing.Point(0, 0);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel9.Location = new System.Drawing.Point(544, 0);
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(313, 92);
             this.panel9.TabIndex = 6;
@@ -306,12 +260,12 @@
             // 
             // shapeContainer1
             // 
-            this.shapeContainer1.Location = new System.Drawing.Point(0, 68);
+            this.shapeContainer1.Location = new System.Drawing.Point(10, 10);
             this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.rectangleShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(382, 322);
+            this.shapeContainer1.Size = new System.Drawing.Size(857, 380);
             this.shapeContainer1.TabIndex = 3;
             this.shapeContainer1.TabStop = false;
             // 
@@ -320,16 +274,6 @@
             this.rectangleShape1.Location = new System.Drawing.Point(-6, 217);
             this.rectangleShape1.Name = "rectangleShape1";
             this.rectangleShape1.Size = new System.Drawing.Size(5, 23);
-            // 
-            // panel7
-            // 
-            this.panel7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel7.BackgroundImage")));
-            this.panel7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 10);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(382, 58);
-            this.panel7.TabIndex = 1;
             // 
             // panel1
             // 
@@ -507,6 +451,14 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Total Amount";
             // 
+            // poSlbl2
+            // 
+            this.poSlbl2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.poSlbl2.Location = new System.Drawing.Point(182, 61);
+            this.poSlbl2.Name = "poSlbl2";
+            this.poSlbl2.Size = new System.Drawing.Size(273, 46);
+            this.poSlbl2.TabIndex = 13;
+            // 
             // rightSidePane
             // 
             this.rightSidePane.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.barcodeWhite;
@@ -571,6 +523,18 @@
             this.pictureBox4.TabIndex = 27;
             this.pictureBox4.TabStop = false;
             // 
+            // keyButton1
+            // 
+            this.keyButton1.accessKeyChar = "F1";
+            this.keyButton1.accessMasterController = null;
+            this.keyButton1.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton1.Location = new System.Drawing.Point(3, 5);
+            this.keyButton1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton1.Name = "keyButton1";
+            this.keyButton1.Size = new System.Drawing.Size(61, 50);
+            this.keyButton1.TabIndex = 16;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
@@ -581,6 +545,18 @@
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
             // 
+            // keyButton4
+            // 
+            this.keyButton4.accessKeyChar = "F4";
+            this.keyButton4.accessMasterController = null;
+            this.keyButton4.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton4.Location = new System.Drawing.Point(621, 7);
+            this.keyButton4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton4.Name = "keyButton4";
+            this.keyButton4.Size = new System.Drawing.Size(61, 50);
+            this.keyButton4.TabIndex = 19;
+            // 
             // label8
             // 
             this.label8.AutoSize = true;
@@ -590,6 +566,18 @@
             this.label8.Size = new System.Drawing.Size(78, 18);
             this.label8.TabIndex = 22;
             this.label8.Text = "Payment";
+            // 
+            // keyButton3
+            // 
+            this.keyButton3.accessKeyChar = "F3";
+            this.keyButton3.accessMasterController = null;
+            this.keyButton3.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton3.Location = new System.Drawing.Point(416, 6);
+            this.keyButton3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton3.Name = "keyButton3";
+            this.keyButton3.Size = new System.Drawing.Size(61, 50);
+            this.keyButton3.TabIndex = 18;
             // 
             // label10
             // 
@@ -611,6 +599,18 @@
             this.pictureBox2.TabIndex = 23;
             this.pictureBox2.TabStop = false;
             // 
+            // keyButton2
+            // 
+            this.keyButton2.accessKeyChar = "F2";
+            this.keyButton2.accessMasterController = null;
+            this.keyButton2.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton2.Location = new System.Drawing.Point(196, 5);
+            this.keyButton2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton2.Name = "keyButton2";
+            this.keyButton2.Size = new System.Drawing.Size(61, 50);
+            this.keyButton2.TabIndex = 17;
+            // 
             // pictureBox3
             // 
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
@@ -631,76 +631,18 @@
             this.label9.TabIndex = 24;
             this.label9.Text = "Reset";
             // 
-            // poSlbl2
-            // 
-            this.poSlbl2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.poSlbl2.Location = new System.Drawing.Point(182, 61);
-            this.poSlbl2.Name = "poSlbl2";
-            this.poSlbl2.Size = new System.Drawing.Size(273, 46);
-            this.poSlbl2.TabIndex = 13;
-            // 
-            // keyButton1
-            // 
-            this.keyButton1.accessKeyChar = "F1";
-            this.keyButton1.accessMasterController = null;
-            this.keyButton1.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton1.Location = new System.Drawing.Point(3, 5);
-            this.keyButton1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton1.Name = "keyButton1";
-            this.keyButton1.Size = new System.Drawing.Size(61, 50);
-            this.keyButton1.TabIndex = 16;
-            // 
-            // keyButton4
-            // 
-            this.keyButton4.accessKeyChar = "F4";
-            this.keyButton4.accessMasterController = null;
-            this.keyButton4.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton4.Location = new System.Drawing.Point(621, 7);
-            this.keyButton4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton4.Name = "keyButton4";
-            this.keyButton4.Size = new System.Drawing.Size(61, 50);
-            this.keyButton4.TabIndex = 19;
-            // 
-            // keyButton3
-            // 
-            this.keyButton3.accessKeyChar = "F3";
-            this.keyButton3.accessMasterController = null;
-            this.keyButton3.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton3.Location = new System.Drawing.Point(416, 6);
-            this.keyButton3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton3.Name = "keyButton3";
-            this.keyButton3.Size = new System.Drawing.Size(61, 50);
-            this.keyButton3.TabIndex = 18;
-            // 
-            // keyButton2
-            // 
-            this.keyButton2.accessKeyChar = "F2";
-            this.keyButton2.accessMasterController = null;
-            this.keyButton2.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton2.Location = new System.Drawing.Point(196, 5);
-            this.keyButton2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton2.Name = "keyButton2";
-            this.keyButton2.Size = new System.Drawing.Size(61, 50);
-            this.keyButton2.TabIndex = 17;
-            // 
             // POS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.Controls.Add(this.parentPanel);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.sidePanel);
             this.Name = "POS";
             this.Size = new System.Drawing.Size(877, 583);
             this.Load += new System.EventHandler(this.POS_Load);
-            this.parentPanel.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgTransaction)).EndInit();
             this.panel8.ResumeLayout(false);
@@ -755,7 +697,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Timer barcodeIndicator;
         private System.Windows.Forms.Label lblPOSmsg;
         private System.Windows.Forms.Timer paymentTimer;
@@ -773,9 +714,6 @@
         private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.Panel parentPanel;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button btnAddService;
         private System.Windows.Forms.Button btnQuantity;
         private System.Windows.Forms.Button btnPayment;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;

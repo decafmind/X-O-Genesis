@@ -174,6 +174,18 @@
     <Compile Include="Control\CustomerInformation.Designer.cs">
       <DependentUpon>CustomerInformation.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\ProductSliderPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\ProductSliderPane.Designer.cs">
+      <DependentUpon>ProductSliderPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\SliderPane.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\SliderPane.Designer.cs">
+      <DependentUpon>SliderPane.cs</DependentUpon>
+    </Compile>
     <Compile Include="Domain\Client.cs" />
     <Compile Include="Domain\Controller\Service.cs" />
     <Compile Include="Domain\InventoryPersonnelMenuList.cs" />
@@ -411,8 +423,8 @@
     <Compile Include="Control\TrailView.Designer.cs">
       <DependentUpon>TrailView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Domain\Transaction.cs" />
-    <Compile Include="ORM\TableGateway\TransactionMapper.cs" />
+    <Compile Include="Domain\Invoice.cs" />
+    <Compile Include="ORM\TableGateway\InvoiceMapper.cs" />
     <Compile Include="Domain\TransactionResult.cs" />
     <Compile Include="Domain\User.cs" />
     <Compile Include="Control\UserAdministration.cs">
@@ -444,11 +456,23 @@
       <DependentUpon>ValidationMarks.cs</DependentUpon>
     </Compile>
     <Compile Include="ORM\ViewGateway\WeeklySalesReport.cs" />
+    <Compile Include="UserControl1.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControl1.Designer.cs">
+      <DependentUpon>UserControl1.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Control\AddServices.resx">
       <DependentUpon>AddServices.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\CustomerInformation.resx">
       <DependentUpon>CustomerInformation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\ProductSliderPane.resx">
+      <DependentUpon>ProductSliderPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\SliderPane.resx">
+      <DependentUpon>SliderPane.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CriticalNotif.resx">
       <DependentUpon>CriticalNotif.cs</DependentUpon>
@@ -553,6 +577,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\ValidationMarks.resx">
       <DependentUpon>ValidationMarks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControl1.resx">
+      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="PetvetPOS_Inventory_System_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
@@ -675,7 +702,12 @@
   <ItemGroup>
     <None Include="Resources\petvet.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\fab-animation.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fab-animation1.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

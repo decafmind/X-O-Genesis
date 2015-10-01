@@ -159,6 +159,9 @@ namespace PetvetPOS_Inventory_System
         {
             panelSidebar.BackColor = SystemColors.menuBarBlack;
             subHeader.BackColor = Color.Silver;
+            outLine.BackColor = Color.Green;
+            outline2.BackColor = Color.Green;
+            outline3.BackColor = Color.Green;
         }        
 
         // This method is the antithesis of activateTrueForm method
@@ -166,6 +169,9 @@ namespace PetvetPOS_Inventory_System
         {
             panelSidebar.BackColor = Color.White;
             subHeader.BackColor = Color.White;
+            outLine.BackColor = Color.White;
+            outline2.BackColor = Color.White;
+            outline3.BackColor = Color.White;
         }
 
         public void disableForm()
@@ -212,6 +218,11 @@ namespace PetvetPOS_Inventory_System
         }
 
         private void panelHeader_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panelSidebar_Paint(object sender, PaintEventArgs e)
         {
 
         }

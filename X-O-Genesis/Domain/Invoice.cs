@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace PetvetPOS_Inventory_System
 {
-    public class Transaction : IEntity
+    public class Invoice : IEntity
     {
-        public int TransactionId { get; set; }
+        public int InvoiceId { get; set; }
         public DateTime TransactionDateTime { get; set; }
-        public string UserId { get; set; }
+        public string EmployeeId { get; set; }
 
-        public Transaction()
+        public Invoice()
         {
 
         }

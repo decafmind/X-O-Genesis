@@ -18,9 +18,15 @@ namespace PetvetPOS_Inventory_System
             InitializeComponent();
         }
 
+        public virtual void onClick()
+        {
+            //
+        }
+
         private void rectangleShape1_Click(object sender, EventArgs e)
         {
             updateButton();
+            onClick();
         }
 
         public void updateButton()
@@ -36,6 +42,7 @@ namespace PetvetPOS_Inventory_System
         private void label1_Click(object sender, EventArgs e)
         {
             updateButton();
+            onClick();
         }
 
         private void timer1_Tick(object sender, EventArgs e)

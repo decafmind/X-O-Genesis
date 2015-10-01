@@ -37,7 +37,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.pawPrint2 = new PetvetPOS_Inventory_System.PawPrint();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panelImage = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
@@ -129,7 +128,6 @@
             // panel4
             // 
             this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
-            this.panel4.Controls.Add(this.pawPrint2);
             this.panel4.Controls.Add(this.panel5);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel4.Location = new System.Drawing.Point(566, 0);
@@ -138,16 +136,6 @@
             this.panel4.TabIndex = 3;
             this.panel4.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panelTitle_MouseDoubleClick);
             this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mouseDown);
-            // 
-            // pawPrint2
-            // 
-            this.pawPrint2.Location = new System.Drawing.Point(76, 25);
-            this.pawPrint2.Name = "pawPrint2";
-            this.pawPrint2.PawColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.pawPrint2.Size = new System.Drawing.Size(55, 59);
-            this.pawPrint2.TabIndex = 3;
-            this.pawPrint2.TabStop = false;
-            this.pawPrint2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mouseDown);
             // 
             // panel5
             // 
@@ -198,6 +186,5 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolTip toolTip1;
-        private PawPrint pawPrint2;
     }
 }

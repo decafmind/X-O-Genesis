@@ -64,11 +64,6 @@ namespace PetvetPOS_Inventory_System
             toggle();
             onUpdateMode = false;
             clear();
-
-            if (inventoryView.rbMedical.Checked)
-                rbMedical.Checked = true;
-            else
-                rbGrooming.Checked = true;
         }
 
         public void toogleUpdate(Service service)
