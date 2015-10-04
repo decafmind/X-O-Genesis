@@ -18,7 +18,7 @@ namespace PetvetPOS_Inventory_System
                 "name",
                 //"category_id",
                 "unit_price",
-                // "source_company_name",
+                //"source_company_name",
             };
         }
 

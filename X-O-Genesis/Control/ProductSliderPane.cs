@@ -17,7 +17,9 @@ namespace PetvetPOS_Inventory_System
         Inventory inventory;
         public DatabaseController dbController;
 
-        Product product;
+        Product oldProduct, product;
+        public InventoryMode mode;
+
 
         public ProductSliderPane()
         {
@@ -48,7 +50,6 @@ namespace PetvetPOS_Inventory_System
                 StockinDateTime = DateTime.Now,
                 QtyReceived = Convert.ToInt32(txtQuantity.Text),
                 QtyOnHand = Convert.ToInt32(txtQuantity.Text),
-                Supplier = txtSupplier.Text,
             };
 
             if (checkIfProductAlreadyExists(txtBarcode.Text))
@@ -80,22 +81,90 @@ namespace PetvetPOS_Inventory_System
             txtQuantity.Clear();
             txtSupplier.Clear();
             txtBarcode.Enabled = true; // To make sure it is enabled even after update
+            txtQuantity.Enabled = true;
         }
 
         public void mapProductToTextfield(Product product)
         {
+            txtQuantity.Enabled = false;
+            txtQuantity.ForeColor = Color.DimGray;
+            txtQuantity.BackColor = Color.White;
+
             txtBarcode.Text = product.Barcode.ToString();
             txtBarcode.Enabled = false;
             txtBarcode.ForeColor = Color.DimGray;
             txtBarcode.BackColor = Color.White;
+
             txtName.Text = product.Description.ToString();
             txtPrice.Text = product.UnitPrice.ToString();
+
+            oldProduct = product;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            insertProduct();
+            OK();
         }
 
+        public void OK()
+        {
+            switch (mode)
+            {
+                case InventoryMode.ADD:
+                    insertProduct();
+                    break;
+                case InventoryMode.UPDATE:
+                    updateProduct();
+                    break;
+            }
+        }
+
+        private void txtQuantity_TextChanged(object sender, EventArgs e)
+        {
+ 
+        }
+
+        private void txtBarcode_TextChanged(object sender, EventArgs e)
+        {
+            TextBox thisTexbox = sender as TextBox;
+
+            if (thisTexbox == txtBarcode && txtBarcode.TextLength > 0)
+            {
+                if (checkIfProductAlreadyExists(txtBarcode.Text))
+                {
+                    txtName.Text = product.Description.ToString();
+                    txtPrice.Text = product.UnitPrice.ToString();
+                }
+                else
+                {
+                    txtName.Clear();
+                    txtPrice.Clear();
+                }
+            }
+        }
+
+        void updateProduct()
+        {
+            product = new Product()
+            {
+                Barcode = txtBarcode.Text,
+                Description = txtName.Text,
+                UnitPrice = Convert.ToDecimal(txtPrice.Text),
+            };
+
+
+            dbController.updateProduct(oldProduct, product);
+            txtQuantity.Enabled = true;
+            txtBarcode.Enabled = true;
+
+            toggle();
+            clearTexts();
+        }
+
+        public void toggle(InventoryMode mode)
+        {
+            base.toggle();
+            this.mode = mode;
+        }
     }
 }

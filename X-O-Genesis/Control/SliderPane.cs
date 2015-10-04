@@ -60,7 +60,7 @@ namespace PetvetPOS_Inventory_System
             }
         }
 
-        public void toggle()
+        public virtual void toggle()
         {
             switch(viewState){
                 case VIEW_STATE.Passive:

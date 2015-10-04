@@ -297,7 +297,10 @@ namespace PetvetPOS_Inventory_System
                 {
                     keyButton9.updateButton();
                     updateProduct();
-                    productSliderPane1.toggle();
+                    productSliderPane1.mode = InventoryMode.UPDATE;
+
+                    if (!productSliderPane1.isOpen())
+                        productSliderPane1.toggle();
                 }
                 else
                 {
@@ -334,25 +337,10 @@ namespace PetvetPOS_Inventory_System
 
             if (sliderPane.isOpen())
             {
-                if (e.KeyCode == Keys.Enter)
-                {
-                    sliderPane.insertProduct();
+                if (e.KeyCode == Keys.Enter){
+                    sliderPane.OK();
                 }
             }
-
-            //if (!(productPaneScroll.checkIfVisisble))
-            //{
-            //    if (e.KeyCode == Keys.Right || e.KeyCode == Keys.Left)
-            //    {
-            //        if (rbInventory.Checked)
-            //            rbPurchased.Checked = true;
-            //        else if (rbPurchased.Checked)
-            //            rbInventory.Checked = true;
-
-            //        smartFocus();
-            //    }
-            //}
-
 
         }
 
@@ -403,13 +391,14 @@ namespace PetvetPOS_Inventory_System
 
         void addProduct()
         {
+            sliderPane.mode = InventoryMode.ADD;
+
             if (txtSearch.Enabled)
                 toogleSearch();
 
-            if (sliderPane.isOpen())
+            if (!sliderPane.isOpen())
                 sliderPane.toggle();
 
-            sliderPane.toggle();
             sliderPane.clearTexts();
         }
 
@@ -925,8 +914,11 @@ namespace PetvetPOS_Inventory_System
 
         private void dgInventory_CellMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
+            productSliderPane1.mode = InventoryMode.UPDATE;
+
             if (!productSliderPane1.isOpen())
                 productSliderPane1.toggle();
+
             updateProduct();
         }
 

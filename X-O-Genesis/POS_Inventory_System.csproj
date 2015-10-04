@@ -178,6 +178,7 @@
     <Compile Include="Domain\GPP.cs" />
     <Compile Include="Domain\Grooming.cs" />
     <Compile Include="Domain\Medical.cs" />
+    <Compile Include="Enums\InventoryMode.cs" />
     <Compile Include="Enums\Petsize.cs" />
     <Compile Include="Forms\CriticalNotif.cs">
       <SubType>Form</SubType>

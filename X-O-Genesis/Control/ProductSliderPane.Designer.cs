@@ -72,6 +72,7 @@
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(213, 24);
             this.txtQuantity.TabIndex = 6;
+            this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
             // 
             // txtBarcode
             // 
@@ -81,6 +82,7 @@
             this.txtBarcode.Name = "txtBarcode";
             this.txtBarcode.Size = new System.Drawing.Size(211, 24);
             this.txtBarcode.TabIndex = 7;
+            this.txtBarcode.TextChanged += new System.EventHandler(this.txtBarcode_TextChanged);
             // 
             // txtName
             // 
@@ -108,6 +110,7 @@
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(212, 24);
             this.txtCategory.TabIndex = 10;
+            this.txtCategory.Visible = false;
             // 
             // txtSupplier
             // 
@@ -117,6 +120,7 @@
             this.txtSupplier.Name = "txtSupplier";
             this.txtSupplier.Size = new System.Drawing.Size(212, 24);
             this.txtSupplier.TabIndex = 11;
+            this.txtSupplier.Visible = false;
             // 
             // label1
             // 
@@ -172,6 +176,7 @@
             this.label5.Size = new System.Drawing.Size(99, 20);
             this.label5.TabIndex = 16;
             this.label5.Text = "CATEGORY";
+            this.label5.Visible = false;
             // 
             // label6
             // 
@@ -183,6 +188,7 @@
             this.label6.Size = new System.Drawing.Size(89, 20);
             this.label6.TabIndex = 17;
             this.label6.Text = "SUPPLIER";
+            this.label6.Visible = false;
             // 
             // pictureBox1
             // 
