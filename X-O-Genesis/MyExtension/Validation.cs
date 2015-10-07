@@ -20,20 +20,17 @@ namespace MyExtension
 
         public static bool isFilled(Control c)
         {
-            bool y = false;
             foreach (Control cn in c.Controls)
             {
                 if (cn is TextBox)
                 {
                     TextBox txt = (TextBox)cn;
-                    if (!string.IsNullOrWhiteSpace(txt.Text))
-                    {
-                        y = true;
-                    }
+                    if (string.IsNullOrWhiteSpace(txt.Text))
+                        return false;
                 }
             }
 
-            return y;
+            return true;
         }
     }
 

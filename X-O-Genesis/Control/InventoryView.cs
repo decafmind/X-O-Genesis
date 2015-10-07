@@ -716,7 +716,7 @@ namespace PetvetPOS_Inventory_System
                 InvoiceId = transaction_id,
             };
 
-            ProductTransaction pt = new ProductTransaction()
+            ProductInvoice productInvoice = new ProductInvoice()
             {
                 product = product,
                 invoice = transaction,
@@ -724,7 +724,7 @@ namespace PetvetPOS_Inventory_System
                 GroupPrice = grp_price,
             };
 
-            dbController.insertProductTransaction(pt);
+            dbController.insertProductInvoice(productInvoice);
         }
 
         void editDataGrid()

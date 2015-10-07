@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace PetvetPOS_Inventory_System
 {
-    public class TransactionResult: DatabaseMapper
+    public class Receipt: DatabaseMapper
     {
-        public TransactionResult(MySqlDB db)
+        public Receipt(MySqlDB db)
             : base(db)
         {
             tableName = "receipt_tbl";
@@ -21,13 +21,13 @@ namespace PetvetPOS_Inventory_System
             };
         }
 
-        public bool insertTransactionResult(Invoice transaction, Decimal totalPrice, Decimal cashTender)
+        public bool insertReceipt(Invoice invoice, Decimal totalPrice, Decimal cashTender)
         {
-            if (transaction != null)
+            if (invoice != null)
             {
                 Decimal change = cashTender - totalPrice;
                 return create(
-                    insertValues(transaction.InvoiceId, totalPrice, cashTender, change)
+                    insertValues(invoice.InvoiceId, totalPrice, cashTender, change)
                 );
             }
             return false;

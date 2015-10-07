@@ -178,8 +178,8 @@
     <Compile Include="Domain\GPP.cs" />
     <Compile Include="Domain\Grooming.cs" />
     <Compile Include="Domain\Medical.cs" />
-    <Compile Include="Enums\InventoryMode.cs" />
-    <Compile Include="Enums\Petsize.cs" />
+    <Compile Include="Domain\Enums\InventoryMode.cs" />
+    <Compile Include="Domain\Enums\Petsize.cs" />
     <Compile Include="Forms\CriticalNotif.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -292,7 +292,7 @@
     <Compile Include="ORM\Controller\DatabaseMapper.cs" />
     <Compile Include="ORM\TableGateway\LoginTrailMapper.cs" />
     <Compile Include="Domain\Controller\MasterController.cs" />
-    <Compile Include="Enums\Menu.cs" />
+    <Compile Include="Domain\Enums\Menu.cs" />
     <Compile Include="Control\MenuBar.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -360,8 +360,8 @@
     <Compile Include="Control\ProductPaneScroll.Designer.cs">
       <DependentUpon>ProductPaneScroll.cs</DependentUpon>
     </Compile>
-    <Compile Include="Domain\ProductTransaction.cs" />
-    <Compile Include="ORM\TableGateway\ProductTransactionMapper.cs" />
+    <Compile Include="Domain\ProductInvoice.cs" />
+    <Compile Include="ORM\TableGateway\ProductInvoiceMapper.cs" />
     <Compile Include="Domain\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
@@ -412,7 +412,7 @@
     </Compile>
     <Compile Include="Domain\Invoice.cs" />
     <Compile Include="ORM\TableGateway\InvoiceMapper.cs" />
-    <Compile Include="Domain\TransactionResult.cs" />
+    <Compile Include="Domain\Receipt.cs" />
     <Compile Include="Domain\User.cs" />
     <Compile Include="Control\UserAdministration.cs">
       <SubType>UserControl</SubType>
@@ -421,7 +421,7 @@
       <DependentUpon>UserAdministration.cs</DependentUpon>
     </Compile>
     <Compile Include="EventHandler\UserArgs.cs" />
-    <Compile Include="Enums\UserLevel.cs" />
+    <Compile Include="Domain\Enums\UserLevel.cs" />
     <Compile Include="ORM\TableGateway\UserMapper.cs" />
     <Compile Include="Domain\UserMenuList.cs" />
     <Compile Include="Control\UserSettingsControl.cs">

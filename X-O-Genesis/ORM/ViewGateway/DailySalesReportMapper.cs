@@ -13,12 +13,12 @@ namespace PetvetPOS_Inventory_System
         {
             tableName = "daily_sales_report";
             fieldsname = new string[] {
-                "transaction_date",
+                "date",
                 "Sales",
             };
 
             fieldsname_forselect = new string[] {
-                "transaction_date AS 'Date'",
+                "date AS 'Date'",
                 "Sales",
             };
         }

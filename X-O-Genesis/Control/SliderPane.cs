@@ -70,7 +70,7 @@ namespace PetvetPOS_Inventory_System
                 case VIEW_STATE.Visible:
                     hide();
                     break;
-         }
+            }
         }
 
         public void show()

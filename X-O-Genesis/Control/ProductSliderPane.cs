@@ -44,12 +44,14 @@ namespace PetvetPOS_Inventory_System
 
         public void insertProduct()
         {
-            inventory = new Inventory()
+            if(MyExtension.Validation.isFilled(contentPanel)){
+                inventory = new Inventory()
             {
                 Barcode = txtBarcode.Text,
                 StockinDateTime = DateTime.Now,
                 QtyReceived = Convert.ToInt32(txtQuantity.Text),
                 QtyOnHand = Convert.ToInt32(txtQuantity.Text),
+                Supplier = txtSupplier.Text,
             };
 
             if (checkIfProductAlreadyExists(txtBarcode.Text))
@@ -69,23 +71,30 @@ namespace PetvetPOS_Inventory_System
             }
 
             toggle();
+
+            }
+
+            
         }
 
         public void clearTexts()
         {
+           // MyExtension.Validation.
             txtBarcode.Clear();
             txtCategory.Clear();
             txtName.Clear();
             txtPrice.Clear();
-
             txtQuantity.Clear();
             txtSupplier.Clear();
             txtBarcode.Enabled = true; // To make sure it is enabled even after update
             txtQuantity.Enabled = true;
+            txtQuantity.Visible = true;
+            lblQuantity.Visible = true;
         }
 
         public void mapProductToTextfield(Product product)
         {
+            clearTexts();
             txtQuantity.Enabled = false;
             txtQuantity.ForeColor = Color.DimGray;
             txtQuantity.BackColor = Color.White;
@@ -96,9 +105,13 @@ namespace PetvetPOS_Inventory_System
             txtBarcode.BackColor = Color.White;
 
             txtName.Text = product.Description.ToString();
-            txtPrice.Text = product.UnitPrice.ToString();
-
+            txtPrice.Text = product.UnitPrice.ToString(); 
+           // if (product.Company != null)
+          //      txtSupplier.Text = product.Company.ToString();
             oldProduct = product;
+
+            lblQuantity.Visible = false;
+            txtQuantity.Visible = false;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -151,7 +164,6 @@ namespace PetvetPOS_Inventory_System
                 Description = txtName.Text,
                 UnitPrice = Convert.ToDecimal(txtPrice.Text),
             };
-
 
             dbController.updateProduct(oldProduct, product);
             txtQuantity.Enabled = true;
