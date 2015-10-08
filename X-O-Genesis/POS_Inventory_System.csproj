@@ -424,7 +424,7 @@
     </Compile>
     <Compile Include="Domain\Invoice.cs" />
     <Compile Include="ORM\TableGateway\InvoiceMapper.cs" />
-    <Compile Include="Domain\TransactionResult.cs" />
+    <Compile Include="Domain\Receipt.cs" />
     <Compile Include="Domain\User.cs" />
     <Compile Include="Control\UserAdministration.cs">
       <SubType>UserControl</SubType>

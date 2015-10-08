@@ -36,7 +36,7 @@ namespace PetvetPOS_Inventory_System
         public InvoiceMapper invoiceMapper { get; set; }
 
         public ProductInvoiceMapper productInvoiceMapper { get; set; }
-        public TransactionResult transactionResult { get; set; }
+        public Receipt receipt { get; set; }
         public PurchasedProductMapper purchasedProductMapper { get; set; }
         public TodaySalesMapper todaySalesMapper { get; set; }
 
@@ -79,7 +79,7 @@ namespace PetvetPOS_Inventory_System
             this.productInventory = new ProductInventory(mySqlDB);
             this.invoiceMapper = new InvoiceMapper(mySqlDB);
             this.productInvoiceMapper = new ProductInvoiceMapper(mySqlDB);
-            this.transactionResult = new TransactionResult(mySqlDB);
+            this.receipt = new Receipt(mySqlDB);
 
             this.purchasedProductMapper = new PurchasedProductMapper(mySqlDB);
             this.todaySalesMapper = new TodaySalesMapper(mySqlDB);
@@ -151,6 +151,7 @@ namespace PetvetPOS_Inventory_System
         {
             return inventoryMapper.pullInventory(inventory);
         }
+
         /* This method will return an instance of User if 
          * user credentials exists in the database
          */
@@ -166,7 +167,7 @@ namespace PetvetPOS_Inventory_System
 
         public bool updateTotalPrice(string transaction_id, decimal new_total_price)
         {
-            return transactionResult.updateTotalPrice(transaction_id, new_total_price);
+            return receipt.updateTotalPrice(transaction_id, new_total_price);
         }
 
         public Employee getEmployeeFromUser(User user)
@@ -214,13 +215,13 @@ namespace PetvetPOS_Inventory_System
             string[] extractFrom = MyExtension.MySqlToCSharp.convertDateTime(from).Split(' ');
             string[] extractTo = MyExtension.MySqlToCSharp.convertDateTime(to).Split(' ');
 
-            string condition = String.Format("transaction_date BETWEEN '{0}' AND '{1}'", extractFrom[0], extractTo[0]);
+            string condition = String.Format("date BETWEEN '{0}' AND '{1}'", extractFrom[0], extractTo[0]);
             return dailySalesReportMapper.loadTable(dt, condition);
         }
 
         public DataTable getProductTransactionFromTransactionID(string transction_id)
         {
-            string condition = string.Format("transaction_id = {0} GROUP BY description", transction_id);
+            string condition = string.Format("id = {0} GROUP BY description", transction_id);
             return productTransactionView.loadTable(new DataTable(), condition);
         }
 
@@ -569,9 +570,9 @@ namespace PetvetPOS_Inventory_System
             }
         }
 
-        public bool insertTransactionResult(Invoice transaction, Decimal totalPrice, Decimal cashTender)
+        public bool insertReceipt(Invoice transaction, Decimal totalPrice, Decimal cashTender)
         {
-            return transactionResult.insertTransactionResult(transaction, totalPrice, cashTender);
+            return receipt.insertReceipt(transaction, totalPrice, cashTender);
         }
 
         public bool insertProductInvoice(ProductInvoice productInvoice)

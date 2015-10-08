@@ -336,7 +336,7 @@ namespace PetvetPOS_Inventory_System
                 else
                     total = totalAmount;
 
-                if (dbController.insertTransactionResult(currentTransaction, total, payment)){
+                if (dbController.insertReceipt(currentTransaction, total, payment)){
                     lblPOSmsg.Text = String.Format("Payment: Php {0}", payment);
                     change = payment - total;
                     lblChange.Text = change.ToString();

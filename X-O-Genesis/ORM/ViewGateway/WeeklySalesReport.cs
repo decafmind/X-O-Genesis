@@ -13,7 +13,7 @@ namespace PetvetPOS_Inventory_System
         {
             tableName = "weekly_sales_report";
             fieldsname = new string[] {
-                "transaction_date",
+                "Date",
                 "Week",
                 "Begin",
                 "End",
