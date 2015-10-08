@@ -25,9 +25,9 @@ namespace PetvetPOS_Inventory_System
         {
             InitializeComponent();
             dbController = masterController.DataBaseController;
+            orderSliderPane1.accessMasterController = masterController;
             existingClientTable = new DataTable();
         }
-
 
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -37,8 +37,7 @@ namespace PetvetPOS_Inventory_System
 
         public KeyFunction getKeyController
         {
-            get;
-            set;
+            get { return customerInformationViewKeys; }
         }
 
         public Menu accessMenuName
@@ -46,6 +45,17 @@ namespace PetvetPOS_Inventory_System
             get { return Menu.Client; }
         }
 
+        void customerInformationViewKeys(KeyEventArgs e)
+        {
+            if (orderSliderPane1.isOpen())
+            {
+                KeyFunction keyFunction = orderSliderPane1.getKeyController;
+                if (keyFunction != null)
+                {
+                    keyFunction(e);
+                }
+            }
+        }
         public Bitmap accessImage
         {
             get { return Properties.Resources.usersIcon; }

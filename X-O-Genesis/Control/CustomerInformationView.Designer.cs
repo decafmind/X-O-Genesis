@@ -472,7 +472,6 @@
             this.orderSliderPane1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.orderSliderPane1.Location = new System.Drawing.Point(840, 0);
             this.orderSliderPane1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.orderSliderPane1.MaximumSize = new System.Drawing.Size(300, 1000);
             this.orderSliderPane1.MinimumSize = new System.Drawing.Size(30, 600);
             this.orderSliderPane1.Name = "orderSliderPane1";
             this.orderSliderPane1.Size = new System.Drawing.Size(30, 600);

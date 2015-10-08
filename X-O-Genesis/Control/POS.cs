@@ -80,6 +80,14 @@ namespace PetvetPOS_Inventory_System
         private void txtEncode_Enter(object sender, EventArgs e) {
             masterController.setFormReturnkey = btnEncode;
         }
+        private void txtEncode_EnabledChanged(object sender, EventArgs e)
+        {
+
+            if (txtEncode.Enabled)
+                btnEncode.Enabled = true;
+            else
+                btnEncode.Enabled = false;
+        }
 
         public void toggleEncoding()
         {
@@ -146,15 +154,6 @@ namespace PetvetPOS_Inventory_System
         {
             get { return new KeyFunction(POS_KeyFunction); }
         }
-
-        private void txtEncode_EnabledChanged(object sender, EventArgs e)
-        {
-            if (txtEncode.Enabled)
-                btnEncode.Enabled = true;
-            else
-                btnEncode.Enabled = false;
-        }
-
         public void finalizePage()
         {
            

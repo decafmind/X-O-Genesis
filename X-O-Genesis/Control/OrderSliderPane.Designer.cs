@@ -33,7 +33,7 @@
             // 
             // contentPanel
             // 
-            this.contentPanel.Location = new System.Drawing.Point(129, 17);
+            this.contentPanel.Location = new System.Drawing.Point(29, 17);
             // 
             // orders1
             // 
@@ -47,8 +47,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.orders1);
+            this.MaximumSize = new System.Drawing.Size(0, 0);
             this.Name = "OrderSliderPane";
-            this.Size = new System.Drawing.Size(501, 617);
+            this.Size = new System.Drawing.Size(300, 617);
             this.Load += new System.EventHandler(this.OrderSliderPane_Load);
             this.Controls.SetChildIndex(this.contentPanel, 0);
             this.Controls.SetChildIndex(this.orders1, 0);

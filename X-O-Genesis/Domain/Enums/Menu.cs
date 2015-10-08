@@ -10,6 +10,7 @@ namespace PetvetPOS_Inventory_System
     {
         User,
         POS,
+        Orders,
         Inventory,
         Sales,
         Login,
