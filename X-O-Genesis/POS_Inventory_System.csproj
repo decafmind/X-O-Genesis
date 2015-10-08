@@ -202,12 +202,6 @@
     <Compile Include="ORM\TableGateway\AuditTrailMapper.cs" />
     <Compile Include="ORM\TableGateway\CustomerInformationMapper.cs" />
     <Compile Include="ORM\TableGateway\PetsizeMapper.cs" />
-    <Compile Include="ORM\TableGateway\Clock.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="ORM\TableGateway\Clock.Designer.cs">
-      <DependentUpon>Clock.cs</DependentUpon>
-    </Compile>
     <Compile Include="ORM\ViewGateway\AuditTrailView.cs" />
     <Compile Include="ORM\TableGateway\GppTransactionMapper.cs" />
     <Compile Include="ORM\TableGateway\GroomingMapper.cs" />
@@ -543,9 +537,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\ProductPaneScroll.resx">
       <DependentUpon>ProductPaneScroll.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ORM\TableGateway\Clock.resx">
-      <DependentUpon>Clock.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryView));
@@ -97,6 +98,7 @@
             this.keyButton3 = new PetvetPOS_Inventory_System.KeyButton();
             this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
             this.keyButton1 = new PetvetPOS_Inventory_System.KeyButton();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.mainTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -207,6 +209,7 @@
             this.dgInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgInventory.Size = new System.Drawing.Size(809, 353);
             this.dgInventory.TabIndex = 0;
+            this.dgInventory.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgInventory_CellEnter);
             this.dgInventory.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgInventory_CellMouseDoubleClick);
             this.dgInventory.Sorted += new System.EventHandler(this.dgInventory_Sorted);
             // 
@@ -1032,5 +1035,6 @@
         public System.Windows.Forms.RadioButton rbInventory;
         public System.Windows.Forms.RadioButton rbPurchased;
         private ProductSliderPane productSliderPane1;
+        private System.Windows.Forms.ToolTip toolTip1;
     }
 }

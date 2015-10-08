@@ -13,7 +13,7 @@ namespace PetvetPOS_Inventory_System
             : base(db)
         {
             tableName = "login_trail_tbl";
-            id = "login_trail_id";
+            id = "id";
             fieldsname = new string[]{
                 "user_id",
                 "datetime_in",
@@ -39,10 +39,10 @@ namespace PetvetPOS_Inventory_System
 
         public void insertTimeout(Employee employee)
         {
-         //   int last_id = int.TryParse(readScalar("login_trail_id", "1 = 1 ORDER BY datetime_in DESC"));
-            //string condition = String.Format("user_id = '{0}' AND login_trail_id = {1}", employee.User_id, last_id);
-            //string set = "datetime_out = NOW()";
-            //update(updateSet(condition, set));
+            int last_id = int.Parse(readScalar("id", "1 = 1 ORDER BY datetime_in DESC").ToString());
+            string condition = String.Format("user_id = '{0}' AND id = {1}", employee.User_id, last_id);
+            string set = "datetime_out = NOW()";
+            update(updateSet(condition, set));
         }
 
         private class loginTrailViewMapper: LoginTrailMapper

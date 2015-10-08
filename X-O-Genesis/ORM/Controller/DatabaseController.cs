@@ -310,7 +310,7 @@ namespace PetvetPOS_Inventory_System
 
         public DataTable filterLoginTrailUserAndDate(DataTable dt, string user, DateTime date){
             string[] extractDate = MyExtension.MySqlToCSharp.convertDateTime(date).Split(' ');
-            string condition = string.Format("id = '{0}' AND datetime_in BETWEEN '{1}' AND DATE_ADD('{1}', INTERVAL 1 DAY) ORDER BY datetime_in DESC",
+            string condition = string.Format("user_id = '{0}' AND datetime_in BETWEEN '{1}' AND DATE_ADD('{1}', INTERVAL 1 DAY) ORDER BY datetime_in DESC",
                 user, extractDate[0]);
             return loginTrailMapper.loadTable(dt, condition);
         }

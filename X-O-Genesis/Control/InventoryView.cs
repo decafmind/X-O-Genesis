@@ -922,6 +922,18 @@ namespace PetvetPOS_Inventory_System
             updateProduct();
         }
 
+        private void dgInventory_CellEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            Product product = dbController.productMapper.getProductFromName(getValueFromDatagridCell(PRODUCT_NAME_INDEX));
+            toolTip1.BackColor = Color.Green;
+            toolTip1.ForeColor = Color.White;
+            toolTip1.Show(product.Barcode, 
+                this, 
+                dgInventory.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false).Left + dbController.masterController.getFrmMain.Left,
+                dgInventory.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false).Bottom + dbController.masterController.getFrmMain.Top + 100
+                );
+        }
+
     }
 }
 

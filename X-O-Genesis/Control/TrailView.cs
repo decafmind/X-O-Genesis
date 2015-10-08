@@ -60,5 +60,10 @@ namespace PetvetPOS_Inventory_System
         {
 
         }
+
+        private void cmbEmployee_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -147,6 +147,7 @@
             this.cmbEmployee.Size = new System.Drawing.Size(207, 25);
             this.cmbEmployee.TabIndex = 9;
             this.cmbEmployee.TabStop = false;
+            this.cmbEmployee.SelectedIndexChanged += new System.EventHandler(this.cmbEmployee_SelectedIndexChanged);
             // 
             // label4
             // 
