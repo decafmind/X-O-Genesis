@@ -51,6 +51,14 @@ namespace PetvetPOS_Inventory_System
             }
 
         }
+        public bool updateContacts(string oldMob, string mobile, string other)
+        {
+            string updateMobileNo = String.Format(" mobile_number = '{0}'", mobile);
+            string updateOther = String.Format(" telephone_number = '{0}'", other);
+            string condition = String.Format(" mobile_number = '{0}'", oldMob);
+            updateSet(condition, updateMobileNo, updateOther);
+            return update(updateQuery);
+        }
 
     
     }

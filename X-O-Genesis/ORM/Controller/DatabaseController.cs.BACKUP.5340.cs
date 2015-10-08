@@ -36,7 +36,11 @@ namespace PetvetPOS_Inventory_System
         public InvoiceMapper invoiceMapper { get; set; }
 
         public ProductInvoiceMapper productInvoiceMapper { get; set; }
+<<<<<<< HEAD
+        public TransactionResult transactionResult { get; set; }
+=======
         public Receipt receipt { get; set; }
+>>>>>>> origin/master
         public PurchasedProductMapper purchasedProductMapper { get; set; }
         public TodaySalesMapper todaySalesMapper { get; set; }
 
@@ -79,7 +83,11 @@ namespace PetvetPOS_Inventory_System
             this.productInventory = new ProductInventory(mySqlDB);
             this.invoiceMapper = new InvoiceMapper(mySqlDB);
             this.productInvoiceMapper = new ProductInvoiceMapper(mySqlDB);
+<<<<<<< HEAD
+            this.transactionResult = new TransactionResult(mySqlDB);
+=======
             this.receipt = new Receipt(mySqlDB);
+>>>>>>> origin/master
 
             this.purchasedProductMapper = new PurchasedProductMapper(mySqlDB);
             this.todaySalesMapper = new TodaySalesMapper(mySqlDB);
@@ -170,10 +178,6 @@ namespace PetvetPOS_Inventory_System
             return receipt.updateTotalPrice(transaction_id, new_total_price);
         }
 
-        public bool updateContacts(string oldmob, string newmob, string other)
-        {
-            return customerInformationMapper.updateContacts(oldmob, newmob, other);
-        }
         public Employee getEmployeeFromUser(User user)
         {
             return employeeMapper.getEmployeeFromUserId(user);
@@ -314,7 +318,7 @@ namespace PetvetPOS_Inventory_System
 
         public DataTable filterLoginTrailUserAndDate(DataTable dt, string user, DateTime date){
             string[] extractDate = MyExtension.MySqlToCSharp.convertDateTime(date).Split(' ');
-            string condition = string.Format("user_id = '{0}' AND datetime_in BETWEEN '{1}' AND DATE_ADD('{1}', INTERVAL 1 DAY) ORDER BY datetime_in DESC",
+            string condition = string.Format("id = '{0}' AND datetime_in BETWEEN '{1}' AND DATE_ADD('{1}', INTERVAL 1 DAY) ORDER BY datetime_in DESC",
                 user, extractDate[0]);
             return loginTrailMapper.loadTable(dt, condition);
         }

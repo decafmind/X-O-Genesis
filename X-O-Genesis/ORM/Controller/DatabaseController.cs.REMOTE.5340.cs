@@ -105,8 +105,6 @@ namespace PetvetPOS_Inventory_System
             this.medicalTransactionMapper = new MedicalTransactionMapper(mySqlDB);
             this.productReturnViewMapper = new ProductReturnViewMapper(mySqlDB);
 
-            this.customerInformationMapper = new CustomerInformationMapper(mySqlDB);
-
             // Events hooking
             this.masterController.EmployeeLogin += masterController_EmployeeLogin;
             this.masterController.EmployeeLogout += masterController_EmployeeLogout;
@@ -170,10 +168,6 @@ namespace PetvetPOS_Inventory_System
             return receipt.updateTotalPrice(transaction_id, new_total_price);
         }
 
-        public bool updateContacts(string oldmob, string newmob, string other)
-        {
-            return customerInformationMapper.updateContacts(oldmob, newmob, other);
-        }
         public Employee getEmployeeFromUser(User user)
         {
             return employeeMapper.getEmployeeFromUserId(user);
@@ -314,7 +308,7 @@ namespace PetvetPOS_Inventory_System
 
         public DataTable filterLoginTrailUserAndDate(DataTable dt, string user, DateTime date){
             string[] extractDate = MyExtension.MySqlToCSharp.convertDateTime(date).Split(' ');
-            string condition = string.Format("user_id = '{0}' AND datetime_in BETWEEN '{1}' AND DATE_ADD('{1}', INTERVAL 1 DAY) ORDER BY datetime_in DESC",
+            string condition = string.Format("id = '{0}' AND datetime_in BETWEEN '{1}' AND DATE_ADD('{1}', INTERVAL 1 DAY) ORDER BY datetime_in DESC",
                 user, extractDate[0]);
             return loginTrailMapper.loadTable(dt, condition);
         }
@@ -334,20 +328,6 @@ namespace PetvetPOS_Inventory_System
             );
 
             return serviceRenderedMapper.loadTable(dt, condition);
-        }
-
-        public DataTable filterExistingClientsByLastname(DataTable dt, string token)
-        {
-            string condition = String.Format(" lastname LIKE '%{0}%'", token);
-            return customerInformationMapper.loadTable(dt, condition);
-        }
-
-        public CustomerInformation getExistingClientContacts(DataTable dt, string token1, string token2)
-        {
-            string condition = String.Format(" lastname = '{0}' AND mobile_number = '{1}'", token1, token2);
-           // customerInformationMapper.loadTable(dt, condition);
-            CustomerInformation customerInformation = new CustomerInformation(customerInformationMapper.getEntityWhere(condition));
-            return customerInformation;         
         }
 
         public DataTable getCriticalLevelProducts(DataTable dt)
@@ -520,15 +500,8 @@ namespace PetvetPOS_Inventory_System
                 " Name LIKE '%{0}%' OR Barcode LIKE '%{0}%' " +
                 " OR Category LIKE '%{0}%'", token
                 );
-
             return productInventory.loadTable(dt, condition);
         }
-
-        //public DataTable filterCustomerInformation(DataTable dt, string token)
-        //{
-        //    string condition = String.Format(" fname LIKE '%{0}%'", token);
-        //    return customerInformationMapper.loadTable(dt);
-        //}
 
         public DataTable filterPurchasedProduct(DataTable dt, string token)
         {
