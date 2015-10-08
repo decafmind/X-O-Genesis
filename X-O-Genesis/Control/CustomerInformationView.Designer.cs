@@ -123,6 +123,7 @@
             this.btnSaveUpdate.TabIndex = 49;
             this.btnSaveUpdate.Text = "Save";
             this.btnSaveUpdate.UseVisualStyleBackColor = true;
+            this.btnSaveUpdate.Click += new System.EventHandler(this.btnSaveUpdate_Click);
             // 
             // txtUpdateOtherContacts
             // 

@@ -62,9 +62,11 @@ namespace PetvetPOS_Inventory_System
         
         }
 
+        private CustomerInformation customerInformation;
+
         private void btnSave_Click(object sender, EventArgs e)
         {
-            CustomerInformation customer = new CustomerInformation()
+            customerInformation = new CustomerInformation()
             {
                 Firstname = txtFname.Text,
                 Middlename = txtMname.Text,
@@ -78,7 +80,7 @@ namespace PetvetPOS_Inventory_System
   
             if (Validation.isFilled(customerInfo_panel))
             {
-                dbController.customerInformationMapper.insertCustomerInformation(customer);
+                dbController.customerInformationMapper.insertCustomerInformation(customerInformation);
             }
             else
             {
@@ -134,7 +136,28 @@ namespace PetvetPOS_Inventory_System
 
         private void btnSaveUpdate_Click(object sender, EventArgs e)
         {
+            MessageBanner banner; 
+            if (MyExtension.Validation.isFilled(updateContacts_panel))
+            {
+                customerInformation = new CustomerInformation()
+                {
+                    Mobile_number = mob
+                };
 
+                if (dbController.updateContacts(customerInformation.Mobile_number, txtUpdateMobile.Text, txtUpdateOtherContacts.Text))
+                {          
+                    banner = new MessageBanner("Successful updating contact details.", 2000);
+                    banner.Show();
+                }
+                else
+                {
+                    banner = new MessageBanner("Failed updating contact details.", 2000);
+                    banner.ForeColor = Color.Red;
+                    banner.Show();
+                }
+            }
+
+            MyExtension.Validation.clearFields(updateContacts_panel);
         }
         private void fillUpdateContacts(string token1, string token2)
         {
@@ -151,8 +174,6 @@ namespace PetvetPOS_Inventory_System
         private static string mob, lastname;
         void getValueFromDataGridCell()
         {
-            const int FIRST_NAME = 0;
-            const int MIDDLE_NAME = 1;
             const int LAST_NAME = 2;
             const int MOBILE_NUMBER = 3;
 

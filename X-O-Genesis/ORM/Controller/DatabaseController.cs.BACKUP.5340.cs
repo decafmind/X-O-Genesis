@@ -36,7 +36,11 @@ namespace PetvetPOS_Inventory_System
         public InvoiceMapper invoiceMapper { get; set; }
 
         public ProductInvoiceMapper productInvoiceMapper { get; set; }
+<<<<<<< HEAD
+        public TransactionResult transactionResult { get; set; }
+=======
         public Receipt receipt { get; set; }
+>>>>>>> origin/master
         public PurchasedProductMapper purchasedProductMapper { get; set; }
         public TodaySalesMapper todaySalesMapper { get; set; }
 
@@ -79,7 +83,11 @@ namespace PetvetPOS_Inventory_System
             this.productInventory = new ProductInventory(mySqlDB);
             this.invoiceMapper = new InvoiceMapper(mySqlDB);
             this.productInvoiceMapper = new ProductInvoiceMapper(mySqlDB);
+<<<<<<< HEAD
+            this.transactionResult = new TransactionResult(mySqlDB);
+=======
             this.receipt = new Receipt(mySqlDB);
+>>>>>>> origin/master
 
             this.purchasedProductMapper = new PurchasedProductMapper(mySqlDB);
             this.todaySalesMapper = new TodaySalesMapper(mySqlDB);
@@ -170,10 +178,6 @@ namespace PetvetPOS_Inventory_System
             return receipt.updateTotalPrice(transaction_id, new_total_price);
         }
 
-        public bool updateContacts(string oldmob, string newmob, string other)
-        {
-            return customerInformationMapper.updateContacts(oldmob, newmob, other);
-        }
         public Employee getEmployeeFromUser(User user)
         {
             return employeeMapper.getEmployeeFromUserId(user);

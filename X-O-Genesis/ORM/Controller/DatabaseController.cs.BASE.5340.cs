@@ -35,8 +35,8 @@ namespace PetvetPOS_Inventory_System
         public ProductInventory productInventory { get; set; }
         public InvoiceMapper invoiceMapper { get; set; }
 
-        public ProductInvoiceMapper productInvoiceMapper { get; set; }
-        public Receipt receipt { get; set; }
+        public ProductTransactionMapper productTransactionMapper { get; set; }
+        public TransactionResult transactionResult { get; set; }
         public PurchasedProductMapper purchasedProductMapper { get; set; }
         public TodaySalesMapper todaySalesMapper { get; set; }
 
@@ -78,8 +78,8 @@ namespace PetvetPOS_Inventory_System
 
             this.productInventory = new ProductInventory(mySqlDB);
             this.invoiceMapper = new InvoiceMapper(mySqlDB);
-            this.productInvoiceMapper = new ProductInvoiceMapper(mySqlDB);
-            this.receipt = new Receipt(mySqlDB);
+            this.productTransactionMapper = new ProductTransactionMapper(mySqlDB);
+            this.transactionResult = new TransactionResult(mySqlDB);
 
             this.purchasedProductMapper = new PurchasedProductMapper(mySqlDB);
             this.todaySalesMapper = new TodaySalesMapper(mySqlDB);
@@ -104,8 +104,6 @@ namespace PetvetPOS_Inventory_System
             this.petsizeMapper = new PetsizeMapper(mySqlDB);
             this.medicalTransactionMapper = new MedicalTransactionMapper(mySqlDB);
             this.productReturnViewMapper = new ProductReturnViewMapper(mySqlDB);
-
-            this.customerInformationMapper = new CustomerInformationMapper(mySqlDB);
 
             // Events hooking
             this.masterController.EmployeeLogin += masterController_EmployeeLogin;
@@ -151,7 +149,6 @@ namespace PetvetPOS_Inventory_System
         {
             return inventoryMapper.pullInventory(inventory);
         }
-
         /* This method will return an instance of User if 
          * user credentials exists in the database
          */
@@ -167,13 +164,9 @@ namespace PetvetPOS_Inventory_System
 
         public bool updateTotalPrice(string transaction_id, decimal new_total_price)
         {
-            return receipt.updateTotalPrice(transaction_id, new_total_price);
+            return transactionResult.updateTotalPrice(transaction_id, new_total_price);
         }
 
-        public bool updateContacts(string oldmob, string newmob, string other)
-        {
-            return customerInformationMapper.updateContacts(oldmob, newmob, other);
-        }
         public Employee getEmployeeFromUser(User user)
         {
             return employeeMapper.getEmployeeFromUserId(user);
@@ -219,13 +212,13 @@ namespace PetvetPOS_Inventory_System
             string[] extractFrom = MyExtension.MySqlToCSharp.convertDateTime(from).Split(' ');
             string[] extractTo = MyExtension.MySqlToCSharp.convertDateTime(to).Split(' ');
 
-            string condition = String.Format("date BETWEEN '{0}' AND '{1}'", extractFrom[0], extractTo[0]);
+            string condition = String.Format("transaction_date BETWEEN '{0}' AND '{1}'", extractFrom[0], extractTo[0]);
             return dailySalesReportMapper.loadTable(dt, condition);
         }
 
         public DataTable getProductTransactionFromTransactionID(string transction_id)
         {
-            string condition = string.Format("id = {0} GROUP BY description", transction_id);
+            string condition = string.Format("transaction_id = {0} GROUP BY description", transction_id);
             return productTransactionView.loadTable(new DataTable(), condition);
         }
 
@@ -334,20 +327,6 @@ namespace PetvetPOS_Inventory_System
             );
 
             return serviceRenderedMapper.loadTable(dt, condition);
-        }
-
-        public DataTable filterExistingClientsByLastname(DataTable dt, string token)
-        {
-            string condition = String.Format(" lastname LIKE '%{0}%'", token);
-            return customerInformationMapper.loadTable(dt, condition);
-        }
-
-        public CustomerInformation getExistingClientContacts(DataTable dt, string token1, string token2)
-        {
-            string condition = String.Format(" lastname = '{0}' AND mobile_number = '{1}'", token1, token2);
-           // customerInformationMapper.loadTable(dt, condition);
-            CustomerInformation customerInformation = new CustomerInformation(customerInformationMapper.getEntityWhere(condition));
-            return customerInformation;         
         }
 
         public DataTable getCriticalLevelProducts(DataTable dt)
@@ -520,15 +499,8 @@ namespace PetvetPOS_Inventory_System
                 " Name LIKE '%{0}%' OR Barcode LIKE '%{0}%' " +
                 " OR Category LIKE '%{0}%'", token
                 );
-
             return productInventory.loadTable(dt, condition);
         }
-
-        //public DataTable filterCustomerInformation(DataTable dt, string token)
-        //{
-        //    string condition = String.Format(" fname LIKE '%{0}%'", token);
-        //    return customerInformationMapper.loadTable(dt);
-        //}
 
         public DataTable filterPurchasedProduct(DataTable dt, string token)
         {
@@ -574,14 +546,14 @@ namespace PetvetPOS_Inventory_System
             }
         }
 
-        public bool insertReceipt(Invoice transaction, Decimal totalPrice, Decimal cashTender)
+        public bool insertTransactionResult(Invoice transaction, Decimal totalPrice, Decimal cashTender)
         {
-            return receipt.insertReceipt(transaction, totalPrice, cashTender);
+            return transactionResult.insertTransactionResult(transaction, totalPrice, cashTender);
         }
 
-        public bool insertProductInvoice(ProductInvoice productInvoice)
+        public bool insertProductTransaction(ProductTransaction productTransaction)
         {
-            return productInvoiceMapper.insertProductInvoice(productInvoice);
+            return productTransactionMapper.insertProductTransaction(productTransaction);
         }
 
         public Product getProductFromBarcode(string barcode)
