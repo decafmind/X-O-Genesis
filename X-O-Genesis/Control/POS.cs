@@ -18,7 +18,7 @@ namespace PetvetPOS_Inventory_System
         DatabaseController dbController;
         Product currentProduct;
         DataTable dt = new DataTable();
-        List<ProductTransaction> carts = new List<ProductTransaction>();
+        List<ProductInvoice> carts = new List<ProductInvoice>();
 
         bool concludeTransaction;
         decimal totalAmount;
@@ -212,7 +212,7 @@ namespace PetvetPOS_Inventory_System
 
         public void addRowInDatagrid(int quantity)
         {
-            ProductTransaction productTransaction = new ProductTransaction(){
+            ProductInvoice productTransaction = new ProductInvoice(){
                 invoice = currentTransaction,
                 product = currentProduct,
                 QuantitySold = quantity,
@@ -223,7 +223,7 @@ namespace PetvetPOS_Inventory_System
             int sum_of_qty = 0;
             decimal sum_of_price = 0M;
 
-            foreach (ProductTransaction item in carts){
+            foreach (ProductInvoice item in carts){
                 if (item.product.Barcode == productTransaction.product.Barcode){
                     int old_qty = item.QuantitySold;
                     int new_qty = productTransaction.QuantitySold;
@@ -363,8 +363,8 @@ namespace PetvetPOS_Inventory_System
             toggleEncoding(false);
 
             Inventory inventory = null;
-            foreach (ProductTransaction item in carts){
-                dbController.insertProductTransaction(item);
+            foreach (ProductInvoice item in carts){
+                dbController.insertProductInvoice(item);
                 inventory = new Inventory(){
                     Barcode = item.product.Barcode,
                     QtyReceived = 0,
@@ -437,7 +437,7 @@ namespace PetvetPOS_Inventory_System
                 if (result == DialogResult.OK)
                 {
                     DataGridViewRow selectedRow = dgTransaction.SelectedRows[0];
-                    foreach (ProductTransaction item in carts)
+                    foreach (ProductInvoice item in carts)
                     {
                         if (item.product.Description == selectedRow.Cells[DESCRIPTION_INDEX].Value.ToString())
                         {
@@ -501,7 +501,7 @@ namespace PetvetPOS_Inventory_System
                 g.DrawString(productheader, font, Brushes.Black, new PointF(10, Y));
                 Y += (int)stringSize.Height + yIncrement;
 
-                foreach (ProductTransaction p in carts)
+                foreach (ProductInvoice p in carts)
                 {
                     string cart = String.Format("{0} ({1})", p.product.Description, p.QuantitySold);
                     g.DrawString(cart, font, Brushes.Black, new PointF(10, Y));

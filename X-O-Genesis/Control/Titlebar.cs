@@ -151,7 +151,7 @@ namespace PetvetPOS_Inventory_System
                 case Menu.User:
                     titlename = "User Management";
                     break;
-                case Menu.CustomerInformation:
+                case Menu.Client:
                     titlename = "Customer Information";
                     break;
                 default:

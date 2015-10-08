@@ -207,8 +207,7 @@ namespace PetvetPOS_Inventory_System
         /// <returns></returns>
         public Entity getEntityWhere(string condition)
         {
-            setSelectQueryForGetEntity(condition);
-            return getEntity();
+            return setSelectQueryForGetEntity(condition);
         }
 
         /// <summary>
@@ -220,12 +219,14 @@ namespace PetvetPOS_Inventory_System
         /// and getEntityFromId() methods
         /// </summary>
         /// <param name="condition"> the condition of select query </param>
-        void setSelectQueryForGetEntity(string condition)
+        public Entity setSelectQueryForGetEntity(string condition)
         {
             string[] holder = fieldsname_forselect;
             fieldsname_forselect = null;
             setSelectQuery(condition);
             fieldsname_forselect = holder;
+
+            return getEntity();
         }
 
         /// <summary>
@@ -242,8 +243,8 @@ namespace PetvetPOS_Inventory_System
             else
                 condition=  String.Format(" {0} = {1}", this.id, id);
 
-            setSelectQueryForGetEntity(condition);
-            return getEntity();
+            return setSelectQueryForGetEntity(condition);
+            
         }
 
         /// <summary>

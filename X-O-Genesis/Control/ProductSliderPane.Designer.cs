@@ -35,7 +35,7 @@
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.txtCategory = new System.Windows.Forms.TextBox();
             this.txtSupplier = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lblQuantity = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,7 +54,7 @@
             this.contentPanel.Controls.Add(this.label4);
             this.contentPanel.Controls.Add(this.label3);
             this.contentPanel.Controls.Add(this.label2);
-            this.contentPanel.Controls.Add(this.label1);
+            this.contentPanel.Controls.Add(this.lblQuantity);
             this.contentPanel.Controls.Add(this.txtSupplier);
             this.contentPanel.Controls.Add(this.txtCategory);
             this.contentPanel.Controls.Add(this.txtPrice);
@@ -110,7 +110,6 @@
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.Size = new System.Drawing.Size(212, 24);
             this.txtCategory.TabIndex = 10;
-            this.txtCategory.Visible = false;
             // 
             // txtSupplier
             // 
@@ -120,18 +119,17 @@
             this.txtSupplier.Name = "txtSupplier";
             this.txtSupplier.Size = new System.Drawing.Size(212, 24);
             this.txtSupplier.TabIndex = 11;
-            this.txtSupplier.Visible = false;
             // 
-            // label1
+            // lblQuantity
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(73, 8);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 20);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "QUANTITY";
+            this.lblQuantity.AutoSize = true;
+            this.lblQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.lblQuantity.ForeColor = System.Drawing.Color.DimGray;
+            this.lblQuantity.Location = new System.Drawing.Point(73, 8);
+            this.lblQuantity.Name = "lblQuantity";
+            this.lblQuantity.Size = new System.Drawing.Size(89, 20);
+            this.lblQuantity.TabIndex = 12;
+            this.lblQuantity.Text = "QUANTITY";
             // 
             // label2
             // 
@@ -176,7 +174,6 @@
             this.label5.Size = new System.Drawing.Size(99, 20);
             this.label5.TabIndex = 16;
             this.label5.Text = "CATEGORY";
-            this.label5.Visible = false;
             // 
             // label6
             // 
@@ -188,7 +185,6 @@
             this.label6.Size = new System.Drawing.Size(89, 20);
             this.label6.TabIndex = 17;
             this.label6.Text = "SUPPLIER";
-            this.label6.Visible = false;
             // 
             // pictureBox1
             // 
@@ -229,7 +225,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblQuantity;
         private System.Windows.Forms.PictureBox pictureBox1;
 
     }

@@ -119,7 +119,7 @@ namespace PetvetPOS_Inventory_System
             else if (e.employee.Position == UserLevel.STAFF)
             {
                 list = new StaffMenuList(masterController, this);
-                menu = Menu.CustomerInformation;
+                menu = Menu.Client;
             }else{
                 list = new InventoryPersonnelMenuList(masterController, this);
                 menu = Menu.Inventory;

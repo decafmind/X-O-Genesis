@@ -27,34 +27,36 @@ namespace PetvetPOS_Inventory_System
         {
             Database = DEFAULT_DATABASE;
 
-            string mydocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            string filepath = mydocuments + @"\Petvet\Database\connection";
+            //string mydocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            //string filepath = mydocuments + @"\Petvet\Database\connection";
 
-            if(File.Exists(filepath)){
-                using(StreamReader sr = new StreamReader(filepath)){
-                    Host = sr.ReadLine();
-                    User_id = sr.ReadLine();
-                    Password = sr.ReadLine();
-                }
-            }else{
-                dbSettings = new DatabaseSettings(this);
-                dbSettings.ShowDialog();
-            }
+            //if(File.Exists(filepath)){
+            //    using(StreamReader sr = new StreamReader(filepath)){
+            //        Host = sr.ReadLine();
+            //        User_id = sr.ReadLine();
+            //        Password = sr.ReadLine();
+            //    }
+            //}
+            //else
+            //{
+            //    dbSettings = new DatabaseSettings(this);
+            //    dbSettings.ShowDialog();
+            //}
        }
 
         public MySqlDB(string host, string user_id, string password)
         {
-            Host = host;
-            User_id = user_id;
-            Password = password;
-            Database = DEFAULT_DATABASE;
+            //Host = host;
+            //User_id = user_id;
+            //Password = password;
+            //Database = DEFAULT_DATABASE;
         }
 
         public void open()
         {
             try
             {
-                string connectionString = String.Format("host = {0}; user = {1}; password = {2}; database = {3}", Host, User_id, Password, Database);
+                string connectionString = String.Format("host = '127.0.0.1'; user = 'root'; password = 'root'; database = '" + DEFAULT_DATABASE + "'");
                 Connection = new MySqlConnection(connectionString);
                 Connection.Open();
             }

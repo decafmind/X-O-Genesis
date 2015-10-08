@@ -20,20 +20,32 @@ namespace MyExtension
 
         public static bool isFilled(Control c)
         {
-            bool y = false;
             foreach (Control cn in c.Controls)
             {
                 if (cn is TextBox)
                 {
                     TextBox txt = (TextBox)cn;
-                    if (!string.IsNullOrWhiteSpace(txt.Text))
+                    if (string.IsNullOrWhiteSpace(txt.Text))
                     {
-                        y = true;
+                        return false;
                     }
                 }
             }
 
-            return y;
+            return true;
+        }
+
+        public static void clearFields(Control c)
+        {
+            foreach (Control cn in c.Controls)
+            {
+                if (cn is TextBox)
+                {
+                    TextBox txt = (TextBox)cn;
+                    txt.Clear();
+                }
+            }
+
         }
     }
 

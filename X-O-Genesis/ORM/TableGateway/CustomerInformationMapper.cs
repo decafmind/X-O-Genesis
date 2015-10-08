@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace PetvetPOS_Inventory_System
 {
@@ -16,8 +17,19 @@ namespace PetvetPOS_Inventory_System
             tableName = "customer_tbl";
             id = "id";
             fieldsname = new string[] {
-                "firstname", "middlename", "lastname", "mobile_number", "telephone_number", "email_address",
+                "firstname", 
+                "middlename", 
+                "lastname", 
+                "mobile_number", 
+                "telephone_number", 
+                "email_address",
                 "address" };
+
+            fieldsname_forselect = new string[] {
+                "firstname AS Firstname",
+                "middlename AS Middlename",
+                "lastname AS Lastname",
+                "mobile_number AS 'Mobile Number'" };
         }
 
 
@@ -30,14 +42,17 @@ namespace PetvetPOS_Inventory_System
 
         public void insertCustomerInformation(CustomerInformation customer)
         {
-            if(create(insertValues(customer.Firstname, customer.Middlename, customer.Lastname, 
+            if (create(insertValues(customer.Firstname, customer.Middlename, customer.Lastname,
                 customer.Mobile_number, customer.Telephone_number, customer.Email_address, customer.Address)))
             {
                 // OnCustomerAdded(new EventArgs());
-                MessageBanner banner = new MessageBanner("asdasd", 3000);
+                MessageBanner banner = new MessageBanner("Successful adding information.", 2000);
                 banner.Show();
             }
-        } 
+
+        }
+
+    
     }
 
 
