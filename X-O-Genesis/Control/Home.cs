@@ -186,5 +186,10 @@ namespace PetvetPOS_Inventory_System
             initTable();
             fillPieChart();
         }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

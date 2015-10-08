@@ -365,6 +365,7 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(290, 583);
             this.panel6.TabIndex = 7;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
             // Home
             // 
