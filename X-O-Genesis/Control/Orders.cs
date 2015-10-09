@@ -37,7 +37,6 @@ namespace PetvetPOS_Inventory_System
             totalAmountWithService = totalAmount + servicesSubtotal;
             poSlbl2.Text = string.Format("{0:0.00}", totalAmountWithService);
         }
-
         void Orders_KeyFunction(KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1){
@@ -76,6 +75,7 @@ namespace PetvetPOS_Inventory_System
         public Orders()
         {
             InitializeComponent();
+            initTable();
         }
    
         public Orders(MasterController masterController):base(masterController)
@@ -143,8 +143,6 @@ namespace PetvetPOS_Inventory_System
                 txtEncode.Focus();
             }
         }
-
-
         public bool queryProduct()
         {
             bool success = false;
@@ -173,6 +171,7 @@ namespace PetvetPOS_Inventory_System
 
         public void addRowInDatagrid(int quantity)
         {
+           
             ProductInvoice productTransaction = new ProductInvoice(){
                 invoice = currentTransaction,
                 product = currentProduct,
