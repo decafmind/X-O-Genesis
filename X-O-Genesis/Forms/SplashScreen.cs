@@ -25,17 +25,18 @@ namespace PetvetPOS_Inventory_System
             this.Close();
         }
 
-        
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            this.Hide();
-            main.Show();
-            timer1.Stop();
-        }
-
+       
         private void SplashScreen_Load(object sender, EventArgs e)
         {
             timer1.Start();
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            this.Close();
+            main.Show();
+            timer1.Stop();
+        }
+
     }
 }

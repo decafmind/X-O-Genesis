@@ -64,6 +64,9 @@
   <PropertyGroup>
     <StartupObject>PetvetPOS_Inventory_System.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SystemIcon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ListNetworkComputerNames">
       <HintPath>..\..\Capstone\cjp\X-O-Genesis\X-O-Genesis\bin\Debug\ListNetworkComputerNames.dll</HintPath>
@@ -449,12 +452,6 @@
       <DependentUpon>ValidationMarks.cs</DependentUpon>
     </Compile>
     <Compile Include="ORM\ViewGateway\WeeklySalesReport.cs" />
-    <Compile Include="UserControl1.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControl1.Designer.cs">
-      <DependentUpon>UserControl1.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Control\AddServices.resx">
       <DependentUpon>AddServices.cs</DependentUpon>
     </EmbeddedResource>
@@ -573,9 +570,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\ValidationMarks.resx">
       <DependentUpon>ValidationMarks.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControl1.resx">
-      <DependentUpon>UserControl1.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="PetvetPOS_Inventory_System_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
@@ -703,6 +697,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\fab-animation1.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SystemIcon3.png" />
+    <None Include="Resources\SystemIcon.png" />
+    <None Include="Resources\AkiraGIF.gif" />
+    <Content Include="SystemIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
