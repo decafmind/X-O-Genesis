@@ -95,7 +95,7 @@ namespace PetvetPOS_Inventory_System
             else
             {
                 MessageBanner banner = new MessageBanner("Please fill up the required fields.", 2000);
-                banner.ForeColor = System.Drawing.Color.Red;
+                banner.BackColor = System.Drawing.Color.Red;
                 banner.Show();
             }
 
