@@ -42,6 +42,5 @@ namespace PetvetPOS_Inventory_System
             return insertProductInvoice(productInvoice.invoice, productInvoice.product, productInvoice.QuantitySold);
         }
 
-
     }
 }

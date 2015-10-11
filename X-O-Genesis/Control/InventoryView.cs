@@ -927,10 +927,12 @@ namespace PetvetPOS_Inventory_System
             Product product = dbController.productMapper.getProductFromName(getValueFromDatagridCell(PRODUCT_NAME_INDEX));
             toolTip1.BackColor = Color.Green;
             toolTip1.ForeColor = Color.White;
+            Rectangle cellRectangle = dgInventory.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false);
+
             toolTip1.Show(product.Barcode, 
                 this, 
-                dgInventory.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false).Left + dbController.masterController.getFrmMain.Left,
-                dgInventory.GetCellDisplayRectangle(e.ColumnIndex, e.RowIndex, false).Bottom + dbController.masterController.getFrmMain.Top + 100
+                cellRectangle.Left + dbController.masterController.getFrmMain.Left + panel4.Left + dgInventory.Left,
+                cellRectangle.Bottom + panel4.Top + (cellRectangle.Height * 2)
                 );
         }
 
