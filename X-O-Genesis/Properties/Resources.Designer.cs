@@ -73,6 +73,16 @@ namespace PetvetPOS_Inventory_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap AkiraGIF {
+            get {
+                object obj = ResourceManager.GetObject("AkiraGIF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap barcodeBlack {
             get {
                 object obj = ResourceManager.GetObject("barcodeBlack", resourceCulture);
@@ -203,86 +213,6 @@ namespace PetvetPOS_Inventory_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap max_ {
-            get {
-                object obj = ResourceManager.GetObject("max_", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap max_ini {
-            get {
-                object obj = ResourceManager.GetObject("max_ini", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap max_ini_ {
-            get {
-                object obj = ResourceManager.GetObject("max_ini_", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap petvet {
-            get {
-                object obj = ResourceManager.GetObject("petvet", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PETVET_LOGO2 {
-            get {
-                object obj = ResourceManager.GetObject("PETVET_LOGO2", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PETVET_LOGO2_cropped {
-            get {
-                object obj = ResourceManager.GetObject("PETVET_LOGO2_cropped", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PETVET_LOGO3 {
-            get {
-                object obj = ResourceManager.GetObject("PETVET_LOGO3", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PETVET_LOGO3_cropeed {
-            get {
-                object obj = ResourceManager.GetObject("PETVET_LOGO3_cropeed", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap removeUser {
             get {
                 object obj = ResourceManager.GetObject("removeUser", resourceCulture);
@@ -316,6 +246,26 @@ namespace PetvetPOS_Inventory_System.Properties {
         internal static System.Drawing.Bitmap Splash_screenF4 {
             get {
                 object obj = ResourceManager.GetObject("Splash_screenF4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SystemIcon {
+            get {
+                object obj = ResourceManager.GetObject("SystemIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SystemIcon3 {
+            get {
+                object obj = ResourceManager.GetObject("SystemIcon3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
