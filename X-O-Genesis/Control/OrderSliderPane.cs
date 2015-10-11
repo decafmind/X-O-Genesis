@@ -20,8 +20,11 @@ namespace PetvetPOS_Inventory_System
 
         private void OrderSliderPane_Load(object sender, EventArgs e)
         {
-            orders1.accessMasterController = masterController;
-            orders1.DatabaseController = masterController.DataBaseController;
+            if (masterController != null && orders1 != null)
+            {
+                orders1.accessMasterController = masterController;
+                orders1.DatabaseController = masterController.DataBaseController;
+            }
         }
 
         public KeyFunction getKeyController

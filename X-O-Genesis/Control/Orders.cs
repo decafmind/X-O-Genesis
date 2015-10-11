@@ -134,7 +134,7 @@ namespace PetvetPOS_Inventory_System
 
                 dbController.insertTransaction(currentTransaction);
                 currentTransaction.InvoiceId = dbController.getTransactionId(currentTransaction);
-                lblTransactionno.Text = "PV-" + currentTransaction.InvoiceId.ToString("00000");
+                lblTransactionno.Text = "POS_" + currentTransaction.InvoiceId.ToString("00000");
                 totalAmount = 0M;
 
                 activateServices(true);
@@ -297,19 +297,6 @@ namespace PetvetPOS_Inventory_System
             }
         }
 
-        void saveInvoice()
-        {
-            string mydoc = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            string filepath = mydoc + @"\Petvet\Sales Invoice\";
-
-            if (File.Exists(filepath))
-            {
-                
-            }
-            
-            
-        }
-
         void conclusion()
         {
             // End the transaction
@@ -324,8 +311,8 @@ namespace PetvetPOS_Inventory_System
                     QtyReceived = 0,
                     QtyOnHand = -item.QuantitySold,
                 };
-               // dbController.pullInventory(inventory);
-               // dbController.checkProductCriticalLevel(item.product);
+                  dbController.pullInventory(inventory);
+                  dbController.checkProductCriticalLevel(item.product);
         	}
 
             // audit 
@@ -370,6 +357,7 @@ namespace PetvetPOS_Inventory_System
 
                 preview.ShowDialog(this);
                 preview.SetDesktopLocation(masterController.getFrmMain.Width - preview.Width, preview.DesktopLocation.Y);
+
             }
         }
 
