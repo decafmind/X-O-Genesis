@@ -86,7 +86,6 @@
             this.customerInfo_panel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.customerInfo_panel.Controls.Add(this.updateContacts_panel);
             this.customerInfo_panel.Controls.Add(this.tabControl1);
-            this.customerInfo_panel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.customerInfo_panel.Location = new System.Drawing.Point(0, 0);
             this.customerInfo_panel.Name = "customerInfo_panel";
             this.customerInfo_panel.Size = new System.Drawing.Size(840, 583);
