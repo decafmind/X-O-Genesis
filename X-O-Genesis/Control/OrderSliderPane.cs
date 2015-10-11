@@ -15,7 +15,7 @@ namespace PetvetPOS_Inventory_System
         public OrderSliderPane()
         {
             InitializeComponent();
-            max_width = (orders1.Width)/2 + orders1.Width;
+            max_width = orders1.Width;
         }
 
         private void OrderSliderPane_Load(object sender, EventArgs e)
