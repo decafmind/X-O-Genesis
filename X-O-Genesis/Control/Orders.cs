@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Printing;
@@ -294,6 +295,19 @@ namespace PetvetPOS_Inventory_System
                 conclusion();
                 resetTransaction();
             }
+        }
+
+        void saveInvoice()
+        {
+            string mydoc = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string filepath = mydoc + @"\Petvet\Sales Invoice\";
+
+            if (File.Exists(filepath))
+            {
+                
+            }
+            
+            
         }
 
         void conclusion()
