@@ -64,6 +64,9 @@
   <PropertyGroup>
     <StartupObject>PetvetPOS_Inventory_System.Program</StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>SystemIcon3.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="ListNetworkComputerNames">
       <HintPath>..\..\Capstone\cjp\X-O-Genesis\X-O-Genesis\bin\Debug\ListNetworkComputerNames.dll</HintPath>
@@ -706,6 +709,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AkiraGIF.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SystemIcon3.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
