@@ -17,7 +17,7 @@ namespace PetvetPOS_Inventory_System
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             try{
-                Application.Run(new SplashScreen());
+                Application.Run(new frmMain());
             }
             catch (ArgumentException ae) {
                 ErrorLog.Log(ae);

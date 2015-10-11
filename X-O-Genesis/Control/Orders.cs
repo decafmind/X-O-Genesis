@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Printing;
@@ -296,6 +297,19 @@ namespace PetvetPOS_Inventory_System
             }
         }
 
+        void saveInvoice()
+        {
+            string mydoc = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+            string filepath = mydoc + @"\Petvet\Sales Invoice\";
+
+            if (File.Exists(filepath))
+            {
+                
+            }
+            
+            
+        }
+
         void conclusion()
         {
             // End the transaction
@@ -335,7 +349,7 @@ namespace PetvetPOS_Inventory_System
         void printInvoice()
         {
             if (concludeTransaction){
-                PaperSize size = new PaperSize("Sales Invoice", 700, 900);
+                PaperSize size = new PaperSize("Sales Invoice", 750, 900);
                
                 PrinterSettings printerSettings = new PrinterSettings(){
                     // FILLME
@@ -349,8 +363,8 @@ namespace PetvetPOS_Inventory_System
                 invoice.PrintPage += invoice_Layout;
                 invoice.DefaultPageSettings = setting;
                 PrintPreviewDialog preview = new PrintPreviewDialog(){
-                    Width = 700,
-                    Height = 400,
+                    Width = 750,
+                    Height = 900,
                     Document = invoice,
                 };
 
@@ -421,7 +435,7 @@ namespace PetvetPOS_Inventory_System
                 int Y = 20;
                 int yIncrement = 5;
 
-                g.DrawString(title, font, Brushes.Black, new PointF(10, Y));
+                g.DrawString(title, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) /2, Y));
                 Y += (int)stringSize.Height + yIncrement;
 
                 stringSize = g.MeasureString(addressL1, font);
@@ -448,69 +462,27 @@ namespace PetvetPOS_Inventory_System
                 Y += 30;
 
                 string productheader = "** ITEMS **";
-                stringSize = g.MeasureString(productheader, font);
-                g.DrawString(productheader, font, Brushes.Black, new PointF(10, Y));
-                Y += (int)stringSize.Height + yIncrement;
-
-
-                Bitmap dgItemsImg = new Bitmap(this.dgTransaction.Width, this.dgTransaction.Height);
-                dgTransaction.DrawToBitmap(dgItemsImg, new Rectangle(0, 0, this.dgTransaction.Width, this.dgTransaction.Height));
-                e.Graphics.DrawImage(dgItemsImg, new PointF(100, Y));
+                g.DrawString(productheader, font, Brushes.Black, new PointF(30, Y));
                 Y += 30;
 
-                //foreach (ProductInvoice p in carts)
-                //{
+                Bitmap bmp = new Bitmap(this.dgTransaction.Width, this.dgTransaction.Height);
+                dgTransaction.DrawToBitmap(bmp, new Rectangle(0, 0, this.dgTransaction.Width, this.dgTransaction.Height));
+                g.DrawImage(bmp, new PointF(10, Y));
+                Y += 50;
 
-                //    string cart = String.Format("{0} ({1})", p.product.Description, p.QuantitySold);
-                //    g.DrawString(cart, font, Brushes.Black, new PointF(10, Y));
+                string serviceheader = "** SERVICES **";
+                stringSize = g.MeasureString(serviceheader, font);
+                g.DrawString(serviceheader, font, Brushes.Black, new PointF(10, Y));
+                Y += (int)stringSize.Height + yIncrement;
 
-                //    stringSize = g.MeasureString(p.GroupPrice.ToString(), font);
-                //    g.DrawString(p.GroupPrice.ToString(), font, Brushes.Black, new PointF((documentWidth - 10) - stringSize.Width, Y));
-
-                //    Y += (int)stringSize.Height + yIncrement;
-
-                //    stringSize = g.MeasureString(p.product.Barcode, font);
-                //    g.DrawString(p.product.Barcode, font, Brushes.Black, new PointF(20, Y));
-
-                //    Y += (int)stringSize.Height + yIncrement;
-
-                //    string serviceheader = "** SERVICES **";
-                //    stringSize = g.MeasureString(serviceheader, font);
-                //    g.DrawString(serviceheader, font, Brushes.Black, new PointF(10, Y));
-                //    Y += (int)stringSize.Height + yIncrement;
-
-                //    int service_count = 0;
-                //    foreach (AddServices services in addServices)
-                //    {
-                //        if (services.inConlusion())
-                //        {
-                //            service_count++;
-                //            string servicename = string.Format("{0} ({1})", services.getServiceNameSize(), services.Qty);
-                //            string subtotal = services.Subtotal.ToString();
-
-                //            g.DrawString(servicename, font, Brushes.Black, new PointF(10, Y));
-                //            stringSize = g.MeasureString(subtotal, font);
-                //            g.DrawString(subtotal, font, Brushes.Black, new PointF(
-                //                (documentWidth - 10) - stringSize.Width, Y));
-                //            Y += (int)stringSize.Height + yIncrement;
-                //        }
-                //    }
-
-                //    Y += 20;
-
-
-                //    string countItems = String.Format("** {0} item(s) **", carts.Count + service_count);
-                //    stringSize = g.MeasureString(countItems, font);
-                //    g.DrawString(countItems, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
-                //    Y += (int)stringSize.Height + yIncrement;
-
-                //    string cashierName = string.Format("Cashier name: {0}", masterController.LoginEmployee.User_id);
-                //    g.DrawString(cashierName, font, Brushes.Black, new PointF(10, Y));
-                //    Y += 30;
+               
+                string cashierName = string.Format("Cashier name: {0}", masterController.LoginEmployee.User_id);
+                g.DrawString(cashierName, font, Brushes.Black, new PointF(10, Y));
+                Y += 30;
 
                   
 
-                //}
+                
             }
         }
 

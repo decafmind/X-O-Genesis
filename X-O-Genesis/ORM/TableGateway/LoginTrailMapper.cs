@@ -36,7 +36,7 @@ namespace PetvetPOS_Inventory_System
             insertQuery = String.Format("INSERT INTO login_trail_tbl(user_id) VALUES('{0}')",employee.User_id);
             create(insertQuery);
         }
-
+        
         public void insertTimeout(Employee employee)
         {
             int last_id = int.Parse(readScalar("id", "1 = 1 ORDER BY datetime_in DESC").ToString());
