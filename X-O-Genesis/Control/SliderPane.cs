@@ -14,6 +14,10 @@ namespace PetvetPOS_Inventory_System
     {
         public event EventHandler StateChange;
 
+
+        public virtual void doWhenVisible() { }
+        public virtual void doWhenNotVisible() { }
+
         public void OnStateChange(EventArgs e)
         {
             EventHandler onStateChanged = StateChange;
@@ -87,7 +91,7 @@ namespace PetvetPOS_Inventory_System
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            contentPanel.Visible = false;
+           // contentPanel.Visible = false;
 
             switch (viewState)
             {
@@ -97,6 +101,7 @@ namespace PetvetPOS_Inventory_System
                         Size = new Size(width, Height);
                     else
                     {
+                        doWhenNotVisible();
                         timer1.Stop();
                         contentPanel.Visible = true;
                     }
@@ -107,6 +112,7 @@ namespace PetvetPOS_Inventory_System
                         Size = new Size(width, Height);
                     else
                     {
+                        doWhenVisible();
                         timer1.Stop();
                         contentPanel.Visible = true;
                     }
@@ -133,6 +139,11 @@ namespace PetvetPOS_Inventory_System
                 default:
                     return false;
             }
+        }
+
+        private void SliderPane_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

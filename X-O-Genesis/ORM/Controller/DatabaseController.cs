@@ -697,6 +697,16 @@ namespace PetvetPOS_Inventory_System
             if (onDeleteEntity != null)
                 onDeleteEntity(this, e);
         }
+
+        public List<String> getListOfProduct(Invoice invoice)
+        {
+            return productInvoiceMapper.getListOfProductOnInvoice(invoice);
+        }
+
+        public List<ProductInvoice> getListOfProductInvoice(Invoice invoice)
+        {
+            return productInvoiceMapper.getListOfProductInvoice(invoice);
+        }
     }
 }
 

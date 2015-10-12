@@ -98,7 +98,7 @@ namespace PetvetPOS_Inventory_System
 
         public void Dispose()
         {
-     //   Password = string.Empty;
+
         }
     }
 }

@@ -16,9 +16,10 @@ namespace PetvetPOS_Inventory_System
             fieldsname = new string[] {
                 "id",
                 "name",
-                //"category_id",
                 "unit_price",
-                //"source_company_name",
+                "specification",
+                "warranty",
+                "replacement",
             };
         }
 
@@ -59,8 +60,13 @@ namespace PetvetPOS_Inventory_System
         public string createProduct(Product product)
         {
             return insertValues(
-                product.Barcode, product.Description, product.UnitPrice /*,
-                product.Category*/);
+                product.Barcode,
+                product.Description, 
+                product.UnitPrice,
+                product.Specification,
+                product.Warranty,
+                product.Replacement
+                );
         }
 
         public Product getProductFromName(string name)

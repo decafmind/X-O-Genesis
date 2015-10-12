@@ -614,7 +614,7 @@ namespace PetvetPOS_Inventory_System
         private void textChanged(object sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;
-            string charAllowed = "1234567890.";
+            string charAllowed = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnoqprstuvwxyz1234567890.";
             MyExtension.Validation.limitTextbox(textBox, charAllowed);
         }
 

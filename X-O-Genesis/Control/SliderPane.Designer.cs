@@ -56,6 +56,7 @@
             this.MinimumSize = new System.Drawing.Size(30, 600);
             this.Name = "SliderPane";
             this.Size = new System.Drawing.Size(300, 600);
+            this.Load += new System.EventHandler(this.SliderPane_Load);
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.SliderPane_Paint);
             this.ResumeLayout(false);
 
@@ -63,7 +64,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Timer timer1;
         protected System.Windows.Forms.Panel contentPanel;
+        protected System.Windows.Forms.Timer timer1;
     }
 }

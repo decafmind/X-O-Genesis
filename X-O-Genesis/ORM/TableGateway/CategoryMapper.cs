@@ -12,10 +12,10 @@ namespace PetvetPOS_Inventory_System
         public CategoryMapper(MySqlDB db)
             : base(db)
         {
-            tableName = "category";
+            tableName = "category_tbl";
             id = "id";
             fieldsname = new string[] {
-                "category_name",
+                "name",
             };
         }
 
@@ -26,17 +26,17 @@ namespace PetvetPOS_Inventory_System
 
         public List<string> getListOfCategory()
         {
-            return getList("category_name");
+            return getList("name");
         }
 
         public string getCategoryNameFromId(int id)
         {
-            return (string)readScalar("category_name", " id = " + id);
+            return (string)readScalar("name", " id = " + id);
         }
 
         public int getCategoryIndexFromName(string name)
         {
-            return (int)readScalar("id", " category_name = '" + name + "'");
+            return (int)readScalar("id", "name = '" + name + "'");
         }
     }
 }
