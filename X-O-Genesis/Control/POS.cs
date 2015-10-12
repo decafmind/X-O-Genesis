@@ -29,16 +29,6 @@ namespace PetvetPOS_Inventory_System
         private const int DESCRIPTION_INDEX = 0;
         private const int PRICE_INDEX = 2;
 
-        void computeTotalAmountWithService()
-        {
-            decimal servicesSubtotal = 0M;
-            foreach (AddServices services in addServices)
-                servicesSubtotal += services.Subtotal;
-
-            totalAmountWithService = totalAmount + servicesSubtotal;
-            poSlbl2.Text = string.Format("{0:0.00}", totalAmountWithService);
-        }
-
         void POS_KeyFunction(KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1){
@@ -102,7 +92,6 @@ namespace PetvetPOS_Inventory_System
         public void toggleEncoding(bool flag)
         {
             txtEncode.Enabled = flag;
-            txtQuantity.Enabled = flag;
 
             if (flag){
                 txtEncode.Clear();
@@ -154,6 +143,7 @@ namespace PetvetPOS_Inventory_System
         {
             get { return new KeyFunction(POS_KeyFunction); }
         }
+
         public void finalizePage()
         {
            
@@ -171,10 +161,7 @@ namespace PetvetPOS_Inventory_System
 
                 dbController.insertTransaction(currentTransaction);
                 currentTransaction.InvoiceId = dbController.getTransactionId(currentTransaction);
-                lblTransactionno.Text = "PV-" + currentTransaction.InvoiceId.ToString("00000");
                 totalAmount = 0M;
-
-                activateServices(true);
             }
             else
             {
@@ -185,7 +172,6 @@ namespace PetvetPOS_Inventory_System
         
         public bool queryProducts()
         {
-
             bool success = false;
             int invoice_no = 0;
             int sum_of_qty = 0;
@@ -194,8 +180,10 @@ namespace PetvetPOS_Inventory_System
             if (int.TryParse(txtEncode.Text, out invoice_no))
             {
                 Invoice invoice = new Invoice() { InvoiceId = invoice_no };
+                lblPOSmsg.Text = "PV-" + invoice.InvoiceId.ToString("00000");
                 carts = dbController.getListOfProductInvoice(invoice);
                 int quantity = carts.Count;
+                dt.Clear();
 
                 foreach (ProductInvoice productInvoice in carts)
                 {
@@ -215,9 +203,6 @@ namespace PetvetPOS_Inventory_System
             }
 
             txtEncode.Clear();
-            txtQuantity.Clear();
-            txtQuantity.Focus();
-
             return success;
         }
 
@@ -235,8 +220,8 @@ namespace PetvetPOS_Inventory_System
         {
             dt.Columns.Add("Product", typeof(string));
             dt.Columns.Add("Quantity", typeof(Int32));
-            dt.Columns.Add("Unit price", typeof(Decimal));
-            dt.Columns.Add("Net Price", typeof(Decimal));
+            dt.Columns.Add("Unit price", typeof(string));
+            dt.Columns.Add("Net Price", typeof(string));
             dgTransaction.DataSource = dt;
 
             dgTransaction.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
@@ -266,13 +251,11 @@ namespace PetvetPOS_Inventory_System
             }
 
             currentTransaction = null;
-            lblTransactionno.ResetText();
             toggleEncoding(true);
 
             lblChange.ResetText();
             carts.Clear();
             clearDataGrid();
-            resetServices();
 
             concludeTransaction = false;
             poSlbl2.Text = "0";
@@ -322,7 +305,7 @@ namespace PetvetPOS_Inventory_System
         	}
 
             // audit 
-            string message = string.Format("completed a transaction: {0}", lblTransactionno.Text);
+            string message = string.Format("completed a transaction: {0}", lblPOSmsg.Text);
             dbController.insertAuditTrail(message);
             masterController.clientClock();
         }
@@ -453,8 +436,8 @@ namespace PetvetPOS_Inventory_System
                     string cart = String.Format("{0} ({1})", product.Description, p.QuantitySold);
                     g.DrawString(cart, font, Brushes.Black, new PointF(10, Y));
 
-                    stringSize = g.MeasureString(string.Format("{0:N}", p.GroupPrice), font);
-                    g.DrawString(p.GroupPrice.ToString(), font, Brushes.Black, new PointF((documentWidth - 10) - stringSize.Width, Y));
+                    stringSize = g.MeasureString(p.GroupPrice.ToString(), font);
+                    g.DrawString(string.Format("{0:N}",p.GroupPrice), font, Brushes.Black, new PointF((documentWidth - 10) - stringSize.Width, Y));
 
                     Y += (int)stringSize.Height + yIncrement;
 
@@ -491,7 +474,7 @@ namespace PetvetPOS_Inventory_System
                 g.DrawString(countItems, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
                 Y += (int)stringSize.Height + yIncrement;
 
-                string orderNo = String.Format("ORDER #{0}", lblTransactionno.Text);
+                string orderNo = String.Format("ORDER #{0}", lblPOSmsg.Text);
                 g.DrawString(orderNo, font, Brushes.Black, new PointF(10, Y));
                 Y += 30;                
 
@@ -509,31 +492,6 @@ namespace PetvetPOS_Inventory_System
             }
         }
 
-        private void txtQuantity_EnabledChanged(object sender, EventArgs e)
-        {
-            if (txtQuantity.Enabled)
-            {
-                txtQuantity.Focus();
-                btnQuantity.Enabled = true;
-                masterController.setFormReturnkey = btnQuantity;
-            }
-            else
-            {
-                btnQuantity.Enabled = false;
-            }
-        }
-
-        private void btnQuantity_Click(object sender, EventArgs e)
-        {
-            txtEncode.Focus();
-        }
-
-        private void txtQuantity_Enter(object sender, EventArgs e)
-        {
-            masterController.setFormReturnkey = btnQuantity;
-            txtQuantity.Text = "1";
-            txtQuantity.SelectAll();
-        }
 
         private void txtPayment_Enter(object sender, EventArgs e)
         {
@@ -590,37 +548,28 @@ namespace PetvetPOS_Inventory_System
                 btnPayment.Enabled = false;
         }
 
-        void activateServices(bool flag)
-        {
-            foreach (AddServices item in addServices)
-                item.activate(flag);
-        }
-
-        void resetServices()
-        {
-            if (addServices.Count > 1)
-            {
-                int length = addServices.Count;
-                for (int i = 0; i < length; i++)
-                {
-                    if (i == 0)
-                        addServices[i].reset();
-                    else
-                        addServices[i].Exit();
-                }
-            }
-
-            foreach (AddServices item in addServices)
-                item.reset();
-        }
-
-        private void txtPayment_TextChanged(object sender, EventArgs e)
+         private void txtPayment_TextChanged(object sender, EventArgs e)
         {
             string charAllowed = "1234567890.";
             MyExtension.Validation.limitTextbox(txtPayment, charAllowed);
         }
 
         private void parentPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnQuantity_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtQuantity_EnabledChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtQuantity_Enter(object sender, EventArgs e)
         {
 
         }
