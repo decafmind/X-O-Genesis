@@ -548,7 +548,6 @@
     <EmbeddedResource Include="Control\Slash.resx">
       <DependentUpon>Slash.cs</DependentUpon>
     </EmbeddedResource>
-      <SubType>Designer</SubType>
     <EmbeddedResource Include="Control\Titlebar.resx">
       <DependentUpon>Titlebar.cs</DependentUpon>
     </EmbeddedResource>
