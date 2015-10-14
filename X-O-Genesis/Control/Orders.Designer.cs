@@ -181,7 +181,6 @@
             // btnEncode
             // 
             this.btnEncode.BackColor = System.Drawing.Color.White;
-            this.btnEncode.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.barcodeSearch;
             this.btnEncode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnEncode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnEncode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

@@ -88,14 +88,14 @@ namespace PetvetPOS_Inventory_System
             };
 
   
-            if (Validation.isFilled(customerInfo_panel))
+            if (Validation.isFilled(newClient_tab))
             {
                 dbController.customerInformationMapper.insertCustomerInformation(customerInformation);
             }
             else
             {
                 MessageBanner banner = new MessageBanner("Please fill up the required fields.", 2000);
-                banner.ForeColor = System.Drawing.Color.Red;
+                banner.BackColor = System.Drawing.Color.Red;
                 banner.Show();
             }
 

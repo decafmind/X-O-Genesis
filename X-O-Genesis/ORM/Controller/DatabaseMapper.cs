@@ -344,7 +344,6 @@ namespace PetvetPOS_Inventory_System
         private object getScalarValue(string commandText)
         {
             object value = null;
-
             try
             {
                 db.open();

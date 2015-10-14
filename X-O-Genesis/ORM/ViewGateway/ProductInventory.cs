@@ -43,7 +43,6 @@ namespace PetvetPOS_Inventory_System
             selectQuery = "SELECT Name, Qty_On_Hand AS 'Stock', Qty_Received AS 'Qty on Received' FROM inventory_view WHERE Qty_On_Hand <= (Qty_Received * .20)";
             return selectRows(dt, selectQuery);
         }
-
         public void checkProductCriticalLevel(Product product, MasterController masterController)
         {
             string condition = string.Format("Name = '{0}'", product.Description);

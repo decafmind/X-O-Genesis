@@ -379,11 +379,6 @@
     <Compile Include="ORM\TableGateway\ProductInvoiceMapper.cs" />
     <Compile Include="Domain\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="ORM\ViewGateway\PurchasedProductMapper.cs" />
     <Compile Include="Control\Sales.cs">
       <SubType>UserControl</SubType>
@@ -402,12 +397,6 @@
     </Compile>
     <Compile Include="Control\Slash.Designer.cs">
       <DependentUpon>Slash.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Forms\SplashScreen.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\SplashScreen.Designer.cs">
-      <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Domain\SystemColors.cs" />
     <Compile Include="Control\Titlebar.cs">
@@ -460,6 +449,7 @@
     <Compile Include="ORM\ViewGateway\WeeklySalesReport.cs" />
     <EmbeddedResource Include="Control\AddServices.resx">
       <DependentUpon>AddServices.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\CustomerInformationView.resx">
       <DependentUpon>CustomerInformationView.cs</DependentUpon>
@@ -558,10 +548,7 @@
     <EmbeddedResource Include="Control\Slash.resx">
       <DependentUpon>Slash.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\SplashScreen.resx">
-      <DependentUpon>SplashScreen.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="Control\Titlebar.resx">
       <DependentUpon>Titlebar.cs</DependentUpon>
     </EmbeddedResource>
@@ -586,6 +573,11 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
