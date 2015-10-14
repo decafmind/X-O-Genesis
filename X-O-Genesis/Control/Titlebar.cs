@@ -154,6 +154,9 @@ namespace PetvetPOS_Inventory_System
                 case Menu.Client:
                     titlename = "Customer Information";
                     break;
+                case Menu.Orders:
+                    titlename = "Purchase Order";
+                    break;
                 default:
                     titlename = menuname.ToString();
                     break;

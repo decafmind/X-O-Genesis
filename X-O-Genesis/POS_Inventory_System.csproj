@@ -161,11 +161,11 @@
     <Compile Include="Control\CustomerInformationView.Designer.cs">
       <DependentUpon>CustomerInformationView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\Orders.cs">
+    <Compile Include="Control\OrdersView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\Orders.Designer.cs">
-      <DependentUpon>Orders.cs</DependentUpon>
+    <Compile Include="Control\OrdersView.Designer.cs">
+      <DependentUpon>OrdersView.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\OrderSliderPane.cs">
       <SubType>UserControl</SubType>
@@ -448,8 +448,8 @@
     <EmbeddedResource Include="Control\CustomerInformationView.resx">
       <DependentUpon>CustomerInformationView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\Orders.resx">
-      <DependentUpon>Orders.cs</DependentUpon>
+    <EmbeddedResource Include="Control\OrdersView.resx">
+      <DependentUpon>OrdersView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\OrderSliderPane.resx">
       <DependentUpon>OrderSliderPane.cs</DependentUpon>

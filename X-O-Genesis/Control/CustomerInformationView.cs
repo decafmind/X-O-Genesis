@@ -11,51 +11,27 @@ using MyExtension;
 
 namespace PetvetPOS_Inventory_System
 {
-    public partial class CustomerInformationView :  MyUserControl, IContentPage, IKeyController
+    public partial class CustomerInformationView :  MyUserControl, IContentPage
     {
         DatabaseController dbController;
         DataTable existingClientTable;
         public CustomerInformationView()
         {
             InitializeComponent();
-            orderSliderPane1.Visible = false;
         }
 
         public CustomerInformationView(MasterController masterController):base(masterController)
         {
             InitializeComponent();
             dbController = masterController.DataBaseController;
-            orderSliderPane1.accessMasterController = masterController;
             existingClientTable = new DataTable();
-        }
-
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-           // customerInfo_panel.SetBounds((this.Width  - customerInfo_panel.Width)/2, (this.Height - customerInfo_panel.Height)/2, customerInfo_panel.Width, customerInfo_panel.Height);
-        }
-
-        public KeyFunction getKeyController
-        {
-            get { return customerInformationViewKeys; }
         }
 
         public Menu accessMenuName
         {
-            get { return Menu.Client; }
+            get { return Menu.Client; }        
         }
 
-        void customerInformationViewKeys(KeyEventArgs e)
-        {
-            if (orderSliderPane1.isOpen())
-            {
-                KeyFunction keyFunction = orderSliderPane1.getKeyController;
-                if (keyFunction != null)
-                {
-                    keyFunction(e);
-                }
-            }
-        }
         public Bitmap accessImage
         {
             get { return Properties.Resources.usersIcon; }
@@ -101,12 +77,6 @@ namespace PetvetPOS_Inventory_System
 
             MyExtension.Validation.clearFields(newClient_tab);
             
-        }
-
-        private void btnNewOrder_Click(object sender, EventArgs e)
-        {
-            orderSliderPane1.Visible = true;
-            orderSliderPane1.toggle();
         }
 
         private void txtClientName_TextChanged(object sender, EventArgs e)
@@ -205,7 +175,14 @@ namespace PetvetPOS_Inventory_System
             getValueFromDataGridCell();
             fillUpdateContacts(lastname, mob);
         }
-       
+
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (tabControl1.SelectedTab == tabControl1.TabPages["newClient_tab"])
+                updateContacts_panel.Visible = false;
+            else if (tabControl1.SelectedTab == tabControl1.TabPages["existingClient_Tab"])
+                updateContacts_panel.Visible = true;
+        }
 
     }
 }

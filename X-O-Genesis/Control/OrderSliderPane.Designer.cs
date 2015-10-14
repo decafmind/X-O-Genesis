@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.orders1 = new PetvetPOS_Inventory_System.Orders();
+            this.orders1 = new PetvetPOS_Inventory_System.OrdersView();
             this.SuspendLayout();
             // 
             // contentPanel
@@ -59,7 +59,7 @@
 
         #endregion
 
-        private Orders orders1;
+        private OrdersView orders1;
 
     }
 }

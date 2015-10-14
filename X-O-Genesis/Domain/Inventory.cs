@@ -19,5 +19,22 @@ namespace PetvetPOS_Inventory_System
         {
 
         }
+
+        public Inventory(Entity entity)
+        {
+            try
+            {
+                 Barcode = (string)entity.getField("product_id");
+                 StockinDateTime = (DateTime)entity.getField("stockin_datetime");
+                 QtyReceived = (int)entity.getField("qty_received");
+                 Supplier = (string)entity.getField("supplier");
+                 QtyOnHand = (int)entity.getField("qty_onhand");
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log(ex);
+            }
+        }
+
     }
 }

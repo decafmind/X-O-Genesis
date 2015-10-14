@@ -174,6 +174,10 @@ namespace PetvetPOS_Inventory_System
         {
             return customerInformationMapper.updateContacts(oldmob, newmob, other);
         }
+        public bool updateInventory(int qty, string barcode)
+        {
+            return inventoryMapper.updateInventory(qty, barcode);
+        }
         public Employee getEmployeeFromUser(User user)
         {
             return employeeMapper.getEmployeeFromUserId(user);
@@ -345,7 +349,6 @@ namespace PetvetPOS_Inventory_System
         public CustomerInformation getExistingClientContacts(DataTable dt, string token1, string token2)
         {
             string condition = String.Format(" lastname = '{0}' AND mobile_number = '{1}'", token1, token2);
-           // customerInformationMapper.loadTable(dt, condition);
             CustomerInformation customerInformation = new CustomerInformation(customerInformationMapper.getEntityWhere(condition));
             return customerInformation;         
         }
@@ -582,6 +585,13 @@ namespace PetvetPOS_Inventory_System
         public bool insertProductInvoice(ProductInvoice productInvoice)
         {
             return productInvoiceMapper.insertProductInvoice(productInvoice);
+        }
+
+        public Inventory getCurrentStockCountFromBarCode(string product_id)
+        {
+            string condition = String.Format(" product_id = '{0}'", product_id);
+            Inventory inventory = new Inventory(inventoryMapper.getEntityWhere(condition));
+            return inventory;
         }
 
         public Product getProductFromBarcode(string barcode)

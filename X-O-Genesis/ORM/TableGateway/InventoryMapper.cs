@@ -46,7 +46,6 @@ namespace PetvetPOS_Inventory_System
                 inventory.QtyOnHand, "null"));
         }
 
-
         public DataTable loadInventoryTable(DataTable dt)
         {
             return loadTable(dt);
@@ -56,7 +55,13 @@ namespace PetvetPOS_Inventory_System
         {
             return create(createInventory(inventory));
         }
-
+        public bool updateInventory(int qty, string barcode)
+        {
+            string qty_onhand = String.Format(" qty_onhand = {0}", qty);
+            string condition = String.Format(" product_id = '{0}'", barcode);
+            updateSet(condition, qty_onhand);
+            return update(updateQuery);
+        }
   
     }
 }
