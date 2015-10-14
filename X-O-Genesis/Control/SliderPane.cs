@@ -91,7 +91,7 @@ namespace PetvetPOS_Inventory_System
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-           // contentPanel.Visible = false;
+            contentPanel.Visible = false;
 
             switch (viewState)
             {

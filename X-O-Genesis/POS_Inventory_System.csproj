@@ -201,6 +201,12 @@
     <Compile Include="Forms\CriticalNotif.Designer.cs">
       <DependentUpon>CriticalNotif.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\DateAndTime.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Forms\DateAndTime.Designer.cs">
+      <DependentUpon>DateAndTime.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyExtension\ErrorLog.cs" />
     <Compile Include="ORM\TableGateway\AuditTrailMapper.cs" />
     <Compile Include="ORM\TableGateway\CustomerInformationMapper.cs" />
@@ -482,6 +488,9 @@
     <EmbeddedResource Include="Control\AddUserPane.resx">
       <DependentUpon>AddUserPane.cs</DependentUpon>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DateAndTime.resx">
+      <DependentUpon>DateAndTime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>

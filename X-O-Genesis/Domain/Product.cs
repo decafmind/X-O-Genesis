@@ -50,7 +50,10 @@ namespace PetvetPOS_Inventory_System
                         if (this.Category == product.Category)
                             if (this.UnitPrice == product.UnitPrice)
                                 if (this.Company == product.Company)
-                                    return true;
+                                    if (this.Warranty == product.Warranty)
+                                        if (this.Replacement == product.Replacement)
+                                            if (this.Specification == product.Specification)
+                                                return true;
             }
             
             return false;

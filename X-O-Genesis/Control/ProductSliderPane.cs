@@ -101,9 +101,7 @@ namespace PetvetPOS_Inventory_System
             txtSpecs.Text = product.Specification.ToString();
             txtReplacement.Text = product.Replacement.ToString();
             txtWarranty.Text = product.Warranty.ToString();
-
-           // if (product.Company != null)
-          //      txtSupplier.Text = product.Company.ToString();
+           
             oldProduct = product;
 
             lblQuantity.Visible = false;
@@ -159,6 +157,9 @@ namespace PetvetPOS_Inventory_System
                 Barcode = txtBarcode.Text,
                 Description = txtName.Text,
                 UnitPrice = Convert.ToDecimal(txtPrice.Text),
+                Warranty = txtWarranty.Text,
+                Replacement = txtReplacement.Text,
+                Specification = txtSpecs.Text,
             };
 
             dbController.updateProduct(oldProduct, product);

@@ -84,7 +84,8 @@ namespace PetvetPOS_Inventory_System
             if (origProduct.Barcode != updatedProduct.Barcode || origProduct.Equals(updatedProduct))
                 return false;
 
-            string desc = string.Empty, unitPrice = string.Empty, category = string.Empty, manufacturer = string.Empty;
+            string desc = string.Empty, unitPrice = string.Empty, category = string.Empty, manufacturer = string.Empty, specs = string.Empty,
+                warranty = string.Empty, replacement = string.Empty;
 
             if (origProduct.Description != updatedProduct.Description)
                 desc = string.Format("name = '{0}'", updatedProduct.Description);
@@ -94,11 +95,17 @@ namespace PetvetPOS_Inventory_System
                 manufacturer = string.Format("source_company_name = '{0}'", updatedProduct.Company);
             if (origProduct.Category != updatedProduct.Category)
                 category = string.Format("category_id = '{0}'", updatedProduct.Category);
+            if (origProduct.Specification != updatedProduct.Specification)
+                specs = string.Format("specification = '{0}'", updatedProduct.Specification);
+            if (origProduct.Warranty != updatedProduct.Warranty)
+                warranty = string.Format("warranty = '{0}'", updatedProduct.Warranty);
+            if (origProduct.Replacement != updatedProduct.Replacement)
+                replacement = string.Format("replacement = '{0}'", updatedProduct.Replacement);
 
             string condition = string.Format("id = '{0}'", origProduct.Barcode);
 
             return update(
-                updateSet(condition, desc, unitPrice, category, manufacturer)
+                updateSet(condition, desc, unitPrice, category, manufacturer, specs, warranty, replacement)
                 );
         }
     }
