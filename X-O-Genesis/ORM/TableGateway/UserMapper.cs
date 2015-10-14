@@ -11,7 +11,6 @@ namespace PetvetPOS_Inventory_System
     public class UserMapper: DatabaseMapper
     {
         private const int ACTIVE = 1;
-
         public UserMapper(MySqlDB db): base(db)
         {
             tableName = "user_tbl";
@@ -22,6 +21,7 @@ namespace PetvetPOS_Inventory_System
                 "access_level",
                 "active",
                 "create_time",
+                "session_status",
             };
         }
 
@@ -46,7 +46,6 @@ namespace PetvetPOS_Inventory_System
             string condition = String.Format("id = '{0}'", user);
             return update(updateSet(condition, "active = 0"));
         }
-
         public User getUserFromId(string id)
         {
             return new User(getEntityFromId(id));
@@ -64,8 +63,8 @@ namespace PetvetPOS_Inventory_System
                     bool isValid = PasswordHash.PasswordHash.ValidatePassword(password, correctHash);
                     if (isValid)
                     {
-                        condition = String.Format("id = '{0}' AND password = '{1}'", user_id, correctHash);
-                        return getUserFromId((string)readScalar("id", condition));
+                        condition = String.Format("id = '{0}' AND password = '{1}' AND session_status = 0", user_id, correctHash);
+                        return getUserFromId((string)readScalar("id", condition));                      
                     }
                 }
                 catch (Exception)
@@ -76,5 +75,19 @@ namespace PetvetPOS_Inventory_System
             return null;
         }
 
+        public bool sessionIn(string id)
+        {
+            string login = String.Format(" session_status = 1");
+            string condition = String.Format(" id = '{0}'", id);
+            return update(updateSet(condition, login));
+        }
+        public bool sessionOut(string id)
+        {
+            string login = String.Format(" session_status = 0");
+            string condition = String.Format(" id = '{0}'", id);
+            return update(updateSet(login, condition));
+        }
+
+ 
     }
 }

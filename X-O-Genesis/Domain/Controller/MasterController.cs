@@ -160,7 +160,7 @@ namespace PetvetPOS_Inventory_System
         public bool logout()
         {       
             DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Confirmation", MessageBoxButtons.YesNo);
-            if (result == DialogResult.Yes){
+            if (result == DialogResult.Yes){               
                 userSettingsControl.returnHome();
                 return true;
             }

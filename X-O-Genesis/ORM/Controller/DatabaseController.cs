@@ -174,6 +174,14 @@ namespace PetvetPOS_Inventory_System
         {
             return customerInformationMapper.updateContacts(oldmob, newmob, other);
         }
+        public bool sessionIn(string user_id)
+        {
+            return userMapper.sessionIn(user_id);
+        }
+        public bool sessionOut(string user_id)
+        {
+            return userMapper.sessionOut(user_id);
+        }
         public bool updateInventory(int qty, string barcode)
         {
             return inventoryMapper.updateInventory(qty, barcode);
@@ -383,7 +391,6 @@ namespace PetvetPOS_Inventory_System
             }
             return false;
         }
-
         public string createEmployee(Employee employee)
         {
             return employeeMapper.createEmployee(employee);
