@@ -14,6 +14,7 @@ namespace PetvetPOS_Inventory_System
     {
         DatabaseController dbController;
         ProductPaneScroll scroll;
+        ProductSliderPane slider;
         List<string> categoryList;
 
         public modalAddCategory(DatabaseController dbController, ProductPaneScroll scroll)
@@ -21,6 +22,13 @@ namespace PetvetPOS_Inventory_System
             InitializeComponent();
             this.dbController = dbController;
             this.scroll = scroll;
+        }
+
+        public modalAddCategory(DatabaseController dbController, ProductSliderPane slider)
+        {
+            InitializeComponent();
+            this.dbController = dbController;
+            this.slider = slider;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -49,7 +57,7 @@ namespace PetvetPOS_Inventory_System
         {
             if (dbController.createCategory(category))
             {
-                scroll.loadCategoryList();
+                slider.loadCategoryList();
                 Close();
             }
         }
@@ -60,7 +68,6 @@ namespace PetvetPOS_Inventory_System
                 MessageBox.Show("Category already exists", "Message");
             } else{
                 addNewCategory(txtCategory.Text);
-                scroll.selectNewlyAddedCategory(txtCategory.Text);
                 Close();
             }
         }

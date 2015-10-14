@@ -42,5 +42,20 @@ namespace PetvetPOS_Inventory_System
             return insertProductInvoice(productInvoice.invoice, productInvoice.product, productInvoice.QuantitySold);
         }
 
+        public List<string> getListOfProductOnInvoice(Invoice invoice)
+        {
+            return getList("invoice_id", string.Format("invoice_id = {0}", invoice.InvoiceId));
+        }
+
+        public List<ProductInvoice> getListOfProductInvoice(Invoice invoice)
+        {
+            List<ProductInvoice> productInvoices = new List<ProductInvoice>();
+            List<Entity> entities = getListOfEntity(string.Format("invoice_id = {0}", invoice.InvoiceId));
+            foreach (Entity entity in entities)
+            {
+                productInvoices.Add(new ProductInvoice(entity));
+            }
+            return productInvoices;
+        }
     }
 }

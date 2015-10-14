@@ -36,11 +36,11 @@ namespace PetvetPOS_Inventory_System
             this.subHeader = new System.Windows.Forms.Panel();
             this.userControlPanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lblDate = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.outLine = new System.Windows.Forms.Panel();
             this.outline2 = new System.Windows.Forms.Panel();
             this.outline3 = new System.Windows.Forms.Panel();
+            this.dateAndTime1 = new PetvetPOS_Inventory_System.Forms.DateAndTime();
             this.subHeader.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -89,27 +89,13 @@ namespace PetvetPOS_Inventory_System
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
-            this.panel3.Controls.Add(this.lblDate);
+            this.panel3.Controls.Add(this.dateAndTime1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.panel3.Size = new System.Drawing.Size(278, 36);
+            this.panel3.Size = new System.Drawing.Size(361, 36);
             this.panel3.TabIndex = 0;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // lblDate
-            // 
-            this.lblDate.BackColor = System.Drawing.Color.Transparent;
-            this.lblDate.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.lblDate.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDate.ForeColor = System.Drawing.Color.White;
-            this.lblDate.Location = new System.Drawing.Point(10, 0);
-            this.lblDate.Name = "lblDate";
-            this.lblDate.Size = new System.Drawing.Size(258, 36);
-            this.lblDate.TabIndex = 0;
-            this.lblDate.Text = "lblDate";
-            this.lblDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // mainPanel
             // 
@@ -147,6 +133,15 @@ namespace PetvetPOS_Inventory_System
             this.outline3.Name = "outline3";
             this.outline3.Size = new System.Drawing.Size(906, 1);
             this.outline3.TabIndex = 3;
+            // 
+            // dateAndTime1
+            // 
+            this.dateAndTime1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dateAndTime1.Location = new System.Drawing.Point(10, 0);
+            this.dateAndTime1.Name = "dateAndTime1";
+            this.dateAndTime1.Padding = new System.Windows.Forms.Padding(10);
+            this.dateAndTime1.Size = new System.Drawing.Size(341, 36);
+            this.dateAndTime1.TabIndex = 0;
             // 
             // frmMain
             // 
@@ -189,12 +184,12 @@ namespace PetvetPOS_Inventory_System
         private System.Windows.Forms.Panel panelSidebar;
         private System.Windows.Forms.Panel subHeader;
         private System.Windows.Forms.Panel mainPanel;
-        private System.Windows.Forms.Label lblDate;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel userControlPanel;
         private System.Windows.Forms.Panel outLine;
         private System.Windows.Forms.Panel outline2;
         private System.Windows.Forms.Panel outline3;
+        private Forms.DateAndTime dateAndTime1;
     }
 }
 

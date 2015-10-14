@@ -15,9 +15,10 @@ namespace PetvetPOS_Inventory_System
         {
             menuControls = new List<MenuControl> { 
                  new MenuControl(new Home(masterController), menuBar),
-                //ew MenuControl(new InventoryView(masterController), menuBar),
                  new MenuControl(new Sales(masterController), menuBar),
                  new MenuControl(new UserAdministration(masterController), menuBar),
+                 new MenuControl(new InventoryView(masterController), menuBar),
+                 new MenuControl(new CustomerInformationView(masterController), menuBar),
             }; 
         }
 

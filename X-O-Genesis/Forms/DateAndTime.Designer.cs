@@ -1,6 +1,6 @@
-﻿namespace PetvetPOS_Inventory_System
+﻿namespace PetvetPOS_Inventory_System.Forms
 {
-    partial class SliderPane
+    partial class DateAndTime
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,42 +29,42 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.label1 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.contentPanel = new System.Windows.Forms.Panel();
             this.SuspendLayout();
+            // 
+            // label1
+            // 
+            this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label1.Font = new System.Drawing.Font("KaiTi", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(10, 10);
+            this.label1.Margin = new System.Windows.Forms.Padding(5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(219, 17);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Date & Time";
             // 
             // timer1
             // 
-            this.timer1.Enabled = true;
-            this.timer1.Interval = 10;
+            this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // contentPanel
-            // 
-            this.contentPanel.Location = new System.Drawing.Point(25, 16);
-            this.contentPanel.Name = "contentPanel";
-            this.contentPanel.Size = new System.Drawing.Size(242, 334);
-            this.contentPanel.TabIndex = 0;
-            // 
-            // SliderPane
+            // DateAndTime
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.Controls.Add(this.contentPanel);
-            this.MaximumSize = new System.Drawing.Size(300, 1000);
-            this.MinimumSize = new System.Drawing.Size(30, 600);
-            this.Name = "SliderPane";
-            this.Size = new System.Drawing.Size(300, 600);
-            this.Load += new System.EventHandler(this.SliderPane_Load);
-            this.Paint += new System.Windows.Forms.PaintEventHandler(this.SliderPane_Paint);
+            this.Controls.Add(this.label1);
+            this.Name = "DateAndTime";
+            this.Padding = new System.Windows.Forms.Padding(10);
+            this.Size = new System.Drawing.Size(239, 37);
+            this.Load += new System.EventHandler(this.DateAndTime_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        protected System.Windows.Forms.Panel contentPanel;
-        protected System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Timer timer1;
     }
 }

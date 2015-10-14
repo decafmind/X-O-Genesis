@@ -92,6 +92,7 @@ namespace PetvetPOS_Inventory_System
 
         void displayOnSmall()
         {
+            dateAndTime1.setForeColor(Color.White);
             MinimumSize = new Size(700, 400);
             Size = new Size(700, 400);
 
@@ -111,17 +112,16 @@ namespace PetvetPOS_Inventory_System
 
         void masterController_EmployeeLogin(object sender, EmployeeArgs e)
         {
-            lblDate.ForeColor = Color.Black;
+            dateAndTime1.setForeColor(Color.Black);
             masterController.setFormReturnkey = null;
             isLogin = true;
             displayOnRealSize();
             masterController.speak("Hey");
         }
 
-        // This will be call upon logout
         void masterController_EmployeeLogout(object sender, EventArgs e)
         {
-            lblDate.ForeColor = Color.White;
+            dateAndTime1.setForeColor(Color.White);
             hideTrueForm();
             initLogin();
             isLogin = false;
@@ -147,11 +147,6 @@ namespace PetvetPOS_Inventory_System
         private void frmMain_Load(object sender, EventArgs e)
         {
             initLogin();
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-            lblDate.Text = DateTime.Now.Date.ToLongDateString();
         }
 
         // This method change the backColor of SideBar and SubBar into their designated true Color

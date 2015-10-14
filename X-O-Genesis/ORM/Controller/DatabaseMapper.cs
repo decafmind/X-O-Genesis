@@ -125,14 +125,14 @@ namespace PetvetPOS_Inventory_System
         }
 
 
-        protected List<Entity> getListOfEntity(string selectQuery)
+        protected List<Entity> getListOfEntity(string condition)
         {
             List<Entity> entities = new List<Entity>();
 
             try
             {
                 db.open();
-                this.selectQuery = selectQuery;
+                setSelectQueryForGetEntity(condition);
                 using (command = new MySqlCommand(selectQuery, db.Connection))
                 using (reader = command.ExecuteReader())
                 {
@@ -196,7 +196,6 @@ namespace PetvetPOS_Inventory_System
                 db.dispose();
             }
             return entity;
-            
         }
 
         /// <summary>
@@ -207,7 +206,8 @@ namespace PetvetPOS_Inventory_System
         /// <returns></returns>
         public Entity getEntityWhere(string condition)
         {
-            return setSelectQueryForGetEntity(condition);
+            setSelectQueryForGetEntity(condition);
+            return getEntity();
         }
 
         /// <summary>
@@ -219,14 +219,12 @@ namespace PetvetPOS_Inventory_System
         /// and getEntityFromId() methods
         /// </summary>
         /// <param name="condition"> the condition of select query </param>
-        public Entity setSelectQueryForGetEntity(string condition)
+        private void setSelectQueryForGetEntity(string condition)
         {
             string[] holder = fieldsname_forselect;
             fieldsname_forselect = null;
             setSelectQuery(condition);
             fieldsname_forselect = holder;
-
-            return getEntity();
         }
 
         /// <summary>
@@ -243,8 +241,8 @@ namespace PetvetPOS_Inventory_System
             else
                 condition=  String.Format(" {0} = {1}", this.id, id);
 
-            return setSelectQueryForGetEntity(condition);
-            
+            setSelectQueryForGetEntity(condition);
+            return getEntity();
         }
 
         /// <summary>
@@ -373,6 +371,7 @@ namespace PetvetPOS_Inventory_System
             return getList(field, string.Empty);
         }
 
+
         protected List<string> getList(string field, string condition)
         {
             List<string> list = new List<string>();
@@ -406,6 +405,7 @@ namespace PetvetPOS_Inventory_System
             
             return list;
         }
+
 
         private bool createUpdateDelete(string commandText)
         {
@@ -490,6 +490,9 @@ namespace PetvetPOS_Inventory_System
             setSelectQuery(condition);
             return selectRows(dt, selectQuery);
         }
+
+
+
     }
 }
   

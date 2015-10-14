@@ -297,10 +297,6 @@ namespace PetvetPOS_Inventory_System
                 {
                     keyButton9.updateButton();
                     updateProduct();
-                    productSliderPane1.mode = InventoryMode.UPDATE;
-
-                    if (!productSliderPane1.isOpen())
-                        productSliderPane1.toggle();
                 }
                 else
                 {
@@ -464,7 +460,19 @@ namespace PetvetPOS_Inventory_System
             string product_name = string.Empty;
             product_name = getValueFromDatagridCell(PRODUCT_NAME_INDEX);
             Product product = dbController.getProductThroughName(product_name);
-            productSliderPane1.mapProductToTextfield(product);
+            if (product.Barcode != null)
+            {
+                productSliderPane1.mapProductToTextfield(product);
+
+                productSliderPane1.mode = InventoryMode.UPDATE;
+
+                if (!productSliderPane1.isOpen())
+                    productSliderPane1.toggle();
+            }
+            else
+            {
+                MessageBox.Show("No product selected");
+            }
         }
 
         string getValueFromDatagridCell(int index)

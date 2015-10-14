@@ -20,7 +20,6 @@ namespace PetvetPOS_Inventory_System
                 "stockin_datetime",
                 "qty_received",
                 "qty_onhand",
-                "supplier",
             };
 
             fieldsname_forselect = new string[]{
@@ -28,7 +27,6 @@ namespace PetvetPOS_Inventory_System
                 "stockin_datetime AS 'Stock since'",
                 "qty_received AS 'Qty on Received'",
                 "qty_onhand AS 'Qty on Hand'",
-                "supplier AS 'Supplier'",
             };
         }
 
@@ -36,14 +34,14 @@ namespace PetvetPOS_Inventory_System
         {
             return insertValues(
                 inventory.Barcode, "NOW()", inventory.QtyReceived,
-                inventory.QtyOnHand, inventory.Supplier);
+                inventory.QtyOnHand);
         }
 
         public bool pullInventory(Inventory inventory)
         {
             return create(
                 insertValues(inventory.Barcode, "null", "null",
-                inventory.QtyOnHand, "null"));
+                inventory.QtyOnHand));
         }
 
         public DataTable loadInventoryTable(DataTable dt)

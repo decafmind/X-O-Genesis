@@ -33,8 +33,6 @@
             this.txtBarcode = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
-            this.txtCategory = new System.Windows.Forms.TextBox();
-            this.txtSupplier = new System.Windows.Forms.TextBox();
             this.lblQuantity = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -42,12 +40,32 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtSpecs = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtWarranty = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtReplacement = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.cbSupplier = new System.Windows.Forms.ComboBox();
             this.contentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // contentPanel
             // 
+            this.contentPanel.Controls.Add(this.cbSupplier);
+            this.contentPanel.Controls.Add(this.cbCategory);
+            this.contentPanel.Controls.Add(this.button2);
+            this.contentPanel.Controls.Add(this.button1);
+            this.contentPanel.Controls.Add(this.txtReplacement);
+            this.contentPanel.Controls.Add(this.label8);
+            this.contentPanel.Controls.Add(this.txtWarranty);
+            this.contentPanel.Controls.Add(this.label7);
+            this.contentPanel.Controls.Add(this.txtSpecs);
+            this.contentPanel.Controls.Add(this.label1);
             this.contentPanel.Controls.Add(this.pictureBox1);
             this.contentPanel.Controls.Add(this.label6);
             this.contentPanel.Controls.Add(this.label5);
@@ -55,20 +73,18 @@
             this.contentPanel.Controls.Add(this.label3);
             this.contentPanel.Controls.Add(this.label2);
             this.contentPanel.Controls.Add(this.lblQuantity);
-            this.contentPanel.Controls.Add(this.txtSupplier);
-            this.contentPanel.Controls.Add(this.txtCategory);
             this.contentPanel.Controls.Add(this.txtPrice);
             this.contentPanel.Controls.Add(this.txtName);
             this.contentPanel.Controls.Add(this.txtBarcode);
             this.contentPanel.Controls.Add(this.txtQuantity);
             this.contentPanel.Location = new System.Drawing.Point(29, 19);
-            this.contentPanel.Size = new System.Drawing.Size(242, 455);
+            this.contentPanel.Size = new System.Drawing.Size(242, 551);
             // 
             // txtQuantity
             // 
             this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtQuantity.ForeColor = System.Drawing.Color.Black;
-            this.txtQuantity.Location = new System.Drawing.Point(17, 33);
+            this.txtQuantity.Location = new System.Drawing.Point(17, 35);
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(213, 24);
             this.txtQuantity.TabIndex = 6;
@@ -78,7 +94,7 @@
             // 
             this.txtBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtBarcode.ForeColor = System.Drawing.Color.Black;
-            this.txtBarcode.Location = new System.Drawing.Point(17, 92);
+            this.txtBarcode.Location = new System.Drawing.Point(17, 86);
             this.txtBarcode.Name = "txtBarcode";
             this.txtBarcode.Size = new System.Drawing.Size(211, 24);
             this.txtBarcode.TabIndex = 7;
@@ -88,7 +104,7 @@
             // 
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtName.ForeColor = System.Drawing.Color.Black;
-            this.txtName.Location = new System.Drawing.Point(17, 157);
+            this.txtName.Location = new System.Drawing.Point(18, 137);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(211, 24);
             this.txtName.TabIndex = 8;
@@ -97,28 +113,10 @@
             // 
             this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtPrice.ForeColor = System.Drawing.Color.Black;
-            this.txtPrice.Location = new System.Drawing.Point(17, 226);
+            this.txtPrice.Location = new System.Drawing.Point(17, 187);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.Size = new System.Drawing.Size(212, 24);
             this.txtPrice.TabIndex = 9;
-            // 
-            // txtCategory
-            // 
-            this.txtCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtCategory.ForeColor = System.Drawing.Color.Black;
-            this.txtCategory.Location = new System.Drawing.Point(17, 293);
-            this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(212, 24);
-            this.txtCategory.TabIndex = 10;
-            // 
-            // txtSupplier
-            // 
-            this.txtSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtSupplier.ForeColor = System.Drawing.Color.Black;
-            this.txtSupplier.Location = new System.Drawing.Point(16, 358);
-            this.txtSupplier.Name = "txtSupplier";
-            this.txtSupplier.Size = new System.Drawing.Size(212, 24);
-            this.txtSupplier.TabIndex = 11;
             // 
             // lblQuantity
             // 
@@ -136,7 +134,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label2.ForeColor = System.Drawing.Color.DimGray;
-            this.label2.Location = new System.Drawing.Point(73, 69);
+            this.label2.Location = new System.Drawing.Point(73, 63);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(89, 20);
             this.label2.TabIndex = 13;
@@ -147,7 +145,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label3.ForeColor = System.Drawing.Color.DimGray;
-            this.label3.Location = new System.Drawing.Point(91, 133);
+            this.label3.Location = new System.Drawing.Point(91, 114);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(55, 20);
             this.label3.TabIndex = 14;
@@ -158,7 +156,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label4.ForeColor = System.Drawing.Color.DimGray;
-            this.label4.Location = new System.Drawing.Point(94, 198);
+            this.label4.Location = new System.Drawing.Point(94, 164);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 20);
             this.label4.TabIndex = 15;
@@ -169,7 +167,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label5.ForeColor = System.Drawing.Color.DimGray;
-            this.label5.Location = new System.Drawing.Point(71, 270);
+            this.label5.Location = new System.Drawing.Point(71, 368);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(99, 20);
             this.label5.TabIndex = 16;
@@ -180,7 +178,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label6.ForeColor = System.Drawing.Color.DimGray;
-            this.label6.Location = new System.Drawing.Point(73, 335);
+            this.label6.Location = new System.Drawing.Point(73, 420);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(89, 20);
             this.label6.TabIndex = 17;
@@ -190,13 +188,108 @@
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(95, 399);
+            this.pictureBox1.Location = new System.Drawing.Point(96, 479);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(51, 47);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.ForeColor = System.Drawing.Color.DimGray;
+            this.label1.Location = new System.Drawing.Point(61, 215);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(131, 20);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "SPECIFICATION";
+            // 
+            // txtSpecs
+            // 
+            this.txtSpecs.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.txtSpecs.ForeColor = System.Drawing.Color.Black;
+            this.txtSpecs.Location = new System.Drawing.Point(15, 238);
+            this.txtSpecs.Name = "txtSpecs";
+            this.txtSpecs.Size = new System.Drawing.Size(212, 24);
+            this.txtSpecs.TabIndex = 20;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label7.ForeColor = System.Drawing.Color.DimGray;
+            this.label7.Location = new System.Drawing.Point(72, 264);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(101, 20);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "WARRANTY";
+            // 
+            // txtWarranty
+            // 
+            this.txtWarranty.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.txtWarranty.ForeColor = System.Drawing.Color.Black;
+            this.txtWarranty.Location = new System.Drawing.Point(15, 287);
+            this.txtWarranty.Name = "txtWarranty";
+            this.txtWarranty.Size = new System.Drawing.Size(212, 24);
+            this.txtWarranty.TabIndex = 22;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label8.ForeColor = System.Drawing.Color.DimGray;
+            this.label8.Location = new System.Drawing.Point(71, 316);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(128, 20);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "REPLACEMENT";
+            // 
+            // txtReplacement
+            // 
+            this.txtReplacement.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.txtReplacement.ForeColor = System.Drawing.Color.Black;
+            this.txtReplacement.Location = new System.Drawing.Point(15, 340);
+            this.txtReplacement.Name = "txtReplacement";
+            this.txtReplacement.Size = new System.Drawing.Size(212, 24);
+            this.txtReplacement.TabIndex = 24;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(205, 392);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(19, 23);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "+";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(205, 442);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(19, 23);
+            this.button2.TabIndex = 26;
+            this.button2.Text = "+";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // cbCategory
+            // 
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Location = new System.Drawing.Point(17, 393);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(182, 21);
+            this.cbCategory.TabIndex = 27;
+            // 
+            // cbSupplier
+            // 
+            this.cbSupplier.FormattingEnabled = true;
+            this.cbSupplier.Location = new System.Drawing.Point(18, 445);
+            this.cbSupplier.Name = "cbSupplier";
+            this.cbSupplier.Size = new System.Drawing.Size(181, 21);
+            this.cbSupplier.TabIndex = 28;
             // 
             // ProductSliderPane
             // 
@@ -205,6 +298,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.MaximumSize = new System.Drawing.Size(300, 100);
             this.Name = "ProductSliderPane";
+            this.Load += new System.EventHandler(this.ProductSliderPane_Load);
             this.contentPanel.ResumeLayout(false);
             this.contentPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -214,8 +308,6 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox txtSupplier;
-        private System.Windows.Forms.TextBox txtCategory;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtBarcode;
@@ -227,6 +319,16 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblQuantity;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtReplacement;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtWarranty;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtSpecs;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.ComboBox cbSupplier;
+        private System.Windows.Forms.ComboBox cbCategory;
 
     }
 }

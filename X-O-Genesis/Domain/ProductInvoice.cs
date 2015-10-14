@@ -17,5 +17,21 @@ namespace PetvetPOS_Inventory_System
         {
 
         }
+
+        public ProductInvoice(Entity entity)
+        {
+            invoice = new Invoice()
+            {
+                InvoiceId = (int)entity.getField("invoice_id"),
+            };
+
+            product = new Product()
+            {
+                Barcode = entity.getField("product_id").ToString(),
+            };
+
+            QuantitySold = (int)entity.getField("quantity");
+            GroupPrice = (Decimal)entity.getField("subtotal");
+        }
     }
 }
