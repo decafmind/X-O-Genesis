@@ -46,7 +46,6 @@ namespace PetvetPOS_Inventory_System
             : base(masterController)
         {
             InitializeComponent();
-          //  productPaneScroll = new ProductPaneScroll(this, panel1, masterController);
 
             this.dbController = masterController.DataBaseController;
             sliderPane = productSliderPane1;
@@ -207,6 +206,14 @@ namespace PetvetPOS_Inventory_System
                 colorCodedRows();
             else if (rbPurchased.Checked)
                 highlightQtySoldCells();
+
+            string product_name;
+            foreach (DataGridViewRow row in dgInventory.Rows)
+            {
+                product_name = (string)row.Cells[PRODUCT_NAME_INDEX].Value;
+                Product product = dbController.getProductThroughName(product_name);
+                dbController.checkProductCriticalLevel(product);
+            }
         }
 
         public void filterdgInventory(string token)
@@ -232,6 +239,7 @@ namespace PetvetPOS_Inventory_System
                 else if (rbPurchased.Checked)
                     highlightQtySoldCells();
             }
+
         }
 
         void colorCodedRows()

@@ -598,11 +598,10 @@ namespace PetvetPOS_Inventory_System
             return productInvoiceMapper.insertProductInvoice(productInvoice);
         }
 
-        public Inventory getCurrentStockCountFromBarCode(string product_id)
+        public int getCurrentStockCountFromBarCode(Product product)
         {
-            string condition = String.Format(" product_id = '{0}'", product_id);
-            Inventory inventory = new Inventory(inventoryMapper.getEntityWhere(condition));
-            return inventory;
+            int quantity = (int)productInventory.getStockQuantity(product);
+            return quantity;
         }
 
         public Product getProductFromBarcode(string barcode)

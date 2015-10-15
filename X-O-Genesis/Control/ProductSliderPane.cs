@@ -77,7 +77,7 @@ namespace PetvetPOS_Inventory_System
             }
             else
             {
-                MessageBox.Show("Missing field required");
+             //   MessageBox.Show("Missing field required");
             }
         }
 
@@ -115,13 +115,13 @@ namespace PetvetPOS_Inventory_System
 
                 string category = dbController.categoryMapper.getCategoryNameFromId(product.Category_id);
                 cbCategory.Text = category;
+
+                oldProduct = product;
+
             }catch(Exception){
 
             }
             
-
-            oldProduct = product;
-
             lblQuantity.Visible = false;
             txtQuantity.Visible = false;
         }
@@ -159,6 +159,10 @@ namespace PetvetPOS_Inventory_System
                 {
                     txtName.Text = product.Description.ToString();
                     txtPrice.Text = product.UnitPrice.ToString();
+                    txtReplacement.Text = product.Replacement.ToString();
+                    txtSpecs.Text = product.Specification.ToString();
+                    txtWarranty.Text = product.Warranty.ToString();
+                    cbCategory.Text = dbController.categoryMapper.getCategoryNameFromId(product.Category_id);
                 }
                 else
                 {
