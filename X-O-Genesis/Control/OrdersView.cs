@@ -344,7 +344,6 @@ namespace PetvetPOS_Inventory_System
                     QtyOnHand = -item.QuantitySold,
                 };
 
-              //  dbController.pullInventory(item);
                 dbController.checkProductCriticalLevel(item.product);
         	}
          
@@ -461,20 +460,10 @@ namespace PetvetPOS_Inventory_System
                 dgTransaction.DrawToBitmap(bmp, new Rectangle(0, 0, this.dgTransaction.Width, this.dgTransaction.Height));
                 g.DrawImage(bmp, new PointF(10, Y));
                 Y += 50;
-
-                string serviceheader = "** SERVICES **";
-                stringSize = g.MeasureString(serviceheader, font);
-                g.DrawString(serviceheader, font, Brushes.Black, new PointF(10, Y));
-                Y += (int)stringSize.Height + yIncrement;
-
-               
+        
                 string cashierName = string.Format("Cashier name: {0}", masterController.LoginEmployee.User_id);
                 g.DrawString(cashierName, font, Brushes.Black, new PointF(10, Y));
-                Y += 30;
-
-                  
-
-                
+                Y += 30;                  
             }
         }
         
