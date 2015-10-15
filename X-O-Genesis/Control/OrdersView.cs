@@ -151,35 +151,40 @@ namespace PetvetPOS_Inventory_System
         public bool queryProduct()
         {
             bool success = false;
-            barcode = txtEncode.Text;
-            int quantity = 1;
-
-            if(string.IsNullOrWhiteSpace(txtQuantity.Text))
-                MessageBox.Show("Please enter quantity");
-            else
-                quantity = int.Parse(txtQuantity.Text);
-
-            currentProduct = dbController.getProductFromBarcode(barcode);
-            int stock = dbController.getCurrentStockCountFromBarCode(currentProduct);
-            if (stock >= quantity)
+            try
             {
-                if (!string.IsNullOrWhiteSpace(currentProduct.Barcode))
+                barcode = txtEncode.Text;
+                int quantity = 1;
+
+                if (string.IsNullOrWhiteSpace(txtQuantity.Text))
+                    MessageBox.Show("Please enter quantity");
+                else
+                    quantity = int.Parse(txtQuantity.Text);
+
+                currentProduct = dbController.getProductFromBarcode(barcode);
+                int stock = dbController.getCurrentStockCountFromBarCode(currentProduct);
+                if (stock >= quantity)
                 {
-                    Decimal totalPrice = currentProduct.UnitPrice * quantity;
-             //       lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, quantity, totalPrice);
-                    success = true;
-                    addRowInDatagrid(quantity);
+                    if (!string.IsNullOrWhiteSpace(currentProduct.Barcode))
+                    {
+                        Decimal totalPrice = currentProduct.UnitPrice * quantity;
+                        success = true;
+                        addRowInDatagrid(quantity);
+                    }
+                    else
+                    {
+                        lblPOSmsg.Text = "Item not found";
+                    }
                 }
                 else
                 {
-                    lblPOSmsg.Text = "Item not found";
-                }    
-            }else{
-                MessageBox.Show("Out of stock. Only " + stock + " left");
+                    MessageBox.Show("Out of stock. Only " + stock + " left");
+                }
+
             }
-            
+            catch (Exception) { lblPOSmsg.Text = "Item not found";  }
+
             return success;
-            
         }
 
         public void addRowInDatagrid(int quantity)
@@ -416,9 +421,9 @@ namespace PetvetPOS_Inventory_System
             using(Font font = new Font("MS San Serif", 11, FontStyle.Regular))
             using (Pen pen = new Pen(Brushes.Black, 1))
             {
-                string title = "Company Name";
-                string addressL1 = "Company Address Line 1";
-                string addressL2 = "Company Address Line 2";
+                string title = "Guardtech";
+                string addressL1 = "G44 Abbey Road Bagbag";
+                string addressL2 = "Novaliches Quezon City";
                 int documentWidth = e.PageBounds.Width;
  
                 SizeF stringSize = g.MeasureString(title, font);

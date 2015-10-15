@@ -92,10 +92,10 @@
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel10.Controls.Add(this.txtQuantity);
             this.panel10.Controls.Add(this.btnQuantity);
-            this.panel10.Location = new System.Drawing.Point(137, 55);
+            this.panel10.Location = new System.Drawing.Point(167, 55);
             this.panel10.Name = "panel10";
             this.panel10.Padding = new System.Windows.Forms.Padding(2);
-            this.panel10.Size = new System.Drawing.Size(191, 30);
+            this.panel10.Size = new System.Drawing.Size(161, 30);
             this.panel10.TabIndex = 6;
             // 
             // txtQuantity
@@ -106,8 +106,8 @@
             this.txtQuantity.Location = new System.Drawing.Point(2, 2);
             this.txtQuantity.MaxLength = 20;
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(187, 26);
-            this.txtQuantity.TabIndex = 0;
+            this.txtQuantity.Size = new System.Drawing.Size(157, 26);
+            this.txtQuantity.TabIndex = 1;
             this.txtQuantity.EnabledChanged += new System.EventHandler(this.txtQuantity_EnabledChanged);
             this.txtQuantity.TextChanged += new System.EventHandler(this.textChanged);
             this.txtQuantity.Enter += new System.EventHandler(this.txtQuantity_Enter);
@@ -169,10 +169,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel3.Controls.Add(this.txtEncode);
-            this.panel3.Location = new System.Drawing.Point(137, 91);
+            this.panel3.Location = new System.Drawing.Point(169, 91);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(2);
-            this.panel3.Size = new System.Drawing.Size(191, 30);
+            this.panel3.Size = new System.Drawing.Size(159, 30);
             this.panel3.TabIndex = 1;
             // 
             // txtEncode
@@ -183,8 +183,8 @@
             this.txtEncode.Location = new System.Drawing.Point(2, 2);
             this.txtEncode.MaxLength = 20;
             this.txtEncode.Name = "txtEncode";
-            this.txtEncode.Size = new System.Drawing.Size(187, 26);
-            this.txtEncode.TabIndex = 1;
+            this.txtEncode.Size = new System.Drawing.Size(155, 26);
+            this.txtEncode.TabIndex = 2;
             this.txtEncode.EnabledChanged += new System.EventHandler(this.txtEncode_EnabledChanged);
             this.txtEncode.TextChanged += new System.EventHandler(this.textChanged);
             this.txtEncode.Enter += new System.EventHandler(this.txtEncode_Enter);
@@ -198,9 +198,9 @@
             this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(24, 96);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(52, 19);
+            this.label5.Size = new System.Drawing.Size(129, 19);
             this.label5.TabIndex = 4;
-            this.label5.Text = "SCAN";
+            this.label5.Text = "PRODUCT CODE";
             // 
             // btnEncode
             // 
@@ -209,7 +209,7 @@
             this.btnEncode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnEncode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnEncode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEncode.Location = new System.Drawing.Point(82, 91);
+            this.btnEncode.Location = new System.Drawing.Point(167, 91);
             this.btnEncode.Name = "btnEncode";
             this.btnEncode.Size = new System.Drawing.Size(49, 30);
             this.btnEncode.TabIndex = 2;
