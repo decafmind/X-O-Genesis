@@ -239,6 +239,7 @@
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(149, 20);
             this.txtMobile.TabIndex = 40;
+            this.txtMobile.TextChanged += new System.EventHandler(this.textChanged_Numeric);
             // 
             // txtLandline
             // 
@@ -246,6 +247,7 @@
             this.txtLandline.Name = "txtLandline";
             this.txtLandline.Size = new System.Drawing.Size(149, 20);
             this.txtLandline.TabIndex = 39;
+            this.txtLandline.TextChanged += new System.EventHandler(this.textChanged_Numeric);
             // 
             // txtAdd2
             // 

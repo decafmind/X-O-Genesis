@@ -184,5 +184,11 @@ namespace PetvetPOS_Inventory_System
                 updateContacts_panel.Visible = true;
         }
 
+        private void textChanged_Numeric(object sender, EventArgs e)
+        {
+            Validation.filterToNumeric(sender as TextBox);
+        }
+      
+
     }
 }

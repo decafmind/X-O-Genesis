@@ -274,6 +274,7 @@ namespace PetvetPOS_Inventory_System
                     lblChange.Text = change.ToString("N");
 
                     concludeTransaction = true;
+                    conclusion();
                     paymentTimer.Start();
                     printReceipt();
                     txtPayment.Clear();
@@ -294,14 +295,14 @@ namespace PetvetPOS_Inventory_System
 
             Inventory inventory = null;
             foreach (ProductInvoice item in carts){
-                dbController.insertProductInvoice(item);
                 inventory = new Inventory(){
                     Barcode = item.product.Barcode,
                     QtyReceived = 0,
                     QtyOnHand = -item.QuantitySold,
                 };
+                Product product = dbController.getProductFromBarcode(item.product.Barcode);
                 dbController.pullInventory(inventory);
-                dbController.checkProductCriticalLevel(item.product);
+                dbController.checkProductCriticalLevel(product);
         	}
 
             // audit 
@@ -344,8 +345,9 @@ namespace PetvetPOS_Inventory_System
                     Document = receipt,
                 };
 
-                preview.ShowDialog(this);
-                preview.SetDesktopLocation(masterController.getFrmMain.Width - preview.Width, preview.DesktopLocation.Y);
+                receipt.Print();
+             //   preview.ShowDialog(this);
+             //   preview.SetDesktopLocation(masterController.getFrmMain.Width - preview.Width, preview.DesktopLocation.Y);
             }
         }
 
@@ -403,7 +405,7 @@ namespace PetvetPOS_Inventory_System
             using(Font font = new Font("MS San Serif", 11 , FontStyle.Regular))
             using(Pen pen = new Pen(Brushes.Black, 1))
             {
-                string title = "Petvet Animal Health Clinic";
+                string title = "Guardtech";
                 string addressL1 = "2/F Nova Square Shopping Center,";
                 string addressL2 = "San Bartolome, Nova. QC";
                 int documentWidth = e.PageBounds.Width;
@@ -474,7 +476,7 @@ namespace PetvetPOS_Inventory_System
                 g.DrawString(countItems, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
                 Y += (int)stringSize.Height + yIncrement;
 
-                string orderNo = String.Format("ORDER #{0}", lblPOSmsg.Text);
+                string orderNo = String.Format("ORDER # {0} ", txtEncode.Text);
                 g.DrawString(orderNo, font, Brushes.Black, new PointF(10, Y));
                 Y += 30;                
 
@@ -554,24 +556,15 @@ namespace PetvetPOS_Inventory_System
             MyExtension.Validation.limitTextbox(txtPayment, charAllowed);
         }
 
-        private void parentPanel_Paint(object sender, PaintEventArgs e)
-        {
+         private void panel8_Paint(object sender, PaintEventArgs e)
+         {
 
-        }
+         }
 
-        private void btnQuantity_Click(object sender, EventArgs e)
-        {
+         private void panel6_Paint(object sender, PaintEventArgs e)
+         {
 
-        }
+         }
 
-        private void txtQuantity_EnabledChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtQuantity_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }
