@@ -58,6 +58,16 @@ namespace MyExtension
             }
 
         }
+
+        public static void filterToNumeric(TextBox textbox)
+        {
+            string acceptedChar = "+1234567890";
+            string result = "";
+            foreach (char character in textbox.Text)
+                if (acceptedChar.Contains(character))
+                    result += character;
+            textbox.Text = result;
+        }
     }
 
 

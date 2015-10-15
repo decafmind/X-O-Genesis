@@ -146,6 +146,7 @@ namespace PetvetPOS_Inventory_System
                 txtEncode.Focus();
             }
         }
+
         string barcode;
         public bool queryProduct()
         {
@@ -158,7 +159,10 @@ namespace PetvetPOS_Inventory_System
             else
                 quantity = int.Parse(txtQuantity.Text);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f089d3469397762b2474cc7fe6ad8ddb3d23916a
             currentProduct = dbController.getProductFromBarcode(barcode);
             int stock = dbController.getCurrentStockCountFromBarCode(currentProduct);
             if (stock >= quantity)
@@ -166,7 +170,11 @@ namespace PetvetPOS_Inventory_System
                 if (!string.IsNullOrWhiteSpace(currentProduct.Barcode))
                 {
                     Decimal totalPrice = currentProduct.UnitPrice * quantity;
+<<<<<<< HEAD
                     lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, quantity, totalPrice);
+=======
+             //       lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, quantity, totalPrice);
+>>>>>>> f089d3469397762b2474cc7fe6ad8ddb3d23916a
                     success = true;
                     addRowInDatagrid(quantity);
                 }
@@ -184,7 +192,8 @@ namespace PetvetPOS_Inventory_System
 
         public void addRowInDatagrid(int quantity)
         {
-           
+            bool success = false;
+
             ProductInvoice productTransaction = new ProductInvoice(){
                 invoice = currentTransaction,
                 product = currentProduct,
@@ -208,8 +217,12 @@ namespace PetvetPOS_Inventory_System
                     decimal old_price = item.GroupPrice;
                     decimal new_price = productTransaction.GroupPrice;
                     sum_of_price = old_price + new_price;
-                    item.GroupPrice = sum_of_price;
 
+                    int stock = dbController.getCurrentStockCountFromBarCode(currentProduct);
+                    if (stock >= sum_of_qty){
+                        item.GroupPrice = sum_of_price;
+                        success = true;
+                    }
                     items_already_in_cart = true;
                     break;
                 }
@@ -225,12 +238,13 @@ namespace PetvetPOS_Inventory_System
                     row["Quantity"] = quantity;
                     row["Price"] = productTransaction.GroupPrice;
                     dt.Rows.Add(row);
+                    lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, quantity, productTransaction.GroupPrice);
+                    success = true;
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
-                lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, quantity, productTransaction.GroupPrice);
             }
             else
             {
@@ -240,8 +254,22 @@ namespace PetvetPOS_Inventory_System
                     {
                         if (row.Cells[DESCRIPTION_INDEX].Value.ToString() == productTransaction.product.Description)
                         {
+<<<<<<< HEAD
                             row.Cells[QTY_INDEX].Value = sum_of_qty;
                             row.Cells[PRICE_INDEX].Value = sum_of_price;
+=======
+                            int stock = dbController.getCurrentStockCountFromBarCode(currentProduct);
+                            if (stock >= sum_of_qty){
+                                row.Cells[QTY_INDEX].Value = sum_of_qty;
+                                row.Cells[PRICE_INDEX].Value = sum_of_price;
+                                lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, sum_of_qty, sum_of_price);
+                                success = true;
+                            }
+                            else
+                            {
+                                MessageBox.Show("Out of stock! " + stock + " left.");
+                            }
+>>>>>>> f089d3469397762b2474cc7fe6ad8ddb3d23916a
                             break;
                         }
                     }
@@ -250,10 +278,15 @@ namespace PetvetPOS_Inventory_System
                 {
 
                 }
-                lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, sum_of_qty, sum_of_price);
             }
 
+<<<<<<< HEAD
             totalAmount += productTransaction.GroupPrice;
+=======
+            if (success)
+                totalAmount += productTransaction.GroupPrice;
+
+>>>>>>> f089d3469397762b2474cc7fe6ad8ddb3d23916a
             poSlbl2.Text = totalAmount.ToString();
             txtEncode.Clear();
             txtQuantity.Clear();
@@ -295,10 +328,11 @@ namespace PetvetPOS_Inventory_System
             carts.Clear();
             clearDataGrid();
             resetServices();
-
+          
             concludeTransaction = false;
             poSlbl2.Text = "0";
             lblPOSmsg.Text = "No current transaction";
+            MyExtension.Validation.clearFields(panel1);
         }
 
         private void settle()

@@ -109,6 +109,10 @@
             this.panel6.Padding = new System.Windows.Forms.Padding(10);
             this.panel6.Size = new System.Drawing.Size(877, 400);
             this.panel6.TabIndex = 3;
+<<<<<<< HEAD
+=======
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+>>>>>>> f089d3469397762b2474cc7fe6ad8ddb3d23916a
             // 
             // dgTransaction
             // 

@@ -345,8 +345,9 @@ namespace PetvetPOS_Inventory_System
                     Document = receipt,
                 };
 
-                preview.ShowDialog(this);
-                preview.SetDesktopLocation(masterController.getFrmMain.Width - preview.Width, preview.DesktopLocation.Y);
+                receipt.Print();
+             //   preview.ShowDialog(this);
+             //   preview.SetDesktopLocation(masterController.getFrmMain.Width - preview.Width, preview.DesktopLocation.Y);
             }
         }
 
@@ -475,7 +476,7 @@ namespace PetvetPOS_Inventory_System
                 g.DrawString(countItems, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
                 Y += (int)stringSize.Height + yIncrement;
 
-                string orderNo = String.Format("ORDER #{0}", lblPOSmsg.Text);
+                string orderNo = String.Format("ORDER # {0} ", txtEncode.Text);
                 g.DrawString(orderNo, font, Brushes.Black, new PointF(10, Y));
                 Y += 30;                
 
@@ -560,5 +561,13 @@ namespace PetvetPOS_Inventory_System
 
          }
 
+<<<<<<< HEAD
+=======
+         private void panel6_Paint(object sender, PaintEventArgs e)
+         {
+
+         }
+
+>>>>>>> f089d3469397762b2474cc7fe6ad8ddb3d23916a
     }
 }
