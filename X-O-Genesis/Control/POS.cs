@@ -181,28 +181,32 @@ namespace PetvetPOS_Inventory_System
             if (int.TryParse(txtEncode.Text, out invoice_no))
             {
                 Invoice invoice = new Invoice() { InvoiceId = invoice_no };
-                lblPOSmsg.Text = "PV-" + invoice.InvoiceId.ToString("00000");
-                carts = dbController.getListOfProductInvoice(invoice);
-                int quantity = carts.Count;
-                dt.Clear();
 
-                foreach (ProductInvoice productInvoice in carts)
+                ProductInvoice pI = new ProductInvoice() { invoice = invoice };
+                if (!dbController.checkIfAlreadyConsumed(pI))
                 {
-                    currentProduct = dbController.getProductFromBarcode(productInvoice.product.Barcode);
-                    sum_of_qty += productInvoice.QuantitySold;
-                    sum_of_price += productInvoice.GroupPrice;
-                    addRowInDatagrid(productInvoice);
+                    lblPOSmsg.Text = "PV-" + invoice.InvoiceId.ToString("00000");
+                    carts = dbController.getListOfProductInvoice(invoice);
+                    int quantity = carts.Count;
+                    dt.Clear();
+
+                    foreach (ProductInvoice productInvoice in carts)
+                    {
+                        currentProduct = dbController.getProductFromBarcode(productInvoice.product.Barcode);
+                        sum_of_qty += productInvoice.QuantitySold;
+                        sum_of_price += productInvoice.GroupPrice;
+                        addRowInDatagrid(productInvoice);
+                    }
+
+                    poSlbl2.Text = sum_of_price.ToString("N");
+                    totalAmount = sum_of_price;
+                    success = true;
                 }
-
-                poSlbl2.Text = sum_of_price.ToString("N");
-                totalAmount = sum_of_price;
-                success = true;
+                else
+                {
+                    MessageBox.Show("Invoice transaction was already used or do not exist.");
+                }
             }
-            else
-            {
-                lblPOSmsg.Text = "Invoice not found";
-            }
-
             txtEncode.Clear();
             return success;
         }
@@ -304,6 +308,7 @@ namespace PetvetPOS_Inventory_System
                 Product product = dbController.getProductFromBarcode(item.product.Barcode);
                 dbController.pullInventory(inventory);
                 dbController.checkProductCriticalLevel(product);
+                dbController.consumeProductInvoice(item);
         	}
 
             // audit 

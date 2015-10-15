@@ -137,6 +137,11 @@ namespace PetvetPOS_Inventory_System
             
         }
 
+        public bool consumeProductInvoice(ProductInvoice productInvoice)
+        {
+            return productInvoiceMapper.consumeProductInvoice(productInvoice);
+        }
+
         void worker_DoWork(object sender, System.ComponentModel.DoWorkEventArgs e)
         {
             Employee employee = e.Argument as Employee;
@@ -532,7 +537,7 @@ namespace PetvetPOS_Inventory_System
         {
             string condition = String.Format(
                 " Name LIKE '%{0}%' OR Barcode LIKE '%{0}%' " +
-                " OR Category LIKE '%{0}%'", token
+                " OR Category LIKE '%{0}%' OR Supplier LIKE '%{0}%'", token
                 );
 
             return productInventory.loadTable(dt, condition);
@@ -572,7 +577,7 @@ namespace PetvetPOS_Inventory_System
         }
         public DataTable readPurchasedProduct(DataTable dt)
         {
-            return purchasedProductMapper.loadTable(dt, "Qty_sold > 0");
+            return purchasedProductMapper.loadTable(dt, "quantity > 0");
         }
 
         public int getTransactionId(Invoice transaction)
@@ -726,6 +731,11 @@ namespace PetvetPOS_Inventory_System
         public List<ProductInvoice> getListOfProductInvoice(Invoice invoice)
         {
             return productInvoiceMapper.getListOfProductInvoice(invoice);
+        }
+
+        public bool checkIfAlreadyConsumed(ProductInvoice productInvoice)
+        {
+            return productInvoiceMapper.checkIfAlreadyConsumed(productInvoice);
         }
     }
 }

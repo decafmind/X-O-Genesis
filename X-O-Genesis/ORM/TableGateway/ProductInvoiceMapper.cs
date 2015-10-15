@@ -47,6 +47,22 @@ namespace PetvetPOS_Inventory_System
             return getList("invoice_id", string.Format("invoice_id = {0}", invoice.InvoiceId));
         }
 
+        public bool consumeProductInvoice(ProductInvoice productInvoice)
+        {
+            string condition = string.Format("invoice_id = {0}", productInvoice.invoice.InvoiceId);
+            return update(updateSet(condition, "consumed = 1"));
+        }
+
+        public bool checkIfAlreadyConsumed(ProductInvoice productInvoice)
+        {
+            object foo = readScalar("id", string.Format("invoice_id = {0} AND consumed= 1", productInvoice.invoice.InvoiceId));
+            if (foo != null)
+                return true;
+            else
+                return false;
+        }
+
+
         public List<ProductInvoice> getListOfProductInvoice(Invoice invoice)
         {
             List<ProductInvoice> productInvoices = new List<ProductInvoice>();

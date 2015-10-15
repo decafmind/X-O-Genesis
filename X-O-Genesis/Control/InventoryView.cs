@@ -84,8 +84,6 @@ namespace PetvetPOS_Inventory_System
         {
             tabPage1.Select();
             txtSearch.Enabled = false;
-           // sliderPane.hide();
-            //productPaneScroll.switchOff();
 
             fillgdInventory();
 
@@ -383,7 +381,8 @@ namespace PetvetPOS_Inventory_System
             }
             else
             {
-                sliderPane.hide();
+                if (sliderPane.isOpen())
+                    sliderPane.hide();
                 txtSearch.Enabled = true;
             }
         }
