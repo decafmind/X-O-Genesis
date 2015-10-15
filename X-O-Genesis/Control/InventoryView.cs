@@ -388,14 +388,13 @@ namespace PetvetPOS_Inventory_System
         void addProduct()
         {
             sliderPane.mode = InventoryMode.ADD;
+            sliderPane.clearTexts();
 
             if (txtSearch.Enabled)
                 toogleSearch();
 
             if (!sliderPane.isOpen())
                 sliderPane.toggle();
-
-            sliderPane.clearTexts();
         }
 
         private void txtSearch_EnabledChanged_1(object sender, EventArgs e)

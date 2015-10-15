@@ -30,6 +30,12 @@ namespace MyExtension
                         return false;
                     }
                 }
+                else if (cn is ComboBox)
+                {
+                    ComboBox cb = (ComboBox)cn;
+                    if (string.IsNullOrWhiteSpace(cb.Text))
+                        return false;
+                }
             }
 
             return true;
@@ -43,6 +49,11 @@ namespace MyExtension
                 {
                     TextBox txt = (TextBox)cn;
                     txt.Clear();
+                }
+                else if (cn is ComboBox)
+                {
+                    ComboBox cb = (ComboBox)cn;
+                    cb.Items.Clear();
                 }
             }
 

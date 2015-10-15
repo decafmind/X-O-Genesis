@@ -42,9 +42,14 @@ namespace PetvetPOS_Inventory_System
         /// <returns> object of single data </returns>
         protected object readScalar(string fieldname, string condition)
         {
-            selectQuery = String.Format("SELECT {0} FROM {1} ", fieldname, tableName);
-            selectQuery += String.Format("WHERE {0}", condition);
-            return getScalarValue(selectQuery);
+            try
+            {
+                selectQuery = String.Format("SELECT {0} FROM {1} ", fieldname, tableName);
+                selectQuery += String.Format("WHERE {0}", condition);
+                return getScalarValue(selectQuery);
+            }catch(Exception){
+                return 0;
+            }
         }
 
         /// <summary>

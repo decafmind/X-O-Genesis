@@ -1,4 +1,5 @@
 ﻿using System;
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,7 @@ namespace PetvetPOS_Inventory_System
                 "specification",
                 "warranty",
                 "replacement",
+                "category_id",
             };
         }
 
@@ -65,7 +67,8 @@ namespace PetvetPOS_Inventory_System
                 product.UnitPrice,
                 product.Specification,
                 product.Warranty,
-                product.Replacement
+                product.Replacement,
+                product.Category_id
                 );
         }
 
@@ -93,8 +96,8 @@ namespace PetvetPOS_Inventory_System
                 unitPrice = string.Format("unit_price = {0}", updatedProduct.UnitPrice);
             if (origProduct.Company != updatedProduct.Company)
                 manufacturer = string.Format("source_company_name = '{0}'", updatedProduct.Company);
-            if (origProduct.Category != updatedProduct.Category)
-                category = string.Format("category_id = '{0}'", updatedProduct.Category);
+            if (origProduct.Category_id != updatedProduct.Category_id)
+                category = string.Format("category_id = {0}", updatedProduct.Category_id);
             if (origProduct.Specification != updatedProduct.Specification)
                 specs = string.Format("specification = '{0}'", updatedProduct.Specification);
             if (origProduct.Warranty != updatedProduct.Warranty)

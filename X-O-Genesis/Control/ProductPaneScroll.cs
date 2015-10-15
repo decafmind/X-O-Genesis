@@ -47,7 +47,7 @@ namespace PetvetPOS_Inventory_System
             txtBarcode.Text = product.Barcode;
             txtDescription.Text = product.Description;
             txtPrice.Text = product.UnitPrice.ToString();
-            cmbCategory.Text = product.Category;
+            //cmbCategory.Text = product.Category;
         }
 
         public void toggleInsert()
@@ -123,8 +123,7 @@ namespace PetvetPOS_Inventory_System
                     Barcode = txtBarcode.Text,
                     Description = txtDescription.Text,
                     UnitPrice = Convert.ToDecimal(txtPrice.Text),
-                    Category = cmbCategory.Text,
-                    Company = txtCompany.Text
+                    //Company = txtCompany.Text
                 };
                 dbController.insertProductInsideInventory(inventory, product);
             }
@@ -162,8 +161,7 @@ namespace PetvetPOS_Inventory_System
                 Barcode = txtBarcode.Text,
                 Description = txtDescription.Text,
                 UnitPrice = Convert.ToDecimal(txtPrice.Text),
-                Category = cmbCategory.Text,
-                Company = txtCompany.Text
+                //Company = txtCompany.Text
             };
 
            
@@ -195,8 +193,8 @@ namespace PetvetPOS_Inventory_System
                 if(checkIfProductAlreadyExists(txtBarcode.Text)){
                     txtDescription.Text = product.Description;
                     txtPrice.Text = product.UnitPrice.ToString();
-                    cmbCategory.Text = product.Category;
-                    txtCompany.Text = product.Company;
+                    //cmbCategory.Text = product.Category;
+                    //txtCompany.Text = product.Company;
                 }
             }
         }
