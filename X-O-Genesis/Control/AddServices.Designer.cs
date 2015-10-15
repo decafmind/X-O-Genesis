@@ -317,6 +317,7 @@
             this.txtQty.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtQty.Font = new System.Drawing.Font("Times New Roman", 12F);
             this.txtQty.Location = new System.Drawing.Point(68, 5);
+            this.txtQty.MaxLength = 7;
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(57, 26);
             this.txtQty.TabIndex = 4;

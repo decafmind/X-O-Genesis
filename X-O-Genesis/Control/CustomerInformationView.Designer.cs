@@ -136,9 +136,11 @@
             // txtUpdateOtherContacts
             // 
             this.txtUpdateOtherContacts.Location = new System.Drawing.Point(17, 280);
+            this.txtUpdateOtherContacts.MaxLength = 13;
             this.txtUpdateOtherContacts.Name = "txtUpdateOtherContacts";
             this.txtUpdateOtherContacts.Size = new System.Drawing.Size(248, 20);
             this.txtUpdateOtherContacts.TabIndex = 48;
+            this.txtUpdateOtherContacts.TextChanged += new System.EventHandler(this.filterContacts);
             // 
             // label14
             // 
@@ -152,9 +154,11 @@
             // txtUpdateMobile
             // 
             this.txtUpdateMobile.Location = new System.Drawing.Point(17, 195);
+            this.txtUpdateMobile.MaxLength = 13;
             this.txtUpdateMobile.Name = "txtUpdateMobile";
             this.txtUpdateMobile.Size = new System.Drawing.Size(248, 20);
             this.txtUpdateMobile.TabIndex = 46;
+            this.txtUpdateMobile.TextChanged += new System.EventHandler(this.filterContacts);
             // 
             // label13
             // 
@@ -232,10 +236,12 @@
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(149, 20);
             this.txtEmail.TabIndex = 41;
+            this.txtEmail.TextChanged += new System.EventHandler(this.filterEmail);
             // 
             // txtMobile
             // 
             this.txtMobile.Location = new System.Drawing.Point(130, 320);
+            this.txtMobile.MaxLength = 13;
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(149, 20);
             this.txtMobile.TabIndex = 40;
@@ -244,6 +250,7 @@
             // txtLandline
             // 
             this.txtLandline.Location = new System.Drawing.Point(392, 320);
+            this.txtLandline.MaxLength = 13;
             this.txtLandline.Name = "txtLandline";
             this.txtLandline.Size = new System.Drawing.Size(149, 20);
             this.txtLandline.TabIndex = 39;
@@ -255,6 +262,7 @@
             this.txtAdd2.Name = "txtAdd2";
             this.txtAdd2.Size = new System.Drawing.Size(411, 20);
             this.txtAdd2.TabIndex = 38;
+            this.txtAdd2.TextChanged += new System.EventHandler(this.filterParagraph);
             // 
             // txtAdd1
             // 
@@ -262,6 +270,7 @@
             this.txtAdd1.Name = "txtAdd1";
             this.txtAdd1.Size = new System.Drawing.Size(411, 20);
             this.txtAdd1.TabIndex = 37;
+            this.txtAdd1.TextChanged += new System.EventHandler(this.filterParagraph);
             // 
             // txtMname
             // 
@@ -269,6 +278,7 @@
             this.txtMname.Name = "txtMname";
             this.txtMname.Size = new System.Drawing.Size(149, 20);
             this.txtMname.TabIndex = 36;
+            this.txtMname.TextChanged += new System.EventHandler(this.filterNames);
             // 
             // txtFname
             // 
@@ -276,6 +286,7 @@
             this.txtFname.Name = "txtFname";
             this.txtFname.Size = new System.Drawing.Size(149, 20);
             this.txtFname.TabIndex = 35;
+            this.txtFname.TextChanged += new System.EventHandler(this.filterNames);
             // 
             // txtLname
             // 
@@ -283,6 +294,7 @@
             this.txtLname.Name = "txtLname";
             this.txtLname.Size = new System.Drawing.Size(149, 20);
             this.txtLname.TabIndex = 34;
+            this.txtLname.TextChanged += new System.EventHandler(this.filterNames);
             // 
             // label9
             // 
@@ -435,7 +447,7 @@
             this.txtClientName.Name = "txtClientName";
             this.txtClientName.Size = new System.Drawing.Size(531, 20);
             this.txtClientName.TabIndex = 44;
-            this.txtClientName.TextChanged += new System.EventHandler(this.txtClientName_TextChanged);
+            this.txtClientName.TextChanged += new System.EventHandler(this.filterNames);
             // 
             // label11
             // 

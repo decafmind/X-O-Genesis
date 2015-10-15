@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Printing;
 using System.Threading;
+using MyExtension;
 
 namespace PetvetPOS_Inventory_System
 {
@@ -561,13 +562,34 @@ namespace PetvetPOS_Inventory_System
 
          }
 
-<<<<<<< HEAD
-=======
          private void panel6_Paint(object sender, PaintEventArgs e)
          {
 
          }
+         private void filterNames(object sender, EventArgs e)
+         {
+             Validation.filterToNames(sender as TextBox);
+         }
+         private void filterContacts(object sender, EventArgs e)
+         {
+             Validation.filterToContactNo(sender as TextBox);
+         }
+         private void filterEmail(object sender, EventArgs e)
+         {
+             Validation.filterToEmail(sender as TextBox);
+         }
+         private void filterParagraph(object sender, EventArgs e)
+         {
+             Validation.filterToParagraph(sender as TextBox);
+         }
+         private void filterAplhaNumeric(object sender, EventArgs e)
+         {
+             Validation.filterToAlphaNumeric(sender as TextBox);
+         }
+         private void filterNumeric(object sender, EventArgs e)
+         {
+             Validation.filterToNumeric(sender as TextBox);
+         }
 
->>>>>>> f089d3469397762b2474cc7fe6ad8ddb3d23916a
     }
 }

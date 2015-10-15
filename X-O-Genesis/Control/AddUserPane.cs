@@ -323,5 +323,22 @@ namespace PetvetPOS_Inventory_System
             frmWebCam webCam = new frmWebCam(this);
             webCam.Show();
         }
+
+        private void filterNames(object sender, EventArgs e)
+        {
+            Validation.filterToNames(sender as TextBox);
+        }
+        private void filterContacts(object sender, EventArgs e)
+        {
+            Validation.filterToContactNo(sender as TextBox);
+        }
+        private void filterEmail(object sender, EventArgs e)
+        {
+            Validation.filterToEmail(sender as TextBox);
+        }
+        private void filterParagraph(object sender, EventArgs e)
+        {
+            Validation.filterToParagraph(sender as TextBox);
+        }
     }
 }

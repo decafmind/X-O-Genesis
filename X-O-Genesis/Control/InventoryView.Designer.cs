@@ -271,11 +271,12 @@
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSearch.Enabled = false;
             this.txtSearch.Location = new System.Drawing.Point(236, 23);
+            this.txtSearch.MaxLength = 25;
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(225, 26);
             this.txtSearch.TabIndex = 0;
             this.txtSearch.EnabledChanged += new System.EventHandler(this.txtSearch_EnabledChanged_1);
-            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
+            this.txtSearch.TextChanged += new System.EventHandler(this.filterAlphaNumeric);
             // 
             // textBox1
             // 
@@ -860,11 +861,12 @@
             this.txtTransactionno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtTransactionno.Enabled = false;
             this.txtTransactionno.Location = new System.Drawing.Point(268, 22);
+            this.txtTransactionno.MaxLength = 10;
             this.txtTransactionno.Name = "txtTransactionno";
             this.txtTransactionno.Size = new System.Drawing.Size(153, 26);
             this.txtTransactionno.TabIndex = 1;
             this.txtTransactionno.EnabledChanged += new System.EventHandler(this.txtTransactionno_EnabledChanged);
-            this.txtTransactionno.TextChanged += new System.EventHandler(this.txtTransactionno_TextChanged);
+            this.txtTransactionno.TextChanged += new System.EventHandler(this.filterAlphaNumeric);
             this.txtTransactionno.Enter += new System.EventHandler(this.txtTransactionno_Enter);
             // 
             // keyButton5

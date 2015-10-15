@@ -31,16 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddUserPane));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.button1 = new System.Windows.Forms.Button();
+            this.upload = new System.Windows.Forms.Button();
+            this.vUsername = new PetvetPOS_Inventory_System.ValidationMarks();
+            this.vRepassword = new PetvetPOS_Inventory_System.ValidationMarks();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.txtTelno = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.lblAsterisk3 = new System.Windows.Forms.Label();
             this.lblAsterisk2 = new System.Windows.Forms.Label();
             this.lblAsterisk1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.upload = new System.Windows.Forms.Button();
             this.txtFirstname = new System.Windows.Forms.TextBox();
             this.txtMiddlename = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -63,49 +65,9 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblPassword = new System.Windows.Forms.Label();
-            this.vUsername = new PetvetPOS_Inventory_System.ValidationMarks();
-            this.vRepassword = new PetvetPOS_Inventory_System.ValidationMarks();
             ((System.ComponentModel.ISupportInitialize)(this.imageUser)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(182, 192);
-            this.textBox2.MaxLength = 13;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(216, 26);
-            this.textBox2.TabIndex = 129;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(34, 195);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(144, 19);
-            this.label7.TabIndex = 128;
-            this.label7.Text = "EMAIL ADDRESS:";
-            // 
-            // txtTelno
-            // 
-            this.txtTelno.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelno.Location = new System.Drawing.Point(345, 152);
-            this.txtTelno.MaxLength = 13;
-            this.txtTelno.Name = "txtTelno";
-            this.txtTelno.Size = new System.Drawing.Size(118, 26);
-            this.txtTelno.TabIndex = 127;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(268, 156);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 19);
-            this.label4.TabIndex = 126;
-            this.label4.Text = "TEL NO:";
             // 
             // button1
             // 
@@ -123,6 +85,85 @@
             this.toolTip1.SetToolTip(this.button1, "Take picture from webcam");
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // upload
+            // 
+            this.upload.BackColor = System.Drawing.Color.White;
+            this.upload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("upload.BackgroundImage")));
+            this.upload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.upload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.upload.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.upload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.upload.Location = new System.Drawing.Point(363, 119);
+            this.upload.Name = "upload";
+            this.upload.Size = new System.Drawing.Size(47, 23);
+            this.upload.TabIndex = 111;
+            this.upload.TabStop = false;
+            this.toolTip1.SetToolTip(this.upload, "Upload from files");
+            this.upload.UseVisualStyleBackColor = false;
+            this.upload.Click += new System.EventHandler(this.upload_Click_1);
+            // 
+            // vUsername
+            // 
+            this.vUsername.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("vUsername.BackgroundImage")));
+            this.vUsername.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.vUsername.Location = new System.Drawing.Point(404, 307);
+            this.vUsername.Name = "vUsername";
+            this.vUsername.Size = new System.Drawing.Size(33, 24);
+            this.vUsername.TabIndex = 124;
+            this.toolTip1.SetToolTip(this.vUsername, "username already exists");
+            this.vUsername.Visible = false;
+            // 
+            // vRepassword
+            // 
+            this.vRepassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("vRepassword.BackgroundImage")));
+            this.vRepassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.vRepassword.Location = new System.Drawing.Point(405, 372);
+            this.vRepassword.Name = "vRepassword";
+            this.vRepassword.Size = new System.Drawing.Size(33, 24);
+            this.vRepassword.TabIndex = 122;
+            this.toolTip1.SetToolTip(this.vRepassword, "Password doesn\'t match");
+            this.vRepassword.Visible = false;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(182, 192);
+            this.textBox2.MaxLength = 13;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(216, 26);
+            this.textBox2.TabIndex = 129;
+            this.textBox2.TextChanged += new System.EventHandler(this.filterEmail);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(34, 195);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(144, 19);
+            this.label7.TabIndex = 128;
+            this.label7.Text = "EMAIL ADDRESS:";
+            // 
+            // txtTelno
+            // 
+            this.txtTelno.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelno.Location = new System.Drawing.Point(345, 152);
+            this.txtTelno.MaxLength = 7;
+            this.txtTelno.Name = "txtTelno";
+            this.txtTelno.Size = new System.Drawing.Size(118, 26);
+            this.txtTelno.TabIndex = 127;
+            this.txtTelno.TextChanged += new System.EventHandler(this.filterContacts);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(268, 156);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(71, 19);
+            this.label4.TabIndex = 126;
+            this.label4.Text = "TEL NO:";
             // 
             // lblAsterisk3
             // 
@@ -167,23 +208,6 @@
             this.label3.TabIndex = 116;
             this.label3.Text = "LAST NAME";
             // 
-            // upload
-            // 
-            this.upload.BackColor = System.Drawing.Color.White;
-            this.upload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("upload.BackgroundImage")));
-            this.upload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.upload.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.upload.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.upload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.upload.Location = new System.Drawing.Point(363, 119);
-            this.upload.Name = "upload";
-            this.upload.Size = new System.Drawing.Size(47, 23);
-            this.upload.TabIndex = 111;
-            this.upload.TabStop = false;
-            this.toolTip1.SetToolTip(this.upload, "Upload from files");
-            this.upload.UseVisualStyleBackColor = false;
-            this.upload.Click += new System.EventHandler(this.upload_Click_1);
-            // 
             // txtFirstname
             // 
             this.txtFirstname.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -192,7 +216,7 @@
             this.txtFirstname.Name = "txtFirstname";
             this.txtFirstname.Size = new System.Drawing.Size(117, 29);
             this.txtFirstname.TabIndex = 112;
-            this.txtFirstname.TextChanged += new System.EventHandler(this.textboxes_TextChanged);
+            this.txtFirstname.TextChanged += new System.EventHandler(this.filterNames);
             // 
             // txtMiddlename
             // 
@@ -202,7 +226,7 @@
             this.txtMiddlename.Name = "txtMiddlename";
             this.txtMiddlename.Size = new System.Drawing.Size(79, 29);
             this.txtMiddlename.TabIndex = 113;
-            this.txtMiddlename.TextChanged += new System.EventHandler(this.textboxes_TextChanged);
+            this.txtMiddlename.TextChanged += new System.EventHandler(this.filterNames);
             // 
             // label2
             // 
@@ -243,7 +267,7 @@
             this.txtLastname.Name = "txtLastname";
             this.txtLastname.Size = new System.Drawing.Size(116, 29);
             this.txtLastname.TabIndex = 114;
-            this.txtLastname.TextChanged += new System.EventHandler(this.textboxes_TextChanged);
+            this.txtLastname.TextChanged += new System.EventHandler(this.filterNames);
             // 
             // domainPosition
             // 
@@ -287,7 +311,7 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(216, 64);
             this.txtAddress.TabIndex = 13;
-            this.txtAddress.TextChanged += new System.EventHandler(this.textboxes_TextChanged);
+            this.txtAddress.TextChanged += new System.EventHandler(this.filterParagraph);
             // 
             // label9
             // 
@@ -371,7 +395,7 @@
             this.txtMobno.Name = "txtMobno";
             this.txtMobno.Size = new System.Drawing.Size(118, 26);
             this.txtMobno.TabIndex = 12;
-            this.txtMobno.TextChanged += new System.EventHandler(this.textboxes_TextChanged);
+            this.txtMobno.TextChanged += new System.EventHandler(this.filterContacts);
             // 
             // label8
             // 
@@ -413,28 +437,6 @@
             this.lblPassword.Size = new System.Drawing.Size(102, 19);
             this.lblPassword.TabIndex = 106;
             this.lblPassword.Text = "PASSWORD:";
-            // 
-            // vUsername
-            // 
-            this.vUsername.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("vUsername.BackgroundImage")));
-            this.vUsername.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.vUsername.Location = new System.Drawing.Point(404, 307);
-            this.vUsername.Name = "vUsername";
-            this.vUsername.Size = new System.Drawing.Size(33, 24);
-            this.vUsername.TabIndex = 124;
-            this.toolTip1.SetToolTip(this.vUsername, "username already exists");
-            this.vUsername.Visible = false;
-            // 
-            // vRepassword
-            // 
-            this.vRepassword.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("vRepassword.BackgroundImage")));
-            this.vRepassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.vRepassword.Location = new System.Drawing.Point(405, 372);
-            this.vRepassword.Name = "vRepassword";
-            this.vRepassword.Size = new System.Drawing.Size(33, 24);
-            this.vRepassword.TabIndex = 122;
-            this.toolTip1.SetToolTip(this.vRepassword, "Password doesn\'t match");
-            this.vRepassword.Visible = false;
             // 
             // AddUserPane
             // 

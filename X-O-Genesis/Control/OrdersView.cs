@@ -9,6 +9,7 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Printing;
+using MyExtension;
 
 namespace PetvetPOS_Inventory_System
 {
@@ -159,10 +160,6 @@ namespace PetvetPOS_Inventory_System
             else
                 quantity = int.Parse(txtQuantity.Text);
 
-<<<<<<< HEAD
-
-=======
->>>>>>> f089d3469397762b2474cc7fe6ad8ddb3d23916a
             currentProduct = dbController.getProductFromBarcode(barcode);
             int stock = dbController.getCurrentStockCountFromBarCode(currentProduct);
             if (stock >= quantity)
@@ -170,11 +167,8 @@ namespace PetvetPOS_Inventory_System
                 if (!string.IsNullOrWhiteSpace(currentProduct.Barcode))
                 {
                     Decimal totalPrice = currentProduct.UnitPrice * quantity;
-<<<<<<< HEAD
                     lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, quantity, totalPrice);
-=======
              //       lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, quantity, totalPrice);
->>>>>>> f089d3469397762b2474cc7fe6ad8ddb3d23916a
                     success = true;
                     addRowInDatagrid(quantity);
                 }
@@ -254,10 +248,8 @@ namespace PetvetPOS_Inventory_System
                     {
                         if (row.Cells[DESCRIPTION_INDEX].Value.ToString() == productTransaction.product.Description)
                         {
-<<<<<<< HEAD
                             row.Cells[QTY_INDEX].Value = sum_of_qty;
                             row.Cells[PRICE_INDEX].Value = sum_of_price;
-=======
                             int stock = dbController.getCurrentStockCountFromBarCode(currentProduct);
                             if (stock >= sum_of_qty){
                                 row.Cells[QTY_INDEX].Value = sum_of_qty;
@@ -269,7 +261,6 @@ namespace PetvetPOS_Inventory_System
                             {
                                 MessageBox.Show("Out of stock! " + stock + " left.");
                             }
->>>>>>> f089d3469397762b2474cc7fe6ad8ddb3d23916a
                             break;
                         }
                     }
@@ -280,13 +271,10 @@ namespace PetvetPOS_Inventory_System
                 }
             }
 
-<<<<<<< HEAD
             totalAmount += productTransaction.GroupPrice;
-=======
             if (success)
                 totalAmount += productTransaction.GroupPrice;
 
->>>>>>> f089d3469397762b2474cc7fe6ad8ddb3d23916a
             poSlbl2.Text = totalAmount.ToString();
             txtEncode.Clear();
             txtQuantity.Clear();
@@ -328,8 +316,9 @@ namespace PetvetPOS_Inventory_System
             carts.Clear();
             clearDataGrid();
             resetServices();
-          
+
             concludeTransaction = false;
+            txtQuantity.Text = "1";
             poSlbl2.Text = "0";
             lblPOSmsg.Text = "No current transaction";
             MyExtension.Validation.clearFields(panel1);
@@ -639,6 +628,29 @@ namespace PetvetPOS_Inventory_System
         {
             toggleEncoding(true);
         }
-
+        private void filterNames(object sender, EventArgs e)
+        {
+            Validation.filterToNames(sender as TextBox);
+        }
+        private void filterContacts(object sender, EventArgs e)
+        {
+            Validation.filterToContactNo(sender as TextBox);
+        }
+        private void filterEmail(object sender, EventArgs e)
+        {
+            Validation.filterToEmail(sender as TextBox);
+        }
+        private void filterParagraph(object sender, EventArgs e)
+        {
+            Validation.filterToParagraph(sender as TextBox);
+        }
+        private void filterAplhaNumeric(object sender, EventArgs e)
+        {
+            Validation.filterToAlphaNumeric(sender as TextBox);
+        }
+        private void filterNumeric(object sender, EventArgs e)
+        {
+            Validation.filterToNumeric(sender as TextBox);
+        }
     }
 }

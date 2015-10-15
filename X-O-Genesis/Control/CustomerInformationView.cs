@@ -81,17 +81,7 @@ namespace PetvetPOS_Inventory_System
 
         private void txtClientName_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtClientName.Text))
-                txtClientName.BackColor = SystemColors.loginDullYellow;
-            else
-            {
-                existingClientTable.Dispose();
-                dgExistingClients.DataSource = null;
-                txtClientName.BackColor = Color.White;
-            }
-    
 
-            search(txtClientName.Text);           
         }
 
         private void search(string token)
@@ -186,9 +176,32 @@ namespace PetvetPOS_Inventory_System
 
         private void textChanged_Numeric(object sender, EventArgs e)
         {
+            Validation.filterToContactNo(sender as TextBox);
+        }
+
+        private void filterNames(object sender, EventArgs e)
+        {
+            Validation.filterToNames(sender as TextBox);
+        }
+        private void filterContacts(object sender, EventArgs e)
+        {
+            Validation.filterToContactNo(sender as TextBox);
+        }
+        private void filterEmail(object sender, EventArgs e)
+        {
+            Validation.filterToEmail(sender as TextBox);
+        }
+        private void filterParagraph(object sender, EventArgs e)
+        {
+            Validation.filterToParagraph(sender as TextBox);
+        }
+        private void filterAlphabet(object sender, EventArgs e)
+        {
+            Validation.filterToAplha(sender as TextBox);
+        }
+        private void filterNumeric(object sender, EventArgs e)
+        {
             Validation.filterToNumeric(sender as TextBox);
         }
-      
-
     }
 }

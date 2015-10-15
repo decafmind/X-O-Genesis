@@ -59,9 +59,63 @@ namespace MyExtension
 
         }
 
-        public static void filterToNumeric(TextBox textbox)
+        public static void filterToContactNo(TextBox textbox)
         {
             string acceptedChar = "+1234567890";
+            string result = "";
+            foreach (char character in textbox.Text)
+                if (acceptedChar.Contains(character))
+                    result += character;
+            textbox.Text = result;
+        }
+        public static void filterToNumeric(TextBox textbox)
+        {
+            string acceptedChar = "1234567890";
+            string result = "";
+            foreach (char character in textbox.Text)
+                if (acceptedChar.Contains(character))
+                    result += character;
+            textbox.Text = result;
+        }
+        public static void filterToAplha(TextBox textbox)
+        {
+            string acceptedChar = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
+            string result = "";
+            foreach (char character in textbox.Text)
+                if (acceptedChar.Contains(character))
+                    result += character;
+            textbox.Text = result;
+        }
+        public static void filterToAlphaNumeric(TextBox textbox)
+        {
+            string acceptedChar = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            string result = "";
+            foreach (char character in textbox.Text)
+                if (acceptedChar.Contains(character))
+                    result += character;
+            textbox.Text = result;
+        }
+        public static void filterToParagraph(TextBox textbox)
+        {
+            string acceptedChar = ".,abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 ";
+            string result = "";
+            foreach (char character in textbox.Text)
+                if (acceptedChar.Contains(character))
+                    result += character;
+            textbox.Text = result;
+        }
+        public static void filterToEmail(TextBox textbox)
+        {
+            string acceptedChar = ".abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890@_";
+            string result = "";
+            foreach (char character in textbox.Text)
+                if (acceptedChar.Contains(character))
+                    result += character;
+            textbox.Text = result;
+        }
+        public static void filterToNames(TextBox textbox)
+        {
+            string acceptedChar = ".abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
             string result = "";
             foreach (char character in textbox.Text)
                 if (acceptedChar.Contains(character))

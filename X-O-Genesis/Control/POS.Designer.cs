@@ -109,10 +109,7 @@
             this.panel6.Padding = new System.Windows.Forms.Padding(10);
             this.panel6.Size = new System.Drawing.Size(877, 400);
             this.panel6.TabIndex = 3;
-<<<<<<< HEAD
-=======
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
->>>>>>> f089d3469397762b2474cc7fe6ad8ddb3d23916a
             // 
             // dgTransaction
             // 
@@ -322,7 +319,7 @@
             this.txtEncode.Size = new System.Drawing.Size(170, 26);
             this.txtEncode.TabIndex = 1;
             this.txtEncode.EnabledChanged += new System.EventHandler(this.txtEncode_EnabledChanged);
-            this.txtEncode.TextChanged += new System.EventHandler(this.textChanged);
+            this.txtEncode.TextChanged += new System.EventHandler(this.filterAplhaNumeric);
             this.txtEncode.Enter += new System.EventHandler(this.txtEncode_Enter);
             // 
             // btnEncode

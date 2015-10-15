@@ -609,12 +609,7 @@ namespace PetvetPOS_Inventory_System
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtSearch.Text))
-                txtSearch.BackColor = SystemColors.loginDullYellow;
-            else
-                txtSearch.BackColor = Color.White;
 
-            search(txtSearch.Text);
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -950,7 +945,28 @@ namespace PetvetPOS_Inventory_System
                 cellRectangle.Bottom + panel4.Top + (cellRectangle.Height * 2)
                 );
         }
+        private void filterNames(object sender, EventArgs e)
+        {
+            Validation.filterToNames(sender as TextBox);
+        }
+        private void filterContacts(object sender, EventArgs e)
+        {
+            Validation.filterToContactNo(sender as TextBox);
+        }
+        private void filterEmail(object sender, EventArgs e)
+        {
+            Validation.filterToEmail(sender as TextBox);
+        }
+        private void filterParagraph(object sender, EventArgs e)
+        {
+            Validation.filterToParagraph(sender as TextBox);
+        }
+        private void filterAlphaNumeric(object sender, EventArgs e)
+        {
+            Validation.filterToAlphaNumeric(sender as TextBox);
+        }
 
     }
+
 }
 
