@@ -22,6 +22,7 @@ namespace PetvetPOS_Inventory_System
                 "access_level",
                 "active",
                 "create_time",
+                "session_status",
             };
         }
 
@@ -76,5 +77,46 @@ namespace PetvetPOS_Inventory_System
             return null;
         }
 
+        public bool login(string user_id)
+        {
+            int login_state = 1;
+            string condition = string.Format("id = '{0}'", user_id);
+            string session_state = string.Format("session_status = {0}", login_state);
+            return update(updateSet(condition, session_state));
+        }
+
+
+        public bool isAlreadyLogin(User user)
+        {
+            string condition = string.Format("id = '{0}' && session_status = 1", user.UserId);
+            object foo = readScalar("session_status", condition);
+
+            if (foo != null)
+                return true;
+            else
+                return false;
+           
+            //UInt64 session_status = 0;
+            //if (foo is UInt64)
+            //{
+            //    session_status = foo;
+            //}
+            //if (foo is uint || 
+            //    foo is int || 
+            //    foo is Int32 || 
+            //    foo is Int64 ||
+            //    foo is UInt32 ||
+            //    foo is UInt64
+
+        }
+
+
+        public bool logout(string user_id)
+        {
+            int login_state = 0;
+            string condition = string.Format("id = '{0}'", user_id);
+            string session_state = string.Format("session_status = {0}", login_state);
+            return update(updateSet(condition, session_state));
+        }
     }
 }

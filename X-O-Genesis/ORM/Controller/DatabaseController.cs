@@ -115,6 +115,7 @@ namespace PetvetPOS_Inventory_System
         void masterController_EmployeeLogout(object sender, EventArgs e)
         {
             loginTrailMapper.insertTimeout(masterController.LoginEmployee);
+            userMapper.logout(masterController.LoginEmployee.User_id);
         }
 
         void masterController_EmployeeLogin(object sender, EmployeeArgs e)
@@ -140,6 +141,7 @@ namespace PetvetPOS_Inventory_System
         {
             Employee employee = e.Argument as Employee;
             loginTrailMapper.insertTimeIn(employee);
+            login(employee.User_id);
         }
 
         public bool insertAuditTrail(string action)
@@ -152,6 +154,15 @@ namespace PetvetPOS_Inventory_System
             return inventoryMapper.pullInventory(inventory);
         }
 
+        public bool login(string user_id)
+        {
+            return userMapper.login(user_id);
+        }
+
+        public bool isAlreadyLogin(User user)
+        {
+            return userMapper.isAlreadyLogin(user);
+        }
         /* This method will return an instance of User if 
          * user credentials exists in the database
          */
