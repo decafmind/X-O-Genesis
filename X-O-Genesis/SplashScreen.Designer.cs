@@ -33,10 +33,10 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lblTitle = new System.Windows.Forms.Label();
             this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -80,25 +80,15 @@
             this.shapeContainer1.TabIndex = 2;
             this.shapeContainer1.TabStop = false;
             // 
-            // lineShape1
+            // lineShape4
             // 
-            this.lineShape1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lineShape1.BorderWidth = 2;
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 1;
-            this.lineShape1.X2 = 599;
-            this.lineShape1.Y1 = 0;
-            this.lineShape1.Y2 = 0;
-            // 
-            // lineShape2
-            // 
-            this.lineShape2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lineShape2.BorderWidth = 2;
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 1;
-            this.lineShape2.X2 = 599;
-            this.lineShape2.Y1 = 305;
-            this.lineShape2.Y2 = 305;
+            this.lineShape4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lineShape4.BorderWidth = 2;
+            this.lineShape4.Name = "lineShape4";
+            this.lineShape4.X1 = 598;
+            this.lineShape4.X2 = 599;
+            this.lineShape4.Y1 = 1;
+            this.lineShape4.Y2 = 400;
             // 
             // lineShape3
             // 
@@ -110,15 +100,25 @@
             this.lineShape3.Y1 = 1;
             this.lineShape3.Y2 = 400;
             // 
-            // lineShape4
+            // lineShape2
             // 
-            this.lineShape4.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.lineShape4.BorderWidth = 2;
-            this.lineShape4.Name = "lineShape4";
-            this.lineShape4.X1 = 598;
-            this.lineShape4.X2 = 599;
-            this.lineShape4.Y1 = 1;
-            this.lineShape4.Y2 = 400;
+            this.lineShape2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lineShape2.BorderWidth = 2;
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 1;
+            this.lineShape2.X2 = 599;
+            this.lineShape2.Y1 = 305;
+            this.lineShape2.Y2 = 305;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.lineShape1.BorderWidth = 2;
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 1;
+            this.lineShape1.X2 = 599;
+            this.lineShape1.Y1 = 0;
+            this.lineShape1.Y2 = 0;
             // 
             // lblTitle
             // 
@@ -132,7 +132,7 @@
             // 
             // timer2
             // 
-            this.timer2.Interval = 50;
+            this.timer2.Interval = 75;
             this.timer2.Tick += new System.EventHandler(this.timer2_Tick);
             // 
             // SplashScreen
@@ -147,6 +147,7 @@
             this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "SplashScreen";
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SplashScreen";
             this.Load += new System.EventHandler(this.SplashScreen_Load);

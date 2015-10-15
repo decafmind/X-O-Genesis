@@ -95,19 +95,7 @@ namespace PetvetPOS_Inventory_System
                 return true;
             else
                 return false;
-           
-            //UInt64 session_status = 0;
-            //if (foo is UInt64)
-            //{
-            //    session_status = foo;
-            //}
-            //if (foo is uint || 
-            //    foo is int || 
-            //    foo is Int32 || 
-            //    foo is Int64 ||
-            //    foo is UInt32 ||
-            //    foo is UInt64
-
+       
         }
 
 
