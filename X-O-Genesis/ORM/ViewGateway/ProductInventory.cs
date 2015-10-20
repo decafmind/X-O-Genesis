@@ -43,11 +43,12 @@ namespace PetvetPOS_Inventory_System
             selectQuery = "SELECT Name, Qty_On_Hand AS 'Stock', Qty_Received AS 'Qty on Received' FROM inventory_view WHERE Qty_On_Hand <= (Qty_Received * .20)";
             return selectRows(dt, selectQuery);
         }
+
         public void checkProductCriticalLevel(Product product, MasterController masterController)
         {
             string condition = string.Format("Name = '{0}'", product.Description);
             decimal qty_received = (decimal)readScalar("Qty_Received", condition);
-            decimal qty_onhand = (decimal)readScalar("Qty_on_Hand", condition);
+            decimal qty_onhand = (decimal)readScalar("Qty_On_Hand", condition);
 
             if (qty_onhand <= (qty_received * .10M))
             {
@@ -57,6 +58,13 @@ namespace PetvetPOS_Inventory_System
                                             );
                 notif.Show();
             }
+        }
+
+        public decimal getStockQuantity(Product product)
+        {
+            string condition = string.Format("Name = '{0}'", product.Description);
+            decimal qty_onhand = (decimal)readScalar("Qty_On_Hand", condition);
+            return qty_onhand;
         }
     }
 }

@@ -104,7 +104,7 @@ namespace PetvetPOS_Inventory_System
         private void loginSequence(){
             timer1.Stop();
             
-            if (user != null){
+            if (user != null && !dbController.isAlreadyLogin(user)){
                 if (loginPane.isLock){
                     if (user.getUserLevel() == UserLevel.ADMIN)
                         authorizeLogin();

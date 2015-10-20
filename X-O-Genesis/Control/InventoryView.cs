@@ -46,7 +46,6 @@ namespace PetvetPOS_Inventory_System
             : base(masterController)
         {
             InitializeComponent();
-          //  productPaneScroll = new ProductPaneScroll(this, panel1, masterController);
 
             this.dbController = masterController.DataBaseController;
             sliderPane = productSliderPane1;
@@ -85,8 +84,6 @@ namespace PetvetPOS_Inventory_System
         {
             tabPage1.Select();
             txtSearch.Enabled = false;
-           // sliderPane.hide();
-            //productPaneScroll.switchOff();
 
             fillgdInventory();
 
@@ -207,6 +204,14 @@ namespace PetvetPOS_Inventory_System
                 colorCodedRows();
             else if (rbPurchased.Checked)
                 highlightQtySoldCells();
+
+            string product_name;
+            foreach (DataGridViewRow row in dgInventory.Rows)
+            {
+                product_name = (string)row.Cells[PRODUCT_NAME_INDEX].Value;
+                Product product = dbController.getProductThroughName(product_name);
+                dbController.checkProductCriticalLevel(product);
+            }
         }
 
         public void filterdgInventory(string token)
@@ -232,6 +237,7 @@ namespace PetvetPOS_Inventory_System
                 else if (rbPurchased.Checked)
                     highlightQtySoldCells();
             }
+
         }
 
         void colorCodedRows()
@@ -375,7 +381,8 @@ namespace PetvetPOS_Inventory_System
             }
             else
             {
-                sliderPane.hide();
+                if (sliderPane.isOpen())
+                    sliderPane.hide();
                 txtSearch.Enabled = true;
             }
         }
@@ -388,14 +395,13 @@ namespace PetvetPOS_Inventory_System
         void addProduct()
         {
             sliderPane.mode = InventoryMode.ADD;
+            sliderPane.clearTexts();
 
             if (txtSearch.Enabled)
                 toogleSearch();
 
             if (!sliderPane.isOpen())
                 sliderPane.toggle();
-
-            sliderPane.clearTexts();
         }
 
         private void txtSearch_EnabledChanged_1(object sender, EventArgs e)
@@ -602,12 +608,7 @@ namespace PetvetPOS_Inventory_System
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtSearch.Text))
-                txtSearch.BackColor = SystemColors.loginDullYellow;
-            else
-                txtSearch.BackColor = Color.White;
 
-            search(txtSearch.Text);
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -943,7 +944,28 @@ namespace PetvetPOS_Inventory_System
                 cellRectangle.Bottom + panel4.Top + (cellRectangle.Height * 2)
                 );
         }
+        private void filterNames(object sender, EventArgs e)
+        {
+            Validation.filterToNames(sender as TextBox);
+        }
+        private void filterContacts(object sender, EventArgs e)
+        {
+            Validation.filterToContactNo(sender as TextBox);
+        }
+        private void filterEmail(object sender, EventArgs e)
+        {
+            Validation.filterToEmail(sender as TextBox);
+        }
+        private void filterParagraph(object sender, EventArgs e)
+        {
+            Validation.filterToParagraph(sender as TextBox);
+        }
+        private void filterAlphaNumeric(object sender, EventArgs e)
+        {
+            Validation.filterToAlphaNumeric(sender as TextBox);
+        }
 
     }
+
 }
 

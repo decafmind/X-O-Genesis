@@ -75,19 +75,34 @@ namespace PetvetPOS_Inventory_System
             return null;
         }
 
-        public bool sessionIn(string id)
+        public bool login(string user_id)
         {
-            string login = String.Format(" session_status = 1");
-            string condition = String.Format(" id = '{0}'", id);
-            return update(updateSet(condition, login));
-        }
-        public bool sessionOut(string id)
-        {
-            string login = String.Format(" session_status = 0");
-            string condition = String.Format(" id = '{0}'", id);
-            return update(updateSet(login, condition));
+            int login_state = 1;
+            string condition = string.Format("id = '{0}'", user_id);
+            string session_state = string.Format("session_status = {0}", login_state);
+            return update(updateSet(condition, session_state));
         }
 
- 
+
+        public bool isAlreadyLogin(User user)
+        {
+            string condition = string.Format("id = '{0}' && session_status = 1", user.UserId);
+            object foo = readScalar("session_status", condition);
+
+            if (foo != null)
+                return true;
+            else
+                return false;
+       
+        }
+
+
+        public bool logout(string user_id)
+        {
+            int login_state = 0;
+            string condition = string.Format("id = '{0}'", user_id);
+            string session_state = string.Format("session_status = {0}", login_state);
+            return update(updateSet(condition, session_state));
+        }
     }
 }

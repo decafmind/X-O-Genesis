@@ -16,7 +16,7 @@ namespace PetvetPOS_Inventory_System
             fieldsname = new string[] {
                 "Name",
                 "Barcode",
-                "Qty_sold",
+                "quantity",
                 "unit_price",
                 "Sales",
                 "category",
@@ -26,7 +26,7 @@ namespace PetvetPOS_Inventory_System
             fieldsname_forselect = new string[] {
                 "Name",
                 "unit_price AS 'Price (Peso)'",
-                "Qty_sold AS 'Qty Sold'",
+                "quantity AS 'Qty Sold'",
                 "Sales AS' Subtotal (Peso)'",
             };
         }

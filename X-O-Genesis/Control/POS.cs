@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Printing;
 using System.Threading;
+using MyExtension;
 
 namespace PetvetPOS_Inventory_System
 {
@@ -180,28 +181,32 @@ namespace PetvetPOS_Inventory_System
             if (int.TryParse(txtEncode.Text, out invoice_no))
             {
                 Invoice invoice = new Invoice() { InvoiceId = invoice_no };
-                lblPOSmsg.Text = "PV-" + invoice.InvoiceId.ToString("00000");
-                carts = dbController.getListOfProductInvoice(invoice);
-                int quantity = carts.Count;
-                dt.Clear();
 
-                foreach (ProductInvoice productInvoice in carts)
+                ProductInvoice pI = new ProductInvoice() { invoice = invoice };
+                if (!dbController.checkIfAlreadyConsumed(pI))
                 {
-                    currentProduct = dbController.getProductFromBarcode(productInvoice.product.Barcode);
-                    sum_of_qty += productInvoice.QuantitySold;
-                    sum_of_price += productInvoice.GroupPrice;
-                    addRowInDatagrid(productInvoice);
+                    lblPOSmsg.Text = "PV-" + invoice.InvoiceId.ToString("00000");
+                    carts = dbController.getListOfProductInvoice(invoice);
+                    int quantity = carts.Count;
+                    dt.Clear();
+
+                    foreach (ProductInvoice productInvoice in carts)
+                    {
+                        currentProduct = dbController.getProductFromBarcode(productInvoice.product.Barcode);
+                        sum_of_qty += productInvoice.QuantitySold;
+                        sum_of_price += productInvoice.GroupPrice;
+                        addRowInDatagrid(productInvoice);
+                    }
+
+                    poSlbl2.Text = sum_of_price.ToString("N");
+                    totalAmount = sum_of_price;
+                    success = true;
                 }
-
-                poSlbl2.Text = sum_of_price.ToString("N");
-                totalAmount = sum_of_price;
-                success = true;
+                else
+                {
+                    MessageBox.Show("Invoice transaction was already used or do not exist.");
+                }
             }
-            else
-            {
-                lblPOSmsg.Text = "Invoice not found";
-            }
-
             txtEncode.Clear();
             return success;
         }
@@ -274,6 +279,7 @@ namespace PetvetPOS_Inventory_System
                     lblChange.Text = change.ToString("N");
 
                     concludeTransaction = true;
+                    conclusion();
                     paymentTimer.Start();
                     printReceipt();
                     txtPayment.Clear();
@@ -294,14 +300,15 @@ namespace PetvetPOS_Inventory_System
 
             Inventory inventory = null;
             foreach (ProductInvoice item in carts){
-                dbController.insertProductInvoice(item);
                 inventory = new Inventory(){
                     Barcode = item.product.Barcode,
                     QtyReceived = 0,
                     QtyOnHand = -item.QuantitySold,
                 };
+                Product product = dbController.getProductFromBarcode(item.product.Barcode);
                 dbController.pullInventory(inventory);
-                dbController.checkProductCriticalLevel(item.product);
+                dbController.checkProductCriticalLevel(product);
+                dbController.consumeProductInvoice(item);
         	}
 
             // audit 
@@ -344,8 +351,9 @@ namespace PetvetPOS_Inventory_System
                     Document = receipt,
                 };
 
-                preview.ShowDialog(this);
-                preview.SetDesktopLocation(masterController.getFrmMain.Width - preview.Width, preview.DesktopLocation.Y);
+                receipt.Print();
+             //   preview.ShowDialog(this);
+             //   preview.SetDesktopLocation(masterController.getFrmMain.Width - preview.Width, preview.DesktopLocation.Y);
             }
         }
 
@@ -403,7 +411,7 @@ namespace PetvetPOS_Inventory_System
             using(Font font = new Font("MS San Serif", 11 , FontStyle.Regular))
             using(Pen pen = new Pen(Brushes.Black, 1))
             {
-                string title = "Petvet Animal Health Clinic";
+                string title = "Guardtech";
                 string addressL1 = "2/F Nova Square Shopping Center,";
                 string addressL2 = "San Bartolome, Nova. QC";
                 int documentWidth = e.PageBounds.Width;
@@ -474,7 +482,7 @@ namespace PetvetPOS_Inventory_System
                 g.DrawString(countItems, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
                 Y += (int)stringSize.Height + yIncrement;
 
-                string orderNo = String.Format("ORDER #{0}", lblPOSmsg.Text);
+                string orderNo = String.Format("ORDER # {0} ", txtEncode.Text);
                 g.DrawString(orderNo, font, Brushes.Black, new PointF(10, Y));
                 Y += 30;                
 
@@ -554,24 +562,39 @@ namespace PetvetPOS_Inventory_System
             MyExtension.Validation.limitTextbox(txtPayment, charAllowed);
         }
 
-        private void parentPanel_Paint(object sender, PaintEventArgs e)
-        {
+         private void panel8_Paint(object sender, PaintEventArgs e)
+         {
 
-        }
+         }
 
-        private void btnQuantity_Click(object sender, EventArgs e)
-        {
+         private void panel6_Paint(object sender, PaintEventArgs e)
+         {
 
-        }
+         }
+         private void filterNames(object sender, EventArgs e)
+         {
+             Validation.filterToNames(sender as TextBox);
+         }
+         private void filterContacts(object sender, EventArgs e)
+         {
+             Validation.filterToContactNo(sender as TextBox);
+         }
+         private void filterEmail(object sender, EventArgs e)
+         {
+             Validation.filterToEmail(sender as TextBox);
+         }
+         private void filterParagraph(object sender, EventArgs e)
+         {
+             Validation.filterToParagraph(sender as TextBox);
+         }
+         private void filterAplhaNumeric(object sender, EventArgs e)
+         {
+             Validation.filterToAlphaNumeric(sender as TextBox);
+         }
+         private void filterNumeric(object sender, EventArgs e)
+         {
+             Validation.filterToNumeric(sender as TextBox);
+         }
 
-        private void txtQuantity_EnabledChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtQuantity_Enter(object sender, EventArgs e)
-        {
-
-        }
     }
 }

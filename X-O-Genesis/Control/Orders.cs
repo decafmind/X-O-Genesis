@@ -9,16 +9,14 @@ using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Printing;
-using MyExtension;
 
 namespace PetvetPOS_Inventory_System
 {
-    public partial class OrdersView : MyUserControl, IContentPage, IKeyController
+    public partial class Orders : MyUserControl, IContentPage, IKeyController
     {
         Invoice currentTransaction;
         DatabaseController dbController;
         Product currentProduct;
-        Inventory inventory;
         DataTable dt = new DataTable();
         List<ProductInvoice> carts = new List<ProductInvoice>();
 
@@ -40,7 +38,6 @@ namespace PetvetPOS_Inventory_System
             totalAmountWithService = totalAmount + servicesSubtotal;
             poSlbl2.Text = string.Format("{0:0.00}", totalAmountWithService);
         }
-
         void Orders_KeyFunction(KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1){
@@ -76,13 +73,13 @@ namespace PetvetPOS_Inventory_System
             get { return Properties.Resources.cashRegister; }
         }
 
-        public OrdersView()
+        public Orders()
         {
             InitializeComponent();
             initTable();
         }
    
-        public OrdersView(MasterController masterController):base(masterController)
+        public Orders(MasterController masterController):base(masterController)
         {
             InitializeComponent();
             this.dbController = masterController.DataBaseController;
@@ -147,52 +144,35 @@ namespace PetvetPOS_Inventory_System
                 txtEncode.Focus();
             }
         }
-
-        string barcode;
         public bool queryProduct()
         {
             bool success = false;
-            try
-            {
-                barcode = txtEncode.Text;
-                int quantity = 1;
+            string barcode = txtEncode.Text;
+            int quantity = 1;
 
-                if (string.IsNullOrWhiteSpace(txtQuantity.Text))
-                    MessageBox.Show("Please enter quantity");
-                else
-                    quantity = int.Parse(txtQuantity.Text);
+            if(string.IsNullOrWhiteSpace(txtQuantity.Text))
+                MessageBox.Show("Please enter quantity");
+            else
+                quantity = int.Parse(txtQuantity.Text);
 
-                currentProduct = dbController.getProductFromBarcode(barcode);
-                int stock = dbController.getCurrentStockCountFromBarCode(currentProduct);
-                if (stock >= quantity)
-                {
-                    if (!string.IsNullOrWhiteSpace(currentProduct.Barcode))
-                    {
-                        Decimal totalPrice = currentProduct.UnitPrice * quantity;
-                    lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, quantity, totalPrice);
-                        success = true;
-                        addRowInDatagrid(quantity);
-                    }
-                    else
-                    {
-                        lblPOSmsg.Text = "Item not found";
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Out of stock. Only " + stock + " left");
-                }
+            currentProduct = dbController.getProductFromBarcode(barcode);
 
+            if (!string.IsNullOrWhiteSpace(currentProduct.Barcode)){
+                Decimal totalPrice = currentProduct.UnitPrice * quantity;
+                lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, quantity, totalPrice);
+                success = true;
+                addRowInDatagrid(quantity);
             }
-            catch (Exception) { lblPOSmsg.Text = "Item not found";  }
+            else{
+                lblPOSmsg.Text = "Item not found";
+            }
 
             return success;
         }
 
         public void addRowInDatagrid(int quantity)
         {
-            bool success = false;
-
+           
             ProductInvoice productTransaction = new ProductInvoice(){
                 invoice = currentTransaction,
                 product = currentProduct,
@@ -204,10 +184,8 @@ namespace PetvetPOS_Inventory_System
             int sum_of_qty = 0;
             decimal sum_of_price = 0M;
 
-            foreach (ProductInvoice item in carts)
-            {
-                if (item.product.Barcode == productTransaction.product.Barcode)
-                {
+            foreach (ProductInvoice item in carts){
+                if (item.product.Barcode == productTransaction.product.Barcode){
                     int old_qty = item.QuantitySold;
                     int new_qty = productTransaction.QuantitySold;
                     sum_of_qty = old_qty + new_qty;
@@ -216,75 +194,49 @@ namespace PetvetPOS_Inventory_System
                     decimal old_price = item.GroupPrice;
                     decimal new_price = productTransaction.GroupPrice;
                     sum_of_price = old_price + new_price;
+                    item.GroupPrice = sum_of_price;
 
-                    int stock = dbController.getCurrentStockCountFromBarCode(currentProduct);
-                    if (stock >= sum_of_qty){
-                        item.GroupPrice = sum_of_price;
-                        success = true;
-                    }
                     items_already_in_cart = true;
                     break;
                 }
             }
 
-            if (!items_already_in_cart)
-            {
+            if (!items_already_in_cart){
                 carts.Add(productTransaction);
-                try
-                {
+                try{
                     var row = dt.NewRow();
                     row["Product"] = currentProduct.Description;
                     row["Quantity"] = quantity;
                     row["Price"] = productTransaction.GroupPrice;
                     dt.Rows.Add(row);
-                    lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, quantity, productTransaction.GroupPrice);
-                    success = true;
                 }
-                catch (Exception ex)
-                {
+                catch (Exception ex){
                     MessageBox.Show(ex.Message);
                 }
+                lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, quantity, productTransaction.GroupPrice);
             }
-            else
-            {
-                try
-                {
-                    foreach (DataGridViewRow row in dgTransaction.Rows)
-                    {
-                        if (row.Cells[DESCRIPTION_INDEX].Value.ToString() == productTransaction.product.Description)
-                        {
+            else{
+                try{
+                    foreach (DataGridViewRow row in dgTransaction.Rows){
+                        if (row.Cells[DESCRIPTION_INDEX].Value.ToString() == productTransaction.product.Description){
                             row.Cells[QTY_INDEX].Value = sum_of_qty;
                             row.Cells[PRICE_INDEX].Value = sum_of_price;
-                            int stock = dbController.getCurrentStockCountFromBarCode(currentProduct);
-                            if (stock >= sum_of_qty){
-                                row.Cells[QTY_INDEX].Value = sum_of_qty;
-                                row.Cells[PRICE_INDEX].Value = sum_of_price;
-                                lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, sum_of_qty, sum_of_price);
-                                success = true;
-                            }
-                            else
-                            {
-                                MessageBox.Show("Out of stock! " + stock + " left.");
-                            }
                             break;
                         }
                     }
                 }
                 catch (Exception)
                 {
-
+                    
                 }
+                lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, sum_of_qty, sum_of_price);
             }
-
+            
             totalAmount += productTransaction.GroupPrice;
-            if (success)
-                totalAmount += productTransaction.GroupPrice;
-
             poSlbl2.Text = totalAmount.ToString();
             txtEncode.Clear();
             txtQuantity.Clear();
             txtQuantity.Focus();
-         
         }
 
         void initTable()
@@ -306,6 +258,12 @@ namespace PetvetPOS_Inventory_System
             MyExtension.Validation.limitTextbox(sender as TextBox, acceptedChar);
         }
 
+        //private void barcodeIndicator_Tick(object sender, EventArgs e)
+        //{
+        //    rightSidePane.BackgroundImage = Properties.Resources.barcodeWhite;
+        //    barcodeIndicator.Stop();
+        //}
+
         void resetTransaction()
         {
             if (!concludeTransaction){
@@ -318,15 +276,14 @@ namespace PetvetPOS_Inventory_System
             lblTransactionno.ResetText();
             toggleEncoding(true);
 
+            //lblChange.ResetText();
             carts.Clear();
             clearDataGrid();
             resetServices();
 
             concludeTransaction = false;
-            txtQuantity.Text = "1";
             poSlbl2.Text = "0";
             lblPOSmsg.Text = "No current transaction";
-            MyExtension.Validation.clearFields(panel1);
         }
 
         private void settle()
@@ -334,8 +291,8 @@ namespace PetvetPOS_Inventory_System
             if (dgTransaction.Rows.Count > 0)
             {
                 concludeTransaction = true;
+                printInvoice();             
                 conclusion();
-                printInvoice();
                 resetTransaction();
             }
         }
@@ -345,25 +302,30 @@ namespace PetvetPOS_Inventory_System
             // End the transaction
             concludeTransaction = true;
             toggleEncoding(false);
-          
-            inventory = null;
-            foreach (ProductInvoice item in carts)
-            {
+
+            Inventory inventory = null;
+            foreach (ProductInvoice item in carts){
                 dbController.insertProductInvoice(item);
                 inventory = new Inventory(){
                     Barcode = item.product.Barcode,
                     QtyReceived = 0,
                     QtyOnHand = -item.QuantitySold,
                 };
-
-                dbController.checkProductCriticalLevel(item.product);
+                  dbController.pullInventory(inventory);
+                  dbController.checkProductCriticalLevel(item.product);
         	}
-         
+
             // audit 
             string message = string.Format("completed a transaction: {0}", lblTransactionno.Text);
             dbController.insertAuditTrail(message);
             masterController.clientClock();
         }
+
+        //private void paymentTimer_Tick(object sender, EventArgs e)
+        //{
+        //    lblPOSmsg.Text = String.Format("Change: Php {0}", change);
+        //    paymentTimer.Stop();
+        //}
 
         void clearDataGrid()
         {
@@ -399,27 +361,51 @@ namespace PetvetPOS_Inventory_System
             }
         }
 
+        modalVoid modalFrm;
+
         void voidProduct()
         {
-            DataGridViewRow selectedRow = dgTransaction.SelectedRows[0];
-            foreach (ProductInvoice item in carts)
+            modalFrm = new modalVoid(dbController);
+            modalFrm.btnOK.Click += btnOK_Click;
+            modalFrm.Show();
+        }
+
+
+        void btnOK_Click(object sender, EventArgs e)
+        {
+            try
             {
-                if (item.product.Description == selectedRow.Cells[DESCRIPTION_INDEX].Value.ToString())
+                DialogResult result = modalFrm.getResult;
+                if (result == DialogResult.OK)
                 {
-                    totalAmount -= item.GroupPrice;
-                    carts.Remove(item);
+                    DataGridViewRow selectedRow = dgTransaction.SelectedRows[0];
+                    foreach (ProductInvoice item in carts)
+                    {
+                        if (item.product.Description == selectedRow.Cells[DESCRIPTION_INDEX].Value.ToString())
+                        {
+                            totalAmount -= item.GroupPrice;
+                            carts.Remove(item);
 
-                    if (totalAmountWithService != 0)
-                        poSlbl2.Text = totalAmountWithService.ToString();
-                    else
-                        poSlbl2.Text = totalAmount.ToString();
+                            if (totalAmountWithService != 0)
+                                poSlbl2.Text = totalAmountWithService.ToString();
+                            else
+                                poSlbl2.Text = totalAmount.ToString();
 
-                    lblPOSmsg.Text = string.Format("Void {0}", item.product.Description);
-                    break;
+                            lblPOSmsg.Text = string.Format("Void {0}", item.product.Description);
+                            break;
+                        }
+                    }
+                    dgTransaction.Rows.Remove(selectedRow);
+                }
+                else
+                {
+                    MessageBox.Show("Wrong admin credentials");
                 }
             }
-            dgTransaction.Rows.Remove(selectedRow);
+            catch (Exception)
+            {
                 
+            }
         }
 
         void invoice_Layout(object sender, PrintPageEventArgs e)
@@ -428,11 +414,10 @@ namespace PetvetPOS_Inventory_System
             using(Font font = new Font("MS San Serif", 11, FontStyle.Regular))
             using (Pen pen = new Pen(Brushes.Black, 1))
             {
-                string title = "Guardtech";
-                string addressL1 = "G44 Abbey Road Bagbag";
-                string addressL2 = "Novaliches Quezon City";
+                string title = "Company Name";
+                string addressL1 = "Company Address Line 1";
+                string addressL2 = "Company Address Line 2";
                 int documentWidth = e.PageBounds.Width;
- 
                 SizeF stringSize = g.MeasureString(title, font);
 
                 int Y = 20;
@@ -468,16 +453,35 @@ namespace PetvetPOS_Inventory_System
                 g.DrawString(productheader, font, Brushes.Black, new PointF(30, Y));
                 Y += 30;
 
-                Bitmap bmp = new Bitmap(documentWidth, this.dgTransaction.Height);
+                Bitmap bmp = new Bitmap(this.dgTransaction.Width, this.dgTransaction.Height);
                 dgTransaction.DrawToBitmap(bmp, new Rectangle(0, 0, this.dgTransaction.Width, this.dgTransaction.Height));
                 g.DrawImage(bmp, new PointF(10, Y));
                 Y += 50;
-        
+
+                string serviceheader = "** SERVICES **";
+                stringSize = g.MeasureString(serviceheader, font);
+                g.DrawString(serviceheader, font, Brushes.Black, new PointF(10, Y));
+                Y += (int)stringSize.Height + yIncrement;
+
+               
                 string cashierName = string.Format("Cashier name: {0}", masterController.LoginEmployee.User_id);
                 g.DrawString(cashierName, font, Brushes.Black, new PointF(10, Y));
-                Y += 30;                  
+                Y += 30;
+
+                  
+
+                
             }
         }
+
+        //private void timer1_Tick(object sender, EventArgs e)
+        //{
+        //    if (sidePanel.Width <= 10)
+        //        timer1.Stop();
+        //    sidePanel.Size = new Size(sidePanel.Width - 10, sidePanel.Height);
+
+        //}
+
         
         // Services Fields
         private const int ADDSERVICES_HEIGHT = 100;
@@ -556,13 +560,60 @@ namespace PetvetPOS_Inventory_System
             txtQuantity.SelectAll();
         }
 
+        //private void txtPayment_Enter(object sender, EventArgs e)
+        //{
+        //    masterController.setFormReturnkey = btnPayment;
+        //}
+
+        int btn_click_counter = 0;
+
+        //private void btnPayment_Click(object sender, EventArgs e)
+        //{
+        //    swithClickIndicator(++btn_click_counter);
+
+        //    if (btn_click_counter == 2){
+        //        decimal payment = 0;
+        //        if (string.IsNullOrWhiteSpace(txtPayment.Text))
+        //            MessageBox.Show("Enter payment");
+        //        else
+        //            payment = decimal.Parse(txtPayment.Text);
+        //        pay(payment);
+        //        swithClickIndicator(btn_click_counter = 0);
+        //    }
+        //}
+
+        //void swithClickIndicator(int numberOfClicks)
+        //{
+        //    switch (numberOfClicks)
+        //    {
+        //        case 0:
+        //            clickIndicator1.BackColor = Color.White;
+        //            clickIndicator2.BackColor = Color.White;
+        //            break;
+        //        case 1:
+        //            clickIndicator1.BackColor = SystemColors.subHeaderGreen;
+        //            break;
+        //        case 2:
+        //            clickIndicator2.BackColor = SystemColors.subHeaderGreen;
+        //            break;
+        //    }
+        //}
 
         private void textChanged(object sender, EventArgs e)
         {
             TextBox textBox = sender as TextBox;
-            string charAllowed = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnoqprstuvwxyz1234567890.";
+            string charAllowed = "1234567890.";
             MyExtension.Validation.limitTextbox(textBox, charAllowed);
         }
+
+
+        //private void txtPayment_EnabledChanged(object sender, EventArgs e)
+        //{
+        //    if (txtPayment.Enabled)
+        //        btnPayment.Enabled = true;
+        //    else
+        //        btnPayment.Enabled = false;
+        //}
 
         void activateServices(bool flag)
         {
@@ -618,33 +669,16 @@ namespace PetvetPOS_Inventory_System
                 btnEncode.Enabled = false;
         }
 
+        //Events not triggered
         private void keyButton1_Click(object sender, EventArgs e)
         {
             toggleEncoding(true);
         }
-        private void filterNames(object sender, EventArgs e)
-        {
-            Validation.filterToNames(sender as TextBox);
-        }
-        private void filterContacts(object sender, EventArgs e)
-        {
-            Validation.filterToContactNo(sender as TextBox);
-        }
-        private void filterEmail(object sender, EventArgs e)
-        {
-            Validation.filterToEmail(sender as TextBox);
-        }
-        private void filterParagraph(object sender, EventArgs e)
-        {
-            Validation.filterToParagraph(sender as TextBox);
-        }
-        private void filterAplhaNumeric(object sender, EventArgs e)
-        {
-            Validation.filterToAlphaNumeric(sender as TextBox);
-        }
-        private void filterNumeric(object sender, EventArgs e)
-        {
-            Validation.filterToNumeric(sender as TextBox);
-        }
+
+        //private void txtPayment_TextChanged(object sender, EventArgs e)
+        //{
+        //    string charAllowed = "1234567890.";
+        //    MyExtension.Validation.limitTextbox(txtPayment, charAllowed);
+        //}
     }
 }

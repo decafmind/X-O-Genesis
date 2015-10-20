@@ -11,8 +11,8 @@ namespace PetvetPOS_Inventory_System
         public string Barcode { get; set; }
         public string Description { get; set; }
         public Decimal UnitPrice { get; set; }
-        public string Category { get; set; }
-        public string Company { get; set; }
+        public int Category_id { get; set; }
+        public int Company { get; set; }
         public string Warranty { get; set; }
         public string Specification { get; set; }
         public string Replacement { get; set; }
@@ -29,10 +29,11 @@ namespace PetvetPOS_Inventory_System
                  Barcode = (string)entity.getField("id");
                  Description = (string)entity.getField("name");
                  UnitPrice = (decimal)entity.getField("unit_price");
-                 Company = (string)entity.getField("supplier");
                  Warranty = (string)entity.getField("warranty");
                  Specification = (string)entity.getField("specification");
                  Replacement = (string)entity.getField("replacement");
+                 Category_id = (int)entity.getField("category_id");
+                 Company = (int)entity.getField("supplier");
             }
             catch (Exception ex)
             {
@@ -47,7 +48,7 @@ namespace PetvetPOS_Inventory_System
                 Product product = obj as Product;
                 if (this.Barcode == product.Barcode)
                     if(this.Description == product.Description)
-                        if (this.Category == product.Category)
+                        if (this.Category_id == product.Category_id)
                             if (this.UnitPrice == product.UnitPrice)
                                 if (this.Company == product.Company)
                                     if (this.Warranty == product.Warranty)

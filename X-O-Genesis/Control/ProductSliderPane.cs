@@ -44,33 +44,40 @@ namespace PetvetPOS_Inventory_System
 
         public void insertProduct()
         {
-            if(MyExtension.Validation.isFilled(contentPanel)){
+            if (MyExtension.Validation.isFilled(contentPanel))
+            {
                 inventory = new Inventory()
-            {
-                Barcode = txtBarcode.Text,
-                StockinDateTime = DateTime.Now,
-                QtyReceived = Convert.ToInt32(txtQuantity.Text),
-                QtyOnHand = Convert.ToInt32(txtQuantity.Text),
-            };
+                {
+                    Barcode = txtBarcode.Text,
+                    StockinDateTime = DateTime.Now,
+                    QtyReceived = Convert.ToInt32(txtQuantity.Text),
+                    QtyOnHand = Convert.ToInt32(txtQuantity.Text),
+                };
 
-            if (checkIfProductAlreadyExists(txtBarcode.Text))
-            {
-                dbController.insertInventory(inventory);
+                if (checkIfProductAlreadyExists(txtBarcode.Text))
+                {
+                    dbController.insertInventory(inventory);
+                }
+                else
+                {
+                    int category_id = dbController.categoryMapper.getCategoryIndexFromName(cbCategory.Text);
+                    product = new Product()
+                    {
+                        Barcode = txtBarcode.Text,
+                        Description = txtName.Text,
+                        UnitPrice = Convert.ToDecimal(txtPrice.Text),
+                        Warranty = txtWarranty.Text.ToString(),
+                        Replacement = txtReplacement.Text.ToString(),
+                        Specification = txtSpecs.Text,
+                        Category_id = category_id,
+                    };
+                    dbController.insertProductInsideInventory(inventory, product);
+                }
+                toggle();
             }
             else
             {
-                product = new Product()
-                {
-                    Barcode = txtBarcode.Text,
-                    Description = txtName.Text,
-                    UnitPrice = Convert.ToDecimal(txtPrice.Text),
-                    Warranty = txtWarranty.Text.ToString(),
-                    Replacement = txtReplacement.Text.ToString(),
-                    Specification = txtSpecs.Text,
-                };
-                dbController.insertProductInsideInventory(inventory, product);
-            }
-            toggle();
+             //   MessageBox.Show("Missing field required");
             }
         }
 
@@ -78,32 +85,43 @@ namespace PetvetPOS_Inventory_System
         {
            // MyExtension.Validation.
             MyExtension.Validation.clearFields(contentPanel);
+            cbCategory.Text = "";
             txtBarcode.Enabled = true; // To make sure it is enabled even after update
             txtQuantity.Enabled = true;
             txtQuantity.Visible = true;
             lblQuantity.Visible = true;
+            loadCategoryList();
         }
 
         public void mapProductToTextfield(Product product)
         {
             clearTexts();
-            txtQuantity.Enabled = false;
-            txtQuantity.ForeColor = Color.DimGray;
-            txtQuantity.BackColor = Color.White;
+            try
+            {
+                txtQuantity.Enabled = false;
+                txtQuantity.ForeColor = Color.DimGray;
+                txtQuantity.BackColor = Color.White;
 
-            txtBarcode.Text = product.Barcode.ToString();
-            txtBarcode.Enabled = false;
-            txtBarcode.ForeColor = Color.DimGray;
-            txtBarcode.BackColor = Color.White;
+                txtBarcode.Text = product.Barcode.ToString();
+                txtBarcode.Enabled = false;
+                txtBarcode.ForeColor = Color.DimGray;
+                txtBarcode.BackColor = Color.White;
 
-            txtName.Text = product.Description.ToString();
-            txtPrice.Text = product.UnitPrice.ToString();
-            txtSpecs.Text = product.Specification.ToString();
-            txtReplacement.Text = product.Replacement.ToString();
-            txtWarranty.Text = product.Warranty.ToString();
-           
-            oldProduct = product;
+                txtName.Text = product.Description.ToString();
+                txtPrice.Text = product.UnitPrice.ToString();
+                txtSpecs.Text = product.Specification.ToString();
+                txtReplacement.Text = product.Replacement.ToString();
+                txtWarranty.Text = product.Warranty.ToString();
 
+                string category = dbController.categoryMapper.getCategoryNameFromId(product.Category_id);
+                cbCategory.Text = category;
+
+                oldProduct = product;
+
+            }catch(Exception){
+
+            }
+            
             lblQuantity.Visible = false;
             txtQuantity.Visible = false;
         }
@@ -128,7 +146,7 @@ namespace PetvetPOS_Inventory_System
 
         private void txtQuantity_TextChanged(object sender, EventArgs e)
         {
- 
+            MyExtension.Validation.limitTextbox(sender as TextBox, "01234567890");
         }
 
         private void txtBarcode_TextChanged(object sender, EventArgs e)
@@ -141,6 +159,10 @@ namespace PetvetPOS_Inventory_System
                 {
                     txtName.Text = product.Description.ToString();
                     txtPrice.Text = product.UnitPrice.ToString();
+                    txtReplacement.Text = product.Replacement.ToString();
+                    txtSpecs.Text = product.Specification.ToString();
+                    txtWarranty.Text = product.Warranty.ToString();
+                    cbCategory.Text = dbController.categoryMapper.getCategoryNameFromId(product.Category_id);
                 }
                 else
                 {
@@ -152,22 +174,28 @@ namespace PetvetPOS_Inventory_System
 
         void updateProduct()
         {
-            product = new Product()
+            if (MyExtension.Validation.isFilled(contentPanel) || string.IsNullOrWhiteSpace(txtQuantity.Text))
             {
-                Barcode = txtBarcode.Text,
-                Description = txtName.Text,
-                UnitPrice = Convert.ToDecimal(txtPrice.Text),
-                Warranty = txtWarranty.Text,
-                Replacement = txtReplacement.Text,
-                Specification = txtSpecs.Text,
-            };
+                int category_id = dbController.categoryMapper.getCategoryIndexFromName(cbCategory.Text);
 
-            dbController.updateProduct(oldProduct, product);
-            txtQuantity.Enabled = true;
-            txtBarcode.Enabled = true;
+                product = new Product()
+                {
+                    Barcode = txtBarcode.Text,
+                    Description = txtName.Text,
+                    UnitPrice = Convert.ToDecimal(txtPrice.Text),
+                    Warranty = txtWarranty.Text,
+                    Replacement = txtReplacement.Text,
+                    Specification = txtSpecs.Text,
+                    Category_id = category_id,
+                };
 
-            toggle();
-            clearTexts();
+                dbController.updateProduct(oldProduct, product);
+                txtQuantity.Enabled = true;
+                txtBarcode.Enabled = true;
+
+                toggle();
+                clearTexts();
+            }
         }
 
         public void toggle(InventoryMode mode)
@@ -203,6 +231,11 @@ namespace PetvetPOS_Inventory_System
             modalAddCategory categoryModal = new modalAddCategory(dbController, this);
             categoryModal.Show();
 
+        }
+
+        private void txtPrice_TextChanged(object sender, EventArgs e)
+        {
+            MyExtension.Validation.limitTextbox(sender as TextBox, ".1234567890");
         }
     }
 }
