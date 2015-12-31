@@ -25,22 +25,12 @@ namespace PetvetPOS_Inventory_System
         bool concludeTransaction;
         decimal totalAmount;
         decimal totalAmountWithService;
-        decimal change;
 
         private const int QTY_INDEX = 0;
         private const int DESCRIPTION_INDEX = 1;
         private const int PRICE_INDEX = 2;
 
-      void computeTotalAmountWithService()
-        {
-            decimal servicesSubtotal = 0M;
-            foreach (AddServices services in addServices)
-                servicesSubtotal += services.Subtotal;
-
-            totalAmountWithService = totalAmount + servicesSubtotal;
-            poSlbl2.Text = string.Format("{0:0.00}", totalAmountWithService);
-        }
-
+   
         void Orders_KeyFunction(KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1){
@@ -139,8 +129,6 @@ namespace PetvetPOS_Inventory_System
                 currentTransaction.InvoiceId = dbController.getTransactionId(currentTransaction);
                 lblTransactionno.Text = "POS_" + currentTransaction.InvoiceId.ToString("00000");
                 totalAmount = 0M;
-
-                activateServices(true);
             }
             else
             {
@@ -320,7 +308,6 @@ namespace PetvetPOS_Inventory_System
 
             carts.Clear();
             clearDataGrid();
-            resetServices();
 
             concludeTransaction = false;
             txtQuantity.Text = "1";
@@ -479,71 +466,7 @@ namespace PetvetPOS_Inventory_System
             }
         }
         
-        // Services Fields
-        private const int ADDSERVICES_HEIGHT = 100;
-        private const int INITIAL_Y = 70;
-        private const int MARGIN = 20;
-        private const int LINE_HEIGHT = 10;
-
-        List<AddServices> addServices = new List<AddServices>();
-        int Y = INITIAL_Y;
-
- 
-        void addService_SubTotalCompute(object sender, EventArgs e)
-        {
-            AddServices addService = sender as AddServices;
-            lblPOSmsg.Text = string.Format("{0} x{1} @{2}", addService.getServiceNameSize(),
-                addService.Qty, addService.Subtotal);
-
-            computeTotalAmountWithService();
-        }
-
-        void updateY()
-        {
-            Y = INITIAL_Y + (addServices.Count * (ADDSERVICES_HEIGHT + LINE_HEIGHT));
-        }
-
-        int computeForY(int index)
-        {
-            return Y = INITIAL_Y + ((index - 1) * (ADDSERVICES_HEIGHT + LINE_HEIGHT));
-        }
-
-        void addService_paneClose(object sender, EventArgs e)
-        {
-            AddServices a = sender as AddServices;
-            int index = 0;
-
-            if (addServices.Contains(a))
-                index = addServices.IndexOf(a);
-
-            int length = addServices.Count;
-            Point previousLocation = Point.Empty;
-            for (int i = 0; i < length; i++){
-                if (i > index){
-                    addServices[i].NewLocation = new Point(addServices[i].Location.X, computeForY(i));
-                }
-            }
-
-            addServices.RemoveAt(index);
-            computeTotalAmountWithService();
-            updateY();
-        }
-
         
-        private void txtQuantity_EnabledChanged(object sender, EventArgs e)
-        {
-            if (txtQuantity.Enabled)
-            {
-                txtQuantity.Focus();
-                btnQuantity.Enabled = true;
-                masterController.setFormReturnkey = btnQuantity;
-            }
-            else
-            {
-                btnQuantity.Enabled = false;
-            }
-        }
-
         private void btnQuantity_Click(object sender, EventArgs e)
         {
             txtEncode.Focus();
@@ -564,29 +487,7 @@ namespace PetvetPOS_Inventory_System
             MyExtension.Validation.limitTextbox(textBox, charAllowed);
         }
 
-        void activateServices(bool flag)
-        {
-            foreach (AddServices item in addServices)
-                item.activate(flag);
-        }
 
-        void resetServices()
-        {
-            if (addServices.Count > 1)
-            {
-                int length = addServices.Count;
-                for (int i = 0; i < length; i++)
-                {
-                    if (i == 0)
-                        addServices[i].reset();
-                    else
-                        addServices[i].Exit();
-                }
-            }
-
-            foreach (AddServices item in addServices)
-                item.reset();
-        }
 
         private void btnEncode_Click(object sender, EventArgs e)
         {

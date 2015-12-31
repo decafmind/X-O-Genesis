@@ -108,7 +108,6 @@
             this.txtQuantity.Name = "txtQuantity";
             this.txtQuantity.Size = new System.Drawing.Size(157, 26);
             this.txtQuantity.TabIndex = 1;
-            this.txtQuantity.EnabledChanged += new System.EventHandler(this.txtQuantity_EnabledChanged);
             this.txtQuantity.TextChanged += new System.EventHandler(this.filterNumeric);
             this.txtQuantity.Enter += new System.EventHandler(this.txtQuantity_Enter);
             // 

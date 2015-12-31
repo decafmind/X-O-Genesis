@@ -204,26 +204,12 @@ namespace PetvetPOS_Inventory_System
             return userMapper.getUserFromId(id);
         }
 
-        public List<string> getListOfMedical()
-        {
-            return medicalMapper.getListOfMedicalService();
-        }
-
-        public List<Grooming> getListOFGrooming()
-        {
-            return groomingMapper.getListOfGrooming();
-        }
-
         public DataTable getLoginTrail(DataTable dt)
         {
             return loginTrailMapper.getLoginTrailTable(dt);
         }
 
-        public DataTable getServiceRendered(DataTable dt)
-        {
-            return serviceRenderedMapper.loadTable(dt);
-        }
-
+        
         public DataTable getDailySalesReport(DataTable dt)
         {
             return dailySalesReportMapper.loadTable(dt);
@@ -255,19 +241,10 @@ namespace PetvetPOS_Inventory_System
         }
 
  
-        public bool insertMedicalTransaction(Invoice transaction, Medical medical, int qty, decimal subtotal)
-        {
-            if (medicalTransactionMapper.insertMedicalTransaction(transaction, medical, qty, subtotal))
-            {
-                OnInsertEntity(new EntityArgs(transaction));
-                return true;
-            }
-            return false;
-        }
-
         public DataTable loadAuditTrail(DataTable dt){
             return auditTrailView.loadTable(dt);
         }
+
         public DataTable filterWeeklySalesReport(DataTable dt, DateTime from, DateTime to)
         {
             string[] extractFrom = MyExtension.MySqlToCSharp.convertDateTime(from).Split(' ');
@@ -282,22 +259,7 @@ namespace PetvetPOS_Inventory_System
             return weeklySalesReportMapper.loadTable(dt);
         }
 
-        public decimal getPriceFromGroomingSize(Grooming grooming, Petsize size)
-        {
-            return gppMapper.getPriceFromGroomingSize(grooming, size);
-        }
-
-
-        public GPP getGPPFromGroomingSize(Grooming grooming, Petsize size)
-        {
-            return gppMapper.getGPPFromGroomingSize(grooming, size);
-        }
-
-        public DataTable getGroomingViewTable(DataTable dt)
-        {
-            return groomingViewMapper.loadTable(dt);
-        }
-
+        
         public DataTable getMonthlySalesReport(DataTable dt)
         {
             return monthlySalesReportMapper.loadTable(dt);
@@ -314,36 +276,30 @@ namespace PetvetPOS_Inventory_System
         }
 
         public DataTable filterLoginTrail(DataTable dt, DateTime date)
-        {
-            string[] extractDate = MyExtension.MySqlToCSharp.convertDateTime(date).Split(' ');
-            
+        {            
             string condition = string.Format("datetime_in BETWEEN '{0}' AND DATE_ADD('{0}', INTERVAL 1 DAY)",
-                extractDate[0]);
+                MyExtension.MySqlToCSharp.convertDate(date));
             return loginTrailViewMapper.loadTable(dt, condition);
+        }
+
+        public DataTable filterLoginTrailUserAndDate(DataTable dt, string user, DateTime date)
+        {
+            string condition = string.Format("user_id = '{0}' AND datetime_in BETWEEN '{1}' AND DATE_ADD('{1}', INTERVAL 1 DAY) ORDER BY datetime_in DESC",
+                user, MyExtension.MySqlToCSharp.convertDate(date));
+            return loginTrailMapper.loadTable(dt, condition);
         }
 
         public DataTable filterAuditTrail(DataTable dt, DateTime date)
         {
-            string[] extractDate = MyExtension.MySqlToCSharp.convertDateTime(date).Split(' ');
-
-            string condition = string.Format("date_time BETWEEN '{0}' AND DATE_ADD('{0}', INTERVAL 1 DAY)",
-                extractDate[0]);
+            string condition = string.Format("date BETWEEN '{0}' AND DATE_ADD('{0}', INTERVAL 1 DAY) ORDER BY time DESC", MyExtension.MySqlToCSharp.convertDate(date));
             return auditTrailView.loadTable(dt, condition);
         }
 
 
-        public DataTable filterLoginTrailUserAndDate(DataTable dt, string user, DateTime date){
-            string[] extractDate = MyExtension.MySqlToCSharp.convertDateTime(date).Split(' ');
-            string condition = string.Format("user_id = '{0}' AND datetime_in BETWEEN '{1}' AND DATE_ADD('{1}', INTERVAL 1 DAY) ORDER BY datetime_in DESC",
-                user, extractDate[0]);
-            return loginTrailMapper.loadTable(dt, condition);
-        }
-
         public DataTable filterAuditTrailUserAndDate(DataTable dt, string user, DateTime date)
         {
-            string[] extractDate = MyExtension.MySqlToCSharp.convertDateTime(date).Split(' ');
-            string condition = string.Format("id = '{0}' AND date_time BETWEEN '{1}' AND DATE_ADD('{1}', INTERVAL 1 DAY)",
-                user, extractDate[0]);
+            string condition = string.Format("user_id = '{0}' AND date BETWEEN '{1}' AND DATE_ADD('{1}', INTERVAL 1 DAY) ORDER BY time DESC",
+                user, MyExtension.MySqlToCSharp.convertDate(date));
             return auditTrailView.loadTable(dt, condition);
         }
 

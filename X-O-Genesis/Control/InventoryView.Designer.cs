@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryView));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.mainTab = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -47,18 +48,12 @@
             this.panel5 = new System.Windows.Forms.Panel();
             this.rbPurchased = new System.Windows.Forms.RadioButton();
             this.rbInventory = new System.Windows.Forms.RadioButton();
-            this.productSliderPane1 = new PetvetPOS_Inventory_System.ProductSliderPane();
             this.parentPanel = new System.Windows.Forms.Panel();
             this.bottomPanel = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.keyButton11 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton8 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton7 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton9 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton6 = new PetvetPOS_Inventory_System.KeyButton();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -79,26 +74,31 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
-            this.keyButton13 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton14 = new PetvetPOS_Inventory_System.KeyButton();
             this.label12 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.keyButton12 = new PetvetPOS_Inventory_System.KeyButton();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.keyButton10 = new PetvetPOS_Inventory_System.KeyButton();
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnOK = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTransactionno = new System.Windows.Forms.TextBox();
+            this.productSliderPane1 = new PetvetPOS_Inventory_System.ProductSliderPane();
+            this.keyButton11 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton8 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton7 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton9 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton6 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton13 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton14 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton12 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton10 = new PetvetPOS_Inventory_System.KeyButton();
             this.keyButton5 = new PetvetPOS_Inventory_System.KeyButton();
             this.keyButton4 = new PetvetPOS_Inventory_System.KeyButton();
             this.keyButton3 = new PetvetPOS_Inventory_System.KeyButton();
             this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
             this.keyButton1 = new PetvetPOS_Inventory_System.KeyButton();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.mainTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -300,14 +300,15 @@
             // 
             // rbPurchased
             // 
+            this.rbPurchased.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbPurchased.AutoSize = true;
             this.rbPurchased.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbPurchased.Dock = System.Windows.Forms.DockStyle.Left;
             this.rbPurchased.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbPurchased.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.rbPurchased.Location = new System.Drawing.Point(92, 0);
+            this.rbPurchased.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.rbPurchased.Location = new System.Drawing.Point(84, 0);
             this.rbPurchased.Name = "rbPurchased";
-            this.rbPurchased.Size = new System.Drawing.Size(119, 32);
+            this.rbPurchased.Size = new System.Drawing.Size(111, 32);
             this.rbPurchased.TabIndex = 4;
             this.rbPurchased.Text = "Sold product";
             this.rbPurchased.UseVisualStyleBackColor = true;
@@ -315,6 +316,7 @@
             // 
             // rbInventory
             // 
+            this.rbInventory.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbInventory.AutoSize = true;
             this.rbInventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(2)))), ((int)(((byte)(3)))));
             this.rbInventory.Checked = true;
@@ -324,26 +326,12 @@
             this.rbInventory.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.rbInventory.Location = new System.Drawing.Point(0, 0);
             this.rbInventory.Name = "rbInventory";
-            this.rbInventory.Size = new System.Drawing.Size(92, 32);
+            this.rbInventory.Size = new System.Drawing.Size(84, 32);
             this.rbInventory.TabIndex = 3;
             this.rbInventory.TabStop = true;
             this.rbInventory.Text = "Products";
             this.rbInventory.UseVisualStyleBackColor = false;
             this.rbInventory.CheckedChanged += new System.EventHandler(this.checkChanged);
-            // 
-            // productSliderPane1
-            // 
-            this.productSliderPane1.accessMasterController = null;
-            this.productSliderPane1.BackColor = System.Drawing.Color.White;
-            this.productSliderPane1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.productSliderPane1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.productSliderPane1.Location = new System.Drawing.Point(839, 3);
-            this.productSliderPane1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.productSliderPane1.MaximumSize = new System.Drawing.Size(300, 100);
-            this.productSliderPane1.MinimumSize = new System.Drawing.Size(30, 600);
-            this.productSliderPane1.Name = "productSliderPane1";
-            this.productSliderPane1.Size = new System.Drawing.Size(30, 600);
-            this.productSliderPane1.TabIndex = 6;
             // 
             // parentPanel
             // 
@@ -418,66 +406,6 @@
             this.label3.Size = new System.Drawing.Size(66, 18);
             this.label3.TabIndex = 19;
             this.label3.Text = "Search";
-            // 
-            // keyButton11
-            // 
-            this.keyButton11.accessKeyChar = "Ctrl";
-            this.keyButton11.accessMasterController = null;
-            this.keyButton11.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton11.Location = new System.Drawing.Point(681, 11);
-            this.keyButton11.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton11.Name = "keyButton11";
-            this.keyButton11.Size = new System.Drawing.Size(61, 50);
-            this.keyButton11.TabIndex = 29;
-            // 
-            // keyButton8
-            // 
-            this.keyButton8.accessKeyChar = "F3";
-            this.keyButton8.accessMasterController = null;
-            this.keyButton8.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton8.Location = new System.Drawing.Point(440, 11);
-            this.keyButton8.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton8.Name = "keyButton8";
-            this.keyButton8.Size = new System.Drawing.Size(61, 50);
-            this.keyButton8.TabIndex = 26;
-            // 
-            // keyButton7
-            // 
-            this.keyButton7.accessKeyChar = "P";
-            this.keyButton7.accessMasterController = null;
-            this.keyButton7.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton7.Location = new System.Drawing.Point(748, 10);
-            this.keyButton7.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton7.Name = "keyButton7";
-            this.keyButton7.Size = new System.Drawing.Size(61, 50);
-            this.keyButton7.TabIndex = 33;
-            // 
-            // keyButton9
-            // 
-            this.keyButton9.accessKeyChar = "F2";
-            this.keyButton9.accessMasterController = null;
-            this.keyButton9.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton9.Location = new System.Drawing.Point(269, 11);
-            this.keyButton9.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton9.Name = "keyButton9";
-            this.keyButton9.Size = new System.Drawing.Size(61, 50);
-            this.keyButton9.TabIndex = 34;
-            // 
-            // keyButton6
-            // 
-            this.keyButton6.accessKeyChar = "F1";
-            this.keyButton6.accessMasterController = null;
-            this.keyButton6.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton6.Location = new System.Drawing.Point(67, 12);
-            this.keyButton6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton6.Name = "keyButton6";
-            this.keyButton6.Size = new System.Drawing.Size(61, 50);
-            this.keyButton6.TabIndex = 24;
             // 
             // pictureBox5
             // 
@@ -718,30 +646,6 @@
             this.label11.TabIndex = 35;
             this.label11.Text = "Print Receipt";
             // 
-            // keyButton13
-            // 
-            this.keyButton13.accessKeyChar = "Ctrl";
-            this.keyButton13.accessMasterController = null;
-            this.keyButton13.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton13.Location = new System.Drawing.Point(501, 8);
-            this.keyButton13.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton13.Name = "keyButton13";
-            this.keyButton13.Size = new System.Drawing.Size(61, 50);
-            this.keyButton13.TabIndex = 34;
-            // 
-            // keyButton14
-            // 
-            this.keyButton14.accessKeyChar = "P";
-            this.keyButton14.accessMasterController = null;
-            this.keyButton14.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton14.Location = new System.Drawing.Point(568, 7);
-            this.keyButton14.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton14.Name = "keyButton14";
-            this.keyButton14.Size = new System.Drawing.Size(61, 50);
-            this.keyButton14.TabIndex = 37;
-            // 
             // label12
             // 
             this.label12.AutoSize = true;
@@ -770,18 +674,6 @@
             this.label10.Size = new System.Drawing.Size(63, 18);
             this.label10.TabIndex = 23;
             this.label10.Text = "Return";
-            // 
-            // keyButton12
-            // 
-            this.keyButton12.accessKeyChar = "F2";
-            this.keyButton12.accessMasterController = null;
-            this.keyButton12.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton12.Location = new System.Drawing.Point(290, 7);
-            this.keyButton12.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton12.Name = "keyButton12";
-            this.keyButton12.Size = new System.Drawing.Size(61, 50);
-            this.keyButton12.TabIndex = 22;
             // 
             // pictureBox4
             // 
@@ -812,18 +704,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(54, 45);
             this.pictureBox1.TabIndex = 16;
             this.pictureBox1.TabStop = false;
-            // 
-            // keyButton10
-            // 
-            this.keyButton10.accessKeyChar = "F1";
-            this.keyButton10.accessMasterController = null;
-            this.keyButton10.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton10.Location = new System.Drawing.Point(68, 7);
-            this.keyButton10.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton10.Name = "keyButton10";
-            this.keyButton10.Size = new System.Drawing.Size(61, 50);
-            this.keyButton10.TabIndex = 0;
             // 
             // panel7
             // 
@@ -868,6 +748,128 @@
             this.txtTransactionno.EnabledChanged += new System.EventHandler(this.txtTransactionno_EnabledChanged);
             this.txtTransactionno.TextChanged += new System.EventHandler(this.filterAlphaNumeric);
             this.txtTransactionno.Enter += new System.EventHandler(this.txtTransactionno_Enter);
+            // 
+            // productSliderPane1
+            // 
+            this.productSliderPane1.accessMasterController = null;
+            this.productSliderPane1.BackColor = System.Drawing.Color.White;
+            this.productSliderPane1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.productSliderPane1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.productSliderPane1.Location = new System.Drawing.Point(839, 3);
+            this.productSliderPane1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.productSliderPane1.MaximumSize = new System.Drawing.Size(300, 100);
+            this.productSliderPane1.MinimumSize = new System.Drawing.Size(30, 600);
+            this.productSliderPane1.Name = "productSliderPane1";
+            this.productSliderPane1.Size = new System.Drawing.Size(30, 600);
+            this.productSliderPane1.TabIndex = 6;
+            // 
+            // keyButton11
+            // 
+            this.keyButton11.accessKeyChar = "Ctrl";
+            this.keyButton11.accessMasterController = null;
+            this.keyButton11.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton11.Location = new System.Drawing.Point(681, 11);
+            this.keyButton11.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton11.Name = "keyButton11";
+            this.keyButton11.Size = new System.Drawing.Size(61, 50);
+            this.keyButton11.TabIndex = 29;
+            // 
+            // keyButton8
+            // 
+            this.keyButton8.accessKeyChar = "F3";
+            this.keyButton8.accessMasterController = null;
+            this.keyButton8.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton8.Location = new System.Drawing.Point(440, 11);
+            this.keyButton8.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton8.Name = "keyButton8";
+            this.keyButton8.Size = new System.Drawing.Size(61, 50);
+            this.keyButton8.TabIndex = 26;
+            // 
+            // keyButton7
+            // 
+            this.keyButton7.accessKeyChar = "P";
+            this.keyButton7.accessMasterController = null;
+            this.keyButton7.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton7.Location = new System.Drawing.Point(748, 10);
+            this.keyButton7.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton7.Name = "keyButton7";
+            this.keyButton7.Size = new System.Drawing.Size(61, 50);
+            this.keyButton7.TabIndex = 33;
+            // 
+            // keyButton9
+            // 
+            this.keyButton9.accessKeyChar = "F2";
+            this.keyButton9.accessMasterController = null;
+            this.keyButton9.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton9.Location = new System.Drawing.Point(269, 11);
+            this.keyButton9.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton9.Name = "keyButton9";
+            this.keyButton9.Size = new System.Drawing.Size(61, 50);
+            this.keyButton9.TabIndex = 34;
+            // 
+            // keyButton6
+            // 
+            this.keyButton6.accessKeyChar = "F1";
+            this.keyButton6.accessMasterController = null;
+            this.keyButton6.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton6.Location = new System.Drawing.Point(67, 12);
+            this.keyButton6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton6.Name = "keyButton6";
+            this.keyButton6.Size = new System.Drawing.Size(61, 50);
+            this.keyButton6.TabIndex = 24;
+            // 
+            // keyButton13
+            // 
+            this.keyButton13.accessKeyChar = "Ctrl";
+            this.keyButton13.accessMasterController = null;
+            this.keyButton13.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton13.Location = new System.Drawing.Point(501, 8);
+            this.keyButton13.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton13.Name = "keyButton13";
+            this.keyButton13.Size = new System.Drawing.Size(61, 50);
+            this.keyButton13.TabIndex = 34;
+            // 
+            // keyButton14
+            // 
+            this.keyButton14.accessKeyChar = "P";
+            this.keyButton14.accessMasterController = null;
+            this.keyButton14.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton14.Location = new System.Drawing.Point(568, 7);
+            this.keyButton14.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton14.Name = "keyButton14";
+            this.keyButton14.Size = new System.Drawing.Size(61, 50);
+            this.keyButton14.TabIndex = 37;
+            // 
+            // keyButton12
+            // 
+            this.keyButton12.accessKeyChar = "F2";
+            this.keyButton12.accessMasterController = null;
+            this.keyButton12.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton12.Location = new System.Drawing.Point(290, 7);
+            this.keyButton12.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton12.Name = "keyButton12";
+            this.keyButton12.Size = new System.Drawing.Size(61, 50);
+            this.keyButton12.TabIndex = 22;
+            // 
+            // keyButton10
+            // 
+            this.keyButton10.accessKeyChar = "F1";
+            this.keyButton10.accessMasterController = null;
+            this.keyButton10.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton10.Location = new System.Drawing.Point(68, 7);
+            this.keyButton10.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton10.Name = "keyButton10";
+            this.keyButton10.Size = new System.Drawing.Size(61, 50);
+            this.keyButton10.TabIndex = 0;
             // 
             // keyButton5
             // 
@@ -1034,9 +1036,9 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
-        public System.Windows.Forms.RadioButton rbInventory;
         public System.Windows.Forms.RadioButton rbPurchased;
         private ProductSliderPane productSliderPane1;
         private System.Windows.Forms.ToolTip toolTip1;
+        public System.Windows.Forms.RadioButton rbInventory;
     }
 }
