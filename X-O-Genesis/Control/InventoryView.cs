@@ -428,9 +428,15 @@ namespace PetvetPOS_Inventory_System
         {
             RadioButton cb = sender as RadioButton;
             if (cb.Checked)
+            {
                 cb.BackColor = SystemColors.jetBlackTitleBar;
+                cb.ForeColor = Color.WhiteSmoke;
+            }
             else
+            {
                 cb.BackColor = Color.Silver;
+                cb.ForeColor = SystemColors.jetBlackTitleBar;
+            }
 
             fillgdInventory();
         }
@@ -944,22 +950,27 @@ namespace PetvetPOS_Inventory_System
                 cellRectangle.Bottom + panel4.Top + (cellRectangle.Height * 2)
                 );
         }
+
         private void filterNames(object sender, EventArgs e)
         {
             Validation.filterToNames(sender as TextBox);
         }
+
         private void filterContacts(object sender, EventArgs e)
         {
             Validation.filterToContactNo(sender as TextBox);
         }
+
         private void filterEmail(object sender, EventArgs e)
         {
             Validation.filterToEmail(sender as TextBox);
         }
+
         private void filterParagraph(object sender, EventArgs e)
         {
             Validation.filterToParagraph(sender as TextBox);
         }
+
         private void filterAlphaNumeric(object sender, EventArgs e)
         {
             Validation.filterToAlphaNumeric(sender as TextBox);

@@ -82,7 +82,6 @@
             this.lblTelno.Size = new System.Drawing.Size(118, 26);
             this.lblTelno.TabIndex = 18;
             this.lblTelno.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblTelno.TextChanged += new System.EventHandler(this.filterNumeric);
             // 
             // label8
             // 
@@ -103,7 +102,6 @@
             this.lblMobileno.Size = new System.Drawing.Size(118, 26);
             this.lblMobileno.TabIndex = 16;
             this.lblMobileno.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblMobileno.TextChanged += new System.EventHandler(this.filterContacts);
             // 
             // label6
             // 
@@ -123,7 +121,6 @@
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(216, 53);
             this.lblAddress.TabIndex = 14;
-            this.lblAddress.TextChanged += new System.EventHandler(this.filterParagraph);
             // 
             // label4
             // 
@@ -174,7 +171,6 @@
             this.lblEmailadd.Size = new System.Drawing.Size(216, 23);
             this.lblEmailadd.TabIndex = 7;
             this.lblEmailadd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblEmailadd.TextChanged += new System.EventHandler(this.filterEmail);
             // 
             // label5
             // 
@@ -215,7 +211,6 @@
             this.lblPosition.Size = new System.Drawing.Size(216, 23);
             this.lblPosition.TabIndex = 6;
             this.lblPosition.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.lblPosition.TextChanged += new System.EventHandler(this.filterAlphabet);
             // 
             // panel1
             // 

@@ -46,7 +46,7 @@ namespace PetvetPOS_Inventory_System
                     cmbHost.Items.Add(pc);
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 MessageBox.Show("An error occurred trying to access the network computers", "error",
                                    MessageBoxButtons.OK, MessageBoxIcon.Error);

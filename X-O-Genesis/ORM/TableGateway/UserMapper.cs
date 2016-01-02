@@ -38,7 +38,7 @@ namespace PetvetPOS_Inventory_System
 
         public string createUser(User user)
         {
-            return insertValues(user.UserId, PasswordHash.PasswordHash.CreateHash(user.Password), user.getUserLevel().ToString(), ACTIVE , "NOW()");
+            return insertValues(user.UserId, PasswordHash.PasswordHash.CreateHash(user.Password), user.getUserLevel().ToString(), ACTIVE , "NOW()", 0);
         }
 
         public bool inactivateUser(User user)

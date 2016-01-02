@@ -13,16 +13,17 @@ namespace PetvetPOS_Inventory_System
         {
             tableName = "audit_trail_tbl";
             fieldsname = new string[]{
-                "user_id",
-                "user_action",
-                "date_time",
+                "employee_id",
+                "activity",
+                "date",
+                "time",
             };
         }
 
         public bool insertAuditTrail(Employee employee, string action, DateTime date)
         {   
             return create(
-                insertValues(employee.User_id, action, MyExtension.MySqlToCSharp.convertDateTime(date))
+                insertValues(employee.User_id, action, MyExtension.MySqlToCSharp.convertDate(date), MyExtension.MySqlToCSharp.convertTime(date))
                 );
         }
     }

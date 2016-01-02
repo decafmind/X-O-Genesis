@@ -77,6 +77,7 @@ namespace MyExtension
                     result += character;
             textbox.Text = result;
         }
+
         public static void filterToAplha(TextBox textbox)
         {
             string acceptedChar = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
@@ -135,6 +136,17 @@ namespace MyExtension
         {
             return String.Format("{0}-{1}-{2} {3}:{4}:{5}",
                 dateTime.Year.ToString(), dateTime.Month.ToString(), dateTime.Day.ToString(),
+                dateTime.Hour.ToString(), dateTime.Minute.ToString(), dateTime.Second.ToString());
+        }
+
+        public static string convertDate(DateTime dateTime){
+            return String.Format("{0}-{1}-{2}",
+                dateTime.Year.ToString(), dateTime.Month.ToString(), dateTime.Day.ToString());
+        }
+
+        public static string convertTime(DateTime dateTime)
+        {
+            return String.Format("{0}:{1}:{2}",
                 dateTime.Hour.ToString(), dateTime.Minute.ToString(), dateTime.Second.ToString());
         }
     }

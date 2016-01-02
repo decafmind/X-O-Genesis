@@ -12,13 +12,16 @@ namespace PetvetPOS_Inventory_System
         {
             tableName = "audit_trail_view";
             fieldsname = new string[]{
-                "date_time",
+                "date",
+                "time",
                 "activity",
                 "user_id",
             };
             fieldsname_forselect = new string[]{
-                "activity AS 'Activity'",
-                "date_time AS 'Date & Time'",
+                "user_id AS Employee",
+                "activity AS Activity",
+                "date AS Date",
+                "time AS Time",
             };
         }
     }
