@@ -192,5 +192,14 @@ namespace PetvetPOS_Inventory_System
         {
             loginPane.completeProgressBar();
         }
+
+        private void btnForgot_Click(object sender, EventArgs e)
+        {
+            if (dbController == null)
+                dbController = masterController.DataBaseController;
+
+            btnLogin.Enabled = false;
+            
+        }
     }
 }

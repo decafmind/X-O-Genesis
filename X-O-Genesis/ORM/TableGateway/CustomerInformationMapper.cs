@@ -47,6 +47,8 @@ namespace PetvetPOS_Inventory_System
             {
                 // OnCustomerAdded(new EventArgs());
                 MessageBanner banner = new MessageBanner("Successful adding information.", 2000);
+                banner.Opacity = 1;
+                banner.ForeColor = System.Drawing.Color.White;
                 banner.Show();
             }
 

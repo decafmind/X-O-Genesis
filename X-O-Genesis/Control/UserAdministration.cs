@@ -24,6 +24,7 @@ namespace PetvetPOS_Inventory_System
         private AddUserPane addUserPane;
         private UserView userView;
         public Employee selectedEmployee;
+        public User seletedUser;
         public UserAdminMode mode = UserAdminMode.Standby;
 
         private DatabaseController dbController;

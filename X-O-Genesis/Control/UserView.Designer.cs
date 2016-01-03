@@ -53,7 +53,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackColor = System.Drawing.Color.White;
             this.panel2.Controls.Add(this.lblTelno);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.lblMobileno);
@@ -214,7 +214,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.userImage);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblPosition);

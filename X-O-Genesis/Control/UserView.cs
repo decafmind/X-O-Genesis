@@ -41,6 +41,8 @@ namespace PetvetPOS_Inventory_System
 
             lblUsername.Text = employee.User_id;
             lblAddress.Text = employee.Address;
+
+            
             if (File.Exists(@employee.ImagePath))
                 userImage.Image = Renderer.resizeImage(Image.FromFile(@employee.ImagePath) as Bitmap, userImage.Width, userImage.Height) as Image;
             else

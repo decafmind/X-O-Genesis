@@ -448,6 +448,7 @@
             this.txtClientName.Size = new System.Drawing.Size(531, 20);
             this.txtClientName.TabIndex = 44;
             this.txtClientName.TextChanged += new System.EventHandler(this.filterNames);
+            this.txtClientName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtClientName_KeyPress);
             // 
             // label11
             // 

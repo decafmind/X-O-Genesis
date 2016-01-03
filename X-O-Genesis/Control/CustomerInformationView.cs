@@ -70,8 +70,10 @@ namespace PetvetPOS_Inventory_System
             }
             else
             {
-                MessageBanner banner = new MessageBanner("Please fill up the required fields.", 2000);
-                banner.BackColor = System.Drawing.Color.Red;
+                MessageBanner banner = new MessageBanner("Please fill up all the fields and try again.", 2000);
+                banner.BackColor = System.Drawing.Color.DarkRed;
+                banner.ForeColor = System.Drawing.Color.White;
+                banner.Opacity = 1;
                 banner.Show();
             }
 
@@ -181,7 +183,7 @@ namespace PetvetPOS_Inventory_System
 
         private void filterNames(object sender, EventArgs e)
         {
-            Validation.filterToNames(sender as TextBox);
+            Validation.filterToNames(sender as TextBox);           
         }
         private void filterContacts(object sender, EventArgs e)
         {
@@ -202,6 +204,11 @@ namespace PetvetPOS_Inventory_System
         private void filterNumeric(object sender, EventArgs e)
         {
             Validation.filterToNumeric(sender as TextBox);
+        }
+
+        private void txtClientName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            search(txtClientName.Text);
         }
     }
 }

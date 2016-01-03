@@ -127,9 +127,9 @@
             // 
             this.userPanel.BackColor = System.Drawing.Color.Transparent;
             this.userPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.userPanel.Location = new System.Drawing.Point(73, 3);
+            this.userPanel.Location = new System.Drawing.Point(4, 3);
             this.userPanel.Name = "userPanel";
-            this.userPanel.Size = new System.Drawing.Size(482, 479);
+            this.userPanel.Size = new System.Drawing.Size(551, 479);
             this.userPanel.TabIndex = 2;
             // 
             // sidePanel

@@ -38,6 +38,7 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.btnForgot = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // timer1
@@ -119,13 +120,27 @@
             this.btnLogin.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(148)))), ((int)(((byte)(157)))));
             this.btnLogin.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnLogin.Location = new System.Drawing.Point(143, 159);
+            this.btnLogin.Location = new System.Drawing.Point(252, 159);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(70, 28);
+            this.btnLogin.Size = new System.Drawing.Size(80, 28);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            // 
+            // btnForgot
+            // 
+            this.btnForgot.BackColor = System.Drawing.Color.Khaki;
+            this.btnForgot.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnForgot.FlatAppearance.BorderSize = 0;
+            this.btnForgot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnForgot.Location = new System.Drawing.Point(24, 164);
+            this.btnForgot.Name = "btnForgot";
+            this.btnForgot.Size = new System.Drawing.Size(113, 23);
+            this.btnForgot.TabIndex = 12;
+            this.btnForgot.Text = "Forgot Password?";
+            this.btnForgot.UseVisualStyleBackColor = false;
+            this.btnForgot.Click += new System.EventHandler(this.btnForgot_Click);
             // 
             // LoginControl
             // 
@@ -133,6 +148,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.Controls.Add(this.btnForgot);
             this.Controls.Add(this.lblWelcomeMsg);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtUsername);
@@ -157,5 +173,6 @@
         public System.Windows.Forms.Button btnLogin;
         private System.Windows.Forms.Timer timer1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.Button btnForgot;
     }
 }

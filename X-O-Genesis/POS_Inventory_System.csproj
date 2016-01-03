@@ -161,6 +161,12 @@
     <Compile Include="Control\CustomerInformationView.Designer.cs">
       <DependentUpon>CustomerInformationView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\FBUser.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\FBUser.Designer.cs">
+      <DependentUpon>FBUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\OrdersView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -188,6 +194,7 @@
     <Compile Include="Domain\Client.cs" />
     <Compile Include="Domain\Controller\Service.cs" />
     <Compile Include="Domain\CustomerInformation.cs" />
+    <Compile Include="Domain\Fallback.cs" />
     <Compile Include="Domain\InventoryPersonnelMenuList.cs" />
     <Compile Include="Domain\StaffMenuList.cs" />
     <Compile Include="Domain\GPP.cs" />
@@ -207,9 +214,16 @@
     <Compile Include="Forms\DateAndTime.Designer.cs">
       <DependentUpon>DateAndTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Fallback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Fallback.Designer.cs">
+      <DependentUpon>Fallback.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyExtension\ErrorLog.cs" />
     <Compile Include="ORM\TableGateway\AuditTrailMapper.cs" />
     <Compile Include="ORM\TableGateway\CustomerInformationMapper.cs" />
+    <Compile Include="ORM\TableGateway\FallbackMapper.cs" />
     <Compile Include="ORM\TableGateway\PetsizeMapper.cs" />
     <Compile Include="ORM\ViewGateway\AuditTrailView.cs" />
     <Compile Include="ORM\TableGateway\GppTransactionMapper.cs" />
@@ -450,6 +464,9 @@
     <EmbeddedResource Include="Control\CustomerInformationView.resx">
       <DependentUpon>CustomerInformationView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\FBUser.resx">
+      <DependentUpon>FBUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\OrdersView.resx">
       <DependentUpon>OrdersView.cs</DependentUpon>
     </EmbeddedResource>
@@ -478,6 +495,9 @@
     <EmbeddedResource Include="Forms\DateAndTime.resx">
       <DependentUpon>DateAndTime.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Fallback.resx">
+      <DependentUpon>Fallback.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -489,6 +509,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\InventoryView.resx">
       <DependentUpon>InventoryView.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\KeyButton.resx">
       <DependentUpon>KeyButton.cs</DependentUpon>
@@ -499,6 +520,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\LoginPane.resx">
       <DependentUpon>LoginPane.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\MenuBar.resx">
       <DependentUpon>MenuBar.cs</DependentUpon>

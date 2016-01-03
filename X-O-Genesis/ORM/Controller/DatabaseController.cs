@@ -65,6 +65,8 @@ namespace PetvetPOS_Inventory_System
         public CustomerInformationView customerInformationView { get; set; }
         public CustomerInformationMapper customerInformationMapper { get; set; }
 
+        public FallbackMapper fallbackMapper { get; set; }
+
         public DatabaseController(MasterController masterController)
         {
             this.mySqlDB = new MySqlDB();
@@ -106,6 +108,7 @@ namespace PetvetPOS_Inventory_System
             this.productReturnViewMapper = new ProductReturnViewMapper(mySqlDB);
 
             this.customerInformationMapper = new CustomerInformationMapper(mySqlDB);
+            this.fallbackMapper = new FallbackMapper(mySqlDB);
 
             // Events hooking
             this.masterController.EmployeeLogin += masterController_EmployeeLogin;
@@ -190,14 +193,14 @@ namespace PetvetPOS_Inventory_System
         {
             return customerInformationMapper.updateContacts(oldmob, newmob, other);
         }
-        public bool sessionIn(string user_id)
-        {
-            return userMapper.sessionIn(user_id);
-        }
-        public bool sessionOut(string user_id)
-        {
-            return userMapper.sessionOut(user_id);
-        }
+        //public bool sessionIn(string user_id)
+        //{
+        //    return userMapper.sessionIn(user_id);
+        //}
+        //public bool sessionOut(string user_id)
+        //{
+        //    return userMapper.sessionOut(user_id);
+        //}
         public bool updateInventory(int qty, string barcode)
         {
             return inventoryMapper.updateInventory(qty, barcode);
@@ -248,6 +251,10 @@ namespace PetvetPOS_Inventory_System
             return categoryMapper.getListOfCategory();
         }
 
+        public List<string> getListOfSquery()
+        {
+            return fallbackMapper.getListOfSquery();
+        }
  
         public DataTable loadAuditTrail(DataTable dt){
             return auditTrailView.loadTable(dt);
@@ -267,7 +274,11 @@ namespace PetvetPOS_Inventory_System
             return weeklySalesReportMapper.loadTable(dt);
         }
 
-        
+        public int getSqueryFromID(string id)
+        {
+            return userMapper.getSqueryIndexFromID(id);
+        }
+
         public DataTable getMonthlySalesReport(DataTable dt)
         {
             return monthlySalesReportMapper.loadTable(dt);

@@ -22,8 +22,6 @@ namespace PetvetPOS_Inventory_System
                 "active",
                 "create_time",
                 "session_status",
-                "fallbackid",
-                "fallbackans",
             };
         }
 
@@ -33,11 +31,6 @@ namespace PetvetPOS_Inventory_System
             return getList("id", "active = 1");
         }
 
-        public int getSqueryIndexFromID(string id) 
-        {
-            return (int)readScalar("fallbackid", "id = '" + id + "'");
-        }
-
         public List<string> getListOfAllUsername()
         {
             return getList("id");
@@ -45,7 +38,7 @@ namespace PetvetPOS_Inventory_System
 
         public string createUser(User user)
         {
-            return insertValues(user.UserId, PasswordHash.PasswordHash.CreateHash(user.Password), user.getUserLevel().ToString(), ACTIVE , "NOW()", 0, user.Squery, PasswordHash.PasswordHash.CreateHash(user.FBAnswer));
+            return insertValues(user.UserId, PasswordHash.PasswordHash.CreateHash(user.Password), user.getUserLevel().ToString(), ACTIVE , "NOW()");
         }
 
         public bool inactivateUser(User user)
@@ -82,6 +75,22 @@ namespace PetvetPOS_Inventory_System
             return null;
         }
 
+<<<<<<< HEAD
+        public bool sessionIn(string id)
+        {
+            string login = String.Format(" session_status = 1");
+            string condition = String.Format(" id = '{0}'", id);
+            return update(updateSet(condition, login));
+        }
+        public bool sessionOut(string id)
+        {
+            string login = String.Format(" session_status = 0");
+            string condition = String.Format(" id = '{0}'", id);
+            return update(updateSet(login, condition));
+        }
+
+ 
+=======
         public bool login(string user_id)
         {
             int login_state = 1;
@@ -102,6 +111,8 @@ namespace PetvetPOS_Inventory_System
                 return false;
        
         }
+
+
         public bool logout(string user_id)
         {
             int login_state = 0;
@@ -109,23 +120,6 @@ namespace PetvetPOS_Inventory_System
             string session_state = string.Format("session_status = {0}", login_state);
             return update(updateSet(condition, session_state));
         }
-
-        public bool updateSquery(User oldSquery, User newSquery)
-        {
-            if (oldSquery.UserId != newSquery.UserId)
-                return false;
-            int updateSquery;
-            string updateAns;
-
-            if (!string.IsNullOrWhiteSpace(Convert.ToString(newSquery.Squery)))
-                updateSquery = Convert.ToInt32(String.Format("fallbackid = {0}", newSquery.Squery));
-            if (!string.IsNullOrWhiteSpace(newSquery.FBAnswer))
-                updateAns = String.Format("fallbackans = '{0}'", newSquery.FBAnswer);
-
-            string condition = String.Format("id = '{0}'", newSquery.UserId);
-            //What to do when parameters contains non-string inputs (update)?
-            //return update(updateSet(condition, updateSquery, updateAns));            
-            return false;
-        }
+>>>>>>> 612571bf1f270ebac0c1904034668a80990981e4
     }
 }

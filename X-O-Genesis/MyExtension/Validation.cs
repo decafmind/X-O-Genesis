@@ -14,7 +14,8 @@ namespace MyExtension
             string result = "";
             foreach (char character in textbox.Text)
                 if (acceptedChar.Contains(character))
-                    result += character;
+                    if (!string.IsNullOrWhiteSpace(textbox.Text))
+                        result += character;
             textbox.Text = result;
         }
 
@@ -65,7 +66,8 @@ namespace MyExtension
             string result = "";
             foreach (char character in textbox.Text)
                 if (acceptedChar.Contains(character))
-                    result += character;
+                    if (!string.IsNullOrWhiteSpace(textbox.Text))
+                        result += character;
             textbox.Text = result;
         }
         public static void filterToNumeric(TextBox textbox)
@@ -74,7 +76,8 @@ namespace MyExtension
             string result = "";
             foreach (char character in textbox.Text)
                 if (acceptedChar.Contains(character))
-                    result += character;
+                    if (!string.IsNullOrWhiteSpace(textbox.Text))
+                        result += character;
             textbox.Text = result;
         }
 
@@ -84,7 +87,8 @@ namespace MyExtension
             string result = "";
             foreach (char character in textbox.Text)
                 if (acceptedChar.Contains(character))
-                    result += character;
+                    if (!string.IsNullOrWhiteSpace(textbox.Text))
+                        result += character;
             textbox.Text = result;
         }
         public static void filterToAlphaNumeric(TextBox textbox)
@@ -93,7 +97,8 @@ namespace MyExtension
             string result = "";
             foreach (char character in textbox.Text)
                 if (acceptedChar.Contains(character))
-                    result += character;
+                    if (!string.IsNullOrWhiteSpace(textbox.Text))
+                        result += character;
             textbox.Text = result;
         }
         public static void filterToParagraph(TextBox textbox)
@@ -102,7 +107,8 @@ namespace MyExtension
             string result = "";
             foreach (char character in textbox.Text)
                 if (acceptedChar.Contains(character))
-                    result += character;
+                    if (!string.IsNullOrWhiteSpace(textbox.Text))
+                        result += character;
             textbox.Text = result;
         }
         public static void filterToEmail(TextBox textbox)
@@ -111,7 +117,8 @@ namespace MyExtension
             string result = "";
             foreach (char character in textbox.Text)
                 if (acceptedChar.Contains(character))
-                    result += character;
+                    if (!string.IsNullOrWhiteSpace(textbox.Text))
+                        result += character;
             textbox.Text = result;
         }
         public static void filterToNames(TextBox textbox)
@@ -120,7 +127,8 @@ namespace MyExtension
             string result = "";
             foreach (char character in textbox.Text)
                 if (acceptedChar.Contains(character))
-                    result += character;
+                    if(!string.IsNullOrWhiteSpace(textbox.Text))
+                         result += character;
             textbox.Text = result;
         }
     }
