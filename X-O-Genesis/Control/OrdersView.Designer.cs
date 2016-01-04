@@ -249,6 +249,7 @@
             this.poSlbl2.Name = "poSlbl2";
             this.poSlbl2.Size = new System.Drawing.Size(361, 46);
             this.poSlbl2.TabIndex = 13;
+            this.poSlbl2.Load += new System.EventHandler(this.poSlbl2_Load);
             // 
             // panel4
             // 
@@ -423,6 +424,7 @@
             this.dgTransaction.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgTransaction.Size = new System.Drawing.Size(692, 322);
             this.dgTransaction.TabIndex = 46;
+            this.dgTransaction.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgTransaction_CellContentClick);
             // 
             // OrdersView
             // 

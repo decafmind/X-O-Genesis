@@ -74,8 +74,9 @@ namespace PetvetPOS_Inventory_System
                         return getUserFromId((string)readScalar("id", condition));                      
                     }
                 }
-                catch (Exception)
+                catch (Exception ex)
                 {
+                    ErrorLog.Log(ex);
                     return null;
                 }
             }

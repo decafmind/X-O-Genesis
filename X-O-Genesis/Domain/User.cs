@@ -18,7 +18,7 @@ namespace PetvetPOS_Inventory_System
         // Login details
         public string UserId { get; set; }
         public string Password { get; set; }
-        public int Session { get; set; }
+        public bool Session { get; set; }
         private UserLevel _UserLevel;
         public int Squery { get; set; }
         public string FBAnswer { get; set; }
@@ -33,9 +33,9 @@ namespace PetvetPOS_Inventory_System
             this.UserId = (string)entity.getField("id");
             this.Password = (string)entity.getField("password");
             this.userLevel = (string)entity.getField("access_level");
-            this.Session = (int)entity.getField("session_status");
-            this.Squery = (int)entity.getField("fallbackid");
+            //this.Session = (bool)entity.getField("session_status");
             this.FBAnswer = (string)entity.getField("fallbackans");
+            this.Squery = (int)entity.getField("fallbackid");  
         }
 
         public User(string user_id, string password, string user_level)

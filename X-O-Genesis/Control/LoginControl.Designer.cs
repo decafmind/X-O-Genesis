@@ -131,6 +131,7 @@
             // btnForgot
             // 
             this.btnForgot.BackColor = System.Drawing.Color.Khaki;
+            this.btnForgot.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnForgot.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.btnForgot.FlatAppearance.BorderSize = 0;
             this.btnForgot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

@@ -377,6 +377,7 @@
             this.poSlbl2.Name = "poSlbl2";
             this.poSlbl2.Size = new System.Drawing.Size(273, 46);
             this.poSlbl2.TabIndex = 13;
+            this.poSlbl2.Load += new System.EventHandler(this.poSlbl2_Load);
             // 
             // rightSidePane
             // 

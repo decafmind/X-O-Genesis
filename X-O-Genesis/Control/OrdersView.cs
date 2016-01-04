@@ -1,4 +1,4 @@
-﻿using System;
+﻿using System ;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
@@ -268,7 +268,7 @@ namespace PetvetPOS_Inventory_System
             if (success)
                 totalAmount += productTransaction.GroupPrice;
 
-            poSlbl2.Text = totalAmount.ToString();
+            poSlbl2.Text = totalAmount.ToString("N");
             txtEncode.Clear();
             txtQuantity.Clear();
             txtQuantity.Focus();
@@ -397,9 +397,9 @@ namespace PetvetPOS_Inventory_System
                     carts.Remove(item);
 
                     if (totalAmountWithService != 0)
-                        poSlbl2.Text = totalAmountWithService.ToString();
+                        poSlbl2.Text = totalAmountWithService.ToString("N");
                     else
-                        poSlbl2.Text = totalAmount.ToString();
+                        poSlbl2.Text = totalAmount.ToString("N");
 
                     lblPOSmsg.Text = string.Format("Void {0}", item.product.Description);
                     break;
@@ -546,6 +546,16 @@ namespace PetvetPOS_Inventory_System
         private void filterNumeric(object sender, EventArgs e)
         {
             Validation.filterToNumeric(sender as TextBox);
+        }
+        
+        private void poSlbl2_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgTransaction_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

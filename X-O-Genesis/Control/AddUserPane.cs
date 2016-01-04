@@ -14,11 +14,9 @@ using MyExtension;
 
 namespace PetvetPOS_Inventory_System
 {
-    // jldkfj
     public partial class AddUserPane : MyUserControl
     {
         Employee currentEmployee;
-        User currentUser;
         UserAdministration userAdministration;
         DatabaseController dbController;
         UserAdminMode mode;
