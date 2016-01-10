@@ -974,6 +974,12 @@ namespace PetvetPOS_Inventory_System
         private void filterAlphaNumeric(object sender, EventArgs e)
         {
             Validation.filterToAlphaNumeric(sender as TextBox);
+
+        }
+
+        private void dgInventory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
     }

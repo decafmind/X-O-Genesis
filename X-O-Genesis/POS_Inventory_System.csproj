@@ -179,6 +179,12 @@
     <Compile Include="Control\OrderSliderPane.Designer.cs">
       <DependentUpon>OrderSliderPane.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Personalization.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Personalization.Designer.cs">
+      <DependentUpon>Personalization.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\ProductSliderPane.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -191,8 +197,17 @@
     <Compile Include="Control\SliderPane.Designer.cs">
       <DependentUpon>SliderPane.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\SystemSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\SystemSettings.Designer.cs">
+      <DependentUpon>SystemSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Domain\Client.cs" />
     <Compile Include="Domain\Controller\Service.cs" />
+    <Compile Include="Domain\Enums\Settings.cs" />
+    <Compile Include="Domain\Theme.cs" />
+    <Compile Include="EventHandler\SettingArgs.cs" />
     <Compile Include="Domain\CustomerInformation.cs" />
     <Compile Include="Domain\Fallback.cs" />
     <Compile Include="Domain\InventoryPersonnelMenuList.cs" />
@@ -455,6 +470,11 @@
       <DependentUpon>ValidationMarks.cs</DependentUpon>
     </Compile>
     <Compile Include="ORM\ViewGateway\WeeklySalesReport.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -473,11 +493,17 @@
     <EmbeddedResource Include="Control\OrderSliderPane.resx">
       <DependentUpon>OrderSliderPane.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\Personalization.resx">
+      <DependentUpon>Personalization.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\ProductSliderPane.resx">
       <DependentUpon>ProductSliderPane.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\SliderPane.resx">
       <DependentUpon>SliderPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\SystemSettings.resx">
+      <DependentUpon>SystemSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CriticalNotif.resx">
       <DependentUpon>CriticalNotif.cs</DependentUpon>
@@ -593,11 +619,6 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -728,6 +749,7 @@
     <None Include="Resources\AkiraGIF_x.gif" />
     <None Include="Resources\AkiraGIF_x1.gif" />
     <None Include="Resources\AkiraGIF%28100x100%29.gif" />
+    <None Include="Resources\matBG.png" />
     <Content Include="SystemIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

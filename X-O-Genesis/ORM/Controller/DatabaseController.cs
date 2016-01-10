@@ -193,14 +193,7 @@ namespace PetvetPOS_Inventory_System
         {
             return customerInformationMapper.updateContacts(oldmob, newmob, other);
         }
-        //public bool sessionIn(string user_id)
-        //{
-        //    return userMapper.sessionIn(user_id);
-        //}
-        //public bool sessionOut(string user_id)
-        //{
-        //    return userMapper.sessionOut(user_id);
-        //}
+      
         public bool updateInventory(int qty, string barcode)
         {
             return inventoryMapper.updateInventory(qty, barcode);
@@ -517,11 +510,6 @@ namespace PetvetPOS_Inventory_System
             return productInventory.loadTable(dt, condition);
         }
 
-        //public DataTable filterCustomerInformation(DataTable dt, string token)
-        //{
-        //    string condition = String.Format(" fname LIKE '%{0}%'", token);
-        //    return customerInformationMapper.loadTable(dt);
-        //}
 
         public DataTable filterPurchasedProduct(DataTable dt, string token)
         {

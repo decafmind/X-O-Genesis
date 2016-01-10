@@ -38,14 +38,32 @@ namespace PetvetPOS_Inventory_System
             InitializeComponent();
             this.masterController = masterController;
             this.masterController.setTitleBar = this;
-            this.masterController.ContentChange += new EventHandler<ContentArgs>(masterController_ContentChange);
+            this.masterController.ContentChanged += new EventHandler<ContentArgs>(masterController_ContentChange);
 
             this.masterController.EmployeeLogin += masterController_EmployeeLogin;
             this.masterController.EmployeeLogout += masterController_EmployeeLogout;
+            this.masterController.SettingsChanged += masterController_SettingsChanged;
             masterController.getFrmMain.Resize += getFrmMain_Resize;
            
             TabStop = false;
             whenNotLogin();
+            initColors();
+
+        }
+
+        void initColors()
+        {
+            panelTitle.BackColor = Properties.Settings.Default.headerColor;
+            panel4.BackColor = Properties.Settings.Default.headerColor;
+            panelImage.BackColor = Properties.Settings.Default.iconColor;
+        }
+
+        void masterController_SettingsChanged(object sender, SettingArgs e)
+        {
+            if (e.settings == Settings.PERSONALIZATION)
+            {
+                initColors();
+            }
         }
 
         void getFrmMain_Resize(object sender, EventArgs e)

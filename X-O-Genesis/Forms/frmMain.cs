@@ -59,7 +59,7 @@ namespace PetvetPOS_Inventory_System
             // EventHandler hooking
             masterController.EmployeeLogin += masterController_EmployeeLogin;
             masterController.EmployeeLogout += masterController_EmployeeLogout;
-            masterController.ContentChange += new EventHandler<ContentArgs>(masterController_ContentChange);
+            masterController.ContentChanged += new EventHandler<ContentArgs>(masterController_ContentChange);
 
             // Initialize DatabaseController
             try
@@ -152,21 +152,15 @@ namespace PetvetPOS_Inventory_System
         // This method change the backColor of SideBar and SubBar into their designated true Color
         public void activateTrueForm()
         {
-            panelSidebar.BackColor = SystemColors.menuBarBlack;
+            panelSidebar.BackColor = Properties.Settings.Default.sidebarColor;
             subHeader.BackColor = Color.Silver;
-            outLine.BackColor = Color.Green;
-            outline2.BackColor = Color.Green;
-            outline3.BackColor = Color.Green;
         }        
 
         // This method is the antithesis of activateTrueForm method
         public void hideTrueForm()
-        {
+        {   
             panelSidebar.BackColor = Color.White;
             subHeader.BackColor = Color.White;
-            outLine.BackColor = Color.White;
-            outline2.BackColor = Color.White;
-            outline3.BackColor = Color.White;
         }
 
         public void disableForm()
@@ -218,6 +212,11 @@ namespace PetvetPOS_Inventory_System
         }
 
         private void panelSidebar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void mainPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }

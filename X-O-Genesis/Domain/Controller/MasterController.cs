@@ -11,13 +11,17 @@ namespace PetvetPOS_Inventory_System
     /* The class that links and manipulates the mainForm & its Controls.
      * Central communication of all MyUserControl
      */
+    
+
     public class MasterController
     {
         /* EventHandler */
-        public event EventHandler<ContentArgs> ContentChange;
+        public event EventHandler<ContentArgs> ContentChanged;
         public event EventHandler<EmployeeArgs> EmployeeLogin;
         public event EventHandler EmployeeLogout;
         public event EventHandler ServerClock;
+        public event EventHandler<SettingArgs> SettingsChanged;
+
 
         /* Fields */
         private frmMain mainForm;
@@ -90,6 +94,7 @@ namespace PetvetPOS_Inventory_System
             get { return currentContent; }
             private set { currentContent = value; }
         }
+
         public Button setFormReturnkey
         {
             set { mainForm.AcceptButton = value; }
@@ -124,9 +129,10 @@ namespace PetvetPOS_Inventory_System
         /* Event Trigger */
         protected void OnContentChange(ContentArgs e)
         {
-            EventHandler<ContentArgs> onContentChange = ContentChange;
+            EventHandler<ContentArgs> onContentChange = ContentChanged;
             if (onContentChange != null)
                 onContentChange(this, e);
+            setFormReturnkey = null;
         }
 
         public void OnEmployeeLogin(EmployeeArgs e)
@@ -135,6 +141,13 @@ namespace PetvetPOS_Inventory_System
             if (onEmployeeLogin != null)
                 onEmployeeLogin(this, e);
             LoginEmployee = e.employee;
+        }
+
+        public void OnSettingsChanged(SettingArgs s)
+        {
+            EventHandler<SettingArgs> onSettingsChanged = SettingsChanged;
+            if (onSettingsChanged != null)
+                onSettingsChanged(this, s);
         }
 
         public void OnEmployeeLogout(EventArgs e)
@@ -219,5 +232,6 @@ namespace PetvetPOS_Inventory_System
         {
             //
         }
+
     }
 }

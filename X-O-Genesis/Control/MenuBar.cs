@@ -27,6 +27,16 @@ namespace PetvetPOS_Inventory_System
             }
         }
 
+        private void initColor()
+        {
+            this.BackColor = Properties.Settings.Default.sidebarColor;
+        }
+
+        private void hideColor()
+        {
+            this.BackColor = Color.White;
+        }
+
         public void selectControlbyIndex(int index)
         {
             int n = menuControls.Count;
@@ -89,6 +99,15 @@ namespace PetvetPOS_Inventory_System
             this.masterController.setMenuBar = this;
             masterController.EmployeeLogin += masterController_EmployeeLogin;
             masterController.EmployeeLogout += masterController_EmployeeLogout;
+            masterController.SettingsChanged += masterController_SettingsChanged;
+        }
+
+        void masterController_SettingsChanged(object sender, SettingArgs e)
+        {
+            if (e.settings == Settings.PERSONALIZATION)
+            {
+                initColor();
+            }
         }
 
         void getFrmMain_Resize(object sender, EventArgs e)
@@ -99,6 +118,7 @@ namespace PetvetPOS_Inventory_System
         void masterController_EmployeeLogout(object sender, EventArgs e)
         {
             removeMenuControls();
+            hideColor();
         }
 
         void masterController_EmployeeLogin(object sender, EmployeeArgs e)
@@ -129,6 +149,7 @@ namespace PetvetPOS_Inventory_System
             masterController.appearSideAndSubBar();
             initControlLocation();
             selectControlbyName(menu);
+            initColor();
         }
 
         public void updateMenus()
@@ -152,6 +173,11 @@ namespace PetvetPOS_Inventory_System
         private void timer1_Tick(object sender, EventArgs e)
         {
             timer1.Stop();
+        }
+
+        private void MenuBar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

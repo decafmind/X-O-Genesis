@@ -42,6 +42,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Name = "MenuBar";
             this.Size = new System.Drawing.Size(105, 431);
+            this.Load += new System.EventHandler(this.MenuBar_Load);
             this.ResumeLayout(false);
 
         }
