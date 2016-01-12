@@ -29,15 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sales));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel8 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.cbCharttype = new System.Windows.Forms.ComboBox();
+            this.lblType = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -50,11 +52,15 @@
             this.salesChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel7 = new System.Windows.Forms.Panel();
             this.picSearch = new System.Windows.Forms.PictureBox();
+            this.keyButton1 = new PetvetPOS_Inventory_System.KeyButton();
             this.label2 = new System.Windows.Forms.Label();
+            this.keyButton4 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton3 = new PetvetPOS_Inventory_System.KeyButton();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
             this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -64,12 +70,6 @@
             this.lblTodaysales = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblType = new System.Windows.Forms.Label();
-            this.cbCharttype = new System.Windows.Forms.ComboBox();
-            this.keyButton1 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton4 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton3 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel6.SuspendLayout();
@@ -111,14 +111,14 @@
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(268, 0);
             this.dataGridView2.Name = "dataGridView2";
@@ -144,6 +144,30 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(268, 183);
             this.panel6.TabIndex = 5;
+            // 
+            // cbCharttype
+            // 
+            this.cbCharttype.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCharttype.FormattingEnabled = true;
+            this.cbCharttype.Items.AddRange(new object[] {
+            "BAR",
+            "LINE"});
+            this.cbCharttype.Location = new System.Drawing.Point(71, 44);
+            this.cbCharttype.Name = "cbCharttype";
+            this.cbCharttype.Size = new System.Drawing.Size(189, 27);
+            this.cbCharttype.TabIndex = 7;
+            this.cbCharttype.Text = "BAR";
+            this.cbCharttype.SelectedIndexChanged += new System.EventHandler(this.cbCharttype_SelectedIndexChanged);
+            // 
+            // lblType
+            // 
+            this.lblType.AutoSize = true;
+            this.lblType.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblType.Location = new System.Drawing.Point(3, 49);
+            this.lblType.Name = "lblType";
+            this.lblType.Size = new System.Drawing.Size(46, 17);
+            this.lblType.TabIndex = 6;
+            this.lblType.Text = "TYPE";
             // 
             // label6
             // 
@@ -209,7 +233,6 @@
             this.cmType.Name = "cmType";
             this.cmType.Size = new System.Drawing.Size(189, 27);
             this.cmType.TabIndex = 0;
-            this.cmType.Text = "DAILY";
             this.cmType.SelectedIndexChanged += new System.EventHandler(this.cmType_SelectedIndexChanged);
             // 
             // panel5
@@ -245,17 +268,17 @@
             // 
             // salesChart
             // 
-            chartArea2.Name = "ChartArea1";
-            this.salesChart.ChartAreas.Add(chartArea2);
+            chartArea4.Name = "ChartArea1";
+            this.salesChart.ChartAreas.Add(chartArea4);
             this.salesChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.salesChart.Legends.Add(legend2);
+            legend4.Name = "Legend1";
+            this.salesChart.Legends.Add(legend4);
             this.salesChart.Location = new System.Drawing.Point(5, 5);
             this.salesChart.Name = "salesChart";
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.salesChart.Series.Add(series2);
+            series4.ChartArea = "ChartArea1";
+            series4.Legend = "Legend1";
+            series4.Name = "Series1";
+            this.salesChart.Series.Add(series4);
             this.salesChart.Size = new System.Drawing.Size(862, 211);
             this.salesChart.TabIndex = 1;
             this.salesChart.Text = "chart1";
@@ -290,6 +313,18 @@
             this.picSearch.TabIndex = 16;
             this.picSearch.TabStop = false;
             // 
+            // keyButton1
+            // 
+            this.keyButton1.accessKeyChar = "F1";
+            this.keyButton1.accessMasterController = null;
+            this.keyButton1.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton1.Location = new System.Drawing.Point(67, 6);
+            this.keyButton1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton1.Name = "keyButton1";
+            this.keyButton1.Size = new System.Drawing.Size(61, 50);
+            this.keyButton1.TabIndex = 0;
+            // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -299,6 +334,30 @@
             this.label2.TabIndex = 20;
             this.label2.Text = "Next sales report";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // keyButton4
+            // 
+            this.keyButton4.accessKeyChar = "P";
+            this.keyButton4.accessMasterController = null;
+            this.keyButton4.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton4.Location = new System.Drawing.Point(656, 4);
+            this.keyButton4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton4.Name = "keyButton4";
+            this.keyButton4.Size = new System.Drawing.Size(61, 50);
+            this.keyButton4.TabIndex = 28;
+            // 
+            // keyButton3
+            // 
+            this.keyButton3.accessKeyChar = "F5";
+            this.keyButton3.accessMasterController = null;
+            this.keyButton3.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton3.Location = new System.Drawing.Point(337, 6);
+            this.keyButton3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton3.Name = "keyButton3";
+            this.keyButton3.Size = new System.Drawing.Size(61, 50);
+            this.keyButton3.TabIndex = 24;
             // 
             // pictureBox2
             // 
@@ -339,6 +398,18 @@
             this.label8.TabIndex = 26;
             this.label8.Text = "Refresh";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // keyButton2
+            // 
+            this.keyButton2.accessKeyChar = "Ctrl";
+            this.keyButton2.accessMasterController = null;
+            this.keyButton2.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton2.Location = new System.Drawing.Point(586, 4);
+            this.keyButton2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton2.Name = "keyButton2";
+            this.keyButton2.Size = new System.Drawing.Size(61, 50);
+            this.keyButton2.TabIndex = 21;
             // 
             // label9
             // 
@@ -441,78 +512,6 @@
             this.label1.Text = "TODAY SALES";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // lblType
-            // 
-            this.lblType.AutoSize = true;
-            this.lblType.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblType.Location = new System.Drawing.Point(3, 49);
-            this.lblType.Name = "lblType";
-            this.lblType.Size = new System.Drawing.Size(46, 17);
-            this.lblType.TabIndex = 6;
-            this.lblType.Text = "TYPE";
-            // 
-            // cbCharttype
-            // 
-            this.cbCharttype.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbCharttype.FormattingEnabled = true;
-            this.cbCharttype.Items.AddRange(new object[] {
-            "BAR",
-            "LINE"});
-            this.cbCharttype.Location = new System.Drawing.Point(71, 44);
-            this.cbCharttype.Name = "cbCharttype";
-            this.cbCharttype.Size = new System.Drawing.Size(189, 27);
-            this.cbCharttype.TabIndex = 7;
-            this.cbCharttype.Text = "BAR";
-            this.cbCharttype.SelectedIndexChanged += new System.EventHandler(this.cbCharttype_SelectedIndexChanged);
-            // 
-            // keyButton1
-            // 
-            this.keyButton1.accessKeyChar = "F1";
-            this.keyButton1.accessMasterController = null;
-            this.keyButton1.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton1.Location = new System.Drawing.Point(67, 6);
-            this.keyButton1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton1.Name = "keyButton1";
-            this.keyButton1.Size = new System.Drawing.Size(61, 50);
-            this.keyButton1.TabIndex = 0;
-            // 
-            // keyButton4
-            // 
-            this.keyButton4.accessKeyChar = "P";
-            this.keyButton4.accessMasterController = null;
-            this.keyButton4.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton4.Location = new System.Drawing.Point(656, 4);
-            this.keyButton4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton4.Name = "keyButton4";
-            this.keyButton4.Size = new System.Drawing.Size(61, 50);
-            this.keyButton4.TabIndex = 28;
-            // 
-            // keyButton3
-            // 
-            this.keyButton3.accessKeyChar = "F5";
-            this.keyButton3.accessMasterController = null;
-            this.keyButton3.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton3.Location = new System.Drawing.Point(337, 6);
-            this.keyButton3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton3.Name = "keyButton3";
-            this.keyButton3.Size = new System.Drawing.Size(61, 50);
-            this.keyButton3.TabIndex = 24;
-            // 
-            // keyButton2
-            // 
-            this.keyButton2.accessKeyChar = "Ctrl";
-            this.keyButton2.accessMasterController = null;
-            this.keyButton2.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton2.Location = new System.Drawing.Point(586, 4);
-            this.keyButton2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton2.Name = "keyButton2";
-            this.keyButton2.Size = new System.Drawing.Size(61, 50);
-            this.keyButton2.TabIndex = 21;
             // 
             // Sales
             // 

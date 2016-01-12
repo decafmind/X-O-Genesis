@@ -106,9 +106,7 @@ namespace PetvetPOS_Inventory_System
 
         public void clearTextboxes()
         {
-            foreach (TextBox text in textboxes)
-                text.Clear();
-
+            Validation.clearFields(panel_AddUser);
             domainPosition.Text = "Cashier";
             imageUser.Image = null;
             isDirty = false;
@@ -170,8 +168,6 @@ namespace PetvetPOS_Inventory_System
                 txtAddress.Text = currentEmployee.Address;
                 domainPosition.Text = currentEmployee.Position.ToString();
 
-
-
                 if (File.Exists(currentEmployee.ImagePath))
                     imageUser.Image = Renderer.resizeImage(Image.FromFile(currentEmployee.ImagePath) as Bitmap, imageUser.Width, imageUser.Height) as Image;
                 else
@@ -199,8 +195,21 @@ namespace PetvetPOS_Inventory_System
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (Validation.isFilled(panel_AddUser))
+            if (Validation.isFilled(panel_AddUser, txtMiddlename, txtPassword, txtRepassword))
             {
+                if (mode == UserAdminMode.Add_user)
+                {
+                    if (string.IsNullOrWhiteSpace(txtPassword.Text) || string.IsNullOrWhiteSpace(txtRepassword.Text))
+                    {
+                        MessageBanner banner0 = new MessageBanner("Please fill up all the fields and try again.", 2000);
+                        banner0.BackColor = System.Drawing.Color.DarkRed;
+                        banner0.ForeColor = System.Drawing.Color.White;
+                        banner0.Opacity = 1;
+                        banner0.Show();
+                        return;
+                    }
+
+                }
                 if (userAdministration.usernames.Contains(txtUsername.Text) && mode != UserAdminMode.Edit_user)
                 {
                     MessageBox.Show(String.Format("The username {0} did already exists!", txtUsername.Text));
@@ -264,14 +273,13 @@ namespace PetvetPOS_Inventory_System
 
                 this.disappear();
             }
-
             else
             {
-                MessageBanner banner = new MessageBanner("Please fill up all the fields and try again.", 2000);
-                banner.BackColor = System.Drawing.Color.DarkRed;
-                banner.ForeColor = System.Drawing.Color.White;
-                banner.Opacity = 1;
-                banner.Show();
+                MessageBanner banner1 = new MessageBanner("Please fill up all the fields and try again.", 2000);
+                banner1.BackColor = System.Drawing.Color.DarkRed;
+                banner1.ForeColor = System.Drawing.Color.White;
+                banner1.Opacity = 1;
+                banner1.Show();
             }
          
         }
@@ -449,6 +457,11 @@ namespace PetvetPOS_Inventory_System
         }
 
         private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel_AddUser_Paint(object sender, PaintEventArgs e)
         {
 
         }

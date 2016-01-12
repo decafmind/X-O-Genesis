@@ -33,7 +33,7 @@ namespace PetvetPOS_Inventory_System
 
         public void insertTimeIn(Employee employee)
         {
-            insertQuery = String.Format("INSERT INTO login_trail_tbl(user_id) VALUES('{0}')",employee.User_id);
+            insertQuery = String.Format("INSERT INTO login_trail_tbl(user_id, datetime_in) VALUES('{0}' ,'{1}')", employee.User_id, MyExtension.MySqlToCSharp.convertDateTime(DateTime.Now));
             create(insertQuery);
         }
         

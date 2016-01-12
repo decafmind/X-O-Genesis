@@ -301,14 +301,17 @@
             // 
             // rbPurchased
             // 
+            this.rbPurchased.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbPurchased.AutoSize = true;
             this.rbPurchased.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbPurchased.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rbPurchased.FlatAppearance.BorderSize = 0;
+            this.rbPurchased.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbPurchased.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbPurchased.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.rbPurchased.Location = new System.Drawing.Point(92, 0);
+            this.rbPurchased.Location = new System.Drawing.Point(84, 0);
             this.rbPurchased.Name = "rbPurchased";
-            this.rbPurchased.Size = new System.Drawing.Size(119, 32);
+            this.rbPurchased.Size = new System.Drawing.Size(111, 32);
             this.rbPurchased.TabIndex = 4;
             this.rbPurchased.Text = "Sold product";
             this.rbPurchased.UseVisualStyleBackColor = true;
@@ -316,16 +319,20 @@
             // 
             // rbInventory
             // 
+            this.rbInventory.Appearance = System.Windows.Forms.Appearance.Button;
             this.rbInventory.AutoSize = true;
             this.rbInventory.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(2)))), ((int)(((byte)(3)))));
             this.rbInventory.Checked = true;
             this.rbInventory.Cursor = System.Windows.Forms.Cursors.Hand;
             this.rbInventory.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rbInventory.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.rbInventory.FlatAppearance.BorderSize = 0;
+            this.rbInventory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.rbInventory.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbInventory.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.rbInventory.Location = new System.Drawing.Point(0, 0);
             this.rbInventory.Name = "rbInventory";
-            this.rbInventory.Size = new System.Drawing.Size(92, 32);
+            this.rbInventory.Size = new System.Drawing.Size(84, 32);
             this.rbInventory.TabIndex = 3;
             this.rbInventory.TabStop = true;
             this.rbInventory.Text = "Products";

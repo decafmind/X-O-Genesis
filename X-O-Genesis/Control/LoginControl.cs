@@ -170,6 +170,12 @@ namespace PetvetPOS_Inventory_System
                 txtUsername.BackColor = Color.White;
                 txtPassword.BackColor = txtUsername.BackColor;
             }
+
+            if (t.Text.Length > 0)
+            {
+                t.SelectionStart = t.Text.Length;
+                t.SelectionLength = 0;
+            }
         }
 
         private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)

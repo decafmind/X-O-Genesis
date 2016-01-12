@@ -17,9 +17,9 @@ namespace PetvetPOS_Inventory_System
                  new MenuControl(new Home(masterController), menuBar),
                  new MenuControl(new Sales(masterController), menuBar),
                  new MenuControl(new SystemSettings(masterController), menuBar),
-                 //new MenuControl(new UserAdministration(masterController), menuBar),
+                 new MenuControl(new UserAdministration(masterController), menuBar),
                  new MenuControl(new InventoryView(masterController), menuBar),
-                 new MenuControl(new CustomerInformationView(masterController), menuBar),
+                // new MenuControl(new CustomerInformationView(masterController), menuBar),
                  
             }; 
         }

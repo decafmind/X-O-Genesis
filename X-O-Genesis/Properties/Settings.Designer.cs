@@ -55,5 +55,17 @@ namespace PetvetPOS_Inventory_System.Properties {
                 this["iconColor"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool isSystemConfigured {
+            get {
+                return ((bool)(this["isSystemConfigured"]));
+            }
+            set {
+                this["isSystemConfigured"] = value;
+            }
+        }
     }
 }

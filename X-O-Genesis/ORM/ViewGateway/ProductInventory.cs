@@ -52,11 +52,7 @@ namespace PetvetPOS_Inventory_System
 
             if (qty_onhand <= (qty_received * .10M))
             {
-                CriticalNotif notif = new CriticalNotif(product, (int)qty_onhand);
-                notif.Location = new Point(masterController.getFrmMain.Height - notif.Height,
-                                            masterController.getFrmMain.Width - notif.Width
-                                            );
-                notif.Show();
+                masterController.displayCriticalNotif(product, (int)qty_onhand);
             }
         }
 

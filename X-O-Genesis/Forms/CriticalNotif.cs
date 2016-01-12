@@ -20,7 +20,16 @@ namespace PetvetPOS_Inventory_System
         public CriticalNotif(Product product, int qty_left)
         {
             InitializeComponent();
-            string message = string.Format("Product {0} is already in critical level. {1} left.", product.Description, qty_left);
+            string message = string.Empty;
+            if (qty_left == 0)
+            {
+                message = string.Format("Product {0} is OUT OF STOCK.", product.Description);
+            }
+            else
+            {
+                message = string.Format("Product {0} is already in critical level. {1} left.", product.Description, qty_left);
+            }
+             
             label1.Text = message;
         }
 

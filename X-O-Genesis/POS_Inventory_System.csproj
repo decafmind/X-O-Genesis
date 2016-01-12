@@ -235,6 +235,12 @@
     <Compile Include="Forms\Fallback.Designer.cs">
       <DependentUpon>Fallback.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ModulesConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModulesConfiguration.Designer.cs">
+      <DependentUpon>ModulesConfiguration.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyExtension\ErrorLog.cs" />
     <Compile Include="ORM\TableGateway\AuditTrailMapper.cs" />
     <Compile Include="ORM\TableGateway\CustomerInformationMapper.cs" />
@@ -577,6 +583,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\ProductPaneScroll.resx">
       <DependentUpon>ProductPaneScroll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModulesConfiguration.resx">
+      <DependentUpon>ModulesConfiguration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

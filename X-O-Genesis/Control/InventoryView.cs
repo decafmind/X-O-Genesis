@@ -58,7 +58,10 @@ namespace PetvetPOS_Inventory_System
                 critical = new DataGridViewCellStyle()
                 {
                     Font = timesNewRoman,
-                    BackColor = SystemColors.inventoryRosy,
+                    BackColor = Color.DarkRed,
+                    ForeColor = Color.White,
+                    SelectionBackColor = SystemColors.inventoryRosy,
+                    SelectionForeColor = Color.Black,
                 };
 
                 normal = new DataGridViewCellStyle()
@@ -427,14 +430,15 @@ namespace PetvetPOS_Inventory_System
         private void checkChanged(object sender, EventArgs e)
         {
             RadioButton cb = sender as RadioButton;
+
             if (cb.Checked)
             {
-                cb.BackColor = SystemColors.jetBlackTitleBar;
+                cb.FlatAppearance.CheckedBackColor = SystemColors.jetBlackTitleBar;
                 cb.ForeColor = Color.WhiteSmoke;
             }
             else
             {
-                cb.BackColor = Color.Silver;
+                cb.FlatAppearance.CheckedBackColor = Color.Silver;
                 cb.ForeColor = SystemColors.jetBlackTitleBar;
             }
 
