@@ -19,7 +19,6 @@ namespace PetvetPOS_Inventory_System
         // ProductPaneScroll productPaneScroll;
         ProductSliderPane sliderPane;
         DatabaseController dbController;
-
         DataTable inventoryTable;
 
         private const int PRODUCT_NAME_INDEX = 0;
@@ -27,6 +26,9 @@ namespace PetvetPOS_Inventory_System
         private const int QUANTITY_ONHAND_INDEX = 1;
         private const int QUANTITY_RECEIVED_INDEX = 2;
         private const int GROOMING_PETSIZE_INDEX = 1;
+
+        public int currentSelection;
+        string barcode;
 
         DataGridViewCellStyle critical, normal, highlighted;
         private const decimal CRITICAL_LEVEL = .10M;
@@ -83,13 +85,15 @@ namespace PetvetPOS_Inventory_System
         public void initializePage()
         {
             tabPage1.Select();
-            txtSearch.Enabled = false;
+            txtSearch.Enabled = true;          
 
             fillgdInventory();
 
             dbController.UpdateEntity += dbController_UpdateEntity;
             dbController.InsertEntity += dbController_InsertEntity;
             dbController.DeleteEntity += dbController_DeleteEntity;
+
+            txtSearch.Focus();
         }
 
         public void finalizePage()
@@ -190,7 +194,6 @@ namespace PetvetPOS_Inventory_System
         public void fillgdInventory()
         {
             inventoryTable = new DataTable();
-
             if (rbInventory.Checked)
                 dbController.readInventory(inventoryTable);
             else if (rbPurchased.Checked)
@@ -272,7 +275,7 @@ namespace PetvetPOS_Inventory_System
         {
             get
             {
-                return Menu.Inventory;
+                return Menu.StockControl;
             }
         }
 
@@ -281,14 +284,18 @@ namespace PetvetPOS_Inventory_System
             get { return Properties.Resources.inventoryWhite; }
         }
 
+        
+        public string Barcode { get { return barcode; } set { barcode = value; } }
         private void Inventory_KeyFunction(KeyEventArgs e)
         {
             if (e.KeyCode == Keys.F1)
             {
                 if (mainTab.SelectedTab == tabPage1)
                 {
-                    toogleSearch();
                     keyButton6.updateButton();
+                    modalInspectProduct inspect = new modalInspectProduct(dbController);
+                    inspect.bcode = getBarcodeFromRow();
+                    inspect.ShowDialog();
                 }
                 else
                 {
@@ -302,7 +309,10 @@ namespace PetvetPOS_Inventory_System
                 if (mainTab.SelectedTab == tabPage1)
                 {
                     keyButton9.updateButton();
-                    updateProduct();
+                    currentSelection = dgInventory.CurrentCell.RowIndex;
+                    updateProduct();              
+                    dgInventory.Rows[currentSelection].Selected = true;
+
                 }
                 else
                 {
@@ -313,7 +323,10 @@ namespace PetvetPOS_Inventory_System
             else if (e.KeyCode == Keys.F3)
             {
                 keyButton8.updateButton();
+                currentSelection = dgInventory.CurrentCell.RowIndex;
                 addProduct();
+                dgInventory.Rows[currentSelection].Selected = true;
+                
             }
             else if (e.Control && e.KeyCode == Keys.P)
             {
@@ -334,13 +347,18 @@ namespace PetvetPOS_Inventory_System
             else if (e.KeyCode == Keys.Escape)
             {
                 if (productSliderPane1.isOpen())
+                {
                     productSliderPane1.toggle();
+                    toogleSearch();
+                }
+                   
             }
 
             if (sliderPane.isOpen())
             {
                 if (e.KeyCode == Keys.Enter){
                     sliderPane.OK();
+                    toogleSearch();
                 }
             }
 
@@ -378,12 +396,14 @@ namespace PetvetPOS_Inventory_System
                 txtSearch.Clear();
                 txtSearch.Enabled = false;
                 fillgdInventory();
+              
             }
             else
             {
                 if (sliderPane.isOpen())
                     sliderPane.hide();
                 txtSearch.Enabled = true;
+               
             }
         }
 
@@ -397,11 +417,9 @@ namespace PetvetPOS_Inventory_System
             sliderPane.mode = InventoryMode.ADD;
             sliderPane.clearTexts();
 
-            if (txtSearch.Enabled)
-                toogleSearch();
-
             if (!sliderPane.isOpen())
                 sliderPane.toggle();
+            toogleSearch();
         }
 
         private void txtSearch_EnabledChanged_1(object sender, EventArgs e)
@@ -409,10 +427,8 @@ namespace PetvetPOS_Inventory_System
             if (txtSearch.Enabled)
             {
                 txtSearch.Focus();
-                btnSearch.BackColor = SystemColors.menuLightBlue;
+               
             }
-            else
-                btnSearch.BackColor = Color.WhiteSmoke;
         }
 
 
@@ -462,11 +478,6 @@ namespace PetvetPOS_Inventory_System
             filterdgInventory(token);
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            toogleSearch();
-        }
-
         void updateProduct()
         {    
             string product_name = string.Empty;
@@ -474,12 +485,11 @@ namespace PetvetPOS_Inventory_System
             Product product = dbController.getProductThroughName(product_name);
             if (product.Barcode != null)
             {
-                productSliderPane1.mapProductToTextfield(product);
-
                 productSliderPane1.mode = InventoryMode.UPDATE;
-
+                productSliderPane1.mapProductToTextfield(product);       
                 if (!productSliderPane1.isOpen())
                     productSliderPane1.toggle();
+                toogleSearch();
             }
             else
             {
@@ -950,7 +960,11 @@ namespace PetvetPOS_Inventory_System
                 cellRectangle.Bottom + panel4.Top + (cellRectangle.Height * 2)
                 );
         }
-
+        private string getBarcodeFromRow()
+        {
+            Product product = dbController.productMapper.getProductFromName(getValueFromDatagridCell(PRODUCT_NAME_INDEX));
+            return product.Barcode;
+        }
         private void filterNames(object sender, EventArgs e)
         {
             Validation.filterToNames(sender as TextBox);
@@ -974,7 +988,7 @@ namespace PetvetPOS_Inventory_System
         private void filterAlphaNumeric(object sender, EventArgs e)
         {
             Validation.filterToAlphaNumeric(sender as TextBox);
-
+            search(txtSearch.Text);
         }
 
         private void dgInventory_CellContentClick(object sender, DataGridViewCellEventArgs e)

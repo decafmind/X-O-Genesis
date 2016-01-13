@@ -31,7 +31,6 @@ namespace PetvetPOS_Inventory_System
         public MenuControl(IContentPage mapControl, MenuBar menuBar)
         {
             InitializeComponent();
-
             this.mapControl = mapControl;
             accessMenuBar = menuBar;
             accessIconImage = mapControl.accessImage;
@@ -59,6 +58,7 @@ namespace PetvetPOS_Inventory_System
             private set {
                 iconImage = Renderer.resizeImage(value, 47, 47);
                 icon.Invalidate();
+                icon.Left -= 5;
             }
         }
 
@@ -66,6 +66,7 @@ namespace PetvetPOS_Inventory_System
         {
             private set { menuName.Text = value; }
             get { return menuName.Text; }
+           
         }
 
         public Menu accessMenuName
@@ -208,7 +209,8 @@ namespace PetvetPOS_Inventory_System
         private void icon_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            g.DrawImageUnscaled(iconImage, new Point(22, 32));
+            g.DrawImageUnscaled(iconImage, new Point(30, 32));
+
         }
 
     }

@@ -20,6 +20,7 @@ namespace PetvetPOS_Inventory_System
                 "stockin_datetime",
                 "qty_received",
                 "qty_onhand",
+                "supplier",
             };
 
             fieldsname_forselect = new string[]{
@@ -34,7 +35,7 @@ namespace PetvetPOS_Inventory_System
         {
             return insertValues(
                 inventory.Barcode, "NOW()", inventory.QtyReceived,
-                inventory.QtyOnHand);
+                inventory.QtyOnHand, inventory.Supplier);
         }
 
         public bool pullInventory(Inventory inventory)

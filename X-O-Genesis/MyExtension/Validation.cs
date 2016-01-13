@@ -17,6 +17,8 @@ namespace MyExtension
                     if (!string.IsNullOrWhiteSpace(textbox.Text))
                         result += character;
             textbox.Text = result;
+            textbox.SelectionStart = textbox.TextLength;
+            textbox.SelectionLength = 0;
         }
 
         public static bool isFilled(Control c)
@@ -69,6 +71,8 @@ namespace MyExtension
                     if (!string.IsNullOrWhiteSpace(textbox.Text))
                         result += character;
             textbox.Text = result;
+            textbox.SelectionStart = textbox.TextLength;
+            textbox.SelectionLength = 0;
         }
         public static void filterToNumeric(TextBox textbox)
         {
@@ -79,6 +83,8 @@ namespace MyExtension
                     if (!string.IsNullOrWhiteSpace(textbox.Text))
                         result += character;
             textbox.Text = result;
+            textbox.SelectionStart = textbox.TextLength;
+            textbox.SelectionLength = 0;
         }
 
         public static void filterToAplha(TextBox textbox)
@@ -90,16 +96,20 @@ namespace MyExtension
                     if (!string.IsNullOrWhiteSpace(textbox.Text))
                         result += character;
             textbox.Text = result;
+            textbox.SelectionStart = textbox.TextLength;
+            textbox.SelectionLength = 0;
         }
         public static void filterToAlphaNumeric(TextBox textbox)
         {
-            string acceptedChar = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            string acceptedChar = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 ";
             string result = "";
             foreach (char character in textbox.Text)
                 if (acceptedChar.Contains(character))
                     if (!string.IsNullOrWhiteSpace(textbox.Text))
                         result += character;
             textbox.Text = result;
+            textbox.SelectionStart = textbox.TextLength;
+            textbox.SelectionLength = 0;
         }
         public static void filterToParagraph(TextBox textbox)
         {
@@ -110,6 +120,8 @@ namespace MyExtension
                     if (!string.IsNullOrWhiteSpace(textbox.Text))
                         result += character;
             textbox.Text = result;
+            textbox.SelectionStart = textbox.TextLength;
+            textbox.SelectionLength = 0;
         }
         public static void filterToEmail(TextBox textbox)
         {
@@ -120,6 +132,8 @@ namespace MyExtension
                     if (!string.IsNullOrWhiteSpace(textbox.Text))
                         result += character;
             textbox.Text = result;
+            textbox.SelectionStart = textbox.TextLength;
+            textbox.SelectionLength = 0;
         }
         public static void filterToNames(TextBox textbox)
         {
@@ -130,6 +144,8 @@ namespace MyExtension
                     if(!string.IsNullOrWhiteSpace(textbox.Text))
                          result += character;
             textbox.Text = result;
+            textbox.SelectionStart = textbox.TextLength;
+            textbox.SelectionLength = 0;
         }
     }
 
