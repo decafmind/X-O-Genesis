@@ -23,6 +23,7 @@ namespace PetvetPOS_Inventory_System
                 "Qty_on_Hand",
                 "Qty_Received",
                 "Stock_since",
+                "Supplier",
             };
 
             fieldsname_forselect = new string[]{

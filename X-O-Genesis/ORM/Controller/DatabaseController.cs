@@ -61,11 +61,11 @@ namespace PetvetPOS_Inventory_System
         public MedicalTransactionMapper medicalTransactionMapper { get; set; }
 
         public ProductReturnViewMapper productReturnViewMapper { get; set; }
-
         public CustomerInformationView customerInformationView { get; set; }
         public CustomerInformationMapper customerInformationMapper { get; set; }
-
         public FallbackMapper fallbackMapper { get; set; }
+
+        public ProductInspectionMapper productInspectionMapper { get; set; }
 
         public DatabaseController(MasterController masterController)
         {
@@ -109,6 +109,7 @@ namespace PetvetPOS_Inventory_System
 
             this.customerInformationMapper = new CustomerInformationMapper(mySqlDB);
             this.fallbackMapper = new FallbackMapper(mySqlDB);
+            this.productInspectionMapper = new ProductInspectionMapper(mySqlDB);
 
             // Events hooking
             this.masterController.EmployeeLogin += masterController_EmployeeLogin;
@@ -328,6 +329,12 @@ namespace PetvetPOS_Inventory_System
         {
             string condition = String.Format(" lastname LIKE '%{0}%'", token);
             return customerInformationMapper.loadTable(dt, condition);
+        }
+
+        public DataTable getBasicProductInfoFromBarcode(DataTable dt, string barcode)
+        {
+            string condition = String.Format(" item_code = '{0}'", barcode);
+            return productInspectionMapper.loadTable(dt, condition);
         }
 
         public CustomerInformation getExistingClientContacts(DataTable dt, string token1, string token2)

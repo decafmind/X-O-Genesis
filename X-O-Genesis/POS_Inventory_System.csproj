@@ -59,7 +59,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>PetvetPOS_Inventory_System.Program</StartupObject>
@@ -206,6 +206,7 @@
     <Compile Include="Domain\Client.cs" />
     <Compile Include="Domain\Controller\Service.cs" />
     <Compile Include="Domain\Enums\Settings.cs" />
+    <Compile Include="Domain\ProductInspection.cs" />
     <Compile Include="Domain\Theme.cs" />
     <Compile Include="EventHandler\SettingArgs.cs" />
     <Compile Include="Domain\CustomerInformation.cs" />
@@ -235,17 +236,18 @@
     <Compile Include="Forms\Fallback.Designer.cs">
       <DependentUpon>Fallback.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\ModulesConfiguration.cs">
+    <Compile Include="Forms\modalInspectProduct.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ModulesConfiguration.Designer.cs">
-      <DependentUpon>ModulesConfiguration.cs</DependentUpon>
+    <Compile Include="Forms\modalInspectProduct.Designer.cs">
+      <DependentUpon>modalInspectProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="MyExtension\ErrorLog.cs" />
     <Compile Include="ORM\TableGateway\AuditTrailMapper.cs" />
     <Compile Include="ORM\TableGateway\CustomerInformationMapper.cs" />
     <Compile Include="ORM\TableGateway\FallbackMapper.cs" />
     <Compile Include="ORM\TableGateway\PetsizeMapper.cs" />
+    <Compile Include="ORM\TableGateway\ProductInspectionMapper.cs" />
     <Compile Include="ORM\ViewGateway\AuditTrailView.cs" />
     <Compile Include="ORM\TableGateway\GppTransactionMapper.cs" />
     <Compile Include="ORM\TableGateway\GroomingMapper.cs" />
@@ -565,6 +567,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\modalAddCategory.resx">
       <DependentUpon>modalAddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\modalInspectProduct.resx">
+      <DependentUpon>modalInspectProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\modalVoid.resx">
       <DependentUpon>modalVoid.cs</DependentUpon>

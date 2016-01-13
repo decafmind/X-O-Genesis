@@ -142,7 +142,7 @@ namespace PetvetPOS_Inventory_System
                 menu = Menu.Client;
             }else{
                 list = new InventoryPersonnelMenuList(masterController, this);
-                menu = Menu.Inventory;
+                menu = Menu.StockControl;
             }
 
             accessMenuControl = list.getList;

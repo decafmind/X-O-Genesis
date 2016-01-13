@@ -34,9 +34,9 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.ovalEarHoleR = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.ovalEarHoleL = new Microsoft.VisualBasic.PowerPacks.OvalShape();
+            this.ovalEarR = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.ovalEarL = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.icon = new Microsoft.VisualBasic.PowerPacks.OvalShape();
-            this.ovalEarR = new Microsoft.VisualBasic.PowerPacks.OvalShape();
             this.SuspendLayout();
             // 
             // timer1
@@ -47,11 +47,12 @@
             // menuName
             // 
             this.menuName.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.menuName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuName.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.menuName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuName.ForeColor = System.Drawing.Color.White;
-            this.menuName.Location = new System.Drawing.Point(0, 86);
+            this.menuName.Location = new System.Drawing.Point(0, 89);
             this.menuName.Name = "menuName";
-            this.menuName.Size = new System.Drawing.Size(92, 39);
+            this.menuName.Size = new System.Drawing.Size(105, 39);
             this.menuName.TabIndex = 1;
             this.menuName.Text = "Menu Name";
             this.menuName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -68,7 +69,7 @@
             this.ovalEarR,
             this.ovalEarL,
             this.icon});
-            this.shapeContainer1.Size = new System.Drawing.Size(92, 128);
+            this.shapeContainer1.Size = new System.Drawing.Size(105, 128);
             this.shapeContainer1.TabIndex = 0;
             this.shapeContainer1.TabStop = false;
             // 
@@ -96,6 +97,18 @@
             this.ovalEarHoleL.Visible = false;
             this.ovalEarHoleL.Click += new System.EventHandler(this.ovalShape4_Click);
             // 
+            // ovalEarR
+            // 
+            this.ovalEarR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(148)))), ((int)(((byte)(157)))));
+            this.ovalEarR.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
+            this.ovalEarR.BorderColor = System.Drawing.Color.White;
+            this.ovalEarR.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.ovalEarR.Location = new System.Drawing.Point(62, 10);
+            this.ovalEarR.Name = "ovalEarR";
+            this.ovalEarR.Size = new System.Drawing.Size(20, 19);
+            this.ovalEarR.Visible = false;
+            this.ovalEarR.Click += new System.EventHandler(this.ovalShape4_Click);
+            // 
             // ovalEarL
             // 
             this.ovalEarL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(148)))), ((int)(((byte)(157)))));
@@ -110,30 +123,20 @@
             // 
             // icon
             // 
+            this.icon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.icon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(148)))), ((int)(((byte)(157)))));
             this.icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.icon.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.icon.BorderColor = System.Drawing.Color.White;
             this.icon.BorderWidth = 2;
             this.icon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.icon.Location = new System.Drawing.Point(10, 20);
+            this.icon.Location = new System.Drawing.Point(20, 20);
             this.icon.Name = "icon";
-            this.icon.Size = new System.Drawing.Size(68, 65);
+            this.icon.Size = new System.Drawing.Size(75, 65);
             this.icon.Click += new System.EventHandler(this.icon_Click);
             this.icon.MouseHover += new System.EventHandler(this.icon_MouseHover);
             this.icon.Paint += new System.Windows.Forms.PaintEventHandler(this.icon_Paint);
-            // 
-            // ovalEarR
-            // 
-            this.ovalEarR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(148)))), ((int)(((byte)(157)))));
-            this.ovalEarR.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.ovalEarR.BorderColor = System.Drawing.Color.White;
-            this.ovalEarR.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ovalEarR.Location = new System.Drawing.Point(62, 10);
-            this.ovalEarR.Name = "ovalEarR";
-            this.ovalEarR.Size = new System.Drawing.Size(20, 19);
-            this.ovalEarR.Visible = false;
-            this.ovalEarR.Click += new System.EventHandler(this.ovalShape4_Click);
             // 
             // MenuControl
             // 
@@ -142,7 +145,7 @@
             this.Controls.Add(this.shapeContainer1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "MenuControl";
-            this.Size = new System.Drawing.Size(92, 128);
+            this.Size = new System.Drawing.Size(105, 128);
             this.Load += new System.EventHandler(this.MenuControl_Load);
             this.Click += new System.EventHandler(this.MenuControl_Click);
             this.ResumeLayout(false);
@@ -155,9 +158,9 @@
         private Microsoft.VisualBasic.PowerPacks.OvalShape icon;
         private System.Windows.Forms.Label menuName;
         private System.Windows.Forms.Timer timer1;
-        protected Microsoft.VisualBasic.PowerPacks.OvalShape ovalEarL;
-        protected Microsoft.VisualBasic.PowerPacks.OvalShape ovalEarHoleR;
-        protected Microsoft.VisualBasic.PowerPacks.OvalShape ovalEarHoleL;
-        protected Microsoft.VisualBasic.PowerPacks.OvalShape ovalEarR;
+        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalEarL;
+        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalEarHoleR;
+        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalEarHoleL;
+        private Microsoft.VisualBasic.PowerPacks.OvalShape ovalEarR;
     }
 }

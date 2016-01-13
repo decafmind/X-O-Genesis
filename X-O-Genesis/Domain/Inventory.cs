@@ -27,8 +27,8 @@ namespace PetvetPOS_Inventory_System
                  Barcode = (string)entity.getField("product_id");
                  StockinDateTime = (DateTime)entity.getField("stockin_datetime");
                  QtyReceived = (int)entity.getField("qty_received");
-                 Supplier = (string)entity.getField("supplier");
                  QtyOnHand = (int)entity.getField("qty_onhand");
+                 Supplier = (string)entity.getField("supplier");
             }
             catch (Exception ex)
             {

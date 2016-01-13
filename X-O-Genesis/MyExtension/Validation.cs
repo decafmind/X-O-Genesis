@@ -17,6 +17,8 @@ namespace MyExtension
                     if (!string.IsNullOrWhiteSpace(textbox.Text))
                         result += character;
             textbox.Text = result;
+            textbox.SelectionStart = textbox.TextLength;
+            textbox.SelectionLength = 0;
         }
 
         // You can only make 3 exceptions
@@ -113,7 +115,7 @@ namespace MyExtension
         }
         public static void filterToAlphaNumeric(TextBox textbox)
         {
-            string acceptedChar = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+            string acceptedChar = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 ";
             string result = "";
             foreach (char character in textbox.Text)
                 if (acceptedChar.Contains(character))

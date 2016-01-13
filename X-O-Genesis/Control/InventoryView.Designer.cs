@@ -40,11 +40,13 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgInventory = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.btnSearch = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.panel13 = new System.Windows.Forms.Panel();
             this.txtSearch = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.rbPurchased = new System.Windows.Forms.RadioButton();
             this.rbInventory = new System.Windows.Forms.RadioButton();
@@ -105,7 +107,12 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgInventory)).BeginInit();
             this.panel3.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.panel13.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel12.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panel5.SuspendLayout();
             this.parentPanel.SuspendLayout();
             this.bottomPanel.SuspendLayout();
@@ -217,7 +224,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.Controls.Add(this.panel9);
+            this.panel3.Controls.Add(this.panel1);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(5, 0);
@@ -226,67 +233,77 @@
             this.panel3.TabIndex = 0;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panel9);
+            this.panel1.Controls.Add(this.panel6);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel1.Location = new System.Drawing.Point(0, -4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(829, 56);
+            this.panel1.TabIndex = 4;
+            // 
             // panel9
             // 
-            this.panel9.BackColor = System.Drawing.Color.Transparent;
-            this.panel9.Controls.Add(this.btnSearch);
-            this.panel9.Controls.Add(this.button1);
-            this.panel9.Controls.Add(this.txtSearch);
-            this.panel9.Controls.Add(this.textBox1);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel9.Location = new System.Drawing.Point(362, 0);
+            this.panel9.Controls.Add(this.panel13);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Location = new System.Drawing.Point(196, 0);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(467, 68);
-            this.panel9.TabIndex = 4;
+            this.panel9.Size = new System.Drawing.Size(633, 56);
+            this.panel9.TabIndex = 1;
             // 
-            // btnSearch
+            // panel13
             // 
-            this.btnSearch.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnSearch.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.barcodeSearch;
-            this.btnSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSearch.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSearch.FlatAppearance.BorderSize = 0;
-            this.btnSearch.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearch.Location = new System.Drawing.Point(182, 24);
-            this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(55, 24);
-            this.btnSearch.TabIndex = 1;
-            this.btnSearch.UseVisualStyleBackColor = false;
-            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.barcodeSearch;
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(184, 24);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(53, 23);
-            this.button1.TabIndex = 3;
-            this.button1.UseVisualStyleBackColor = true;
+            this.panel13.BackColor = System.Drawing.Color.Transparent;
+            this.panel13.Controls.Add(this.txtSearch);
+            this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel13.Location = new System.Drawing.Point(0, 0);
+            this.panel13.Name = "panel13";
+            this.panel13.Padding = new System.Windows.Forms.Padding(20, 15, 20, 20);
+            this.panel13.Size = new System.Drawing.Size(633, 56);
+            this.panel13.TabIndex = 8;
             // 
             // txtSearch
             // 
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSearch.Enabled = false;
-            this.txtSearch.Location = new System.Drawing.Point(236, 23);
+            this.txtSearch.Location = new System.Drawing.Point(20, 15);
             this.txtSearch.MaxLength = 25;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(225, 26);
-            this.txtSearch.TabIndex = 0;
-            this.txtSearch.EnabledChanged += new System.EventHandler(this.txtSearch_EnabledChanged_1);
+            this.txtSearch.Size = new System.Drawing.Size(593, 26);
+            this.txtSearch.TabIndex = 1;
             this.txtSearch.TextChanged += new System.EventHandler(this.filterAlphaNumeric);
             // 
-            // textBox1
+            // panel6
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(181, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(56, 26);
-            this.textBox1.TabIndex = 2;
+            this.panel6.Controls.Add(this.panel12);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(196, 56);
+            this.panel6.TabIndex = 0;
+            // 
+            // panel12
+            // 
+            this.panel12.Controls.Add(this.pictureBox7);
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel12.Location = new System.Drawing.Point(0, 0);
+            this.panel12.Name = "panel12";
+            this.panel12.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
+            this.panel12.Size = new System.Drawing.Size(196, 56);
+            this.panel12.TabIndex = 9;
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.barcodeSearch;
+            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox7.Location = new System.Drawing.Point(0, 5);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(196, 46);
+            this.pictureBox7.TabIndex = 0;
+            this.pictureBox7.TabStop = false;
             // 
             // panel5
             // 
@@ -294,9 +311,9 @@
             this.panel5.Controls.Add(this.rbPurchased);
             this.panel5.Controls.Add(this.rbInventory);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 68);
+            this.panel5.Location = new System.Drawing.Point(0, 52);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(829, 32);
+            this.panel5.Size = new System.Drawing.Size(829, 48);
             this.panel5.TabIndex = 3;
             // 
             // rbPurchased
@@ -307,7 +324,6 @@
             this.rbPurchased.Dock = System.Windows.Forms.DockStyle.Left;
             this.rbPurchased.FlatAppearance.BorderSize = 0;
             this.rbPurchased.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbPurchased.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbPurchased.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
             this.rbPurchased.Location = new System.Drawing.Point(84, 0);
             this.rbPurchased.Name = "rbPurchased";
@@ -328,7 +344,6 @@
             this.rbInventory.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.rbInventory.FlatAppearance.BorderSize = 0;
             this.rbInventory.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.rbInventory.Font = new System.Drawing.Font("Arial Rounded MT Bold", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rbInventory.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.rbInventory.Location = new System.Drawing.Point(0, 0);
             this.rbInventory.Name = "rbInventory";
@@ -390,42 +405,42 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(806, 26);
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(798, 23);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(46, 18);
+            this.label9.Size = new System.Drawing.Size(41, 20);
             this.label9.TabIndex = 31;
             this.label9.Text = "Print";
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(498, 12);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(517, 8);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(114, 47);
+            this.label4.Size = new System.Drawing.Size(86, 47);
             this.label4.TabIndex = 20;
-            this.label4.Text = "Add product / stocks";
+            this.label4.Text = "Replenish \r\nStocks";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(328, 25);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(311, 15);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(39, 18);
+            this.label6.Size = new System.Drawing.Size(66, 40);
             this.label6.TabIndex = 36;
-            this.label6.Text = "Edit";
+            this.label6.Text = "Update \r\nProduct";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(128, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 18);
+            this.label3.Size = new System.Drawing.Size(62, 20);
             this.label3.TabIndex = 19;
-            this.label3.Text = "Search";
+            this.label3.Text = "Inspect";
             // 
             // keyButton11
             // 
@@ -433,7 +448,7 @@
             this.keyButton11.accessMasterController = null;
             this.keyButton11.BackColor = System.Drawing.Color.Transparent;
             this.keyButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton11.Location = new System.Drawing.Point(681, 11);
+            this.keyButton11.Location = new System.Drawing.Point(673, 8);
             this.keyButton11.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.keyButton11.Name = "keyButton11";
             this.keyButton11.Size = new System.Drawing.Size(61, 50);
@@ -445,7 +460,7 @@
             this.keyButton8.accessMasterController = null;
             this.keyButton8.BackColor = System.Drawing.Color.Transparent;
             this.keyButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton8.Location = new System.Drawing.Point(440, 11);
+            this.keyButton8.Location = new System.Drawing.Point(460, 10);
             this.keyButton8.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.keyButton8.Name = "keyButton8";
             this.keyButton8.Size = new System.Drawing.Size(61, 50);
@@ -457,7 +472,7 @@
             this.keyButton7.accessMasterController = null;
             this.keyButton7.BackColor = System.Drawing.Color.Transparent;
             this.keyButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton7.Location = new System.Drawing.Point(748, 10);
+            this.keyButton7.Location = new System.Drawing.Point(740, 7);
             this.keyButton7.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.keyButton7.Name = "keyButton7";
             this.keyButton7.Size = new System.Drawing.Size(61, 50);
@@ -469,7 +484,7 @@
             this.keyButton9.accessMasterController = null;
             this.keyButton9.BackColor = System.Drawing.Color.Transparent;
             this.keyButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton9.Location = new System.Drawing.Point(269, 11);
+            this.keyButton9.Location = new System.Drawing.Point(249, 10);
             this.keyButton9.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.keyButton9.Name = "keyButton9";
             this.keyButton9.Size = new System.Drawing.Size(61, 50);
@@ -491,7 +506,7 @@
             // 
             this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox5.Location = new System.Drawing.Point(625, 13);
+            this.pictureBox5.Location = new System.Drawing.Point(617, 10);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(54, 45);
             this.pictureBox5.TabIndex = 30;
@@ -501,7 +516,7 @@
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(383, 13);
+            this.pictureBox2.Location = new System.Drawing.Point(401, 10);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(54, 45);
             this.pictureBox2.TabIndex = 16;
@@ -511,7 +526,7 @@
             // 
             this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(210, 13);
+            this.pictureBox3.Location = new System.Drawing.Point(199, 12);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(54, 45);
             this.pictureBox3.TabIndex = 35;
@@ -530,7 +545,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(736, 24);
+            this.label5.Location = new System.Drawing.Point(728, 21);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(18, 20);
             this.label5.TabIndex = 32;
@@ -719,10 +734,10 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(627, 23);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(112, 18);
+            this.label11.Size = new System.Drawing.Size(100, 20);
             this.label11.TabIndex = 35;
             this.label11.Text = "Print Receipt";
             // 
@@ -772,10 +787,10 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(349, 21);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(63, 18);
+            this.label10.Size = new System.Drawing.Size(58, 20);
             this.label10.TabIndex = 23;
             this.label10.Text = "Return";
             // 
@@ -804,10 +819,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(130, 21);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(66, 18);
+            this.label7.Size = new System.Drawing.Size(60, 20);
             this.label7.TabIndex = 20;
             this.label7.Text = "Search";
             // 
@@ -951,8 +966,13 @@
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgInventory)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
+            this.panel13.ResumeLayout(false);
+            this.panel13.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel12.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.parentPanel.ResumeLayout(false);
@@ -985,15 +1005,12 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button btnSearch;
-        private System.Windows.Forms.TextBox txtSearch;
         private System.Windows.Forms.Panel panel5;
         private KeyButton keyButton1;
         private KeyButton keyButton5;
         private KeyButton keyButton4;
         private KeyButton keyButton3;
         private KeyButton keyButton2;
-        private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.DataGridView dgInventory;
         private System.Windows.Forms.Panel parentPanel;
         private System.Windows.Forms.Panel bottomPanel;
@@ -1040,11 +1057,16 @@
         private KeyButton keyButton13;
         private KeyButton keyButton14;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
         public System.Windows.Forms.RadioButton rbPurchased;
         private ProductSliderPane productSliderPane1;
         private System.Windows.Forms.ToolTip toolTip1;
         public System.Windows.Forms.RadioButton rbInventory;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel13;
+        private System.Windows.Forms.TextBox txtSearch;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.PictureBox pictureBox7;
     }
 }

@@ -16,7 +16,6 @@ namespace PetvetPOS_Inventory_System
         public string Warranty { get; set; }
         public string Specification { get; set; }
         public string Replacement { get; set; }
-
         public Product()
         {
 
@@ -33,7 +32,7 @@ namespace PetvetPOS_Inventory_System
                  Specification = (string)entity.getField("specification");
                  Replacement = (string)entity.getField("replacement");
                  Category_id = (int)entity.getField("category_id");
-                 Company = (int)entity.getField("supplier");
+                // Company = (int)entity.getField("supplier");
             }
             catch (Exception ex)
             {
@@ -47,7 +46,7 @@ namespace PetvetPOS_Inventory_System
             {
                 Product product = obj as Product;
                 if (this.Barcode == product.Barcode)
-                    if(this.Description == product.Description)
+                    if (this.Description == product.Description)
                         if (this.Category_id == product.Category_id)
                             if (this.UnitPrice == product.UnitPrice)
                                 if (this.Company == product.Company)

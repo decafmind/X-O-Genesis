@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductSliderPane));
-            this.txtQuantity = new System.Windows.Forms.TextBox();
             this.txtBarcode = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtPrice = new System.Windows.Forms.TextBox();
@@ -47,12 +46,17 @@
             this.txtReplacement = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.txtQuantity = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtSupplier = new System.Windows.Forms.TextBox();
             this.contentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // contentPanel
             // 
+            this.contentPanel.Controls.Add(this.txtSupplier);
+            this.contentPanel.Controls.Add(this.label6);
             this.contentPanel.Controls.Add(this.cbCategory);
             this.contentPanel.Controls.Add(this.button1);
             this.contentPanel.Controls.Add(this.txtReplacement);
@@ -73,16 +77,6 @@
             this.contentPanel.Controls.Add(this.txtQuantity);
             this.contentPanel.Location = new System.Drawing.Point(29, 19);
             this.contentPanel.Size = new System.Drawing.Size(242, 551);
-            // 
-            // txtQuantity
-            // 
-            this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.txtQuantity.ForeColor = System.Drawing.Color.Black;
-            this.txtQuantity.Location = new System.Drawing.Point(17, 35);
-            this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(213, 24);
-            this.txtQuantity.TabIndex = 6;
-            this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
             // 
             // txtBarcode
             // 
@@ -259,6 +253,36 @@
             this.cbCategory.Size = new System.Drawing.Size(182, 26);
             this.cbCategory.TabIndex = 27;
             // 
+            // txtQuantity
+            // 
+            this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.txtQuantity.ForeColor = System.Drawing.Color.Black;
+            this.txtQuantity.Location = new System.Drawing.Point(17, 35);
+            this.txtQuantity.Name = "txtQuantity";
+            this.txtQuantity.Size = new System.Drawing.Size(213, 24);
+            this.txtQuantity.TabIndex = 6;
+            this.txtQuantity.TextChanged += new System.EventHandler(this.txtQuantity_TextChanged);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label6.ForeColor = System.Drawing.Color.DimGray;
+            this.label6.Location = new System.Drawing.Point(71, 427);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 20);
+            this.label6.TabIndex = 29;
+            this.label6.Text = "SUPPLIER";
+            // 
+            // txtSupplier
+            // 
+            this.txtSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.txtSupplier.ForeColor = System.Drawing.Color.Black;
+            this.txtSupplier.Location = new System.Drawing.Point(15, 455);
+            this.txtSupplier.Name = "txtSupplier";
+            this.txtSupplier.Size = new System.Drawing.Size(212, 24);
+            this.txtSupplier.TabIndex = 28;
+            // 
             // ProductSliderPane
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,7 +303,6 @@
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtBarcode;
-        private System.Windows.Forms.TextBox txtQuantity;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -294,6 +317,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cbCategory;
+        private System.Windows.Forms.TextBox txtQuantity;
+        private System.Windows.Forms.TextBox txtSupplier;
+        private System.Windows.Forms.Label label6;
 
     }
 }

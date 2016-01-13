@@ -52,6 +52,7 @@ namespace PetvetPOS_Inventory_System
                     StockinDateTime = DateTime.Now,
                     QtyReceived = Convert.ToInt32(txtQuantity.Text),
                     QtyOnHand = Convert.ToInt32(txtQuantity.Text),
+                    Supplier = txtSupplier.Text,
                 };
 
                 if (checkIfProductAlreadyExists(txtBarcode.Text))
@@ -91,6 +92,18 @@ namespace PetvetPOS_Inventory_System
             txtQuantity.Visible = true;
             lblQuantity.Visible = true;
             loadCategoryList();
+
+            //Hide supplier field if update and show if add
+            if (mode.Equals(InventoryMode.ADD))
+            {
+                this.txtSupplier.Visible = true;
+                this.label6.Visible = true;
+            }
+            else if (mode.Equals(InventoryMode.UPDATE))
+            {
+                this.txtSupplier.Visible = false;
+                this.label6.Visible = false;
+            }
         }
 
         public void mapProductToTextfield(Product product)
@@ -168,6 +181,11 @@ namespace PetvetPOS_Inventory_System
                 {
                     txtName.Clear();
                     txtPrice.Clear();
+                    txtSpecs.Clear();
+                    txtWarranty.Clear();
+                    txtReplacement.Clear();
+                    cbCategory.Text = string.Empty;
+                    cbCategory.Items.Clear();
                 }
             }
         }
