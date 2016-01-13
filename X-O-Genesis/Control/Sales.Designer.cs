@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Sales));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel8 = new System.Windows.Forms.Panel();
@@ -111,14 +111,14 @@
             this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(268, 0);
             this.dataGridView2.Name = "dataGridView2";
@@ -233,6 +233,7 @@
             this.cmType.Name = "cmType";
             this.cmType.Size = new System.Drawing.Size(189, 27);
             this.cmType.TabIndex = 0;
+            this.cmType.Text = "MONTHLY";
             this.cmType.SelectedIndexChanged += new System.EventHandler(this.cmType_SelectedIndexChanged);
             // 
             // panel5
@@ -268,17 +269,17 @@
             // 
             // salesChart
             // 
-            chartArea4.Name = "ChartArea1";
-            this.salesChart.ChartAreas.Add(chartArea4);
+            chartArea1.Name = "ChartArea1";
+            this.salesChart.ChartAreas.Add(chartArea1);
             this.salesChart.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend4.Name = "Legend1";
-            this.salesChart.Legends.Add(legend4);
+            legend1.Name = "Legend1";
+            this.salesChart.Legends.Add(legend1);
             this.salesChart.Location = new System.Drawing.Point(5, 5);
             this.salesChart.Name = "salesChart";
-            series4.ChartArea = "ChartArea1";
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.salesChart.Series.Add(series4);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.salesChart.Series.Add(series1);
             this.salesChart.Size = new System.Drawing.Size(862, 211);
             this.salesChart.TabIndex = 1;
             this.salesChart.Text = "chart1";

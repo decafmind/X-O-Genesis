@@ -59,7 +59,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>PetvetPOS_Inventory_System.Program</StartupObject>
@@ -161,17 +161,29 @@
     <Compile Include="Control\CustomerInformationView.Designer.cs">
       <DependentUpon>CustomerInformationView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Control\Orders.cs">
+    <Compile Include="Control\FBUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Control\Orders.Designer.cs">
-      <DependentUpon>Orders.cs</DependentUpon>
+    <Compile Include="Control\FBUser.Designer.cs">
+      <DependentUpon>FBUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\OrdersView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\OrdersView.Designer.cs">
+      <DependentUpon>OrdersView.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\OrderSliderPane.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Control\OrderSliderPane.Designer.cs">
       <DependentUpon>OrderSliderPane.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\Personalization.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Personalization.Designer.cs">
+      <DependentUpon>Personalization.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\ProductSliderPane.cs">
       <SubType>UserControl</SubType>
@@ -185,9 +197,20 @@
     <Compile Include="Control\SliderPane.Designer.cs">
       <DependentUpon>SliderPane.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\SystemSettings.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\SystemSettings.Designer.cs">
+      <DependentUpon>SystemSettings.cs</DependentUpon>
+    </Compile>
     <Compile Include="Domain\Client.cs" />
     <Compile Include="Domain\Controller\Service.cs" />
+    <Compile Include="Domain\Enums\Settings.cs" />
+    <Compile Include="Domain\ProductInspection.cs" />
+    <Compile Include="Domain\Theme.cs" />
+    <Compile Include="EventHandler\SettingArgs.cs" />
     <Compile Include="Domain\CustomerInformation.cs" />
+    <Compile Include="Domain\Fallback.cs" />
     <Compile Include="Domain\InventoryPersonnelMenuList.cs" />
     <Compile Include="Domain\StaffMenuList.cs" />
     <Compile Include="Domain\GPP.cs" />
@@ -207,10 +230,32 @@
     <Compile Include="Forms\DateAndTime.Designer.cs">
       <DependentUpon>DateAndTime.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Fallback.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Fallback.Designer.cs">
+      <DependentUpon>Fallback.cs</DependentUpon>
+    </Compile>
+<<<<<<< HEAD
+    <Compile Include="Forms\ModulesConfiguration.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ModulesConfiguration.Designer.cs">
+      <DependentUpon>ModulesConfiguration.cs</DependentUpon>
+=======
+    <Compile Include="Forms\modalInspectProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\modalInspectProduct.Designer.cs">
+      <DependentUpon>modalInspectProduct.cs</DependentUpon>
+>>>>>>> ba5ed03f6ea4d731428054efd384933f5aa1150e
+    </Compile>
     <Compile Include="MyExtension\ErrorLog.cs" />
     <Compile Include="ORM\TableGateway\AuditTrailMapper.cs" />
     <Compile Include="ORM\TableGateway\CustomerInformationMapper.cs" />
+    <Compile Include="ORM\TableGateway\FallbackMapper.cs" />
     <Compile Include="ORM\TableGateway\PetsizeMapper.cs" />
+    <Compile Include="ORM\TableGateway\ProductInspectionMapper.cs" />
     <Compile Include="ORM\ViewGateway\AuditTrailView.cs" />
     <Compile Include="ORM\TableGateway\GppTransactionMapper.cs" />
     <Compile Include="ORM\TableGateway\GroomingMapper.cs" />
@@ -222,12 +267,6 @@
     <Compile Include="ORM\ViewGateway\ProductReturnViewMapper.cs" />
     <Compile Include="ORM\ViewGateway\ProductTransactionView.cs" />
     <Compile Include="ORM\ViewGateway\ServiceRenderedMapper.cs" />
-    <Compile Include="Control\AddServices.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\AddServices.Designer.cs">
-      <DependentUpon>AddServices.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\DatabaseSettings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -447,24 +486,40 @@
       <DependentUpon>ValidationMarks.cs</DependentUpon>
     </Compile>
     <Compile Include="ORM\ViewGateway\WeeklySalesReport.cs" />
-    <EmbeddedResource Include="Control\AddServices.resx">
-      <DependentUpon>AddServices.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SplashScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SplashScreen.Designer.cs">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Control\CustomerInformationView.resx">
       <DependentUpon>CustomerInformationView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Control\Orders.resx">
-      <DependentUpon>Orders.cs</DependentUpon>
+    <EmbeddedResource Include="Control\FBUser.resx">
+      <DependentUpon>FBUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\OrdersView.resx">
+      <DependentUpon>OrdersView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\OrderSliderPane.resx">
       <DependentUpon>OrderSliderPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Personalization.resx">
+      <DependentUpon>Personalization.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\ProductSliderPane.resx">
       <DependentUpon>ProductSliderPane.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\SliderPane.resx">
       <DependentUpon>SliderPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\SystemSettings.resx">
+      <DependentUpon>SystemSettings.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\CriticalNotif.resx">
       <DependentUpon>CriticalNotif.cs</DependentUpon>
@@ -482,6 +537,9 @@
     <EmbeddedResource Include="Forms\DateAndTime.resx">
       <DependentUpon>DateAndTime.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Fallback.resx">
+      <DependentUpon>Fallback.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -493,6 +551,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\InventoryView.resx">
       <DependentUpon>InventoryView.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\KeyButton.resx">
       <DependentUpon>KeyButton.cs</DependentUpon>
@@ -503,6 +562,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\LoginPane.resx">
       <DependentUpon>LoginPane.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\MenuBar.resx">
       <DependentUpon>MenuBar.cs</DependentUpon>
@@ -515,6 +575,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\modalAddCategory.resx">
       <DependentUpon>modalAddCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\modalInspectProduct.resx">
+      <DependentUpon>modalInspectProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\modalVoid.resx">
       <DependentUpon>modalVoid.cs</DependentUpon>
@@ -534,6 +597,9 @@
     <EmbeddedResource Include="Control\ProductPaneScroll.resx">
       <DependentUpon>ProductPaneScroll.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ModulesConfiguration.resx">
+      <DependentUpon>ModulesConfiguration.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -548,13 +614,6 @@
     <EmbeddedResource Include="Control\Slash.resx">
       <DependentUpon>Slash.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
-    <EmbeddedResource Include="Forms\SplashScreen.resx">
-      <DependentUpon>SplashScreen.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
-=======
->>>>>>> origin/master
     <EmbeddedResource Include="Control\Titlebar.resx">
       <DependentUpon>Titlebar.cs</DependentUpon>
     </EmbeddedResource>
@@ -574,16 +633,14 @@
     <EmbeddedResource Include="Control\ValidationMarks.resx">
       <DependentUpon>ValidationMarks.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SplashScreen.resx">
+      <DependentUpon>SplashScreen.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="PetvetPOS_Inventory_System_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -710,6 +767,11 @@
     <None Include="Resources\SystemIcon3.png" />
     <None Include="Resources\SystemIcon.png" />
     <None Include="Resources\AkiraGIF.gif" />
+    <None Include="Resources\AkiraGIF1.gif" />
+    <None Include="Resources\AkiraGIF_x.gif" />
+    <None Include="Resources\AkiraGIF_x1.gif" />
+    <None Include="Resources\AkiraGIF%28100x100%29.gif" />
+    <None Include="Resources\matBG.png" />
     <Content Include="SystemIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

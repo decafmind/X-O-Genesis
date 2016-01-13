@@ -146,6 +146,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Personalization";
             this.Size = new System.Drawing.Size(877, 583);
+            this.Load += new System.EventHandler(this.Personalization_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

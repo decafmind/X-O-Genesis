@@ -107,5 +107,10 @@ namespace PetvetPOS_Inventory_System
             Properties.Settings.Default.Save();
             masterController.OnSettingsChanged(s);
         }
+
+        private void Personalization_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

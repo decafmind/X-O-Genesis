@@ -51,11 +51,13 @@
             this.menuName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuName.ForeColor = System.Drawing.Color.White;
             this.menuName.Location = new System.Drawing.Point(0, 89);
+            this.menuName.MaximumSize = new System.Drawing.Size(105, 39);
             this.menuName.Name = "menuName";
             this.menuName.Size = new System.Drawing.Size(105, 39);
             this.menuName.TabIndex = 1;
             this.menuName.Text = "Menu Name";
             this.menuName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.menuName.Click += new System.EventHandler(this.menuName_Click);
             this.menuName.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lblDesc_MouseClick);
             // 
             // shapeContainer1
@@ -79,10 +81,9 @@
             this.ovalEarHoleR.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.ovalEarHoleR.BorderColor = System.Drawing.Color.White;
             this.ovalEarHoleR.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ovalEarHoleR.Location = new System.Drawing.Point(66, 20);
+            this.ovalEarHoleR.Location = new System.Drawing.Point(73, 20);
             this.ovalEarHoleR.Name = "ovalEarHoleR";
             this.ovalEarHoleR.Size = new System.Drawing.Size(13, 8);
-            this.ovalEarHoleR.Visible = false;
             this.ovalEarHoleR.Click += new System.EventHandler(this.ovalShape4_Click);
             // 
             // ovalEarHoleL
@@ -91,10 +92,9 @@
             this.ovalEarHoleL.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.ovalEarHoleL.BorderColor = System.Drawing.Color.White;
             this.ovalEarHoleL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ovalEarHoleL.Location = new System.Drawing.Point(11, 20);
+            this.ovalEarHoleL.Location = new System.Drawing.Point(18, 20);
             this.ovalEarHoleL.Name = "ovalEarHoleL";
             this.ovalEarHoleL.Size = new System.Drawing.Size(13, 8);
-            this.ovalEarHoleL.Visible = false;
             this.ovalEarHoleL.Click += new System.EventHandler(this.ovalShape4_Click);
             // 
             // ovalEarR
@@ -103,10 +103,9 @@
             this.ovalEarR.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.ovalEarR.BorderColor = System.Drawing.Color.White;
             this.ovalEarR.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ovalEarR.Location = new System.Drawing.Point(62, 10);
+            this.ovalEarR.Location = new System.Drawing.Point(69, 10);
             this.ovalEarR.Name = "ovalEarR";
             this.ovalEarR.Size = new System.Drawing.Size(20, 19);
-            this.ovalEarR.Visible = false;
             this.ovalEarR.Click += new System.EventHandler(this.ovalShape4_Click);
             // 
             // ovalEarL
@@ -115,10 +114,9 @@
             this.ovalEarL.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.ovalEarL.BorderColor = System.Drawing.Color.White;
             this.ovalEarL.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ovalEarL.Location = new System.Drawing.Point(5, 11);
+            this.ovalEarL.Location = new System.Drawing.Point(12, 11);
             this.ovalEarL.Name = "ovalEarL";
             this.ovalEarL.Size = new System.Drawing.Size(20, 19);
-            this.ovalEarL.Visible = false;
             this.ovalEarL.Click += new System.EventHandler(this.ovalShape4_Click);
             // 
             // icon
@@ -131,7 +129,7 @@
             this.icon.BorderColor = System.Drawing.Color.White;
             this.icon.BorderWidth = 2;
             this.icon.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.icon.Location = new System.Drawing.Point(20, 20);
+            this.icon.Location = new System.Drawing.Point(14, 20);
             this.icon.Name = "icon";
             this.icon.Size = new System.Drawing.Size(75, 65);
             this.icon.Click += new System.EventHandler(this.icon_Click);

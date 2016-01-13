@@ -58,7 +58,6 @@ namespace PetvetPOS_Inventory_System
             private set {
                 iconImage = Renderer.resizeImage(value, 47, 47);
                 icon.Invalidate();
-                icon.Left -= 5;
             }
         }
 
@@ -74,7 +73,17 @@ namespace PetvetPOS_Inventory_System
             private set
             {
                 menu = value;
-                accessIconLabel = menu.ToString();
+                string[] split = menu.ToString().Split('_');
+                string polishString = string.Empty;
+                int string_length = split.Length;
+                for (int i = 0; i < string_length; i++)
+                {
+                    polishString += split[i];
+                    if (i != string_length - 1)
+                        polishString += " ";
+                        
+                }
+                accessIconLabel = polishString;
             }
             get { return menu;  }
         }
@@ -210,6 +219,11 @@ namespace PetvetPOS_Inventory_System
         {
             Graphics g = e.Graphics;
             g.DrawImageUnscaled(iconImage, new Point(30, 32));
+
+        }
+
+        private void menuName_Click(object sender, EventArgs e)
+        {
 
         }
 

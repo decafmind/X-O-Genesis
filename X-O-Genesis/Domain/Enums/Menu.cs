@@ -11,7 +11,7 @@ namespace PetvetPOS_Inventory_System
         User,
         POS,
         Orders,
-        StockControl,
+        Stock_Control,
         Sales,
         Login,
         Home,

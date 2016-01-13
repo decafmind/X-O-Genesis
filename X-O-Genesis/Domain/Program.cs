@@ -17,11 +17,11 @@ namespace PetvetPOS_Inventory_System
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             try{
-                Application.Run(new frmMain());
+                Application.Run(new SplashScreen());
             }
             catch (ArgumentException ae) {
                 ErrorLog.Log(ae);
-                Application.Run(new frmMain());
+                Application.Run(new SplashScreen());
             }
         }
     }

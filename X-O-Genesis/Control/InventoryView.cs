@@ -278,7 +278,7 @@ namespace PetvetPOS_Inventory_System
         {
             get
             {
-                return Menu.StockControl;
+                return Menu.Stock_Control;
             }
         }
 
