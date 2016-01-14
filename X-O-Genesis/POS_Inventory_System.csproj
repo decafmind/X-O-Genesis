@@ -218,6 +218,7 @@
     <Compile Include="Domain\Client.cs" />
     <Compile Include="Domain\Controller\Service.cs" />
     <Compile Include="Domain\Enums\Settings.cs" />
+    <Compile Include="Domain\LoginTrail.cs" />
     <Compile Include="Domain\ProductInspection.cs" />
     <Compile Include="Domain\Theme.cs" />
     <Compile Include="EventHandler\SettingArgs.cs" />
