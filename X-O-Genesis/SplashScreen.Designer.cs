@@ -59,7 +59,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::PetvetPOS_Inventory_System.Properties.Resources.AkiraGIF_100x100_;
+            this.pictureBox1.Image = global::PetvetPOS_Inventory_System.Properties.Resources.AkiraGIF;
             this.pictureBox1.Location = new System.Drawing.Point(247, 56);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(100, 100);

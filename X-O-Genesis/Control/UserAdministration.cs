@@ -31,6 +31,29 @@ namespace PetvetPOS_Inventory_System
         Dictionary<string, Employee> userEmployeeMap = new Dictionary<string, Employee>();
         public List<string> usernames = new List<string>();
 
+
+        public void changedTab(int index)
+        {
+            tabControl1.SelectedIndex = index;
+            switch (index)
+            {
+                case 0:
+                    tabControl1.TabPages.Remove(tabPage3);
+                    tabControl1.TabPages.Remove(tabPage4);
+                    break;
+                case 1:
+                    tabControl1.TabPages.Remove(tabPage1);
+                    tabControl1.TabPages.Remove(tabPage4);
+                    break;
+                case 2:
+                    tabControl1.TabPages.Remove(tabPage1);
+                    tabControl1.TabPages.Remove(tabPage3);
+                    break;
+
+            }
+            
+        }
+
         public void reloadUsers()
         {
             usernames = dbController.getListOfActiveUsernames();
@@ -65,6 +88,14 @@ namespace PetvetPOS_Inventory_System
             dbController = masterController.DataBaseController;
         }
 
+        public UserAdministration(MasterController masterController, int index)
+            : base(masterController)
+        {
+            InitializeComponent();
+            changedTab(index);
+            dbController = masterController.DataBaseController;
+        }
+
         void masterController_EmployeeLogin(object sender, EmployeeArgs e)
         {
            // reloadUsers();
@@ -78,6 +109,8 @@ namespace PetvetPOS_Inventory_System
             dbController.InsertEntity += dbController_InsertEntity;
             dbController.UpdateEntity += dbController_UpdateEntity;
             dbController.DeleteEntity += dbController_DeleteEntity;
+
+         //   tabControl1.SelectedIndex = 1;
 
          //   timer1.Start();
         }

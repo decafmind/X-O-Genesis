@@ -155,6 +155,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\Back.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Back.Designer.cs">
+      <DependentUpon>Back.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\CustomerInformationView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -197,6 +203,12 @@
     <Compile Include="Control\SliderPane.Designer.cs">
       <DependentUpon>SliderPane.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\SystemOperation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\SystemOperation.Designer.cs">
+      <DependentUpon>SystemOperation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\SystemSettings.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -224,10 +236,10 @@
     <Compile Include="Forms\CriticalNotif.Designer.cs">
       <DependentUpon>CriticalNotif.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DateAndTime.cs">
+    <Compile Include="Control\DateAndTime.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\DateAndTime.Designer.cs">
+    <Compile Include="Control\DateAndTime.Designer.cs">
       <DependentUpon>DateAndTime.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Fallback.cs">
@@ -334,7 +346,6 @@
     <Compile Include="Control\LoginPane.Designer.cs">
       <DependentUpon>LoginPane.cs</DependentUpon>
     </Compile>
-    <Compile Include="Domain\LoginTrail.cs" />
     <Compile Include="ORM\Controller\DatabaseMapper.cs" />
     <Compile Include="ORM\TableGateway\LoginTrailMapper.cs" />
     <Compile Include="Domain\Controller\MasterController.cs" />
@@ -489,6 +500,9 @@
     <Compile Include="SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Control\Back.resx">
+      <DependentUpon>Back.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\CustomerInformationView.resx">
       <DependentUpon>CustomerInformationView.cs</DependentUpon>
     </EmbeddedResource>
@@ -510,6 +524,9 @@
     <EmbeddedResource Include="Control\SliderPane.resx">
       <DependentUpon>SliderPane.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\SystemOperation.resx">
+      <DependentUpon>SystemOperation.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\SystemSettings.resx">
       <DependentUpon>SystemSettings.cs</DependentUpon>
     </EmbeddedResource>
@@ -526,7 +543,7 @@
       <DependentUpon>AddUserPane.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DateAndTime.resx">
+    <EmbeddedResource Include="Control\DateAndTime.resx">
       <DependentUpon>DateAndTime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Fallback.resx">
@@ -588,9 +605,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\ProductPaneScroll.resx">
       <DependentUpon>ProductPaneScroll.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ModulesConfiguration.resx">
-      <DependentUpon>ModulesConfiguration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -764,6 +778,8 @@
     <None Include="Resources\AkiraGIF_x1.gif" />
     <None Include="Resources\AkiraGIF%28100x100%29.gif" />
     <None Include="Resources\matBG.png" />
+    <None Include="Resources\System.png" />
+    <None Include="Resources\iconmonstr-gear-icon-256.png" />
     <Content Include="SystemIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,4 +1,4 @@
-﻿namespace PetvetPOS_Inventory_System.Forms
+﻿namespace PetvetPOS_Inventory_System
 {
     partial class DateAndTime
     {
@@ -43,6 +43,7 @@
             this.label1.Size = new System.Drawing.Size(219, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Date & Time";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // timer1
             // 

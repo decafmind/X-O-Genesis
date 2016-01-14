@@ -218,7 +218,7 @@ namespace PetvetPOS_Inventory_System
         private void icon_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            g.DrawImageUnscaled(iconImage, new Point(30, 32));
+            g.DrawImageUnscaled(iconImage, new Point(22, 32));
 
         }
 

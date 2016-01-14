@@ -49,7 +49,7 @@ namespace PetvetPOS_Inventory_System
 
         public Bitmap accessImage
         {
-            get { return Properties.Resources.userBlack; }
+            get { return Properties.Resources.settingsIcon; }
         }
 
         public KeyFunction getKeyController

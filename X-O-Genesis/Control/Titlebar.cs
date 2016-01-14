@@ -178,6 +178,9 @@ namespace PetvetPOS_Inventory_System
                 case Menu.Stock_Control:
                     titlename = "Stock Control";
                     break;
+                case Menu.System_Operation:
+                    titlename = "System Operation";
+                    break;
                 default:
                     titlename = menuname.ToString();
                     break;

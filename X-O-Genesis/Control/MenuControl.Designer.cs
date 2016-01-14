@@ -53,7 +53,7 @@
             this.menuName.Location = new System.Drawing.Point(0, 89);
             this.menuName.MaximumSize = new System.Drawing.Size(105, 39);
             this.menuName.Name = "menuName";
-            this.menuName.Size = new System.Drawing.Size(105, 39);
+            this.menuName.Size = new System.Drawing.Size(92, 39);
             this.menuName.TabIndex = 1;
             this.menuName.Text = "Menu Name";
             this.menuName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -71,7 +71,7 @@
             this.ovalEarR,
             this.ovalEarL,
             this.icon});
-            this.shapeContainer1.Size = new System.Drawing.Size(105, 128);
+            this.shapeContainer1.Size = new System.Drawing.Size(92, 128);
             this.shapeContainer1.TabIndex = 0;
             this.shapeContainer1.TabStop = false;
             // 
@@ -81,7 +81,7 @@
             this.ovalEarHoleR.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.ovalEarHoleR.BorderColor = System.Drawing.Color.White;
             this.ovalEarHoleR.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ovalEarHoleR.Location = new System.Drawing.Point(73, 20);
+            this.ovalEarHoleR.Location = new System.Drawing.Point(59, 20);
             this.ovalEarHoleR.Name = "ovalEarHoleR";
             this.ovalEarHoleR.Size = new System.Drawing.Size(13, 8);
             this.ovalEarHoleR.Click += new System.EventHandler(this.ovalShape4_Click);
@@ -103,7 +103,7 @@
             this.ovalEarR.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.ovalEarR.BorderColor = System.Drawing.Color.White;
             this.ovalEarR.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.ovalEarR.Location = new System.Drawing.Point(69, 10);
+            this.ovalEarR.Location = new System.Drawing.Point(58, 10);
             this.ovalEarR.Name = "ovalEarR";
             this.ovalEarR.Size = new System.Drawing.Size(20, 19);
             this.ovalEarR.Click += new System.EventHandler(this.ovalShape4_Click);
@@ -131,7 +131,7 @@
             this.icon.Cursor = System.Windows.Forms.Cursors.Hand;
             this.icon.Location = new System.Drawing.Point(14, 20);
             this.icon.Name = "icon";
-            this.icon.Size = new System.Drawing.Size(75, 65);
+            this.icon.Size = new System.Drawing.Size(62, 65);
             this.icon.Click += new System.EventHandler(this.icon_Click);
             this.icon.MouseHover += new System.EventHandler(this.icon_MouseHover);
             this.icon.Paint += new System.Windows.Forms.PaintEventHandler(this.icon_Paint);
@@ -143,7 +143,7 @@
             this.Controls.Add(this.shapeContainer1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Name = "MenuControl";
-            this.Size = new System.Drawing.Size(105, 128);
+            this.Size = new System.Drawing.Size(92, 128);
             this.Load += new System.EventHandler(this.MenuControl_Load);
             this.Click += new System.EventHandler(this.MenuControl_Click);
             this.ResumeLayout(false);

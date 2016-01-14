@@ -235,6 +235,8 @@
             this.cmType.TabIndex = 0;
             this.cmType.Text = "MONTHLY";
             this.cmType.SelectedIndexChanged += new System.EventHandler(this.cmType_SelectedIndexChanged);
+            this.cmType.DisplayMemberChanged += new System.EventHandler(this.cmType_DisplayMemberChanged);
+            this.cmType.TextChanged += new System.EventHandler(this.cmType_TextChanged);
             // 
             // panel5
             // 

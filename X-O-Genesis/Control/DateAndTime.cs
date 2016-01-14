@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PetvetPOS_Inventory_System.Forms
+namespace PetvetPOS_Inventory_System
 {
     public partial class DateAndTime : UserControl
     {
@@ -30,6 +30,11 @@ namespace PetvetPOS_Inventory_System.Forms
         public void setForeColor(Color color)
         {
             label1.ForeColor = color;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

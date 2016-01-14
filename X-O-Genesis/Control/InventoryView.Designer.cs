@@ -315,6 +315,7 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(829, 48);
             this.panel5.TabIndex = 3;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // rbPurchased
             // 
@@ -325,9 +326,9 @@
             this.rbPurchased.FlatAppearance.BorderSize = 0;
             this.rbPurchased.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.rbPurchased.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.rbPurchased.Location = new System.Drawing.Point(84, 0);
+            this.rbPurchased.Location = new System.Drawing.Point(82, 0);
             this.rbPurchased.Name = "rbPurchased";
-            this.rbPurchased.Size = new System.Drawing.Size(111, 32);
+            this.rbPurchased.Size = new System.Drawing.Size(109, 48);
             this.rbPurchased.TabIndex = 4;
             this.rbPurchased.Text = "Sold product";
             this.rbPurchased.UseVisualStyleBackColor = true;
@@ -347,7 +348,7 @@
             this.rbInventory.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.rbInventory.Location = new System.Drawing.Point(0, 0);
             this.rbInventory.Name = "rbInventory";
-            this.rbInventory.Size = new System.Drawing.Size(84, 32);
+            this.rbInventory.Size = new System.Drawing.Size(82, 48);
             this.rbInventory.TabIndex = 3;
             this.rbInventory.TabStop = true;
             this.rbInventory.Text = "Products";

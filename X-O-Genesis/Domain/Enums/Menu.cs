@@ -22,5 +22,6 @@ namespace PetvetPOS_Inventory_System
         Services,
         Client,
         Settings,
+        System_Operation,
     }
 }

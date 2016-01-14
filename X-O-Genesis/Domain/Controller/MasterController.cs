@@ -21,7 +21,7 @@ namespace PetvetPOS_Inventory_System
         public event EventHandler EmployeeLogout;
         public event EventHandler ServerClock;
         public event EventHandler<SettingArgs> SettingsChanged;
-
+       
 
         /* Fields */
         private frmMain mainForm;
@@ -32,6 +32,7 @@ namespace PetvetPOS_Inventory_System
         private MyUserControl currentContent;
         private UserSettingsControl userSettingsControl;
         private DatabaseController databaseController;
+        public Stack<MyUserControl> history = new Stack<MyUserControl>();
 
         /* Properties */
         public Employee LoginEmployee { get; set; }
@@ -114,6 +115,11 @@ namespace PetvetPOS_Inventory_System
             IContentPage lastContent = currentContent as IContentPage;
             if (lastContent != null)
                 lastContent.finalizePage();
+
+            if (lastContent is MyUserControl)
+            {
+                history.Push(lastContent as MyUserControl);
+            }
 
             if (content is MyUserControl)
             {
@@ -245,6 +251,15 @@ namespace PetvetPOS_Inventory_System
             Form form = Application.OpenForms["CriticalNotif"];
             if (form == null)
                 notif.Show();
+        }
+
+        public void returnToPreviousPage()
+        {
+            MyUserControl previousPage = history.Pop();
+            if (previousPage is IContentPage)
+            {
+                changeCurrentContent(previousPage as IContentPage);
+            }
         }
     }
 }

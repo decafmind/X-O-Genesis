@@ -36,8 +36,9 @@ namespace PetvetPOS_Inventory_System
             this.subHeader = new System.Windows.Forms.Panel();
             this.userControlPanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dateAndTime1 = new PetvetPOS_Inventory_System.Forms.DateAndTime();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.dateAndTime1 = new PetvetPOS_Inventory_System.DateAndTime();
+            this.back1 = new PetvetPOS_Inventory_System.Back();
             this.subHeader.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -87,21 +88,13 @@ namespace PetvetPOS_Inventory_System
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.dateAndTime1);
+            this.panel3.Controls.Add(this.back1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
             this.panel3.Size = new System.Drawing.Size(361, 36);
             this.panel3.TabIndex = 0;
-            // 
-            // dateAndTime1
-            // 
-            this.dateAndTime1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateAndTime1.Location = new System.Drawing.Point(10, 0);
-            this.dateAndTime1.Name = "dateAndTime1";
-            this.dateAndTime1.Padding = new System.Windows.Forms.Padding(10);
-            this.dateAndTime1.Size = new System.Drawing.Size(341, 36);
-            this.dateAndTime1.TabIndex = 0;
             // 
             // mainPanel
             // 
@@ -112,6 +105,24 @@ namespace PetvetPOS_Inventory_System
             this.mainPanel.Size = new System.Drawing.Size(907, 619);
             this.mainPanel.TabIndex = 0;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
+            // 
+            // dateAndTime1
+            // 
+            this.dateAndTime1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dateAndTime1.Location = new System.Drawing.Point(52, 0);
+            this.dateAndTime1.Name = "dateAndTime1";
+            this.dateAndTime1.Padding = new System.Windows.Forms.Padding(10);
+            this.dateAndTime1.Size = new System.Drawing.Size(299, 36);
+            this.dateAndTime1.TabIndex = 0;
+            // 
+            // back1
+            // 
+            this.back1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.back1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.back1.Location = new System.Drawing.Point(10, 0);
+            this.back1.Name = "back1";
+            this.back1.Size = new System.Drawing.Size(42, 36);
+            this.back1.TabIndex = 1;
             // 
             // frmMain
             // 
@@ -152,8 +163,9 @@ namespace PetvetPOS_Inventory_System
         private System.Windows.Forms.Panel subHeader;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel userControlPanel;
-        private Forms.DateAndTime dateAndTime1;
+        private DateAndTime dateAndTime1;
         private System.Windows.Forms.Panel mainPanel;
+        private Back back1;
     }
 }
 

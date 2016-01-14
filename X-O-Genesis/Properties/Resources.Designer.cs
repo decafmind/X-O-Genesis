@@ -83,46 +83,6 @@ namespace PetvetPOS_Inventory_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap AkiraGIF_100x100_ {
-            get {
-                object obj = ResourceManager.GetObject("AkiraGIF(100x100)", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap AkiraGIF_x {
-            get {
-                object obj = ResourceManager.GetObject("AkiraGIF_x", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap AkiraGIF_x1 {
-            get {
-                object obj = ResourceManager.GetObject("AkiraGIF_x1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap AkiraGIF1 {
-            get {
-                object obj = ResourceManager.GetObject("AkiraGIF1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap barcodeBlack {
             get {
                 object obj = ResourceManager.GetObject("barcodeBlack", resourceCulture);
@@ -286,6 +246,16 @@ namespace PetvetPOS_Inventory_System.Properties {
         internal static System.Drawing.Bitmap reportIcon {
             get {
                 object obj = ResourceManager.GetObject("reportIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap settingsIcon {
+            get {
+                object obj = ResourceManager.GetObject("settingsIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

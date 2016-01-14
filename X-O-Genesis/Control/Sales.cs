@@ -367,5 +367,21 @@ namespace PetvetPOS_Inventory_System
         {
             initTable();
         }
+
+        private void cmType_DisplayMemberChanged(object sender, EventArgs e)
+        {
+            initChart();
+        }
+
+        private void cmType_TextChanged(object sender, EventArgs e)
+        {
+            ComboBox combobox = sender as ComboBox;
+            if (combobox == cmType)
+            {
+                if (cmType.SelectedText != currentReport.ToString())
+                    combobox.SelectedText = currentReport.ToString();
+            }
+            
+        }
     }
 }
