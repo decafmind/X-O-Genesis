@@ -22,13 +22,16 @@ namespace PetvetPOS_Inventory_System
 
         /* Default values for MySql Database*/
         private const string DEFAULT_DATABASE = "pos_inventory_db";
+        private const string DEFAULT_USER = "pos_user";
+        private const string DEFAULT_PASSWORD = "nimda";
+        private const string DEFAULT_HOST = "localhost";
 
         public MySqlDB()
         {
             Database = DEFAULT_DATABASE;
 
-            string mydocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            string filepath = mydocuments + @"\Petvet\Database\connection";
+            string local = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            string filepath = local + @"\Exogenesis\Database\connection";
 
             if (File.Exists(filepath))
             {
@@ -54,21 +57,30 @@ namespace PetvetPOS_Inventory_System
             Database = DEFAULT_DATABASE;
         }
 
-        public void open()
+        public void open(bool isAdmin = false)
         {
             try
             {
-                string connectionString = String.Format("host = '{0}'; user = '{1}'; password = '{2}'; database = '{3}'", Host, User_id, Password, Database);
+                string connectionString = string.Empty;
+
+                if (isAdmin)
+                    connectionString = String.Format("host = '{0}'; user = '{1}'; password = '{2}'; database = '{3}'", Host, User_id, Password, Database);
+                else
+                    connectionString = String.Format("host = '{0}'; user = '{1}'; password = '{2}'; database = '{3}'", Host, DEFAULT_USER, DEFAULT_PASSWORD, DEFAULT_DATABASE);
+
                 Connection = new MySqlConnection(connectionString);
                 Connection.Open();
             }
             catch (MySqlException mex)
             {
-                MessageBox.Show("It seems that the Database Autentication was not properly configured", "Fix it");
+                MessageBox.Show("It seems that the Database Authentication was not properly configured", "Fix it");
                 if (dbSettings == null)
                 {
                     dbSettings = new DatabaseSettings(this);
-           //         dbSettings.button1.Click += button1_Click;
+                    dbSettings.ShowDialog();
+                }
+                else
+                {
                     dbSettings.ShowDialog();
                 }
                 ErrorLog.Log(mex);
@@ -78,11 +90,6 @@ namespace PetvetPOS_Inventory_System
                 ErrorLog.Log(ex);   
             }
         }
-
-        //void button1_Click(object sender, EventArgs e)
-        //{
-        //    open();
-        //}
 
         public void close()
         {
@@ -98,7 +105,38 @@ namespace PetvetPOS_Inventory_System
                     ErrorLog.Log(ex);
                 }
             }
+        }
 
+        public bool grantAllAccessToOtherHost()
+        {
+            bool success = false;
+            MySqlCommand command;
+            string commandText = "GRANT ALL PRIVILEGES ON *.* TO 'pos_user'@'%' IDENTIFIED BY 'nimda'";
+
+            try
+            {
+                open();
+                using (command = new MySqlCommand(@commandText, Connection))
+                    command.ExecuteNonQuery();
+                close();
+                success = true;
+            }
+            catch (MySqlException mx)
+            {
+                success = false;
+                ErrorLog.Log(mx);
+            }
+            catch (Exception ex)
+            {
+                success = false;
+                ErrorLog.Log(ex);
+            }
+            finally
+            {
+                dispose();
+            }
+
+            return success;
         }
 
         public void dispose()
@@ -112,6 +150,5 @@ namespace PetvetPOS_Inventory_System
             dispose();
         }        
         
-
     }
 }

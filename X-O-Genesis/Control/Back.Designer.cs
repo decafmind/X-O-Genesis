@@ -55,7 +55,7 @@
             this.lineShape3.X2 = 1;
             this.lineShape3.Y1 = 8;
             this.lineShape3.Y2 = 16;
-            this.lineShape3.Click += new System.EventHandler(this.lineShape3_Click);
+            this.lineShape3.Click += new System.EventHandler(this.Back_Click);
             // 
             // lineShape2
             // 
@@ -65,7 +65,7 @@
             this.lineShape2.X2 = 15;
             this.lineShape2.Y1 = 16;
             this.lineShape2.Y2 = 22;
-            this.lineShape2.Click += new System.EventHandler(this.lineShape2_Click);
+            this.lineShape2.Click += new System.EventHandler(this.Back_Click);
             // 
             // lineShape1
             // 
@@ -75,7 +75,7 @@
             this.lineShape1.X2 = 1;
             this.lineShape1.Y1 = 16;
             this.lineShape1.Y2 = 16;
-            this.lineShape1.Click += new System.EventHandler(this.lineShape1_Click);
+            this.lineShape1.Click += new System.EventHandler(this.Back_Click);
             // 
             // Back
             // 

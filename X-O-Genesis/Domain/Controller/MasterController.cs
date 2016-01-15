@@ -110,7 +110,7 @@ namespace PetvetPOS_Inventory_System
         }
 
 
-        public void changeCurrentContent(IContentPage content)
+        public void changeCurrentContent(IContentPage content, bool recordOnHistory = true)
         {
             IContentPage lastContent = currentContent as IContentPage;
             if (lastContent != null)
@@ -118,7 +118,8 @@ namespace PetvetPOS_Inventory_System
 
             if (lastContent is MyUserControl)
             {
-                history.Push(lastContent as MyUserControl);
+                if (recordOnHistory)
+                    history.Push(lastContent as MyUserControl);
             }
 
             if (content is MyUserControl)
@@ -255,10 +256,13 @@ namespace PetvetPOS_Inventory_System
 
         public void returnToPreviousPage()
         {
+            if (history.Count == 0)
+                return;
+
             MyUserControl previousPage = history.Pop();
             if (previousPage is IContentPage)
             {
-                changeCurrentContent(previousPage as IContentPage);
+                changeCurrentContent(previousPage as IContentPage, false);
             }
         }
     }

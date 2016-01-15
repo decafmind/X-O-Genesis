@@ -191,5 +191,10 @@ namespace PetvetPOS_Inventory_System
         {
 
         }
+
+        private void dgReturnedProduct_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

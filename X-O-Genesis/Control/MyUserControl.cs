@@ -86,5 +86,10 @@ namespace PetvetPOS_Inventory_System
         {
 
         }
+
+        private void MyUserControl_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

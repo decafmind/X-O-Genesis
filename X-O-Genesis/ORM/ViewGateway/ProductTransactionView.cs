@@ -21,9 +21,9 @@ namespace PetvetPOS_Inventory_System
             };
 
             fieldsname_forselect = new string[]{
-                "description",
-                "unit_price",
-                "SUM(qty_sold) AS 'Qty sold'",
+                "description AS Name",
+                "unit_price AS 'Unit Price'",
+                "SUM(qty_sold) AS 'Qty Sold'",
                 "SUM(grp_price) AS 'Grp price'",
             };
         }

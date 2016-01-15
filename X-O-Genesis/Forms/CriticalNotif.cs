@@ -45,7 +45,12 @@ namespace PetvetPOS_Inventory_System
 
         private void label1_Click(object sender, EventArgs e)
         {
+            Close();
+        }
 
+        private void CriticalNotif_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

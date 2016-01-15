@@ -234,6 +234,7 @@
             this.userImage.Size = new System.Drawing.Size(100, 100);
             this.userImage.TabIndex = 0;
             this.userImage.TabStop = false;
+            this.userImage.Click += new System.EventHandler(this.userImage_Click);
             // 
             // lblName
             // 

@@ -12,6 +12,7 @@ namespace PetvetPOS_Inventory_System
         public Invoice invoice { get; set; }
         public int QuantitySold { get; set; }
         public Decimal GroupPrice { get; set; }
+        public DateTime date { get; set; }
 
         public ProductInvoice()
         {

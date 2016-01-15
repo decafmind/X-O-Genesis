@@ -216,7 +216,8 @@ namespace PetvetPOS_Inventory_System
             {
                 product_name = (string)row.Cells[PRODUCT_NAME_INDEX].Value;
                 Product product = dbController.getProductThroughName(product_name);
-                dbController.checkProductCriticalLevel(product);
+                if (rbInventory.Checked && mainTab.SelectedTab == tabPage1)
+                    dbController.checkProductCriticalLevel(product);
             }
         }
 
@@ -734,11 +735,12 @@ namespace PetvetPOS_Inventory_System
 
         private void btnConfirm_Click(object sender, EventArgs e)
         {
-            editDataGrid();
+            editDataGrid(); 
         }
 
         void updateProductTransaction(string name, int transaction_id, int qty, decimal grp_price)
         {
+
             Product product = dbController.getProductThroughName(name);
             Invoice transaction = new Invoice()
             {
@@ -753,45 +755,66 @@ namespace PetvetPOS_Inventory_System
                 GroupPrice = grp_price,
             };
 
+            int quantity = 0;
+            if (int.TryParse(getValueFromDatagridCell(2), out quantity))
+            {
+                if (qty > quantity)
+                    return;
+            }
+
             dbController.insertProductInvoice(productInvoice);
+
         }
 
         void editDataGrid()
         {
-            const int DESC_INDEX = 0;
-            const int UNIT_PRICE_INDEX = 1;
-            const int QUANTITY_INDEX = 2;
-            const int GROUP_PRICE_INDEX = 3;
+            InputDialog inputDialog = new InputDialog("Product Return", "Reason for return");
+            DialogResult result = inputDialog.ShowDialog();
 
-            if (dgProductTransaction.SelectedRows.Count == 1)
+            if (result == DialogResult.OK)
             {
-                DataGridViewRow row = dgProductTransaction.SelectedRows[0];
-                string desc = getValueFromDatagridCell(dgProductTransaction, row.Index, DESC_INDEX).ToString();
-              
-                int old_qty = 0;
-                int.TryParse(getValueFromDatagridCell(dgProductTransaction, row.Index, QUANTITY_INDEX).ToString(), out old_qty);
+                const int DESC_INDEX = 0;
+                const int UNIT_PRICE_INDEX = 1;
+                const int QUANTITY_INDEX = 2;
+                const int GROUP_PRICE_INDEX = 3;
 
-                int return_qty = 0;
-                int.TryParse(txtQty.Text, out return_qty);
+                if (dgProductTransaction.SelectedRows.Count == 1)
+                {
+                    DataGridViewRow row = dgProductTransaction.SelectedRows[0];
+                    string desc = getValueFromDatagridCell(dgProductTransaction, row.Index, DESC_INDEX).ToString();
 
-                int new_qty = old_qty;
-                if (return_qty <= old_qty)
-                    new_qty = old_qty - return_qty;
-                else
-                    MessageBox.Show("Value cannot be higher than the sold qyt");
+                    int old_qty = 0;
+                    int.TryParse(getValueFromDatagridCell(dgProductTransaction, row.Index, QUANTITY_INDEX).ToString(), out old_qty);
 
-                dgProductTransaction.SelectedRows[0].Cells[QUANTITY_INDEX].Value = new_qty;
+                    int return_qty = 0;
+                    int.TryParse(txtQty.Text, out return_qty);
 
-                decimal unit_price = (decimal)getValueFromDatagridCell(dgProductTransaction, row.Index, UNIT_PRICE_INDEX);
-                decimal new_group_price = unit_price * new_qty;
-                dgProductTransaction.SelectedRows[0].Cells[GROUP_PRICE_INDEX].Value = new_group_price;
+                    int new_qty = old_qty;
+                    if (return_qty <= old_qty)
+                        new_qty = old_qty - return_qty;
+                    else
+                        MessageBox.Show("Value cannot be higher than the sold qyt");
 
-                computeTotalPrice();
-                updateProductTransaction(desc, parseTransactionNo(), return_qty, new_group_price);
-                dbController.updateTotalPrice(parseTransactionNo().ToString(), new_group_price);
+                    dgProductTransaction.SelectedRows[0].Cells[QUANTITY_INDEX].Value = new_qty;
+
+                    decimal unit_price = (decimal)getValueFromDatagridCell(dgProductTransaction, row.Index, UNIT_PRICE_INDEX);
+                    decimal new_group_price = unit_price * new_qty;
+                    dgProductTransaction.SelectedRows[0].Cells[GROUP_PRICE_INDEX].Value = new_group_price;
+
+                    computeTotalPrice();
+
+                    // TODO
+                    ProductReturned productReturned = new ProductReturned(int.Parse(txtTransactionno.Text), return_qty, DateTime.Now, inputDialog.prompt);
+                    ProductReturnMapper prm = new ProductReturnMapper(dbController.mySqlDB);
+                    prm.insertProductReturn(productReturned);
+
+                    updateProductTransaction(desc, parseTransactionNo(), return_qty, new_group_price);
+                    dbController.updateTotalPrice(parseTransactionNo().ToString(), new_group_price);
+                }
+
+                txtQty.Clear();
+                searchTransaction();   
             }
-
-            txtQty.Clear();
         }
 
         void printReceipt()
@@ -996,6 +1019,11 @@ namespace PetvetPOS_Inventory_System
         }
 
         private void dgInventory_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void panel11_Paint(object sender, PaintEventArgs e)
         {
 
         }

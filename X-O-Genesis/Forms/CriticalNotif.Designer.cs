@@ -45,7 +45,7 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Product - is already in critical level";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Click += new System.EventHandler(this.CriticalNotif_Click);
             // 
             // panel1
             // 
@@ -58,7 +58,7 @@
             // 
             // timer1
             // 
-            this.timer1.Interval = 7000;
+            this.timer1.Interval = 3000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // CriticalNotif
@@ -78,6 +78,7 @@
             this.Text = "CriticalNotif";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.CriticalNotif_Load);
+            this.Click += new System.EventHandler(this.CriticalNotif_Click);
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 

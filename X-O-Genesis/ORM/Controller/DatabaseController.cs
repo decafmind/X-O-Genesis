@@ -236,7 +236,7 @@ namespace PetvetPOS_Inventory_System
 
         public DataTable getProductTransactionFromTransactionID(string transction_id)
         {
-            string condition = string.Format("id = {0} GROUP BY description", transction_id);
+            string condition = string.Format("transaction_id = {0} GROUP BY description HAVING SUM(qty_sold) <> 0", transction_id);
             return productTransactionView.loadTable(new DataTable(), condition);
         }
 

@@ -375,13 +375,13 @@ namespace PetvetPOS_Inventory_System
 
         private void cmType_TextChanged(object sender, EventArgs e)
         {
-            ComboBox combobox = sender as ComboBox;
-            if (combobox == cmType)
-            {
-                if (cmType.SelectedText != currentReport.ToString())
-                    combobox.SelectedText = currentReport.ToString();
-            }
+       
             
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

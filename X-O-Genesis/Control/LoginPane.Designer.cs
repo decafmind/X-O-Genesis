@@ -28,16 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LoginPane));
             this.panel2 = new System.Windows.Forms.Panel();
             this.mainPane = new System.Windows.Forms.Panel();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.lockPanel = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.mainPane.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.panel5.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
@@ -56,7 +54,6 @@
             // 
             this.mainPane.Controls.Add(this.progressBar1);
             this.mainPane.Controls.Add(this.panel5);
-            this.mainPane.Controls.Add(this.panel1);
             this.mainPane.Location = new System.Drawing.Point(3, 3);
             this.mainPane.Name = "mainPane";
             this.mainPane.Size = new System.Drawing.Size(680, 334);
@@ -79,27 +76,17 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Transparent;
+            this.panel5.Controls.Add(this.lockPanel);
             this.panel5.Location = new System.Drawing.Point(3, 3);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(362, 220);
             this.panel5.TabIndex = 7;
             // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Controls.Add(this.lockPanel);
-            this.panel1.Location = new System.Drawing.Point(331, -5);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 236);
-            this.panel1.TabIndex = 11;
-            this.panel1.Visible = false;
-            // 
             // lockPanel
             // 
             this.lockPanel.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.lockIcon;
             this.lockPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.lockPanel.Location = new System.Drawing.Point(179, 15);
+            this.lockPanel.Location = new System.Drawing.Point(293, 3);
             this.lockPanel.Name = "lockPanel";
             this.lockPanel.Size = new System.Drawing.Size(68, 59);
             this.lockPanel.TabIndex = 10;
@@ -116,7 +103,7 @@
             this.Size = new System.Drawing.Size(772, 428);
             this.panel2.ResumeLayout(false);
             this.mainPane.ResumeLayout(false);
-            this.panel1.ResumeLayout(false);
+            this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -126,8 +113,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.Panel lockPanel;
         private System.Windows.Forms.Panel mainPane;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel lockPanel;
     }
 }

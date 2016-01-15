@@ -12,7 +12,7 @@ namespace PetvetPOS_Inventory_System
         private static string FILENAME = "error.log";
 
         public static void Log(Exception e){
-            string directory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Petvet\Log\";
+            string directory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + @"\Exogenenesis\Log\";
            
             if (!Directory.Exists(directory))
                 Directory.CreateDirectory(directory);

@@ -84,7 +84,9 @@ namespace PetvetPOS_Inventory_System
         {
             try
             {
-                string destFolder = @"C:\Petvet\Images\";
+                string local = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+                string destFolder = local + @"\Exogenesis\Images\";
+
                 if (!Directory.Exists(destFolder))
                     Directory.CreateDirectory(destFolder);
 

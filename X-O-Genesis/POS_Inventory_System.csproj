@@ -191,6 +191,12 @@
     <Compile Include="Control\Personalization.Designer.cs">
       <DependentUpon>Personalization.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\ProductReturnControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\ProductReturnControl.Designer.cs">
+      <DependentUpon>ProductReturnControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\ProductSliderPane.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -220,6 +226,7 @@
     <Compile Include="Domain\Enums\Settings.cs" />
     <Compile Include="Domain\LoginTrail.cs" />
     <Compile Include="Domain\ProductInspection.cs" />
+    <Compile Include="Domain\ProductReturned.cs" />
     <Compile Include="Domain\Theme.cs" />
     <Compile Include="EventHandler\SettingArgs.cs" />
     <Compile Include="Domain\CustomerInformation.cs" />
@@ -249,6 +256,12 @@
     <Compile Include="Forms\Fallback.Designer.cs">
       <DependentUpon>Fallback.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\InputDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InputDialog.Designer.cs">
+      <DependentUpon>InputDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\modalInspectProduct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +274,7 @@
     <Compile Include="ORM\TableGateway\FallbackMapper.cs" />
     <Compile Include="ORM\TableGateway\PetsizeMapper.cs" />
     <Compile Include="ORM\TableGateway\ProductInspectionMapper.cs" />
+    <Compile Include="ORM\TableGateway\ProductReturnMapper.cs" />
     <Compile Include="ORM\ViewGateway\AuditTrailView.cs" />
     <Compile Include="ORM\TableGateway\GppTransactionMapper.cs" />
     <Compile Include="ORM\TableGateway\GroomingMapper.cs" />
@@ -519,6 +533,9 @@
     <EmbeddedResource Include="Control\Personalization.resx">
       <DependentUpon>Personalization.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\ProductReturnControl.resx">
+      <DependentUpon>ProductReturnControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\ProductSliderPane.resx">
       <DependentUpon>ProductSliderPane.cs</DependentUpon>
     </EmbeddedResource>
@@ -579,6 +596,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\MenuControl.resx">
       <DependentUpon>MenuControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InputDialog.resx">
+      <DependentUpon>InputDialog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\MessageBanner.resx">
       <DependentUpon>MessageBanner.cs</DependentUpon>

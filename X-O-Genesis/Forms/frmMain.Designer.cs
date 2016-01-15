@@ -117,12 +117,17 @@ namespace PetvetPOS_Inventory_System
             // 
             // back1
             // 
+            this.back1.accessMasterController = null;
             this.back1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.back1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.back1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.back1.Location = new System.Drawing.Point(10, 0);
+            this.back1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.back1.masterController = null;
             this.back1.Name = "back1";
             this.back1.Size = new System.Drawing.Size(42, 36);
             this.back1.TabIndex = 1;
+            this.back1.Visible = false;
             // 
             // frmMain
             // 

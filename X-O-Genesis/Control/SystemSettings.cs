@@ -90,5 +90,10 @@ namespace PetvetPOS_Inventory_System
             Personalization personalization = new Personalization(base.masterController);
             masterController.changeCurrentContent(personalization);
         }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            masterController.changeCurrentContent(new ProductReturnControl(base.masterController));
+        }
     }
 }

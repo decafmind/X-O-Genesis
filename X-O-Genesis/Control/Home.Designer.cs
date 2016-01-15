@@ -332,6 +332,7 @@
             this.dgReturnedProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgReturnedProduct.Size = new System.Drawing.Size(255, 176);
             this.dgReturnedProduct.TabIndex = 4;
+            this.dgReturnedProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgReturnedProduct_CellContentClick);
             // 
             // panel5
             // 

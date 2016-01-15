@@ -83,8 +83,8 @@ namespace PetvetPOS_Inventory_System
 
             if (testConnection() == true)
             {
-                string mydocuments = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-                string directory = mydocuments + @"\Petvet\Database\";
+                string local = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+                string directory = local + @"\Exogenesis\Database\";
                 string filepath = @"connection";
 
                 if (!Directory.Exists(directory))
@@ -98,6 +98,7 @@ namespace PetvetPOS_Inventory_System
                 }
 
                 MessageBox.Show("Connection succeed");
+                mySqlDb.grantAllAccessToOtherHost();
                 Close();
             }
             else

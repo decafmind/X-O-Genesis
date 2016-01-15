@@ -104,7 +104,7 @@ namespace PetvetPOS_Inventory_System
             isSelected = true;
 
             menuBar.updateMenus();
-            masterController.changeCurrentContent(mapControl);
+            masterController.changeCurrentContent(mapControl, false);
         }
 
         private void icon_MouseHover(object sender, EventArgs e)

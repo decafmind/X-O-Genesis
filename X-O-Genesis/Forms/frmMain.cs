@@ -55,6 +55,8 @@ namespace PetvetPOS_Inventory_System
             menuBar = new MenuBar(panelSidebar, masterController);
             userSettingsControl = new UserSettingsControl(userControlPanel, masterController);
             loginPane = new LoginPane(masterController);
+            back1.accessMasterController = masterController;
+         
 
             // EventHandler hooking
             masterController.EmployeeLogin += masterController_EmployeeLogin;
@@ -116,7 +118,6 @@ namespace PetvetPOS_Inventory_System
             masterController.setFormReturnkey = null;
             isLogin = true;
             displayOnRealSize();
-            masterController.speak("Hey");
         }
 
         void masterController_EmployeeLogout(object sender, EventArgs e)
@@ -137,11 +138,16 @@ namespace PetvetPOS_Inventory_System
                 IKeyController keyController = e.currentContent as IKeyController;
                 keyFunction = keyController.getKeyController;
             }
+
+            if (masterController.history.Count == 0)
+                back1.enable(false);
+            else
+                back1.enable(true);
         }
 
         void initLogin()
         {
-            masterController.changeCurrentContent(loginPane);
+            masterController.changeCurrentContent(loginPane, false);
         }
 
         private void frmMain_Load(object sender, EventArgs e)
@@ -154,6 +160,7 @@ namespace PetvetPOS_Inventory_System
         {
             panelSidebar.BackColor = Properties.Settings.Default.sidebarColor;
             subHeader.BackColor = Color.Silver;
+            back1.Visible = true;
         }        
 
         // This method is the antithesis of activateTrueForm method
@@ -161,6 +168,7 @@ namespace PetvetPOS_Inventory_System
         {   
             panelSidebar.BackColor = Color.White;
             subHeader.BackColor = Color.White;
+            back1.Visible = false;
         }
 
         public void disableForm()
