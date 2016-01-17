@@ -132,6 +132,7 @@ namespace PetvetPOS_Inventory_System
 
         private void button2_Click(object sender, EventArgs e)
         {
+            
             masterController.closeForm();
         }
 
@@ -250,6 +251,19 @@ namespace PetvetPOS_Inventory_System
         private void panelTitle_MouseDoubleClick(object sender, MouseEventArgs e)
         {
             masterController.toogleMaximize();
+        }
+
+        private void kek(object sender, EventArgs e)
+        {
+            button2.BackgroundImage = Properties.Resources.Cancel_2;
+
+
+        }
+
+        private void kekek(object sender, EventArgs e)
+        {
+            button2.BackgroundImage = Properties.Resources.Delete_2;
+
         }
 
     }
