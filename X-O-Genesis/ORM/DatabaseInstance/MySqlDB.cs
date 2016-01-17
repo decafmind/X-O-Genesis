@@ -115,7 +115,7 @@ namespace PetvetPOS_Inventory_System
 
             try
             {
-                open();
+                open(true);
                 using (command = new MySqlCommand(@commandText, Connection))
                     command.ExecuteNonQuery();
                 close();

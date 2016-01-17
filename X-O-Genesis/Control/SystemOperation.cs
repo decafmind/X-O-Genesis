@@ -72,12 +72,12 @@ namespace PetvetPOS_Inventory_System
 
         private void pbLoginTrail_Click(object sender, EventArgs e)
         {
-            masterController.changeCurrentContent(new UserAdministration(base.masterController, 1));
+            masterController.changeCurrentContent(new UserAdministration(base.masterController, 2));
         }
 
         private void pbAuditTrail_Click(object sender, EventArgs e)
         {
-            masterController.changeCurrentContent(new UserAdministration(base.masterController, 2));
+            masterController.changeCurrentContent(new UserAdministration(base.masterController, 1));
         }
 
         private void label1_Click(object sender, EventArgs e)

@@ -19,7 +19,6 @@ namespace PetvetPOS_Inventory_System
                 "product_id",
                 "quantity",
                 "subtotal",
-                "date"
             };
         }
 

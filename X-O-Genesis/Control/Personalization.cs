@@ -100,6 +100,12 @@ namespace PetvetPOS_Inventory_System
                 Properties.Settings.Default.iconColor = SystemColors.getColorFromArgb(246, 255, 226); 
                 Properties.Settings.Default.sidebarColor = SystemColors.getColorFromArgb(215, 121, 72);
             }
+            else if (comboBox1.SelectedIndex == 2)
+            {
+                Properties.Settings.Default.headerColor = SystemColors.getColorFromArgb(227, 231, 179);
+                Properties.Settings.Default.iconColor = SystemColors.getColorFromArgb(246, 255, 226);
+                Properties.Settings.Default.sidebarColor = SystemColors.getColorFromArgb(215, 121, 72);
+            }
         }
 
         private void button4_Click(object sender, EventArgs e)
