@@ -69,7 +69,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ListNetworkComputerNames">
-      <HintPath>..\..\Capstone\cjp\X-O-Genesis\X-O-Genesis\bin\Debug\ListNetworkComputerNames.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Final wave\Capstone\X-O-Genesis\X-O-Genesis\bin\Debug\ListNetworkComputerNames.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic">
       <Private>True</Private>
@@ -92,7 +92,7 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="MySql.Fabric.Plugin">
-      <HintPath>..\..\Capstone\cjp\X-O-Genesis\X-O-Genesis\bin\Debug\MySql.Fabric.Plugin.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Final wave\Capstone\X-O-Genesis\X-O-Genesis\bin\Debug\MySql.Fabric.Plugin.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Web, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -101,10 +101,10 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="PasswordHash">
-      <HintPath>..\..\Capstone\cjp\X-O-Genesis\X-O-Genesis\bin\Debug\PasswordHash.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Final wave\Capstone\X-O-Genesis\X-O-Genesis\bin\Debug\PasswordHash.dll</HintPath>
     </Reference>
     <Reference Include="Randy.Graphics">
-      <HintPath>..\..\Capstone\cjp\X-O-Genesis\X-O-Genesis\bin\Debug\Randy.Graphics.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Final wave\Capstone\X-O-Genesis\X-O-Genesis\bin\Debug\Randy.Graphics.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Private>True</Private>
@@ -151,7 +151,7 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="TouchlessLib">
-      <HintPath>..\..\Capstone\cjp\X-O-Genesis\X-O-Genesis\bin\Debug\TouchlessLib.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Final wave\Capstone\X-O-Genesis\X-O-Genesis\bin\Debug\TouchlessLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -801,6 +801,48 @@
     <None Include="Resources\matBG.png" />
     <None Include="Resources\System.png" />
     <None Include="Resources\iconmonstr-gear-icon-256.png" />
+    <None Include="Resources\Add File.png" />
+    <None Include="Resources\Add User.png" />
+    <None Include="Resources\Banknotes.png" />
+    <None Include="Resources\Barcode Scanner.png" />
+    <None Include="Resources\Buy.png" />
+    <None Include="Resources\Cancel 2.png" />
+    <None Include="Resources\Cancel.png" />
+    <None Include="Resources\Checkout.png" />
+    <None Include="Resources\Circled Down.png" />
+    <None Include="Resources\Circled Left.png" />
+    <None Include="Resources\Circled Right.png" />
+    <None Include="Resources\Clear Shopping Cart.png" />
+    <None Include="Resources\Close Window.png" />
+    <None Include="Resources\Compact Camera.png" />
+    <None Include="Resources\Delete Shield.png" />
+    <None Include="Resources\Delete.png" />
+    <None Include="Resources\Delete_2.png" />
+    <None Include="Resources\Edit.png" />
+    <None Include="Resources\Enter Key.png" />
+    <None Include="Resources\Enter.png" />
+    <None Include="Resources\Exit.png" />
+    <None Include="Resources\Export.png" />
+    <None Include="Resources\Forgot Password.png" />
+    <None Include="Resources\Maximize Window.png" />
+    <None Include="Resources\Minimize Window.png" />
+    <None Include="Resources\More Than.png" />
+    <None Include="Resources\Ok.png" />
+    <None Include="Resources\Plus.png" />
+    <None Include="Resources\Plus_2.png" />
+    <None Include="Resources\Price Tag.png" />
+    <None Include="Resources\Print.png" />
+    <None Include="Resources\Refresh.png" />
+    <None Include="Resources\Remove User.png" />
+    <None Include="Resources\Resize Vertical.png" />
+    <None Include="Resources\Return Purchase.png" />
+    <None Include="Resources\Save.png" />
+    <None Include="Resources\Search.png" />
+    <None Include="Resources\Shop.png" />
+    <None Include="Resources\Table.png" />
+    <None Include="Resources\Toggle On.png" />
+    <None Include="Resources\Upload.png" />
+    <None Include="Resources\View File.png" />
     <Content Include="SystemIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

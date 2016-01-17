@@ -50,10 +50,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtTelno = new System.Windows.Forms.TextBox();
-            this.btnSave = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.lblRepassword = new System.Windows.Forms.Label();
             this.txtRepassword = new System.Windows.Forms.TextBox();
@@ -62,19 +60,21 @@
             this.lblAsterisk2 = new System.Windows.Forms.Label();
             this.txtLastname = new System.Windows.Forms.TextBox();
             this.lblAsterisk1 = new System.Windows.Forms.Label();
-            this.imageUser = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.upload = new System.Windows.Forms.Button();
             this.txtMiddlename = new System.Windows.Forms.TextBox();
             this.txtFirstname = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblMode = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.vUsername = new PetvetPOS_Inventory_System.ValidationMarks();
             this.vRepassword = new PetvetPOS_Inventory_System.ValidationMarks();
+            this.imageUser = new System.Windows.Forms.PictureBox();
+            this.upload = new System.Windows.Forms.Button();
             this.panel_AddUser.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imageUser)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imageUser)).BeginInit();
             this.SuspendLayout();
             // 
             // panel_AddUser
@@ -310,19 +310,6 @@
             this.txtTelno.TabIndex = 6;
             this.txtTelno.TextChanged += new System.EventHandler(this.filterContacts);
             // 
-            // btnSave
-            // 
-            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Location = new System.Drawing.Point(254, 406);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(112, 30);
-            this.btnSave.TabIndex = 19;
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.TextChanged += new System.EventHandler(this.textboxes_TextChanged);
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -343,23 +330,6 @@
             this.label9.TabIndex = 108;
             this.label9.Text = "ADDRESS:";
             this.label9.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(468, 107);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(47, 23);
-            this.button1.TabIndex = 125;
-            this.button1.TabStop = false;
-            this.toolTip1.SetToolTip(this.button1, "Take picture from webcam");
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // txtAddress
             // 
@@ -450,17 +420,6 @@
             this.lblAsterisk1.TabIndex = 119;
             this.lblAsterisk1.Text = "*";
             // 
-            // imageUser
-            // 
-            this.imageUser.BackColor = System.Drawing.Color.Transparent;
-            this.imageUser.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.imageUser.InitialImage = null;
-            this.imageUser.Location = new System.Drawing.Point(415, 7);
-            this.imageUser.Name = "imageUser";
-            this.imageUser.Size = new System.Drawing.Size(100, 94);
-            this.imageUser.TabIndex = 115;
-            this.imageUser.TabStop = false;
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -482,23 +441,6 @@
             this.label2.TabIndex = 118;
             this.label2.Text = "MI";
             this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // upload
-            // 
-            this.upload.BackColor = System.Drawing.Color.White;
-            this.upload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("upload.BackgroundImage")));
-            this.upload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.upload.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.upload.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.upload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.upload.Location = new System.Drawing.Point(415, 107);
-            this.upload.Name = "upload";
-            this.upload.Size = new System.Drawing.Size(47, 23);
-            this.upload.TabIndex = 111;
-            this.upload.TabStop = false;
-            this.toolTip1.SetToolTip(this.upload, "Upload from files");
-            this.upload.UseVisualStyleBackColor = false;
-            this.upload.Click += new System.EventHandler(this.upload_Click_1);
             // 
             // txtMiddlename
             // 
@@ -542,6 +484,36 @@
             this.lblMode.Text = "Mode";
             this.lblMode.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnSave
+            // 
+            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Location = new System.Drawing.Point(254, 406);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(112, 30);
+            this.btnSave.TabIndex = 19;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.TextChanged += new System.EventHandler(this.textboxes_TextChanged);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(468, 107);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(47, 23);
+            this.button1.TabIndex = 125;
+            this.button1.TabStop = false;
+            this.toolTip1.SetToolTip(this.button1, "Take picture from webcam");
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // vUsername
             // 
             this.vUsername.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("vUsername.BackgroundImage")));
@@ -566,6 +538,34 @@
             this.vRepassword.Visible = false;
             this.vRepassword.Load += new System.EventHandler(this.vRepassword_Load);
             // 
+            // imageUser
+            // 
+            this.imageUser.BackColor = System.Drawing.Color.Transparent;
+            this.imageUser.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.imageUser.InitialImage = null;
+            this.imageUser.Location = new System.Drawing.Point(415, 7);
+            this.imageUser.Name = "imageUser";
+            this.imageUser.Size = new System.Drawing.Size(100, 94);
+            this.imageUser.TabIndex = 115;
+            this.imageUser.TabStop = false;
+            // 
+            // upload
+            // 
+            this.upload.BackColor = System.Drawing.Color.White;
+            this.upload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("upload.BackgroundImage")));
+            this.upload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.upload.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.upload.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.upload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.upload.Location = new System.Drawing.Point(415, 107);
+            this.upload.Name = "upload";
+            this.upload.Size = new System.Drawing.Size(47, 23);
+            this.upload.TabIndex = 111;
+            this.upload.TabStop = false;
+            this.toolTip1.SetToolTip(this.upload, "Upload from files");
+            this.upload.UseVisualStyleBackColor = false;
+            this.upload.Click += new System.EventHandler(this.upload_Click_1);
+            // 
             // AddUserPane
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -576,8 +576,8 @@
             this.Size = new System.Drawing.Size(549, 478);
             this.panel_AddUser.ResumeLayout(false);
             this.panel_AddUser.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imageUser)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imageUser)).EndInit();
             this.ResumeLayout(false);
 
         }
