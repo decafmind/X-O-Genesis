@@ -64,10 +64,10 @@
             // 
             this.progressBar1.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.progressBar1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
-            this.progressBar1.Location = new System.Drawing.Point(2, 224);
+            this.progressBar1.Location = new System.Drawing.Point(156, 264);
             this.progressBar1.Margin = new System.Windows.Forms.Padding(10);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(362, 10);
+            this.progressBar1.Size = new System.Drawing.Size(362, 18);
             this.progressBar1.Step = 100;
             this.progressBar1.TabIndex = 0;
             this.progressBar1.Visible = false;
@@ -79,7 +79,7 @@
             this.panel5.Controls.Add(this.lockPanel);
             this.panel5.Location = new System.Drawing.Point(3, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(608, 220);
+            this.panel5.Size = new System.Drawing.Size(608, 248);
             this.panel5.TabIndex = 7;
             // 
             // lockPanel

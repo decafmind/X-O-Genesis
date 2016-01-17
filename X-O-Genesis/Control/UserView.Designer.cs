@@ -80,7 +80,7 @@
             this.lblTelno.Location = new System.Drawing.Point(330, 21);
             this.lblTelno.Name = "lblTelno";
             this.lblTelno.Size = new System.Drawing.Size(118, 26);
-            this.lblTelno.TabIndex = 18;
+            this.lblTelno.TabIndex = 17;
             this.lblTelno.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label8
@@ -120,7 +120,7 @@
             this.lblAddress.Location = new System.Drawing.Point(182, 130);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(216, 53);
-            this.lblAddress.TabIndex = 14;
+            this.lblAddress.TabIndex = 19;
             // 
             // label4
             // 
@@ -139,7 +139,7 @@
             this.lblUsername.Location = new System.Drawing.Point(182, 196);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(216, 23);
-            this.lblUsername.TabIndex = 12;
+            this.lblUsername.TabIndex = 20;
             this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label1
@@ -159,7 +159,7 @@
             this.lblRegistrationdate.Location = new System.Drawing.Point(241, 300);
             this.lblRegistrationdate.Name = "lblRegistrationdate";
             this.lblRegistrationdate.Size = new System.Drawing.Size(186, 23);
-            this.lblRegistrationdate.TabIndex = 9;
+            this.lblRegistrationdate.TabIndex = 21;
             this.lblRegistrationdate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblEmailadd
@@ -169,7 +169,7 @@
             this.lblEmailadd.Location = new System.Drawing.Point(182, 92);
             this.lblEmailadd.Name = "lblEmailadd";
             this.lblEmailadd.Size = new System.Drawing.Size(216, 23);
-            this.lblEmailadd.TabIndex = 7;
+            this.lblEmailadd.TabIndex = 18;
             this.lblEmailadd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label5
@@ -233,7 +233,7 @@
             this.lblPosition.Location = new System.Drawing.Point(129, 79);
             this.lblPosition.Name = "lblPosition";
             this.lblPosition.Size = new System.Drawing.Size(216, 23);
-            this.lblPosition.TabIndex = 6;
+            this.lblPosition.TabIndex = 16;
             this.lblPosition.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblName

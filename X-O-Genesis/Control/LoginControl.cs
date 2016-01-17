@@ -207,5 +207,10 @@ namespace PetvetPOS_Inventory_System
             btnLogin.Enabled = false;
             
         }
+
+        private void btnForgot_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
