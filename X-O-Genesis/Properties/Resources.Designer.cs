@@ -273,6 +273,16 @@ namespace PetvetPOS_Inventory_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Close_Window1 {
+            get {
+                object obj = ResourceManager.GetObject("Close Window1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Compact_Camera {
             get {
                 object obj = ResourceManager.GetObject("Compact Camera", resourceCulture);
@@ -306,6 +316,16 @@ namespace PetvetPOS_Inventory_System.Properties {
         internal static System.Drawing.Bitmap Delete_Shield {
             get {
                 object obj = ResourceManager.GetObject("Delete Shield", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Delete1 {
+            get {
+                object obj = ResourceManager.GetObject("Delete1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

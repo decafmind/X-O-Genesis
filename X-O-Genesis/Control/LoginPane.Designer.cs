@@ -79,7 +79,7 @@
             this.panel5.Controls.Add(this.lockPanel);
             this.panel5.Location = new System.Drawing.Point(3, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(362, 220);
+            this.panel5.Size = new System.Drawing.Size(608, 220);
             this.panel5.TabIndex = 7;
             // 
             // lockPanel

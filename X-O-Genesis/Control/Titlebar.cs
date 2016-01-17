@@ -255,14 +255,14 @@ namespace PetvetPOS_Inventory_System
 
         private void kek(object sender, EventArgs e)
         {
-            button2.BackgroundImage = Properties.Resources.Cancel_2;
+            button2.BackgroundImage = Properties.Resources.Close_Window;
 
 
         }
 
         private void kekek(object sender, EventArgs e)
         {
-            button2.BackgroundImage = Properties.Resources.Delete_2;
+            button2.BackgroundImage = Properties.Resources.Delete1;
 
         }
 

@@ -116,22 +116,31 @@
             // 
             // btnDiscardUpdate
             // 
+            this.btnDiscardUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDiscardUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnDiscardUpdate.Location = new System.Drawing.Point(165, 332);
+            this.btnDiscardUpdate.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Cancel;
+            this.btnDiscardUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDiscardUpdate.Location = new System.Drawing.Point(149, 360);
             this.btnDiscardUpdate.Name = "btnDiscardUpdate";
-            this.btnDiscardUpdate.Size = new System.Drawing.Size(100, 82);
+            this.btnDiscardUpdate.Size = new System.Drawing.Size(116, 62);
             this.btnDiscardUpdate.TabIndex = 50;
             this.btnDiscardUpdate.Text = "Cancel";
+            this.btnDiscardUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDiscardUpdate.UseVisualStyleBackColor = true;
             // 
             // btnSaveUpdate
             // 
+            this.btnSaveUpdate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSaveUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSaveUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnSaveUpdate.Location = new System.Drawing.Point(17, 332);
+            this.btnSaveUpdate.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Save;
+            this.btnSaveUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSaveUpdate.Location = new System.Drawing.Point(18, 360);
             this.btnSaveUpdate.Name = "btnSaveUpdate";
-            this.btnSaveUpdate.Size = new System.Drawing.Size(100, 82);
+            this.btnSaveUpdate.Size = new System.Drawing.Size(117, 62);
             this.btnSaveUpdate.TabIndex = 49;
             this.btnSaveUpdate.Text = "Save";
+            this.btnSaveUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSaveUpdate.UseVisualStyleBackColor = true;
             this.btnSaveUpdate.Click += new System.EventHandler(this.btnSaveUpdate_Click);
             // 
@@ -177,9 +186,11 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.tabControl1.Controls.Add(this.newClient_tab);
             this.tabControl1.Controls.Add(this.existingClient_tab);
             this.tabControl1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -208,33 +219,41 @@
             this.newClient_tab.Controls.Add(this.label3);
             this.newClient_tab.Controls.Add(this.label2);
             this.newClient_tab.Controls.Add(this.label1);
-            this.newClient_tab.Location = new System.Drawing.Point(4, 22);
+            this.newClient_tab.Location = new System.Drawing.Point(4, 25);
             this.newClient_tab.Name = "newClient_tab";
             this.newClient_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.newClient_tab.Size = new System.Drawing.Size(577, 557);
+            this.newClient_tab.Size = new System.Drawing.Size(577, 554);
             this.newClient_tab.TabIndex = 0;
             this.newClient_tab.Text = "Add New Client Information";
             this.newClient_tab.UseVisualStyleBackColor = true;
             // 
             // btnDiscard
             // 
-            this.btnDiscard.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnDiscard.Location = new System.Drawing.Point(296, 457);
+            this.btnDiscard.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDiscard.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnDiscard.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Cancel;
+            this.btnDiscard.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnDiscard.Location = new System.Drawing.Point(374, 457);
             this.btnDiscard.Name = "btnDiscard";
-            this.btnDiscard.Size = new System.Drawing.Size(245, 55);
+            this.btnDiscard.Size = new System.Drawing.Size(146, 55);
             this.btnDiscard.TabIndex = 44;
             this.btnDiscard.Text = "Discard";
+            this.btnDiscard.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDiscard.UseVisualStyleBackColor = true;
             this.btnDiscard.Click += new System.EventHandler(this.btnDiscard_Click);
             // 
             // btnSave
             // 
-            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnSave.Location = new System.Drawing.Point(34, 457);
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnSave.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Save;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSave.Location = new System.Drawing.Point(222, 457);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(245, 55);
+            this.btnSave.Size = new System.Drawing.Size(146, 55);
             this.btnSave.TabIndex = 43;
             this.btnSave.Text = "Save";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -395,20 +414,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(31, 52);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 13);
+            this.label1.Size = new System.Drawing.Size(225, 29);
             this.label1.TabIndex = 24;
             this.label1.Text = "Client Information:";
             // 
             // existingClient_tab
             // 
             this.existingClient_tab.Controls.Add(this.panel1);
-            this.existingClient_tab.Location = new System.Drawing.Point(4, 22);
+            this.existingClient_tab.Location = new System.Drawing.Point(4, 32);
             this.existingClient_tab.Name = "existingClient_tab";
             this.existingClient_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.existingClient_tab.Size = new System.Drawing.Size(577, 557);
+            this.existingClient_tab.Size = new System.Drawing.Size(577, 547);
             this.existingClient_tab.TabIndex = 1;
             this.existingClient_tab.Text = "Update Client Contact Information";
             this.existingClient_tab.UseVisualStyleBackColor = true;
@@ -420,7 +439,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(571, 551);
+            this.panel1.Size = new System.Drawing.Size(571, 541);
             this.panel1.TabIndex = 42;
             // 
             // panel4
@@ -430,7 +449,7 @@
             this.panel4.Location = new System.Drawing.Point(0, 97);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(20);
-            this.panel4.Size = new System.Drawing.Size(571, 454);
+            this.panel4.Size = new System.Drawing.Size(571, 444);
             this.panel4.TabIndex = 47;
             // 
             // dgExistingClients
@@ -451,7 +470,7 @@
             this.dgExistingClients.ReadOnly = true;
             this.dgExistingClients.RowHeadersVisible = false;
             this.dgExistingClients.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgExistingClients.Size = new System.Drawing.Size(531, 414);
+            this.dgExistingClients.Size = new System.Drawing.Size(531, 404);
             this.dgExistingClients.TabIndex = 0;
             this.dgExistingClients.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgExistingClients_CellDoubleClick);
             // 

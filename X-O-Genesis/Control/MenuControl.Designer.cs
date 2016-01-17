@@ -139,6 +139,7 @@
             // MenuControl
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Inherit;
+            this.BackColor = System.Drawing.Color.DarkGray;
             this.Controls.Add(this.menuName);
             this.Controls.Add(this.shapeContainer1);
             this.Cursor = System.Windows.Forms.Cursors.Hand;

@@ -133,6 +133,7 @@
             // 
             // mainTab
             // 
+            this.mainTab.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.mainTab.Controls.Add(this.tabPage1);
             this.mainTab.Controls.Add(this.tabPage2);
             this.mainTab.Dock = System.Windows.Forms.DockStyle.Fill;

@@ -53,18 +53,20 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label1.Location = new System.Drawing.Point(62, 71);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 13);
+            this.label1.Size = new System.Drawing.Size(84, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = "Supplier";
             // 
             // comboBox1
             // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(116, 66);
+            this.comboBox1.Location = new System.Drawing.Point(152, 68);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(215, 21);
+            this.comboBox1.Size = new System.Drawing.Size(215, 33);
             this.comboBox1.TabIndex = 0;
             // 
             // ProductReturnControl

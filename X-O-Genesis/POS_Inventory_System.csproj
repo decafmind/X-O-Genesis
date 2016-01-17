@@ -843,6 +843,8 @@
     <None Include="Resources\Toggle On.png" />
     <None Include="Resources\Upload.png" />
     <None Include="Resources\View File.png" />
+    <None Include="Resources\Close Window1.png" />
+    <None Include="Resources\Delete1.png" />
     <Content Include="SystemIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
