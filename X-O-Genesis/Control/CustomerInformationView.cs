@@ -58,9 +58,8 @@ namespace PetvetPOS_Inventory_System
                 Middlename = txtMname.Text,
                 Lastname = txtLname.Text,
                 Mobile_number = txtMobile.Text,
-                Telephone_number = txtMobile.Text,
                 Email_address = txtEmail.Text,
-                Address = txtAdd1.Text + " " + txtAdd2.Text
+                Address = txtAdd1.Text,
             };
 
   
@@ -116,7 +115,7 @@ namespace PetvetPOS_Inventory_System
                     Mobile_number = mob
                 };
 
-                if (dbController.updateContacts(customerInformation.Mobile_number, txtUpdateMobile.Text, txtUpdateOtherContacts.Text))
+                if (dbController.updateContacts(customerInformation.Mobile_number, txtUpdateMobile.Text))
                 {          
                     banner = new MessageBanner("Successful updating contact details.", 2000);
                     banner.Show();
@@ -138,7 +137,6 @@ namespace PetvetPOS_Inventory_System
                 existingClientTable = new DataTable();
                 CustomerInformation customerInformation = dbController.getExistingClientContacts(existingClientTable, token1, token2);
                 txtUpdateMobile.Text = customerInformation.Mobile_number;
-                txtUpdateOtherContacts.Text = customerInformation.Telephone_number;
                 
             }
 

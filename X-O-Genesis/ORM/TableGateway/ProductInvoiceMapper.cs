@@ -26,8 +26,7 @@ namespace PetvetPOS_Inventory_System
         {
             Decimal grpPrice = product.UnitPrice * quantity;
             return create(
-                insertValues(transaction.InvoiceId, product.Barcode, quantity, grpPrice, MyExtension.MySqlToCSharp.convertDate(DateTime.Now))
-                );
+                insertValues(transaction.InvoiceId, product.Barcode, quantity, grpPrice));
         }
 
         public bool updateDescription(string barcode, string newDescription)

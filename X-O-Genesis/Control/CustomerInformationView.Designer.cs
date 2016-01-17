@@ -33,8 +33,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.btnDiscardUpdate = new System.Windows.Forms.Button();
             this.btnSaveUpdate = new System.Windows.Forms.Button();
-            this.txtUpdateOtherContacts = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.txtUpdateMobile = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
@@ -43,16 +41,12 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtMobile = new System.Windows.Forms.TextBox();
-            this.txtLandline = new System.Windows.Forms.TextBox();
-            this.txtAdd2 = new System.Windows.Forms.TextBox();
             this.txtAdd1 = new System.Windows.Forms.TextBox();
             this.txtMname = new System.Windows.Forms.TextBox();
             this.txtFname = new System.Windows.Forms.TextBox();
             this.txtLname = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -93,8 +87,6 @@
             this.updateContacts_panel.Controls.Add(this.label10);
             this.updateContacts_panel.Controls.Add(this.btnDiscardUpdate);
             this.updateContacts_panel.Controls.Add(this.btnSaveUpdate);
-            this.updateContacts_panel.Controls.Add(this.txtUpdateOtherContacts);
-            this.updateContacts_panel.Controls.Add(this.label14);
             this.updateContacts_panel.Controls.Add(this.txtUpdateMobile);
             this.updateContacts_panel.Controls.Add(this.label13);
             this.updateContacts_panel.Dock = System.Windows.Forms.DockStyle.Left;
@@ -120,7 +112,7 @@
             this.btnDiscardUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnDiscardUpdate.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Cancel;
             this.btnDiscardUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDiscardUpdate.Location = new System.Drawing.Point(149, 360);
+            this.btnDiscardUpdate.Location = new System.Drawing.Point(149, 285);
             this.btnDiscardUpdate.Name = "btnDiscardUpdate";
             this.btnDiscardUpdate.Size = new System.Drawing.Size(116, 62);
             this.btnDiscardUpdate.TabIndex = 50;
@@ -135,7 +127,7 @@
             this.btnSaveUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnSaveUpdate.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Save;
             this.btnSaveUpdate.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSaveUpdate.Location = new System.Drawing.Point(18, 360);
+            this.btnSaveUpdate.Location = new System.Drawing.Point(17, 285);
             this.btnSaveUpdate.Name = "btnSaveUpdate";
             this.btnSaveUpdate.Size = new System.Drawing.Size(117, 62);
             this.btnSaveUpdate.TabIndex = 49;
@@ -143,26 +135,6 @@
             this.btnSaveUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSaveUpdate.UseVisualStyleBackColor = true;
             this.btnSaveUpdate.Click += new System.EventHandler(this.btnSaveUpdate_Click);
-            // 
-            // txtUpdateOtherContacts
-            // 
-            this.txtUpdateOtherContacts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtUpdateOtherContacts.Location = new System.Drawing.Point(17, 280);
-            this.txtUpdateOtherContacts.MaxLength = 13;
-            this.txtUpdateOtherContacts.Name = "txtUpdateOtherContacts";
-            this.txtUpdateOtherContacts.Size = new System.Drawing.Size(248, 26);
-            this.txtUpdateOtherContacts.TabIndex = 48;
-            this.txtUpdateOtherContacts.TextChanged += new System.EventHandler(this.filterContacts);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label14.Location = new System.Drawing.Point(14, 244);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(113, 20);
-            this.label14.TabIndex = 47;
-            this.label14.Text = "Other Contact:";
             // 
             // txtUpdateMobile
             // 
@@ -204,25 +176,21 @@
             this.newClient_tab.Controls.Add(this.btnSave);
             this.newClient_tab.Controls.Add(this.txtEmail);
             this.newClient_tab.Controls.Add(this.txtMobile);
-            this.newClient_tab.Controls.Add(this.txtLandline);
-            this.newClient_tab.Controls.Add(this.txtAdd2);
             this.newClient_tab.Controls.Add(this.txtAdd1);
             this.newClient_tab.Controls.Add(this.txtMname);
             this.newClient_tab.Controls.Add(this.txtFname);
             this.newClient_tab.Controls.Add(this.txtLname);
             this.newClient_tab.Controls.Add(this.label9);
             this.newClient_tab.Controls.Add(this.label8);
-            this.newClient_tab.Controls.Add(this.label7);
-            this.newClient_tab.Controls.Add(this.label6);
             this.newClient_tab.Controls.Add(this.label5);
             this.newClient_tab.Controls.Add(this.label4);
             this.newClient_tab.Controls.Add(this.label3);
             this.newClient_tab.Controls.Add(this.label2);
             this.newClient_tab.Controls.Add(this.label1);
-            this.newClient_tab.Location = new System.Drawing.Point(4, 25);
+            this.newClient_tab.Location = new System.Drawing.Point(4, 32);
             this.newClient_tab.Name = "newClient_tab";
             this.newClient_tab.Padding = new System.Windows.Forms.Padding(3);
-            this.newClient_tab.Size = new System.Drawing.Size(577, 554);
+            this.newClient_tab.Size = new System.Drawing.Size(577, 547);
             this.newClient_tab.TabIndex = 0;
             this.newClient_tab.Text = "Add New Client Information";
             this.newClient_tab.UseVisualStyleBackColor = true;
@@ -262,7 +230,7 @@
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtEmail.Location = new System.Drawing.Point(83, 372);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(196, 26);
+            this.txtEmail.Size = new System.Drawing.Size(411, 26);
             this.txtEmail.TabIndex = 41;
             this.txtEmail.TextChanged += new System.EventHandler(this.filterEmail);
             // 
@@ -272,35 +240,17 @@
             this.txtMobile.Location = new System.Drawing.Point(83, 320);
             this.txtMobile.MaxLength = 13;
             this.txtMobile.Name = "txtMobile";
-            this.txtMobile.Size = new System.Drawing.Size(196, 26);
+            this.txtMobile.Size = new System.Drawing.Size(411, 26);
             this.txtMobile.TabIndex = 40;
             this.txtMobile.TextChanged += new System.EventHandler(this.textChanged_Numeric);
-            // 
-            // txtLandline
-            // 
-            this.txtLandline.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtLandline.Location = new System.Drawing.Point(324, 320);
-            this.txtLandline.MaxLength = 13;
-            this.txtLandline.Name = "txtLandline";
-            this.txtLandline.Size = new System.Drawing.Size(196, 26);
-            this.txtLandline.TabIndex = 39;
-            this.txtLandline.TextChanged += new System.EventHandler(this.textChanged_Numeric);
-            // 
-            // txtAdd2
-            // 
-            this.txtAdd2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.txtAdd2.Location = new System.Drawing.Point(83, 266);
-            this.txtAdd2.Name = "txtAdd2";
-            this.txtAdd2.Size = new System.Drawing.Size(411, 26);
-            this.txtAdd2.TabIndex = 38;
-            this.txtAdd2.TextChanged += new System.EventHandler(this.filterParagraph);
             // 
             // txtAdd1
             // 
             this.txtAdd1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.txtAdd1.Location = new System.Drawing.Point(83, 214);
+            this.txtAdd1.Multiline = true;
             this.txtAdd1.Name = "txtAdd1";
-            this.txtAdd1.Size = new System.Drawing.Size(411, 26);
+            this.txtAdd1.Size = new System.Drawing.Size(411, 78);
             this.txtAdd1.TabIndex = 37;
             this.txtAdd1.TextChanged += new System.EventHandler(this.filterParagraph);
             // 
@@ -347,29 +297,9 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label8.Location = new System.Drawing.Point(30, 295);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(87, 20);
+            this.label8.Size = new System.Drawing.Size(97, 20);
             this.label8.TabIndex = 31;
-            this.label8.Text = "Mobile No.:";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label7.Location = new System.Drawing.Point(277, 295);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(137, 20);
-            this.label7.TabIndex = 30;
-            this.label7.Text = "Other Contact No:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label6.Location = new System.Drawing.Point(31, 243);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(119, 20);
-            this.label6.TabIndex = 29;
-            this.label6.Text = "Address Line 2:";
+            this.label8.Text = "Contact No.:";
             // 
             // label5
             // 
@@ -377,9 +307,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.label5.Location = new System.Drawing.Point(31, 193);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(119, 20);
+            this.label5.Size = new System.Drawing.Size(72, 20);
             this.label5.TabIndex = 28;
-            this.label5.Text = "Address Line 1:";
+            this.label5.Text = "Address:";
             // 
             // label4
             // 
@@ -537,16 +467,12 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtMobile;
-        private System.Windows.Forms.TextBox txtLandline;
-        private System.Windows.Forms.TextBox txtAdd2;
         private System.Windows.Forms.TextBox txtAdd1;
         private System.Windows.Forms.TextBox txtMname;
         private System.Windows.Forms.TextBox txtFname;
         private System.Windows.Forms.TextBox txtLname;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
@@ -562,8 +488,6 @@
         private System.Windows.Forms.Panel updateContacts_panel;
         private System.Windows.Forms.Button btnDiscardUpdate;
         private System.Windows.Forms.Button btnSaveUpdate;
-        private System.Windows.Forms.TextBox txtUpdateOtherContacts;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.TextBox txtUpdateMobile;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label10;

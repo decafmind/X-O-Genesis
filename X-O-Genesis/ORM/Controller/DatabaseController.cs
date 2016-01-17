@@ -190,9 +190,9 @@ namespace PetvetPOS_Inventory_System
             return receipt.updateTotalPrice(transaction_id, new_total_price);
         }
 
-        public bool updateContacts(string oldmob, string newmob, string other)
+        public bool updateContacts(string oldmob, string newmob)
         {
-            return customerInformationMapper.updateContacts(oldmob, newmob, other);
+            return customerInformationMapper.updateContacts(oldmob, newmob);
         }
       
         public bool updateInventory(int qty, string barcode)

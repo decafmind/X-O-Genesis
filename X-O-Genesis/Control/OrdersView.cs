@@ -388,25 +388,28 @@ namespace PetvetPOS_Inventory_System
 
         void voidProduct()
         {
-            DataGridViewRow selectedRow = dgTransaction.SelectedRows[0];
-            foreach (ProductInvoice item in carts)
+            DataGridViewRow selectedRow = new DataGridViewRow();
+            if (dgTransaction.Rows.Count > 0)
             {
-                if (item.product.Description == selectedRow.Cells[DESCRIPTION_INDEX].Value.ToString())
-                {
-                    totalAmount -= item.GroupPrice;
-                    carts.Remove(item);
+              selectedRow  = dgTransaction.SelectedRows[0];
+              foreach (ProductInvoice item in carts)
+              {
+                  if (item.product.Description == selectedRow.Cells[DESCRIPTION_INDEX].Value.ToString())
+                  {
+                      totalAmount -= item.GroupPrice;
+                      carts.Remove(item);
 
-                    if (totalAmountWithService != 0)
-                        poSlbl2.Text = totalAmountWithService.ToString("N");
-                    else
-                        poSlbl2.Text = totalAmount.ToString("N");
+                      if (totalAmountWithService != 0)
+                          poSlbl2.Text = totalAmountWithService.ToString("N");
+                      else
+                          poSlbl2.Text = totalAmount.ToString("N");
 
-                    lblPOSmsg.Text = string.Format("Void {0}", item.product.Description);
-                    break;
-                }
-            }
-            dgTransaction.Rows.Remove(selectedRow);
-                
+                      lblPOSmsg.Text = string.Format("Void {0}", item.product.Description);
+                      break;
+                  }
+              }
+              dgTransaction.Rows.Remove(selectedRow);
+            }                               
         }
 
         void invoice_Layout(object sender, PrintPageEventArgs e)

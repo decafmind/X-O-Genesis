@@ -21,7 +21,6 @@ namespace PetvetPOS_Inventory_System
                 "middlename", 
                 "lastname", 
                 "mobile_number", 
-                "telephone_number", 
                 "email_address",
                 "address" };
 
@@ -43,7 +42,7 @@ namespace PetvetPOS_Inventory_System
         public void insertCustomerInformation(CustomerInformation customer)
         {
             if (create(insertValues(customer.Firstname, customer.Middlename, customer.Lastname,
-                customer.Mobile_number, customer.Telephone_number, customer.Email_address, customer.Address)))
+                customer.Mobile_number, customer.Email_address, customer.Address)))
             {
                 // OnCustomerAdded(new EventArgs());
                 MessageBanner banner = new MessageBanner("Successful adding information.", 2000);
@@ -53,12 +52,11 @@ namespace PetvetPOS_Inventory_System
             }
 
         }
-        public bool updateContacts(string oldMob, string mobile, string other)
+        public bool updateContacts(string oldMob, string mobile)
         {
             string updateMobileNo = String.Format(" mobile_number = '{0}'", mobile);
-            string updateOther = String.Format(" telephone_number = '{0}'", other);
             string condition = String.Format(" mobile_number = '{0}'", oldMob);
-            updateSet(condition, updateMobileNo, updateOther);
+            updateSet(condition, updateMobileNo);
             return update(updateQuery);
         }
 

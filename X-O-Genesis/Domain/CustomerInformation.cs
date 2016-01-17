@@ -13,7 +13,6 @@ namespace PetvetPOS_Inventory_System
         public string Middlename { get; set; }
         public string Lastname { get; set; }
         public string Mobile_number { get; set; }
-        public string Telephone_number { get; set; }
         public string Email_address { get; set; }
         public string Address { get; set; }
 
@@ -31,7 +30,6 @@ namespace PetvetPOS_Inventory_System
                 Middlename = (string)entity.getField("middlename");
                 Lastname = (string)entity.getField("lastname");
                 Mobile_number = (string)entity.getField("mobile_number");
-                Telephone_number = (string)entity.getField("telephone_number");
                 Email_address = (string)entity.getField("email_address");
                 Address = (string)entity.getField("address");
             }
