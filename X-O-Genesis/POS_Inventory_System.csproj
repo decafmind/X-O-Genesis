@@ -845,6 +845,24 @@
     <None Include="Resources\View File.png" />
     <None Include="Resources\Close Window1.png" />
     <None Include="Resources\Delete1.png" />
+    <None Include="Resources\F1.png" />
+    <None Include="Resources\Ctrl.png" />
+    <None Include="Resources\Ctrlclick.png" />
+    <None Include="Resources\F11.png" />
+    <None Include="Resources\F1click.png" />
+    <None Include="Resources\F2.png" />
+    <None Include="Resources\F2click.png" />
+    <None Include="Resources\F3.png" />
+    <None Include="Resources\F3click.png" />
+    <None Include="Resources\F4.png" />
+    <None Include="Resources\F4click.png" />
+    <None Include="Resources\F5.png" />
+    <None Include="Resources\F5click.png" />
+    <None Include="Resources\P.png" />
+    <None Include="Resources\Pclick.png" />
+    <None Include="Resources\shift.png" />
+    <None Include="Resources\ShiftClick.png" />
+    <None Include="Resources\settings3-48.png" />
     <Content Include="SystemIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

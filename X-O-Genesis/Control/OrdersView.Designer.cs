@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.txtQuantity = new System.Windows.Forms.TextBox();
@@ -266,6 +266,7 @@
             // 
             // panel8
             // 
+            this.panel8.BackColor = System.Drawing.Color.White;
             this.panel8.Controls.Add(this.keyButton4);
             this.panel8.Controls.Add(this.label9);
             this.panel8.Controls.Add(this.keyButton3);
@@ -292,6 +293,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label9.Location = new System.Drawing.Point(81, 17);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(115, 18);
@@ -315,6 +317,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label10.Location = new System.Drawing.Point(273, 17);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(112, 18);
@@ -323,6 +326,7 @@
             // 
             // panel6
             // 
+            this.panel6.BackColor = System.Drawing.Color.White;
             this.panel6.Controls.Add(this.keyButton1);
             this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.keyButton2);
@@ -349,6 +353,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label7.Location = new System.Drawing.Point(73, 17);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 18);
@@ -371,6 +376,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label4.Location = new System.Drawing.Point(207, 17);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(121, 18);
@@ -408,14 +414,14 @@
             this.dgTransaction.BackgroundColor = System.Drawing.Color.White;
             this.dgTransaction.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgTransaction.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgTransaction.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgTransaction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgTransaction.Location = new System.Drawing.Point(20, 20);
             this.dgTransaction.MultiSelect = false;

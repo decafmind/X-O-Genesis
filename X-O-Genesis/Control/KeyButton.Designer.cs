@@ -37,7 +37,7 @@
             // 
             // lblKeyChar
             // 
-            this.lblKeyChar.BackColor = System.Drawing.Color.Black;
+            this.lblKeyChar.BackColor = System.Drawing.Color.CornflowerBlue;
             this.lblKeyChar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblKeyChar.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKeyChar.ForeColor = System.Drawing.Color.White;

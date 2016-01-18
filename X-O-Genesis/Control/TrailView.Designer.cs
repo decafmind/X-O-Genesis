@@ -50,9 +50,9 @@
             // 
             this.panel4.Controls.Add(this.trailGrid);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel4.Location = new System.Drawing.Point(111, 61);
+            this.panel4.Location = new System.Drawing.Point(111, 58);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(664, 484);
+            this.panel4.Size = new System.Drawing.Size(664, 487);
             this.panel4.TabIndex = 3;
             // 
             // trailGrid
@@ -97,7 +97,7 @@
             this.trailGrid.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.trailGrid.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.trailGrid.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.trailGrid.Size = new System.Drawing.Size(664, 484);
+            this.trailGrid.Size = new System.Drawing.Size(664, 487);
             this.trailGrid.TabIndex = 0;
             this.trailGrid.TabStop = false;
             this.trailGrid.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -105,25 +105,25 @@
             // panel3
             // 
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(775, 61);
+            this.panel3.Location = new System.Drawing.Point(775, 58);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(94, 484);
+            this.panel3.Size = new System.Drawing.Size(94, 487);
             this.panel3.TabIndex = 2;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // panel2
             // 
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 61);
+            this.panel2.Location = new System.Drawing.Point(0, 58);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(111, 484);
+            this.panel2.Size = new System.Drawing.Size(111, 487);
             this.panel2.TabIndex = 1;
             // 
             // panel1
             // 
             this.panel1.AutoSize = true;
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel1.BackColor = System.Drawing.Color.DimGray;
             this.panel1.Controls.Add(this.cmbEmployee);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.dtPicker);
@@ -132,17 +132,16 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(869, 61);
+            this.panel1.Size = new System.Drawing.Size(869, 58);
             this.panel1.TabIndex = 0;
             // 
             // cmbEmployee
             // 
-            this.cmbEmployee.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbEmployee.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbEmployee.FormattingEnabled = true;
             this.cmbEmployee.Items.AddRange(new object[] {
             "ALL"});
-            this.cmbEmployee.Location = new System.Drawing.Point(182, 33);
+            this.cmbEmployee.Location = new System.Drawing.Point(213, 30);
             this.cmbEmployee.Name = "cmbEmployee";
             this.cmbEmployee.Size = new System.Drawing.Size(207, 25);
             this.cmbEmployee.TabIndex = 9;
@@ -151,10 +150,11 @@
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(108, 37);
+            this.label4.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label4.Location = new System.Drawing.Point(107, 34);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(68, 21);
+            this.label4.Size = new System.Drawing.Size(99, 21);
             this.label4.TabIndex = 8;
             this.label4.Text = "Employee";
             // 
@@ -163,7 +163,7 @@
             this.dtPicker.Checked = false;
             this.dtPicker.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtPicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtPicker.Location = new System.Drawing.Point(465, 31);
+            this.dtPicker.Location = new System.Drawing.Point(501, 30);
             this.dtPicker.Name = "dtPicker";
             this.dtPicker.Size = new System.Drawing.Size(120, 25);
             this.dtPicker.TabIndex = 7;
@@ -172,16 +172,18 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(413, 36);
+            this.label3.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label3.Location = new System.Drawing.Point(435, 33);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 17);
+            this.label3.Size = new System.Drawing.Size(60, 22);
             this.label3.TabIndex = 6;
             this.label3.Text = "DATE";
             // 
             // label2
             // 
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label2.Location = new System.Drawing.Point(105, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(185, 22);
