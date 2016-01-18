@@ -93,13 +93,9 @@ namespace PetvetPOS_Inventory_System
         public void toggleEncoding(bool flag)
         {
             txtEncode.Enabled = flag;
-            txtName.Enabled = flag;
-            txtAddress.Enabled = flag;
 
             if (flag){
                 txtEncode.Clear();
-                txtName.Clear();
-                txtAddress.Clear();
                 beginTransaction();
             }
         }
@@ -114,6 +110,7 @@ namespace PetvetPOS_Inventory_System
             // And max of 13 (EAN-13)
             if (txtEncode.Enabled){
                 if (queryProducts()){
+                    rightSidePane.BackgroundImage = Properties.Resources.barcodeBlack;
                     barcodeIndicator.Start();
                 }
                 else{
@@ -246,6 +243,7 @@ namespace PetvetPOS_Inventory_System
 
         private void barcodeIndicator_Tick(object sender, EventArgs e)
         {
+            rightSidePane.BackgroundImage = Properties.Resources.barcodeWhite;
             barcodeIndicator.Stop();
         }
 
@@ -275,7 +273,7 @@ namespace PetvetPOS_Inventory_System
             {
                 decimal total = totalAmount;
 
-                if (dbController.insertReceipt(currentTransaction, total, payment, txtName.Text, txtAddress.Text)){
+                if (dbController.insertReceipt(currentTransaction, total, payment)){
                     lblPOSmsg.Text = String.Format("Payment: Php {0:N}", payment);
                     change = payment - total;
                     lblChange.Text = change.ToString("N");

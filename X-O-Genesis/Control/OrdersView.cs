@@ -157,7 +157,7 @@ namespace PetvetPOS_Inventory_System
                     if (!string.IsNullOrWhiteSpace(currentProduct.Barcode))
                     {
                         Decimal totalPrice = currentProduct.UnitPrice * quantity;
-                        lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, quantity, currentProduct.UnitPrice);
+                    lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, quantity, totalPrice);
                         success = true;
                         addRowInDatagrid(quantity);
                     }
@@ -264,7 +264,7 @@ namespace PetvetPOS_Inventory_System
                 }
             }
 
-            //totalAmount += productTransaction.GroupPrice;
+            totalAmount += productTransaction.GroupPrice;
             if (success)
                 totalAmount += productTransaction.GroupPrice;
 
