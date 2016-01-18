@@ -18,18 +18,16 @@ namespace PetvetPOS_Inventory_System
                 "net_price",
                 "cash_tender",
                 "changed",
-                "cname",
-                "address",
             };
         }
 
-        public bool insertReceipt(Invoice invoice, Decimal totalPrice, Decimal cashTender, string name, string address = "N/A")
+        public bool insertReceipt(Invoice invoice, Decimal totalPrice, Decimal cashTender)
         {
             if (invoice != null)
             {
                 Decimal change = cashTender - totalPrice;
                 return create(
-                    insertValues(invoice.InvoiceId, totalPrice, cashTender, change, name, address)
+                    insertValues(invoice.InvoiceId, totalPrice, cashTender, change)
                 );
             }
             return false;

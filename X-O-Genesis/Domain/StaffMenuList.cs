@@ -11,6 +11,7 @@ namespace PetvetPOS_Inventory_System
         public StaffMenuList(MasterController masterController, MenuBar menuBar):base(masterController)
         {
             menuControls = new List<MenuControl> { 
+                 new MenuControl(new CustomerInformationView(masterController), menuBar),
                  new MenuControl(new OrdersView(masterController), menuBar),
             }; 
         }

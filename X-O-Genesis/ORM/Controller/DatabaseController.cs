@@ -61,6 +61,8 @@ namespace PetvetPOS_Inventory_System
         public MedicalTransactionMapper medicalTransactionMapper { get; set; }
 
         public ProductReturnViewMapper productReturnViewMapper { get; set; }
+        public CustomerInformationView customerInformationView { get; set; }
+        public CustomerInformationMapper customerInformationMapper { get; set; }
         public FallbackMapper fallbackMapper { get; set; }
 
         public ProductInspectionMapper productInspectionMapper { get; set; }
@@ -105,6 +107,7 @@ namespace PetvetPOS_Inventory_System
             this.medicalTransactionMapper = new MedicalTransactionMapper(mySqlDB);
             this.productReturnViewMapper = new ProductReturnViewMapper(mySqlDB);
 
+            this.customerInformationMapper = new CustomerInformationMapper(mySqlDB);
             this.fallbackMapper = new FallbackMapper(mySqlDB);
             this.productInspectionMapper = new ProductInspectionMapper(mySqlDB);
 
@@ -185,6 +188,11 @@ namespace PetvetPOS_Inventory_System
         public bool updateTotalPrice(string transaction_id, decimal new_total_price)
         {
             return receipt.updateTotalPrice(transaction_id, new_total_price);
+        }
+
+        public bool updateContacts(string oldmob, string newmob)
+        {
+            return customerInformationMapper.updateContacts(oldmob, newmob);
         }
       
         public bool updateInventory(int qty, string barcode)
@@ -317,6 +325,11 @@ namespace PetvetPOS_Inventory_System
             return serviceRenderedMapper.loadTable(dt, condition);
         }
 
+        public DataTable filterExistingClientsByLastname(DataTable dt, string token)
+        {
+            string condition = String.Format(" lastname LIKE '%{0}%'", token);
+            return customerInformationMapper.loadTable(dt, condition);
+        }
 
         public DataTable getBasicProductInfoFromBarcode(DataTable dt, string barcode)
         {
@@ -324,6 +337,12 @@ namespace PetvetPOS_Inventory_System
             return productInspectionMapper.loadTable(dt, condition);
         }
 
+        public CustomerInformation getExistingClientContacts(DataTable dt, string token1, string token2)
+        {
+            string condition = String.Format(" lastname = '{0}' AND mobile_number = '{1}'", token1, token2);
+            CustomerInformation customerInformation = new CustomerInformation(customerInformationMapper.getEntityWhere(condition));
+            return customerInformation;         
+        }
 
         public DataTable getCriticalLevelProducts(DataTable dt)
         {
@@ -543,9 +562,9 @@ namespace PetvetPOS_Inventory_System
             }
         }
 
-        public bool insertReceipt(Invoice transaction, Decimal totalPrice, Decimal cashTender, string name, string address = "N/A")
+        public bool insertReceipt(Invoice transaction, Decimal totalPrice, Decimal cashTender)
         {
-            return receipt.insertReceipt(transaction, totalPrice, cashTender, name, address);
+            return receipt.insertReceipt(transaction, totalPrice, cashTender);
         }
 
         public bool insertProductInvoice(ProductInvoice productInvoice)

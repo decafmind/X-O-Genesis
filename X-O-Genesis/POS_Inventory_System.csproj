@@ -69,7 +69,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ListNetworkComputerNames">
-      <HintPath>F:\X-O-Genesis\X-O-Genesis\bin\Debug\ListNetworkComputerNames.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Final wave\Capstone\X-O-Genesis\X-O-Genesis\bin\Debug\ListNetworkComputerNames.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic">
       <Private>True</Private>
@@ -92,7 +92,7 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="MySql.Fabric.Plugin">
-      <HintPath>F:\X-O-Genesis\X-O-Genesis\bin\Debug\MySql.Fabric.Plugin.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Final wave\Capstone\X-O-Genesis\X-O-Genesis\bin\Debug\MySql.Fabric.Plugin.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Web, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -101,10 +101,10 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="PasswordHash">
-      <HintPath>F:\X-O-Genesis\X-O-Genesis\bin\Debug\PasswordHash.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Final wave\Capstone\X-O-Genesis\X-O-Genesis\bin\Debug\PasswordHash.dll</HintPath>
     </Reference>
     <Reference Include="Randy.Graphics">
-      <HintPath>F:\X-O-Genesis\X-O-Genesis\bin\Debug\Randy.Graphics.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Final wave\Capstone\X-O-Genesis\X-O-Genesis\bin\Debug\Randy.Graphics.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Private>True</Private>
@@ -151,7 +151,7 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="TouchlessLib">
-      <HintPath>F:\X-O-Genesis\X-O-Genesis\bin\Debug\TouchlessLib.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Final wave\Capstone\X-O-Genesis\X-O-Genesis\bin\Debug\TouchlessLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -160,6 +160,12 @@
     </Compile>
     <Compile Include="Control\Back.Designer.cs">
       <DependentUpon>Back.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\CustomerInformationView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\CustomerInformationView.Designer.cs">
+      <DependentUpon>CustomerInformationView.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\FBUser.cs">
       <SubType>UserControl</SubType>
@@ -226,6 +232,7 @@
     <Compile Include="Domain\ProductReturned.cs" />
     <Compile Include="Domain\Theme.cs" />
     <Compile Include="EventHandler\SettingArgs.cs" />
+    <Compile Include="Domain\CustomerInformation.cs" />
     <Compile Include="Domain\Fallback.cs" />
     <Compile Include="Domain\InventoryPersonnelMenuList.cs" />
     <Compile Include="Domain\StaffMenuList.cs" />
@@ -266,6 +273,7 @@
     </Compile>
     <Compile Include="MyExtension\ErrorLog.cs" />
     <Compile Include="ORM\TableGateway\AuditTrailMapper.cs" />
+    <Compile Include="ORM\TableGateway\CustomerInformationMapper.cs" />
     <Compile Include="ORM\TableGateway\FallbackMapper.cs" />
     <Compile Include="ORM\TableGateway\InventoryMapper.cs" />
     <Compile Include="ORM\TableGateway\PetsizeMapper.cs" />
@@ -514,6 +522,9 @@
     </Compile>
     <EmbeddedResource Include="Control\Back.resx">
       <DependentUpon>Back.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\CustomerInformationView.resx">
+      <DependentUpon>CustomerInformationView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\FBUser.resx">
       <DependentUpon>FBUser.cs</DependentUpon>
