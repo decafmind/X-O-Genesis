@@ -33,28 +33,46 @@ namespace PetvetPOS_Inventory_System
 
         private void modalInspectProduct_Load(object sender, EventArgs e)
         {
-            displayBasicInfo();
+           // displayBasicInfo();
         }
+        ////Lazy ass textbox population.
+        ////Lazy ass textbox population.
+        //private void displayBasicInfo()
+        //{
+        //    dbController.getBasicProductInfoFromBarcode(dtBasicInfo, bcode);
+        //    ProductInventoryDomain productInventory = dbController.productInventory.getProductInventoryThroughBarcode(bcode);
+        //    Product product = productInventory.product;
+        //    Inventory inventory = productInventory.inventory;
 
+        //    txtItemCode.Text = product.Barcode;
+        //    txtName.Text = product.Description;
+        //    txtDescription.Text = product.Specification;
+        //    txtCategory.Text = product.Category;
+        //    txtQty.Text = inventory.QtyOnHand.ToString();
+        //    txtUnitPrice.Text = product.UnitPrice.ToString();
+        //    txtSupplier.Text = inventory.Supplier;
+        //    txtWarranty.Text = product.Warranty;
+        //    txtReplacement.Text = product.Replacement;
 
-        private void displayBasicInfo()
-        {
-            ProductInventoryDomain productInventory = dbController.productInventory.getProductInventoryThroughBarcode(bcode);
-            Product product = productInventory.product;
-            Inventory inventory = productInventory.inventory;
-
-            txtItemCode.Text = product.Barcode;
-            txtName.Text = product.Description;
-            txtDescription.Text = product.Specification;
-            txtCategory.Text = product.Category;
-            txtQty.Text = inventory.QtyOnHand.ToString();
-            txtUnitPrice.Text = product.UnitPrice.ToString();
-            txtSupplier.Text = inventory.Supplier;
-            txtWarranty.Text = product.Warranty;
-            txtReplacement.Text = product.Replacement;
-
-            txtItemCode.Focus();
-        }
+        //    List<TextBox> txtBoxes = new List<TextBox>();
+        //    foreach (Control c in panel_basicInfo.Controls)
+        //    {
+        //        if (c is TextBox)
+        //        {
+        //            TextBox txt = (TextBox)c;
+        //            txtBoxes.Add(txt as TextBox);
+        //            txt.ReadOnly = true;
+        //        }
+        //    }
+        //    foreach (DataRow dr in dtBasicInfo.Rows)
+        //    {
+        //        for (int i = 0; i < dtBasicInfo.Columns.Count; i++)
+        //        {
+        //            txtBoxes[i].Text = dr[i].ToString();
+        //        }
+        //    }
+        //    txtItemCode.Focus();
+        //}
 
         private void modalInspectProduct_KeyUp(object sender, KeyEventArgs e)
         {

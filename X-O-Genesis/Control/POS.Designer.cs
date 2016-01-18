@@ -66,7 +66,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
             this.label9 = new System.Windows.Forms.Label();
-<<<<<<< HEAD
             this.label2 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
             this.txtName = new System.Windows.Forms.TextBox();
@@ -74,8 +73,6 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-=======
->>>>>>> parent of 7ffd59e... pos
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgTransaction)).BeginInit();
             this.panel8.SuspendLayout();
@@ -492,7 +489,6 @@
             this.label9.TabIndex = 24;
             this.label9.Text = "Reset";
             // 
-<<<<<<< HEAD
             // btnEncode
             // 
             this.btnEncode.BackColor = System.Drawing.Color.White;
@@ -633,8 +629,6 @@
             this.txtAddress.Size = new System.Drawing.Size(229, 72);
             this.txtAddress.TabIndex = 1;
             // 
-=======
->>>>>>> parent of 7ffd59e... pos
             // POS
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

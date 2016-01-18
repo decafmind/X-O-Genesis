@@ -31,23 +31,18 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel_miniView = new System.Windows.Forms.Panel();
             this.panel_basicInfo = new System.Windows.Forms.Panel();
-            this.label14 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.txtSupplier = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
-            this.txtDescription = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtUnitPrice = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
             this.txtQty = new System.Windows.Forms.TextBox();
             this.txtItemCode = new System.Windows.Forms.TextBox();
             this.txtDesc = new System.Windows.Forms.TextBox();
             this.txtCategory = new System.Windows.Forms.TextBox();
             this.txtUCost = new System.Windows.Forms.TextBox();
+<<<<<<< HEAD
+            this.txtWarranty = new System.Windows.Forms.TextBox();
+=======
+            this.txtSpecs = new System.Windows.Forms.TextBox();
+>>>>>>> parent of 750c5c2... Editing Inventory View
             this.txtWarranty = new System.Windows.Forms.TextBox();
             this.txtReplacement = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -80,27 +75,22 @@
             this.panel_miniView.Name = "panel_miniView";
             this.panel_miniView.Size = new System.Drawing.Size(468, 381);
             this.panel_miniView.TabIndex = 1;
-            this.panel_miniView.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_miniView_Paint);
             // 
             // panel_basicInfo
             // 
-            this.panel_basicInfo.Controls.Add(this.label14);
-            this.panel_basicInfo.Controls.Add(this.textBox5);
-            this.panel_basicInfo.Controls.Add(this.textBox4);
-            this.panel_basicInfo.Controls.Add(this.label13);
-            this.panel_basicInfo.Controls.Add(this.txtSupplier);
-            this.panel_basicInfo.Controls.Add(this.label12);
-            this.panel_basicInfo.Controls.Add(this.txtDescription);
-            this.panel_basicInfo.Controls.Add(this.label11);
-            this.panel_basicInfo.Controls.Add(this.textBox1);
             this.panel_basicInfo.Controls.Add(this.label10);
-            this.panel_basicInfo.Controls.Add(this.txtUnitPrice);
             this.panel_basicInfo.Controls.Add(this.btnClose);
             this.panel_basicInfo.Controls.Add(this.txtQty);
             this.panel_basicInfo.Controls.Add(this.txtItemCode);
             this.panel_basicInfo.Controls.Add(this.txtDesc);
             this.panel_basicInfo.Controls.Add(this.txtCategory);
             this.panel_basicInfo.Controls.Add(this.txtUCost);
+<<<<<<< HEAD
+            this.panel_basicInfo.Controls.Add(this.txtWarranty);
+=======
+            this.panel_basicInfo.Controls.Add(this.txtSpecs);
+>>>>>>> parent of 750c5c2... Editing Inventory View
+            this.panel_basicInfo.Controls.Add(this.txtWarranty);
             this.panel_basicInfo.Controls.Add(this.txtReplacement);
             this.panel_basicInfo.Controls.Add(this.label9);
             this.panel_basicInfo.Controls.Add(this.label8);
@@ -116,78 +106,6 @@
             this.panel_basicInfo.Name = "panel_basicInfo";
             this.panel_basicInfo.Size = new System.Drawing.Size(391, 381);
             this.panel_basicInfo.TabIndex = 0;
-            this.panel_basicInfo.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_basicInfo_Paint);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(14, 239);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(98, 13);
-            this.label14.TabIndex = 29;
-            this.label14.Text = "Maintaining stocks:";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(125, 236);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(251, 20);
-            this.textBox5.TabIndex = 28;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(125, 198);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(251, 20);
-            this.textBox4.TabIndex = 27;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(13, 202);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(75, 13);
-            this.label13.TabIndex = 26;
-            this.label13.Text = "Unit of stocks:";
-            // 
-            // txtSupplier
-            // 
-            this.txtSupplier.Location = new System.Drawing.Point(125, 160);
-            this.txtSupplier.Name = "txtSupplier";
-            this.txtSupplier.Size = new System.Drawing.Size(251, 20);
-            this.txtSupplier.TabIndex = 25;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(14, 160);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(77, 13);
-            this.label12.TabIndex = 24;
-            this.label12.Text = "Supplier name:";
-            // 
-            // txtDescription
-            // 
-            this.txtDescription.Location = new System.Drawing.Point(125, 124);
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(251, 20);
-            this.txtDescription.TabIndex = 23;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(13, 127);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(63, 13);
-            this.label11.TabIndex = 22;
-            this.label11.Text = "Description:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(125, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(251, 20);
-            this.textBox1.TabIndex = 21;
             // 
             // label10
             // 
@@ -197,16 +115,6 @@
             this.label10.Size = new System.Drawing.Size(56, 13);
             this.label10.TabIndex = 19;
             this.label10.Text = "Unit Price:";
-            this.label10.Size = new System.Drawing.Size(64, 13);
-            this.label10.TabIndex = 20;
-            this.label10.Text = "Serial Code:";
-            // 
-            // txtUnitPrice
-            // 
-            this.txtUnitPrice.Location = new System.Drawing.Point(125, 345);
-            this.txtUnitPrice.Name = "txtUnitPrice";
-            this.txtUnitPrice.Size = new System.Drawing.Size(251, 20);
-            this.txtUnitPrice.TabIndex = 19;
             // 
             // btnClose
             // 
@@ -260,12 +168,19 @@
             this.txtWarranty.Size = new System.Drawing.Size(251, 20);
             this.txtWarranty.TabIndex = 11;
             // 
+<<<<<<< HEAD
             // txtWarranty
             // 
             this.txtWarranty.Location = new System.Drawing.Point(125, 239);
             this.txtWarranty.Name = "txtWarranty";
             this.txtWarranty.Size = new System.Drawing.Size(251, 20);
             this.txtWarranty.TabIndex = 10;
+=======
+            this.txtSpecs.Location = new System.Drawing.Point(125, 202);
+            this.txtSpecs.Name = "txtSpecs";
+            this.txtSpecs.Size = new System.Drawing.Size(251, 20);
+            this.txtSpecs.TabIndex = 11;
+>>>>>>> parent of 750c5c2... Editing Inventory View
             // 
             // txtWarranty
             // 
@@ -397,6 +312,11 @@
         private System.Windows.Forms.TextBox txtDesc;
         private System.Windows.Forms.TextBox txtCategory;
         private System.Windows.Forms.TextBox txtUCost;
+<<<<<<< HEAD
+        private System.Windows.Forms.TextBox txtWarranty;
+=======
+        private System.Windows.Forms.TextBox txtSpecs;
+>>>>>>> parent of 750c5c2... Editing Inventory View
         private System.Windows.Forms.TextBox txtWarranty;
         private System.Windows.Forms.TextBox txtReplacement;
         private System.Windows.Forms.Label label9;
@@ -408,16 +328,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtUnitPrice;
-        private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox txtSupplier;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtDescription;
-        private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label10;
     }
 }

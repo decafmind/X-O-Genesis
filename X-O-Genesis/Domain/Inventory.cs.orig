@@ -20,10 +20,11 @@ namespace PetvetPOS_Inventory_System
 
         }
 
-        public Inventory(Entity entity, bool isFromInventoryView = false)
+        public Inventory(Entity entity)
         {
             try
             {
+<<<<<<< HEAD
                 if (isFromInventoryView)
                 {
                     StockinDateTime = (DateTime)entity.getField("Stock_since");
@@ -31,11 +32,6 @@ namespace PetvetPOS_Inventory_System
           	    Barcode = (string)entity.getField("product_id");
                     StockinDateTime = (DateTime)entity.getField("stockin_datetime");
                     QtyReceived = (int)entity.getField("qty_received");
-                 Barcode = (string)entity.getField("product_id");
-                 StockinDateTime = (DateTime)entity.getField("stockin_datetime");
-                 QtyReceived = (int)entity.getField("qty_received");
-                 QtyOnHand = (int)entity.getField("qty_onhand");
-             
                     Supplier = (string)entity.getField("Supplier");
                 }
                 else
@@ -47,6 +43,13 @@ namespace PetvetPOS_Inventory_System
                     Supplier = (string)entity.getField("supplier");
                 }
                  
+=======
+                 Barcode = (string)entity.getField("product_id");
+                 StockinDateTime = (DateTime)entity.getField("stockin_datetime");
+                 QtyReceived = (int)entity.getField("qty_received");
+                 QtyOnHand = (int)entity.getField("qty_onhand");
+                 Supplier = (string)entity.getField("supplier");
+>>>>>>> parent of 750c5c2... Editing Inventory View
             }
             catch (Exception ex)
             {
