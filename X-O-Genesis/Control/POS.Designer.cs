@@ -66,12 +66,12 @@
             this.label10 = new System.Windows.Forms.Label();
             this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
             this.label9 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.txtName = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.btnEncode = new System.Windows.Forms.Button();
+            this.rightSidePane = new System.Windows.Forms.Panel();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.keyButton1 = new PetvetPOS_Inventory_System.KeyButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgTransaction)).BeginInit();
@@ -565,69 +565,6 @@
             this.pictureBox3.Size = new System.Drawing.Size(60, 42);
             this.pictureBox3.TabIndex = 25;
             this.pictureBox3.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 50);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(147, 19);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "CUSTOMER NAME:";
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel5.Controls.Add(this.txtName);
-            this.panel5.Location = new System.Drawing.Point(165, 44);
-            this.panel5.Name = "panel5";
-            this.panel5.Padding = new System.Windows.Forms.Padding(2);
-            this.panel5.Size = new System.Drawing.Size(233, 30);
-            this.panel5.TabIndex = 4;
-            // 
-            // txtName
-            // 
-            this.txtName.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtName.Enabled = false;
-            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(2, 2);
-            this.txtName.MaxLength = 50;
-            this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(229, 26);
-            this.txtName.TabIndex = 1;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(14, 88);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 19);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "ADDRESS:";
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel7.Controls.Add(this.txtAddress);
-            this.panel7.Location = new System.Drawing.Point(165, 78);
-            this.panel7.Name = "panel7";
-            this.panel7.Padding = new System.Windows.Forms.Padding(2);
-            this.panel7.Size = new System.Drawing.Size(233, 76);
-            this.panel7.TabIndex = 6;
-            // 
-            // txtAddress
-            // 
-            this.txtAddress.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtAddress.Enabled = false;
-            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtAddress.Location = new System.Drawing.Point(2, 2);
-            this.txtAddress.MaxLength = 500;
-            this.txtAddress.Multiline = true;
-            this.txtAddress.Name = "txtAddress";
-            this.txtAddress.Size = new System.Drawing.Size(229, 72);
-            this.txtAddress.TabIndex = 1;
             // 
             // POS
             // 

@@ -69,7 +69,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ListNetworkComputerNames">
-      <HintPath>..\..\..\..\Desktop\Final wave\Capstone\X-O-Genesis\X-O-Genesis\bin\Debug\ListNetworkComputerNames.dll</HintPath>
+      <HintPath>E:\Documents\dll\ListNetworkComputerNames.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic">
       <Private>True</Private>
@@ -101,10 +101,10 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="PasswordHash">
-      <HintPath>..\..\..\..\Desktop\Final wave\Capstone\X-O-Genesis\X-O-Genesis\bin\Debug\PasswordHash.dll</HintPath>
+      <HintPath>E:\Documents\dll\PasswordHash.dll</HintPath>
     </Reference>
     <Reference Include="Randy.Graphics">
-      <HintPath>..\..\..\..\Desktop\Final wave\Capstone\X-O-Genesis\X-O-Genesis\bin\Debug\Randy.Graphics.dll</HintPath>
+      <HintPath>E:\Documents\dll\Randy.Graphics.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Private>True</Private>
@@ -151,7 +151,7 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="TouchlessLib">
-      <HintPath>..\..\..\..\Desktop\Final wave\Capstone\X-O-Genesis\X-O-Genesis\bin\Debug\TouchlessLib.dll</HintPath>
+      <HintPath>E:\Documents\dll\TouchlessLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -347,8 +347,6 @@
     <Compile Include="Domain\Entity.cs" />
     <Compile Include="Interface\IEntity.cs" />
     <Compile Include="Interface\IKeyController.cs" />
-    <Compile Include="Domain\Inventory.cs" />
-    <Compile Include="ORM\TableGateway\InventoryMapper.cs" />
     <Compile Include="Control\InventoryView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -435,8 +433,6 @@
     <Compile Include="Control\POSlbl.Designer.cs">
       <DependentUpon>POSlbl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Domain\Product.cs" />
-    <Compile Include="ORM\ViewGateway\ProductInventory.cs" />
     <Compile Include="ORM\TableGateway\ProductMapper.cs" />
     <Compile Include="Control\ProductPaneScroll.cs">
       <SubType>UserControl</SubType>
@@ -623,9 +619,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\modalAddCategory.resx">
       <DependentUpon>modalAddCategory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\modalInspectProduct.resx">
-      <DependentUpon>modalInspectProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\modalVoid.resx">
       <DependentUpon>modalVoid.cs</DependentUpon>
