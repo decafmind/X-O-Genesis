@@ -22,13 +22,15 @@ namespace PetvetPOS_Inventory_System
                 "lastname", 
                 "mobile_number", 
                 "email_address",
-                "address" };
+                "address",
+            };
 
             fieldsname_forselect = new string[] {
                 "firstname AS Firstname",
                 "middlename AS Middlename",
                 "lastname AS Lastname",
-                "mobile_number AS 'Mobile Number'" };
+                "mobile_number AS 'Mobile Number'",
+            };
         }
 
 
@@ -41,12 +43,23 @@ namespace PetvetPOS_Inventory_System
 
         public void insertCustomerInformation(CustomerInformation customer)
         {
-            if (create(insertValues(customer.Firstname, customer.Middlename, customer.Lastname,
-                customer.Mobile_number, customer.Email_address, customer.Address)))
+            if (!checkIfCustomesAlreadyExists(customer))
             {
-                // OnCustomerAdded(new EventArgs());
-                MessageBanner banner = new MessageBanner("Successful adding information.", 2000);
+                if (create(insertValues(customer.Firstname, customer.Middlename, customer.Lastname,
+                    customer.Mobile_number, customer.Email_address, customer.Address)))
+                {
+                    // OnCustomerAdded(new EventArgs());
+                    MessageBanner banner = new MessageBanner("Successful adding information.", 2000);
+                    banner.Opacity = 1;
+                    banner.ForeColor = System.Drawing.Color.White;
+                    banner.Show();
+                }
+            }
+            else
+            {
+                MessageBanner banner = new MessageBanner("Customer already exists!", 2000);
                 banner.Opacity = 1;
+                banner.BackColor = System.Drawing.Color.DarkRed;
                 banner.ForeColor = System.Drawing.Color.White;
                 banner.Show();
             }
@@ -58,6 +71,17 @@ namespace PetvetPOS_Inventory_System
             string condition = String.Format(" mobile_number = '{0}'", oldMob);
             updateSet(condition, updateMobileNo);
             return update(updateQuery);
+        }
+
+        public bool checkIfCustomesAlreadyExists(CustomerInformation customerInfo)
+        {
+            object item = readScalar("id", string.Format("firstname = '{0}' AND lastname = '{1}' AND mobile_number = '{2}'", customerInfo.Firstname, 
+                customerInfo.Lastname, 
+                customerInfo.Mobile_number));
+            if (item != null)
+                return true;
+            else
+                return false;
         }
 
     

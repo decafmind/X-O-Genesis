@@ -66,6 +66,7 @@ namespace PetvetPOS_Inventory_System
         public FallbackMapper fallbackMapper { get; set; }
 
         public ProductInspectionMapper productInspectionMapper { get; set; }
+        public CustomerInfoView customerInfoView { get; set; }
 
         public DatabaseController(MasterController masterController)
         {
@@ -110,6 +111,7 @@ namespace PetvetPOS_Inventory_System
             this.customerInformationMapper = new CustomerInformationMapper(mySqlDB);
             this.fallbackMapper = new FallbackMapper(mySqlDB);
             this.productInspectionMapper = new ProductInspectionMapper(mySqlDB);
+            this.customerInfoView = new CustomerInfoView(mySqlDB);
 
             // Events hooking
             this.masterController.EmployeeLogin += masterController_EmployeeLogin;
@@ -238,6 +240,17 @@ namespace PetvetPOS_Inventory_System
         {
             string condition = string.Format("transaction_id = {0} GROUP BY description HAVING SUM(qty_sold) <> 0", transction_id);
             return productTransactionView.loadTable(new DataTable(), condition);
+        }
+
+        public DataTable getCustomersForOrdering(DataTable dt)
+        {
+            return customerInfoView.loadTable(dt);
+        }
+
+        public DataTable getCustomersForOrderingByName(DataTable dt, string cname)
+        {
+            string condition = string.Format("cname LIKE '%{0}%' GROUP BY cname", cname);
+            return customerInfoView.loadTable(dt, condition);
         }
 
         public List<string> getListOfCategory()
