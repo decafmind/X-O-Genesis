@@ -69,7 +69,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ListNetworkComputerNames">
-      <HintPath>..\..\Capstone\cjp\X-O-Genesis\X-O-Genesis\bin\Debug\ListNetworkComputerNames.dll</HintPath>
+<<<<<<< HEAD
+      <HintPath>..\..\..\..\Desktop\Final wave\Capstone\X-O-Genesis\X-O-Genesis\bin\Debug\ListNetworkComputerNames.dll</HintPath>
+=======
+      <HintPath>E:\Documents\dll\ListNetworkComputerNames.dll</HintPath>
+>>>>>>> parent of eb4ff8a... Merge branch 'master' of https://github.com/decafmind/X-O-Genesis
     </Reference>
     <Reference Include="Microsoft.VisualBasic">
       <Private>True</Private>
@@ -92,7 +96,7 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="MySql.Fabric.Plugin">
-      <HintPath>..\..\Capstone\cjp\X-O-Genesis\X-O-Genesis\bin\Debug\MySql.Fabric.Plugin.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Final wave\Capstone\X-O-Genesis\X-O-Genesis\bin\Debug\MySql.Fabric.Plugin.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Web, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -101,10 +105,17 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="PasswordHash">
-      <HintPath>..\..\Capstone\cjp\X-O-Genesis\X-O-Genesis\bin\Debug\PasswordHash.dll</HintPath>
+<<<<<<< HEAD
+      <HintPath>..\..\..\..\Desktop\Final wave\Capstone\X-O-Genesis\X-O-Genesis\bin\Debug\PasswordHash.dll</HintPath>
     </Reference>
     <Reference Include="Randy.Graphics">
-      <HintPath>..\..\Capstone\cjp\X-O-Genesis\X-O-Genesis\bin\Debug\Randy.Graphics.dll</HintPath>
+      <HintPath>..\..\..\..\Desktop\Final wave\Capstone\X-O-Genesis\X-O-Genesis\bin\Debug\Randy.Graphics.dll</HintPath>
+=======
+      <HintPath>E:\Documents\dll\PasswordHash.dll</HintPath>
+    </Reference>
+    <Reference Include="Randy.Graphics">
+      <HintPath>E:\Documents\dll\Randy.Graphics.dll</HintPath>
+>>>>>>> parent of eb4ff8a... Merge branch 'master' of https://github.com/decafmind/X-O-Genesis
     </Reference>
     <Reference Include="System">
       <Private>True</Private>
@@ -151,10 +162,20 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="TouchlessLib">
-      <HintPath>..\..\Capstone\cjp\X-O-Genesis\X-O-Genesis\bin\Debug\TouchlessLib.dll</HintPath>
+<<<<<<< HEAD
+      <HintPath>..\..\..\..\Desktop\Final wave\Capstone\X-O-Genesis\X-O-Genesis\bin\Debug\TouchlessLib.dll</HintPath>
+=======
+      <HintPath>E:\Documents\dll\TouchlessLib.dll</HintPath>
+>>>>>>> parent of eb4ff8a... Merge branch 'master' of https://github.com/decafmind/X-O-Genesis
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\Back.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Back.Designer.cs">
+      <DependentUpon>Back.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\CustomerInformationView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -185,6 +206,12 @@
     <Compile Include="Control\Personalization.Designer.cs">
       <DependentUpon>Personalization.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\ProductReturnControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\ProductReturnControl.Designer.cs">
+      <DependentUpon>ProductReturnControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\ProductSliderPane.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -197,6 +224,24 @@
     <Compile Include="Control\SliderPane.Designer.cs">
       <DependentUpon>SliderPane.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Supplier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Supplier.Designer.cs">
+      <DependentUpon>Supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\SupplierView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\SupplierView.Designer.cs">
+      <DependentUpon>SupplierView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\SystemOperation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\SystemOperation.Designer.cs">
+      <DependentUpon>SystemOperation.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\SystemSettings.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -206,7 +251,9 @@
     <Compile Include="Domain\Client.cs" />
     <Compile Include="Domain\Controller\Service.cs" />
     <Compile Include="Domain\Enums\Settings.cs" />
+    <Compile Include="Domain\LoginTrail.cs" />
     <Compile Include="Domain\ProductInspection.cs" />
+    <Compile Include="Domain\ProductReturned.cs" />
     <Compile Include="Domain\Theme.cs" />
     <Compile Include="EventHandler\SettingArgs.cs" />
     <Compile Include="Domain\CustomerInformation.cs" />
@@ -224,10 +271,10 @@
     <Compile Include="Forms\CriticalNotif.Designer.cs">
       <DependentUpon>CriticalNotif.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\DateAndTime.cs">
+    <Compile Include="Control\DateAndTime.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Forms\DateAndTime.Designer.cs">
+    <Compile Include="Control\DateAndTime.Designer.cs">
       <DependentUpon>DateAndTime.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\Fallback.cs">
@@ -236,19 +283,17 @@
     <Compile Include="Forms\Fallback.Designer.cs">
       <DependentUpon>Fallback.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="Forms\ModulesConfiguration.cs">
+    <Compile Include="Forms\InputDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\ModulesConfiguration.Designer.cs">
-      <DependentUpon>ModulesConfiguration.cs</DependentUpon>
-=======
+    <Compile Include="Forms\InputDialog.Designer.cs">
+      <DependentUpon>InputDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\modalInspectProduct.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\modalInspectProduct.Designer.cs">
       <DependentUpon>modalInspectProduct.cs</DependentUpon>
->>>>>>> ba5ed03f6ea4d731428054efd384933f5aa1150e
     </Compile>
     <Compile Include="MyExtension\ErrorLog.cs" />
     <Compile Include="ORM\TableGateway\AuditTrailMapper.cs" />
@@ -256,6 +301,7 @@
     <Compile Include="ORM\TableGateway\FallbackMapper.cs" />
     <Compile Include="ORM\TableGateway\PetsizeMapper.cs" />
     <Compile Include="ORM\TableGateway\ProductInspectionMapper.cs" />
+    <Compile Include="ORM\TableGateway\ProductReturnMapper.cs" />
     <Compile Include="ORM\ViewGateway\AuditTrailView.cs" />
     <Compile Include="ORM\TableGateway\GppTransactionMapper.cs" />
     <Compile Include="ORM\TableGateway\GroomingMapper.cs" />
@@ -316,8 +362,6 @@
     <Compile Include="Domain\Entity.cs" />
     <Compile Include="Interface\IEntity.cs" />
     <Compile Include="Interface\IKeyController.cs" />
-    <Compile Include="Domain\Inventory.cs" />
-    <Compile Include="ORM\TableGateway\InventoryMapper.cs" />
     <Compile Include="Control\InventoryView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -342,7 +386,6 @@
     <Compile Include="Control\LoginPane.Designer.cs">
       <DependentUpon>LoginPane.cs</DependentUpon>
     </Compile>
-    <Compile Include="Domain\LoginTrail.cs" />
     <Compile Include="ORM\Controller\DatabaseMapper.cs" />
     <Compile Include="ORM\TableGateway\LoginTrailMapper.cs" />
     <Compile Include="Domain\Controller\MasterController.cs" />
@@ -405,8 +448,6 @@
     <Compile Include="Control\POSlbl.Designer.cs">
       <DependentUpon>POSlbl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Domain\Product.cs" />
-    <Compile Include="ORM\ViewGateway\ProductInventory.cs" />
     <Compile Include="ORM\TableGateway\ProductMapper.cs" />
     <Compile Include="Control\ProductPaneScroll.cs">
       <SubType>UserControl</SubType>
@@ -497,6 +538,9 @@
     <Compile Include="SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Control\Back.resx">
+      <DependentUpon>Back.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\CustomerInformationView.resx">
       <DependentUpon>CustomerInformationView.cs</DependentUpon>
     </EmbeddedResource>
@@ -512,11 +556,23 @@
     <EmbeddedResource Include="Control\Personalization.resx">
       <DependentUpon>Personalization.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\ProductReturnControl.resx">
+      <DependentUpon>ProductReturnControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\ProductSliderPane.resx">
       <DependentUpon>ProductSliderPane.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\SliderPane.resx">
       <DependentUpon>SliderPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Supplier.resx">
+      <DependentUpon>Supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\SupplierView.resx">
+      <DependentUpon>SupplierView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\SystemOperation.resx">
+      <DependentUpon>SystemOperation.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\SystemSettings.resx">
       <DependentUpon>SystemSettings.cs</DependentUpon>
@@ -534,7 +590,7 @@
       <DependentUpon>AddUserPane.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\DateAndTime.resx">
+    <EmbeddedResource Include="Control\DateAndTime.resx">
       <DependentUpon>DateAndTime.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Fallback.resx">
@@ -570,14 +626,14 @@
     <EmbeddedResource Include="Control\MenuControl.resx">
       <DependentUpon>MenuControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InputDialog.resx">
+      <DependentUpon>InputDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\MessageBanner.resx">
       <DependentUpon>MessageBanner.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\modalAddCategory.resx">
       <DependentUpon>modalAddCategory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\modalInspectProduct.resx">
-      <DependentUpon>modalInspectProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\modalVoid.resx">
       <DependentUpon>modalVoid.cs</DependentUpon>
@@ -590,15 +646,13 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\POS.resx">
       <DependentUpon>POS.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\POSlbl.resx">
       <DependentUpon>POSlbl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\ProductPaneScroll.resx">
       <DependentUpon>ProductPaneScroll.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Forms\ModulesConfiguration.resx">
-      <DependentUpon>ModulesConfiguration.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -772,6 +826,70 @@
     <None Include="Resources\AkiraGIF_x1.gif" />
     <None Include="Resources\AkiraGIF%28100x100%29.gif" />
     <None Include="Resources\matBG.png" />
+    <None Include="Resources\System.png" />
+    <None Include="Resources\iconmonstr-gear-icon-256.png" />
+    <None Include="Resources\Add File.png" />
+    <None Include="Resources\Add User.png" />
+    <None Include="Resources\Banknotes.png" />
+    <None Include="Resources\Barcode Scanner.png" />
+    <None Include="Resources\Buy.png" />
+    <None Include="Resources\Cancel 2.png" />
+    <None Include="Resources\Cancel.png" />
+    <None Include="Resources\Checkout.png" />
+    <None Include="Resources\Circled Down.png" />
+    <None Include="Resources\Circled Left.png" />
+    <None Include="Resources\Circled Right.png" />
+    <None Include="Resources\Clear Shopping Cart.png" />
+    <None Include="Resources\Close Window.png" />
+    <None Include="Resources\Compact Camera.png" />
+    <None Include="Resources\Delete Shield.png" />
+    <None Include="Resources\Delete.png" />
+    <None Include="Resources\Delete_2.png" />
+    <None Include="Resources\Edit.png" />
+    <None Include="Resources\Enter Key.png" />
+    <None Include="Resources\Enter.png" />
+    <None Include="Resources\Exit.png" />
+    <None Include="Resources\Export.png" />
+    <None Include="Resources\Forgot Password.png" />
+    <None Include="Resources\Maximize Window.png" />
+    <None Include="Resources\Minimize Window.png" />
+    <None Include="Resources\More Than.png" />
+    <None Include="Resources\Ok.png" />
+    <None Include="Resources\Plus.png" />
+    <None Include="Resources\Plus_2.png" />
+    <None Include="Resources\Price Tag.png" />
+    <None Include="Resources\Print.png" />
+    <None Include="Resources\Refresh.png" />
+    <None Include="Resources\Remove User.png" />
+    <None Include="Resources\Resize Vertical.png" />
+    <None Include="Resources\Return Purchase.png" />
+    <None Include="Resources\Save.png" />
+    <None Include="Resources\Search.png" />
+    <None Include="Resources\Shop.png" />
+    <None Include="Resources\Table.png" />
+    <None Include="Resources\Toggle On.png" />
+    <None Include="Resources\Upload.png" />
+    <None Include="Resources\View File.png" />
+    <None Include="Resources\Close Window1.png" />
+    <None Include="Resources\Delete1.png" />
+    <None Include="Resources\F1.png" />
+    <None Include="Resources\Ctrl.png" />
+    <None Include="Resources\Ctrlclick.png" />
+    <None Include="Resources\F11.png" />
+    <None Include="Resources\F1click.png" />
+    <None Include="Resources\F2.png" />
+    <None Include="Resources\F2click.png" />
+    <None Include="Resources\F3.png" />
+    <None Include="Resources\F3click.png" />
+    <None Include="Resources\F4.png" />
+    <None Include="Resources\F4click.png" />
+    <None Include="Resources\F5.png" />
+    <None Include="Resources\F5click.png" />
+    <None Include="Resources\P.png" />
+    <None Include="Resources\Pclick.png" />
+    <None Include="Resources\shift.png" />
+    <None Include="Resources\ShiftClick.png" />
+    <None Include="Resources\settings3-48.png" />
     <Content Include="SystemIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
