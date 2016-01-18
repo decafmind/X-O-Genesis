@@ -97,12 +97,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtTransactionno = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.supplier1 = new PetvetPOS_Inventory_System.Supplier();
             this.keyButton5 = new PetvetPOS_Inventory_System.KeyButton();
             this.keyButton4 = new PetvetPOS_Inventory_System.KeyButton();
             this.keyButton3 = new PetvetPOS_Inventory_System.KeyButton();
             this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
             this.keyButton1 = new PetvetPOS_Inventory_System.KeyButton();
-            this.supplier1 = new PetvetPOS_Inventory_System.Supplier();
             this.mainTab.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -917,6 +917,17 @@
             this.tabPage3.Text = "Supplier";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // supplier1
+            // 
+            this.supplier1.accessMasterController = null;
+            this.supplier1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.supplier1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.supplier1.Location = new System.Drawing.Point(3, 3);
+            this.supplier1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.supplier1.Name = "supplier1";
+            this.supplier1.Size = new System.Drawing.Size(863, 539);
+            this.supplier1.TabIndex = 0;
+            // 
             // keyButton5
             // 
             this.keyButton5.accessKeyChar = "F2";
@@ -976,17 +987,6 @@
             this.keyButton1.Name = "keyButton1";
             this.keyButton1.Size = new System.Drawing.Size(61, 50);
             this.keyButton1.TabIndex = 10;
-            // 
-            // supplier1
-            // 
-            this.supplier1.accessMasterController = null;
-            this.supplier1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.supplier1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.supplier1.Location = new System.Drawing.Point(3, 3);
-            this.supplier1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.supplier1.Name = "supplier1";
-            this.supplier1.Size = new System.Drawing.Size(863, 539);
-            this.supplier1.TabIndex = 0;
             // 
             // InventoryView
             // 

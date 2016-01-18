@@ -42,7 +42,7 @@ namespace PetvetPOS_Inventory_System
         {
             return create(
                 insertValues(inventory.Barcode, "null", "null",
-                inventory.QtyOnHand, "null"));
+                inventory.QtyOnHand));
         }
 
         public DataTable loadInventoryTable(DataTable dt)
