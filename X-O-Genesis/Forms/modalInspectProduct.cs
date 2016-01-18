@@ -48,7 +48,10 @@ namespace PetvetPOS_Inventory_System
             txtDescription.Text = product.Specification;
             txtCategory.Text = product.Category;
             txtQty.Text = inventory.QtyOnHand.ToString();
+            txtUnitPrice.Text = product.UnitPrice.ToString();
             txtSupplier.Text = inventory.Supplier;
+            txtWarranty.Text = product.Warranty;
+            txtReplacement.Text = product.Replacement;
 
             txtItemCode.Focus();
         }

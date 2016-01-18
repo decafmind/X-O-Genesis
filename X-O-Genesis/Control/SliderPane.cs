@@ -81,17 +81,19 @@ namespace PetvetPOS_Inventory_System
         {
             viewState = VIEW_STATE.Visible;
             timer1.Start();
+            contentPanel.Visible = false;
         }
 
         public void hide()
         {
             viewState = VIEW_STATE.Hidden;
             timer1.Start();
+            contentPanel.Visible = false;
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            contentPanel.Visible = false;
+          //  contentPanel.Visible = false;
 
             switch (viewState)
             {

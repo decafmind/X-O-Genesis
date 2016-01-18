@@ -26,6 +26,8 @@ namespace PetvetPOS_Inventory_System
                 "Stock_since",
                 "Supplier",
                 "Category",
+                "Warranty",
+                "Replacement"
             };
 
             fieldsname_forselect = new string[]{

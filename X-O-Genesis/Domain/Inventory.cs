@@ -27,7 +27,7 @@ namespace PetvetPOS_Inventory_System
                 if (isFromInventoryView)
                 {
                     StockinDateTime = (DateTime)entity.getField("Stock_since");
-                    QtyOnHand = (int)entity.getField("Qty_on_Hand");
+                    QtyOnHand = (int)(decimal)entity.getField("Qty_on_Hand");
                     Supplier = (string)entity.getField("Supplier");
                 }
                 else

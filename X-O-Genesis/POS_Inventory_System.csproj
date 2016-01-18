@@ -209,6 +209,18 @@
     <Compile Include="Control\SliderPane.Designer.cs">
       <DependentUpon>SliderPane.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\Supplier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\Supplier.Designer.cs">
+      <DependentUpon>Supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\SupplierView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\SupplierView.Designer.cs">
+      <DependentUpon>SupplierView.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\SystemOperation.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -546,6 +558,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\SliderPane.resx">
       <DependentUpon>SliderPane.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\Supplier.resx">
+      <DependentUpon>Supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\SupplierView.resx">
+      <DependentUpon>SupplierView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\SystemOperation.resx">
       <DependentUpon>SystemOperation.cs</DependentUpon>

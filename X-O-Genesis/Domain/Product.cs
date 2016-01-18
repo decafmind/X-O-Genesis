@@ -33,7 +33,8 @@ namespace PetvetPOS_Inventory_System
                     Category = (string)entity.getField("Category");
                     UnitPrice = (decimal)entity.getField("Unit_price");
                     Specification = (string)entity.getField("Description");
-
+                    Warranty = Warranty = (string)entity.getField("Warranty");
+                    Replacement = (string)entity.getField("Replacement");
                 }
                 else
                 {
