@@ -42,10 +42,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.userImage = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblPosition = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
+            this.userImage = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userImage)).BeginInit();
@@ -53,7 +53,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BackColor = System.Drawing.Color.DimGray;
             this.panel2.Controls.Add(this.lblTelno);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.lblMobileno);
@@ -67,6 +67,7 @@
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.panel2.Location = new System.Drawing.Point(0, 140);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(482, 339);
@@ -75,7 +76,8 @@
             // 
             // lblTelno
             // 
-            this.lblTelno.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblTelno.BackColor = System.Drawing.Color.White;
+            this.lblTelno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblTelno.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelno.Location = new System.Drawing.Point(330, 21);
             this.lblTelno.Name = "lblTelno";
@@ -87,6 +89,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label8.Location = new System.Drawing.Point(250, 27);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(74, 19);
@@ -95,7 +98,9 @@
             // 
             // lblMobileno
             // 
+            this.lblMobileno.BackColor = System.Drawing.Color.White;
             this.lblMobileno.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblMobileno.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblMobileno.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMobileno.Location = new System.Drawing.Point(124, 23);
             this.lblMobileno.Name = "lblMobileno";
@@ -107,6 +112,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label6.Location = new System.Drawing.Point(11, 28);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(105, 19);
@@ -115,18 +121,20 @@
             // 
             // lblAddress
             // 
-            this.lblAddress.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblAddress.BackColor = System.Drawing.Color.White;
+            this.lblAddress.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblAddress.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAddress.Location = new System.Drawing.Point(182, 130);
+            this.lblAddress.Location = new System.Drawing.Point(74, 151);
             this.lblAddress.Name = "lblAddress";
-            this.lblAddress.Size = new System.Drawing.Size(216, 53);
+            this.lblAddress.Size = new System.Drawing.Size(324, 56);
             this.lblAddress.TabIndex = 19;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(11, 131);
+            this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label4.Location = new System.Drawing.Point(21, 132);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(95, 19);
             this.label4.TabIndex = 13;
@@ -134,11 +142,12 @@
             // 
             // lblUsername
             // 
-            this.lblUsername.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblUsername.BackColor = System.Drawing.Color.White;
+            this.lblUsername.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblUsername.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(182, 196);
+            this.lblUsername.Location = new System.Drawing.Point(74, 247);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(216, 23);
+            this.lblUsername.Size = new System.Drawing.Size(324, 23);
             this.lblUsername.TabIndex = 20;
             this.lblUsername.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -146,7 +155,8 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 200);
+            this.label1.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label1.Location = new System.Drawing.Point(11, 221);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 19);
             this.label1.TabIndex = 10;
@@ -154,21 +164,23 @@
             // 
             // lblRegistrationdate
             // 
-            this.lblRegistrationdate.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblRegistrationdate.BackColor = System.Drawing.Color.White;
+            this.lblRegistrationdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblRegistrationdate.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRegistrationdate.Location = new System.Drawing.Point(241, 300);
+            this.lblRegistrationdate.Location = new System.Drawing.Point(74, 300);
             this.lblRegistrationdate.Name = "lblRegistrationdate";
-            this.lblRegistrationdate.Size = new System.Drawing.Size(186, 23);
+            this.lblRegistrationdate.Size = new System.Drawing.Size(324, 23);
             this.lblRegistrationdate.TabIndex = 21;
             this.lblRegistrationdate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // lblEmailadd
             // 
-            this.lblEmailadd.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblEmailadd.BackColor = System.Drawing.Color.White;
+            this.lblEmailadd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lblEmailadd.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmailadd.Location = new System.Drawing.Point(182, 92);
+            this.lblEmailadd.Location = new System.Drawing.Point(74, 98);
             this.lblEmailadd.Name = "lblEmailadd";
-            this.lblEmailadd.Size = new System.Drawing.Size(216, 23);
+            this.lblEmailadd.Size = new System.Drawing.Size(324, 23);
             this.lblEmailadd.TabIndex = 18;
             this.lblEmailadd.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
@@ -176,7 +188,8 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(239, 270);
+            this.label5.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label5.Location = new System.Drawing.Point(13, 281);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(182, 19);
             this.label5.TabIndex = 4;
@@ -186,7 +199,8 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 92);
+            this.label3.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label3.Location = new System.Drawing.Point(13, 79);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(147, 19);
             this.label3.TabIndex = 2;
@@ -194,7 +208,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BackColor = System.Drawing.Color.DimGray;
             this.panel1.Controls.Add(this.userImage);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.lblPosition);
@@ -204,6 +218,38 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(482, 140);
             this.panel1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label2.Location = new System.Drawing.Point(11, 79);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 24);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "POSITION:";
+            // 
+            // lblPosition
+            // 
+            this.lblPosition.BackColor = System.Drawing.Color.White;
+            this.lblPosition.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lblPosition.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPosition.Location = new System.Drawing.Point(129, 79);
+            this.lblPosition.Name = "lblPosition";
+            this.lblPosition.Size = new System.Drawing.Size(216, 23);
+            this.lblPosition.TabIndex = 16;
+            this.lblPosition.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // lblName
+            // 
+            this.lblName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblName.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.lblName.Location = new System.Drawing.Point(11, 30);
+            this.lblName.Name = "lblName";
+            this.lblName.Size = new System.Drawing.Size(337, 83);
+            this.lblName.TabIndex = 0;
+            this.lblName.Text = "FULLNAME";
             // 
             // userImage
             // 
@@ -215,35 +261,6 @@
             this.userImage.TabIndex = 0;
             this.userImage.TabStop = false;
             this.userImage.Click += new System.EventHandler(this.userImage_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(11, 79);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(112, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "POSITION:";
-            // 
-            // lblPosition
-            // 
-            this.lblPosition.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblPosition.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPosition.Location = new System.Drawing.Point(129, 79);
-            this.lblPosition.Name = "lblPosition";
-            this.lblPosition.Size = new System.Drawing.Size(216, 23);
-            this.lblPosition.TabIndex = 16;
-            this.lblPosition.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // lblName
-            // 
-            this.lblName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(11, 30);
-            this.lblName.Name = "lblName";
-            this.lblName.Size = new System.Drawing.Size(337, 83);
-            this.lblName.TabIndex = 0;
-            this.lblName.Text = "FULLNAME";
             // 
             // UserView
             // 

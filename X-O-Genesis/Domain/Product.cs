@@ -12,6 +12,7 @@ namespace PetvetPOS_Inventory_System
         public string Description { get; set; }
         public Decimal UnitPrice { get; set; }
         public int Category_id { get; set; }
+        public string Category { get; set; }
         public int Company { get; set; }
         public string Warranty { get; set; }
         public string Specification { get; set; }
@@ -21,17 +22,30 @@ namespace PetvetPOS_Inventory_System
 
         }
 
-        public Product(Entity entity)
+        public Product(Entity entity, bool isFromInventoryView = false)
         {
             try
             {
-                 Barcode = (string)entity.getField("id");
-                 Description = (string)entity.getField("name");
-                 UnitPrice = (decimal)entity.getField("unit_price");
-                 Warranty = (string)entity.getField("warranty");
-                 Specification = (string)entity.getField("specification");
-                 Replacement = (string)entity.getField("replacement");
-                 Category_id = (int)entity.getField("category_id");
+                if (isFromInventoryView)
+                {
+                    Barcode = (string)entity.getField("Barcode");
+                    Description = (string)entity.getField("Name");
+                    Category = (string)entity.getField("Category");
+                    UnitPrice = (decimal)entity.getField("Unit_price");
+                    Specification = (string)entity.getField("Description");
+
+                }
+                else
+                {
+                    Barcode = (string)entity.getField("id");
+                    Description = (string)entity.getField("name");
+                    UnitPrice = (decimal)entity.getField("unit_price");
+                    Warranty = (string)entity.getField("warranty");
+                    Specification = (string)entity.getField("specification");
+                    Replacement = (string)entity.getField("replacement");
+                    Category_id = (int)entity.getField("category_id");
+                }
+                 
                 // Company = (int)entity.getField("supplier");
             }
             catch (Exception ex)

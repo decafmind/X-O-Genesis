@@ -127,11 +127,17 @@
   <data name="Delete" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Delete.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="F5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\F5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Enter" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Enter.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Save" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Save.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\F4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Refresh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Refresh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,11 +148,17 @@
   <data name="fab-animation1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\fab-animation1.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="addUser" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\iconmonstr-user-4-icon-256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="reportIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconmonstr-flip-chart-7-icon-256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F4click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\F4click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ShiftClick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ShiftClick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shift" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shift.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Cancel 2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Cancel 2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,17 +199,26 @@
   <data name="SystemIcon3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SystemIcon3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="F2click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\F2click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Plus_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Plus_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Splash_screenF4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Splash screenF4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Close Window1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Close Window1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Circled Left" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Circled Left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="inventoryWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconmonstr-archive-8-icon-256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="P" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\P.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\F3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="unlockIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconmonstr-lock-15-icon-256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -207,6 +228,9 @@
   </data>
   <data name="cashRegister" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconmonstr-checkout-icon-256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Splash_screenF4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Splash screenF4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="barcodeSearch" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconmonstr-barcode-7-icon-256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,6 +244,9 @@
   <data name="Compact Camera" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Compact Camera.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="addUser" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\iconmonstr-user-4-icon-256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Clear Shopping Cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Clear Shopping Cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -229,20 +256,29 @@
   <data name="inventoryBlack" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconmonstr-archive-7-icon-256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Ctrlclick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ctrlclick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\F2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="AkiraGIF" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\AkiraGIF(100x100).gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Minimize Window" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Minimize Window.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Toggle On" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Toggle On.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="F3click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\F3click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Banknotes" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Banknotes.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="viewIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconmonstr-eye-7-icon-256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\F1click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="removeUser" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconmonstr-user-5-icon-256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -252,6 +288,9 @@
   </data>
   <data name="CircularProgressAnimation" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CircularProgressAnimation.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F5click" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\F5click.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="documentIcon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconmonstr-document-file-2-icon-256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -268,6 +307,12 @@
   <data name="Price Tag" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Price Tag.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Pclick" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Pclick.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delete1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Delete1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="barcodeHorizontal" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\iconmonstr-barcode-2-icon-256.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -279,6 +324,12 @@
   </data>
   <data name="Resize Vertical" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Resize Vertical.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ctrl" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Ctrl.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="F1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\F1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Buy" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Buy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -316,11 +367,14 @@
   <data name="Enter Key" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Enter Key.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Forgot Password" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Forgot Password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Toggle On" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Toggle On.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PETVET_LOGO3_cropeed" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PETVET LOGO3_cropeed.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Forgot Password" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Forgot Password.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Search" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Search.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -331,10 +385,10 @@
   <data name="Shop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Shop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Close Window1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Close Window1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="F11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\F11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Delete1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Delete1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="settings3-48" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\settings3-48.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

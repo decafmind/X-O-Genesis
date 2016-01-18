@@ -299,7 +299,7 @@ namespace PetvetPOS_Inventory_System
                     keyButton6.updateButton();
                     modalInspectProduct inspect = new modalInspectProduct(dbController);
                     inspect.bcode = getBarcodeFromRow();
-                    inspect.ShowDialog();
+                    inspect.ShowDialog();   
                 }
                 else
                 {

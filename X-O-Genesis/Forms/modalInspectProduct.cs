@@ -35,28 +35,21 @@ namespace PetvetPOS_Inventory_System
         {
             displayBasicInfo();
         }
-        //Lazy ass textbox population.
+
+
         private void displayBasicInfo()
         {
-            dbController.getBasicProductInfoFromBarcode(dtBasicInfo, bcode);
+            ProductInventoryDomain productInventory = dbController.productInventory.getProductInventoryThroughBarcode(bcode);
+            Product product = productInventory.product;
+            Inventory inventory = productInventory.inventory;
 
-            List<TextBox> txtBoxes = new List<TextBox>();
-            foreach (Control c in panel_basicInfo.Controls)
-            {
-                if (c is TextBox)
-                {
-                    TextBox txt = (TextBox)c;
-                    txtBoxes.Add(txt as TextBox);
-                    txt.ReadOnly = true;
-                }
-            }
-            foreach (DataRow dr in dtBasicInfo.Rows)
-            {
-                for (int i = 0; i < dtBasicInfo.Columns.Count; i++)
-                {
-                    txtBoxes[i].Text = dr[i].ToString();
-                }
-            }
+            txtItemCode.Text = product.Barcode;
+            txtName.Text = product.Description;
+            txtDescription.Text = product.Specification;
+            txtCategory.Text = product.Category;
+            txtQty.Text = inventory.QtyOnHand.ToString();
+            txtSupplier.Text = inventory.Supplier;
+
             txtItemCode.Focus();
         }
 
@@ -65,5 +58,16 @@ namespace PetvetPOS_Inventory_System
             if (e.KeyCode == Keys.F1)
                 this.Close();
         }
+
+        private void panel_miniView_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel_basicInfo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
+
 }

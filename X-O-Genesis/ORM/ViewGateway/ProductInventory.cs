@@ -18,12 +18,14 @@ namespace PetvetPOS_Inventory_System
             tableName = "inventory_view";
             fieldsname = new string[] {
                 "Name",
+                "Description",
                 "Barcode",
                 "Unit_price",
                 "Qty_on_Hand",
                 "Qty_Received",
                 "Stock_since",
                 "Supplier",
+                "Category",
             };
 
             fieldsname_forselect = new string[]{
@@ -43,6 +45,13 @@ namespace PetvetPOS_Inventory_System
         {
             selectQuery = "SELECT Name, Qty_On_Hand AS 'Stock', Qty_Received AS 'Qty on Received' FROM inventory_view WHERE Qty_On_Hand <= (Qty_Received * .20)";
             return selectRows(dt, selectQuery);
+        }
+
+        public ProductInventoryDomain getProductInventoryThroughBarcode(string barcode)
+        {
+            Product product = new Product(getEntityWhere(string.Format("Barcode = '{0}'", barcode)),true);
+            Inventory inventory = new Inventory(getEntityWhere(string.Format("Barcode = '{0}'", barcode)),true);
+            return new ProductInventoryDomain(product, inventory);
         }
 
         public void checkProductCriticalLevel(Product product, MasterController masterController)

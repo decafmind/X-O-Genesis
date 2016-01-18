@@ -49,8 +49,10 @@
             // 
             // btnSubmit
             // 
-            this.btnSubmit.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnSubmit.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnSubmit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubmit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSubmit.ForeColor = System.Drawing.Color.Black;
             this.btnSubmit.Location = new System.Drawing.Point(195, 100);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(108, 34);
@@ -61,7 +63,8 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.IndianRed;
+            this.btnCancel.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Location = new System.Drawing.Point(52, 100);
             this.btnCancel.Name = "btnCancel";

@@ -133,6 +133,7 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.CornflowerBlue;
             this.button1.Dock = System.Windows.Forms.DockStyle.Top;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(158)))), ((int)(((byte)(150)))));
             this.button1.FlatAppearance.BorderSize = 3;
@@ -143,7 +144,7 @@
             this.button1.Size = new System.Drawing.Size(243, 50);
             this.button1.TabIndex = 0;
             this.button1.Text = "Services";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // cbStayput
