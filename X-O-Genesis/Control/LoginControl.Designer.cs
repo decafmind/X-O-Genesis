@@ -93,7 +93,7 @@
             this.btnForgot.FlatAppearance.BorderSize = 0;
             this.btnForgot.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnForgot.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Forgot_Password;
-            this.btnForgot.Location = new System.Drawing.Point(128, 3);
+            this.btnForgot.Location = new System.Drawing.Point(128, 9);
             this.btnForgot.Name = "btnForgot";
             this.btnForgot.Size = new System.Drawing.Size(60, 57);
             this.btnForgot.TabIndex = 19;
