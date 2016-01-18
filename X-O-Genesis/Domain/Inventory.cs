@@ -20,15 +20,25 @@ namespace PetvetPOS_Inventory_System
 
         }
 
-        public Inventory(Entity entity)
+        public Inventory(Entity entity, bool isFromInventoryView = false)
         {
             try
             {
-                 Barcode = (string)entity.getField("product_id");
-                 StockinDateTime = (DateTime)entity.getField("stockin_datetime");
-                 QtyReceived = (int)entity.getField("qty_received");
-                 QtyOnHand = (int)entity.getField("qty_onhand");
-                 Supplier = (string)entity.getField("supplier");
+                if (isFromInventoryView)
+                {
+                    StockinDateTime = (DateTime)entity.getField("Stock_since");
+                    QtyOnHand = (int)entity.getField("Qty_on_Hand");
+                    Supplier = (string)entity.getField("Supplier");
+                }
+                else
+                {
+                    Barcode = (string)entity.getField("product_id");
+                    StockinDateTime = (DateTime)entity.getField("stockin_datetime");
+                    QtyReceived = (int)entity.getField("qty_received");
+                    QtyOnHand = (int)entity.getField("qty_onhand");
+                    Supplier = (string)entity.getField("supplier");
+                }
+                 
             }
             catch (Exception ex)
             {
