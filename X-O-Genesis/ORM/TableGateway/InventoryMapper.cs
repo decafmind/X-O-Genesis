@@ -61,6 +61,6 @@ namespace PetvetPOS_Inventory_System
             updateSet(condition, qty_onhand);
             return update(updateQuery);
         }
-  
+
     }
 }

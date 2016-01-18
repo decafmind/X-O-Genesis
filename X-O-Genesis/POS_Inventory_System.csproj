@@ -218,7 +218,6 @@
     <Compile Include="Domain\Client.cs" />
     <Compile Include="Domain\Controller\Service.cs" />
     <Compile Include="Domain\Enums\Settings.cs" />
-    <Compile Include="Domain\Inventory.cs" />
     <Compile Include="Domain\LoginTrail.cs" />
     <Compile Include="Domain\Product.cs" />
     <Compile Include="Domain\ProductInspection.cs" />
@@ -230,7 +229,6 @@
     <Compile Include="Domain\InventoryPersonnelMenuList.cs" />
     <Compile Include="Domain\StaffMenuList.cs" />
     <Compile Include="Domain\GPP.cs" />
-    <Compile Include="Domain\Grooming.cs" />
     <Compile Include="Domain\Medical.cs" />
     <Compile Include="Domain\Enums\InventoryMode.cs" />
     <Compile Include="Domain\Enums\Petsize.cs" />
@@ -267,19 +265,14 @@
     <Compile Include="MyExtension\ErrorLog.cs" />
     <Compile Include="ORM\TableGateway\AuditTrailMapper.cs" />
     <Compile Include="ORM\TableGateway\FallbackMapper.cs" />
-    <Compile Include="ORM\TableGateway\InventoryMapper.cs" />
     <Compile Include="ORM\TableGateway\PetsizeMapper.cs" />
     <Compile Include="ORM\TableGateway\ProductInspectionMapper.cs" />
     <Compile Include="ORM\TableGateway\ProductReturnMapper.cs" />
     <Compile Include="ORM\ViewGateway\AuditTrailView.cs" />
-    <Compile Include="ORM\TableGateway\GppTransactionMapper.cs" />
-    <Compile Include="ORM\TableGateway\GroomingMapper.cs" />
-    <Compile Include="ORM\TableGateway\GroomingPetsizePriceMapper.cs" />
     <Compile Include="ORM\ViewGateway\GroomingView.cs" />
     <Compile Include="ORM\TableGateway\MedicalMapper.cs" />
     <Compile Include="ORM\TableGateway\MedicalTransactionMapper.cs" />
     <Compile Include="ORM\ViewGateway\LoginTrailViewMapper.cs" />
-    <Compile Include="ORM\ViewGateway\ProductInventory.cs" />
     <Compile Include="ORM\ViewGateway\ProductReturnViewMapper.cs" />
     <Compile Include="ORM\ViewGateway\ProductTransactionView.cs" />
     <Compile Include="ORM\ViewGateway\ServiceRenderedMapper.cs" />
@@ -288,12 +281,6 @@
     </Compile>
     <Compile Include="Forms\DatabaseSettings.Designer.cs">
       <DependentUpon>DatabaseSettings.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Control\ServiceScrollPane.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Control\ServiceScrollPane.Designer.cs">
-      <DependentUpon>ServiceScrollPane.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\AddUserPane.cs">
       <SubType>UserControl</SubType>
@@ -420,7 +407,6 @@
     <Compile Include="Control\POSlbl.Designer.cs">
       <DependentUpon>POSlbl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Domain\Product.cs" />
     <Compile Include="ORM\ViewGateway\ProductInventory.cs" />
     <Compile Include="ORM\TableGateway\ProductMapper.cs" />
     <Compile Include="Control\ProductPaneScroll.cs">
@@ -547,9 +533,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DatabaseSettings.resx">
       <DependentUpon>DatabaseSettings.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Control\ServiceScrollPane.resx">
-      <DependentUpon>ServiceScrollPane.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\AddUserPane.resx">
       <DependentUpon>AddUserPane.cs</DependentUpon>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PetvetPOS_Inventory_System
 {
-    public class Inventory: IEntity
+    public class Inventory : IEntity
     {
         public int InventoryId { get; set; }
         public string Barcode { get; set; }
@@ -38,7 +38,7 @@ namespace PetvetPOS_Inventory_System
                     QtyOnHand = (int)entity.getField("qty_onhand");
                     Supplier = (string)entity.getField("supplier");
                 }
-                 
+
             }
             catch (Exception ex)
             {

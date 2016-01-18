@@ -46,11 +46,8 @@ namespace PetvetPOS_Inventory_System
         public CategoryMapper categoryMapper { get; set; }
 
         public MedicalMapper medicalMapper { get; set; }
-        public GroomingMapper groomingMapper { get; set; }
-        public GroomingPetsizePriceMapper gppMapper { get; set; }
         public GroomingView groomingViewMapper { get; set; }
 
-        public GppTransactionMapper gppTransactionMapper { get; set; }
         public ServiceRenderedMapper serviceRenderedMapper { get; set; }
         public AuditTrailMapper auditTrailMapper { get; set; }
         public AuditTrailView auditTrailView { get; set; }
@@ -88,12 +85,7 @@ namespace PetvetPOS_Inventory_System
 
             this.monthlySalesReportMapper = new MonthlySaleReportMapper(mySqlDB);
             this.categoryMapper = new CategoryMapper(mySqlDB);
-            this.groomingMapper = new GroomingMapper(mySqlDB);
-            this.medicalMapper = new MedicalMapper(mySqlDB);
-
-            this.gppMapper = new GroomingPetsizePriceMapper(mySqlDB);
-            this.groomingViewMapper = new GroomingView(mySqlDB);
-            this.gppTransactionMapper = new GppTransactionMapper(mySqlDB);
+         
             this.serviceRenderedMapper = new ServiceRenderedMapper(mySqlDB);
 
             this.auditTrailMapper = new AuditTrailMapper(mySqlDB);
@@ -378,35 +370,7 @@ namespace PetvetPOS_Inventory_System
             return false;
         }
 
-        public bool updateGrooming(Grooming oldGrooming, Grooming newGrooming)
-        {
-            if (groomingMapper.updateGrooming(oldGrooming, newGrooming)){
-                OnUpdateEntity(new EntityArgs(newGrooming));
-                return true;
-            }
-            return false;
-        }
-
-        public bool updateGPP(GPP oldGpp, GPP newGpp)
-        {
-            if (gppMapper.updateGroomingPrice(oldGpp, newGpp))
-            {
-                OnUpdateEntity(new EntityArgs(oldGpp));
-                return true;
-            }
-            return false;
-        }
-
-        public bool updateMedical(Medical oldMedical, Medical newMedical)
-        {
-            if (medicalMapper.updateMedical(oldMedical, newMedical))
-            {
-                OnUpdateEntity(new EntityArgs(newMedical));
-                return true;
-            }
-            return false;
-        }
-
+   
         public bool insertProductInsideInventory(Inventory inventory, Product product){
             string insertInventory = inventoryMapper.createInventory(inventory);
             string insertProduct = productMapper.createProduct(product);
@@ -418,61 +382,11 @@ namespace PetvetPOS_Inventory_System
             return false;
         }
 
-        public int getGroomingIDFromName(string name)
-        {
-            return groomingMapper.getGroomingIDFromName(name);
-        }
-
+   
         public bool insertInventory(Inventory inventory)
         {
             if (inventoryMapper.insertInventory(inventory)){
                 OnInsertEntity(new EntityArgs(inventory));
-                return true;
-            }
-            return false;
-        }
-
-        public bool insertGroomingAndGPP(Grooming grooming, Petsize size, decimal price)
-        {
-            string insertGrooming = groomingMapper.createGroomingQuery(grooming);
-            string insertGPP = gppMapper.createGPPQuery(grooming, size, price);
-            if (createTransaction(insertGrooming, insertGPP))
-            {
-                OnInsertEntity(new EntityArgs(grooming));
-                return true;
-            }
-            return false;
-        }
-
-        public bool insertGrooming(Grooming grooming)
-        {
-            if (groomingMapper.insertGrooming(grooming))
-            {
-                OnInsertEntity(new EntityArgs(grooming));
-                return true;
-            }
-            return false;
-        }
-
-        public bool insertGPP(Grooming grooming, Petsize size, decimal price)
-        {
-            if (gppMapper.insertGPP(grooming, size, price))
-            {
-                OnInsertEntity(new EntityArgs(grooming));
-                return true;
-            }
-            return false;
-        }
-
-        public DataTable loadGrooming(DataTable dt)
-        {
-            return groomingMapper.loadTable(dt);
-        }
-
-        public bool insertMedical(Medical medical)
-        {
-            if(medicalMapper.insertMedical(medical)){
-                OnInsertEntity(new EntityArgs(medical));
                 return true;
             }
             return false;
@@ -562,12 +476,6 @@ namespace PetvetPOS_Inventory_System
         public Product getProductFromBarcode(string barcode)
         {
             return productMapper.getProductFromBarcode(barcode);
-        }
-
-        public Grooming getGroomingFromName(string name)
-
-        {
-            return groomingMapper.getGroomingFromName(name);
         }
 
         
