@@ -25,7 +25,6 @@ namespace PetvetPOS_Inventory_System
         bool concludeTransaction;
         decimal totalAmount;
         decimal totalAmountWithService;
-        string customerName = string.Empty;
 
         private const int QTY_INDEX = 0;
         private const int DESCRIPTION_INDEX = 1;
@@ -100,12 +99,10 @@ namespace PetvetPOS_Inventory_System
         {
             txtEncode.Enabled = flag;
             txtQuantity.Enabled = flag;
-            txtSearch.Enabled = flag;
 
             if (flag)
             {
                 txtEncode.Clear();
-                txtSearch.Clear();
                 beginTransaction();
             }
         }
@@ -178,17 +175,6 @@ namespace PetvetPOS_Inventory_System
             catch (Exception) { lblPOSmsg.Text = "Item not found";  }
 
             return success;
-        }
-
-        private void populateCustomerViewDG()
-        {
-            lblName.Text = string.Empty;
-            DataTable dt = new DataTable();
-            dbController.getCustomersForOrdering(dt);
-            if (dt.Rows.Count > 0)
-            {
-                dgName.DataSource = dt;
-            }           
         }
 
         public void addRowInDatagrid(int quantity)
@@ -300,8 +286,6 @@ namespace PetvetPOS_Inventory_System
             dgTransaction.ColumnHeadersDefaultCellStyle.WrapMode = DataGridViewTriState.True;
             dgTransaction.DefaultCellStyle.Font = new Font("Times New Roman", 10, FontStyle.Regular);
             dgTransaction.DefaultCellStyle.SelectionBackColor = SystemColors.posGray;
-
-            populateCustomerViewDG();
         }
 
         private void txtEncode_TextChanged(object sender, EventArgs e)
@@ -329,7 +313,6 @@ namespace PetvetPOS_Inventory_System
             txtQuantity.Text = "1";
             poSlbl2.Text = "0";
             lblPOSmsg.Text = "No current transaction";
-            lblName.Text = string.Empty;
             MyExtension.Validation.clearFields(panel1);
         }
 
@@ -338,19 +321,9 @@ namespace PetvetPOS_Inventory_System
             if (dgTransaction.Rows.Count > 0)
             {
                 concludeTransaction = true;
-                if (!string.IsNullOrWhiteSpace(lblName.Text))
-                {
-                    conclusion();
-                    printInvoice();
-                    resetTransaction();
-                }
-                else
-                {
-                    MessageBanner banner = new MessageBanner("Please select a customer.", 2000);
-                    banner.BackColor = Color.Yellow;
-                    banner.Opacity = 1;
-                    banner.Show();
-                }                        
+                conclusion();
+                printInvoice();
+                resetTransaction();
             }
         }
 
@@ -364,16 +337,15 @@ namespace PetvetPOS_Inventory_System
             foreach (ProductInvoice item in carts)
             {
                 dbController.insertProductInvoice(item);
-                inventory = new Inventory()
-                {
+                inventory = new Inventory(){
                     Barcode = item.product.Barcode,
                     QtyReceived = 0,
                     QtyOnHand = -item.QuantitySold,
                 };
 
                 dbController.checkProductCriticalLevel(item.product);
-            }        
-                 
+        	}
+         
             // audit 
             string message = string.Format("completed a transaction: {0}", lblTransactionno.Text);
             dbController.insertAuditTrail(message);
@@ -578,42 +550,20 @@ namespace PetvetPOS_Inventory_System
         {
             Validation.filterToNumeric(sender as TextBox);
         }
-        private void dgName_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        
+        private void poSlbl2_Load(object sender, EventArgs e)
         {
-            getValueFromDataGridCell();
-            if (!string.IsNullOrEmpty(customerName))
-                lblName.Text = customerName;
-        }
-
-        private void getValueFromDataGridCell()
-        {
-            const int NAME = 0;
-
-            if (dgName.SelectedRows.Count == 1)
-            {
-                DataGridViewRow row = dgName.SelectedRows[0];
-                customerName = getValueFromDataGridCell(dgName, row.Index, NAME).ToString();          
-            }
 
         }
-        object getValueFromDataGridCell(DataGridView gv, int row_index, int cell_index)
+
+        private void dgTransaction_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            return gv.Rows[row_index].Cells[cell_index].Value;
+
         }
 
-        private void txtSearch_TextChanged(object sender, EventArgs e)
+        private void panel3_Paint(object sender, PaintEventArgs e)
         {
-            getCustomersForOrderingByName(txtSearch.Text);
-        }
-        private void getCustomersForOrderingByName(string name)
-        {
-            DataTable dt = new DataTable();
-            dbController.getCustomersForOrderingByName(dt, name);
-            if (dt.Rows.Count > 0)
-            {
-                dgName.DataSource = dt;
-            }          
-        }
 
+        }
     }
 }

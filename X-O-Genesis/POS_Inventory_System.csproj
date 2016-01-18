@@ -279,7 +279,6 @@
     <Compile Include="ORM\TableGateway\GppTransactionMapper.cs" />
     <Compile Include="ORM\TableGateway\GroomingMapper.cs" />
     <Compile Include="ORM\TableGateway\GroomingPetsizePriceMapper.cs" />
-    <Compile Include="ORM\ViewGateway\CustomerInfoView.cs" />
     <Compile Include="ORM\ViewGateway\GroomingView.cs" />
     <Compile Include="ORM\TableGateway\MedicalMapper.cs" />
     <Compile Include="ORM\TableGateway\MedicalTransactionMapper.cs" />
