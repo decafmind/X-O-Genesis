@@ -1,6 +1,6 @@
 ﻿namespace PetvetPOS_Inventory_System
 {
-    partial class Supplier
+    partial class SupplierControl
     {
         /// <summary> 
         /// Required designer variable.
@@ -48,14 +48,15 @@
             this.listBox1.Size = new System.Drawing.Size(204, 329);
             this.listBox1.TabIndex = 0;
             // 
-            // Supplier
+            // SupplierControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.listBox1);
-            this.Name = "Supplier";
+            this.Name = "SupplierControl";
             this.Size = new System.Drawing.Size(863, 445);
+            this.Load += new System.EventHandler(this.SupplierControl_Load);
             this.ResumeLayout(false);
 
         }

@@ -10,9 +10,11 @@ using System.Windows.Forms;
 
 namespace PetvetPOS_Inventory_System
 {
-    public partial class Supplier : MyUserControl, IContentPage, IKeyController
+    public partial class SupplierControl : MyUserControl, IContentPage, IKeyController
     {
-        public Supplier()
+        DatabaseController dbController;
+
+        public SupplierControl()
         {
             InitializeComponent();
         }
@@ -48,12 +50,19 @@ namespace PetvetPOS_Inventory_System
 
         public void initializePage()
         {
-            throw new NotImplementedException();
+           
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void SupplierControl_Load(object sender, EventArgs e)
+        {
+            dbController = masterController.DataBaseController;
+            List<string> listOfSupplier = dbController.supplierMapper.getSupplierList();
+            listBox1.Items.AddRange(listOfSupplier.ToArray());
         }
     }
 }
