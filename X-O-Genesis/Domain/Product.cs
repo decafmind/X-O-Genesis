@@ -22,6 +22,7 @@ namespace PetvetPOS_Inventory_System
         public int Company { get; set; }
         public string Warranty { get; set; }
         public string SupplierName { get; set; }
+        public string Archive = "0";
 
         public string Replacement { get; set; }
         public Product()
@@ -49,9 +50,13 @@ namespace PetvetPOS_Inventory_System
                 {
                     Barcode = (string)entity.getField("id");
                     Name = (string)entity.getField("name");
-                    UnitPrice = (decimal)entity.getField("unit_price");
-                    Warranty = (string)entity.getField("warranty");
                     Description = (string)entity.getField("description");
+                    SupplierId = (int)entity.getField("supplier_id");
+                    Unit = (string)entity.getField("unit");
+                    UnitCost = (decimal)entity.getField("unit_cost");
+                    UnitPrice = (decimal)entity.getField("unit_price");
+                    MaintainingStocks = (int)entity.getField("maintaining_stocks");
+                    Warranty = (string)entity.getField("warranty");
                     Replacement = (string)entity.getField("replacement");
                     Category_id = (int)entity.getField("category_id");
                 }
