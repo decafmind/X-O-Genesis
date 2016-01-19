@@ -21,13 +21,11 @@ namespace PetvetPOS_Inventory_System
                 "Description",
                 "Barcode",
                 "Unit_price",
-                "Category",
+                "Qty_on_Hand",
+                "Qty_Received",
                 "Stock_since",
                 "Supplier",
-                "Qty_Received",
-                "Qty_on_Hand",
-                "Warranty",
-                "Replacement",
+                "Category",
             };
 
             fieldsname_forselect = new string[]{
@@ -78,7 +76,7 @@ namespace PetvetPOS_Inventory_System
 
         public decimal getStockQuantity(Product product)
         {
-            string condition = string.Format("Name = '{0}'", product.Name);
+            string condition = string.Format("Name = '{0}'", product.Description);
             decimal qty_onhand = (decimal)readScalar("Qty_On_Hand", condition);
             return qty_onhand;
         }
