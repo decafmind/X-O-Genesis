@@ -54,6 +54,7 @@ namespace PetvetPOS_Inventory_System
             sliderPane.accessMasterController = masterController;
             sliderPane.dbController = masterController.DataBaseController;
             sliderPane.inventoryView = this;
+            supplier1.accessMasterController = masterController;
 
             using (Font timesNewRoman = new Font("Times New Roman", 12, FontStyle.Regular))
             {
@@ -361,8 +362,11 @@ namespace PetvetPOS_Inventory_System
             if (sliderPane.isOpen())
             {
                 if (e.KeyCode == Keys.Enter){
-                    sliderPane.OK();
-                    toogleSearch();
+                    if (sliderPane.OK())
+                    {
+                        toogleSearch();
+                    }
+                     
                 }
             }
 

@@ -44,8 +44,7 @@ namespace PetvetPOS_Inventory_System
 
         public void insertProduct()
         {
-            if (MyExtension.Validation.isFilled(contentPanel))
-            {
+            
                 inventory = new Inventory()
                 {
                     Barcode = txtBarcode.Text,
@@ -59,24 +58,28 @@ namespace PetvetPOS_Inventory_System
                 else
                 {
                     int category_id = dbController.categoryMapper.getCategoryIndexFromName(cbCategory.Text);
+                    int supplier_id = dbController.supplierMapper.getSupplierIdByName(cbSupplier.Text);
+
                     product = new Product()
                     {
                         Barcode = txtBarcode.Text,
+                        SerialCode = txtSerialCode.Text,
                         Name = txtName.Text,
-                       // UnitPrice = Convert.ToDecimal(txtPrice.Text),
+                        Description = txtDescription.Text,
+                        SupplierId = supplier_id,
+                        Unit = cbUnit.Text,
+                        UnitCost = decimal.Parse(txtUnitCost.Text),
+                        UnitPrice = decimal.Parse(txtUnitPrice.Text),
+                        MaintainingStocks = int.Parse(txtMaintainingStocks.Text),
                         Warranty = txtWarranty.Text.ToString(),
                         Replacement = txtReplacement.Text.ToString(),
-                        Description = txtDescription.Text,
                         Category_id = category_id,
                     };
                     dbController.insertProductInsideInventory(inventory, product);
                 }
                 toggle();
-            }
-            else
-            {
-             //   MessageBox.Show("Missing field required");
-            }
+            
+            
         }
 
         public void clearTexts()
@@ -86,6 +89,7 @@ namespace PetvetPOS_Inventory_System
             cbCategory.Text = "";
             txtBarcode.Enabled = true; // To make sure it is enabled even after update
             loadCategoryList();
+            loadSupplierList();
         }
 
         public void mapProductToTextfield(Product product)
@@ -121,17 +125,21 @@ namespace PetvetPOS_Inventory_System
             OK();
         }
 
-        public void OK()
+        public bool OK()
         {
-            switch (mode)
+            if (MyExtension.Validation.isFilled(contentPanel))
             {
-                case InventoryMode.ADD:
-                    insertProduct();
-                    break;
-                case InventoryMode.UPDATE:
-                    updateProduct();
-                    break;
+                switch (mode)
+                {
+                    case InventoryMode.ADD:
+                        insertProduct();
+                        break;
+                    case InventoryMode.UPDATE:
+                        updateProduct();
+                        break;
+                }
             }
+            return MyExtension.Validation.isFilled(contentPanel);
         }
 
         private void txtQuantity_TextChanged(object sender, EventArgs e)
@@ -148,23 +156,17 @@ namespace PetvetPOS_Inventory_System
                 if (checkIfProductAlreadyExists(txtBarcode.Text))
                 {
                     txtName.Text = product.Name.ToString();
-                  
                     txtReplacement.Text = product.Replacement.ToString();
                     txtDescription.Text = product.Description.ToString();
                     txtWarranty.Text = product.Warranty.ToString();
                     cbCategory.Text = dbController.categoryMapper.getCategoryNameFromId(product.Category_id);
                 }
-                else
-                {
-                    txtName.Clear();
-                    
-                    txtDescription.Clear();
-                    txtWarranty.Clear();
-                    txtReplacement.Clear();
-                    cbCategory.Text = string.Empty;
-                    cbCategory.Items.Clear();
-                }
             }
+        }
+
+        public bool isFilled()
+        {
+            return MyExtension.Validation.isFilled(contentPanel);
         }
 
         void updateProduct()
@@ -213,6 +215,8 @@ namespace PetvetPOS_Inventory_System
         {
             base.doWhenVisible();
             loadCategoryList();
+            loadSupplierList();
+         //   masterController.setFormReturnkey = button1
         }
 
         public void loadCategoryList()
@@ -221,10 +225,17 @@ namespace PetvetPOS_Inventory_System
             cbCategory.Items.AddRange(dbController.getListOfCategory().ToArray());
         }
 
+        public void loadSupplierList()
+        {
+            cbSupplier.Items.Clear();
+            cbSupplier.Items.AddRange(dbController.supplierMapper.getSupplierList().ToArray());
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             modalAddCategory categoryModal = new modalAddCategory(dbController, this);
-            categoryModal.Show();
+            categoryModal.ShowDialog();
+            masterController.setFormReturnkey = null;
 
         }
 
