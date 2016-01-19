@@ -48,7 +48,7 @@
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtCategory = new System.Windows.Forms.TextBox();
             this.txtUCost = new System.Windows.Forms.TextBox();
-            this.txtSpecs = new System.Windows.Forms.TextBox();
+            this.txtWarranty = new System.Windows.Forms.TextBox();
             this.txtReplacement = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -100,7 +100,7 @@
             this.panel_basicInfo.Controls.Add(this.txtName);
             this.panel_basicInfo.Controls.Add(this.txtCategory);
             this.panel_basicInfo.Controls.Add(this.txtUCost);
-            this.panel_basicInfo.Controls.Add(this.txtSpecs);
+            this.panel_basicInfo.Controls.Add(this.txtWarranty);
             this.panel_basicInfo.Controls.Add(this.txtReplacement);
             this.panel_basicInfo.Controls.Add(this.label9);
             this.panel_basicInfo.Controls.Add(this.label8);
@@ -249,12 +249,12 @@
             this.txtUCost.Size = new System.Drawing.Size(251, 20);
             this.txtUCost.TabIndex = 13;
             // 
-            // txtSpecs
+            // txtWarranty
             // 
-            this.txtSpecs.Location = new System.Drawing.Point(125, 385);
-            this.txtSpecs.Name = "txtSpecs";
-            this.txtSpecs.Size = new System.Drawing.Size(251, 20);
-            this.txtSpecs.TabIndex = 11;
+            this.txtWarranty.Location = new System.Drawing.Point(125, 385);
+            this.txtWarranty.Name = "txtWarranty";
+            this.txtWarranty.Size = new System.Drawing.Size(251, 20);
+            this.txtWarranty.TabIndex = 11;
             // 
             // txtReplacement
             // 
@@ -370,7 +370,7 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.TextBox txtCategory;
         private System.Windows.Forms.TextBox txtUCost;
-        private System.Windows.Forms.TextBox txtSpecs;
+        private System.Windows.Forms.TextBox txtWarranty;
         private System.Windows.Forms.TextBox txtReplacement;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;

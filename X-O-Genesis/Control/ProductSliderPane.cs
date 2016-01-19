@@ -50,9 +50,6 @@ namespace PetvetPOS_Inventory_System
                 {
                     Barcode = txtBarcode.Text,
                     StockinDateTime = DateTime.Now,
-                    QtyReceived = Convert.ToInt32(txtQuantity.Text),
-                    QtyOnHand = Convert.ToInt32(txtQuantity.Text),
-                    Supplier = txtSupplier.Text,
                 };
 
                 if (checkIfProductAlreadyExists(txtBarcode.Text))
@@ -65,11 +62,11 @@ namespace PetvetPOS_Inventory_System
                     product = new Product()
                     {
                         Barcode = txtBarcode.Text,
-                        Description = txtName.Text,
-                        UnitPrice = Convert.ToDecimal(txtPrice.Text),
+                        Name = txtName.Text,
+                       // UnitPrice = Convert.ToDecimal(txtPrice.Text),
                         Warranty = txtWarranty.Text.ToString(),
                         Replacement = txtReplacement.Text.ToString(),
-                        Specification = txtSpecs.Text,
+                        Description = txtDescription.Text,
                         Category_id = category_id,
                     };
                     dbController.insertProductInsideInventory(inventory, product);
@@ -88,22 +85,7 @@ namespace PetvetPOS_Inventory_System
             MyExtension.Validation.clearFields(contentPanel);
             cbCategory.Text = "";
             txtBarcode.Enabled = true; // To make sure it is enabled even after update
-            txtQuantity.Enabled = true;
-            txtQuantity.Visible = true;
-            lblQuantity.Visible = true;
             loadCategoryList();
-
-            //Hide supplier field if update and show if add
-            if (mode.Equals(InventoryMode.ADD))
-            {
-                this.txtSupplier.Visible = true;
-                this.label6.Visible = true;
-            }
-            else if (mode.Equals(InventoryMode.UPDATE))
-            {
-                this.txtSupplier.Visible = false;
-                this.label6.Visible = false;
-            }
         }
 
         public void mapProductToTextfield(Product product)
@@ -111,18 +93,14 @@ namespace PetvetPOS_Inventory_System
             clearTexts();
             try
             {
-                txtQuantity.Enabled = false;
-                txtQuantity.ForeColor = Color.DimGray;
-                txtQuantity.BackColor = Color.White;
-
                 txtBarcode.Text = product.Barcode.ToString();
                 txtBarcode.Enabled = false;
                 txtBarcode.ForeColor = Color.DimGray;
                 txtBarcode.BackColor = Color.White;
 
-                txtName.Text = product.Description.ToString();
-                txtPrice.Text = product.UnitPrice.ToString();
-                txtSpecs.Text = product.Specification.ToString();
+                txtName.Text = product.Name.ToString();
+                
+                txtDescription.Text = product.Description.ToString();
                 txtReplacement.Text = product.Replacement.ToString();
                 txtWarranty.Text = product.Warranty.ToString();
 
@@ -135,8 +113,7 @@ namespace PetvetPOS_Inventory_System
 
             }
             
-            lblQuantity.Visible = false;
-            txtQuantity.Visible = false;
+          
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -170,18 +147,18 @@ namespace PetvetPOS_Inventory_System
             {
                 if (checkIfProductAlreadyExists(txtBarcode.Text))
                 {
-                    txtName.Text = product.Description.ToString();
-                    txtPrice.Text = product.UnitPrice.ToString();
+                    txtName.Text = product.Name.ToString();
+                  
                     txtReplacement.Text = product.Replacement.ToString();
-                    txtSpecs.Text = product.Specification.ToString();
+                    txtDescription.Text = product.Description.ToString();
                     txtWarranty.Text = product.Warranty.ToString();
                     cbCategory.Text = dbController.categoryMapper.getCategoryNameFromId(product.Category_id);
                 }
                 else
                 {
                     txtName.Clear();
-                    txtPrice.Clear();
-                    txtSpecs.Clear();
+                    
+                    txtDescription.Clear();
                     txtWarranty.Clear();
                     txtReplacement.Clear();
                     cbCategory.Text = string.Empty;
@@ -192,23 +169,23 @@ namespace PetvetPOS_Inventory_System
 
         void updateProduct()
         {
-            if (MyExtension.Validation.isFilled(contentPanel) || string.IsNullOrWhiteSpace(txtQuantity.Text))
+            if (MyExtension.Validation.isFilled(contentPanel))
             {
                 int category_id = dbController.categoryMapper.getCategoryIndexFromName(cbCategory.Text);
 
                 product = new Product()
                 {
                     Barcode = txtBarcode.Text,
-                    Description = txtName.Text,
-                    UnitPrice = Convert.ToDecimal(txtPrice.Text),
+                    Name = txtName.Text,
+                  //  UnitPrice = Convert.ToDecimal(txtPrice.Text),
                     Warranty = txtWarranty.Text,
                     Replacement = txtReplacement.Text,
-                    Specification = txtSpecs.Text,
+                    Description = txtDescription.Text,
                     Category_id = category_id,
                 };
 
                 dbController.updateProduct(oldProduct, product);
-                txtQuantity.Enabled = true;
+               
                 txtBarcode.Enabled = true;
 
                 toggle();

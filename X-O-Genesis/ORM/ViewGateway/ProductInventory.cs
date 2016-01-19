@@ -56,14 +56,22 @@ namespace PetvetPOS_Inventory_System
 
         public void checkProductCriticalLevel(Product product, MasterController masterController)
         {
-            string condition = string.Format("Name = '{0}'", product.Description);
-            decimal qty_received = (decimal)readScalar("Qty_Received", condition);
-            decimal qty_onhand = (decimal)readScalar("Qty_On_Hand", condition);
-
-            if (qty_onhand <= (qty_received * .10M))
+            try
             {
-                masterController.displayCriticalNotif(product, (int)qty_onhand);
+                string condition = string.Format("Name = '{0}'", product.Description);
+                decimal qty_received = (decimal)readScalar("Qty_Received", condition);
+                decimal qty_onhand = (decimal)readScalar("Qty_On_Hand", condition);
+
+                if (qty_onhand <= (qty_received * .10M))
+                {
+                    masterController.displayCriticalNotif(product, (int)qty_onhand);
+                }
             }
+            catch (NullReferenceException)
+            {
+
+            }
+            
         }
 
         public decimal getStockQuantity(Product product)

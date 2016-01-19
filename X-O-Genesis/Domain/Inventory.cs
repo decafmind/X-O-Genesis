@@ -12,7 +12,6 @@ namespace PetvetPOS_Inventory_System
         public string Barcode { get; set; }
         public DateTime StockinDateTime { get; set; }
         public int QtyReceived { get; set; }
-        public string Supplier { get; set; }
         public int QtyOnHand { get; set; }
 
         public Inventory()
@@ -27,8 +26,7 @@ namespace PetvetPOS_Inventory_System
                 if (isFromInventoryView)
                 {
                     StockinDateTime = (DateTime)entity.getField("Stock_since");
-                    QtyOnHand = (int)entity.getField("Qty_on_Hand");
-                    Supplier = (string)entity.getField("Supplier");
+                    QtyOnHand = (int)(decimal)entity.getField("Qty_on_Hand");
                 }
                 else
                 {
@@ -36,7 +34,6 @@ namespace PetvetPOS_Inventory_System
                     StockinDateTime = (DateTime)entity.getField("stockin_datetime");
                     QtyReceived = (int)entity.getField("qty_received");
                     QtyOnHand = (int)entity.getField("qty_onhand");
-                    Supplier = (string)entity.getField("supplier");
                 }
 
             }

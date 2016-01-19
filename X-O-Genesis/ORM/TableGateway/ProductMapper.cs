@@ -18,7 +18,7 @@ namespace PetvetPOS_Inventory_System
                 "id",
                 "name",
                 "unit_price",
-                "specification",
+                "description",
                 "warranty",
                 "replacement",
                 "category_id",
@@ -63,9 +63,9 @@ namespace PetvetPOS_Inventory_System
         {
             return insertValues(
                 product.Barcode,
-                product.Description, 
+                product.Name, 
                 product.UnitPrice,
-                product.Specification,
+                product.Description,
                 product.Warranty,
                 product.Replacement,
                 product.Category_id
@@ -90,16 +90,16 @@ namespace PetvetPOS_Inventory_System
             string desc = string.Empty, unitPrice = string.Empty, category = string.Empty, manufacturer = string.Empty, specs = string.Empty,
                 warranty = string.Empty, replacement = string.Empty;
 
-            if (origProduct.Description != updatedProduct.Description)
-                desc = string.Format("name = '{0}'", updatedProduct.Description);
+            if (origProduct.Name != updatedProduct.Name)
+                desc = string.Format("name = '{0}'", updatedProduct.Name);
             if (origProduct.UnitPrice != updatedProduct.UnitPrice)
                 unitPrice = string.Format("unit_price = {0}", updatedProduct.UnitPrice);
             if (origProduct.Company != updatedProduct.Company)
                 manufacturer = string.Format("source_company_name = '{0}'", updatedProduct.Company);
             if (origProduct.Category_id != updatedProduct.Category_id)
                 category = string.Format("category_id = {0}", updatedProduct.Category_id);
-            if (origProduct.Specification != updatedProduct.Specification)
-                specs = string.Format("specification = '{0}'", updatedProduct.Specification);
+            if (origProduct.Description != updatedProduct.Description)
+                specs = string.Format("specification = '{0}'", updatedProduct.Description);
             if (origProduct.Warranty != updatedProduct.Warranty)
                 warranty = string.Format("warranty = '{0}'", updatedProduct.Warranty);
             if (origProduct.Replacement != updatedProduct.Replacement)
