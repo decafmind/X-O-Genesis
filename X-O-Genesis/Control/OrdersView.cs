@@ -223,7 +223,8 @@ namespace PetvetPOS_Inventory_System
                     var row = dt.NewRow();
                     row["Product"] = currentProduct.Description;
                     row["Quantity"] = quantity;
-                    row["Price"] = productTransaction.GroupPrice;
+                    row["Group Price"] = productTransaction.GroupPrice;
+                    row["Unit Price"] = productTransaction.product.UnitPrice;
                     dt.Rows.Add(row);
                     lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, quantity, productTransaction.GroupPrice);
                     success = true;
@@ -279,7 +280,8 @@ namespace PetvetPOS_Inventory_System
         {
             dt.Columns.Add("Quantity", typeof(Int32));
             dt.Columns.Add("Product", typeof(string));
-            dt.Columns.Add("Price", typeof(Decimal));
+            dt.Columns.Add("Unit Price", typeof(Decimal));
+            dt.Columns.Add("Group Price", typeof(Decimal)); 
             dgTransaction.DataSource = dt;
 
             dgTransaction.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
