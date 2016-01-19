@@ -54,11 +54,12 @@ namespace PetvetPOS_Inventory_System
 
         public ProductTransactionView productTransactionView { get; set; }
         public LoginTrailViewMapper loginTrailViewMapper { get; set; }
+        public PetsizeMapper petsizeMapper { get; set; }
         public MedicalTransactionMapper medicalTransactionMapper { get; set; }
 
         public ProductReturnViewMapper productReturnViewMapper { get; set; }
         public FallbackMapper fallbackMapper { get; set; }
-        public SupplierMapper supplierMapper { get; set; }
+
         public ProductInspectionMapper productInspectionMapper { get; set; }
 
         public DatabaseController(MasterController masterController)
@@ -66,7 +67,6 @@ namespace PetvetPOS_Inventory_System
             this.mySqlDB = new MySqlDB();
             this.masterController = masterController;
             this.employeeMapper = new EmployeeMapper(mySqlDB);
-            this.supplierMapper = new SupplierMapper(mySqlDB);
 
             this.userMapper = new UserMapper(mySqlDB);
             this.loginTrailMapper = new LoginTrailMapper(mySqlDB);
@@ -93,7 +93,7 @@ namespace PetvetPOS_Inventory_System
             this.productTransactionView = new ProductTransactionView(mySqlDB);
             this.loginTrailViewMapper = new LoginTrailViewMapper(mySqlDB);
 
-           
+            this.petsizeMapper = new PetsizeMapper(mySqlDB);
             this.medicalTransactionMapper = new MedicalTransactionMapper(mySqlDB);
             this.productReturnViewMapper = new ProductReturnViewMapper(mySqlDB);
 

@@ -16,43 +16,18 @@ namespace PetvetPOS_Inventory_System
             id = "id";
             fieldsname = new string[] {
                 "id",
-                "serial_code",
                 "name",
-                "description",
-                "supplier_id",
-                "unit",
-                "unit_cost",
                 "unit_price",
-                "maintaining_stocks",
+                "description",
                 "warranty",
                 "replacement",
                 "category_id",
-                "archive",
             };
-        }
-
-        public string createProduct(Product product)
-        {
-            return insertValues(
-                product.Barcode,
-                product.SerialCode,
-                product.Name,
-                product.Description,
-                product.SupplierId,
-                product.Unit,
-                product.UnitCost,
-                product.UnitPrice,
-                product.MaintainingStocks,
-                product.Warranty,
-                product.Replacement,
-                product.Category_id,
-                product.Archive
-                );
         }
 
         public bool deactiveProduct(string barcode){
             string condition = String.Format(" id = '{0}' ", barcode);
-            updateSet(condition, "archive = '1'");
+            updateSet(condition, "active = 0");
             return update(updateQuery);
         }
 
@@ -84,7 +59,18 @@ namespace PetvetPOS_Inventory_System
             return update(updateQuery);
         }
 
-
+        public string createProduct(Product product)
+        {
+            return insertValues(
+                product.Barcode,
+                product.Name, 
+                product.UnitPrice,
+                product.Description,
+                product.Warranty,
+                product.Replacement,
+                product.Category_id
+                );
+        }
 
         public Product getProductFromName(string name)
         {

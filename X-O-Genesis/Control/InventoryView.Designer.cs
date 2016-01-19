@@ -97,7 +97,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtTransactionno = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.supplier1 = new PetvetPOS_Inventory_System.SupplierControl();
+            this.supplier1 = new PetvetPOS_Inventory_System.Supplier();
             this.panel14 = new System.Windows.Forms.Panel();
             this.keyButton5 = new PetvetPOS_Inventory_System.KeyButton();
             this.keyButton4 = new PetvetPOS_Inventory_System.KeyButton();
@@ -1117,6 +1117,6 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Panel panel14;
-        private SupplierControl supplier1;
+        private Supplier supplier1;
     }
 }

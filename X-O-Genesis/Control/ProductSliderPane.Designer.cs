@@ -44,6 +44,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtSupplier = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtSerialCode = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -54,14 +55,12 @@
             this.label12 = new System.Windows.Forms.Label();
             this.txtUnitPrice = new System.Windows.Forms.TextBox();
             this.cbUnit = new System.Windows.Forms.ComboBox();
-            this.cbSupplier = new System.Windows.Forms.ComboBox();
             this.contentPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // contentPanel
             // 
-            this.contentPanel.Controls.Add(this.cbSupplier);
             this.contentPanel.Controls.Add(this.cbUnit);
             this.contentPanel.Controls.Add(this.txtUnitPrice);
             this.contentPanel.Controls.Add(this.label12);
@@ -72,6 +71,7 @@
             this.contentPanel.Controls.Add(this.label4);
             this.contentPanel.Controls.Add(this.txtSerialCode);
             this.contentPanel.Controls.Add(this.label9);
+            this.contentPanel.Controls.Add(this.txtSupplier);
             this.contentPanel.Controls.Add(this.label6);
             this.contentPanel.Controls.Add(this.cbCategory);
             this.contentPanel.Controls.Add(this.button1);
@@ -244,6 +244,15 @@
             this.label6.TabIndex = 29;
             this.label6.Text = "SUPPLIER";
             // 
+            // txtSupplier
+            // 
+            this.txtSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtSupplier.ForeColor = System.Drawing.Color.Black;
+            this.txtSupplier.Location = new System.Drawing.Point(15, 214);
+            this.txtSupplier.Name = "txtSupplier";
+            this.txtSupplier.Size = new System.Drawing.Size(212, 23);
+            this.txtSupplier.TabIndex = 28;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -343,14 +352,6 @@
             this.cbUnit.Size = new System.Drawing.Size(164, 21);
             this.cbUnit.TabIndex = 40;
             // 
-            // cbSupplier
-            // 
-            this.cbSupplier.FormattingEnabled = true;
-            this.cbSupplier.Location = new System.Drawing.Point(17, 215);
-            this.cbSupplier.Name = "cbSupplier";
-            this.cbSupplier.Size = new System.Drawing.Size(212, 21);
-            this.cbSupplier.TabIndex = 41;
-            // 
             // ProductSliderPane
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -381,6 +382,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ComboBox cbCategory;
+        private System.Windows.Forms.TextBox txtSupplier;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtSerialCode;
         private System.Windows.Forms.Label label9;
@@ -392,6 +394,5 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtUnitPrice;
         private System.Windows.Forms.ComboBox cbUnit;
-        private System.Windows.Forms.ComboBox cbSupplier;
     }
 }
