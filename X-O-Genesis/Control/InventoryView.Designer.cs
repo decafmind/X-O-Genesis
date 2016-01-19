@@ -96,6 +96,9 @@
             this.btnOK = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTransactionno = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.supplier1 = new PetvetPOS_Inventory_System.Supplier();
+            this.panel14 = new System.Windows.Forms.Panel();
             this.keyButton5 = new PetvetPOS_Inventory_System.KeyButton();
             this.keyButton4 = new PetvetPOS_Inventory_System.KeyButton();
             this.keyButton3 = new PetvetPOS_Inventory_System.KeyButton();
@@ -129,6 +132,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel7.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // mainTab
@@ -136,6 +140,7 @@
             this.mainTab.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.mainTab.Controls.Add(this.tabPage1);
             this.mainTab.Controls.Add(this.tabPage2);
+            this.mainTab.Controls.Add(this.tabPage3);
             this.mainTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mainTab.ItemSize = new System.Drawing.Size(100, 30);
@@ -902,6 +907,37 @@
             this.txtTransactionno.TextChanged += new System.EventHandler(this.filterAlphaNumeric);
             this.txtTransactionno.Enter += new System.EventHandler(this.txtTransactionno_Enter);
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.supplier1);
+            this.tabPage3.Controls.Add(this.panel14);
+            this.tabPage3.Location = new System.Drawing.Point(4, 34);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(869, 545);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Supplier";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // supplier1
+            // 
+            this.supplier1.accessMasterController = null;
+            this.supplier1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.supplier1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.supplier1.Location = new System.Drawing.Point(3, 3);
+            this.supplier1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.supplier1.Name = "supplier1";
+            this.supplier1.Size = new System.Drawing.Size(863, 445);
+            this.supplier1.TabIndex = 1;
+            // 
+            // panel14
+            // 
+            this.panel14.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel14.Location = new System.Drawing.Point(3, 448);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(863, 94);
+            this.panel14.TabIndex = 0;
+            // 
             // keyButton5
             // 
             this.keyButton5.accessKeyChar = "F2";
@@ -1004,6 +1040,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1078,5 +1115,8 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Panel panel14;
+        private Supplier supplier1;
     }
 }

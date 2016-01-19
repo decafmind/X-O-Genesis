@@ -28,25 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.listBox1 = new System.Windows.Forms.ListBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
-            // 
-            // listBox1
-            // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(36, 35);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(204, 472);
-            this.listBox1.TabIndex = 0;
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(325, 92);
+            this.panel1.Location = new System.Drawing.Point(316, 71);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(463, 342);
             this.panel1.TabIndex = 1;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.Location = new System.Drawing.Point(35, 82);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(204, 329);
+            this.listBox1.TabIndex = 0;
             // 
             // Supplier
             // 
@@ -55,7 +55,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.listBox1);
             this.Name = "Supplier";
-            this.Size = new System.Drawing.Size(869, 545);
+            this.Size = new System.Drawing.Size(863, 445);
             this.ResumeLayout(false);
 
         }

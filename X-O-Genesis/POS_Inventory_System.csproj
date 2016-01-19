@@ -534,6 +534,9 @@
     <EmbeddedResource Include="Control\SliderPane.resx">
       <DependentUpon>SliderPane.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\Supplier.resx">
+      <DependentUpon>Supplier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\SystemOperation.resx">
       <DependentUpon>SystemOperation.cs</DependentUpon>
     </EmbeddedResource>
