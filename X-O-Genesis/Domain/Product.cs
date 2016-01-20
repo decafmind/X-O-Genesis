@@ -61,7 +61,6 @@ namespace PetvetPOS_Inventory_System
                     Category_id = (int)entity.getField("category_id");
                 }
                  
-                // Company = (int)entity.getField("supplier");
             }
             catch (Exception ex)
             {

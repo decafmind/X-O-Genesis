@@ -301,7 +301,7 @@ namespace PetvetPOS_Inventory_System
                 g.DrawString(titleName, arialRoundedMT, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
                 Y+= (int)stringSize.Height + 10;
 
-                string petvetStore = "Petvet Animal Health Clinic";
+                string petvetStore = "Exogenesis";
                 stringSize = g.MeasureString(petvetStore, arialRoundedMT);
                 g.DrawString(petvetStore, arialRoundedMT, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
                 Y += (int)stringSize.Height + 10;

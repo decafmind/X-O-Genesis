@@ -172,7 +172,7 @@ namespace PetvetPOS_Inventory_System
                 }
 
             }
-            catch (Exception) { lblPOSmsg.Text = "Item not found";  }
+            catch (Exception ex) { lblPOSmsg.Text = "Item not found";  }
 
             return success;
         }
