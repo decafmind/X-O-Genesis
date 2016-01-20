@@ -32,17 +32,17 @@
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.loginName = new System.Windows.Forms.Label();
             this.panelImage = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolTip1
@@ -55,7 +55,7 @@
             // 
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.label1.Location = new System.Drawing.Point(43, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(58, 35);
@@ -80,6 +80,21 @@
             this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             this.panel4.MouseLeave += new System.EventHandler(this.label1_MouseLeave);
             this.panel4.MouseHover += new System.EventHandler(this.label1_MouseHover);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Exit;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(43, 35);
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            this.toolTip1.SetToolTip(this.pictureBox1, "CTRL+SHIFT+L");
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
+            this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
             // 
             // panel2
             // 
@@ -116,7 +131,7 @@
             // 
             // loginName
             // 
-            this.loginName.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.loginName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.loginName.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.loginName.Dock = System.Windows.Forms.DockStyle.Fill;
             this.loginName.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -130,7 +145,7 @@
             // 
             // panelImage
             // 
-            this.panelImage.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.panelImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.panelImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.panelImage.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.panelImage.Dock = System.Windows.Forms.DockStyle.Left;
@@ -138,21 +153,6 @@
             this.panelImage.Name = "panelImage";
             this.panelImage.Size = new System.Drawing.Size(34, 35);
             this.panelImage.TabIndex = 2;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Exit;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(43, 35);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.toolTip1.SetToolTip(this.pictureBox1, "CTRL+SHIFT+L");
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.pictureBox1.MouseLeave += new System.EventHandler(this.pictureBox1_MouseLeave);
-            this.pictureBox1.MouseHover += new System.EventHandler(this.pictureBox1_MouseHover);
             // 
             // UserSettingsControl
             // 
@@ -164,10 +164,10 @@
             this.Padding = new System.Windows.Forms.Padding(1, 1, 0, 0);
             this.Size = new System.Drawing.Size(323, 36);
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

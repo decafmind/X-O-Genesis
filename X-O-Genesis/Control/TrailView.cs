@@ -65,5 +65,10 @@ namespace PetvetPOS_Inventory_System
         {
 
         }
+
+        private void TrailView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

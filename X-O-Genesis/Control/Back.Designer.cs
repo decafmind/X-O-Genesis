@@ -49,6 +49,7 @@
             // 
             // lineShape3
             // 
+            this.lineShape3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.lineShape3.BorderWidth = 3;
             this.lineShape3.Name = "lineShape3";
             this.lineShape3.X1 = 15;
@@ -59,6 +60,7 @@
             // 
             // lineShape2
             // 
+            this.lineShape2.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.lineShape2.BorderWidth = 3;
             this.lineShape2.Name = "lineShape2";
             this.lineShape2.X1 = 1;
@@ -69,6 +71,7 @@
             // 
             // lineShape1
             // 
+            this.lineShape1.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.lineShape1.BorderWidth = 3;
             this.lineShape1.Name = "lineShape1";
             this.lineShape1.X1 = 31;

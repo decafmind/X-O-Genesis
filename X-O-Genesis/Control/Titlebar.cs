@@ -159,7 +159,7 @@ namespace PetvetPOS_Inventory_System
                     titlename = "Login Trail";
                     break;
                 case Menu.Login:
-                    titlename = "EXOGEN";
+                    titlename = "EXOGENESIS";
                     break;
                 case Menu.Home:
                     titlename = "Dashboard";
@@ -263,6 +263,26 @@ namespace PetvetPOS_Inventory_System
         private void kekek(object sender, EventArgs e)
         {
             button2.BackgroundImage = Properties.Resources.Delete1;
+
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
 
         }
 

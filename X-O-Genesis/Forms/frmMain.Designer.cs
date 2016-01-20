@@ -147,7 +147,7 @@ namespace PetvetPOS_Inventory_System
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(1000, 736);
+            this.MinimumSize = new System.Drawing.Size(1000, 726);
             this.Name = "frmMain";
             this.Padding = new System.Windows.Forms.Padding(1, 2, 1, 1);
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;

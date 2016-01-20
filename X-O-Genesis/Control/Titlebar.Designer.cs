@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Titlebar));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -42,6 +43,10 @@
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // toolTip1
+            // 
+            this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
             // 
             // button3
             // 
@@ -88,7 +93,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
-            this.button1.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Minimize_Window;
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.Dock = System.Windows.Forms.DockStyle.Left;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
@@ -115,6 +120,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(681, 92);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panelTitle
             // 
@@ -136,6 +142,7 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(115, 92);
             this.panel4.TabIndex = 3;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             this.panel4.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panelTitle_MouseDoubleClick);
             this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mouseDown);
             // 
@@ -149,10 +156,11 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(115, 26);
             this.panel5.TabIndex = 0;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // panelImage
             // 
-            this.panelImage.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(157)))), ((int)(((byte)(157)))));
+            this.panelImage.BackColor = System.Drawing.Color.DimGray;
             this.panelImage.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelImage.Location = new System.Drawing.Point(0, 0);
             this.panelImage.Name = "panelImage";

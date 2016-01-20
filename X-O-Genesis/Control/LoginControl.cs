@@ -21,20 +21,68 @@ namespace PetvetPOS_Inventory_System
         private string Password;
 
         public LoginControl() { InitializeComponent(); }
-        
+
         public LoginControl(LoginPane loginPane, MasterController masterController, Panel panel)
             : base(masterController, panel, true)
         {
             InitializeComponent();
             this.loginPane = loginPane;
             base.masterController.EmployeeLogout += masterController_EmployeeLogout;
+            txtUsername.ForeColor = SystemColors.posGray;
+            txtUsername.Text = "Enter your username";
+            this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
+            this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
+
+            txtPassword.ForeColor = SystemColors.posGray;
+            txtPassword.Text = "Enter your password";
+            this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
+            this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
         }
 
+        private void txtUsername_Leave(object sender, EventArgs e)
+        {
+            if (txtUsername.Text.Length == 0)
+            {
+                txtUsername.Text = "Enter your username";
+                txtUsername.ForeColor = SystemColors.posGray;
+            }
+        }
+
+        private void txtPassword_Leave(object sender, EventArgs e)
+        {
+            if (txtPassword.Text.Length == 0)
+            {
+                txtPassword.Text = "Enter your password";
+                txtPassword.UseSystemPasswordChar = false;
+                txtPassword.ForeColor = Color.Gray;
+            }
+        }
+
+        private void txtUsername_Enter(object sender, EventArgs e)
+        {
+            if (txtUsername.Text == "Enter your username")
+            {
+                txtUsername.Text = "";
+                txtUsername.ForeColor = SystemColors.getColorFromArgb(0, 0, 0);
+            }
+        }
+           
+
+        private void txtPassword_Enter(object sender, EventArgs e)
+        {
+            if (txtPassword.Text == "Enter your password")
+            {
+
+                txtPassword.Text = "";
+                txtPassword.ForeColor = Color.Black;
+                txtPassword.UseSystemPasswordChar = true;
+            }
+        }
         void masterController_EmployeeLogout(object sender, EventArgs e)
         {
             initLoginControl();
         }
-
+       
         public string accessLoginMessage 
         {
             get { return lblWelcomeMsg.Text; }
@@ -209,6 +257,56 @@ namespace PetvetPOS_Inventory_System
         }
 
         private void btnForgot_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblWelcomeMsg_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtUsername_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
 
         }
