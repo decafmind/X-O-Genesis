@@ -58,7 +58,7 @@ namespace PetvetPOS_Inventory_System
         {
             try
             {
-                string condition = string.Format("Name = '{0}'", product.Description);
+                string condition = string.Format("Name = '{0}'", product.Name);
                 decimal qty_received = (decimal)readScalar("Qty_Received", condition);
                 decimal qty_onhand = (decimal)readScalar("Qty_On_Hand", condition);
 

@@ -558,7 +558,7 @@ namespace PetvetPOS_Inventory_System
                 g.DrawString(title, arialRoundedMt, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
                 Y += (int)stringSize.Height + 10;
 
-                string petvetStore = "Petvet Animal Health Clinic";
+                string petvetStore = "Exogenesis";
                 stringSize = g.MeasureString(petvetStore, arialRoundedMt);
                 g.DrawString(petvetStore, arialRoundedMt, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
                 Y += (int)stringSize.Height + 10;
@@ -855,7 +855,7 @@ namespace PetvetPOS_Inventory_System
             using (Font font = new Font("MS San Serif", 11, FontStyle.Regular))
             using (Pen pen = new Pen(Brushes.Black, 1))
             {
-                string title = "Petvet Animal Health Clinic";
+                string title = "Exogenesis";
                 string addressL1 = "2/F Nova Square Shopping Center,";
                 string addressL2 = "San Bartolome, Nova. QC";
                 int documentWidth = e.PageBounds.Width;
