@@ -98,7 +98,7 @@
             this.btnForgot.Size = new System.Drawing.Size(60, 57);
             this.btnForgot.TabIndex = 19;
             this.btnForgot.UseVisualStyleBackColor = false;
-            this.btnForgot.Click += new System.EventHandler(this.btnForgot_Click_1);
+            this.btnForgot.Click += new System.EventHandler(this.btnForgot_Click);
             // 
             // btnLogin
             // 

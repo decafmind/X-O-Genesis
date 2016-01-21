@@ -157,9 +157,23 @@ namespace PetvetPOS_Inventory_System
             return userMapper.login(user_id);
         }
 
+        public bool changePass(string id, string newPass)
+        {
+            return userMapper.changePass(id, newPass);
+        }
+
+        public bool checkUsername(string userName)
+        {
+            return userMapper.checkUsername(userName);
+        }
         public bool isAlreadyLogin(User user)
         {
             return userMapper.isAlreadyLogin(user);
+        }
+
+        public bool getSQAnswer(string userName, string sqans)
+        {
+            return userMapper.getSQAnswer(userName, sqans);
         }
         /* This method will return an instance of User if 
          * user credentials exists in the database

@@ -23,11 +23,13 @@ namespace MyExtension
 
         // You can only make 3 exceptions
         public static bool isFilled(Control c, Control exception = null,
-            Control exception2 = null, Control exception3 = null)
+            Control exception2 = null, Control exception3 = null, Control exception4 = null,
+            Control exception5 = null)
         {
             foreach (Control cn in c.Controls)
             {
-                if (cn == exception || cn == exception2 || cn == exception3)
+                if (cn == exception || cn == exception2 || cn == exception3 || cn == exception4
+                    || cn == exception5)
                     continue;
 
                 if (cn is TextBox)

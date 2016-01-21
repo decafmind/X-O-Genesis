@@ -23,7 +23,6 @@ namespace PetvetPOS_Inventory_System
         {
             return getList("squery");
         }
-        
-        
+
     }
 }

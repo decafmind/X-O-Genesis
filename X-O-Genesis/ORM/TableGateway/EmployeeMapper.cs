@@ -20,7 +20,6 @@ namespace PetvetPOS_Inventory_System
                 "middlename",
                 "lastname",
                 "mobile_no",
-                "telephone_no",
                 "email_address",
                 "address",
                 "image_path",
@@ -29,7 +28,7 @@ namespace PetvetPOS_Inventory_System
 
         public string createEmployee(Employee employee)
         {
-            return insertValues(employee.User_id, employee.Firstname, employee.MiddleName, employee.Lastname, employee.MobileNo, employee.TelNo, employee.EmailAddress , employee.Address, formatImagePath(employee.ImagePath));
+            return insertValues(employee.User_id, employee.Firstname, employee.MiddleName, employee.Lastname, employee.MobileNo, employee.EmailAddress , employee.Address, formatImagePath(employee.ImagePath));
         }
 
         public bool updateEmployee(Employee oldE, Employee newE){
@@ -37,8 +36,8 @@ namespace PetvetPOS_Inventory_System
             if (oldE.User_id != newE.User_id)
                 return false;
         
-            string updateFirstname, updateMiddlename, updateLastname, updateMobileno, updateTelno, updateEmailAdd, updateAddress, updateImagepath;
-            updateFirstname = updateMiddlename = updateLastname = updateMobileno = updateTelno = updateEmailAdd = updateAddress = updateAddress = updateImagepath = "";
+            string updateFirstname, updateMiddlename, updateLastname, updateMobileno, updateEmailAdd, updateAddress, updateImagepath;
+            updateFirstname = updateMiddlename = updateLastname = updateMobileno = updateEmailAdd = updateAddress = updateAddress = updateImagepath = "";
             
             if (oldE.Firstname != newE.Firstname && !String.IsNullOrEmpty(newE.Firstname))
                 updateFirstname = String.Format("firstname = '{0}'", newE.Firstname);
@@ -50,8 +49,6 @@ namespace PetvetPOS_Inventory_System
             if (oldE.MobileNo != newE.MobileNo && !String.IsNullOrEmpty(newE.MobileNo))
                 updateMobileno = String.Format("mobile_no = '{0}'", newE.MobileNo);
 
-            if (oldE.TelNo != newE.TelNo && !String.IsNullOrEmpty(newE.TelNo))
-                updateTelno = String.Format("telephone_no = '{0}'", newE.TelNo);
             if (oldE.EmailAddress != newE.EmailAddress && !String.IsNullOrEmpty(newE.EmailAddress))
                 updateEmailAdd = string.Format("email_address = '{0}'", newE.EmailAddress);
 
@@ -64,7 +61,7 @@ namespace PetvetPOS_Inventory_System
             string condition = String.Format("user_id = '{0}'", newE.User_id);
             return update(
                 updateSet(condition, updateFirstname, updateMiddlename, 
-                updateLastname, updateMobileno, updateTelno, updateEmailAdd, updateAddress, 
+                updateLastname, updateMobileno, updateEmailAdd, updateAddress, 
                 formatImagePath(updateImagepath))
                 );
         }
