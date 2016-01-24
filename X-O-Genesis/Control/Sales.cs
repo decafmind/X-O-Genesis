@@ -38,7 +38,11 @@ namespace PetvetPOS_Inventory_System
                 report = reportType.WEEKLY;
             else if (cmType.Text == "MONTHLY")
                 report = reportType.MONTHLY;
-
+            else
+            {
+                report = reportType.DAILY;
+                cmType.Text = "DAILY";
+            }
             return report;
         }
 
@@ -49,8 +53,14 @@ namespace PetvetPOS_Inventory_System
                 chartType = SeriesChartType.Column;
             else if (cbCharttype.Text == "LINE")
                 chartType = SeriesChartType.Line;
-            return chartType;
+            else
+            {
+                chartType = SeriesChartType.Column;
+                cbCharttype.Text = "BAR";
+            }
+            
 
+            return chartType;
         }
 
         public Sales()

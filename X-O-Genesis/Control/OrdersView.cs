@@ -29,6 +29,7 @@ namespace PetvetPOS_Inventory_System
         private const int QTY_INDEX = 0;
         private const int DESCRIPTION_INDEX = 1;
         private const int PRICE_INDEX = 2;
+        private const int GROUP_PRICE_INDEX = 3;
 
    
         void Orders_KeyFunction(KeyEventArgs e)
@@ -243,11 +244,10 @@ namespace PetvetPOS_Inventory_System
                         if (row.Cells[DESCRIPTION_INDEX].Value.ToString() == productTransaction.product.Name)
                         {
                             row.Cells[QTY_INDEX].Value = sum_of_qty;
-                            row.Cells[PRICE_INDEX].Value = sum_of_price;
                             int stock = dbController.getCurrentStockCountFromBarCode(currentProduct);
                             if (stock >= sum_of_qty){
                                 row.Cells[QTY_INDEX].Value = sum_of_qty;
-                                row.Cells[PRICE_INDEX].Value = sum_of_price;
+                                row.Cells[GROUP_PRICE_INDEX].Value = sum_of_price;
                                 lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Name, sum_of_qty, sum_of_price);
                                 success = true;
                             }

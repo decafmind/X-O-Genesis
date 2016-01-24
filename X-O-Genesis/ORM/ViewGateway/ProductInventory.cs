@@ -38,6 +38,7 @@ namespace PetvetPOS_Inventory_System
                 "Name",
                 "Qty_on_Hand AS 'Qty on Hand'",
                 "Qty_Received AS 'Qty received'",
+                "Category",
                 "Stock_since AS 'Stock since'",
             };
         }

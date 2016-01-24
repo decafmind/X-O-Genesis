@@ -252,6 +252,7 @@ namespace PetvetPOS_Inventory_System
         public override void doWhenNotVisible()
         {
             base.doWhenNotVisible();
+
         }
 
         public override void doWhenVisible()

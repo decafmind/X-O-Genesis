@@ -54,7 +54,6 @@ namespace PetvetPOS_Inventory_System
             sliderPane.accessMasterController = masterController;
             sliderPane.dbController = masterController.DataBaseController;
             sliderPane.inventoryView = this;
-         //   supplier1.accessMasterController = masterController;
 
             using (Font timesNewRoman = new Font("Times New Roman", 12, FontStyle.Regular))
             {
@@ -98,6 +97,8 @@ namespace PetvetPOS_Inventory_System
             dbController.DeleteEntity += dbController_DeleteEntity;
 
             txtSearch.Focus();
+            cbCategory.Items.AddRange(dbController.categoryMapper.getListOfCategory().ToArray());
+            cbCategory.Items.Add("ALL");
         }
 
         public void finalizePage()
@@ -131,7 +132,7 @@ namespace PetvetPOS_Inventory_System
             {
                 Inventory i = entity as Inventory;
                 Product p = dbController.getProductFromBarcode(i.Barcode);
-                nameField = p.Description;
+                nameField = p.Name;
 
                 message = string.Format("New stock of product {0} has been added", nameField);
                 action = string.Format("added a new stock of product", nameField);
@@ -183,7 +184,7 @@ namespace PetvetPOS_Inventory_System
             if (entity is Product)
             {
                 Product p = entity as Product;
-                nameField = p.Description;
+                nameField = p.Name;
                 message = string.Format("Product {0} has been updated", nameField);
                 action = string.Format("has updated the product {0}", nameField);
             }
@@ -222,7 +223,7 @@ namespace PetvetPOS_Inventory_System
             }
         }
 
-        public void filterdgInventory(string token)
+        public void filterdgInventory(string token, bool categoryOnly = false)
         {
             if (string.IsNullOrWhiteSpace(token))
             {
@@ -233,11 +234,15 @@ namespace PetvetPOS_Inventory_System
             {
                 inventoryTable = new DataTable();
 
-                if (rbInventory.Checked)
-                    dbController.filterInventory(inventoryTable, token);
-                else if (rbPurchased.Checked)
+                if (rbInventory.Checked){
+                    if (categoryOnly)
+                        dbController.filterInventory(inventoryTable, token, true);
+                    else
+                        dbController.filterInventory(inventoryTable, token);
+                }
+                else if (rbPurchased.Checked){
                     dbController.filterPurchasedProduct(inventoryTable, token);
- 
+                }
                 dgInventory.DataSource = inventoryTable;
 
                 if (rbInventory.Checked)
@@ -1054,6 +1059,14 @@ namespace PetvetPOS_Inventory_System
         private void panel11_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbCategory.Text == "ALL")
+                fillgdInventory();
+            else
+                filterdgInventory(cbCategory.Text, true);
         }
 
     }

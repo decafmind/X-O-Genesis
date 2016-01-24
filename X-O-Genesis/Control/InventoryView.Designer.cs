@@ -72,6 +72,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel13 = new System.Windows.Forms.Panel();
+            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel12 = new System.Windows.Forms.Panel();
@@ -604,6 +606,8 @@
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.Transparent;
+            this.panel13.Controls.Add(this.cbCategory);
+            this.panel13.Controls.Add(this.label13);
             this.panel13.Controls.Add(this.txtSearch);
             this.panel13.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel13.Location = new System.Drawing.Point(0, 0);
@@ -612,15 +616,32 @@
             this.panel13.Size = new System.Drawing.Size(633, 56);
             this.panel13.TabIndex = 8;
             // 
+            // cbCategory
+            // 
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Location = new System.Drawing.Point(456, 13);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(167, 28);
+            this.cbCategory.TabIndex = 7;
+            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(305, 17);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(145, 20);
+            this.label13.TabIndex = 2;
+            this.label13.Text = "Search by category";
+            // 
             // txtSearch
             // 
             this.txtSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtSearch.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtSearch.Enabled = false;
             this.txtSearch.Location = new System.Drawing.Point(20, 15);
             this.txtSearch.MaxLength = 25;
             this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(593, 26);
+            this.txtSearch.Size = new System.Drawing.Size(279, 26);
             this.txtSearch.TabIndex = 1;
             this.txtSearch.TextChanged += new System.EventHandler(this.filterAlphaNumeric);
             // 
@@ -1078,5 +1099,7 @@
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.TabControl mainTab;
+        private System.Windows.Forms.ComboBox cbCategory;
+        private System.Windows.Forms.Label label13;
     }
 }
