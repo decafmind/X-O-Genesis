@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryView));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.keyButton5 = new PetvetPOS_Inventory_System.KeyButton();
             this.keyButton4 = new PetvetPOS_Inventory_System.KeyButton();
@@ -79,14 +79,21 @@
             this.panel12 = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.rbArchives = new System.Windows.Forms.RadioButton();
             this.rbPurchased = new System.Windows.Forms.RadioButton();
             this.rbInventory = new System.Windows.Forms.RadioButton();
+            this.productSliderPane1 = new PetvetPOS_Inventory_System.ProductSliderPane();
             this.parentPanel = new System.Windows.Forms.Panel();
             this.bottomPanel = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.keyButton11 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton8 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton7 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton9 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton6 = new PetvetPOS_Inventory_System.KeyButton();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -97,7 +104,6 @@
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.mainTab = new System.Windows.Forms.TabControl();
-            this.rbArchives = new System.Windows.Forms.RadioButton();
             this.tabPage2.SuspendLayout();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgProductTransaction)).BeginInit();
@@ -107,17 +113,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel7.SuspendLayout();
-            this.productSliderPane1 = new PetvetPOS_Inventory_System.ProductSliderPane();
-            this.keyButton11 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton8 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton7 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton9 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton6 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton13 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton14 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton12 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton10 = new PetvetPOS_Inventory_System.KeyButton();
-            this.supplier1 = new PetvetPOS_Inventory_System.SupplierControl();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -234,14 +229,14 @@
             this.dgProductTransaction.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgProductTransaction.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgProductTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgProductTransaction.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgProductTransaction.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgProductTransaction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgProductTransaction.Location = new System.Drawing.Point(100, 10);
             this.dgProductTransaction.MultiSelect = false;
@@ -546,24 +541,24 @@
             this.dgInventory.BackgroundColor = System.Drawing.Color.White;
             this.dgInventory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgInventory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(158)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(158)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgInventory.Cursor = System.Windows.Forms.Cursors.IBeam;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgInventory.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgInventory.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgInventory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgInventory.Location = new System.Drawing.Point(10, 10);
             this.dgInventory.MultiSelect = false;
@@ -694,6 +689,24 @@
             this.panel5.Size = new System.Drawing.Size(829, 48);
             this.panel5.TabIndex = 3;
             // 
+            // rbArchives
+            // 
+            this.rbArchives.Appearance = System.Windows.Forms.Appearance.Button;
+            this.rbArchives.AutoSize = true;
+            this.rbArchives.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rbArchives.Dock = System.Windows.Forms.DockStyle.Left;
+            this.rbArchives.FlatAppearance.BorderSize = 0;
+            this.rbArchives.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.rbArchives.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbArchives.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.rbArchives.Location = new System.Drawing.Point(211, 0);
+            this.rbArchives.Name = "rbArchives";
+            this.rbArchives.Size = new System.Drawing.Size(87, 48);
+            this.rbArchives.TabIndex = 5;
+            this.rbArchives.Text = "Archives";
+            this.rbArchives.UseVisualStyleBackColor = true;
+            this.rbArchives.CheckedChanged += new System.EventHandler(this.checkChanged);
+            // 
             // rbPurchased
             // 
             this.rbPurchased.Appearance = System.Windows.Forms.Appearance.Button;
@@ -733,6 +746,20 @@
             this.rbInventory.Text = "Products";
             this.rbInventory.UseVisualStyleBackColor = false;
             this.rbInventory.CheckedChanged += new System.EventHandler(this.checkChanged);
+            // 
+            // productSliderPane1
+            // 
+            this.productSliderPane1.accessMasterController = null;
+            this.productSliderPane1.BackColor = System.Drawing.Color.White;
+            this.productSliderPane1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.productSliderPane1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.productSliderPane1.Location = new System.Drawing.Point(839, 3);
+            this.productSliderPane1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.productSliderPane1.MaximumSize = new System.Drawing.Size(300, 100);
+            this.productSliderPane1.MinimumSize = new System.Drawing.Size(30, 600);
+            this.productSliderPane1.Name = "productSliderPane1";
+            this.productSliderPane1.Size = new System.Drawing.Size(30, 600);
+            this.productSliderPane1.TabIndex = 6;
             // 
             // parentPanel
             // 
@@ -812,6 +839,67 @@
             this.label3.Size = new System.Drawing.Size(62, 20);
             this.label3.TabIndex = 19;
             this.label3.Text = "Inspect";
+            // 
+            // keyButton11
+            // 
+            this.keyButton11.accessKeyChar = "Ctrl";
+            this.keyButton11.accessMasterController = null;
+            this.keyButton11.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton11.Location = new System.Drawing.Point(673, 8);
+            this.keyButton11.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton11.Name = "keyButton11";
+            this.keyButton11.Size = new System.Drawing.Size(61, 50);
+            this.keyButton11.TabIndex = 29;
+            // 
+            // keyButton8
+            // 
+            this.keyButton8.accessKeyChar = "F3";
+            this.keyButton8.accessMasterController = null;
+            this.keyButton8.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton8.Location = new System.Drawing.Point(460, 10);
+            this.keyButton8.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton8.Name = "keyButton8";
+            this.keyButton8.Size = new System.Drawing.Size(61, 50);
+            this.keyButton8.TabIndex = 26;
+            // 
+            // keyButton7
+            // 
+            this.keyButton7.accessKeyChar = "P";
+            this.keyButton7.accessMasterController = null;
+            this.keyButton7.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton7.ForeColor = System.Drawing.Color.Transparent;
+            this.keyButton7.Location = new System.Drawing.Point(740, 7);
+            this.keyButton7.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton7.Name = "keyButton7";
+            this.keyButton7.Size = new System.Drawing.Size(61, 50);
+            this.keyButton7.TabIndex = 33;
+            // 
+            // keyButton9
+            // 
+            this.keyButton9.accessKeyChar = "F2";
+            this.keyButton9.accessMasterController = null;
+            this.keyButton9.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton9.Location = new System.Drawing.Point(249, 10);
+            this.keyButton9.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton9.Name = "keyButton9";
+            this.keyButton9.Size = new System.Drawing.Size(61, 50);
+            this.keyButton9.TabIndex = 34;
+            // 
+            // keyButton6
+            // 
+            this.keyButton6.accessKeyChar = "F1";
+            this.keyButton6.accessMasterController = null;
+            this.keyButton6.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton6.Location = new System.Drawing.Point(67, 12);
+            this.keyButton6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton6.Name = "keyButton6";
+            this.keyButton6.Size = new System.Drawing.Size(61, 50);
+            this.keyButton6.TabIndex = 24;
             // 
             // pictureBox5
             // 
@@ -915,157 +1003,6 @@
             this.mainTab.SelectedIndex = 0;
             this.mainTab.Size = new System.Drawing.Size(877, 583);
             this.mainTab.TabIndex = 0;
-            // panel14
-            // 
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel14.Location = new System.Drawing.Point(3, 448);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(863, 94);
-            this.panel14.TabIndex = 0;
-            // 
-            // productSliderPane1
-            // 
-            this.productSliderPane1.accessMasterController = null;
-            this.productSliderPane1.BackColor = System.Drawing.Color.White;
-            this.productSliderPane1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.productSliderPane1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.productSliderPane1.Location = new System.Drawing.Point(839, 3);
-            this.productSliderPane1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.productSliderPane1.MaximumSize = new System.Drawing.Size(300, 100);
-            this.productSliderPane1.MinimumSize = new System.Drawing.Size(30, 600);
-            this.productSliderPane1.Name = "productSliderPane1";
-            this.productSliderPane1.Size = new System.Drawing.Size(30, 600);
-            this.productSliderPane1.TabIndex = 6;
-            // 
-            // keyButton11
-            // 
-            this.keyButton11.accessKeyChar = "Ctrl";
-            this.keyButton11.accessMasterController = null;
-            this.keyButton11.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton11.Location = new System.Drawing.Point(673, 8);
-            this.keyButton11.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton11.Name = "keyButton11";
-            this.keyButton11.Size = new System.Drawing.Size(61, 50);
-            this.keyButton11.TabIndex = 29;
-            // 
-            // keyButton8
-            // 
-            this.keyButton8.accessKeyChar = "F3";
-            this.keyButton8.accessMasterController = null;
-            this.keyButton8.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton8.Location = new System.Drawing.Point(460, 10);
-            this.keyButton8.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton8.Name = "keyButton8";
-            this.keyButton8.Size = new System.Drawing.Size(61, 50);
-            this.keyButton8.TabIndex = 26;
-            // 
-            // keyButton7
-            // 
-            this.keyButton7.accessKeyChar = "P";
-            this.keyButton7.accessMasterController = null;
-            this.keyButton7.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton7.ForeColor = System.Drawing.Color.Transparent;
-            this.keyButton7.Location = new System.Drawing.Point(740, 7);
-            this.keyButton7.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton7.Name = "keyButton7";
-            this.keyButton7.Size = new System.Drawing.Size(61, 50);
-            this.keyButton7.TabIndex = 33;
-            // 
-            // keyButton9
-            // 
-            this.keyButton9.accessKeyChar = "F2";
-            this.keyButton9.accessMasterController = null;
-            this.keyButton9.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton9.Location = new System.Drawing.Point(249, 10);
-            this.keyButton9.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton9.Name = "keyButton9";
-            this.keyButton9.Size = new System.Drawing.Size(61, 50);
-            this.keyButton9.TabIndex = 34;
-            // 
-            // keyButton6
-            // 
-            this.keyButton6.accessKeyChar = "F1";
-            this.keyButton6.accessMasterController = null;
-            this.keyButton6.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton6.Location = new System.Drawing.Point(67, 12);
-            this.keyButton6.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton6.Name = "keyButton6";
-            this.keyButton6.Size = new System.Drawing.Size(61, 50);
-            this.keyButton6.TabIndex = 24;
-            // 
-            // keyButton13
-            // 
-            this.keyButton13.accessKeyChar = "Ctrl";
-            this.keyButton13.accessMasterController = null;
-            this.keyButton13.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton13.Location = new System.Drawing.Point(501, 8);
-            this.keyButton13.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton13.Name = "keyButton13";
-            this.keyButton13.Size = new System.Drawing.Size(61, 50);
-            this.keyButton13.TabIndex = 34;
-            // 
-            // keyButton14
-            // 
-            this.keyButton14.accessKeyChar = "P";
-            this.keyButton14.accessMasterController = null;
-            this.keyButton14.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton14.Location = new System.Drawing.Point(568, 7);
-            this.keyButton14.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton14.Name = "keyButton14";
-            this.keyButton14.Size = new System.Drawing.Size(61, 50);
-            this.keyButton14.TabIndex = 37;
-            // 
-            // keyButton12
-            // 
-            this.keyButton12.accessKeyChar = "F2";
-            this.keyButton12.accessMasterController = null;
-            this.keyButton12.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton12.Location = new System.Drawing.Point(290, 7);
-            this.keyButton12.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton12.Name = "keyButton12";
-            this.keyButton12.Size = new System.Drawing.Size(61, 50);
-            this.keyButton12.TabIndex = 22;
-            // 
-            // keyButton10
-            // 
-            this.keyButton10.accessKeyChar = "F1";
-            this.keyButton10.accessMasterController = null;
-            this.keyButton10.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton10.Location = new System.Drawing.Point(68, 7);
-            this.keyButton10.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton10.Name = "keyButton10";
-            this.keyButton10.Size = new System.Drawing.Size(61, 50);
-            this.keyButton10.TabIndex = 0;
-            // 
-            this.supplier1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.supplier1.Size = new System.Drawing.Size(863, 539);
-            // 
-            // rbArchives
-            // 
-            this.rbArchives.Appearance = System.Windows.Forms.Appearance.Button;
-            this.rbArchives.AutoSize = true;
-            this.rbArchives.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rbArchives.Dock = System.Windows.Forms.DockStyle.Left;
-            this.rbArchives.FlatAppearance.BorderSize = 0;
-            this.rbArchives.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rbArchives.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbArchives.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.rbArchives.Location = new System.Drawing.Point(211, 0);
-            this.rbArchives.Name = "rbArchives";
-            this.rbArchives.Size = new System.Drawing.Size(87, 48);
-            this.rbArchives.TabIndex = 5;
-            this.rbArchives.Text = "Archives";
-            this.rbArchives.UseVisualStyleBackColor = true;
-            this.rbArchives.CheckedChanged += new System.EventHandler(this.checkChanged);
             // 
             // InventoryView
             // 

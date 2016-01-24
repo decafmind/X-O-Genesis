@@ -70,7 +70,6 @@
             this.panel2.TabIndex = 1;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
-            this.label8.ForeColor = System.Drawing.Color.White;
             // lblMobileno
             // 
             this.lblMobileno.BackColor = System.Drawing.Color.White;
