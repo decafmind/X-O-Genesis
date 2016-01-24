@@ -155,6 +155,7 @@
             this.label3.Size = new System.Drawing.Size(189, 33);
             this.label3.TabIndex = 10;
             this.label3.Text = "Personalization";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pictureBox6
             // 

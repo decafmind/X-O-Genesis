@@ -95,5 +95,10 @@ namespace PetvetPOS_Inventory_System
         {
             masterController.changeCurrentContent(new ProductReturnControl(base.masterController));
         }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+            //Ayos na'to ehh
+        }
     }
 }
