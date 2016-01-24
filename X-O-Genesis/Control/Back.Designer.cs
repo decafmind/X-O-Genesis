@@ -2,7 +2,6 @@
 {
     partial class Back
     {
-        //Ang taba ni CJ
         /// <summary> 
         /// Required designer variable.
         /// </summary>
