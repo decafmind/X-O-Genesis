@@ -271,7 +271,7 @@
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(1194, 114);
             this.lblTitle.TabIndex = 18;
-            this.lblTitle.Text = "         SYSTEM OPERATIONS";
+            this.lblTitle.Text = "         SYSTEM SETTINGS";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // SystemSettings
