@@ -413,7 +413,7 @@ namespace PetvetPOS_Inventory_System
 
         public DataTable readInventory(DataTable dt)
         {
-            return productInventory.loadTable(dt);
+            return productInventory.loadTable(dt, "Archive = '0'");
         }
 
         public DataTable filterInventory(DataTable dt, string token, bool categoryOnly = false)
@@ -433,10 +433,15 @@ namespace PetvetPOS_Inventory_System
                 );
             }
              
-
             return productInventory.loadTable(dt, condition);
         }
 
+        public DataTable showArchives(DataTable dt)
+        {
+            string query = "SELECT Barcode, Name, Description, SerialCode, Category FROM inventory_view WHERE Archive = '1'";
+            return productInventory.loadTableFromQuery(dt, query);
+        }
+        
 
         public DataTable filterPurchasedProduct(DataTable dt, string token)
         {

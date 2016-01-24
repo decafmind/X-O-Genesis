@@ -496,6 +496,17 @@ namespace PetvetPOS_Inventory_System
             return selectRows(dt, selectQuery);
         }
 
+        /// <summary>
+        /// Return a table from query
+        /// </summary>
+        /// <param name="dt"></param>
+        /// <param name="query"></param>
+        /// <returns> A Datatable</returns>
+        public DataTable loadTableFromQuery(DataTable dt, string query)
+        {
+            return selectRows(dt, query);
+        }
+
 
 
     }

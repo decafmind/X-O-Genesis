@@ -123,7 +123,7 @@ namespace PetvetPOS_Inventory_System
             if (entity is Product)
             {
                 Product p = entity as Product;
-                nameField = p.Description;
+                nameField = p.Name;
 
                 message = string.Format("New product: {0} has been added", nameField);
                 action = string.Format("has added a new product", nameField);
@@ -203,6 +203,8 @@ namespace PetvetPOS_Inventory_System
                 dbController.readInventory(inventoryTable);
             else if (rbPurchased.Checked)
                 dbController.readPurchasedProduct(inventoryTable);
+            else if (rbArchives.Checked)
+                dbController.showArchives(inventoryTable);
 
             dgInventory.DataSource = inventoryTable;
             dgInventory.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
@@ -314,6 +316,11 @@ namespace PetvetPOS_Inventory_System
                 }
 
             }
+            else if (e.Shift && e.KeyCode == Keys.F2)
+            {
+                dbController.productMapper.deactiveProduct(getBarcodeFromRow());
+                fillgdInventory();
+            }
             else if (e.KeyCode == Keys.F2)
             {
                 if (mainTab.SelectedTab == tabPage1)
@@ -358,6 +365,7 @@ namespace PetvetPOS_Inventory_System
                     printReceipt();
                 }
             }
+
            
             if (sliderPane.isOpen())
             {
@@ -460,7 +468,6 @@ namespace PetvetPOS_Inventory_System
             if (txtSearch.Enabled)
             {
                 txtSearch.Focus();
-               
             }
         }
 
