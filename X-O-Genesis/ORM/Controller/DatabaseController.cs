@@ -157,9 +157,23 @@ namespace PetvetPOS_Inventory_System
             return userMapper.login(user_id);
         }
 
+        public bool changePass(string id, string newPass)
+        {
+            return userMapper.changePass(id, newPass);
+        }
+
+        public bool checkUsername(string userName)
+        {
+            return userMapper.checkUsername(userName);
+        }
         public bool isAlreadyLogin(User user)
         {
             return userMapper.isAlreadyLogin(user);
+        }
+
+        public bool getSQAnswer(string userName, string sqans)
+        {
+            return userMapper.getSQAnswer(userName, sqans);
         }
         /* This method will return an instance of User if 
          * user credentials exists in the database
@@ -402,12 +416,23 @@ namespace PetvetPOS_Inventory_System
             return productInventory.loadTable(dt);
         }
 
-        public DataTable filterInventory(DataTable dt, string token)
+        public DataTable filterInventory(DataTable dt, string token, bool categoryOnly = false)
         {
-            string condition = String.Format(
-                " Name LIKE '%{0}%' OR Barcode LIKE '%{0}%' " +
-                " OR Category LIKE '%{0}%' OR Supplier LIKE '%{0}%'", token
+            string condition = string.Empty;
+            if (categoryOnly)
+            {
+                condition = String.Format(
+                    " Category = '{0}'", token
                 );
+            }
+            else
+            {
+                condition = String.Format(
+                    " Name LIKE '%{0}%' OR Barcode LIKE '%{0}%' " +
+                    " OR Category LIKE '%{0}%' OR Supplier LIKE '%{0}%'", token
+                );
+            }
+             
 
             return productInventory.loadTable(dt, condition);
         }

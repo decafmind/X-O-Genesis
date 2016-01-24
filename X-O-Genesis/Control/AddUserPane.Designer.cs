@@ -50,12 +50,11 @@
             this.txtMobno = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtTelno = new System.Windows.Forms.TextBox();
             this.btnSave = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.lblRepassword = new System.Windows.Forms.Label();
@@ -151,12 +150,10 @@
             this.panel_AddUser.Controls.Add(this.txtMobno);
             this.panel_AddUser.Controls.Add(this.label10);
             this.panel_AddUser.Controls.Add(this.label5);
-            this.panel_AddUser.Controls.Add(this.textBox2);
+            this.panel_AddUser.Controls.Add(this.txtEmail);
             this.panel_AddUser.Controls.Add(this.label6);
             this.panel_AddUser.Controls.Add(this.label7);
-            this.panel_AddUser.Controls.Add(this.txtTelno);
             this.panel_AddUser.Controls.Add(this.btnSave);
-            this.panel_AddUser.Controls.Add(this.label4);
             this.panel_AddUser.Controls.Add(this.label9);
             this.panel_AddUser.Controls.Add(this.button1);
             this.panel_AddUser.Controls.Add(this.txtAddress);
@@ -282,11 +279,11 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(10, 139);
+            this.label8.Location = new System.Drawing.Point(29, 139);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(107, 19);
+            this.label8.Size = new System.Drawing.Size(118, 19);
             this.label8.TabIndex = 104;
-            this.label8.Text = "MOBILE NO:";
+            this.label8.Text = "CONTACT NO:";
             // 
             // cmbSquery
             // 
@@ -300,10 +297,10 @@
             // txtMobno
             // 
             this.txtMobno.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMobno.Location = new System.Drawing.Point(133, 136);
+            this.txtMobno.Location = new System.Drawing.Point(157, 136);
             this.txtMobno.MaxLength = 13;
             this.txtMobno.Name = "txtMobno";
-            this.txtMobno.Size = new System.Drawing.Size(182, 26);
+            this.txtMobno.Size = new System.Drawing.Size(332, 26);
             this.txtMobno.TabIndex = 5;
             this.txtMobno.TextChanged += new System.EventHandler(this.filterContacts);
             // 
@@ -328,21 +325,21 @@
             this.label5.Text = "POSITION:";
             this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
-            // textBox2
+            // txtEmail
             // 
-            this.textBox2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(157, 168);
-            this.textBox2.MaxLength = 45;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(332, 26);
-            this.textBox2.TabIndex = 7;
-            this.textBox2.TextChanged += new System.EventHandler(this.filterEmail);
+            this.txtEmail.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEmail.Location = new System.Drawing.Point(157, 168);
+            this.txtEmail.MaxLength = 45;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(332, 26);
+            this.txtEmail.TabIndex = 7;
+            this.txtEmail.TextChanged += new System.EventHandler(this.filterEmail);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(29, 235);
+            this.label6.Location = new System.Drawing.Point(28, 235);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(105, 19);
             this.label6.TabIndex = 105;
@@ -353,21 +350,11 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(9, 171);
+            this.label7.Location = new System.Drawing.Point(28, 168);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(144, 19);
+            this.label7.Size = new System.Drawing.Size(67, 19);
             this.label7.TabIndex = 128;
-            this.label7.Text = "EMAIL ADDRESS:";
-            // 
-            // txtTelno
-            // 
-            this.txtTelno.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelno.Location = new System.Drawing.Point(393, 136);
-            this.txtTelno.MaxLength = 8;
-            this.txtTelno.Name = "txtTelno";
-            this.txtTelno.Size = new System.Drawing.Size(96, 26);
-            this.txtTelno.TabIndex = 6;
-            this.txtTelno.TextChanged += new System.EventHandler(this.filterContacts);
+            this.label7.Text = "EMAIL:";
             // 
             // btnSave
             // 
@@ -381,22 +368,23 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.TextChanged += new System.EventHandler(this.textboxes_TextChanged);
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Location = new System.Drawing.Point(254, 406);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(112, 30);
+            this.btnSave.TabIndex = 19;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.TextChanged += new System.EventHandler(this.textboxes_TextChanged);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(316, 139);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 19);
-            this.label4.TabIndex = 126;
-            this.label4.Text = "TEL NO:";
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(9, 205);
+            this.label9.Location = new System.Drawing.Point(28, 203);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(89, 19);
             this.label9.TabIndex = 108;
@@ -615,10 +603,8 @@
         private ValidationMarks vUsername;
         private System.Windows.Forms.Button button1;
         public System.Windows.Forms.PictureBox imageUser;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtTelno;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox cmbSquery;
         private System.Windows.Forms.Label label11;

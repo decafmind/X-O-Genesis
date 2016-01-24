@@ -29,6 +29,8 @@ namespace PetvetPOS_Inventory_System
         string imagePath = "";
         public bool hasPictureChanged;
 
+        private const string DEFAULT_PASSWORD_SHOWCASE = "(Unchanged)";
+
         public Bitmap ImageOfUser
         {
             get
@@ -149,6 +151,14 @@ namespace PetvetPOS_Inventory_System
                 clearTextboxes();
                 loadSqueryList();
                 togglePasswordInputs(true);
+
+                txtAnswer.Visible = true;
+                cmbSquery.Visible = true;
+                label10.Visible = true;
+                label11.Visible = true;
+                label12.Visible = true;
+                label13.Visible = true;
+
                 updateStatus("You are creating a New User", SystemColors.menuLightBlue);
             }
             else if (mode == UserAdminMode.Edit_user)
@@ -158,12 +168,22 @@ namespace PetvetPOS_Inventory_System
                 togglePasswordInputs(false);
                 updateStatus("You are updating an Existing User", SystemColors.menuBarBlue);
                 currentEmployee = userAdministration.selectedEmployee;
-                cmbSquery.SelectedIndex = dbController.getSqueryFromID(currentEmployee.User_id) - 1;
+
+                txtAnswer.Visible = false;
+                cmbSquery.Visible = false;
+                label10.Visible = false;
+                label11.Visible = false;
+                label12.Visible = false;
+                label13.Visible = false;
+
+                txtAnswer.ForeColor = System.Drawing.Color.Gray;
 
                 txtLastname.Text = currentEmployee.Lastname;
                 txtFirstname.Text = currentEmployee.Firstname;
                 txtMiddlename.Text = currentEmployee.MiddleName;
                 txtMobno.Text = currentEmployee.MobileNo;
+                txtAddress.Text = currentEmployee.Address;
+                txtEmail.Text = currentEmployee.EmailAddress;
 
                 txtUsername.Text = currentEmployee.User_id;
                 txtImagepath.Text = currentEmployee.ImagePath;
@@ -197,7 +217,7 @@ namespace PetvetPOS_Inventory_System
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (Validation.isFilled(panel_AddUser, txtMiddlename, txtPassword, txtRepassword))
+            if (Validation.isFilled(panel_AddUser, txtMiddlename, txtPassword, txtRepassword, txtAnswer, cmbSquery))
             {
                 if (mode == UserAdminMode.Add_user)
                 {
@@ -245,8 +265,7 @@ namespace PetvetPOS_Inventory_System
                     MiddleName = txtMiddlename.Text,
                     Lastname = txtLastname.Text,
                     MobileNo = txtMobno.Text,
-                    EmailAddress = textBox2.Text,
-                    TelNo = txtTelno.Text,
+                    EmailAddress = txtEmail.Text,
                     ImagePath = txtImagepath.Text,
                     Address = txtAddress.Text
                 };

@@ -35,7 +35,6 @@ namespace PetvetPOS_Inventory_System
             lblPosition.Text = employee.Position.ToString();
             lblMobileno.Text = employee.MobileNo.ToString();
 
-            lblTelno.Text = employee.TelNo.ToString();
             lblEmailadd.Text = employee.EmailAddress.ToString();
             lblRegistrationdate.Text = employee.RegisteredDate.ToLongDateString();
 

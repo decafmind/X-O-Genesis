@@ -38,7 +38,11 @@ namespace PetvetPOS_Inventory_System
                 report = reportType.WEEKLY;
             else if (cmType.Text == "MONTHLY")
                 report = reportType.MONTHLY;
-
+            else
+            {
+                report = reportType.DAILY;
+                cmType.Text = "DAILY";
+            }
             return report;
         }
 
@@ -49,8 +53,14 @@ namespace PetvetPOS_Inventory_System
                 chartType = SeriesChartType.Column;
             else if (cbCharttype.Text == "LINE")
                 chartType = SeriesChartType.Line;
-            return chartType;
+            else
+            {
+                chartType = SeriesChartType.Column;
+                cbCharttype.Text = "BAR";
+            }
+            
 
+            return chartType;
         }
 
         public Sales()
@@ -301,7 +311,7 @@ namespace PetvetPOS_Inventory_System
                 g.DrawString(titleName, arialRoundedMT, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
                 Y+= (int)stringSize.Height + 10;
 
-                string petvetStore = "Petvet Animal Health Clinic";
+                string petvetStore = "Exogenesis";
                 stringSize = g.MeasureString(petvetStore, arialRoundedMT);
                 g.DrawString(petvetStore, arialRoundedMT, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
                 Y += (int)stringSize.Height + 10;

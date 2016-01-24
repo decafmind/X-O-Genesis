@@ -109,7 +109,7 @@
             this.btnForgot.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnForgot.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
             this.btnForgot.UseVisualStyleBackColor = false;
-            this.btnForgot.Click += new System.EventHandler(this.btnForgot_Click_1);
+            this.btnForgot.Click += new System.EventHandler(this.btnForgot_Click);
             // 
             // btnLogin
             // 

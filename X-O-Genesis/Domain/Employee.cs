@@ -13,7 +13,6 @@ namespace PetvetPOS_Inventory_System
         public string Lastname { get; set; }
 
         public string MobileNo { get; set; }
-        public string TelNo { get; set; }
         public string EmailAddress { get; set; }
 
         public DateTime RegisteredDate { get; set; }
@@ -46,7 +45,6 @@ namespace PetvetPOS_Inventory_System
 
                 Lastname = (string)e.getField("lastname");
                 MobileNo = (string)e.getField("mobile_no");
-                TelNo = (string)e.getField("telephone_no");
 
                 EmailAddress = (string)e.getField("email_address");
                 ImagePath = (string)e.getField("image_path");

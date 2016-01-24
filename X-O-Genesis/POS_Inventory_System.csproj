@@ -245,6 +245,18 @@
     <Compile Include="Domain\Medical.cs" />
     <Compile Include="Domain\Enums\InventoryMode.cs" />
     <Compile Include="Domain\Enums\Petsize.cs" />
+    <Compile Include="Forms\modalAddStocks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\modalAddStocks.Designer.cs">
+      <DependentUpon>modalAddStocks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\modalChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\modalChangePass.Designer.cs">
+      <DependentUpon>modalChangePass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\CriticalNotif.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -257,11 +269,11 @@
     <Compile Include="Control\DateAndTime.Designer.cs">
       <DependentUpon>DateAndTime.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Fallback.cs">
+    <Compile Include="Forms\modalFallback.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\Fallback.Designer.cs">
-      <DependentUpon>Fallback.cs</DependentUpon>
+    <Compile Include="Forms\modalFallback.Designer.cs">
+      <DependentUpon>modalFallback.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\InputDialog.cs">
       <SubType>Form</SubType>
@@ -544,6 +556,12 @@
     <EmbeddedResource Include="Control\SystemSettings.resx">
       <DependentUpon>SystemSettings.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\modalAddStocks.resx">
+      <DependentUpon>modalAddStocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\modalChangePass.resx">
+      <DependentUpon>modalChangePass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\CriticalNotif.resx">
       <DependentUpon>CriticalNotif.cs</DependentUpon>
     </EmbeddedResource>
@@ -557,8 +575,8 @@
     <EmbeddedResource Include="Control\DateAndTime.resx">
       <DependentUpon>DateAndTime.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\Fallback.resx">
-      <DependentUpon>Fallback.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\modalFallback.resx">
+      <DependentUpon>modalFallback.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
@@ -668,7 +686,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\iconmonstr-archive-7-icon-256.png" />

@@ -16,6 +16,7 @@ namespace PetvetPOS_Inventory_System
         private LoginPane loginPane;
         private int loginAttempt = 0;
         DatabaseController dbController;
+        modalFallback fallback;
 
         private string Username;
         private string Password;
@@ -249,16 +250,8 @@ namespace PetvetPOS_Inventory_System
 
         private void btnForgot_Click(object sender, EventArgs e)
         {
-            if (dbController == null)
-                dbController = masterController.DataBaseController;
-
-            btnLogin.Enabled = false;
-            
-        }
-
-        private void btnForgot_Click_1(object sender, EventArgs e)
-        {
-
+            fallback = new modalFallback(dbController);
+            fallback.ShowDialog();
         }
 
         private void lblWelcomeMsg_Click(object sender, EventArgs e)

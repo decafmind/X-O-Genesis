@@ -54,7 +54,6 @@ namespace PetvetPOS_Inventory_System
             sliderPane.accessMasterController = masterController;
             sliderPane.dbController = masterController.DataBaseController;
             sliderPane.inventoryView = this;
-            supplier1.accessMasterController = masterController;
 
             using (Font timesNewRoman = new Font("Times New Roman", 12, FontStyle.Regular))
             {
@@ -98,6 +97,8 @@ namespace PetvetPOS_Inventory_System
             dbController.DeleteEntity += dbController_DeleteEntity;
 
             txtSearch.Focus();
+            cbCategory.Items.AddRange(dbController.categoryMapper.getListOfCategory().ToArray());
+            cbCategory.Items.Add("ALL");
         }
 
         public void finalizePage()
@@ -131,7 +132,7 @@ namespace PetvetPOS_Inventory_System
             {
                 Inventory i = entity as Inventory;
                 Product p = dbController.getProductFromBarcode(i.Barcode);
-                nameField = p.Description;
+                nameField = p.Name;
 
                 message = string.Format("New stock of product {0} has been added", nameField);
                 action = string.Format("added a new stock of product", nameField);
@@ -183,7 +184,7 @@ namespace PetvetPOS_Inventory_System
             if (entity is Product)
             {
                 Product p = entity as Product;
-                nameField = p.Description;
+                nameField = p.Name;
                 message = string.Format("Product {0} has been updated", nameField);
                 action = string.Format("has updated the product {0}", nameField);
             }
@@ -222,7 +223,7 @@ namespace PetvetPOS_Inventory_System
             }
         }
 
-        public void filterdgInventory(string token)
+        public void filterdgInventory(string token, bool categoryOnly = false)
         {
             if (string.IsNullOrWhiteSpace(token))
             {
@@ -233,11 +234,15 @@ namespace PetvetPOS_Inventory_System
             {
                 inventoryTable = new DataTable();
 
-                if (rbInventory.Checked)
-                    dbController.filterInventory(inventoryTable, token);
-                else if (rbPurchased.Checked)
+                if (rbInventory.Checked){
+                    if (categoryOnly)
+                        dbController.filterInventory(inventoryTable, token, true);
+                    else
+                        dbController.filterInventory(inventoryTable, token);
+                }
+                else if (rbPurchased.Checked){
                     dbController.filterPurchasedProduct(inventoryTable, token);
- 
+                }
                 dgInventory.DataSource = inventoryTable;
 
                 if (rbInventory.Checked)
@@ -333,6 +338,10 @@ namespace PetvetPOS_Inventory_System
                 dgInventory.Rows[currentSelection].Selected = true;
                 
             }
+            else if (e.KeyCode == Keys.F4)
+            {
+                addStocks();
+            }
             else if (e.Control && e.KeyCode == Keys.P)
             {
                 if (mainTab.SelectedTab == tabPage1)
@@ -349,27 +358,43 @@ namespace PetvetPOS_Inventory_System
                     printReceipt();
                 }
             }
-            else if (e.KeyCode == Keys.Escape)
-            {
-                if (productSliderPane1.isOpen())
-                {
-                    productSliderPane1.toggle();
-                    toogleSearch();
-                }
-                   
-            }
-
+           
             if (sliderPane.isOpen())
             {
-                if (e.KeyCode == Keys.Enter){
+                if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Escape){
                     if (sliderPane.OK())
                     {
                         toogleSearch();
-                    }
-                     
+                    }          
                 }
             }
 
+        }
+
+        void addStocks()
+        {
+            string barcode = getBarcodeFromRow();
+
+            ProductInventoryDomain productInventoryDomain = dbController.productInventory.getProductInventoryThroughBarcode(barcode);
+            modalAddStocks addStocks = new modalAddStocks(productInventoryDomain.product.Barcode,
+                                                    productInventoryDomain.product.Name,
+                                                    productInventoryDomain.inventory.QtyOnHand);
+
+            DialogResult result = addStocks.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                Inventory inventory = new Inventory()
+                {
+                    Barcode = barcode,
+                    StockinDateTime = DateTime.Now,
+                    QtyReceived = addStocks.AdditionalStocks,
+                    QtyOnHand = addStocks.AdditionalStocks,
+                };
+
+                dbController.insertInventory(inventory);
+            }
+            fillgdInventory();
         }
 
         void smartFocus()
@@ -558,7 +583,7 @@ namespace PetvetPOS_Inventory_System
                 g.DrawString(title, arialRoundedMt, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
                 Y += (int)stringSize.Height + 10;
 
-                string petvetStore = "Petvet Animal Health Clinic";
+                string petvetStore = "Exogenesis";
                 stringSize = g.MeasureString(petvetStore, arialRoundedMt);
                 g.DrawString(petvetStore, arialRoundedMt, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
                 Y += (int)stringSize.Height + 10;
@@ -855,7 +880,7 @@ namespace PetvetPOS_Inventory_System
             using (Font font = new Font("MS San Serif", 11, FontStyle.Regular))
             using (Pen pen = new Pen(Brushes.Black, 1))
             {
-                string title = "Petvet Animal Health Clinic";
+                string title = "Exogenesis";
                 string addressL1 = "2/F Nova Square Shopping Center,";
                 string addressL2 = "San Bartolome, Nova. QC";
                 int documentWidth = e.PageBounds.Width;
@@ -991,6 +1016,10 @@ namespace PetvetPOS_Inventory_System
                 cellRectangle.Bottom + panel4.Top + (cellRectangle.Height * 2)
                 );
         }
+        /// <summary>
+        /// Get Barcode from current selected row
+        /// </summary>
+        /// <returns>string - barcode</returns>
         private string getBarcodeFromRow()
         {
             Product product = dbController.productMapper.getProductFromName(getValueFromDatagridCell(PRODUCT_NAME_INDEX));
@@ -1030,6 +1059,14 @@ namespace PetvetPOS_Inventory_System
         private void panel11_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbCategory.Text == "ALL")
+                fillgdInventory();
+            else
+                filterdgInventory(cbCategory.Text, true);
         }
 
     }

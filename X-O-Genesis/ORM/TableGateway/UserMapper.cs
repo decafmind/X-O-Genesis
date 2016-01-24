@@ -83,6 +83,25 @@ namespace PetvetPOS_Inventory_System
             return null;
         }
 
+        public bool getSQAnswer(string userName, string sqans)
+        {
+            try
+            {
+                string condition = String.Format("id = '{0}'", userName);
+                string correctHash = (string)readScalar("fallbackans", condition);
+                bool isValid = PasswordHash.PasswordHash.ValidatePassword(sqans, correctHash);
+                if (isValid)
+                    return true;
+                else
+                    return false;               
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log(ex);
+                return false;
+            } 
+        }
+
         public bool login(string user_id)
         {
             int login_state = 1;
@@ -91,6 +110,12 @@ namespace PetvetPOS_Inventory_System
             return update(updateSet(condition, session_state));
         }
 
+        public bool changePass(string userName, string newPass)
+        {
+            string condition = String.Format("id = '{0}'", userName);
+            string newpw = String.Format("password = '{0}'", PasswordHash.PasswordHash.CreateHash(newPass));
+            return update(updateSet(condition, newpw));
+        }
 
         public bool isAlreadyLogin(User user)
         {
@@ -128,5 +153,18 @@ namespace PetvetPOS_Inventory_System
             //return update(updateSet(condition, updateSquery, updateAns));            
             return false;
         }
+
+
+        public bool checkUsername(string userName)
+        {
+            string condition = String.Format("id = '{0}'", userName);
+            object foo = readScalar("id", condition);
+            if (foo != null)
+                return true;
+            else
+                return false;
+        }
+
+
     }
 }

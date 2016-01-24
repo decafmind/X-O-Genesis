@@ -21,11 +21,15 @@ namespace PetvetPOS_Inventory_System
                 "Description",
                 "Barcode",
                 "Unit_price",
-                "Category",
+                "Qty_on_Hand",
+                "Qty_Received",
                 "Stock_since",
                 "Supplier",
-                "Qty_Received",
-                "Qty_on_Hand",
+                "Category",
+                "SerialCode",
+                "Unit",
+                "UnitCost",
+                "MaintainingStocks",
                 "Warranty",
                 "Replacement",
             };
@@ -34,6 +38,7 @@ namespace PetvetPOS_Inventory_System
                 "Name",
                 "Qty_on_Hand AS 'Qty on Hand'",
                 "Qty_Received AS 'Qty received'",
+                "Category",
                 "Stock_since AS 'Stock since'",
             };
         }
@@ -60,7 +65,7 @@ namespace PetvetPOS_Inventory_System
         {
             try
             {
-                string condition = string.Format("Name = '{0}'", product.Description);
+                string condition = string.Format("Name = '{0}'", product.Name);
                 decimal qty_received = (decimal)readScalar("Qty_Received", condition);
                 decimal qty_onhand = (decimal)readScalar("Qty_On_Hand", condition);
 

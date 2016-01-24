@@ -29,6 +29,11 @@ namespace PetvetPOS_Inventory_System
 
         }
 
+        public string getSupplierNameFromId(int id)
+        {
+            return (string)readScalar("name", " id = " + id);
+        }
+
         public List<string> getSupplierList()
         {
             return getList("name");
