@@ -150,9 +150,9 @@
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label4.Location = new System.Drawing.Point(107, 34);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(105, 31);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 21);
             this.label4.TabIndex = 8;
@@ -172,18 +172,18 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label3.Location = new System.Drawing.Point(435, 33);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(444, 31);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 22);
+            this.label3.Size = new System.Drawing.Size(53, 25);
             this.label3.TabIndex = 6;
-            this.label3.Text = "DATE";
+            this.label3.Text = "Date";
             // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(105, 7);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(185, 22);
@@ -201,6 +201,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "TrailView";
             this.Size = new System.Drawing.Size(869, 545);
+            this.Load += new System.EventHandler(this.TrailView_Load);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.trailGrid)).EndInit();
             this.panel1.ResumeLayout(false);

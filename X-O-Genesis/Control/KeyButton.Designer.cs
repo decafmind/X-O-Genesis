@@ -29,11 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lblKeyChar = new System.Windows.Forms.Label();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 200;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // lblKeyChar
             // 
@@ -66,17 +71,12 @@
             this.rectangleShape1.BorderWidth = 2;
             this.rectangleShape1.CornerRadius = 5;
             this.rectangleShape1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rectangleShape1.FillColor = System.Drawing.Color.Black;
+            this.rectangleShape1.FillColor = System.Drawing.Color.Transparent;
             this.rectangleShape1.FillStyle = Microsoft.VisualBasic.PowerPacks.FillStyle.Solid;
             this.rectangleShape1.Location = new System.Drawing.Point(3, 0);
             this.rectangleShape1.Name = "rectangleShape1";
             this.rectangleShape1.Size = new System.Drawing.Size(53, 46);
             this.rectangleShape1.Click += new System.EventHandler(this.rectangleShape1_Click);
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 200;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // KeyButton
             // 

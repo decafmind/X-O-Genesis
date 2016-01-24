@@ -41,6 +41,7 @@
             // 
             // contentPanel
             // 
+            this.contentPanel.BackColor = System.Drawing.Color.White;
             this.contentPanel.Location = new System.Drawing.Point(25, 16);
             this.contentPanel.Name = "contentPanel";
             this.contentPanel.Size = new System.Drawing.Size(242, 334);

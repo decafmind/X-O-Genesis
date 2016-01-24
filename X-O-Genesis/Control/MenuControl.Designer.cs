@@ -99,7 +99,7 @@
             // 
             // ovalEarR
             // 
-            this.ovalEarR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(148)))), ((int)(((byte)(157)))));
+            this.ovalEarR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.ovalEarR.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.ovalEarR.BorderColor = System.Drawing.Color.White;
             this.ovalEarR.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -110,7 +110,7 @@
             // 
             // ovalEarL
             // 
-            this.ovalEarL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(148)))), ((int)(((byte)(157)))));
+            this.ovalEarL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.ovalEarL.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.ovalEarL.BorderColor = System.Drawing.Color.White;
             this.ovalEarL.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -123,7 +123,7 @@
             // 
             this.icon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.icon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(148)))), ((int)(((byte)(157)))));
+            this.icon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.icon.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
             this.icon.BorderColor = System.Drawing.Color.White;

@@ -54,6 +54,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.lblRepassword = new System.Windows.Forms.Label();
@@ -83,9 +84,9 @@
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(468, 107);
+            this.button1.Location = new System.Drawing.Point(468, 102);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(47, 23);
+            this.button1.Size = new System.Drawing.Size(47, 33);
             this.button1.TabIndex = 125;
             this.button1.TabStop = false;
             this.toolTip1.SetToolTip(this.button1, "Take picture from webcam");
@@ -180,6 +181,7 @@
             // txtImagepath
             // 
             this.txtImagepath.AutoSize = true;
+            this.txtImagepath.ForeColor = System.Drawing.Color.DarkCyan;
             this.txtImagepath.Location = new System.Drawing.Point(412, 415);
             this.txtImagepath.Name = "txtImagepath";
             this.txtImagepath.Size = new System.Drawing.Size(37, 13);
@@ -366,6 +368,17 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.TextChanged += new System.EventHandler(this.textboxes_TextChanged);
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Location = new System.Drawing.Point(254, 406);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(112, 30);
+            this.btnSave.TabIndex = 19;
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.TextChanged += new System.EventHandler(this.textboxes_TextChanged);
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
             // 
             // label9
             // 
@@ -531,7 +544,7 @@
             // 
             // lblMode
             // 
-            this.lblMode.BackColor = System.Drawing.Color.NavajoWhite;
+            this.lblMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(205)))), ((int)(((byte)(215)))), ((int)(((byte)(234)))));
             this.lblMode.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lblMode.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMode.ForeColor = System.Drawing.Color.White;
