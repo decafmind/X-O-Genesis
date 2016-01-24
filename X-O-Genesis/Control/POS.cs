@@ -217,7 +217,7 @@ namespace PetvetPOS_Inventory_System
         public void addRowInDatagrid(ProductInvoice productInvoice)
         {
             var row = dt.NewRow();
-            row["Product"] = currentProduct.Description;
+            row["Product"] = currentProduct.Name;
             row["Quantity"] = productInvoice.QuantitySold;
             row["Unit price"] = currentProduct.UnitPrice.ToString("N");
             row["Net price"] = productInvoice.GroupPrice.ToString("N");
@@ -379,7 +379,7 @@ namespace PetvetPOS_Inventory_System
                     DataGridViewRow selectedRow = dgTransaction.SelectedRows[0];
                     foreach (ProductInvoice item in carts)
                     {
-                        if (item.product.Description == selectedRow.Cells[DESCRIPTION_INDEX].Value.ToString())
+                        if (item.product.Name == selectedRow.Cells[DESCRIPTION_INDEX].Value.ToString())
                         {
                             totalAmount -= item.GroupPrice;
                             carts.Remove(item);
@@ -389,7 +389,7 @@ namespace PetvetPOS_Inventory_System
                             else
                                 poSlbl2.Text = totalAmount.ToString("N");
 
-                            lblPOSmsg.Text = string.Format("Void {0}", item.product.Description);
+                            lblPOSmsg.Text = string.Format("Void {0}", item.product.Name);
                             break;
                         }
                     }
@@ -443,7 +443,7 @@ namespace PetvetPOS_Inventory_System
                 foreach (ProductInvoice p in carts)
                 {
                     Product product = dbController.getProductFromBarcode(p.product.Barcode);
-                    string cart = String.Format("{0} ({1})", product.Description, p.QuantitySold);
+                    string cart = String.Format("{0} ({1})", product.Name, p.QuantitySold);
                     g.DrawString(cart, font, Brushes.Black, new PointF(10, Y));
 
                     stringSize = g.MeasureString(p.GroupPrice.ToString(), font);

@@ -44,11 +44,30 @@ namespace PetvetPOS_Inventory_System
 
         public void insertProduct()
         {
-            
+            bool existingProduct = checkIfProductAlreadyExists(txtBarcode.Text);
+            ProductInventoryDomain productInventoryDomain;
+            modalAddStocks addStocks = null;
+
+            if (existingProduct)
+            {
+                productInventoryDomain = dbController.productInventory.getProductInventoryThroughBarcode(txtBarcode.Text);
+                addStocks = new modalAddStocks(productInventoryDomain.product.Barcode,
+                                                        productInventoryDomain.product.Name,
+                                                        productInventoryDomain.inventory.QtyOnHand);
+            }else{
+                addStocks = new modalAddStocks(txtBarcode.Text, txtName.Text, 0);
+            }
+                                     
+            DialogResult result = addStocks.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
                 inventory = new Inventory()
                 {
                     Barcode = txtBarcode.Text,
                     StockinDateTime = DateTime.Now,
+                    QtyReceived = addStocks.AdditionalStocks,
+                    QtyOnHand = addStocks.AdditionalStocks,
                 };
 
                 if (checkIfProductAlreadyExists(txtBarcode.Text))
@@ -75,16 +94,16 @@ namespace PetvetPOS_Inventory_System
                         Replacement = txtReplacement.Text.ToString(),
                         Category_id = category_id,
                     };
+
                     dbController.insertProductInsideInventory(inventory, product);
                 }
-                toggle();
-            
-            
+            }
+       
+            toggle();    
         }
 
         public void clearTexts()
         {
-           // MyExtension.Validation.
             MyExtension.Validation.clearFields(contentPanel);
             cbCategory.Text = "";
             txtBarcode.Enabled = true; // To make sure it is enabled even after update
@@ -95,6 +114,7 @@ namespace PetvetPOS_Inventory_System
         public void mapProductToTextfield(Product product)
         {
             clearTexts();
+
             try
             {
                 txtBarcode.Text = product.Barcode.ToString();
@@ -102,22 +122,39 @@ namespace PetvetPOS_Inventory_System
                 txtBarcode.ForeColor = Color.DimGray;
                 txtBarcode.BackColor = Color.White;
 
-                txtName.Text = product.Name.ToString();
-                
+                txtName.Text = product.Name.ToString();            
                 txtDescription.Text = product.Description.ToString();
                 txtReplacement.Text = product.Replacement.ToString();
                 txtWarranty.Text = product.Warranty.ToString();
 
-                string category = dbController.categoryMapper.getCategoryNameFromId(product.Category_id);
-                cbCategory.Text = category;
+                txtSerialCode.Text = product.SerialCode.ToString();
+                loadCategory();
+                loadSupplier();
+                txtUnitCost.Text = product.UnitCost.ToString();
+
+                txtUnitPrice.Text = product.UnitPrice.ToString();
+                txtMaintainingStocks.Text = product.MaintainingStocks.ToString();
+                cbUnit.Text = product.Unit;
 
                 oldProduct = product;
 
-            }catch(Exception){
-
+            }catch(Exception ex){
+                ErrorLog.Log(ex);
             }
             
           
+        }
+
+        void loadCategory()
+        {
+            string category = dbController.categoryMapper.getCategoryNameFromId(product.Category_id);
+            cbCategory.Text = category;
+        }
+
+        void loadSupplier()
+        {
+            string supplier = dbController.supplierMapper.getSupplierNameFromId(product.SupplierId);
+            cbSupplier.Text = supplier;
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
@@ -174,15 +211,21 @@ namespace PetvetPOS_Inventory_System
             if (MyExtension.Validation.isFilled(contentPanel))
             {
                 int category_id = dbController.categoryMapper.getCategoryIndexFromName(cbCategory.Text);
+                int supplier_id = dbController.supplierMapper.getSupplierIdByName(cbSupplier.Text);
 
                 product = new Product()
                 {
                     Barcode = txtBarcode.Text,
+                    SerialCode = txtSerialCode.Text,
                     Name = txtName.Text,
-                  //  UnitPrice = Convert.ToDecimal(txtPrice.Text),
-                    Warranty = txtWarranty.Text,
-                    Replacement = txtReplacement.Text,
                     Description = txtDescription.Text,
+                    SupplierId = supplier_id,
+                    Unit = cbUnit.Text,
+                    UnitCost = decimal.Parse(txtUnitCost.Text),
+                    UnitPrice = decimal.Parse(txtUnitPrice.Text),
+                    MaintainingStocks = int.Parse(txtMaintainingStocks.Text),
+                    Warranty = txtWarranty.Text.ToString(),
+                    Replacement = txtReplacement.Text.ToString(),
                     Category_id = category_id,
                 };
 

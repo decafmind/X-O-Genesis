@@ -56,36 +56,6 @@ namespace PetvetPOS_Inventory_System
             return update(updateQuery);
         }
 
-        public bool updateDescription(string barcode, string newDescription)
-        {
-            string condition = String.Format("id = '{0}' ", barcode);
-            updateSet(condition, String.Format("name = '{0}'", newDescription));
-            return update(updateQuery);
-        }
-
-        public bool updateUnitPrice(string barcode, decimal newPrice)
-        {
-            string condition = String.Format("id = '{0}'", barcode);
-            updateSet(condition, String.Format("name = {0}", newPrice));
-            return update(updateQuery);
-        }
-
-        public bool updateCategory(string barcode, string newCategory)
-        {
-            string condition = String.Format("id = '{0}'", barcode);
-            updateSet(condition, String.Format("category_id = {0}", newCategory));
-            return update(updateQuery);
-        }
-
-        public bool updateSourceCompanyName(string barcode, string company)
-        {
-            string condition = String.Format("id = '{0}'", barcode);
-            updateSet(condition, String.Format("source_company_name = '{0}'", company));
-            return update(updateQuery);
-        }
-
-
-
         public Product getProductFromName(string name)
         {
             return new Product(getEntityWhere(String.Format("name = '{0}'", name)));
@@ -102,7 +72,8 @@ namespace PetvetPOS_Inventory_System
                 return false;
 
             string desc = string.Empty, unitPrice = string.Empty, category = string.Empty, manufacturer = string.Empty, specs = string.Empty,
-                warranty = string.Empty, replacement = string.Empty;
+                warranty = string.Empty, replacement = string.Empty, serialCode = string.Empty, supplierID = string.Empty, unit = string.Empty,
+                unitCost = string.Empty, maintaining_unit = string.Empty;
 
             if (origProduct.Name != updatedProduct.Name)
                 desc = string.Format("name = '{0}'", updatedProduct.Name);
@@ -113,16 +84,27 @@ namespace PetvetPOS_Inventory_System
             if (origProduct.Category_id != updatedProduct.Category_id)
                 category = string.Format("category_id = {0}", updatedProduct.Category_id);
             if (origProduct.Description != updatedProduct.Description)
-                specs = string.Format("specification = '{0}'", updatedProduct.Description);
+                specs = string.Format("description = '{0}'", updatedProduct.Description);
             if (origProduct.Warranty != updatedProduct.Warranty)
                 warranty = string.Format("warranty = '{0}'", updatedProduct.Warranty);
             if (origProduct.Replacement != updatedProduct.Replacement)
                 replacement = string.Format("replacement = '{0}'", updatedProduct.Replacement);
+            if (origProduct.SerialCode != updatedProduct.SerialCode)
+                serialCode = string.Format("serial_code = '{0}')", updatedProduct.SerialCode);
+            if (origProduct.SupplierId != updatedProduct.SupplierId)
+                supplierID = string.Format("supplier_id = {0})", updatedProduct.SupplierId);
+            if (origProduct.Unit != updatedProduct.Unit)
+                unit = string.Format("unit = '{0}'", updatedProduct.Unit);
+            if (origProduct.UnitCost != updatedProduct.UnitCost)
+                unitCost = string.Format("unit_cost = {0}", updatedProduct.UnitCost);
+            if (origProduct.MaintainingStocks != updatedProduct.MaintainingStocks)
+                maintaining_unit = string.Format("maintaining_stocks = {0}", updatedProduct.MaintainingStocks);
 
             string condition = string.Format("id = '{0}'", origProduct.Barcode);
 
             return update(
-                updateSet(condition, desc, unitPrice, category, manufacturer, specs, warranty, replacement)
+                updateSet(condition, desc, unitPrice, category, manufacturer, specs, warranty, replacement,
+                serialCode, supplierID, unit, unitCost, maintaining_unit)
                 );
         }
     }

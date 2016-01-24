@@ -32,14 +32,14 @@
             this.panel_miniView = new System.Windows.Forms.Panel();
             this.panel_basicInfo = new System.Windows.Forms.Panel();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtMaintaining = new System.Windows.Forms.TextBox();
+            this.txtUnit = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.txtSupplier = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtDescription = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSerialCode = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.txtUnitPrice = new System.Windows.Forms.TextBox();
             this.btnClose = new System.Windows.Forms.Button();
@@ -84,14 +84,14 @@
             // panel_basicInfo
             // 
             this.panel_basicInfo.Controls.Add(this.label14);
-            this.panel_basicInfo.Controls.Add(this.textBox5);
-            this.panel_basicInfo.Controls.Add(this.textBox4);
+            this.panel_basicInfo.Controls.Add(this.txtMaintaining);
+            this.panel_basicInfo.Controls.Add(this.txtUnit);
             this.panel_basicInfo.Controls.Add(this.label13);
             this.panel_basicInfo.Controls.Add(this.txtSupplier);
             this.panel_basicInfo.Controls.Add(this.label12);
             this.panel_basicInfo.Controls.Add(this.txtDescription);
             this.panel_basicInfo.Controls.Add(this.label11);
-            this.panel_basicInfo.Controls.Add(this.textBox1);
+            this.panel_basicInfo.Controls.Add(this.txtSerialCode);
             this.panel_basicInfo.Controls.Add(this.label10);
             this.panel_basicInfo.Controls.Add(this.txtUnitPrice);
             this.panel_basicInfo.Controls.Add(this.btnClose);
@@ -126,19 +126,19 @@
             this.label14.TabIndex = 29;
             this.label14.Text = "Maintaining stocks:";
             // 
-            // textBox5
+            // txtMaintaining
             // 
-            this.textBox5.Location = new System.Drawing.Point(125, 236);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(251, 20);
-            this.textBox5.TabIndex = 28;
+            this.txtMaintaining.Location = new System.Drawing.Point(125, 236);
+            this.txtMaintaining.Name = "txtMaintaining";
+            this.txtMaintaining.Size = new System.Drawing.Size(251, 20);
+            this.txtMaintaining.TabIndex = 28;
             // 
-            // textBox4
+            // txtUnit
             // 
-            this.textBox4.Location = new System.Drawing.Point(125, 198);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(251, 20);
-            this.textBox4.TabIndex = 27;
+            this.txtUnit.Location = new System.Drawing.Point(125, 198);
+            this.txtUnit.Name = "txtUnit";
+            this.txtUnit.Size = new System.Drawing.Size(251, 20);
+            this.txtUnit.TabIndex = 27;
             // 
             // label13
             // 
@@ -181,12 +181,12 @@
             this.label11.TabIndex = 22;
             this.label11.Text = "Description:";
             // 
-            // textBox1
+            // txtSerialCode
             // 
-            this.textBox1.Location = new System.Drawing.Point(125, 54);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(251, 20);
-            this.textBox1.TabIndex = 21;
+            this.txtSerialCode.Location = new System.Drawing.Point(125, 54);
+            this.txtSerialCode.Name = "txtSerialCode";
+            this.txtSerialCode.Size = new System.Drawing.Size(251, 20);
+            this.txtSerialCode.TabIndex = 21;
             // 
             // label10
             // 
@@ -382,14 +382,14 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtUnitPrice;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtMaintaining;
+        private System.Windows.Forms.TextBox txtUnit;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox txtSupplier;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSerialCode;
         private System.Windows.Forms.Label label10;
     }
 }

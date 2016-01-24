@@ -221,12 +221,12 @@ namespace PetvetPOS_Inventory_System
                 try
                 {
                     var row = dt.NewRow();
-                    row["Product"] = currentProduct.Description;
+                    row["Product"] = currentProduct.Name;
                     row["Quantity"] = quantity;
                     row["Group Price"] = productTransaction.GroupPrice;
                     row["Unit Price"] = productTransaction.product.UnitPrice;
                     dt.Rows.Add(row);
-                    lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, quantity, productTransaction.GroupPrice);
+                    lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Name, quantity, productTransaction.GroupPrice);
                     success = true;
                 }
                 catch (Exception ex)
@@ -240,7 +240,7 @@ namespace PetvetPOS_Inventory_System
                 {
                     foreach (DataGridViewRow row in dgTransaction.Rows)
                     {
-                        if (row.Cells[DESCRIPTION_INDEX].Value.ToString() == productTransaction.product.Description)
+                        if (row.Cells[DESCRIPTION_INDEX].Value.ToString() == productTransaction.product.Name)
                         {
                             row.Cells[QTY_INDEX].Value = sum_of_qty;
                             row.Cells[PRICE_INDEX].Value = sum_of_price;
@@ -248,7 +248,7 @@ namespace PetvetPOS_Inventory_System
                             if (stock >= sum_of_qty){
                                 row.Cells[QTY_INDEX].Value = sum_of_qty;
                                 row.Cells[PRICE_INDEX].Value = sum_of_price;
-                                lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, sum_of_qty, sum_of_price);
+                                lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Name, sum_of_qty, sum_of_price);
                                 success = true;
                             }
                             else
@@ -406,7 +406,7 @@ namespace PetvetPOS_Inventory_System
                       else
                           poSlbl2.Text = totalAmount.ToString("N");
 
-                      lblPOSmsg.Text = string.Format("Void {0}", item.product.Description);
+                      lblPOSmsg.Text = string.Format("Void {0}", item.product.Name);
                       break;
                   }
               }

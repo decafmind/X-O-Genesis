@@ -44,15 +44,21 @@ namespace PetvetPOS_Inventory_System
             Inventory inventory = productInventory.inventory;
 
             txtItemCode.Text = product.Barcode;
+            txtSerialCode.Text = product.SerialCode;
             txtName.Text = product.Name;
             txtDescription.Text = product.Description;
-            txtCategory.Text = product.Category;
-            txtQty.Text = inventory.QtyOnHand.ToString();
+
             txtSupplier.Text = product.SupplierName;
+            txtUnit.Text = product.Unit;
+            txtMaintaining.Text = product.MaintainingStocks.ToString();
+            txtCategory.Text = product.Category;
+
+            txtUCost.Text = product.UnitCost.ToString();
+            txtUnitPrice.Text = product.UnitPrice.ToString();
             txtWarranty.Text = product.Warranty;
             txtReplacement.Text = product.Replacement;
 
-            txtItemCode.Focus();
+            txtQty.Text = inventory.QtyOnHand.ToString();
         }
 
         private void modalInspectProduct_KeyUp(object sender, KeyEventArgs e)

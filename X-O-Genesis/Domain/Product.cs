@@ -25,6 +25,7 @@ namespace PetvetPOS_Inventory_System
         public string Archive = "0";
 
         public string Replacement { get; set; }
+
         public Product()
         {
 
@@ -39,12 +40,16 @@ namespace PetvetPOS_Inventory_System
                     Barcode = (string)entity.getField("Barcode");
                     Name = (string)entity.getField("Name");
                     Category = (string)entity.getField("Category");
+                    UnitCost = (decimal)entity.getField("UnitCost");
                     UnitPrice = (decimal)entity.getField("Unit_price");
                     Description = (string)entity.getField("Description");
                     Warranty = (string)entity.getField("Warranty");
                     Replacement = (string)entity.getField("Replacement");
                     Description = (string)entity.getField("Description");
                     SupplierName = (string)entity.getField("Supplier");
+                    SerialCode = (string)entity.getField("SerialCode");
+                    Unit = (string)entity.getField("Unit");
+                    MaintainingStocks = (int)entity.getField("MaintainingStocks");
                 }
                 else
                 {
@@ -59,6 +64,7 @@ namespace PetvetPOS_Inventory_System
                     Warranty = (string)entity.getField("warranty");
                     Replacement = (string)entity.getField("replacement");
                     Category_id = (int)entity.getField("category_id");
+                    SerialCode = (string)entity.getField("serial_code");
                 }
                  
             }
@@ -81,7 +87,12 @@ namespace PetvetPOS_Inventory_System
                                     if (this.Warranty == product.Warranty)
                                         if (this.Replacement == product.Replacement)
                                             if (this.Description == product.Description)
-                                                return true;
+                                                if (this.MaintainingStocks == product.MaintainingStocks)
+                                                    if (this.SerialCode == product.SerialCode)
+                                                        if (this.Unit == product.Unit)
+                                                            if (this.UnitCost == product.UnitCost)
+                                                                if (this.UnitPrice == product.UnitPrice)
+                                                                    return true;
             }
             
             return false;

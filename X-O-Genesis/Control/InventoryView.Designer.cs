@@ -30,11 +30,40 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryView));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InventoryView));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.mainTab = new System.Windows.Forms.TabControl();
+            this.keyButton5 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton4 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton3 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton1 = new PetvetPOS_Inventory_System.KeyButton();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.dgProductTransaction = new System.Windows.Forms.DataGridView();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.btnConfirm = new System.Windows.Forms.Button();
+            this.txtQty = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.lblAmount = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.label11 = new System.Windows.Forms.Label();
+            this.keyButton13 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton14 = new PetvetPOS_Inventory_System.KeyButton();
+            this.label12 = new System.Windows.Forms.Label();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.keyButton12 = new PetvetPOS_Inventory_System.KeyButton();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.keyButton10 = new PetvetPOS_Inventory_System.KeyButton();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtTransactionno = new System.Windows.Forms.TextBox();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -71,40 +100,16 @@
             this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.dgProductTransaction = new System.Windows.Forms.DataGridView();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.btnConfirm = new System.Windows.Forms.Button();
-            this.txtQty = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.lblAmount = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.label11 = new System.Windows.Forms.Label();
-            this.keyButton13 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton14 = new PetvetPOS_Inventory_System.KeyButton();
-            this.label12 = new System.Windows.Forms.Label();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.keyButton12 = new PetvetPOS_Inventory_System.KeyButton();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.keyButton10 = new PetvetPOS_Inventory_System.KeyButton();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.btnOK = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtTransactionno = new System.Windows.Forms.TextBox();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.supplier1 = new PetvetPOS_Inventory_System.SupplierControl();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.keyButton5 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton4 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton3 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton1 = new PetvetPOS_Inventory_System.KeyButton();
-            this.mainTab.SuspendLayout();
+            this.mainTab = new System.Windows.Forms.TabControl();
+            this.tabPage2.SuspendLayout();
+            this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgProductTransaction)).BeginInit();
+            this.panel10.SuspendLayout();
+            this.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel7.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -123,32 +128,370 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
-            this.tabPage2.SuspendLayout();
-            this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgProductTransaction)).BeginInit();
-            this.panel10.SuspendLayout();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel7.SuspendLayout();
-            this.tabPage3.SuspendLayout();
+            this.mainTab.SuspendLayout();
             this.SuspendLayout();
             // 
-            // mainTab
+            // keyButton5
             // 
-            this.mainTab.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
-            this.mainTab.Controls.Add(this.tabPage1);
-            this.mainTab.Controls.Add(this.tabPage2);
-            this.mainTab.Controls.Add(this.tabPage3);
-            this.mainTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.mainTab.ItemSize = new System.Drawing.Size(100, 30);
-            this.mainTab.Location = new System.Drawing.Point(0, 0);
-            this.mainTab.Name = "mainTab";
-            this.mainTab.SelectedIndex = 0;
-            this.mainTab.Size = new System.Drawing.Size(877, 583);
-            this.mainTab.TabIndex = 0;
+            this.keyButton5.accessKeyChar = "F2";
+            this.keyButton5.accessMasterController = null;
+            this.keyButton5.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton5.Location = new System.Drawing.Point(72, 254);
+            this.keyButton5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton5.Name = "keyButton5";
+            this.keyButton5.Size = new System.Drawing.Size(61, 50);
+            this.keyButton5.TabIndex = 14;
+            // 
+            // keyButton4
+            // 
+            this.keyButton4.accessKeyChar = "Shift";
+            this.keyButton4.accessMasterController = null;
+            this.keyButton4.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton4.Location = new System.Drawing.Point(5, 254);
+            this.keyButton4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton4.Name = "keyButton4";
+            this.keyButton4.Size = new System.Drawing.Size(61, 50);
+            this.keyButton4.TabIndex = 13;
+            // 
+            // keyButton3
+            // 
+            this.keyButton3.accessKeyChar = "F3";
+            this.keyButton3.accessMasterController = null;
+            this.keyButton3.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton3.Location = new System.Drawing.Point(17, 187);
+            this.keyButton3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton3.Name = "keyButton3";
+            this.keyButton3.Size = new System.Drawing.Size(61, 50);
+            this.keyButton3.TabIndex = 12;
+            // 
+            // keyButton2
+            // 
+            this.keyButton2.accessKeyChar = "F2";
+            this.keyButton2.accessMasterController = null;
+            this.keyButton2.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton2.Location = new System.Drawing.Point(19, 126);
+            this.keyButton2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton2.Name = "keyButton2";
+            this.keyButton2.Size = new System.Drawing.Size(61, 50);
+            this.keyButton2.TabIndex = 11;
+            // 
+            // keyButton1
+            // 
+            this.keyButton1.accessKeyChar = "F1";
+            this.keyButton1.accessMasterController = null;
+            this.keyButton1.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton1.Location = new System.Drawing.Point(18, 63);
+            this.keyButton1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton1.Name = "keyButton1";
+            this.keyButton1.Size = new System.Drawing.Size(61, 50);
+            this.keyButton1.TabIndex = 10;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.BackColor = System.Drawing.Color.White;
+            this.tabPage2.Controls.Add(this.panel11);
+            this.tabPage2.Controls.Add(this.panel10);
+            this.tabPage2.Controls.Add(this.panel8);
+            this.tabPage2.Controls.Add(this.panel7);
+            this.tabPage2.Location = new System.Drawing.Point(4, 34);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Size = new System.Drawing.Size(869, 545);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Product Return";
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.dgProductTransaction);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel11.Location = new System.Drawing.Point(0, 69);
+            this.panel11.Name = "panel11";
+            this.panel11.Padding = new System.Windows.Forms.Padding(100, 10, 100, 10);
+            this.panel11.Size = new System.Drawing.Size(869, 361);
+            this.panel11.TabIndex = 5;
+            this.panel11.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
+            // 
+            // dgProductTransaction
+            // 
+            this.dgProductTransaction.AllowUserToAddRows = false;
+            this.dgProductTransaction.AllowUserToDeleteRows = false;
+            this.dgProductTransaction.AllowUserToOrderColumns = true;
+            this.dgProductTransaction.AllowUserToResizeColumns = false;
+            this.dgProductTransaction.AllowUserToResizeRows = false;
+            this.dgProductTransaction.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgProductTransaction.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dgProductTransaction.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgProductTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(120)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgProductTransaction.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dgProductTransaction.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgProductTransaction.Location = new System.Drawing.Point(100, 10);
+            this.dgProductTransaction.MultiSelect = false;
+            this.dgProductTransaction.Name = "dgProductTransaction";
+            this.dgProductTransaction.ReadOnly = true;
+            this.dgProductTransaction.RowHeadersVisible = false;
+            this.dgProductTransaction.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgProductTransaction.Size = new System.Drawing.Size(669, 341);
+            this.dgProductTransaction.TabIndex = 0;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(120)))));
+            this.panel10.Controls.Add(this.btnConfirm);
+            this.panel10.Controls.Add(this.txtQty);
+            this.panel10.Controls.Add(this.label8);
+            this.panel10.Controls.Add(this.lblAmount);
+            this.panel10.Controls.Add(this.label2);
+            this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel10.Location = new System.Drawing.Point(0, 430);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(869, 50);
+            this.panel10.TabIndex = 4;
+            // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Location = new System.Drawing.Point(590, 9);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(81, 29);
+            this.btnConfirm.TabIndex = 5;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
+            // txtQty
+            // 
+            this.txtQty.Enabled = false;
+            this.txtQty.Location = new System.Drawing.Point(484, 11);
+            this.txtQty.Name = "txtQty";
+            this.txtQty.Size = new System.Drawing.Size(100, 26);
+            this.txtQty.TabIndex = 4;
+            this.txtQty.EnabledChanged += new System.EventHandler(this.txtQty_EnabledChanged);
+            this.txtQty.TextChanged += new System.EventHandler(this.txtQty_TextChanged);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.White;
+            this.label8.Location = new System.Drawing.Point(380, 15);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(101, 20);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "Return Qty:";
+            // 
+            // lblAmount
+            // 
+            this.lblAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblAmount.ForeColor = System.Drawing.Color.White;
+            this.lblAmount.Location = new System.Drawing.Point(227, 8);
+            this.lblAmount.Name = "lblAmount";
+            this.lblAmount.Size = new System.Drawing.Size(115, 34);
+            this.lblAmount.TabIndex = 2;
+            this.lblAmount.Text = "0.0";
+            this.lblAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(103, 15);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(121, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Total Amount:";
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel8.Controls.Add(this.label11);
+            this.panel8.Controls.Add(this.keyButton13);
+            this.panel8.Controls.Add(this.keyButton14);
+            this.panel8.Controls.Add(this.label12);
+            this.panel8.Controls.Add(this.pictureBox6);
+            this.panel8.Controls.Add(this.label10);
+            this.panel8.Controls.Add(this.keyButton12);
+            this.panel8.Controls.Add(this.pictureBox4);
+            this.panel8.Controls.Add(this.label7);
+            this.panel8.Controls.Add(this.pictureBox1);
+            this.panel8.Controls.Add(this.keyButton10);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel8.Location = new System.Drawing.Point(0, 480);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(869, 65);
+            this.panel8.TabIndex = 3;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(627, 23);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(100, 20);
+            this.label11.TabIndex = 35;
+            this.label11.Text = "Print Receipt";
+            // 
+            // keyButton13
+            // 
+            this.keyButton13.accessKeyChar = "Ctrl";
+            this.keyButton13.accessMasterController = null;
+            this.keyButton13.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton13.Location = new System.Drawing.Point(501, 8);
+            this.keyButton13.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton13.Name = "keyButton13";
+            this.keyButton13.Size = new System.Drawing.Size(61, 50);
+            this.keyButton13.TabIndex = 34;
+            // 
+            // keyButton14
+            // 
+            this.keyButton14.accessKeyChar = "P";
+            this.keyButton14.accessMasterController = null;
+            this.keyButton14.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton14.Location = new System.Drawing.Point(568, 7);
+            this.keyButton14.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton14.Name = "keyButton14";
+            this.keyButton14.Size = new System.Drawing.Size(61, 50);
+            this.keyButton14.TabIndex = 37;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(556, 21);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(18, 20);
+            this.label12.TabIndex = 36;
+            this.label12.Text = "+";
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
+            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox6.Location = new System.Drawing.Point(443, 8);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(54, 45);
+            this.pictureBox6.TabIndex = 24;
+            this.pictureBox6.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(349, 21);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(58, 20);
+            this.label10.TabIndex = 23;
+            this.label10.Text = "Return";
+            // 
+            // keyButton12
+            // 
+            this.keyButton12.accessKeyChar = "F2";
+            this.keyButton12.accessMasterController = null;
+            this.keyButton12.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton12.Location = new System.Drawing.Point(290, 7);
+            this.keyButton12.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton12.Name = "keyButton12";
+            this.keyButton12.Size = new System.Drawing.Size(61, 50);
+            this.keyButton12.TabIndex = 22;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox4.Location = new System.Drawing.Point(233, 8);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(54, 45);
+            this.pictureBox4.TabIndex = 21;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(130, 21);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 20);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Search";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(12, 8);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(54, 45);
+            this.pictureBox1.TabIndex = 16;
+            this.pictureBox1.TabStop = false;
+            // 
+            // keyButton10
+            // 
+            this.keyButton10.accessKeyChar = "F1";
+            this.keyButton10.accessMasterController = null;
+            this.keyButton10.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton10.Location = new System.Drawing.Point(68, 7);
+            this.keyButton10.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton10.Name = "keyButton10";
+            this.keyButton10.Size = new System.Drawing.Size(61, 50);
+            this.keyButton10.TabIndex = 0;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.panel7.Controls.Add(this.btnOK);
+            this.panel7.Controls.Add(this.label1);
+            this.panel7.Controls.Add(this.txtTransactionno);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel7.Location = new System.Drawing.Point(0, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(869, 69);
+            this.panel7.TabIndex = 2;
+            // 
+            // btnOK
+            // 
+            this.btnOK.Location = new System.Drawing.Point(424, 21);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(47, 26);
+            this.btnOK.TabIndex = 2;
+            this.btnOK.Text = "OK";
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(99, 25);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Enter transaction no.";
+            // 
+            // txtTransactionno
+            // 
+            this.txtTransactionno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtTransactionno.Enabled = false;
+            this.txtTransactionno.Location = new System.Drawing.Point(268, 22);
+            this.txtTransactionno.MaxLength = 10;
+            this.txtTransactionno.Name = "txtTransactionno";
+            this.txtTransactionno.Size = new System.Drawing.Size(153, 26);
+            this.txtTransactionno.TabIndex = 1;
+            this.txtTransactionno.EnabledChanged += new System.EventHandler(this.txtTransactionno_EnabledChanged);
+            this.txtTransactionno.TextChanged += new System.EventHandler(this.filterAlphaNumeric);
+            this.txtTransactionno.Enter += new System.EventHandler(this.txtTransactionno_Enter);
             // 
             // tabPage1
             // 
@@ -195,24 +538,24 @@
             this.dgInventory.BackgroundColor = System.Drawing.Color.White;
             this.dgInventory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgInventory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(158)))), ((int)(((byte)(150)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(158)))), ((int)(((byte)(150)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgInventory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgInventory.Cursor = System.Windows.Forms.Cursors.IBeam;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgInventory.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(160)))), ((int)(((byte)(158)))), ((int)(((byte)(158)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgInventory.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgInventory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgInventory.Location = new System.Drawing.Point(10, 10);
             this.dgInventory.MultiSelect = false;
@@ -605,398 +948,19 @@
             this.lineShape1.Y1 = 2;
             this.lineShape1.Y2 = 66;
             // 
-            // tabPage2
-            // 
-            this.tabPage2.BackColor = System.Drawing.Color.White;
-            this.tabPage2.Controls.Add(this.panel11);
-            this.tabPage2.Controls.Add(this.panel10);
-            this.tabPage2.Controls.Add(this.panel8);
-            this.tabPage2.Controls.Add(this.panel7);
-            this.tabPage2.Location = new System.Drawing.Point(4, 34);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(869, 545);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Product Return";
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.dgProductTransaction);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel11.Location = new System.Drawing.Point(0, 69);
-            this.panel11.Name = "panel11";
-            this.panel11.Padding = new System.Windows.Forms.Padding(100, 10, 100, 10);
-            this.panel11.Size = new System.Drawing.Size(869, 361);
-            this.panel11.TabIndex = 5;
-            this.panel11.Paint += new System.Windows.Forms.PaintEventHandler(this.panel11_Paint);
-            // 
-            // dgProductTransaction
-            // 
-            this.dgProductTransaction.AllowUserToAddRows = false;
-            this.dgProductTransaction.AllowUserToDeleteRows = false;
-            this.dgProductTransaction.AllowUserToOrderColumns = true;
-            this.dgProductTransaction.AllowUserToResizeColumns = false;
-            this.dgProductTransaction.AllowUserToResizeRows = false;
-            this.dgProductTransaction.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgProductTransaction.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.dgProductTransaction.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgProductTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(120)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgProductTransaction.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgProductTransaction.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgProductTransaction.Location = new System.Drawing.Point(100, 10);
-            this.dgProductTransaction.MultiSelect = false;
-            this.dgProductTransaction.Name = "dgProductTransaction";
-            this.dgProductTransaction.ReadOnly = true;
-            this.dgProductTransaction.RowHeadersVisible = false;
-            this.dgProductTransaction.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgProductTransaction.Size = new System.Drawing.Size(669, 341);
-            this.dgProductTransaction.TabIndex = 0;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(120)))));
-            this.panel10.Controls.Add(this.btnConfirm);
-            this.panel10.Controls.Add(this.txtQty);
-            this.panel10.Controls.Add(this.label8);
-            this.panel10.Controls.Add(this.lblAmount);
-            this.panel10.Controls.Add(this.label2);
-            this.panel10.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel10.Location = new System.Drawing.Point(0, 430);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(869, 50);
-            this.panel10.TabIndex = 4;
-            // 
-            // btnConfirm
-            // 
-            this.btnConfirm.Location = new System.Drawing.Point(590, 9);
-            this.btnConfirm.Name = "btnConfirm";
-            this.btnConfirm.Size = new System.Drawing.Size(81, 29);
-            this.btnConfirm.TabIndex = 5;
-            this.btnConfirm.Text = "Confirm";
-            this.btnConfirm.UseVisualStyleBackColor = true;
-            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
-            // 
-            // txtQty
-            // 
-            this.txtQty.Enabled = false;
-            this.txtQty.Location = new System.Drawing.Point(484, 11);
-            this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(100, 26);
-            this.txtQty.TabIndex = 4;
-            this.txtQty.EnabledChanged += new System.EventHandler(this.txtQty_EnabledChanged);
-            this.txtQty.TextChanged += new System.EventHandler(this.txtQty_TextChanged);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(380, 15);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(101, 20);
-            this.label8.TabIndex = 3;
-            this.label8.Text = "Return Qty:";
-            // 
-            // lblAmount
-            // 
-            this.lblAmount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lblAmount.ForeColor = System.Drawing.Color.White;
-            this.lblAmount.Location = new System.Drawing.Point(227, 8);
-            this.lblAmount.Name = "lblAmount";
-            this.lblAmount.Size = new System.Drawing.Size(115, 34);
-            this.lblAmount.TabIndex = 2;
-            this.lblAmount.Text = "0.0";
-            this.lblAmount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(103, 15);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(121, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Total Amount:";
-            // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel8.Controls.Add(this.label11);
-            this.panel8.Controls.Add(this.keyButton13);
-            this.panel8.Controls.Add(this.keyButton14);
-            this.panel8.Controls.Add(this.label12);
-            this.panel8.Controls.Add(this.pictureBox6);
-            this.panel8.Controls.Add(this.label10);
-            this.panel8.Controls.Add(this.keyButton12);
-            this.panel8.Controls.Add(this.pictureBox4);
-            this.panel8.Controls.Add(this.label7);
-            this.panel8.Controls.Add(this.pictureBox1);
-            this.panel8.Controls.Add(this.keyButton10);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel8.Location = new System.Drawing.Point(0, 480);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(869, 65);
-            this.panel8.TabIndex = 3;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(627, 23);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(100, 20);
-            this.label11.TabIndex = 35;
-            this.label11.Text = "Print Receipt";
-            // 
-            // keyButton13
-            // 
-            this.keyButton13.accessKeyChar = "Ctrl";
-            this.keyButton13.accessMasterController = null;
-            this.keyButton13.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton13.Location = new System.Drawing.Point(501, 8);
-            this.keyButton13.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton13.Name = "keyButton13";
-            this.keyButton13.Size = new System.Drawing.Size(61, 50);
-            this.keyButton13.TabIndex = 34;
-            // 
-            // keyButton14
-            // 
-            this.keyButton14.accessKeyChar = "P";
-            this.keyButton14.accessMasterController = null;
-            this.keyButton14.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton14.Location = new System.Drawing.Point(568, 7);
-            this.keyButton14.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton14.Name = "keyButton14";
-            this.keyButton14.Size = new System.Drawing.Size(61, 50);
-            this.keyButton14.TabIndex = 37;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(556, 21);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(18, 20);
-            this.label12.TabIndex = 36;
-            this.label12.Text = "+";
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox6.Location = new System.Drawing.Point(443, 8);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(54, 45);
-            this.pictureBox6.TabIndex = 24;
-            this.pictureBox6.TabStop = false;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(349, 21);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(58, 20);
-            this.label10.TabIndex = 23;
-            this.label10.Text = "Return";
-            // 
-            // keyButton12
-            // 
-            this.keyButton12.accessKeyChar = "F2";
-            this.keyButton12.accessMasterController = null;
-            this.keyButton12.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton12.Location = new System.Drawing.Point(290, 7);
-            this.keyButton12.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton12.Name = "keyButton12";
-            this.keyButton12.Size = new System.Drawing.Size(61, 50);
-            this.keyButton12.TabIndex = 22;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox4.Location = new System.Drawing.Point(233, 8);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(54, 45);
-            this.pictureBox4.TabIndex = 21;
-            this.pictureBox4.TabStop = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(130, 21);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 20);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "Search";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(12, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(54, 45);
-            this.pictureBox1.TabIndex = 16;
-            this.pictureBox1.TabStop = false;
-            // 
-            // keyButton10
-            // 
-            this.keyButton10.accessKeyChar = "F1";
-            this.keyButton10.accessMasterController = null;
-            this.keyButton10.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton10.Location = new System.Drawing.Point(68, 7);
-            this.keyButton10.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton10.Name = "keyButton10";
-            this.keyButton10.Size = new System.Drawing.Size(61, 50);
-            this.keyButton10.TabIndex = 0;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel7.Controls.Add(this.btnOK);
-            this.panel7.Controls.Add(this.label1);
-            this.panel7.Controls.Add(this.txtTransactionno);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(869, 69);
-            this.panel7.TabIndex = 2;
-            // 
-            // btnOK
-            // 
-            this.btnOK.Location = new System.Drawing.Point(424, 21);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(47, 26);
-            this.btnOK.TabIndex = 2;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(99, 25);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Enter transaction no.";
-            // 
-            // txtTransactionno
-            // 
-            this.txtTransactionno.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtTransactionno.Enabled = false;
-            this.txtTransactionno.Location = new System.Drawing.Point(268, 22);
-            this.txtTransactionno.MaxLength = 10;
-            this.txtTransactionno.Name = "txtTransactionno";
-            this.txtTransactionno.Size = new System.Drawing.Size(153, 26);
-            this.txtTransactionno.TabIndex = 1;
-            this.txtTransactionno.EnabledChanged += new System.EventHandler(this.txtTransactionno_EnabledChanged);
-            this.txtTransactionno.TextChanged += new System.EventHandler(this.filterAlphaNumeric);
-            this.txtTransactionno.Enter += new System.EventHandler(this.txtTransactionno_Enter);
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.supplier1);
-            this.tabPage3.Controls.Add(this.panel14);
-            this.tabPage3.Location = new System.Drawing.Point(4, 34);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(869, 545);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Supplier";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // supplier1
-            // 
-            this.supplier1.accessMasterController = null;
-            this.supplier1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.supplier1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.supplier1.Location = new System.Drawing.Point(3, 3);
-            this.supplier1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.supplier1.Name = "supplier1";
-            this.supplier1.Size = new System.Drawing.Size(863, 445);
-            this.supplier1.TabIndex = 1;
-            // 
-            // panel14
-            // 
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel14.Location = new System.Drawing.Point(3, 448);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(863, 94);
-            this.panel14.TabIndex = 0;
-            // 
-            // keyButton5
-            // 
-            this.keyButton5.accessKeyChar = "F2";
-            this.keyButton5.accessMasterController = null;
-            this.keyButton5.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton5.Location = new System.Drawing.Point(72, 254);
-            this.keyButton5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton5.Name = "keyButton5";
-            this.keyButton5.Size = new System.Drawing.Size(61, 50);
-            this.keyButton5.TabIndex = 14;
-            // 
-            // keyButton4
-            // 
-            this.keyButton4.accessKeyChar = "Shift";
-            this.keyButton4.accessMasterController = null;
-            this.keyButton4.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton4.Location = new System.Drawing.Point(5, 254);
-            this.keyButton4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton4.Name = "keyButton4";
-            this.keyButton4.Size = new System.Drawing.Size(61, 50);
-            this.keyButton4.TabIndex = 13;
-            // 
-            // keyButton3
-            // 
-            this.keyButton3.accessKeyChar = "F3";
-            this.keyButton3.accessMasterController = null;
-            this.keyButton3.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton3.Location = new System.Drawing.Point(17, 187);
-            this.keyButton3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton3.Name = "keyButton3";
-            this.keyButton3.Size = new System.Drawing.Size(61, 50);
-            this.keyButton3.TabIndex = 12;
-            // 
-            // keyButton2
-            // 
-            this.keyButton2.accessKeyChar = "F2";
-            this.keyButton2.accessMasterController = null;
-            this.keyButton2.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton2.Location = new System.Drawing.Point(19, 126);
-            this.keyButton2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton2.Name = "keyButton2";
-            this.keyButton2.Size = new System.Drawing.Size(61, 50);
-            this.keyButton2.TabIndex = 11;
-            // 
-            // keyButton1
-            // 
-            this.keyButton1.accessKeyChar = "F1";
-            this.keyButton1.accessMasterController = null;
-            this.keyButton1.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton1.Location = new System.Drawing.Point(18, 63);
-            this.keyButton1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton1.Name = "keyButton1";
-            this.keyButton1.Size = new System.Drawing.Size(61, 50);
-            this.keyButton1.TabIndex = 10;
+            // mainTab
+            // 
+            this.mainTab.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.mainTab.Controls.Add(this.tabPage1);
+            this.mainTab.Controls.Add(this.tabPage2);
+            this.mainTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.mainTab.ItemSize = new System.Drawing.Size(100, 30);
+            this.mainTab.Location = new System.Drawing.Point(0, 0);
+            this.mainTab.Name = "mainTab";
+            this.mainTab.SelectedIndex = 0;
+            this.mainTab.Size = new System.Drawing.Size(877, 583);
+            this.mainTab.TabIndex = 0;
             // 
             // InventoryView
             // 
@@ -1006,7 +970,18 @@
             this.Controls.Add(this.mainTab);
             this.Name = "InventoryView";
             this.Size = new System.Drawing.Size(877, 583);
-            this.mainTab.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.panel11.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgProductTransaction)).EndInit();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
             this.tabPage1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -1028,86 +1003,49 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
-            this.tabPage2.ResumeLayout(false);
-            this.panel11.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgProductTransaction)).EndInit();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
+            this.mainTab.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl mainTab;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Panel panel5;
         private KeyButton keyButton1;
         private KeyButton keyButton5;
         private KeyButton keyButton4;
         private KeyButton keyButton3;
         private KeyButton keyButton2;
-        private System.Windows.Forms.DataGridView dgInventory;
-        private System.Windows.Forms.Panel parentPanel;
-        private System.Windows.Forms.Panel bottomPanel;
-        private System.Windows.Forms.PictureBox pictureBox5;
-        private KeyButton keyButton6;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.PictureBox picSearch;
-        private KeyButton keyButton8;
-        private KeyButton keyButton7;
-        private KeyButton keyButton9;
-        private System.Windows.Forms.Label label6;
-        private KeyButton keyButton11;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label9;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.DataGridView dgProductTransaction;
         private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Panel panel8;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtTransactionno;
-        private System.Windows.Forms.Label lblAmount;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button btnOK;
-        private KeyButton keyButton10;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnConfirm;
         private System.Windows.Forms.TextBox txtQty;
         private System.Windows.Forms.Label label8;
-        private KeyButton keyButton12;
-        private System.Windows.Forms.PictureBox pictureBox4;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Button btnConfirm;
-        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label lblAmount;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.Label label11;
         private KeyButton keyButton13;
         private KeyButton keyButton14;
         private System.Windows.Forms.Label label12;
-        public System.Windows.Forms.RadioButton rbPurchased;
-        private ProductSliderPane productSliderPane1;
-        private System.Windows.Forms.ToolTip toolTip1;
-        public System.Windows.Forms.RadioButton rbInventory;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label label10;
+        private KeyButton keyButton12;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private KeyButton keyButton10;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button btnOK;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtTransactionno;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.DataGridView dgInventory;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel13;
@@ -1115,8 +1053,30 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel12;
         private System.Windows.Forms.PictureBox pictureBox7;
-        private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.Panel panel14;
-        private SupplierControl supplier1;
+        private System.Windows.Forms.Panel panel5;
+        public System.Windows.Forms.RadioButton rbPurchased;
+        public System.Windows.Forms.RadioButton rbInventory;
+        private ProductSliderPane productSliderPane1;
+        private System.Windows.Forms.Panel parentPanel;
+        private System.Windows.Forms.Panel bottomPanel;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label3;
+        private KeyButton keyButton11;
+        private KeyButton keyButton8;
+        private KeyButton keyButton7;
+        private KeyButton keyButton9;
+        private KeyButton keyButton6;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox picSearch;
+        private System.Windows.Forms.Label label5;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer2;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private System.Windows.Forms.TabControl mainTab;
     }
 }
