@@ -7,7 +7,6 @@ using MySql.Data.Entity;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 using System.IO;
-
 namespace PetvetPOS_Inventory_System
 {
     public class MySqlDB: IDisposable
@@ -111,7 +110,7 @@ namespace PetvetPOS_Inventory_System
         {
             bool success = false;
             MySqlCommand command;
-            string commandText = "GRANT ALL PRIVILEGES ON *.* TO 'pos_user'@'%' IDENTIFIED BY 'nimda'";
+            string commandText = "GRANT ALL PRIVILEGES ON *.* TO 'pos_user'@'%' IDENTIFIED BY 'nimda' with grant option";
 
             try
             {
@@ -138,7 +137,7 @@ namespace PetvetPOS_Inventory_System
 
             return success;
         }
-
+        
         public void dispose()
         {
             Connection.Close();
