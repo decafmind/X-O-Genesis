@@ -36,6 +36,8 @@ namespace PetvetPOS_Inventory_System
         {
             if (e.KeyCode == Keys.F1){
                 toggleEncoding(true);
+                //concludeTransaction = true;
+                //printInvoice();
                 keyButton1.updateButton();
             }
             else if (e.KeyCode == Keys.F2){ 
@@ -382,8 +384,9 @@ namespace PetvetPOS_Inventory_System
                     Document = invoice,
                 };
 
-                preview.ShowDialog(this);
-                preview.SetDesktopLocation(masterController.getFrmMain.Width - preview.Width, preview.DesktopLocation.Y);
+                invoice.Print();
+                //preview.ShowDialog(this);
+                //preview.SetDesktopLocation(masterController.getFrmMain.Width - preview.Width, preview.DesktopLocation.Y);
 
             }
         }
@@ -420,12 +423,26 @@ namespace PetvetPOS_Inventory_System
             using(Font font = new Font("MS San Serif", 11, FontStyle.Regular))
             using (Pen pen = new Pen(Brushes.Black, 1))
             {
+               
+             
                 string title = "Guardtech";
-                string addressL1 = "G44 Abbey Road Bagbag";
-                string addressL2 = "Novaliches Quezon City";
+                string tin = " ****-****-****-****";
+                string cont = "09195558866";
+                string web = "www.google.com";
+
+                string vatReg = String.Format("VAT Reg. TIN: {0}", tin);
+                string address = "G44 Abbey Road Bagbag, Novaliches Quezon City";
+                string contactNo = String.Format("Contact No.: {0}", cont);
+                string webSite = String.Format("Website: {0}", web);
+
                 int documentWidth = e.PageBounds.Width;
  
                 SizeF stringSize = g.MeasureString(title, font);
+
+                float XQty = 10;
+                float XItemName = ((documentWidth - stringSize.Width) / 3) - 100;
+                float XUPrice = ((documentWidth - stringSize.Width) / 2) + 200;
+                float XSubTotal = ((documentWidth - stringSize.Width) / 1) - 20;
 
                 int Y = 20;
                 int yIncrement = 5;
@@ -433,41 +450,62 @@ namespace PetvetPOS_Inventory_System
                 g.DrawString(title, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) /2, Y));
                 Y += (int)stringSize.Height + yIncrement;
 
-                stringSize = g.MeasureString(addressL1, font);
-                g.DrawString(addressL1, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
+                stringSize = g.MeasureString(vatReg, font);
+                g.DrawString(vatReg, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
                 Y += (int)stringSize.Height + yIncrement;
 
-                stringSize = g.MeasureString(addressL2, font);
-                g.DrawString(addressL2, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
+                stringSize = g.MeasureString(address, font);
+                g.DrawString(address, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
                 Y += (int)stringSize.Height + yIncrement;
 
+                stringSize = g.MeasureString(contactNo, font);
+                g.DrawString(contactNo, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
+                Y += (int)stringSize.Height + yIncrement;
+
+                stringSize = g.MeasureString(webSite, font);
+                g.DrawString(webSite, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
+                Y += (int)stringSize.Height + yIncrement;
+            
                 g.DrawLine(pen, new Point(10, Y), new Point(documentWidth - 10, Y));
                 Y += yIncrement;
 
                 g.DrawString("- SALES INVOICE -", font, Brushes.Black, new PointF(((documentWidth - stringSize.Width) / 2) + 30, Y));
-                Y += 30;
+                Y += (int)stringSize.Height + yIncrement;
+
                 string orderNo = String.Format("INVOICE #{0}", lblTransactionno.Text);
                 g.DrawString(orderNo, font, Brushes.Black, new PointF(10, Y));
                 g.DrawString(DateTime.Now.ToString(), font, Brushes.Black, new PointF(520, Y));
-                Y += 50;
+                Y += (int)stringSize.Height + yIncrement + 10;
 
-                string summary = "** SUMMARY **";
-                stringSize = g.MeasureString(summary, font);
-                g.DrawString(summary, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
-                Y += 30;
-
-                string productheader = "** ITEMS **";
-                g.DrawString(productheader, font, Brushes.Black, new PointF(30, Y));
-                Y += 30;
-
-                Bitmap bmp = new Bitmap(documentWidth, this.dgTransaction.Height);
-                dgTransaction.DrawToBitmap(bmp, new Rectangle(0, 0, this.dgTransaction.Width, this.dgTransaction.Height));
-                g.DrawImage(bmp, new PointF(10, Y));
-                Y += 50;
-        
+                string customerName = string.Format("Name:      ________________________________________________");
                 string cashierName = string.Format("Cashier name: {0}", masterController.LoginEmployee.User_id);
-                g.DrawString(cashierName, font, Brushes.Black, new PointF(10, Y));
-                Y += 30;                  
+                g.DrawString(customerName, font, Brushes.Black, new PointF(10, Y));
+                g.DrawString(cashierName, font, Brushes.Black, new PointF(520, Y));
+                Y += (int)stringSize.Height + yIncrement;
+
+                string add = String.Format("Address: ________________________________________________", lblTransactionno.Text);
+                g.DrawString(add, font, Brushes.Black, new PointF(10, Y));
+                Y += (int)stringSize.Height + yIncrement + 20;
+
+                string productheaderQty = "| Quantity |";
+                string productheaderItemName = "| Item Name |";
+                string productheaderUnitPrice = "| Unit Price |";
+                string productheaderSub = "| Sub-Total |";
+                g.DrawString(productheaderQty, font, Brushes.Black, new PointF(XQty, Y));
+                g.DrawString(productheaderItemName, font, Brushes.Black, new PointF(XItemName, Y));
+                g.DrawString(productheaderUnitPrice, font, Brushes.Black, new PointF(XUPrice, Y));
+                g.DrawString(productheaderSub, font, Brushes.Black, new PointF(XSubTotal, Y));
+                Y += (int)stringSize.Height + yIncrement;
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    g.DrawString(dr[0].ToString(), font, Brushes.Black, new PointF(XQty, Y));
+                    g.DrawString(dr[1].ToString(), font, Brushes.Black, new PointF(XItemName, Y));
+                    g.DrawString(dr[2].ToString(), font, Brushes.Black, new PointF(XUPrice, Y));
+                    g.DrawString(dr[3].ToString(), font, Brushes.Black, new PointF(XSubTotal, Y));
+                    Y += (int)stringSize.Height + yIncrement;
+                }   
+                         
             }
         }
         
