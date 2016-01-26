@@ -217,7 +217,8 @@ namespace PetvetPOS_Inventory_System
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (Validation.isFilled(panel_AddUser, txtMiddlename, txtPassword, txtRepassword, txtAnswer, cmbSquery))
+            bool x = Validation.isFilled(panel_AddUser, txtMiddlename, txtPassword, txtRepassword, txtAnswer, cmbSquery);
+            if (x)
             {
                 if (mode == UserAdminMode.Add_user)
                 {
@@ -230,8 +231,8 @@ namespace PetvetPOS_Inventory_System
                         banner0.Show();
                         return;
                     }
-
                 }
+
                 if (userAdministration.usernames.Contains(txtUsername.Text) && mode != UserAdminMode.Edit_user)
                 {
                     MessageBox.Show(String.Format("The username {0} did already exists!", txtUsername.Text));
@@ -291,11 +292,8 @@ namespace PetvetPOS_Inventory_System
                     string action = string.Format("updated User {0}", employee.User_id);
                     dbController.insertAuditTrail(action);
                 }
-
                 this.disappear();
-            }
-            else
-            {
+            }else{
                 MessageBanner banner1 = new MessageBanner("Please fill up all the fields and try again.", 2000);
                 banner1.BackColor = System.Drawing.Color.DarkRed;
                 banner1.ForeColor = System.Drawing.Color.White;
@@ -378,114 +376,35 @@ namespace PetvetPOS_Inventory_System
         {
             Validation.filterToNames(sender as TextBox);
         }
+
         private void filterContacts(object sender, EventArgs e)
         {
             Validation.filterToContactNo(sender as TextBox);
         }
+
         private void filterEmail(object sender, EventArgs e)
         {
             Validation.filterToEmail(sender as TextBox);
         }
+
         private void filterParagraph(object sender, EventArgs e)
         {
             Validation.filterToParagraph(sender as TextBox);
         }
+
         private int SelectedIndex(int index)
         {
             int findex = 0;
             findex = index + 1;
             return findex;
         }
+
         public void loadSqueryList()
         {
             cmbSquery.Items.Clear();
             cmbSquery.Items.AddRange(dbController.getListOfSquery().ToArray());
         }
 
-        private void txtAnswer_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label11_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cmbSquery_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void vUsername_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void vRepassword_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblRepassword_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtImagepath_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblPassword_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void domainPosition_SelectedItemChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel_AddUser_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
         
     }
 }

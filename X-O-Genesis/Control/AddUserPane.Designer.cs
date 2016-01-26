@@ -102,7 +102,7 @@
             this.vUsername.TabIndex = 124;
             this.toolTip1.SetToolTip(this.vUsername, "username already exists");
             this.vUsername.Visible = false;
-            this.vUsername.Load += new System.EventHandler(this.vUsername_Load);
+            
             // 
             // vRepassword
             // 
@@ -114,7 +114,7 @@
             this.vRepassword.TabIndex = 122;
             this.toolTip1.SetToolTip(this.vRepassword, "Password doesn\'t match");
             this.vRepassword.Visible = false;
-            this.vRepassword.Load += new System.EventHandler(this.vRepassword_Load);
+   
             // 
             // upload
             // 
@@ -175,7 +175,7 @@
             this.panel_AddUser.Name = "panel_AddUser";
             this.panel_AddUser.Size = new System.Drawing.Size(542, 450);
             this.panel_AddUser.TabIndex = 666;
-            this.panel_AddUser.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_AddUser_Paint);
+   
             // 
             // txtImagepath
             // 
@@ -197,7 +197,6 @@
             this.label1.Size = new System.Drawing.Size(108, 18);
             this.label1.TabIndex = 117;
             this.label1.Text = "FIRST NAME";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtAnswer
             // 
@@ -208,7 +207,6 @@
             this.txtAnswer.Size = new System.Drawing.Size(332, 26);
             this.txtAnswer.TabIndex = 18;
             this.txtAnswer.UseSystemPasswordChar = true;
-            this.txtAnswer.TextChanged += new System.EventHandler(this.txtAnswer_TextChanged);
             // 
             // lblPassword
             // 
@@ -219,7 +217,7 @@
             this.lblPassword.Size = new System.Drawing.Size(102, 19);
             this.lblPassword.TabIndex = 106;
             this.lblPassword.Text = "PASSWORD:";
-            this.lblPassword.Click += new System.EventHandler(this.lblPassword_Click);
+           
             // 
             // label13
             // 
@@ -272,7 +270,6 @@
             this.label11.Size = new System.Drawing.Size(110, 18);
             this.label11.TabIndex = 132;
             this.label11.Text = "ANSWER:";
-            this.label11.Click += new System.EventHandler(this.label11_Click);
             // 
             // label8
             // 
@@ -291,7 +288,7 @@
             this.cmbSquery.Name = "cmbSquery";
             this.cmbSquery.Size = new System.Drawing.Size(332, 21);
             this.cmbSquery.TabIndex = 17;
-            this.cmbSquery.SelectedIndexChanged += new System.EventHandler(this.cmbSquery_SelectedIndexChanged);
+           
             // 
             // txtMobno
             // 
@@ -311,7 +308,6 @@
             this.label10.Size = new System.Drawing.Size(110, 49);
             this.label10.TabIndex = 130;
             this.label10.Text = "SECRET QUESTION:";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label5
             // 
@@ -322,7 +318,6 @@
             this.label5.Size = new System.Drawing.Size(90, 19);
             this.label5.TabIndex = 103;
             this.label5.Text = "POSITION:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // txtEmail
             // 
@@ -343,7 +338,7 @@
             this.label6.Size = new System.Drawing.Size(105, 19);
             this.label6.TabIndex = 105;
             this.label6.Text = "USERNAME:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
+ 
             // 
             // label7
             // 
@@ -376,7 +371,6 @@
             this.btnSave.TabIndex = 19;
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.TextChanged += new System.EventHandler(this.textboxes_TextChanged);
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // 
             // label9
@@ -388,7 +382,7 @@
             this.label9.Size = new System.Drawing.Size(89, 19);
             this.label9.TabIndex = 108;
             this.label9.Text = "ADDRESS:";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
+        
             // 
             // txtAddress
             // 
@@ -409,7 +403,7 @@
             this.lblRepassword.Size = new System.Drawing.Size(110, 49);
             this.lblRepassword.TabIndex = 110;
             this.lblRepassword.Text = "RETYPE PASSWORD:";
-            this.lblRepassword.Click += new System.EventHandler(this.lblRepassword_Click);
+      
             // 
             // txtRepassword
             // 
@@ -445,7 +439,6 @@
             this.domainPosition.Size = new System.Drawing.Size(254, 26);
             this.domainPosition.TabIndex = 4;
             this.domainPosition.Text = "Cashier";
-            this.domainPosition.SelectedItemChanged += new System.EventHandler(this.domainPosition_SelectedItemChanged);
             // 
             // lblAsterisk2
             // 
@@ -499,7 +492,7 @@
             this.label3.Size = new System.Drawing.Size(103, 18);
             this.label3.TabIndex = 116;
             this.label3.Text = "LAST NAME";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+          
             // 
             // label2
             // 
@@ -510,7 +503,6 @@
             this.label2.Size = new System.Drawing.Size(26, 18);
             this.label2.TabIndex = 118;
             this.label2.Text = "MI";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // txtMiddlename
             // 
