@@ -164,6 +164,12 @@
     <Compile Include="Control\Back.Designer.cs">
       <DependentUpon>Back.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\CompanyProfile.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\CompanyProfile.Designer.cs">
+      <DependentUpon>CompanyProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\FBUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -231,6 +237,7 @@
       <DependentUpon>SystemSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Domain\Client.cs" />
+    <Compile Include="Domain\CompanyProf.cs" />
     <Compile Include="Domain\Controller\Service.cs" />
     <Compile Include="Domain\Enums\Settings.cs" />
     <Compile Include="Domain\LoginTrail.cs" />
@@ -292,6 +299,7 @@
     </Compile>
     <Compile Include="MyExtension\ErrorLog.cs" />
     <Compile Include="ORM\TableGateway\AuditTrailMapper.cs" />
+    <Compile Include="ORM\TableGateway\CompanyProfileMapper.cs" />
     <Compile Include="ORM\TableGateway\FallbackMapper.cs" />
     <Compile Include="ORM\TableGateway\ProductInspectionMapper.cs" />
     <Compile Include="ORM\TableGateway\ProductReturnMapper.cs" />
@@ -528,6 +536,9 @@
     </Compile>
     <EmbeddedResource Include="Control\Back.resx">
       <DependentUpon>Back.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\CompanyProfile.resx">
+      <DependentUpon>CompanyProfile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\FBUser.resx">
       <DependentUpon>FBUser.cs</DependentUpon>

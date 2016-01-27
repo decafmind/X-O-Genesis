@@ -100,5 +100,10 @@ namespace PetvetPOS_Inventory_System
         {
             //Ayos na'to ehh
         }
+
+        private void picCompProf_Click(object sender, EventArgs e)
+        {
+            masterController.changeCurrentContent(new CompanyProfile(base.masterController));
+        }
     }
 }

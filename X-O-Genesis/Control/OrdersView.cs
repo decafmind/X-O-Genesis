@@ -226,7 +226,7 @@ namespace PetvetPOS_Inventory_System
                     var row = dt.NewRow();
                     row["Product"] = currentProduct.Name;
                     row["Quantity"] = quantity;
-                    row["Group Price"] = productTransaction.GroupPrice;
+                    row["Sub-Total"] = productTransaction.GroupPrice;
                     row["Unit Price"] = productTransaction.product.UnitPrice;
                     dt.Rows.Add(row);
                     lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Name, quantity, productTransaction.GroupPrice);
@@ -283,7 +283,7 @@ namespace PetvetPOS_Inventory_System
             dt.Columns.Add("Quantity", typeof(Int32));
             dt.Columns.Add("Product", typeof(string));
             dt.Columns.Add("Unit Price", typeof(Decimal));
-            dt.Columns.Add("Group Price", typeof(Decimal));
+            dt.Columns.Add("Sub-Total", typeof(Decimal));
             dgTransaction.DataSource = dt;
 
             dgTransaction.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
@@ -383,11 +383,10 @@ namespace PetvetPOS_Inventory_System
                     Height = 900,
                     Document = invoice,
                 };
-
-                invoice.Print();
+              
                 //preview.ShowDialog(this);
                 //preview.SetDesktopLocation(masterController.getFrmMain.Width - preview.Width, preview.DesktopLocation.Y);
-
+                invoice.Print();
             }
         }
 
@@ -418,20 +417,30 @@ namespace PetvetPOS_Inventory_System
         }
 
         void invoice_Layout(object sender, PrintPageEventArgs e)
-        { 
+        {
+            DataTable companyProfile = new DataTable();
+            dbController.loadCompanyProfile(companyProfile);
+
+            string title = "Guardtech";
+            string tin = " ****-****-****-****";
+            string address = "G44 Abbey Road Bagbag, Novaliches Quezon City";
+            string cont = "09195558866";
+            string web = "www.google.com";
+          
+
+            foreach (DataRow dr in companyProfile.Rows)
+            {
+                title = dr["compname"].ToString();
+                address = dr["address"].ToString();
+                cont = dr["contactno"].ToString();
+                web = dr["email"].ToString();
+            }
+
             Graphics g = e.Graphics;
             using(Font font = new Font("MS San Serif", 11, FontStyle.Regular))
             using (Pen pen = new Pen(Brushes.Black, 1))
             {
-               
-             
-                string title = "Guardtech";
-                string tin = " ****-****-****-****";
-                string cont = "09195558866";
-                string web = "www.google.com";
-
-                string vatReg = String.Format("VAT Reg. TIN: {0}", tin);
-                string address = "G44 Abbey Road Bagbag, Novaliches Quezon City";
+                string vatReg = String.Format("VAT Reg. TIN: {0}", tin);            
                 string contactNo = String.Format("Contact No.: {0}", cont);
                 string webSite = String.Format("Website: {0}", web);
 
@@ -441,8 +450,8 @@ namespace PetvetPOS_Inventory_System
 
                 float XQty = 10;
                 float XItemName = ((documentWidth - stringSize.Width) / 3) - 100;
-                float XUPrice = ((documentWidth - stringSize.Width) / 2) + 200;
-                float XSubTotal = ((documentWidth - stringSize.Width) / 1) - 20;
+                float XUPrice = ((documentWidth - stringSize.Width) / 2) + 180;
+                float XSubTotal = ((documentWidth - stringSize.Width) / 1) - 60;
 
                 int Y = 20;
                 int yIncrement = 5;
@@ -469,7 +478,7 @@ namespace PetvetPOS_Inventory_System
                 g.DrawLine(pen, new Point(10, Y), new Point(documentWidth - 10, Y));
                 Y += yIncrement;
 
-                g.DrawString("- SALES INVOICE -", font, Brushes.Black, new PointF(((documentWidth - stringSize.Width) / 2) + 30, Y));
+                g.DrawString("- SALES INVOICE -", font, Brushes.Black, new PointF(((documentWidth - stringSize.Width) / 2), Y));
                 Y += (int)stringSize.Height + yIncrement;
 
                 string orderNo = String.Format("INVOICE #{0}", lblTransactionno.Text);

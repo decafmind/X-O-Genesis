@@ -61,6 +61,8 @@ namespace PetvetPOS_Inventory_System
         public SupplierMapper supplierMapper { get; set; }
         public ProductInspectionMapper productInspectionMapper { get; set; }
 
+        public CompanyProfileMapper companyProfileMapper { get; set; }
+
         public DatabaseController(MasterController masterController)
         {
             this.mySqlDB = new MySqlDB();
@@ -99,6 +101,7 @@ namespace PetvetPOS_Inventory_System
 
             this.fallbackMapper = new FallbackMapper(mySqlDB);
             this.productInspectionMapper = new ProductInspectionMapper(mySqlDB);
+            this.companyProfileMapper = new CompanyProfileMapper(mySqlDB);
 
             // Events hooking
             this.masterController.EmployeeLogin += masterController_EmployeeLogin;
@@ -197,6 +200,12 @@ namespace PetvetPOS_Inventory_System
         {
             return inventoryMapper.updateInventory(qty, barcode);
         }
+
+        public bool updateCompanyProfile(CompanyProf companyProfile)
+        {
+            return companyProfileMapper.updateCompanyProfile(companyProfile);
+        }
+
         public Employee getEmployeeFromUser(User user)
         {
             return employeeMapper.getEmployeeFromUserId(user);
@@ -212,7 +221,11 @@ namespace PetvetPOS_Inventory_System
             return loginTrailMapper.getLoginTrailTable(dt);
         }
 
-        
+        public DataTable loadCompanyProfile(DataTable dt)
+        {
+            return companyProfileMapper.loadTable(dt);
+        }
+       
         public DataTable getDailySalesReport(DataTable dt)
         {
             return dailySalesReportMapper.loadTable(dt);

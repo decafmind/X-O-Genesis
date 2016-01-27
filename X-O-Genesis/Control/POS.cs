@@ -354,8 +354,8 @@ namespace PetvetPOS_Inventory_System
                 };
 
                 receipt.Print();
-             //   preview.ShowDialog(this);
-             //   preview.SetDesktopLocation(masterController.getFrmMain.Width - preview.Width, preview.DesktopLocation.Y);
+                //preview.ShowDialog(this);
+                //preview.SetDesktopLocation(masterController.getFrmMain.Width - preview.Width, preview.DesktopLocation.Y);
             }
         }
 
@@ -409,15 +409,28 @@ namespace PetvetPOS_Inventory_System
         
         void receipt_PrintPage(object sender, PrintPageEventArgs e)
         {
+            DataTable companyProfile = new DataTable();
+            dbController.loadCompanyProfile(companyProfile);
+
+            string title = "Guardtech";
+            string tin = " ****-****-****-****";
+            string address = "G44 Abbey Road Bagbag, Novaliches Quezon City";
+            string cont = "09195558866";
+            string web = "www.google.com";
+          
+            foreach (DataRow dr in companyProfile.Rows)
+            {
+                title = dr["compname"].ToString();
+                address = dr["address"].ToString();
+                cont = dr["contactno"].ToString();
+                web = dr["email"].ToString();
+            }
             Graphics g = e.Graphics;
             using(Font font = new Font("MS San Serif", 11 , FontStyle.Regular))
             using(Pen pen = new Pen(Brushes.Black, 1))
             {
-                string title = "Guardtech";
-                string addressL1 = "2/F Nova Square Shopping Center,";
-                string addressL2 = "San Bartolome, Nova. QC";
-                int documentWidth = e.PageBounds.Width;
 
+                int documentWidth = e.PageBounds.Width;
                 int Y = 20;
                 int yIncrement = 5;
 
@@ -425,11 +438,20 @@ namespace PetvetPOS_Inventory_System
                 g.DrawString(title, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
                 Y += (int)stringSize.Height + yIncrement;
 
-                stringSize = g.MeasureString(addressL1, font);
-                g.DrawString(addressL1, font, Brushes.Black, new PointF((documentWidth - stringSize.Width)/2, Y));
+                stringSize = g.MeasureString(tin, font);
+                g.DrawString(tin, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
                 Y += (int)stringSize.Height + yIncrement;
-                stringSize = g.MeasureString(addressL2, font);
-                g.DrawString(addressL2, font, Brushes.Black ,new PointF((documentWidth - stringSize.Width)/2, Y));
+
+                stringSize = g.MeasureString(address, font);
+                g.DrawString(address, font, Brushes.Black, new PointF((documentWidth - stringSize.Width)/2, Y));
+                Y += (int)stringSize.Height + yIncrement;
+
+                stringSize = g.MeasureString(cont, font);
+                g.DrawString(cont, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
+                Y += (int)stringSize.Height + yIncrement;
+
+                stringSize = g.MeasureString(web, font);
+                g.DrawString(web, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
                 Y += (int)stringSize.Height + yIncrement;
 
                 g.DrawLine(pen, new Point(10, Y), new Point(documentWidth - 10, Y));
