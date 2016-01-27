@@ -890,6 +890,8 @@
     <None Include="Resources\shift.png" />
     <None Include="Resources\ShiftClick.png" />
     <None Include="Resources\settings3-48.png" />
+    <None Include="Resources\play.png" />
+    <None Include="Resources\stop.png" />
     <Content Include="SystemIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -119,5 +119,10 @@ namespace PetvetPOS_Inventory_System
                 txtPass1.Focus();
             }
         }
+
+        private void lblBarcode_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

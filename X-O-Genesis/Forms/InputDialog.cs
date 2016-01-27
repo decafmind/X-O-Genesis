@@ -22,7 +22,7 @@ namespace PetvetPOS_Inventory_System
         {
             InitializeComponent();
             this.Text = title;
-            this.label1.Text = message;
+            this.lblTitle.Text = message;
         }
 
         private void InputDialog_Load(object sender, EventArgs e)

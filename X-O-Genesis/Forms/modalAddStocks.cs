@@ -26,7 +26,7 @@ namespace PetvetPOS_Inventory_System
             ProductName = productName;
             CurrentStocks = currentStocks;
 
-            lblBarcode.Text = Barcode;
+            lblTitle.Text = Barcode;
             lblProductName.Text = ProductName;
             lblCurrentStocks.Text = CurrentStocks.ToString();
         }

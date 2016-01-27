@@ -227,5 +227,10 @@ namespace PetvetPOS_Inventory_System
             }
         }
 
+        private void pawPrint1_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
