@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MyExtension;
 
 namespace PetvetPOS_Inventory_System
 {
@@ -286,6 +287,26 @@ namespace PetvetPOS_Inventory_System
         private void txtPrice_TextChanged(object sender, EventArgs e)
         {
             MyExtension.Validation.limitTextbox(sender as TextBox, ".1234567890");
+        }
+
+        private void txtName_TextChanged(object sender, EventArgs e)
+        {
+            Validation.filterToAlphaNumeric(sender as TextBox);
+        }
+
+        private void txtMaintainingStocks_TextChanged(object sender, EventArgs e)
+        {
+            Validation.filterToNumeric(sender as TextBox);
+        }
+
+        private void txtUnitCost_TextChanged(object sender, EventArgs e)
+        {
+            Validation.filterToDecimal(sender as TextBox);
+        }
+
+        private void txtUnitPrice_TextChanged(object sender, EventArgs e)
+        {
+            Validation.filterToDecimal(sender as TextBox);
         }
     }
 }

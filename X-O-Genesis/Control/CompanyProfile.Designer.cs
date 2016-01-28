@@ -120,6 +120,7 @@
             this.txtCont.Name = "txtCont";
             this.txtCont.Size = new System.Drawing.Size(237, 20);
             this.txtCont.TabIndex = 20;
+            this.txtCont.TextChanged += new System.EventHandler(this.txtCont_TextChanged);
             // 
             // txtAdd
             // 

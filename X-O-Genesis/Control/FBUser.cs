@@ -7,14 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MyExtension;
 
 namespace PetvetPOS_Inventory_System
 {
     public partial class FBUser : MyUserControl
     {
-        private User user;
         private Fallback fallback;
-        DatabaseController dbController;
 
         public FBUser() 
         {
@@ -35,6 +34,11 @@ namespace PetvetPOS_Inventory_System
         private void btnSubmit_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            Validation.filterToAlphaNumeric(sender as TextBox);
         }
     }
 }

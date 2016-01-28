@@ -175,6 +175,22 @@ namespace MyExtension
                 textbox.SelectionLength = 0;
             }
         }
+
+        public static void filterToDecimal(TextBox textbox)
+        {
+            string acceptedChar = ".1234567890";
+            string result = "";
+            foreach (char character in textbox.Text)
+                if (acceptedChar.Contains(character))
+                    if (!string.IsNullOrWhiteSpace(textbox.Text))
+                        result += character;
+            textbox.Text = result;
+            if (textbox.Text.Length > 0)
+            {
+                textbox.SelectionStart = textbox.Text.Length;
+                textbox.SelectionLength = 0;
+            }
+        }
     }
 
 

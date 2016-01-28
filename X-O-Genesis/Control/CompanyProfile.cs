@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MyExtension;
 
 namespace PetvetPOS_Inventory_System
 {
@@ -118,6 +119,11 @@ namespace PetvetPOS_Inventory_System
         private void CompanyProfile_Load(object sender, EventArgs e)
         {
             loadCompanyProfile();
+        }
+
+        private void txtCont_TextChanged(object sender, EventArgs e)
+        {     
+            Validation.filterToContactNo(sender as TextBox);
         }
     }
 }

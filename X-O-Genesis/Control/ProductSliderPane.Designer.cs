@@ -108,6 +108,7 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(211, 23);
             this.txtName.TabIndex = 8;
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // label2
             // 
@@ -294,6 +295,7 @@
             this.txtMaintainingStocks.Name = "txtMaintainingStocks";
             this.txtMaintainingStocks.Size = new System.Drawing.Size(212, 23);
             this.txtMaintainingStocks.TabIndex = 35;
+            this.txtMaintainingStocks.TextChanged += new System.EventHandler(this.txtMaintainingStocks_TextChanged);
             // 
             // label11
             // 
@@ -314,6 +316,7 @@
             this.txtUnitCost.Name = "txtUnitCost";
             this.txtUnitCost.Size = new System.Drawing.Size(212, 23);
             this.txtUnitCost.TabIndex = 37;
+            this.txtUnitCost.TextChanged += new System.EventHandler(this.txtUnitCost_TextChanged);
             // 
             // label12
             // 
@@ -334,6 +337,7 @@
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.Size = new System.Drawing.Size(215, 23);
             this.txtUnitPrice.TabIndex = 39;
+            this.txtUnitPrice.TextChanged += new System.EventHandler(this.txtUnitPrice_TextChanged);
             // 
             // cbUnit
             // 

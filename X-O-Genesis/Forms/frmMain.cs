@@ -179,10 +179,12 @@ namespace PetvetPOS_Inventory_System
             userControlPanel.BackColor = Color.WhiteSmoke;
         }
 
-        private void frmMain_FormClosing(object sender, FormClosingEventArgs e){
+        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
             if (isLogin){
                 if (!masterController.logout()){
                     e.Cancel = true;
+                    this.OnFormClosing(e);
                     return;
                 }
             }

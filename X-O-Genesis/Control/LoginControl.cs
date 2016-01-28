@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MyExtension;
 
 namespace PetvetPOS_Inventory_System
 {
@@ -33,11 +34,13 @@ namespace PetvetPOS_Inventory_System
             txtUsername.Text = "Enter your username";
             this.txtUsername.Leave += new System.EventHandler(this.txtUsername_Leave);
             this.txtUsername.Enter += new System.EventHandler(this.txtUsername_Enter);
-
+            
             txtPassword.ForeColor = SystemColors.posGray;
+            txtPassword.PasswordChar = '*';
             txtPassword.Text = "Enter your password";
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);
+            
         }
 
         private void txtUsername_Leave(object sender, EventArgs e)
@@ -266,7 +269,7 @@ namespace PetvetPOS_Inventory_System
 
         private void txtUsername_TextChanged_1(object sender, EventArgs e)
         {
-
+            Validation.filterToAlphaNumeric(sender as TextBox);
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
