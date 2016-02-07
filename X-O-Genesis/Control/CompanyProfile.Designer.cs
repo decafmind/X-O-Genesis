@@ -64,7 +64,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(409, 391);
+            this.panel1.Size = new System.Drawing.Size(409, 413);
             this.panel1.TabIndex = 0;
             // 
             // lblPath
@@ -79,26 +79,40 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(226, 343);
+            this.btnCancel.AutoSize = true;
+            this.btnCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnCancel.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Cancel_2;
+            this.btnCancel.Location = new System.Drawing.Point(212, 335);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(147, 23);
+            this.btnCancel.Size = new System.Drawing.Size(147, 58);
             this.btnCancel.TabIndex = 24;
             this.btnCancel.Text = "Cancel";
+            this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancel.UseVisualStyleBackColor = true;
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(38, 343);
+            this.btnSave.AutoSize = true;
+            this.btnSave.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnSave.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Save;
+            this.btnSave.Location = new System.Drawing.Point(38, 335);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(147, 23);
+            this.btnSave.Size = new System.Drawing.Size(147, 58);
             this.btnSave.TabIndex = 23;
             this.btnSave.Text = "Save";
+            this.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.shopIcon;
+            this.pictureBox1.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Shop;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pictureBox1.ImageLocation = "";
             this.pictureBox1.Location = new System.Drawing.Point(136, 208);
@@ -139,45 +153,50 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(35, 219);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label5.Location = new System.Drawing.Point(15, 217);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(81, 13);
+            this.label5.Size = new System.Drawing.Size(120, 20);
             this.label5.TabIndex = 17;
             this.label5.Text = "Company Logo:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(35, 173);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label4.Location = new System.Drawing.Point(15, 166);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 13);
+            this.label4.Size = new System.Drawing.Size(114, 20);
             this.label4.TabIndex = 16;
             this.label4.Text = "Email/Website:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(35, 122);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label3.Location = new System.Drawing.Point(15, 115);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 13);
+            this.label3.Size = new System.Drawing.Size(97, 20);
             this.label3.TabIndex = 15;
             this.label3.Text = "Contact No.:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(35, 76);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.Location = new System.Drawing.Point(15, 73);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 13);
+            this.label2.Size = new System.Drawing.Size(72, 20);
             this.label2.TabIndex = 14;
             this.label2.Text = "Address:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(35, 28);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label1.Location = new System.Drawing.Point(15, 25);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 13);
+            this.label1.Size = new System.Drawing.Size(126, 20);
             this.label1.TabIndex = 13;
             this.label1.Text = "Company Name:";
             // 
@@ -188,7 +207,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel1);
             this.Name = "CompanyProfile";
-            this.Size = new System.Drawing.Size(409, 391);
+            this.Size = new System.Drawing.Size(409, 413);
             this.Load += new System.EventHandler(this.CompanyProfile_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

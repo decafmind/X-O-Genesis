@@ -155,10 +155,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label3.Location = new System.Drawing.Point(11, 29);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 22);
+            this.label3.Size = new System.Drawing.Size(97, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "ORDER #";
             // 
@@ -182,10 +182,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label2.Location = new System.Drawing.Point(11, 69);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 22);
+            this.label2.Size = new System.Drawing.Size(114, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "QUANTITY";
             // 
@@ -195,10 +195,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.label5.Location = new System.Drawing.Point(11, 103);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(158, 22);
+            this.label5.Size = new System.Drawing.Size(173, 25);
             this.label5.TabIndex = 4;
             this.label5.Text = "PRODUCT CODE";
             // 
