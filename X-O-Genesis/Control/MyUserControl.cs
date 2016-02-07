@@ -12,8 +12,9 @@ namespace PetvetPOS_Inventory_System
 {
     public partial class MyUserControl : UserControl
     {
-        protected MasterController masterController;
         protected Panel container;
+        public virtual MasterController masterController { get; set; }
+        public virtual DatabaseController dbController { get; set; }
 
         public MyUserControl()
         {
@@ -42,6 +43,7 @@ namespace PetvetPOS_Inventory_System
         public MyUserControl(MasterController masterController)
         {
             this.masterController = masterController;
+            this.dbController = masterController.DataBaseController;
         }
 
         public void appear(DockStyle dockStyle)

@@ -17,7 +17,6 @@ namespace PetvetPOS_Inventory_System
     public partial class Sales : MyUserControl, IContentPage, IKeyController
     {
         private int typeOfReporIndex;
-        private DatabaseController dbController;
         private DataTable dt;
 
         enum reportType { DAILY, WEEKLY, MONTHLY, UNKNOWN }

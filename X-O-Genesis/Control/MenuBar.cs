@@ -126,23 +126,34 @@ namespace PetvetPOS_Inventory_System
             MenuList list;
             Menu menu;
 
-            if (e.employee.Position == UserLevel.ADMIN)
+            bool SimpleMode = Properties.Settings.Default.SimpleMode;
+
+            switch (e.employee.Position)
             {
-                list = new AdminMenuList(masterController, this);
-                menu = Menu.Home;
-            }
-            else if (e.employee.Position == UserLevel.CASHIER)
-            {
-                list = new UserMenuList(masterController, this);
-                menu = Menu.POS;
-            }
-            else if (e.employee.Position == UserLevel.STAFF)
-            {
-                list = new StaffMenuList(masterController, this);
-                menu = Menu.Orders;
-            }else{
-                list = new InventoryPersonnelMenuList(masterController, this);
-                menu = Menu.Stock_Control;
+                case UserLevel.ADMIN:
+                    list = new AdminMenuList(masterController, this);
+                    menu = Menu.Home;
+                    break;
+                case UserLevel.CASHIER:
+                    if (SimpleMode)
+                        list = new SimpleCashierMenuList(masterController, this);
+                    else
+                        list = new AdvancedCashierMenuList(masterController, this);
+                        
+                    menu = Menu.POS;
+                    break;
+                case UserLevel.INVENTORY_PERSONNEL:
+                    list = new InventoryPersonnelMenuList(masterController, this);
+                    menu = Menu.Stock_Control;
+                    break;
+                case UserLevel.STAFF:
+                    list = new StaffMenuList(masterController, this);
+                    menu = Menu.Orders;
+                    break;
+                default:
+                    list = new AdminMenuList(masterController, this);
+                    menu = Menu.Home;
+                    break;
             }
 
             accessMenuControl = list.getList;

@@ -176,6 +176,12 @@
     <Compile Include="Control\FBUser.Designer.cs">
       <DependentUpon>FBUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\OrderPOS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\OrderPOS.Designer.cs">
+      <DependentUpon>OrderPOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\OrdersView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -224,6 +230,12 @@
     <Compile Include="Control\SupplierView.Designer.cs">
       <DependentUpon>SupplierView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\SystemModules.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\SystemModules.Designer.cs">
+      <DependentUpon>SystemModules.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\SystemOperation.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -237,10 +249,12 @@
       <DependentUpon>SystemSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Domain\Client.cs" />
-    <Compile Include="Domain\CompanyProf.cs" />
+    <Compile Include="Domain\Controller\CompanyProf.cs" />
     <Compile Include="Domain\Controller\Service.cs" />
     <Compile Include="Domain\Enums\Settings.cs" />
     <Compile Include="Domain\LoginTrail.cs" />
+    <Compile Include="Domain\MenuList\DynamicMenuList.cs" />
+    <Compile Include="Domain\MenuList\SimpleCashierMenuList.cs" />
     <Compile Include="Domain\Product.cs" />
     <Compile Include="Domain\ProductInspection.cs" />
     <Compile Include="Domain\ProductInventoryDomain.cs" />
@@ -249,12 +263,9 @@
     <Compile Include="Domain\Theme.cs" />
     <Compile Include="EventHandler\SettingArgs.cs" />
     <Compile Include="Domain\Fallback.cs" />
-    <Compile Include="Domain\InventoryPersonnelMenuList.cs" />
-    <Compile Include="Domain\StaffMenuList.cs" />
-    <Compile Include="Domain\GPP.cs" />
-    <Compile Include="Domain\Medical.cs" />
+    <Compile Include="Domain\MenuList\InventoryPersonnelMenuList.cs" />
+    <Compile Include="Domain\MenuList\StaffMenuList.cs" />
     <Compile Include="Domain\Enums\InventoryMode.cs" />
-    <Compile Include="Domain\Enums\Petsize.cs" />
     <Compile Include="Forms\modalAddStocks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +308,12 @@
     <Compile Include="Forms\modalInspectProduct.Designer.cs">
       <DependentUpon>modalInspectProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\modalPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\modalPayment.Designer.cs">
+      <DependentUpon>modalPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyExtension\ErrorLog.cs" />
     <Compile Include="ORM\TableGateway\AuditTrailMapper.cs" />
     <Compile Include="ORM\TableGateway\CompanyProfileMapper.cs" />
@@ -305,13 +322,9 @@
     <Compile Include="ORM\TableGateway\ProductReturnMapper.cs" />
     <Compile Include="ORM\TableGateway\SupplierMapper.cs" />
     <Compile Include="ORM\ViewGateway\AuditTrailView.cs" />
-    <Compile Include="ORM\ViewGateway\GroomingView.cs" />
-    <Compile Include="ORM\TableGateway\MedicalMapper.cs" />
-    <Compile Include="ORM\TableGateway\MedicalTransactionMapper.cs" />
     <Compile Include="ORM\ViewGateway\LoginTrailViewMapper.cs" />
     <Compile Include="ORM\ViewGateway\ProductReturnViewMapper.cs" />
     <Compile Include="ORM\ViewGateway\ProductTransactionView.cs" />
-    <Compile Include="ORM\ViewGateway\ServiceRenderedMapper.cs" />
     <Compile Include="Forms\DatabaseSettings.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -324,7 +337,7 @@
     <Compile Include="Control\AddUserPane.Designer.cs">
       <DependentUpon>AddUserPane.cs</DependentUpon>
     </Compile>
-    <Compile Include="Domain\AdminMenuList.cs" />
+    <Compile Include="Domain\MenuList\AdminMenuList.cs" />
     <Compile Include="ORM\TableGateway\CategoryMapper.cs" />
     <Compile Include="EventHandler\ContentArgs.cs" />
     <Compile Include="ORM\ViewGateway\DailySalesReportMapper.cs" />
@@ -397,7 +410,7 @@
     <Compile Include="Control\MenuControl.Designer.cs">
       <DependentUpon>MenuControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Domain\MenuList.cs" />
+    <Compile Include="Domain\MenuList\MenuList.cs" />
     <Compile Include="Forms\MessageBanner.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -503,7 +516,7 @@
     <Compile Include="EventHandler\UserArgs.cs" />
     <Compile Include="Domain\Enums\UserLevel.cs" />
     <Compile Include="ORM\TableGateway\UserMapper.cs" />
-    <Compile Include="Domain\UserMenuList.cs" />
+    <Compile Include="Domain\MenuList\AdvancedCashierMenuList.cs" />
     <Compile Include="Control\UserSettingsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -543,6 +556,9 @@
     <EmbeddedResource Include="Control\FBUser.resx">
       <DependentUpon>FBUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\OrderPOS.resx">
+      <DependentUpon>OrderPOS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\OrdersView.resx">
       <DependentUpon>OrdersView.cs</DependentUpon>
     </EmbeddedResource>
@@ -563,6 +579,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\SupplierControl.resx">
       <DependentUpon>SupplierControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\SystemModules.resx">
+      <DependentUpon>SystemModules.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\SystemOperation.resx">
       <DependentUpon>SystemOperation.cs</DependentUpon>
@@ -633,6 +652,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\modalInspectProduct.resx">
       <DependentUpon>modalInspectProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\modalPayment.resx">
+      <DependentUpon>modalPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\modalVoid.resx">
       <DependentUpon>modalVoid.cs</DependentUpon>

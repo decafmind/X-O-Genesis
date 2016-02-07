@@ -30,27 +30,27 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SystemSettings));
             this.label9 = new System.Windows.Forms.Label();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
+            this.pbProductReturn = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pbReceipts = new System.Windows.Forms.PictureBox();
+            this.pbPersonalization = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.picCompProf = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.pbBackupDB = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pbModules = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.picTax = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProductReturn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbReceipts)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPersonalization)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCompProf)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBackupDB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbModules)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTax)).BeginInit();
             this.SuspendLayout();
@@ -67,18 +67,18 @@
             this.label9.TabIndex = 17;
             this.label9.Text = "Product Return ";
             // 
-            // pictureBox9
+            // pbProductReturn
             // 
-            this.pictureBox9.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox9.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox9.Image")));
-            this.pictureBox9.Location = new System.Drawing.Point(335, 364);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(100, 98);
-            this.pictureBox9.TabIndex = 16;
-            this.pictureBox9.TabStop = false;
-            this.pictureBox9.Click += new System.EventHandler(this.pictureBox9_Click);
+            this.pbProductReturn.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pbProductReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbProductReturn.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbProductReturn.Image = ((System.Drawing.Image)(resources.GetObject("pbProductReturn.Image")));
+            this.pbProductReturn.Location = new System.Drawing.Point(335, 364);
+            this.pbProductReturn.Name = "pbProductReturn";
+            this.pbProductReturn.Size = new System.Drawing.Size(100, 98);
+            this.pbProductReturn.TabIndex = 16;
+            this.pbProductReturn.TabStop = false;
+            this.pbProductReturn.Click += new System.EventHandler(this.pbProductReturn_Click);
             // 
             // label6
             // 
@@ -92,32 +92,32 @@
             this.label6.TabIndex = 12;
             this.label6.Text = "Receipts";
             // 
-            // pictureBox7
+            // pbReceipts
             // 
-            this.pictureBox7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pictureBox7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(152, 364);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(100, 98);
-            this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox7.TabIndex = 11;
-            this.pictureBox7.TabStop = false;
+            this.pbReceipts.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pbReceipts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbReceipts.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbReceipts.Image = ((System.Drawing.Image)(resources.GetObject("pbReceipts.Image")));
+            this.pbReceipts.Location = new System.Drawing.Point(152, 364);
+            this.pbReceipts.Name = "pbReceipts";
+            this.pbReceipts.Size = new System.Drawing.Size(100, 98);
+            this.pbReceipts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbReceipts.TabIndex = 11;
+            this.pbReceipts.TabStop = false;
             // 
-            // pictureBox6
+            // pbPersonalization
             // 
-            this.pictureBox6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pictureBox6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(335, 170);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(100, 98);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 9;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Click += new System.EventHandler(this.pictureBox6_Click);
+            this.pbPersonalization.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pbPersonalization.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbPersonalization.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbPersonalization.Image = ((System.Drawing.Image)(resources.GetObject("pbPersonalization.Image")));
+            this.pbPersonalization.Location = new System.Drawing.Point(335, 170);
+            this.pbPersonalization.Name = "pbPersonalization";
+            this.pbPersonalization.Size = new System.Drawing.Size(100, 98);
+            this.pbPersonalization.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbPersonalization.TabIndex = 9;
+            this.pbPersonalization.TabStop = false;
+            this.pbPersonalization.Click += new System.EventHandler(this.pbPersonalization_Click);
             // 
             // label5
             // 
@@ -159,18 +159,18 @@
             this.label4.Text = "Backup DB";
             this.label4.Click += new System.EventHandler(this.label5_Click);
             // 
-            // pictureBox4
+            // pbBackupDB
             // 
-            this.pictureBox4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(556, 170);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(100, 98);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 5;
-            this.pictureBox4.TabStop = false;
+            this.pbBackupDB.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pbBackupDB.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pbBackupDB.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbBackupDB.Image = ((System.Drawing.Image)(resources.GetObject("pbBackupDB.Image")));
+            this.pbBackupDB.Location = new System.Drawing.Point(556, 170);
+            this.pbBackupDB.Name = "pbBackupDB";
+            this.pbBackupDB.Size = new System.Drawing.Size(100, 98);
+            this.pbBackupDB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbBackupDB.TabIndex = 5;
+            this.pbBackupDB.TabStop = false;
             // 
             // label2
             // 
@@ -184,18 +184,19 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Modules";
             // 
-            // pictureBox3
+            // pbModules
             // 
-            this.pictureBox3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(151, 170);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(100, 98);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 3;
-            this.pictureBox3.TabStop = false;
+            this.pbModules.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pbModules.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbModules.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbModules.Image = ((System.Drawing.Image)(resources.GetObject("pbModules.Image")));
+            this.pbModules.Location = new System.Drawing.Point(151, 170);
+            this.pbModules.Name = "pbModules";
+            this.pbModules.Size = new System.Drawing.Size(100, 98);
+            this.pbModules.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbModules.TabIndex = 3;
+            this.pbModules.TabStop = false;
+            this.pbModules.Click += new System.EventHandler(this.pbModules_Click);
             // 
             // pictureBox2
             // 
@@ -269,27 +270,27 @@
             this.Controls.Add(this.picTax);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.pictureBox9);
+            this.Controls.Add(this.pbProductReturn);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.pictureBox7);
-            this.Controls.Add(this.pictureBox6);
+            this.Controls.Add(this.pbReceipts);
+            this.Controls.Add(this.pbPersonalization);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.picCompProf);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.pictureBox4);
+            this.Controls.Add(this.pbBackupDB);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.pictureBox3);
+            this.Controls.Add(this.pbModules);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.lblTitle);
             this.Name = "SystemSettings";
             this.Size = new System.Drawing.Size(1194, 583);
             this.Load += new System.EventHandler(this.UserSettings_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbProductReturn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbReceipts)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbPersonalization)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCompProf)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbBackupDB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbModules)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picTax)).EndInit();
             this.ResumeLayout(false);
@@ -300,17 +301,17 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
+        private System.Windows.Forms.PictureBox pbModules;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.PictureBox pbBackupDB;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.PictureBox picCompProf;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.PictureBox pictureBox6;
-        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pbPersonalization;
+        private System.Windows.Forms.PictureBox pbReceipts;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.PictureBox pictureBox9;
+        private System.Windows.Forms.PictureBox pbProductReturn;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox picTax;

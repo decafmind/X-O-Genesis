@@ -16,7 +16,6 @@ namespace PetvetPOS_Inventory_System
         private const DockStyle DOCKSTYLE_TYPE = DockStyle.Right;
         public InventoryView inventoryView;
         Inventory inventory;
-        public DatabaseController dbController;
 
         Product oldProduct, product;
         public InventoryMode mode;

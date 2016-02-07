@@ -24,5 +24,7 @@ namespace PetvetPOS_Inventory_System
         Settings,
         System_Operation,
         Company_Profile,
+        Supplier,
+        Modules,
     }
 }

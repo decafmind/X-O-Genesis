@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace PetvetPOS_Inventory_System
 {
-    // The Set of MenuControl for normal user.
+    // The Set of MenuControl for the cashier.
 
-    class UserMenuList:MenuList
+    class AdvancedCashierMenuList : MenuList
     {
-        public UserMenuList(MasterController masterController, MenuBar menuBar):base(masterController)
+        public AdvancedCashierMenuList(MasterController masterController, MenuBar menuBar):base(masterController)
         {
             menuControls = new List<MenuControl> { 
                  new MenuControl(new POS(masterController), menuBar),

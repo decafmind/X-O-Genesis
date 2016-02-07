@@ -18,7 +18,6 @@ namespace PetvetPOS_Inventory_System
         // TODO
         // ProductPaneScroll productPaneScroll;
         ProductSliderPane sliderPane;
-        DatabaseController dbController;
         DataTable inventoryTable;
 
         private const int PRODUCT_NAME_INDEX = 0;

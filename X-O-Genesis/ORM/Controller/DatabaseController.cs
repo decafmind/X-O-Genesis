@@ -45,16 +45,10 @@ namespace PetvetPOS_Inventory_System
         public MonthlySaleReportMapper monthlySalesReportMapper { get; set; }
         public CategoryMapper categoryMapper { get; set; }
 
-        public MedicalMapper medicalMapper { get; set; }
-        public GroomingView groomingViewMapper { get; set; }
-
-        public ServiceRenderedMapper serviceRenderedMapper { get; set; }
         public AuditTrailMapper auditTrailMapper { get; set; }
         public AuditTrailView auditTrailView { get; set; }
-
         public ProductTransactionView productTransactionView { get; set; }
         public LoginTrailViewMapper loginTrailViewMapper { get; set; }
-        public MedicalTransactionMapper medicalTransactionMapper { get; set; }
 
         public ProductReturnViewMapper productReturnViewMapper { get; set; }
         public FallbackMapper fallbackMapper { get; set; }
@@ -87,19 +81,14 @@ namespace PetvetPOS_Inventory_System
 
             this.monthlySalesReportMapper = new MonthlySaleReportMapper(mySqlDB);
             this.categoryMapper = new CategoryMapper(mySqlDB);
-         
-            this.serviceRenderedMapper = new ServiceRenderedMapper(mySqlDB);
-
             this.auditTrailMapper = new AuditTrailMapper(mySqlDB);
             this.auditTrailView = new AuditTrailView(mySqlDB);
+
             this.productTransactionView = new ProductTransactionView(mySqlDB);
             this.loginTrailViewMapper = new LoginTrailViewMapper(mySqlDB);
-
-           
-            this.medicalTransactionMapper = new MedicalTransactionMapper(mySqlDB);
             this.productReturnViewMapper = new ProductReturnViewMapper(mySqlDB);
-
             this.fallbackMapper = new FallbackMapper(mySqlDB);
+
             this.productInspectionMapper = new ProductInspectionMapper(mySqlDB);
             this.companyProfileMapper = new CompanyProfileMapper(mySqlDB);
 
@@ -133,6 +122,11 @@ namespace PetvetPOS_Inventory_System
             
         }
 
+        /// <summary>
+        /// Dispose ProductInvoice and make it unusable on another transaction.
+        /// </summary>
+        /// <param name="productInvoice"></param>
+        /// <returns></returns>
         public bool consumeProductInvoice(ProductInvoice productInvoice)
         {
             return productInvoiceMapper.consumeProductInvoice(productInvoice);
@@ -169,6 +163,8 @@ namespace PetvetPOS_Inventory_System
         {
             return userMapper.checkUsername(userName);
         }
+
+        
         public bool isAlreadyLogin(User user)
         {
             return userMapper.isAlreadyLogin(user);
@@ -178,9 +174,14 @@ namespace PetvetPOS_Inventory_System
         {
             return userMapper.getSQAnswer(userName, sqans);
         }
-        /* This method will return an instance of User if 
-         * user credentials exists in the database
-         */
+
+        
+        /// <summary>
+        /// Check if user exists on the database.
+        /// </summary>
+        /// <param name="user_id"></param>
+        /// <param name="password"></param>
+        /// <returns>An instance of a user if exist; null if not</returns>
         public User authenticateUser(string user_id, string password)
         {
             return userMapper.validate(user_id, password);
@@ -327,16 +328,6 @@ namespace PetvetPOS_Inventory_System
             return auditTrailView.loadTable(dt, condition);
         }
 
-        public DataTable filterServiceRendered(DataTable dt, string token)
-        {
-            string condition = String.Format(
-                " name LIKE '%{0}%'", token
-            );
-
-            return serviceRenderedMapper.loadTable(dt, condition);
-        }
-
-
         public DataTable getBasicProductInfoFromBarcode(DataTable dt, string barcode)
         {
             string condition = String.Format(" item_code = '{0}'", barcode);
@@ -374,6 +365,7 @@ namespace PetvetPOS_Inventory_System
             }
             return false;
         }
+
         public string createEmployee(Employee employee)
         {
             return employeeMapper.createEmployee(employee);
@@ -397,11 +389,10 @@ namespace PetvetPOS_Inventory_System
             return false;
         }
 
-   
         public bool insertProductInsideInventory(Inventory inventory, Product product){
-            string insertInventory = inventoryMapper.createInventory(inventory);
-            string insertProduct = productMapper.createProduct(product);
-            if(createTransaction(insertProduct, insertInventory)){
+            string insertInventory = inventoryMapper.getInsertQuery(inventory);
+            string insertProduct = productMapper.getInsertQuery(product);
+            if(DatabaseMapper.createTransaction(mySqlDB, insertProduct, insertInventory)){
                 OnInsertEntity(new EntityArgs(inventory));
                 OnInsertEntity(new EntityArgs(product));
                 return true;
@@ -419,11 +410,6 @@ namespace PetvetPOS_Inventory_System
             return false;
         }
 
-        public DataTable loadMedical(DataTable dt)
-        {
-            return medicalMapper.loadTable(dt);
-        }
-
         public DataTable readInventory(DataTable dt)
         {
             return productInventory.loadTable(dt, "Archive = '0'");
@@ -435,14 +421,14 @@ namespace PetvetPOS_Inventory_System
             if (categoryOnly)
             {
                 condition = String.Format(
-                    " Category = '{0}'", token
+                    " Category = '{0}' AND Archive = '0'", token
                 );
             }
             else
             {
                 condition = String.Format(
                     " Name LIKE '%{0}%' OR Barcode LIKE '%{0}%' " +
-                    " OR Category LIKE '%{0}%' OR Supplier LIKE '%{0}%'", token
+                    " OR Category LIKE '%{0}%' OR Supplier LIKE '%{0}%' AND Archive = '0", token
                 );
             }
              
@@ -460,28 +446,12 @@ namespace PetvetPOS_Inventory_System
         {
              string condition = String.Format(
                 " Name LIKE '%{0}%' OR Barcode LIKE '%{0}%' " +
-                " OR Category LIKE '%{0}%' OR Company LIKE '%{0}%' ", token
+                " OR Category LIKE '%{0}%' OR Company LIKE '%{0}%' AND Archive = '0'", token
                 );
              return purchasedProductMapper.loadTable(dt, condition);
         }
 
-        public DataTable filterGrooming(DataTable dt, string token)
-        {
-            string condition = String.Format(
-                " grooming_name LIKE '%{0}%' OR petsize LIKE '%{0}%' ", token
-               );
-
-            return groomingViewMapper.loadTable(dt, condition);
-        }
-
-        public DataTable filterMedical(DataTable dt, string token)
-        {
-            string condition = String.Format(
-             " medical_name LIKE '%{0}%'", token
-            );
-
-            return medicalMapper.loadTable(dt, condition);
-        }
+      
         public DataTable readPurchasedProduct(DataTable dt)
         {
             return purchasedProductMapper.loadTable(dt, "quantity > 0");
@@ -536,7 +506,7 @@ namespace PetvetPOS_Inventory_System
         {
             string insertUser = userMapper.createUser(user);
             string insertEmployee = employeeMapper.createEmployee(employee);
-            if (createTransaction(insertUser, insertEmployee)){
+            if (DatabaseMapper.createTransaction(mySqlDB, insertUser, insertEmployee)){
                 EntityArgs e = new EntityArgs(employee);
                 OnInsertEntity(e);
             }
@@ -546,50 +516,6 @@ namespace PetvetPOS_Inventory_System
         public TodaySales getTodaySales()
         {
             return new TodaySales(todaySalesMapper.getSales());
-        }
-
-        public bool createTransaction(params string[] args)
-        {
-            bool success = false;
-            mySqlDB.open();
-            Transaction = mySqlDB.Connection.BeginTransaction();
-            Command = mySqlDB.Connection.CreateCommand();
-
-            Command.Connection = mySqlDB.Connection;
-            Command.Transaction = Transaction;
-            
-            try
-            {
-                int n = args.Length;
-                for (int i = 0; i < n; i++)
-                {
-                    Command.CommandText = @args[i];
-                    if (args[i].Contains("INSERT") || args[i].Contains("UPDATE") || args[i].Contains("DELETE"))
-                        Command.ExecuteNonQuery();
-                }
-                Transaction.Commit();
-                success = true;
-            }
-            catch (MySqlException x)
-            {
-                System.Windows.Forms.MessageBox.Show(x.Message);
-                try
-                {
-                    Transaction.Rollback();
-                }
-                catch (MySqlException ex)
-                {
-                    System.Windows.Forms.MessageBox.Show("An exception of type " + ex.GetType() +
-                        " was encounter while inserting the data.");
-                }
-                success = false;
-            }
-            finally
-            {
-                mySqlDB.close();
-                mySqlDB.dispose();
-            }
-            return success;
         }
 
         public List<string> getListOfAllUsernames()

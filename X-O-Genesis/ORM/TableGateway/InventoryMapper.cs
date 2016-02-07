@@ -30,7 +30,8 @@ namespace PetvetPOS_Inventory_System
             };
         }
 
-        public string createInventory(Inventory inventory)
+
+        public string getInsertQuery(Inventory inventory)
         {
             return insertValues(
                 inventory.Barcode, "NOW()", inventory.QtyReceived,
@@ -51,7 +52,7 @@ namespace PetvetPOS_Inventory_System
 
         public bool insertInventory(Inventory inventory)
         {
-            return create(createInventory(inventory));
+            return create(getInsertQuery(inventory));
         }
         public bool updateInventory(int qty, string barcode)
         {

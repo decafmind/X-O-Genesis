@@ -67,5 +67,77 @@ namespace PetvetPOS_Inventory_System.Properties {
                 this["isSystemConfigured"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CompanyName {
+            get {
+                return ((string)(this["CompanyName"]));
+            }
+            set {
+                this["CompanyName"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CompanyAddress {
+            get {
+                return ((string)(this["CompanyAddress"]));
+            }
+            set {
+                this["CompanyAddress"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CompanyContact {
+            get {
+                return ((string)(this["CompanyContact"]));
+            }
+            set {
+                this["CompanyContact"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CompanyEmail {
+            get {
+                return ((string)(this["CompanyEmail"]));
+            }
+            set {
+                this["CompanyEmail"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string CompanyLogoImagPath {
+            get {
+                return ((string)(this["CompanyLogoImagPath"]));
+            }
+            set {
+                this["CompanyLogoImagPath"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool SimpleMode {
+            get {
+                return ((bool)(this["SimpleMode"]));
+            }
+            set {
+                this["SimpleMode"] = value;
+            }
+        }
     }
 }

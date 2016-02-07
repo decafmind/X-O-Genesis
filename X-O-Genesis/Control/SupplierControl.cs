@@ -12,9 +12,13 @@ namespace PetvetPOS_Inventory_System
 {
     public partial class SupplierControl : MyUserControl, IContentPage, IKeyController
     {
-        DatabaseController dbController;
-
         public SupplierControl()
+        {
+            InitializeComponent();
+        }
+
+        public SupplierControl(MasterController masterController)
+            : base(masterController)
         {
             InitializeComponent();
         }
@@ -23,7 +27,7 @@ namespace PetvetPOS_Inventory_System
         {
             get
             {
-                throw new NotImplementedException();
+               return Properties.Resources.inventoryWhite; 
             }
         }
 
@@ -31,7 +35,7 @@ namespace PetvetPOS_Inventory_System
         {
             get
             {
-                throw new NotImplementedException();
+                return Menu.Supplier;
             }
         }
 
@@ -39,18 +43,25 @@ namespace PetvetPOS_Inventory_System
         {
             get
             {
-                throw new NotImplementedException();
+                return new KeyFunction(SupplierKeyFunction);
             }
+        }
+
+        public void SupplierKeyFunction(KeyEventArgs e)
+        {
+
         }
 
         public void finalizePage()
         {
-            throw new NotImplementedException();
+
         }
 
         public void initializePage()
         {
-           
+            dbController = masterController.DataBaseController;
+            List<string> listOfSupplier = dbController.supplierMapper.getSupplierList();
+            listBox1.Items.AddRange(listOfSupplier.ToArray());    
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -60,9 +71,7 @@ namespace PetvetPOS_Inventory_System
 
         private void SupplierControl_Load(object sender, EventArgs e)
         {
-            dbController = masterController.DataBaseController;
-            List<string> listOfSupplier = dbController.supplierMapper.getSupplierList();
-            listBox1.Items.AddRange(listOfSupplier.ToArray());
+       
         }
     }
 }

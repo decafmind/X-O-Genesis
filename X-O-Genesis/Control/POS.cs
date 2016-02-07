@@ -16,7 +16,6 @@ namespace PetvetPOS_Inventory_System
     public partial class POS : MyUserControl, IContentPage, IKeyController
     {
         Invoice currentTransaction;
-        DatabaseController dbController;
         Product currentProduct;
         DataTable dt = new DataTable();
         List<ProductInvoice> carts = new List<ProductInvoice>();
@@ -271,7 +270,7 @@ namespace PetvetPOS_Inventory_System
 
         public void pay(Decimal payment)
         {
-            if (payment >= totalAmount && payment >= totalAmountWithService)
+            if (payment >= totalAmount)
             {
                 decimal total = totalAmount;
 
@@ -409,22 +408,12 @@ namespace PetvetPOS_Inventory_System
         
         void receipt_PrintPage(object sender, PrintPageEventArgs e)
         {
-            DataTable companyProfile = new DataTable();
-            dbController.loadCompanyProfile(companyProfile);
-
-            string title = "Guardtech";
+            string title = Properties.Settings.Default.CompanyName;
             string tin = " ****-****-****-****";
-            string address = "G44 Abbey Road Bagbag, Novaliches Quezon City";
-            string cont = "09195558866";
-            string web = "www.google.com";
-          
-            foreach (DataRow dr in companyProfile.Rows)
-            {
-                title = dr["compname"].ToString();
-                address = dr["address"].ToString();
-                cont = dr["contactno"].ToString();
-                web = dr["email"].ToString();
-            }
+            string address = Properties.Settings.Default.CompanyAddress;
+            string cont = Properties.Settings.Default.CompanyContact;
+            string web = Properties.Settings.Default.CompanyEmail;
+
             Graphics g = e.Graphics;
             using(Font font = new Font("MS San Serif", 11 , FontStyle.Regular))
             using(Pen pen = new Pen(Brushes.Black, 1))

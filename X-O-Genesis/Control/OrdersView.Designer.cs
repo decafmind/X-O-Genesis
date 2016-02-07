@@ -282,9 +282,11 @@
             this.keyButton4.accessKeyChar = "F4";
             this.keyButton4.accessMasterController = null;
             this.keyButton4.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton4.dbController = null;
             this.keyButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.keyButton4.Location = new System.Drawing.Point(207, 2);
             this.keyButton4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton4.masterController = null;
             this.keyButton4.Name = "keyButton4";
             this.keyButton4.Size = new System.Drawing.Size(61, 50);
             this.keyButton4.TabIndex = 49;
@@ -306,9 +308,11 @@
             this.keyButton3.accessMasterController = null;
             this.keyButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
             this.keyButton3.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton3.dbController = null;
             this.keyButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.keyButton3.Location = new System.Drawing.Point(14, 2);
             this.keyButton3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton3.masterController = null;
             this.keyButton3.Name = "keyButton3";
             this.keyButton3.Size = new System.Drawing.Size(62, 50);
             this.keyButton3.TabIndex = 48;
@@ -342,9 +346,11 @@
             this.keyButton1.accessKeyChar = "F1";
             this.keyButton1.accessMasterController = null;
             this.keyButton1.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton1.dbController = null;
             this.keyButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.keyButton1.Location = new System.Drawing.Point(13, 2);
             this.keyButton1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton1.masterController = null;
             this.keyButton1.Name = "keyButton1";
             this.keyButton1.Size = new System.Drawing.Size(61, 50);
             this.keyButton1.TabIndex = 47;
@@ -365,9 +371,11 @@
             this.keyButton2.accessKeyChar = "F2";
             this.keyButton2.accessMasterController = null;
             this.keyButton2.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton2.dbController = null;
             this.keyButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.keyButton2.Location = new System.Drawing.Point(149, 3);
             this.keyButton2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton2.masterController = null;
             this.keyButton2.Name = "keyButton2";
             this.keyButton2.Size = new System.Drawing.Size(61, 50);
             this.keyButton2.TabIndex = 53;

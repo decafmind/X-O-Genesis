@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POS));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.barcodeIndicator = new System.Windows.Forms.Timer(this.components);
             this.paymentTimer = new System.Windows.Forms.Timer(this.components);
@@ -59,7 +58,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtEncode = new System.Windows.Forms.TextBox();
-            this.btnEncode = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblPOSmsg = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -78,6 +76,7 @@
             this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.btnEncode = new System.Windows.Forms.Button();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgTransaction)).BeginInit();
             this.panel8.SuspendLayout();
@@ -129,14 +128,14 @@
             this.dgTransaction.BackgroundColor = System.Drawing.Color.White;
             this.dgTransaction.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgTransaction.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgTransaction.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgTransaction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgTransaction.Location = new System.Drawing.Point(10, 10);
             this.dgTransaction.MultiSelect = false;
@@ -323,10 +322,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label5.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(14, 88);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(93, 20);
+            this.label5.Size = new System.Drawing.Size(82, 19);
             this.label5.TabIndex = 5;
             this.label5.Text = "ADDRESS:";
             // 
@@ -354,10 +353,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(12, 50);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(154, 20);
+            this.label2.Size = new System.Drawing.Size(147, 19);
             this.label2.TabIndex = 3;
             this.label2.Text = "CUSTOMER NAME:";
             // 
@@ -394,21 +393,6 @@
             this.txtEncode.EnabledChanged += new System.EventHandler(this.txtEncode_EnabledChanged);
             this.txtEncode.TextChanged += new System.EventHandler(this.filterAplhaNumeric);
             this.txtEncode.Enter += new System.EventHandler(this.txtEncode_Enter);
-            // 
-            // btnEncode
-            // 
-            this.btnEncode.BackColor = System.Drawing.Color.White;
-            this.btnEncode.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEncode.BackgroundImage")));
-            this.btnEncode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnEncode.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEncode.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnEncode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEncode.Location = new System.Drawing.Point(112, 10);
-            this.btnEncode.Name = "btnEncode";
-            this.btnEncode.Size = new System.Drawing.Size(49, 30);
-            this.btnEncode.TabIndex = 2;
-            this.btnEncode.UseVisualStyleBackColor = false;
-            this.btnEncode.Click += new System.EventHandler(this.btnEncode_Click);
             // 
             // panel2
             // 
@@ -510,9 +494,11 @@
             this.keyButton1.accessKeyChar = "F1";
             this.keyButton1.accessMasterController = null;
             this.keyButton1.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton1.dbController = null;
             this.keyButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.keyButton1.Location = new System.Drawing.Point(3, 5);
             this.keyButton1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton1.masterController = null;
             this.keyButton1.Name = "keyButton1";
             this.keyButton1.Size = new System.Drawing.Size(61, 50);
             this.keyButton1.TabIndex = 16;
@@ -531,9 +517,11 @@
             this.keyButton4.accessKeyChar = "F4";
             this.keyButton4.accessMasterController = null;
             this.keyButton4.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton4.dbController = null;
             this.keyButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.keyButton4.Location = new System.Drawing.Point(621, 7);
             this.keyButton4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton4.masterController = null;
             this.keyButton4.Name = "keyButton4";
             this.keyButton4.Size = new System.Drawing.Size(61, 50);
             this.keyButton4.TabIndex = 19;
@@ -553,9 +541,11 @@
             this.keyButton3.accessKeyChar = "F3";
             this.keyButton3.accessMasterController = null;
             this.keyButton3.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton3.dbController = null;
             this.keyButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.keyButton3.Location = new System.Drawing.Point(416, 6);
             this.keyButton3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton3.masterController = null;
             this.keyButton3.Name = "keyButton3";
             this.keyButton3.Size = new System.Drawing.Size(61, 50);
             this.keyButton3.TabIndex = 18;
@@ -584,9 +574,11 @@
             this.keyButton2.accessKeyChar = "F2";
             this.keyButton2.accessMasterController = null;
             this.keyButton2.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton2.dbController = null;
             this.keyButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.keyButton2.Location = new System.Drawing.Point(196, 5);
             this.keyButton2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton2.masterController = null;
             this.keyButton2.Name = "keyButton2";
             this.keyButton2.Size = new System.Drawing.Size(61, 50);
             this.keyButton2.TabIndex = 17;
@@ -609,6 +601,20 @@
             this.label9.Size = new System.Drawing.Size(55, 18);
             this.label9.TabIndex = 24;
             this.label9.Text = "Reset";
+            // 
+            // btnEncode
+            // 
+            this.btnEncode.BackColor = System.Drawing.Color.White;
+            this.btnEncode.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.barcodeSearch;
+            this.btnEncode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEncode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnEncode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEncode.Location = new System.Drawing.Point(112, 10);
+            this.btnEncode.Name = "btnEncode";
+            this.btnEncode.Size = new System.Drawing.Size(49, 30);
+            this.btnEncode.TabIndex = 2;
+            this.btnEncode.UseVisualStyleBackColor = false;
+            this.btnEncode.Click += new System.EventHandler(this.btnEncode_Click);
             // 
             // POS
             // 
@@ -662,7 +668,6 @@
         private System.Windows.Forms.Panel sidePanel;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.DataGridView dgTransaction;
-        private System.Windows.Forms.Button btnEncode;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -698,6 +703,7 @@
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnEncode;
 
     }
 }

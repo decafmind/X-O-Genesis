@@ -14,7 +14,6 @@ namespace PetvetPOS_Inventory_System
     {
         private InventoryView inventoryView;
         private const DockStyle DOCKSTYLE_TYPE = DockStyle.Top;
-        public DatabaseController dbController { get; set; }
         private TextBox[] textboxes;
 
         private Inventory inventory;

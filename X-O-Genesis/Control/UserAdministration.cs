@@ -27,7 +27,6 @@ namespace PetvetPOS_Inventory_System
         public User seletedUser;
         public UserAdminMode mode = UserAdminMode.Standby;
 
-        private DatabaseController dbController;
         Dictionary<string, Employee> userEmployeeMap = new Dictionary<string, Employee>();
         public List<string> usernames = new List<string>();
 
@@ -398,6 +397,11 @@ namespace PetvetPOS_Inventory_System
         private void timer1_Tick(object sender, EventArgs e)
         {
             reloadUsers();
+        }
+
+        private void userPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

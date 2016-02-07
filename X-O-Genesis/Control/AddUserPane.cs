@@ -18,7 +18,6 @@ namespace PetvetPOS_Inventory_System
     {
         Employee currentEmployee;
         UserAdministration userAdministration;
-        DatabaseController dbController;
         UserAdminMode mode;
 
         bool isDirty = false;
