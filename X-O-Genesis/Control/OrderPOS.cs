@@ -15,7 +15,6 @@ namespace PetvetPOS_Inventory_System
     {
         Invoice currentTransaction;
         Product currentProduct;
-        Inventory inventory;
         DataTable dt = new DataTable();
         List<ProductInvoice> carts = new List<ProductInvoice>();
 
@@ -80,7 +79,7 @@ namespace PetvetPOS_Inventory_System
         }
         public Menu accessMenuName
         {
-            get { return Menu.Orders; }
+            get { return Menu.POS; }
         }
 
         public DatabaseController DatabaseController { set { this.dbController = value; } }
@@ -186,7 +185,7 @@ namespace PetvetPOS_Inventory_System
                 }
 
             }
-            catch (Exception ex) { lblPOSmsg.Text = "Item not found"; }
+            catch (Exception) { lblPOSmsg.Text = "Item not found"; }
 
             return success;
         }

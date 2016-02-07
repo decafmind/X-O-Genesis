@@ -8,13 +8,12 @@ namespace PetvetPOS_Inventory_System
 {
     // The Set of MenuControl for the cashier.
 
-    class CashierMenuList : MenuList
+    class AdvancedCashierMenuList : MenuList
     {
-        public CashierMenuList(MasterController masterController, MenuBar menuBar):base(masterController)
+        public AdvancedCashierMenuList(MasterController masterController, MenuBar menuBar):base(masterController)
         {
             menuControls = new List<MenuControl> { 
                  new MenuControl(new POS(masterController), menuBar),
-                 new MenuControl(new OrderPOS(masterController), menuBar),
             };
         }
     }

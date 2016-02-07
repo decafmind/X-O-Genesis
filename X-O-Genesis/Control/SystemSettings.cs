@@ -84,17 +84,6 @@ namespace PetvetPOS_Inventory_System
 
         }
 
-        private void pictureBox6_Click(object sender, EventArgs e)
-        {
-            Personalization personalization = new Personalization(base.masterController);
-            masterController.changeCurrentContent(personalization);
-        }
-
-        private void pictureBox9_Click(object sender, EventArgs e)
-        {
-            masterController.changeCurrentContent(new ProductReturnControl(base.masterController));
-        }
-
         private void label3_Click(object sender, EventArgs e)
         {
             //Ayos na'to ehh
@@ -103,6 +92,22 @@ namespace PetvetPOS_Inventory_System
         private void picCompProf_Click(object sender, EventArgs e)
         {
             masterController.changeCurrentContent(new CompanyProfile(base.masterController));
+        }
+
+        private void pbPersonalization_Click(object sender, EventArgs e)
+        {
+            Personalization personalization = new Personalization(base.masterController);
+            masterController.changeCurrentContent(personalization);
+        }
+
+        private void pbProductReturn_Click(object sender, EventArgs e)
+        {
+            masterController.changeCurrentContent(new ProductReturnControl(base.masterController));
+        }
+
+        private void pbModules_Click(object sender, EventArgs e)
+        {
+            masterController.changeCurrentContent(new SystemModules(base.masterController));
         }
     }
 }

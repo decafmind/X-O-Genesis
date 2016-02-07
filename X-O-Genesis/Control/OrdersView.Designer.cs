@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel11 = new System.Windows.Forms.Panel();
             this.panel10 = new System.Windows.Forms.Panel();
             this.txtQuantity = new System.Windows.Forms.TextBox();
@@ -95,7 +95,7 @@
             this.panel10.Location = new System.Drawing.Point(175, 61);
             this.panel10.Name = "panel10";
             this.panel10.Padding = new System.Windows.Forms.Padding(2);
-            this.panel10.Size = new System.Drawing.Size(161, 35);
+            this.panel10.Size = new System.Drawing.Size(161, 30);
             this.panel10.TabIndex = 6;
             // 
             // txtQuantity
@@ -131,7 +131,7 @@
             this.panel3.Location = new System.Drawing.Point(175, 99);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(2);
-            this.panel3.Size = new System.Drawing.Size(161, 35);
+            this.panel3.Size = new System.Drawing.Size(159, 30);
             this.panel3.TabIndex = 1;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -143,7 +143,7 @@
             this.txtEncode.Location = new System.Drawing.Point(2, 2);
             this.txtEncode.MaxLength = 20;
             this.txtEncode.Name = "txtEncode";
-            this.txtEncode.Size = new System.Drawing.Size(157, 30);
+            this.txtEncode.Size = new System.Drawing.Size(155, 30);
             this.txtEncode.TabIndex = 2;
             this.txtEncode.EnabledChanged += new System.EventHandler(this.txtEncode_EnabledChanged);
             this.txtEncode.TextChanged += new System.EventHandler(this.filterAplhaNumeric);
@@ -422,14 +422,14 @@
             this.dgTransaction.BackgroundColor = System.Drawing.Color.White;
             this.dgTransaction.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgTransaction.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgTransaction.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgTransaction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgTransaction.Location = new System.Drawing.Point(20, 20);
             this.dgTransaction.MultiSelect = false;

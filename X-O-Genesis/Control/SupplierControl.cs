@@ -17,11 +17,17 @@ namespace PetvetPOS_Inventory_System
             InitializeComponent();
         }
 
+        public SupplierControl(MasterController masterController)
+            : base(masterController)
+        {
+            InitializeComponent();
+        }
+
         public Bitmap accessImage
         {
             get
             {
-                throw new NotImplementedException();
+               return Properties.Resources.inventoryWhite; 
             }
         }
 
@@ -29,7 +35,7 @@ namespace PetvetPOS_Inventory_System
         {
             get
             {
-                throw new NotImplementedException();
+                return Menu.Supplier;
             }
         }
 
@@ -37,13 +43,18 @@ namespace PetvetPOS_Inventory_System
         {
             get
             {
-                throw new NotImplementedException();
+                return new KeyFunction(SupplierKeyFunction);
             }
+        }
+
+        public void SupplierKeyFunction(KeyEventArgs e)
+        {
+
         }
 
         public void finalizePage()
         {
-            throw new NotImplementedException();
+
         }
 
         public void initializePage()

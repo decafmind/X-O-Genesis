@@ -15,7 +15,9 @@ namespace PetvetPOS_Inventory_System
 {
     public partial class InventoryView : MyUserControl, IContentPage, IKeyController
     {
-        ProductSliderPane productSliderPane;
+        // TODO
+        // ProductPaneScroll productPaneScroll;
+        ProductSliderPane sliderPane;
         DataTable inventoryTable;
 
         private const int PRODUCT_NAME_INDEX = 0;
@@ -41,22 +43,17 @@ namespace PetvetPOS_Inventory_System
             InitializeComponent();
         }
 
-        /// <summary>
-        /// Initialize the Product Slider Pane. Put it in the constructor.
-        /// </summary>
-        public void initProductSliderPane()
+        public InventoryView(MasterController masterController)
+            : base(masterController)
         {
-            productSliderPane = productSliderPane1;
-            productSliderPane.accessMasterController = masterController;
-            productSliderPane.dbController = masterController.DataBaseController;
-            productSliderPane.inventoryView = this;
-        }
+            InitializeComponent();
 
-        /// <summary>
-        /// Initialize DataGridViewCellStyles. Put in on the constructor.
-        /// </summary>
-        public void initDataGridViewCellStyles()
-        {
+            this.dbController = masterController.DataBaseController;
+            sliderPane = productSliderPane1;
+            sliderPane.accessMasterController = masterController;
+            sliderPane.dbController = masterController.DataBaseController;
+            sliderPane.inventoryView = this;
+
             using (Font timesNewRoman = new Font("Times New Roman", 12, FontStyle.Regular))
             {
                 critical = new DataGridViewCellStyle()
@@ -73,7 +70,7 @@ namespace PetvetPOS_Inventory_System
                     Font = timesNewRoman,
                     BackColor = Color.White,
                     ForeColor = Color.Black,
-                    SelectionBackColor = SystemColors.menuDarkBlue,
+                    SelectionBackColor = Color.Silver,
                     SelectionForeColor = Color.White,
                 };
             }
@@ -86,15 +83,6 @@ namespace PetvetPOS_Inventory_System
             dgInventory.DefaultCellStyle.ApplyStyle(normal);
         }
 
-        public InventoryView(MasterController masterController)
-            : base(masterController)
-        {
-            InitializeComponent();
-            this.dbController = masterController.DataBaseController;
-            initProductSliderPane();
-            initDataGridViewCellStyles();
-            supplierControl1.masterController = masterController;
-        }
 
         public void initializePage()
         {
@@ -129,7 +117,7 @@ namespace PetvetPOS_Inventory_System
             fillgdInventory();
             IEntity entity = e.Entity;
 
-            string nameField = string.Empty, message = string.Empty, action = string.Empty;
+            string nameField = string.Empty, message = string.Empty, action = string.Empty, petsize = string.Empty;
 
             if (entity is Product)
             {
@@ -152,6 +140,37 @@ namespace PetvetPOS_Inventory_System
             MessageBanner banner = new MessageBanner(message, 2000);
             banner.Show();
             dbController.insertAuditTrail(action);
+
+            
+        }
+
+        void highlighRowOfDatagridView(params string[] args)
+        {
+            if (args.Length < 1)
+                return;
+
+            const int NAME_INDEX = 0;
+
+            foreach (DataGridViewRow row in dgInventory.Rows)
+            {
+                if (args.Length > 1)
+                {
+                    if (row.Cells[NAME_INDEX].Value.ToString() == args[0] && 
+                        row.Cells[GROOMING_PETSIZE_INDEX].Value.ToString() == args[1])
+                    {
+                        row.Selected = true;
+                        break;
+                    }
+                }
+                else
+                {
+                    if (row.Cells[NAME_INDEX].Value.ToString() == args[0])
+                    {
+                        row.Selected = true;
+                        break;
+                    }
+                }
+            }
         }
 
         void dbController_UpdateEntity(object sender, EntityArgs e)
@@ -179,7 +198,6 @@ namespace PetvetPOS_Inventory_System
         public void fillgdInventory()
         {
             inventoryTable = new DataTable();
-
             if (rbInventory.Checked)
                 dbController.readInventory(inventoryTable);
             else if (rbPurchased.Checked)
@@ -194,7 +212,7 @@ namespace PetvetPOS_Inventory_System
             if (rbInventory.Checked)
                 colorCodedRows();
             else if (rbPurchased.Checked)
-                highlightCells(dgInventory, "Qty Sold");
+                highlightQtySoldCells();
 
             string product_name;
             foreach (DataGridViewRow row in dgInventory.Rows)
@@ -231,7 +249,7 @@ namespace PetvetPOS_Inventory_System
                 if (rbInventory.Checked)
                     colorCodedRows();
                 else if (rbPurchased.Checked)
-                    highlightCells(dgInventory, "Qty Sold");
+                    highlightQtySoldCells();
             }
 
         }
@@ -250,23 +268,18 @@ namespace PetvetPOS_Inventory_System
             }
         }
 
-        void highlightCells(DataGridView dataGridView, int index)
+        void highlightQtySoldCells()
         {
-            int n = dataGridView.Columns.Count;
-            foreach (DataGridViewRow row in dgInventory.Rows)
-                row.Cells[index].Style = highlighted;
-        }
-
-        void highlightCells(DataGridView dataGridView, string headerText)
-        {
-            int index = 0;
-            int n = dataGridView.Columns.Count;
+            int qty_sold_index = 0;
+            int n = dgInventory.Columns.Count;
             for (int i = 0; i < n; i++)
             {
-                if (dgInventory.Columns[i].HeaderText == headerText)
-                    index = i;
+                if (dgInventory.Columns[i].HeaderText == "Qty Sold")
+                    qty_sold_index = i;
             }
-            highlightCells(dataGridView, index);
+
+            foreach (DataGridViewRow row in dgInventory.Rows)
+                row.Cells[qty_sold_index].Style = highlighted;
         }
 
         public Menu accessMenuName
@@ -353,10 +366,10 @@ namespace PetvetPOS_Inventory_System
             }
 
            
-            if (productSliderPane.isOpen())
+            if (sliderPane.isOpen())
             {
                 if (e.KeyCode == Keys.Enter || e.KeyCode == Keys.Escape){
-                    if (productSliderPane.OK())
+                    if (sliderPane.OK())
                     {
                         toogleSearch();
                     }          
@@ -427,8 +440,8 @@ namespace PetvetPOS_Inventory_System
             }
             else
             {
-                if (productSliderPane.isOpen())
-                    productSliderPane.hide();
+                if (sliderPane.isOpen())
+                    sliderPane.hide();
                 txtSearch.Enabled = true;
                
             }
@@ -441,11 +454,11 @@ namespace PetvetPOS_Inventory_System
 
         void addProduct()
         {
-            productSliderPane.mode = InventoryMode.ADD;
-            productSliderPane.clearTexts();
+            sliderPane.mode = InventoryMode.ADD;
+            sliderPane.clearTexts();
 
-            if (!productSliderPane.isOpen())
-                productSliderPane.toggle();
+            if (!sliderPane.isOpen())
+                sliderPane.toggle();
             toogleSearch();
         }
 
@@ -463,7 +476,7 @@ namespace PetvetPOS_Inventory_System
             if (rbInventory.Checked)
                 colorCodedRows();
             if (rbPurchased.Checked)
-                highlightCells(dgInventory, "Qty Sold");
+                highlightQtySoldCells();
         }
 
         private void checkChanged(object sender, EventArgs e)
@@ -1060,11 +1073,6 @@ namespace PetvetPOS_Inventory_System
                 fillgdInventory();
             else
                 filterdgInventory(cbCategory.Text, true);
-        }
-
-        private void supplierControl1_Load(object sender, EventArgs e)
-        {
-
         }
 
     }

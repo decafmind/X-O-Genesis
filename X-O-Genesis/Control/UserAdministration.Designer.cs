@@ -41,33 +41,33 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.keyButton1 = new PetvetPOS_Inventory_System.KeyButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.keyButton5 = new PetvetPOS_Inventory_System.KeyButton();
             this.label4 = new System.Windows.Forms.Label();
             this.keyButton4 = new PetvetPOS_Inventory_System.KeyButton();
             this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
             this.label2 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.keyButton3 = new PetvetPOS_Inventory_System.KeyButton();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.loginTrail = new PetvetPOS_Inventory_System.TrailView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.auditTrail = new PetvetPOS_Inventory_System.TrailView();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.contentPanel.SuspendLayout();
             this.sidePanel.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            this.tabPage4.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.tabPage4.SuspendLayout();
+            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -130,6 +130,7 @@
             this.userPanel.Name = "userPanel";
             this.userPanel.Size = new System.Drawing.Size(551, 479);
             this.userPanel.TabIndex = 2;
+            this.userPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.userPanel_Paint);
             // 
             // sidePanel
             // 
@@ -232,13 +233,35 @@
             this.keyButton1.accessKeyChar = "F1";
             this.keyButton1.accessMasterController = null;
             this.keyButton1.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton1.dbController = null;
             this.keyButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.keyButton1.Location = new System.Drawing.Point(18, 8);
             this.keyButton1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton1.masterController = null;
             this.keyButton1.Name = "keyButton1";
             this.keyButton1.Size = new System.Drawing.Size(61, 50);
             this.keyButton1.TabIndex = 30;
             this.keyButton1.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.View_File;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(81, 11);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(47, 42);
+            this.pictureBox1.TabIndex = 31;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Remove_User;
+            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox4.Location = new System.Drawing.Point(738, 10);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(39, 42);
+            this.pictureBox4.TabIndex = 25;
+            this.pictureBox4.TabStop = false;
             // 
             // label3
             // 
@@ -256,9 +279,11 @@
             this.keyButton5.accessKeyChar = "F2";
             this.keyButton5.accessMasterController = null;
             this.keyButton5.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton5.dbController = null;
             this.keyButton5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.keyButton5.Location = new System.Drawing.Point(673, 10);
             this.keyButton5.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton5.masterController = null;
             this.keyButton5.Name = "keyButton5";
             this.keyButton5.Size = new System.Drawing.Size(61, 50);
             this.keyButton5.TabIndex = 10;
@@ -280,9 +305,11 @@
             this.keyButton4.accessKeyChar = "Shift";
             this.keyButton4.accessMasterController = null;
             this.keyButton4.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton4.dbController = null;
             this.keyButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.keyButton4.Location = new System.Drawing.Point(605, 10);
             this.keyButton4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton4.masterController = null;
             this.keyButton4.Name = "keyButton4";
             this.keyButton4.Size = new System.Drawing.Size(61, 50);
             this.keyButton4.TabIndex = 9;
@@ -293,9 +320,11 @@
             this.keyButton2.accessKeyChar = "F2";
             this.keyButton2.accessMasterController = null;
             this.keyButton2.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton2.dbController = null;
             this.keyButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.keyButton2.Location = new System.Drawing.Point(202, 9);
             this.keyButton2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton2.masterController = null;
             this.keyButton2.Name = "keyButton2";
             this.keyButton2.Size = new System.Drawing.Size(61, 50);
             this.keyButton2.TabIndex = 7;
@@ -310,14 +339,36 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "+";
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Add_User;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(454, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(47, 42);
+            this.pictureBox2.TabIndex = 23;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Edit;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(265, 12);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(45, 42);
+            this.pictureBox3.TabIndex = 24;
+            this.pictureBox3.TabStop = false;
+            // 
             // keyButton3
             // 
             this.keyButton3.accessKeyChar = "F3";
             this.keyButton3.accessMasterController = null;
             this.keyButton3.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton3.dbController = null;
             this.keyButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.keyButton3.Location = new System.Drawing.Point(388, 9);
             this.keyButton3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton3.masterController = null;
             this.keyButton3.Name = "keyButton3";
             this.keyButton3.Size = new System.Drawing.Size(61, 50);
             this.keyButton3.TabIndex = 8;
@@ -340,10 +391,12 @@
             this.loginTrail.AutoSize = true;
             this.loginTrail.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.loginTrail.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.loginTrail.dbController = null;
             this.loginTrail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.loginTrail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.loginTrail.Location = new System.Drawing.Point(0, 0);
             this.loginTrail.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.loginTrail.masterController = null;
             this.loginTrail.Name = "loginTrail";
             this.loginTrail.Size = new System.Drawing.Size(869, 545);
             this.loginTrail.TabIndex = 0;
@@ -368,56 +421,18 @@
             this.auditTrail.AutoSize = true;
             this.auditTrail.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.auditTrail.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.auditTrail.dbController = null;
             this.auditTrail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.auditTrail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.auditTrail.Location = new System.Drawing.Point(0, 0);
             this.auditTrail.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.auditTrail.masterController = null;
             this.auditTrail.Name = "auditTrail";
             this.auditTrail.Size = new System.Drawing.Size(869, 545);
             this.auditTrail.TabIndex = 100;
             this.auditTrail.TabStop = false;
             this.auditTrail.Users = null;
             this.auditTrail.Load += new System.EventHandler(this.auditTrail_Load);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.View_File;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(81, 11);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(47, 42);
-            this.pictureBox1.TabIndex = 31;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Remove_User;
-            this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox4.Location = new System.Drawing.Point(738, 10);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(39, 42);
-            this.pictureBox4.TabIndex = 25;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Add_User;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(454, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(47, 42);
-            this.pictureBox2.TabIndex = 23;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Edit;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(265, 12);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(45, 42);
-            this.pictureBox3.TabIndex = 24;
-            this.pictureBox3.TabStop = false;
             // 
             // UserAdministration
             // 
@@ -435,14 +450,14 @@
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            this.tabPage4.ResumeLayout(false);
-            this.tabPage4.PerformLayout();
-            this.tabPage3.ResumeLayout(false);
-            this.tabPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage4.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
             this.ResumeLayout(false);
 
         }

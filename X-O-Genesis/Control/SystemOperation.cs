@@ -105,6 +105,11 @@ namespace PetvetPOS_Inventory_System
 
         }
 
+        private void pbSupplier_Click(object sender, EventArgs e)
+        {
+            masterController.changeCurrentContent(new SupplierControl(masterController));
+        }
+
 
     }
 }

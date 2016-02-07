@@ -31,7 +31,7 @@ namespace PetvetPOS_Inventory_System
             };
         }
 
-        public string createProduct(Product product)
+        public string getInsertQuery(Product product)
         {
             return insertValues(
                 product.Barcode,

@@ -507,6 +507,49 @@ namespace PetvetPOS_Inventory_System
             return selectRows(dt, query);
         }
 
+        public static bool createTransaction(MySqlDB db, params string[] args)
+        {
+            bool success = false;
+            db.open();
+            MySqlTransaction transaction = db.Connection.BeginTransaction();
+            MySqlCommand command = db.Connection.CreateCommand();
+
+            command.Connection = db.Connection;
+            command.Transaction = transaction;
+
+            try
+            {
+                int n = args.Length;
+                for (int i = 0; i < n; i++)
+                {
+                    command.CommandText = @args[i];
+                    if (args[i].Contains("INSERT") || args[i].Contains("UPDATE") || args[i].Contains("DELETE"))
+                        command.ExecuteNonQuery();
+                }
+                transaction.Commit();
+                success = true;
+            }
+            catch (MySqlException x)
+            {
+                System.Windows.Forms.MessageBox.Show(x.Message);
+                try
+                {
+                    transaction.Rollback();
+                }
+                catch (MySqlException ex)
+                {
+                    System.Windows.Forms.MessageBox.Show("An exception of type " + ex.GetType() +
+                        " was encounter while inserting the data.");
+                }
+                success = false;
+            }
+            finally
+            {
+                db.close();
+                db.dispose();
+            }
+            return success;
+        }
 
 
     }

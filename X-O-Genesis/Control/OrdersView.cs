@@ -174,7 +174,7 @@ namespace PetvetPOS_Inventory_System
                 }
 
             }
-            catch (Exception ex) { lblPOSmsg.Text = "Item not found";  }
+            catch (Exception) { lblPOSmsg.Text = "Item not found";  }
 
             return success;
         }
@@ -336,9 +336,16 @@ namespace PetvetPOS_Inventory_System
             concludeTransaction = true;
             toggleEncoding(false);
           
+            inventory = null;
             foreach (ProductInvoice item in carts)
             {
                 dbController.insertProductInvoice(item);
+                inventory = new Inventory(){
+                    Barcode = item.product.Barcode,
+                    QtyReceived = 0,
+                    QtyOnHand = -item.QuantitySold,
+                };
+
                 dbController.checkProductCriticalLevel(item.product);
         	}
          
@@ -411,13 +418,23 @@ namespace PetvetPOS_Inventory_System
         void invoice_Layout(object sender, PrintPageEventArgs e)
         {
             DataTable companyProfile = new DataTable();
+            dbController.loadCompanyProfile(companyProfile);
 
-            string title = Properties.Settings.Default.CompanyName;
+            string title = "Guardtech";
             string tin = " ****-****-****-****";
-            string address = Properties.Settings.Default.CompanyAddress;
-            string cont = Properties.Settings.Default.CompanyContact;
-            string web = Properties.Settings.Default.CompanyEmail;
-         
+            string address = "G44 Abbey Road Bagbag, Novaliches Quezon City";
+            string cont = "09195558866";
+            string web = "www.google.com";
+          
+
+            foreach (DataRow dr in companyProfile.Rows)
+            {
+                title = dr["compname"].ToString();
+                address = dr["address"].ToString();
+                cont = dr["contactno"].ToString();
+                web = dr["email"].ToString();
+            }
+
             Graphics g = e.Graphics;
             using(Font font = new Font("MS San Serif", 11, FontStyle.Regular))
             using (Pen pen = new Pen(Brushes.Black, 1))
@@ -520,8 +537,6 @@ namespace PetvetPOS_Inventory_System
             string charAllowed = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnoqprstuvwxyz1234567890.";
             MyExtension.Validation.limitTextbox(textBox, charAllowed);
         }
-
-
 
         private void btnEncode_Click(object sender, EventArgs e)
         {

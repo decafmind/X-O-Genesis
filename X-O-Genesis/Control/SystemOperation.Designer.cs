@@ -42,14 +42,14 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbSupplier = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbAuditTrail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoginTrail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPromoAndDiscount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserManagement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSystemSettings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSupplier)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -212,17 +212,18 @@
             this.label6.Text = "Supplier";
             this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
-            // pictureBox1
+            // pbSupplier
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Location = new System.Drawing.Point(430, 364);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 98);
-            this.pictureBox1.TabIndex = 15;
-            this.pictureBox1.TabStop = false;
+            this.pbSupplier.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.pbSupplier.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbSupplier.BackgroundImage")));
+            this.pbSupplier.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbSupplier.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbSupplier.Location = new System.Drawing.Point(430, 364);
+            this.pbSupplier.Name = "pbSupplier";
+            this.pbSupplier.Size = new System.Drawing.Size(100, 98);
+            this.pbSupplier.TabIndex = 15;
+            this.pbSupplier.TabStop = false;
+            this.pbSupplier.Click += new System.EventHandler(this.pbSupplier_Click);
             // 
             // SystemOperation
             // 
@@ -230,7 +231,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pbSupplier);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -252,7 +253,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbUserManagement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSystemSettings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSupplier)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -273,6 +274,6 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbSupplier;
     }
 }

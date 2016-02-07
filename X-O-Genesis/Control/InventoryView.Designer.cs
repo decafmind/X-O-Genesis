@@ -104,9 +104,6 @@
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.mainTab = new System.Windows.Forms.TabControl();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.supplierControl1 = new PetvetPOS_Inventory_System.SupplierControl();
             this.tabPage2.SuspendLayout();
             this.panel11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgProductTransaction)).BeginInit();
@@ -135,7 +132,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
             this.mainTab.SuspendLayout();
-            this.tabPage3.SuspendLayout();
             this.SuspendLayout();
             // 
             // keyButton5
@@ -1026,9 +1022,9 @@
             // 
             // mainTab
             // 
+            this.mainTab.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
             this.mainTab.Controls.Add(this.tabPage1);
             this.mainTab.Controls.Add(this.tabPage2);
-            this.mainTab.Controls.Add(this.tabPage3);
             this.mainTab.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainTab.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mainTab.ItemSize = new System.Drawing.Size(100, 30);
@@ -1037,41 +1033,6 @@
             this.mainTab.SelectedIndex = 0;
             this.mainTab.Size = new System.Drawing.Size(877, 583);
             this.mainTab.TabIndex = 0;
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.Controls.Add(this.panel14);
-            this.tabPage3.Controls.Add(this.supplierControl1);
-            this.tabPage3.Location = new System.Drawing.Point(4, 34);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(869, 545);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Supplier";
-            this.tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // panel14
-            // 
-            this.panel14.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel14.Location = new System.Drawing.Point(3, 433);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(863, 109);
-            this.panel14.TabIndex = 1;
-            // 
-            // supplierControl1
-            // 
-            this.supplierControl1.accessMasterController = null;
-            this.supplierControl1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.supplierControl1.dbController = null;
-            this.supplierControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.supplierControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.supplierControl1.Location = new System.Drawing.Point(3, 3);
-            this.supplierControl1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.supplierControl1.masterController = null;
-            this.supplierControl1.Name = "supplierControl1";
-            this.supplierControl1.Size = new System.Drawing.Size(863, 539);
-            this.supplierControl1.TabIndex = 0;
-            this.supplierControl1.Load += new System.EventHandler(this.supplierControl1_Load);
             // 
             // InventoryView
             // 
@@ -1115,7 +1076,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
             this.mainTab.ResumeLayout(false);
-            this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1193,8 +1153,5 @@
         private System.Windows.Forms.ComboBox cbCategory;
         private System.Windows.Forms.Label label13;
         public System.Windows.Forms.RadioButton rbArchives;
-        private System.Windows.Forms.TabPage tabPage3;
-        private SupplierControl supplierControl1;
-        private System.Windows.Forms.Panel panel14;
     }
 }

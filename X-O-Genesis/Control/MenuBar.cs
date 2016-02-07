@@ -126,6 +126,8 @@ namespace PetvetPOS_Inventory_System
             MenuList list;
             Menu menu;
 
+            bool SimpleMode = Properties.Settings.Default.SimpleMode;
+
             switch (e.employee.Position)
             {
                 case UserLevel.ADMIN:
@@ -133,7 +135,11 @@ namespace PetvetPOS_Inventory_System
                     menu = Menu.Home;
                     break;
                 case UserLevel.CASHIER:
-                    list = new CashierMenuList(masterController, this);
+                    if (SimpleMode)
+                        list = new SimpleCashierMenuList(masterController, this);
+                    else
+                        list = new AdvancedCashierMenuList(masterController, this);
+                        
                     menu = Menu.POS;
                     break;
                 case UserLevel.INVENTORY_PERSONNEL:

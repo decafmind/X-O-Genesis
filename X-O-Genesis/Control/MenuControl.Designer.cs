@@ -84,6 +84,7 @@
             this.ovalEarHoleR.Location = new System.Drawing.Point(59, 20);
             this.ovalEarHoleR.Name = "ovalEarHoleR";
             this.ovalEarHoleR.Size = new System.Drawing.Size(13, 8);
+            this.ovalEarHoleR.Visible = false;
             this.ovalEarHoleR.Click += new System.EventHandler(this.ovalShape4_Click);
             // 
             // ovalEarHoleL
@@ -95,6 +96,7 @@
             this.ovalEarHoleL.Location = new System.Drawing.Point(18, 20);
             this.ovalEarHoleL.Name = "ovalEarHoleL";
             this.ovalEarHoleL.Size = new System.Drawing.Size(13, 8);
+            this.ovalEarHoleL.Visible = false;
             this.ovalEarHoleL.Click += new System.EventHandler(this.ovalShape4_Click);
             // 
             // ovalEarR
@@ -106,6 +108,7 @@
             this.ovalEarR.Location = new System.Drawing.Point(58, 10);
             this.ovalEarR.Name = "ovalEarR";
             this.ovalEarR.Size = new System.Drawing.Size(20, 19);
+            this.ovalEarR.Visible = false;
             this.ovalEarR.Click += new System.EventHandler(this.ovalShape4_Click);
             // 
             // ovalEarL
@@ -117,6 +120,7 @@
             this.ovalEarL.Location = new System.Drawing.Point(12, 11);
             this.ovalEarL.Name = "ovalEarL";
             this.ovalEarL.Size = new System.Drawing.Size(20, 19);
+            this.ovalEarL.Visible = false;
             this.ovalEarL.Click += new System.EventHandler(this.ovalShape4_Click);
             // 
             // icon

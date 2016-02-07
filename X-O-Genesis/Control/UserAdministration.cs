@@ -398,6 +398,11 @@ namespace PetvetPOS_Inventory_System
         {
             reloadUsers();
         }
+
+        private void userPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }
 
