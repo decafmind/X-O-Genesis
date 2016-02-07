@@ -100,6 +100,11 @@ namespace PetvetPOS_Inventory_System
 
         }
 
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
 
     }
 }

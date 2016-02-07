@@ -14,7 +14,6 @@ namespace PetvetPOS_Inventory_System
     public partial class Home : MyUserControl, IContentPage, IKeyController
     {
         private DataTable dt;
-        private DatabaseController dbController;
         private const int QUANTITY_ONHAND_INDEX = 1;
         private const int QUANTITY_ONRECEIVED_INDEX = 2;
        

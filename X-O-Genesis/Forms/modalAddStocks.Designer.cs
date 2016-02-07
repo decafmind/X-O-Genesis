@@ -189,6 +189,7 @@
             this.Controls.Add(this.label2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "modalAddStocks";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "modalAddStocks";
             this.Load += new System.EventHandler(this.modalAddStocks_Load);
             this.ResumeLayout(false);

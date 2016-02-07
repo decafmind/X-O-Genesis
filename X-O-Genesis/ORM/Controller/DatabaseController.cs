@@ -435,14 +435,14 @@ namespace PetvetPOS_Inventory_System
             if (categoryOnly)
             {
                 condition = String.Format(
-                    " Category = '{0}'", token
+                    " Category = '{0}' AND Archive = '0'", token
                 );
             }
             else
             {
                 condition = String.Format(
                     " Name LIKE '%{0}%' OR Barcode LIKE '%{0}%' " +
-                    " OR Category LIKE '%{0}%' OR Supplier LIKE '%{0}%'", token
+                    " OR Category LIKE '%{0}%' OR Supplier LIKE '%{0}%' AND Archive = '0", token
                 );
             }
              
@@ -460,28 +460,12 @@ namespace PetvetPOS_Inventory_System
         {
              string condition = String.Format(
                 " Name LIKE '%{0}%' OR Barcode LIKE '%{0}%' " +
-                " OR Category LIKE '%{0}%' OR Company LIKE '%{0}%' ", token
+                " OR Category LIKE '%{0}%' OR Company LIKE '%{0}%' AND Archive = '0'", token
                 );
              return purchasedProductMapper.loadTable(dt, condition);
         }
 
-        public DataTable filterGrooming(DataTable dt, string token)
-        {
-            string condition = String.Format(
-                " grooming_name LIKE '%{0}%' OR petsize LIKE '%{0}%' ", token
-               );
-
-            return groomingViewMapper.loadTable(dt, condition);
-        }
-
-        public DataTable filterMedical(DataTable dt, string token)
-        {
-            string condition = String.Format(
-             " medical_name LIKE '%{0}%'", token
-            );
-
-            return medicalMapper.loadTable(dt, condition);
-        }
+      
         public DataTable readPurchasedProduct(DataTable dt)
         {
             return purchasedProductMapper.loadTable(dt, "quantity > 0");

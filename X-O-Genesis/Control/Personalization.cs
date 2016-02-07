@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PetvetPOS_Inventory_System.Domain;
 
 namespace PetvetPOS_Inventory_System
 {
     public partial class Personalization : MyUserControl, IContentPage, IKeyController
     {
-        DatabaseController dbController;
         ColorDialog colorDialog = new ColorDialog();
-        SettingArgs s = new SettingArgs(Settings.PERSONALIZATION);
+        Theme theme = new Theme();
 
         public Personalization()
         {
@@ -32,9 +32,7 @@ namespace PetvetPOS_Inventory_System
             DialogResult result = colorDialog.ShowDialog();
             if (result == DialogResult.OK)
             {
-                Properties.Settings.Default.headerColor = colorDialog.Color;
-                Properties.Settings.Default.Save();
-                masterController.OnSettingsChanged(s);
+                theme.HeaderColor = colorDialog.Color;
             }
         }
 
@@ -79,9 +77,7 @@ namespace PetvetPOS_Inventory_System
             DialogResult result = colorDialog.ShowDialog();
             if (result == DialogResult.OK)
             {
-                Properties.Settings.Default.sidebarColor = colorDialog.Color;
-                Properties.Settings.Default.Save();
-                masterController.OnSettingsChanged(s);
+                theme.SideBarColor = colorDialog.Color;
             }
         }
 
@@ -89,34 +85,30 @@ namespace PetvetPOS_Inventory_System
         {
             if (comboBox1.SelectedIndex == 0)
             {
-                Properties.Settings.Default.headerColor = SystemColors.getColorFromArgb(44, 93, 99);
-                Properties.Settings.Default.iconColor = SystemColors.getColorFromArgb(40, 55, 57);
-                Properties.Settings.Default.sidebarColor = SystemColors.getColorFromArgb(169, 197, 47);
-               
+                theme = new Theme("Default", 
+                    SystemColors.getColorFromArgb(44, 93, 99), 
+                    SystemColors.getColorFromArgb(40, 55, 57), 
+                    SystemColors.getColorFromArgb(169, 197, 47)
+                    );
             }
             else if (comboBox1.SelectedIndex == 1)
             {
-                Properties.Settings.Default.headerColor = SystemColors.getColorFromArgb(227, 231, 179);
-                Properties.Settings.Default.iconColor = SystemColors.getColorFromArgb(246, 255, 226); 
-                Properties.Settings.Default.sidebarColor = SystemColors.getColorFromArgb(215, 121, 72);
+                theme = new Theme("Desert Punk",
+                    SystemColors.getColorFromArgb(227, 231, 179),
+                    SystemColors.getColorFromArgb(246, 255, 226),
+                    SystemColors.getColorFromArgb(215, 121, 72)
+                    );
             }
-            else if (comboBox1.SelectedIndex == 2)
-            {
-                Properties.Settings.Default.headerColor = SystemColors.getColorFromArgb(227, 231, 179);
-                Properties.Settings.Default.iconColor = SystemColors.getColorFromArgb(246, 255, 226);
-                Properties.Settings.Default.sidebarColor = SystemColors.getColorFromArgb(215, 121, 72);
-            }
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Properties.Settings.Default.Save();
-            masterController.OnSettingsChanged(s);
         }
 
         private void Personalization_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            theme.Save(masterController);
         }
     }
 }

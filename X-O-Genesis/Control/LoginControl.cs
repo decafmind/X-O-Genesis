@@ -16,7 +16,6 @@ namespace PetvetPOS_Inventory_System
         private User user;
         private LoginPane loginPane;
         private int loginAttempt = 0;
-        DatabaseController dbController;
         modalFallback fallback;
 
         private string Username;

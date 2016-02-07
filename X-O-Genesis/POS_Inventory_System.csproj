@@ -176,6 +176,12 @@
     <Compile Include="Control\FBUser.Designer.cs">
       <DependentUpon>FBUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\OrderPOS.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\OrderPOS.Designer.cs">
+      <DependentUpon>OrderPOS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\OrdersView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -237,7 +243,7 @@
       <DependentUpon>SystemSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Domain\Client.cs" />
-    <Compile Include="Domain\CompanyProf.cs" />
+    <Compile Include="Domain\Controller\CompanyProf.cs" />
     <Compile Include="Domain\Controller\Service.cs" />
     <Compile Include="Domain\Enums\Settings.cs" />
     <Compile Include="Domain\LoginTrail.cs" />
@@ -249,12 +255,10 @@
     <Compile Include="Domain\Theme.cs" />
     <Compile Include="EventHandler\SettingArgs.cs" />
     <Compile Include="Domain\Fallback.cs" />
-    <Compile Include="Domain\InventoryPersonnelMenuList.cs" />
-    <Compile Include="Domain\StaffMenuList.cs" />
-    <Compile Include="Domain\GPP.cs" />
+    <Compile Include="Domain\MenuList\InventoryPersonnelMenuList.cs" />
+    <Compile Include="Domain\MenuList\StaffMenuList.cs" />
     <Compile Include="Domain\Medical.cs" />
     <Compile Include="Domain\Enums\InventoryMode.cs" />
-    <Compile Include="Domain\Enums\Petsize.cs" />
     <Compile Include="Forms\modalAddStocks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -297,6 +301,12 @@
     <Compile Include="Forms\modalInspectProduct.Designer.cs">
       <DependentUpon>modalInspectProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\modalPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\modalPayment.Designer.cs">
+      <DependentUpon>modalPayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="MyExtension\ErrorLog.cs" />
     <Compile Include="ORM\TableGateway\AuditTrailMapper.cs" />
     <Compile Include="ORM\TableGateway\CompanyProfileMapper.cs" />
@@ -324,7 +334,7 @@
     <Compile Include="Control\AddUserPane.Designer.cs">
       <DependentUpon>AddUserPane.cs</DependentUpon>
     </Compile>
-    <Compile Include="Domain\AdminMenuList.cs" />
+    <Compile Include="Domain\MenuList\AdminMenuList.cs" />
     <Compile Include="ORM\TableGateway\CategoryMapper.cs" />
     <Compile Include="EventHandler\ContentArgs.cs" />
     <Compile Include="ORM\ViewGateway\DailySalesReportMapper.cs" />
@@ -397,7 +407,7 @@
     <Compile Include="Control\MenuControl.Designer.cs">
       <DependentUpon>MenuControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Domain\MenuList.cs" />
+    <Compile Include="Domain\MenuList\MenuList.cs" />
     <Compile Include="Forms\MessageBanner.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -503,7 +513,7 @@
     <Compile Include="EventHandler\UserArgs.cs" />
     <Compile Include="Domain\Enums\UserLevel.cs" />
     <Compile Include="ORM\TableGateway\UserMapper.cs" />
-    <Compile Include="Domain\UserMenuList.cs" />
+    <Compile Include="Domain\MenuList\CashierMenuList.cs" />
     <Compile Include="Control\UserSettingsControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -542,6 +552,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\FBUser.resx">
       <DependentUpon>FBUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\OrderPOS.resx">
+      <DependentUpon>OrderPOS.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\OrdersView.resx">
       <DependentUpon>OrdersView.cs</DependentUpon>
@@ -633,6 +646,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\modalInspectProduct.resx">
       <DependentUpon>modalInspectProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\modalPayment.resx">
+      <DependentUpon>modalPayment.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\modalVoid.resx">
       <DependentUpon>modalVoid.cs</DependentUpon>

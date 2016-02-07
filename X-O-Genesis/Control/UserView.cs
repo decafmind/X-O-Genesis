@@ -15,7 +15,6 @@ namespace PetvetPOS_Inventory_System
 {
     public partial class UserView : MyUserControl
     {
-        DatabaseController dbController;
 
         public UserView()
         {

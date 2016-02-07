@@ -17,7 +17,7 @@ namespace PetvetPOS_Inventory_System
             InitializeComponent();
         }
 
-        public MasterController masterController
+        public override MasterController masterController
         {
             get
             {

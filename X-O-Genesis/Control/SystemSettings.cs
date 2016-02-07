@@ -12,7 +12,6 @@ namespace PetvetPOS_Inventory_System
 {
     public partial class SystemSettings : MyUserControl, IContentPage, IKeyController
     {
-        DatabaseController dbController;
 
         public SystemSettings()
         {

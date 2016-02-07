@@ -13,7 +13,6 @@ namespace PetvetPOS_Inventory_System
 {
     public partial class CompanyProfile : MyUserControl, IContentPage
     {
-        DatabaseController dbController;
         CompanyProf companyProfile;
         DataTable companyProfileTable;
 
@@ -48,22 +47,15 @@ namespace PetvetPOS_Inventory_System
                     Logo = lblPath.Text,
                 };
 
-                if (dbController.updateCompanyProfile(companyProfile))
-                {
-                    banner = new MessageBanner("Successful updating company profile.", 2000);
-                    banner.Opacity = 1;
-                    banner.BackColor = System.Drawing.Color.Green;
-                    banner.ForeColor = System.Drawing.Color.White;
-                    banner.Show();
-                }
-                else
-                {
-                    banner = new MessageBanner("Failed to update company profile.", 2000);
-                    banner.Opacity = 1;
-                    banner.BackColor = System.Drawing.Color.DarkRed;
-                    banner.ForeColor = System.Drawing.Color.White;
-                    banner.Show();
-                }
+                // This save the profile in settings
+                companyProfile.Save();
+
+                banner = new MessageBanner("Successful updating company profile.", 2000);
+                banner.Opacity = 1;
+                banner.BackColor = System.Drawing.Color.Green;
+                banner.ForeColor = System.Drawing.Color.White;
+                banner.Show();
+                
             }
             else
             {

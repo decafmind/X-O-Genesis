@@ -13,7 +13,6 @@ namespace PetvetPOS_Inventory_System
     public partial class modalAddStocks : Form
     {
         public string Barcode { get; set; }
-        public string ProductName { get; set; }
         public int CurrentStocks { get; set; }
         public int NewStocks { get; set; }
         public int AdditionalStocks { get; set; }
@@ -23,11 +22,10 @@ namespace PetvetPOS_Inventory_System
         {
             InitializeComponent();
             Barcode = barcode;
-            ProductName = productName;
             CurrentStocks = currentStocks;
 
             lblTitle.Text = Barcode;
-            lblProductName.Text = ProductName;
+            lblProductName.Text = productName;
             lblCurrentStocks.Text = CurrentStocks.ToString();
         }
 
@@ -49,6 +47,7 @@ namespace PetvetPOS_Inventory_System
 
         private void txtStocks_TextChanged(object sender, EventArgs e)
         {
+            MyExtension.Validation.filterToNumeric(sender as TextBox);
             computeNewStocks();
         }
 
