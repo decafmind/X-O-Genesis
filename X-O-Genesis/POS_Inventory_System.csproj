@@ -249,6 +249,7 @@
       <DependentUpon>SystemSettings.cs</DependentUpon>
     </Compile>
     <Compile Include="Domain\Client.cs" />
+    <Compile Include="Domain\Constants.cs" />
     <Compile Include="Domain\Controller\CompanyProf.cs" />
     <Compile Include="Domain\Controller\Service.cs" />
     <Compile Include="Domain\Enums\Settings.cs" />

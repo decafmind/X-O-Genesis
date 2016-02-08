@@ -83,8 +83,7 @@ namespace PetvetPOS_Inventory_System
 
             if (testConnection() == true)
             {
-                string local = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-                string directory = local + @"\Exogenesis\Database\";
+                string directory = Constants.rootFolder + @"Database\";
                 string filepath = @"connection";
 
                 if (!Directory.Exists(directory))
