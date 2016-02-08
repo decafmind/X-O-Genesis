@@ -72,7 +72,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ListNetworkComputerNames">
-      <HintPath>F:\X-O-Genesis\X-O-Genesis\bin\Debug\ListNetworkComputerNames.dll</HintPath>
+      <HintPath>E:\Documents\dll\ListNetworkComputerNames.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic">
       <Private>True</Private>
@@ -104,10 +104,10 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="PasswordHash">
-      <HintPath>F:\X-O-Genesis\X-O-Genesis\bin\Debug\PasswordHash.dll</HintPath>
+      <HintPath>E:\Documents\Library\PasswordHash.dll</HintPath>
     </Reference>
     <Reference Include="Randy.Graphics">
-      <HintPath>F:\X-O-Genesis\X-O-Genesis\bin\Debug\Randy.Graphics.dll</HintPath>
+      <HintPath>E:\Documents\Library\Randy.Graphics.dll</HintPath>
     </Reference>
     <Reference Include="System">
       <Private>True</Private>
@@ -154,7 +154,7 @@
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
     <Reference Include="TouchlessLib">
-      <HintPath>F:\X-O-Genesis\X-O-Genesis\bin\Debug\TouchlessLib.dll</HintPath>
+      <HintPath>E:\Documents\dll\TouchlessLib.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
