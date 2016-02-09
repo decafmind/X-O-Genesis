@@ -28,7 +28,7 @@ namespace PetvetPOS_Inventory_System
 
         public string createEmployee(Employee employee)
         {
-            return insertValues(employee.User_id, employee.Firstname, employee.MiddleName, employee.Lastname, employee.MobileNo, employee.EmailAddress , employee.Address, formatImagePath(employee.ImagePath));
+            return insertValues(employee.User_id, employee.Firstname, employee.MiddleName, employee.Lastname, employee.MobileNo, employee.EmailAddress , employee.Address, Path.formatImagePath(employee.ImagePath));
         }
 
         public bool updateEmployee(Employee oldE, Employee newE){
@@ -62,24 +62,8 @@ namespace PetvetPOS_Inventory_System
             return update(
                 updateSet(condition, updateFirstname, updateMiddlename, 
                 updateLastname, updateMobileno, updateEmailAdd, updateAddress, 
-                formatImagePath(updateImagepath))
+                Path.formatImagePath(updateImagepath))
                 );
-        }
-
-        public string formatImagePath(string path)
-        {
-            string newString = "";
-            char backSlash = '\\';
-
-            if (path.Contains(backSlash))
-            {
-                string[] parseOfString = path.Split(backSlash);
-                newString += parseOfString[0] + "\\\\";
-                int n = parseOfString.Length;
-                for (int i = 1; i < n; i++)
-                    newString += "\\\\" + parseOfString[i];
-            }
-            return newString;
         }
 
         public Employee getEmployeeFromUserId(User user){

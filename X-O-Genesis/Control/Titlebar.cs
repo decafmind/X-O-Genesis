@@ -27,7 +27,10 @@ namespace PetvetPOS_Inventory_System
         private Bitmap defaultIcon = Properties.Resources.shopIcon;
         private string title;
         private Bitmap imageIcon;
- 
+
+        string companyLogoImagePath = string.Empty;
+        Image companyLogo;
+
         public Titlebar()
         {
             InitializeComponent();
@@ -48,6 +51,10 @@ namespace PetvetPOS_Inventory_System
             TabStop = false;
             whenNotLogin();
             initColors();
+
+            companyLogoImagePath = Properties.Settings.Default.CompanyLogoImagPath;
+            if (File.Exists(companyLogoImagePath))
+                companyLogo = Renderer.resizeImage(Image.FromFile(companyLogoImagePath) as Bitmap, panelImage.Width, panelImage.Height) as Image;
 
         }
 
@@ -243,7 +250,10 @@ namespace PetvetPOS_Inventory_System
         private void panelImage_Paint(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-            g.DrawImageUnscaled(imageIcon, new Point(0, 0));
+            if (companyLogo!= null)
+                g.DrawImageUnscaled(companyLogo, new Point(0, 0));
+            else
+                g.DrawImageUnscaled(imageIcon, new Point(0, 0));
         }
 
    

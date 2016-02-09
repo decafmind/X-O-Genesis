@@ -316,6 +316,7 @@
       <DependentUpon>modalPayment.cs</DependentUpon>
     </Compile>
     <Compile Include="MyExtension\ErrorLog.cs" />
+    <Compile Include="MyExtension\Path.cs" />
     <Compile Include="ORM\TableGateway\AuditTrailMapper.cs" />
     <Compile Include="ORM\TableGateway\CompanyProfileMapper.cs" />
     <Compile Include="ORM\TableGateway\FallbackMapper.cs" />
