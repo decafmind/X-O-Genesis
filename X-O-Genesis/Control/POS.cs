@@ -408,11 +408,23 @@ namespace PetvetPOS_Inventory_System
         
         void receipt_PrintPage(object sender, PrintPageEventArgs e)
         {
-            string title = Properties.Settings.Default.CompanyName;
+            DataTable companyProfile = new DataTable();
+            dbController.loadCompanyProfile(companyProfile);
+
+            string title = "Guardtech";
             string tin = " ****-****-****-****";
-            string address = Properties.Settings.Default.CompanyAddress;
-            string cont = Properties.Settings.Default.CompanyContact;
-            string web = Properties.Settings.Default.CompanyEmail;
+            string address = "G44 Abbey Road Bagbag, Novaliches Quezon City";
+            string cont = "09195558866";
+            string web = "www.google.com";
+
+
+            foreach (DataRow dr in companyProfile.Rows)
+            {
+                title = dr["compname"].ToString();
+                address = dr["address"].ToString();
+                cont = dr["contactno"].ToString();
+                web = dr["email"].ToString();
+            }
 
             Graphics g = e.Graphics;
             using(Font font = new Font("MS San Serif", 11 , FontStyle.Regular))

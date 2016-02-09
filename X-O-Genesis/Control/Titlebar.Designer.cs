@@ -31,22 +31,72 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Titlebar));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panelTitle = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panelImage = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolTip1
             // 
             this.toolTip1.Popup += new System.Windows.Forms.PopupEventHandler(this.toolTip1_Popup);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.panelTitle);
+            this.panel1.Controls.Add(this.panel4);
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(681, 92);
+            this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // panelTitle
+            // 
+            this.panelTitle.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTitle.Location = new System.Drawing.Point(91, 0);
+            this.panelTitle.Name = "panelTitle";
+            this.panelTitle.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.panelTitle.Size = new System.Drawing.Size(475, 92);
+            this.panelTitle.TabIndex = 6;
+            this.panelTitle.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            this.panelTitle.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panelTitle_MouseDoubleClick);
+            this.panelTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mouseDown);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.panel5);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel4.Location = new System.Drawing.Point(566, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(115, 92);
+            this.panel4.TabIndex = 3;
+            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
+            this.panel4.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panelTitle_MouseDoubleClick);
+            this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mouseDown);
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.button3);
+            this.panel5.Controls.Add(this.button2);
+            this.panel5.Controls.Add(this.button1);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 0);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(115, 26);
+            this.panel5.TabIndex = 0;
+            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
             // button3
             // 
@@ -110,61 +160,23 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // panel1
+            // panel2
             // 
-            this.panel1.Controls.Add(this.panelTitle);
-            this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panelImage);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(681, 92);
-            this.panel1.TabIndex = 2;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // panelTitle
-            // 
-            this.panelTitle.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTitle.Location = new System.Drawing.Point(90, 0);
-            this.panelTitle.Name = "panelTitle";
-            this.panelTitle.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.panelTitle.Size = new System.Drawing.Size(476, 92);
-            this.panelTitle.TabIndex = 6;
-            this.panelTitle.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            this.panelTitle.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panelTitle_MouseDoubleClick);
-            this.panelTitle.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mouseDown);
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.panel5);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(566, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(115, 92);
-            this.panel4.TabIndex = 3;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
-            this.panel4.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panelTitle_MouseDoubleClick);
-            this.panel4.MouseDown += new System.Windows.Forms.MouseEventHandler(this.mouseDown);
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.button3);
-            this.panel5.Controls.Add(this.button2);
-            this.panel5.Controls.Add(this.button1);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 0);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(115, 26);
-            this.panel5.TabIndex = 0;
-            this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
+            this.panel2.Controls.Add(this.panelImage);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Padding = new System.Windows.Forms.Padding(6);
+            this.panel2.Size = new System.Drawing.Size(91, 92);
+            this.panel2.TabIndex = 7;
             // 
             // panelImage
             // 
             this.panelImage.BackColor = System.Drawing.Color.DimGray;
-            this.panelImage.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelImage.Location = new System.Drawing.Point(0, 0);
+            this.panelImage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelImage.Location = new System.Drawing.Point(6, 6);
             this.panelImage.Name = "panelImage";
-            this.panelImage.Size = new System.Drawing.Size(90, 92);
+            this.panelImage.Size = new System.Drawing.Size(79, 80);
             this.panelImage.TabIndex = 5;
             this.panelImage.Paint += new System.Windows.Forms.PaintEventHandler(this.panelImage_Paint);
             this.panelImage.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.panelTitle_MouseDoubleClick);
@@ -181,6 +193,7 @@
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -196,5 +209,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.Panel panel2;
     }
 }
