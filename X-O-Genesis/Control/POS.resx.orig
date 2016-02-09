@@ -120,17 +120,14 @@
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="button1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAABGdBTUEAALGPC/xhBQAAAYdJREFUaEPt
-        mrFOwzAQhjMywM7AwIBE0rwCD8D7IDFV1TEz9BEYkMqMEMhJhzxAH6Dq1IGBgTEjA9zFRmrNVXIlMGfr
-        fumTqiax/09NM8QuuJzBy0kFzRhZIG/I5z9DHajLmLq5mrtzfv14VN6YqwrMamMQYZgVdaSurvZ2ang+
-        rqDt+Isl0nbU2dW3ITs0nfEXSMbMtn4ZeztxJ8qHug8S7o/d+yckRD88AEowE+ZgUpBDgR/oscaekBAL
-        Ell7X6bImkS4A8mhItJQEWmoiDRURBoqIg0VkYaKSENFpKEi0lARaewlMoJmad8P/z12Lr4HR7BIDeZy
-        eDUZMTXML3DuD78LR6jI3I0dPTj3k9eFJUhkBO2dGzd6cP6p34dDRWIF5/89EeTBjRs9OPe914UlVKSv
-        oTt0Y0fLKXQHFZh3ps8PQkUIWlmd4vMdYlBCc4u8eh12so+IaLISyWahJ4+lt2wWQ7NZnqZksWGAks0W
-        DkoWm2q+Q3b2Nkt4m9Nm3AMgoY1nRfEFiC+jEGEqu4cAAAAASUVORK5CYII=
-</value>
-  </data>
+  <metadata name="barcodeIndicator.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>114, 17</value>
+  </metadata>
+  <metadata name="paymentTimer.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>258, 17</value>
+  </metadata>
+<<<<<<< HEAD
+
+=======
+>>>>>>> parent of eb4ff8a... Merge branch 'master' of https://github.com/decafmind/X-O-Genesis
 </root>

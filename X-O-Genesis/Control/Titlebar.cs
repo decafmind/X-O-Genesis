@@ -229,8 +229,14 @@ namespace PetvetPOS_Inventory_System
         {
             Graphics g = e.Graphics;
             using (Font arialRoundedMt = new Font("Arial Rounded MT", 48, FontStyle.Bold)){
+                float brightness = panelTitle.BackColor.GetBrightness();
                 SizeF stringSize = g.MeasureString(title, arialRoundedMt);
-                g.DrawString(title, arialRoundedMt, Brushes.White, new PointF((panelTitle.Width - stringSize.Width)/2, 5));
+                Brush brush;
+                if (brightness > 0.50)
+                    brush = Brushes.Black;
+                else
+                    brush = Brushes.White;
+                g.DrawString(title, arialRoundedMt, brush, new PointF((panelTitle.Width - stringSize.Width)/2, 5));
             }
         }
 
