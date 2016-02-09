@@ -160,8 +160,7 @@ namespace PetvetPOS_Inventory_System
                 updateStatus("You are creating a New User", SystemColors.menuLightBlue);
             }
             else if (mode == UserAdminMode.Edit_user)
-            {
-              
+            {  
                 loadSqueryList();
                 togglePasswordInputs(false);
                 updateStatus("You are updating an Existing User", SystemColors.menuBarBlue);
@@ -231,7 +230,7 @@ namespace PetvetPOS_Inventory_System
                     }
                 }
 
-                if (userAdministration.usernames.Contains(txtUsername.Text) && mode != UserAdminMode.Edit_user)
+                if (userAdministration.usernames.Contains(txtUsername.Text) && mode == UserAdminMode.Add_user)
                 {
                     MessageBox.Show(String.Format("The username {0} did already exists!", txtUsername.Text));
                     txtUsername.Focus();
@@ -401,6 +400,11 @@ namespace PetvetPOS_Inventory_System
         {
             cmbSquery.Items.Clear();
             cmbSquery.Items.AddRange(dbController.getListOfSquery().ToArray());
+        }
+
+        private void panel_AddUser_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         

@@ -102,7 +102,6 @@
             this.vUsername.TabIndex = 124;
             this.toolTip1.SetToolTip(this.vUsername, "username already exists");
             this.vUsername.Visible = false;
-            
             // 
             // vRepassword
             // 
@@ -114,7 +113,6 @@
             this.vRepassword.TabIndex = 122;
             this.toolTip1.SetToolTip(this.vRepassword, "Password doesn\'t match");
             this.vRepassword.Visible = false;
-   
             // 
             // upload
             // 
@@ -175,7 +173,7 @@
             this.panel_AddUser.Name = "panel_AddUser";
             this.panel_AddUser.Size = new System.Drawing.Size(542, 450);
             this.panel_AddUser.TabIndex = 666;
-   
+            this.panel_AddUser.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_AddUser_Paint);
             // 
             // txtImagepath
             // 
@@ -217,7 +215,6 @@
             this.lblPassword.Size = new System.Drawing.Size(102, 19);
             this.lblPassword.TabIndex = 106;
             this.lblPassword.Text = "PASSWORD:";
-           
             // 
             // label13
             // 
@@ -288,7 +285,6 @@
             this.cmbSquery.Name = "cmbSquery";
             this.cmbSquery.Size = new System.Drawing.Size(332, 21);
             this.cmbSquery.TabIndex = 17;
-           
             // 
             // txtMobno
             // 
@@ -338,7 +334,6 @@
             this.label6.Size = new System.Drawing.Size(105, 19);
             this.label6.TabIndex = 105;
             this.label6.Text = "USERNAME:";
- 
             // 
             // label7
             // 
@@ -352,7 +347,6 @@
             // 
             // btnSave
             // 
-            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Location = new System.Drawing.Point(254, 406);
@@ -362,16 +356,6 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.TextChanged += new System.EventHandler(this.textboxes_TextChanged);
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            this.btnSave.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnSave.BackgroundImage")));
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Location = new System.Drawing.Point(254, 406);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(112, 30);
-            this.btnSave.TabIndex = 19;
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.TextChanged += new System.EventHandler(this.textboxes_TextChanged);
-            // 
             // 
             // label9
             // 
@@ -382,7 +366,6 @@
             this.label9.Size = new System.Drawing.Size(89, 19);
             this.label9.TabIndex = 108;
             this.label9.Text = "ADDRESS:";
-        
             // 
             // txtAddress
             // 
@@ -403,7 +386,6 @@
             this.lblRepassword.Size = new System.Drawing.Size(110, 49);
             this.lblRepassword.TabIndex = 110;
             this.lblRepassword.Text = "RETYPE PASSWORD:";
-      
             // 
             // txtRepassword
             // 
@@ -492,7 +474,6 @@
             this.label3.Size = new System.Drawing.Size(103, 18);
             this.label3.TabIndex = 116;
             this.label3.Text = "LAST NAME";
-          
             // 
             // label2
             // 

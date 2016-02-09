@@ -43,8 +43,11 @@ namespace PetvetPOS_Inventory_System
             email = String.Format("email = '{0}'", companyProfile.Email);
             path = String.Format("logo_path = '{0}'", companyProfile.Logo);
 
+            Properties.Settings.Default.CompanyLogoImagPath = companyProfile.Logo;
+            Properties.Settings.Default.Save();
+
             string condition = String.Format("compname = '{0}'", companyProfile.Name);
-            return update(updateSet(condition, name, address, contact, email, path));
+            return update(updateSet(condition, name, address, contact, email, Path.formatImagePath(path)));
         }
     }
 }

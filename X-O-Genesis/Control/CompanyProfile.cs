@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MyExtension;
+using Randy.GraphicsLibrary;
+using System.IO;
 
 namespace PetvetPOS_Inventory_System
 {
@@ -15,6 +17,8 @@ namespace PetvetPOS_Inventory_System
     {
         CompanyProf companyProfile;
         DataTable companyProfileTable;
+        Bitmap companyLogo;
+        bool hasPictureChanged;
 
         public CompanyProfile()
         {
@@ -26,6 +30,30 @@ namespace PetvetPOS_Inventory_System
         {
             InitializeComponent();
             this.dbController = masterController.DataBaseController;
+        }
+
+        private void saveImage()
+        {
+            try
+            {
+                string destFolder = Constants.rootFolder +  @"Images\";
+
+                if (!Directory.Exists(destFolder))
+                    Directory.CreateDirectory(destFolder);
+
+                Random random = new Random();
+                string imagePath = destFolder + random.Next(1000) + DateTime.Now.Millisecond.ToString() + ".jpg";
+                lblPath.Text = imagePath;
+
+                using (Bitmap image = companyLogo as Bitmap)
+                {
+                    image.Save(imagePath);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error in saving image");
+            }
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -46,6 +74,9 @@ namespace PetvetPOS_Inventory_System
                     Email = txtEmail.Text,
                     Logo = lblPath.Text,
                 };
+
+                if (hasPictureChanged)
+                    saveImage();
 
                 if (dbController.updateCompanyProfile(companyProfile))
                 {
@@ -87,6 +118,9 @@ namespace PetvetPOS_Inventory_System
                 txtEmail.Text = dr["email"].ToString();
                 lblPath.Text = dr["logo_path"].ToString();
             }
+
+            if (File.Exists(lblPath.Text))
+               pbCompanyLogo.Image = Renderer.resizeImage(Image.FromFile(lblPath.Text) as Bitmap, pbCompanyLogo.Width, pbCompanyLogo.Height) as Image;
         }
 
         public void initializePage()
@@ -123,6 +157,23 @@ namespace PetvetPOS_Inventory_System
         private void txtCont_TextChanged(object sender, EventArgs e)
         {     
             Validation.filterToContactNo(sender as TextBox);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "Image Files|*.jpg;*jpeg;*.png";
+            DialogResult result = fileDialog.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                string filename = @fileDialog.FileName;
+                companyLogo = Image.FromFile(filename) as Bitmap;
+                pbCompanyLogo.Image = Renderer.resizeImage(companyLogo, pbCompanyLogo.Width, pbCompanyLogo.Height);
+                lblPath.Text = filename;
+
+                hasPictureChanged = true;
+            }
         }
     }
 }

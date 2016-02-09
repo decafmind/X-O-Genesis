@@ -32,7 +32,7 @@
             this.lblPath = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbCompanyLogo = new System.Windows.Forms.PictureBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.txtCont = new System.Windows.Forms.TextBox();
             this.txtAdd = new System.Windows.Forms.TextBox();
@@ -42,16 +42,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCompanyLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.lblPath);
             this.panel1.Controls.Add(this.btnCancel);
             this.panel1.Controls.Add(this.btnSave);
-            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.pbCompanyLogo);
             this.panel1.Controls.Add(this.txtEmail);
             this.panel1.Controls.Add(this.txtCont);
             this.panel1.Controls.Add(this.txtAdd);
@@ -110,16 +112,16 @@
             this.btnSave.UseVisualStyleBackColor = true;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // pictureBox1
+            // pbCompanyLogo
             // 
-            this.pictureBox1.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Shop;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.ImageLocation = "";
-            this.pictureBox1.Location = new System.Drawing.Point(136, 208);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(115, 100);
-            this.pictureBox1.TabIndex = 22;
-            this.pictureBox1.TabStop = false;
+            this.pbCompanyLogo.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Shop;
+            this.pbCompanyLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pbCompanyLogo.ImageLocation = "";
+            this.pbCompanyLogo.Location = new System.Drawing.Point(136, 208);
+            this.pbCompanyLogo.Name = "pbCompanyLogo";
+            this.pbCompanyLogo.Size = new System.Drawing.Size(115, 100);
+            this.pbCompanyLogo.TabIndex = 22;
+            this.pbCompanyLogo.TabStop = false;
             // 
             // txtEmail
             // 
@@ -200,6 +202,16 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "Company Name:";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(153, 314);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "upload";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // CompanyProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -211,7 +223,7 @@
             this.Load += new System.EventHandler(this.CompanyProfile_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCompanyLogo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -222,7 +234,7 @@
         private System.Windows.Forms.Label lblPath;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbCompanyLogo;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.TextBox txtCont;
         private System.Windows.Forms.TextBox txtAdd;
@@ -232,6 +244,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
 
     }
 }
