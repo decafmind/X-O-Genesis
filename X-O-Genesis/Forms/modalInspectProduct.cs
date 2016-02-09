@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Forms.DataVisualization.Charting;
+using System.Globalization;
 
 namespace PetvetPOS_Inventory_System
 {
@@ -34,6 +36,7 @@ namespace PetvetPOS_Inventory_System
         private void modalInspectProduct_Load(object sender, EventArgs e)
         {
             displayBasicInfo();
+            displayGraph();
         }
 
 
@@ -65,6 +68,37 @@ namespace PetvetPOS_Inventory_System
         {
             if (e.KeyCode == Keys.F1)
                 this.Close();
+        }
+
+        void displayGraph()
+        {
+            DataTable dt = new DataTable();
+            dt = dbController.getStockMovement(dt, bcode);
+
+            string chartTitle = "Stock Movement";
+            stockMovement.Series.Clear();
+            stockMovement.ResetAutoValues();
+            stockMovement.Series.Add(chartTitle);
+
+            stockMovement.Series[chartTitle].ChartType = SeriesChartType.Column;
+            stockMovement.Series[chartTitle].Font = new Font("Times New Roman", 8, FontStyle.Bold);
+            stockMovement.Series[chartTitle].LabelForeColor = Color.White;
+            stockMovement.Series[chartTitle].SetCustomProperty("DrawingStyle", "lightToDark");
+
+            foreach (DataRow row in dt.Rows)
+            {
+                int qtySold = Convert.ToInt32(dt.Rows[0]["QTYSold"]);
+
+                int pointX = Convert.ToInt32(dt.Rows[0]["Month"]);
+                int months = 12;
+                for(int i = 1; i < months; i++)
+                {                   
+                    if(i == pointX)                       
+                        stockMovement.Series[chartTitle].Points.AddXY(CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(pointX), qtySold);
+                    else
+                        stockMovement.Series[chartTitle].Points.AddXY(CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(i), 0);
+                }
+            }
         }
 
         private void panel_miniView_Paint(object sender, PaintEventArgs e)

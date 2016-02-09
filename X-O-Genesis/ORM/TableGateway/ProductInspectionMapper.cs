@@ -35,5 +35,10 @@ namespace PetvetPOS_Inventory_System
                 "Quantity_On_Hand",
             };
         }
+        public DataTable getStockMovement(DataTable dt, string productID)
+        {
+            selectQuery = String.Format("SELECT sold_items AS 'QTYSold', monthly AS 'Month' FROM stock_movement_view WHERE product_id = '{0}'", productID);
+            return selectRows(dt, selectQuery);
+        }
     }
 }

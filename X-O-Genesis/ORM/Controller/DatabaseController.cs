@@ -340,6 +340,10 @@ namespace PetvetPOS_Inventory_System
             return productInventory.getCriticalLevelProducts(dt);
         }
 
+        public DataTable getStockMovement(DataTable dt, string productID)
+        {
+            return productInspectionMapper.getStockMovement(dt, productID);
+        }
         public DataTable getBestSellers(DataTable dt)
         {
             return purchasedProductMapper.getBestSellers(dt);
