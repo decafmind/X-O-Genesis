@@ -97,7 +97,7 @@
             this.txtBarcode.Location = new System.Drawing.Point(18, 26);
             this.txtBarcode.Name = "txtBarcode";
             this.txtBarcode.Size = new System.Drawing.Size(210, 24);
-            this.txtBarcode.TabIndex = 7;
+            this.txtBarcode.TabIndex = 0;
             this.txtBarcode.TextChanged += new System.EventHandler(this.txtBarcode_TextChanged);
             // 
             // txtName
@@ -107,7 +107,7 @@
             this.txtName.Location = new System.Drawing.Point(18, 121);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(211, 23);
-            this.txtName.TabIndex = 8;
+            this.txtName.TabIndex = 2;
             this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // label2
@@ -173,7 +173,7 @@
             this.txtDescription.Location = new System.Drawing.Point(15, 168);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(212, 23);
-            this.txtDescription.TabIndex = 20;
+            this.txtDescription.TabIndex = 3;
             // 
             // label7
             // 
@@ -193,7 +193,7 @@
             this.txtWarranty.Location = new System.Drawing.Point(14, 484);
             this.txtWarranty.Name = "txtWarranty";
             this.txtWarranty.Size = new System.Drawing.Size(216, 23);
-            this.txtWarranty.TabIndex = 22;
+            this.txtWarranty.TabIndex = 10;
             // 
             // label8
             // 
@@ -213,7 +213,7 @@
             this.txtReplacement.Location = new System.Drawing.Point(15, 529);
             this.txtReplacement.Name = "txtReplacement";
             this.txtReplacement.Size = new System.Drawing.Size(211, 23);
-            this.txtReplacement.TabIndex = 24;
+            this.txtReplacement.TabIndex = 11;
             // 
             // button1
             // 
@@ -232,7 +232,7 @@
             this.cbCategory.Location = new System.Drawing.Point(17, 340);
             this.cbCategory.Name = "cbCategory";
             this.cbCategory.Size = new System.Drawing.Size(182, 24);
-            this.cbCategory.TabIndex = 27;
+            this.cbCategory.TabIndex = 7;
             // 
             // label6
             // 
@@ -263,7 +263,7 @@
             this.txtSerialCode.Location = new System.Drawing.Point(16, 74);
             this.txtSerialCode.Name = "txtSerialCode";
             this.txtSerialCode.Size = new System.Drawing.Size(211, 24);
-            this.txtSerialCode.TabIndex = 31;
+            this.txtSerialCode.TabIndex = 1;
             // 
             // label4
             // 
@@ -294,7 +294,7 @@
             this.txtMaintainingStocks.Location = new System.Drawing.Point(15, 292);
             this.txtMaintainingStocks.Name = "txtMaintainingStocks";
             this.txtMaintainingStocks.Size = new System.Drawing.Size(212, 23);
-            this.txtMaintainingStocks.TabIndex = 35;
+            this.txtMaintainingStocks.TabIndex = 6;
             this.txtMaintainingStocks.TextChanged += new System.EventHandler(this.txtMaintainingStocks_TextChanged);
             // 
             // label11
@@ -315,7 +315,7 @@
             this.txtUnitCost.Location = new System.Drawing.Point(15, 390);
             this.txtUnitCost.Name = "txtUnitCost";
             this.txtUnitCost.Size = new System.Drawing.Size(212, 23);
-            this.txtUnitCost.TabIndex = 37;
+            this.txtUnitCost.TabIndex = 8;
             this.txtUnitCost.TextChanged += new System.EventHandler(this.txtUnitCost_TextChanged);
             // 
             // label12
@@ -336,16 +336,21 @@
             this.txtUnitPrice.Location = new System.Drawing.Point(15, 437);
             this.txtUnitPrice.Name = "txtUnitPrice";
             this.txtUnitPrice.Size = new System.Drawing.Size(215, 23);
-            this.txtUnitPrice.TabIndex = 39;
+            this.txtUnitPrice.TabIndex = 9;
             this.txtUnitPrice.TextChanged += new System.EventHandler(this.txtUnitPrice_TextChanged);
             // 
             // cbUnit
             // 
             this.cbUnit.FormattingEnabled = true;
+            this.cbUnit.Items.AddRange(new object[] {
+            "PIECE",
+            "KG",
+            "CM",
+            "BUNDLE"});
             this.cbUnit.Location = new System.Drawing.Point(63, 244);
             this.cbUnit.Name = "cbUnit";
             this.cbUnit.Size = new System.Drawing.Size(164, 21);
-            this.cbUnit.TabIndex = 40;
+            this.cbUnit.TabIndex = 5;
             // 
             // cbSupplier
             // 
@@ -353,7 +358,7 @@
             this.cbSupplier.Location = new System.Drawing.Point(17, 215);
             this.cbSupplier.Name = "cbSupplier";
             this.cbSupplier.Size = new System.Drawing.Size(212, 21);
-            this.cbSupplier.TabIndex = 41;
+            this.cbSupplier.TabIndex = 4;
             // 
             // ProductSliderPane
             // 

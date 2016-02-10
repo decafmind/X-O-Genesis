@@ -433,8 +433,8 @@ namespace PetvetPOS_Inventory_System
             else
             {
                 condition = String.Format(
-                    " Name LIKE '%{0}%' OR Barcode LIKE '%{0}%' " +
-                    " OR Category LIKE '%{0}%' OR Supplier LIKE '%{0}%' AND Archive = '0", token
+                    " (Name LIKE '%{0}%' OR Barcode LIKE '%{0}%' " +
+                    " OR Category LIKE '%{0}%' OR Supplier LIKE '%{0}%') AND Archive = '0'", token
                 );
             }
              
@@ -451,8 +451,8 @@ namespace PetvetPOS_Inventory_System
         public DataTable filterPurchasedProduct(DataTable dt, string token)
         {
              string condition = String.Format(
-                " Name LIKE '%{0}%' OR Barcode LIKE '%{0}%' " +
-                " OR Category LIKE '%{0}%' OR Company LIKE '%{0}%' AND Archive = '0'", token
+                " (Name LIKE '%{0}%' OR Barcode LIKE '%{0}%' " +
+                " OR Category LIKE '%{0}%' OR Company LIKE '%{0}%') AND Archive = '0'", token
                 );
              return purchasedProductMapper.loadTable(dt, condition);
         }

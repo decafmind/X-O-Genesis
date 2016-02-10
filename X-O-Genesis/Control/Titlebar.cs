@@ -66,7 +66,7 @@ namespace PetvetPOS_Inventory_System
         {
             panelTitle.BackColor = Properties.Settings.Default.headerColor;
             panel4.BackColor = Properties.Settings.Default.headerColor;
-            panelImage.BackColor = Properties.Settings.Default.iconColor;
+            panelBackIcon.BackColor = Properties.Settings.Default.iconColor;
         }
 
         void masterController_SettingsChanged(object sender, SettingArgs e)
@@ -168,7 +168,7 @@ namespace PetvetPOS_Inventory_System
                     titlename = "Login Trail";
                     break;
                 case Menu.Login:
-                    titlename = "EXOGENESIS";
+                    titlename = "POS";
                     break;
                 case Menu.Home:
                     titlename = "Dashboard";

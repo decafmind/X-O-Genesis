@@ -52,7 +52,6 @@ namespace PetvetPOS_Inventory_System
             InitializeComponent();
             // Initialize the panels 
             masterController = new MasterController(this, mainPanel);
-            masterController.DataBaseController = new DatabaseController(masterController);
             titleBar = new Titlebar(panelHeader, masterController);
             menuBar = new MenuBar(panelSidebar, masterController);
             userSettingsControl = new UserSettingsControl(userControlPanel, masterController);
@@ -65,10 +64,36 @@ namespace PetvetPOS_Inventory_System
             masterController.EmployeeLogout += masterController_EmployeeLogout;
             masterController.ContentChanged += new EventHandler<ContentArgs>(masterController_ContentChange);
 
+            // Initialize DatabaseController
+            try
+            {
+                BackgroundWorker worker = new BackgroundWorker();
+                worker.DoWork += worker_DoWork;
+                worker.RunWorkerAsync();
+            }
+            catch (InvalidOperationException iex)
+            {
+                ErrorLog.Log(iex);
+            }
+            catch (Exception ex)
+            {
+                ErrorLog.Log(ex);
+            }
+
             displayOnSmall();
 
             // Avoid flickering
             MyExtension.Graphics_.avoidPanelFlickering(mainPanel);
+        }
+
+        /// <summary>
+        /// Method that initialize the DatabaseController
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void worker_DoWork(object sender, DoWorkEventArgs e)
+        {
+            masterController.DataBaseController = new DatabaseController(masterController);
         }
 
         void displayOnSmall()
@@ -173,6 +198,8 @@ namespace PetvetPOS_Inventory_System
         {
             if (e.KeyCode == Keys.F11)
                 masterController.toogleMaximize();
+            else if (e.Alt && e.KeyCode == Keys.Left)
+                masterController.returnToPreviousPage();
 
             if (isLogin){
                 if (e.Control && e.Shift && e.KeyCode == Keys.L){

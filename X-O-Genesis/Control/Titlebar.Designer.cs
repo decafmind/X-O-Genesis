@@ -37,12 +37,12 @@
             this.panelTitle = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panelBackIcon = new System.Windows.Forms.Panel();
             this.panelImage = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.panelBackIcon.SuspendLayout();
             this.SuspendLayout();
             // 
             // toolTip1
@@ -95,7 +95,7 @@
             // 
             this.panel1.Controls.Add(this.panelTitle);
             this.panel1.Controls.Add(this.panel4);
-            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.panelBackIcon);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
@@ -138,15 +138,15 @@
             this.panel5.TabIndex = 0;
             this.panel5.Paint += new System.Windows.Forms.PaintEventHandler(this.panel5_Paint);
             // 
-            // panel2
+            // panelBackIcon
             // 
-            this.panel2.Controls.Add(this.panelImage);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Padding = new System.Windows.Forms.Padding(6);
-            this.panel2.Size = new System.Drawing.Size(91, 92);
-            this.panel2.TabIndex = 7;
+            this.panelBackIcon.Controls.Add(this.panelImage);
+            this.panelBackIcon.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelBackIcon.Location = new System.Drawing.Point(0, 0);
+            this.panelBackIcon.Name = "panelBackIcon";
+            this.panelBackIcon.Padding = new System.Windows.Forms.Padding(6);
+            this.panelBackIcon.Size = new System.Drawing.Size(91, 92);
+            this.panelBackIcon.TabIndex = 7;
             // 
             // panelImage
             // 
@@ -172,7 +172,7 @@
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.panelBackIcon.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -184,7 +184,7 @@
         private System.Windows.Forms.Panel panelImage;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.ToolTip toolTip1;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panelBackIcon;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;

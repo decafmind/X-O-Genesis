@@ -317,18 +317,32 @@ namespace PetvetPOS_Inventory_System
             }
             else if (e.Shift && e.KeyCode == Keys.F2)
             {
-                dbController.productMapper.deactiveProduct(getBarcodeFromRow());
-                fillgdInventory();
+                if (masterController.LoginEmployee.Position == UserLevel.ADMIN)
+                {
+                    dbController.productMapper.deactiveProduct(getBarcodeFromRow());
+                    fillgdInventory();
+                }
+                else
+                {
+                    MessageBox.Show("You must be the admin to remove product.");
+                }
+                
             }
             else if (e.KeyCode == Keys.F2)
             {
                 if (mainTab.SelectedTab == tabPage1)
                 {
-                    keyButton9.updateButton();
-                    currentSelection = dgInventory.CurrentCell.RowIndex;
-                    updateProduct();              
-                    dgInventory.Rows[currentSelection].Selected = true;
-
+                    if (masterController.LoginEmployee.Position == UserLevel.ADMIN)
+                    {
+                        keyButton9.updateButton();
+                        currentSelection = dgInventory.CurrentCell.RowIndex;
+                        updateProduct();
+                        dgInventory.Rows[currentSelection].Selected = true;
+                    }
+                    else
+                    {
+                        MessageBox.Show("You must be the admin to update product.");
+                    }
                 }
                 else
                 {
@@ -338,10 +352,18 @@ namespace PetvetPOS_Inventory_System
             }
             else if (e.KeyCode == Keys.F3)
             {
-                keyButton8.updateButton();
-                currentSelection = dgInventory.CurrentCell.RowIndex;
-                addProduct();
-                dgInventory.Rows[currentSelection].Selected = true;
+                if (masterController.LoginEmployee.Position == UserLevel.ADMIN)
+                {
+                    keyButton8.updateButton();
+                    currentSelection = dgInventory.CurrentCell.RowIndex;
+                    addProduct();
+                    dgInventory.Rows[currentSelection].Selected = true;
+                }
+                else
+                {
+                    MessageBox.Show("You must be the admin to add product");
+                }
+                
                 
             }
             else if (e.KeyCode == Keys.F4)
@@ -454,11 +476,10 @@ namespace PetvetPOS_Inventory_System
 
         void addProduct()
         {
-            sliderPane.mode = InventoryMode.ADD;
             sliderPane.clearTexts();
 
             if (!sliderPane.isOpen())
-                sliderPane.toggle();
+                sliderPane.toggle(InventoryMode.ADD);
             toogleSearch();
         }
 
@@ -525,10 +546,9 @@ namespace PetvetPOS_Inventory_System
             Product product = dbController.getProductThroughName(product_name);
             if (product.Barcode != null)
             {
-                productSliderPane1.mode = InventoryMode.UPDATE;
                 productSliderPane1.mapProductToTextfield(product);       
                 if (!productSliderPane1.isOpen())
-                    productSliderPane1.toggle();
+                    productSliderPane1.toggle(InventoryMode.UPDATE);
                 toogleSearch();
             }
             else
@@ -1054,8 +1074,8 @@ namespace PetvetPOS_Inventory_System
 
         private void filterAlphaNumeric(object sender, EventArgs e)
         {
-            Validation.filterToAlphaNumeric(sender as TextBox);
             search(txtSearch.Text);
+            Validation.filterToAlphaNumeric(sender as TextBox);
         }
 
         private void dgInventory_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -1074,6 +1094,11 @@ namespace PetvetPOS_Inventory_System
                 fillgdInventory();
             else
                 filterdgInventory(cbCategory.Text, true);
+        }
+
+        private void keyButton6_Load(object sender, EventArgs e)
+        {
+
         }
 
     }

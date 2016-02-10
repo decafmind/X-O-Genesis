@@ -69,7 +69,11 @@ namespace PetvetPOS_Inventory_System
 
         private void button3_Click(object sender, EventArgs e)
         {
-
+            DialogResult result = colorDialog.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                theme.IconColor = colorDialog.Color;
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)

@@ -126,6 +126,7 @@ namespace PetvetPOS_Inventory_System
             MenuList list;
             Menu menu;
             bool SimpleMode = true;
+            dbController = masterController.DataBaseController;
             SimpleMode = dbController.systemSettingsMapper.isInSimpleMode();
             
             switch (e.employee.Position)

@@ -835,7 +835,7 @@
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(86, 47);
             this.label4.TabIndex = 20;
-            this.label4.Text = "Replenish \r\nStocks";
+            this.label4.Text = "Add product";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label6
@@ -930,6 +930,7 @@
             this.keyButton6.Name = "keyButton6";
             this.keyButton6.Size = new System.Drawing.Size(61, 50);
             this.keyButton6.TabIndex = 24;
+            this.keyButton6.Load += new System.EventHandler(this.keyButton6_Load);
             // 
             // pictureBox5
             // 

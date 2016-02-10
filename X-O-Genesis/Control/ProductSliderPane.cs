@@ -57,55 +57,65 @@ namespace PetvetPOS_Inventory_System
             }else{
                 addStocks = new modalAddStocks(txtBarcode.Text, txtName.Text, 0);
             }
-                                     
-            DialogResult result = addStocks.ShowDialog();
 
-            if (result == DialogResult.OK)
+            DialogResult result = DialogResult.None;
+
+            while (result != DialogResult.OK)
             {
-                inventory = new Inventory()
-                {
-                    Barcode = txtBarcode.Text,
-                    StockinDateTime = DateTime.Now,
-                    QtyReceived = addStocks.AdditionalStocks,
-                    QtyOnHand = addStocks.AdditionalStocks,
-                };
+                result = addStocks.ShowDialog();
 
-                if (checkIfProductAlreadyExists(txtBarcode.Text))
+                if (result == DialogResult.OK)
                 {
-                    dbController.insertInventory(inventory);
-                }
-                else
-                {
-                    int category_id = dbController.categoryMapper.getCategoryIndexFromName(cbCategory.Text);
-                    int supplier_id = dbController.supplierMapper.getSupplierIdByName(cbSupplier.Text);
-
-                    product = new Product()
+                    inventory = new Inventory()
                     {
                         Barcode = txtBarcode.Text,
-                        SerialCode = txtSerialCode.Text,
-                        Name = txtName.Text,
-                        Description = txtDescription.Text,
-                        SupplierId = supplier_id,
-                        Unit = cbUnit.Text,
-                        UnitCost = decimal.Parse(txtUnitCost.Text),
-                        UnitPrice = decimal.Parse(txtUnitPrice.Text),
-                        MaintainingStocks = int.Parse(txtMaintainingStocks.Text),
-                        Warranty = txtWarranty.Text.ToString(),
-                        Replacement = txtReplacement.Text.ToString(),
-                        Category_id = category_id,
+                        StockinDateTime = DateTime.Now,
+                        QtyReceived = addStocks.AdditionalStocks,
+                        QtyOnHand = addStocks.AdditionalStocks,
                     };
 
-                    dbController.insertProductInsideInventory(inventory, product);
+                    if (checkIfProductAlreadyExists(txtBarcode.Text))
+                    {
+                        dbController.insertInventory(inventory);
+                    }
+                    else
+                    {
+                        int category_id = dbController.categoryMapper.getCategoryIndexFromName(cbCategory.Text);
+                        int supplier_id = dbController.supplierMapper.getSupplierIdByName(cbSupplier.Text);
+
+                        if (supplier_id == 0)
+                        {
+                            MessageBox.Show("Supplier is not registered on the system.");
+                            return;
+                        }
+
+                        product = new Product()
+                        {
+                            Barcode = txtBarcode.Text,
+                            SerialCode = txtSerialCode.Text,
+                            Name = txtName.Text,
+                            Description = txtDescription.Text,
+                            SupplierId = supplier_id,
+                            Unit = cbUnit.Text,
+                            UnitCost = decimal.Parse(txtUnitCost.Text),
+                            UnitPrice = decimal.Parse(txtUnitPrice.Text),
+                            MaintainingStocks = int.Parse(txtMaintainingStocks.Text),
+                            Warranty = txtWarranty.Text.ToString(),
+                            Replacement = txtReplacement.Text.ToString(),
+                            Category_id = category_id,
+                        };
+
+                        dbController.insertProductInsideInventory(inventory, product);
+                    }
                 }
+                toggle();
+                break;  
             }
-       
-            toggle();    
         }
 
         public void clearTexts()
         {
             MyExtension.Validation.clearFields(contentPanel);
-            cbCategory.Text = "";
             txtBarcode.Enabled = true; // To make sure it is enabled even after update
             loadCategoryList();
             loadSupplierList();
@@ -128,8 +138,8 @@ namespace PetvetPOS_Inventory_System
                 txtWarranty.Text = product.Warranty.ToString();
 
                 txtSerialCode.Text = product.SerialCode.ToString();
-                loadCategory();
-                loadSupplier();
+                cbCategory.Text = dbController.categoryMapper.getCategoryNameFromId(product.Category_id);
+                cbSupplier.Text = dbController.supplierMapper.getSupplierNameFromId(product.SupplierId);
                 txtUnitCost.Text = product.UnitCost.ToString();
 
                 txtUnitPrice.Text = product.UnitPrice.ToString();
@@ -187,18 +197,7 @@ namespace PetvetPOS_Inventory_System
         private void txtBarcode_TextChanged(object sender, EventArgs e)
         {
             TextBox thisTexbox = sender as TextBox;
-
-            if (thisTexbox == txtBarcode && txtBarcode.TextLength > 0)
-            {
-                if (checkIfProductAlreadyExists(txtBarcode.Text))
-                {
-                    txtName.Text = product.Name.ToString();
-                    txtReplacement.Text = product.Replacement.ToString();
-                    txtDescription.Text = product.Description.ToString();
-                    txtWarranty.Text = product.Warranty.ToString();
-                    cbCategory.Text = dbController.categoryMapper.getCategoryNameFromId(product.Category_id);
-                }
-            }
+            MyExtension.Validation.filterToAlphaNumeric(thisTexbox);
         }
 
         public bool isFilled()
@@ -220,7 +219,7 @@ namespace PetvetPOS_Inventory_System
                     Name = txtName.Text,
                     Description = txtDescription.Text,
                     SupplierId = supplier_id,
-                    Unit = cbUnit.Text,
+                    Unit = cbUnit.Text.ToUpper(),
                     UnitCost = decimal.Parse(txtUnitCost.Text),
                     UnitPrice = decimal.Parse(txtUnitPrice.Text),
                     MaintainingStocks = int.Parse(txtMaintainingStocks.Text),
@@ -242,6 +241,13 @@ namespace PetvetPOS_Inventory_System
         {
             base.toggle();
             this.mode = mode;
+
+            if (mode == InventoryMode.ADD)
+            {
+                cbCategory.Text = string.Empty;
+                cbSupplier.Text = string.Empty;
+                cbUnit.Text = string.Empty;
+            }
         }
 
         private void ProductSliderPane_Load(object sender, EventArgs e)
@@ -260,7 +266,6 @@ namespace PetvetPOS_Inventory_System
             base.doWhenVisible();
             loadCategoryList();
             loadSupplierList();
-         //   masterController.setFormReturnkey = button1
         }
 
         public void loadCategoryList()

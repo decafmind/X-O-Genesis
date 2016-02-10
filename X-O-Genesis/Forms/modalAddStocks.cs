@@ -31,8 +31,12 @@ namespace PetvetPOS_Inventory_System
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            AdditionalStocks = int.Parse(txtStocks.Text);
-            DialogResult = DialogResult.OK;
+            if (!string.IsNullOrWhiteSpace(txtStocks.Text))
+            {
+                AdditionalStocks = int.Parse(txtStocks.Text);
+                if (AdditionalStocks != 0)
+                    DialogResult = DialogResult.OK;
+            }
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
