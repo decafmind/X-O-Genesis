@@ -56,6 +56,9 @@ namespace PetvetPOS_Inventory_System
                 Font = new Font("Times New Roman", 14, FontStyle.Regular),
                 WrapMode = DataGridViewTriState.True,
             };
+
+            MyExtension.Graphics_.avoidPanelFlickering(panelPie);
+            MyExtension.Graphics_.avoidPanelFlickering(panel6);
         }
 
         void masterController_ServerClock(object sender, EventArgs e)
@@ -142,7 +145,7 @@ namespace PetvetPOS_Inventory_System
             dGBestSellers.DefaultCellStyle = normal;
 
             dt = new DataTable();
-            dbController.productReturnViewMapper.loadTable(dt);
+            dbController.productReturnViewMapper.loadTableFromQuery(dt, "SELECT product AS 'Product', supplier AS 'Supplier' FROM product_return_view");
             dgReturnedProduct.DataSource = dt;
             dgReturnedProduct.ColumnHeadersDefaultCellStyle = cellHeader;
             dgReturnedProduct.DefaultCellStyle = normal;

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.IO;
+using System.Reflection;
 
 namespace PetvetPOS_Inventory_System
 {
@@ -51,6 +52,7 @@ namespace PetvetPOS_Inventory_System
             InitializeComponent();
             // Initialize the panels 
             masterController = new MasterController(this, mainPanel);
+            masterController.DataBaseController = new DatabaseController(masterController);
             titleBar = new Titlebar(panelHeader, masterController);
             menuBar = new MenuBar(panelSidebar, masterController);
             userSettingsControl = new UserSettingsControl(userControlPanel, masterController);
@@ -63,33 +65,10 @@ namespace PetvetPOS_Inventory_System
             masterController.EmployeeLogout += masterController_EmployeeLogout;
             masterController.ContentChanged += new EventHandler<ContentArgs>(masterController_ContentChange);
 
-            // Initialize DatabaseController
-            try
-            {
-                BackgroundWorker worker = new BackgroundWorker();
-                worker.DoWork += worker_DoWork;
-                worker.RunWorkerAsync();
-            }
-            catch (InvalidOperationException iex)
-            {
-                ErrorLog.Log(iex);
-            }
-            catch (Exception ex)
-            {
-                ErrorLog.Log(ex);
-            }
-
             displayOnSmall();
-        }
 
-        /// <summary>
-        /// Method that initialize the DatabaseController
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        void worker_DoWork(object sender, DoWorkEventArgs e)
-        {
-            masterController.DataBaseController = new DatabaseController(masterController);
+            // Avoid flickering
+            MyExtension.Graphics_.avoidPanelFlickering(mainPanel);
         }
 
         void displayOnSmall()
@@ -179,12 +158,12 @@ namespace PetvetPOS_Inventory_System
             userControlPanel.BackColor = Color.WhiteSmoke;
         }
 
-        private void frmMain_FormClosing(object sender, FormClosingEventArgs e)
+        protected override void OnFormClosing(FormClosingEventArgs e)
         {
             if (isLogin){
                 if (!masterController.logout()){
                     e.Cancel = true;
-                    this.OnFormClosing(e);
+                    base.OnFormClosing(e);
                     return;
                 }
             }

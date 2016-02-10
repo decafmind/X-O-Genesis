@@ -35,7 +35,6 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel8 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
             this.cbCharttype = new System.Windows.Forms.ComboBox();
             this.lblType = new System.Windows.Forms.Label();
@@ -45,7 +44,8 @@
             this.dtTo = new System.Windows.Forms.DateTimePicker();
             this.dtFrom = new System.Windows.Forms.DateTimePicker();
             this.cmType = new System.Windows.Forms.ComboBox();
-            this.panel5 = new System.Windows.Forms.Panel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.panelChart = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.salesChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
@@ -70,9 +70,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel6.SuspendLayout();
-            this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panelChart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.salesChart)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
@@ -100,32 +100,6 @@
             this.panel8.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.panel8.Size = new System.Drawing.Size(872, 183);
             this.panel8.TabIndex = 7;
-            // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(268, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(594, 183);
-            this.dataGridView2.TabIndex = 0;
             // 
             // panel6
             // 
@@ -237,18 +211,44 @@
             this.cmType.DisplayMemberChanged += new System.EventHandler(this.cmType_DisplayMemberChanged);
             this.cmType.TextChanged += new System.EventHandler(this.cmType_TextChanged);
             // 
-            // panel5
+            // dataGridView2
             // 
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.Controls.Add(this.label11);
-            this.panel5.Controls.Add(this.label10);
-            this.panel5.Controls.Add(this.salesChart);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(0, 114);
-            this.panel5.Name = "panel5";
-            this.panel5.Padding = new System.Windows.Forms.Padding(5);
-            this.panel5.Size = new System.Drawing.Size(872, 221);
-            this.panel5.TabIndex = 4;
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(268, 0);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(594, 183);
+            this.dataGridView2.TabIndex = 0;
+            // 
+            // panelChart
+            // 
+            this.panelChart.BackColor = System.Drawing.Color.White;
+            this.panelChart.Controls.Add(this.label11);
+            this.panelChart.Controls.Add(this.label10);
+            this.panelChart.Controls.Add(this.salesChart);
+            this.panelChart.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelChart.Location = new System.Drawing.Point(0, 114);
+            this.panelChart.Name = "panelChart";
+            this.panelChart.Padding = new System.Windows.Forms.Padding(5);
+            this.panelChart.Size = new System.Drawing.Size(872, 221);
+            this.panelChart.TabIndex = 4;
             // 
             // label11
             // 
@@ -321,9 +321,11 @@
             this.keyButton1.accessKeyChar = "F1";
             this.keyButton1.accessMasterController = null;
             this.keyButton1.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton1.dbController = null;
             this.keyButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.keyButton1.Location = new System.Drawing.Point(67, 6);
             this.keyButton1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton1.masterController = null;
             this.keyButton1.Name = "keyButton1";
             this.keyButton1.Size = new System.Drawing.Size(61, 50);
             this.keyButton1.TabIndex = 0;
@@ -344,9 +346,11 @@
             this.keyButton4.accessKeyChar = "P";
             this.keyButton4.accessMasterController = null;
             this.keyButton4.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton4.dbController = null;
             this.keyButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.keyButton4.Location = new System.Drawing.Point(656, 4);
             this.keyButton4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton4.masterController = null;
             this.keyButton4.Name = "keyButton4";
             this.keyButton4.Size = new System.Drawing.Size(61, 50);
             this.keyButton4.TabIndex = 28;
@@ -356,9 +360,11 @@
             this.keyButton3.accessKeyChar = "F5";
             this.keyButton3.accessMasterController = null;
             this.keyButton3.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton3.dbController = null;
             this.keyButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.keyButton3.Location = new System.Drawing.Point(337, 6);
             this.keyButton3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton3.masterController = null;
             this.keyButton3.Name = "keyButton3";
             this.keyButton3.Size = new System.Drawing.Size(61, 50);
             this.keyButton3.TabIndex = 24;
@@ -410,9 +416,11 @@
             this.keyButton2.accessKeyChar = "Ctrl";
             this.keyButton2.accessMasterController = null;
             this.keyButton2.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton2.dbController = null;
             this.keyButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.keyButton2.Location = new System.Drawing.Point(586, 4);
             this.keyButton2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton2.masterController = null;
             this.keyButton2.Name = "keyButton2";
             this.keyButton2.Size = new System.Drawing.Size(61, 50);
             this.keyButton2.TabIndex = 21;
@@ -527,7 +535,7 @@
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Controls.Add(this.panel8);
-            this.Controls.Add(this.panel5);
+            this.Controls.Add(this.panelChart);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel2);
             this.Name = "Sales";
@@ -535,10 +543,10 @@
             this.Size = new System.Drawing.Size(877, 583);
             this.Load += new System.EventHandler(this.Reports_Load);
             this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.panelChart.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.salesChart)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
@@ -563,7 +571,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panelChart;
         private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.Label label5;

@@ -12,13 +12,15 @@ namespace PetvetPOS_Inventory_System
         public int qtyReturned { get; private set; }
         public DateTime date { get; private set; }
         public string reason { get; private set; }
+        public string product_id { get; set; }
 
-        public ProductReturned(int pid, int qr, DateTime d, string r)
+        public ProductReturned(int pid, int qr, DateTime d, string r, string product_id)
         {
             productInvoiceId = pid;
             qtyReturned = qr;
             date = d;
             reason = r;
+            this.product_id = product_id;
         }
     }
 }

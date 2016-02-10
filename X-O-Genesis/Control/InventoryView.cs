@@ -839,7 +839,8 @@ namespace PetvetPOS_Inventory_System
                     computeTotalPrice();
 
                     // TODO
-                    ProductReturned productReturned = new ProductReturned(int.Parse(txtTransactionno.Text), return_qty, DateTime.Now, inputDialog.prompt);
+                    Product product = dbController.getProductThroughName(desc);
+                    ProductReturned productReturned = new ProductReturned(int.Parse(txtTransactionno.Text), return_qty, DateTime.Now, inputDialog.prompt, product.Barcode);
                     ProductReturnMapper prm = new ProductReturnMapper(dbController.mySqlDB);
                     prm.insertProductReturn(productReturned);
 

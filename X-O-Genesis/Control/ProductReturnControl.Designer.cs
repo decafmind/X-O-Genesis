@@ -30,7 +30,7 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbSupplier = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,14 +60,15 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Supplier";
             // 
-            // comboBox1
+            // cbSupplier
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(152, 68);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(215, 33);
-            this.comboBox1.TabIndex = 0;
+            this.cbSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.cbSupplier.FormattingEnabled = true;
+            this.cbSupplier.Location = new System.Drawing.Point(152, 68);
+            this.cbSupplier.Name = "cbSupplier";
+            this.cbSupplier.Size = new System.Drawing.Size(215, 33);
+            this.cbSupplier.TabIndex = 0;
+            this.cbSupplier.SelectedIndexChanged += new System.EventHandler(this.cbSupplier_SelectedIndexChanged);
             // 
             // ProductReturnControl
             // 
@@ -75,7 +76,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cbSupplier);
             this.Name = "ProductReturnControl";
             this.Size = new System.Drawing.Size(877, 583);
             this.Load += new System.EventHandler(this.ProductReturnControl_Load);
@@ -87,7 +88,7 @@
 
         #endregion
 
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbSupplier;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
     }

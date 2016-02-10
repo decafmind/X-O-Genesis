@@ -21,7 +21,7 @@ namespace PetvetPOS_Inventory_System
             };
         }
 
-        bool createSupplier(Supplier supplier)
+        public bool createSupplier(Supplier supplier)
         {
             return create(
                     insertValues(supplier.Name, supplier.Address, supplier.ContactNo, supplier.ContactPerson)
@@ -42,6 +42,12 @@ namespace PetvetPOS_Inventory_System
         public int getSupplierIdByName(string name)
         {
             return (int)readScalar("id", "name = '" + name + "'");
+        }
+
+        public Supplier getSupplierByName(string name)
+        {
+            int supplierId = getSupplierIdByName(name);
+            return new Supplier(getEntityFromId(supplierId));
         }
     }
 }

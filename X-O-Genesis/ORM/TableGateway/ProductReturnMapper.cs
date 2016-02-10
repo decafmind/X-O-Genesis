@@ -18,12 +18,13 @@ namespace PetvetPOS_Inventory_System
                 "qty_returned",
                 "date_returned",
                 "reason",
+                "product_id",
             };
         }
 
         public bool insertProductReturn(ProductReturned productReturned){
             return create(
-                insertValues(productReturned.productInvoiceId, productReturned.qtyReturned, MyExtension.MySqlToCSharp.convertDate(productReturned.date), productReturned.reason)
+                insertValues(productReturned.productInvoiceId, productReturned.qtyReturned, MyExtension.MySqlToCSharp.convertDate(productReturned.date), productReturned.reason, productReturned.product_id)
                 );
         }
     }

@@ -12,6 +12,7 @@ namespace PetvetPOS_Inventory_System
 {
     public partial class SupplierControl : MyUserControl, IContentPage, IKeyController
     {
+
         public SupplierControl()
         {
             InitializeComponent();
@@ -49,7 +50,12 @@ namespace PetvetPOS_Inventory_System
 
         public void SupplierKeyFunction(KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.F1)
+                viewSupplier();
+            else if (e.KeyCode == Keys.F2)
+                updateSupplier();
+            else if (e.KeyCode == Keys.F3)
+                addSupplier();
         }
 
         public void finalizePage()
@@ -59,9 +65,14 @@ namespace PetvetPOS_Inventory_System
 
         public void initializePage()
         {
-            dbController = masterController.DataBaseController;
+            listSupplier();
+        }
+
+        private void listSupplier()
+        {
+            listBox1.Items.Clear();
             List<string> listOfSupplier = dbController.supplierMapper.getSupplierList();
-            listBox1.Items.AddRange(listOfSupplier.ToArray());    
+            listBox1.Items.AddRange(listOfSupplier.ToArray());   
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -72,6 +83,45 @@ namespace PetvetPOS_Inventory_System
         private void SupplierControl_Load(object sender, EventArgs e)
         {
        
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            viewSupplier();
+        }
+
+        private void viewSupplier()
+        {
+            string selected = listBox1.Text;
+            if (!string.IsNullOrWhiteSpace(selected))
+            {
+                Supplier supplier = dbController.supplierMapper.getSupplierByName(selected);
+                SupplierView view = new SupplierView(masterController, panelCanvas);
+                view.viewSupplier(supplier);
+            }
+            
+        }
+
+        private void updateSupplier()
+        {
+
+        }
+
+        private void addSupplier()
+        {
+            AddSupplier add = new AddSupplier(masterController, panelCanvas);
+            add.SupplierAdded += add_SupplierAdded;
+        }
+
+        void add_SupplierAdded(object sender, EventArgs e)
+        {
+            listSupplier();
+           // viewSupplier();
+        }
+
+        private void removeSupplier()
+        {
+
         }
     }
 }

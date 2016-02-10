@@ -56,6 +56,7 @@ namespace PetvetPOS_Inventory_System
         public ProductInspectionMapper productInspectionMapper { get; set; }
 
         public CompanyProfileMapper companyProfileMapper { get; set; }
+        public SystemSettingMapper systemSettingsMapper { get; set; }
 
         public DatabaseController(MasterController masterController)
         {
@@ -91,6 +92,7 @@ namespace PetvetPOS_Inventory_System
 
             this.productInspectionMapper = new ProductInspectionMapper(mySqlDB);
             this.companyProfileMapper = new CompanyProfileMapper(mySqlDB);
+            this.systemSettingsMapper = new SystemSettingMapper(mySqlDB);
 
             // Events hooking
             this.masterController.EmployeeLogin += masterController_EmployeeLogin;

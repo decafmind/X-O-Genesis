@@ -24,6 +24,7 @@ namespace PetvetPOS_Inventory_System
         public MyUserControl(MasterController masterController, Panel panel, bool isVisible)
         {
             InitializeComponent();
+            this.dbController = masterController.DataBaseController;
             this.container = panel;
             this.masterController = masterController;
 
@@ -35,6 +36,7 @@ namespace PetvetPOS_Inventory_System
         public MyUserControl(MasterController masterController, Panel panel, DockStyle dockStyle)
         {
             InitializeComponent();
+            this.dbController = masterController.DataBaseController;
             this.container = panel;
             this.masterController = masterController;
             appear(dockStyle);

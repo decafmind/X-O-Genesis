@@ -29,10 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SystemSettings));
+            this.label3 = new System.Windows.Forms.Label();
+            this.picTax = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.pbProductReturn = new System.Windows.Forms.PictureBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pbReceipts = new System.Windows.Forms.PictureBox();
             this.pbPersonalization = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
             this.picCompProf = new System.Windows.Forms.PictureBox();
@@ -42,18 +43,50 @@
             this.pbModules = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.picTax = new System.Windows.Forms.PictureBox();
-            this.label3 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.picTax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductReturn)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbReceipts)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonalization)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCompProf)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBackupDB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbModules)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTax)).BeginInit();
             this.SuspendLayout();
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label3.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(290, 271);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(189, 33);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "Personalization";
+            // 
+            // picTax
+            // 
+            this.picTax.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.picTax.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Banknotes;
+            this.picTax.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picTax.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picTax.Location = new System.Drawing.Point(555, 369);
+            this.picTax.Name = "picTax";
+            this.picTax.Size = new System.Drawing.Size(100, 98);
+            this.picTax.TabIndex = 20;
+            this.picTax.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label1.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(497, 470);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(213, 33);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Tax and Discounts";
             // 
             // label9
             // 
@@ -61,7 +94,7 @@
             this.label9.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label9.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(290, 465);
+            this.label9.Location = new System.Drawing.Point(290, 470);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(190, 33);
             this.label9.TabIndex = 17;
@@ -73,37 +106,12 @@
             this.pbProductReturn.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbProductReturn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbProductReturn.Image = ((System.Drawing.Image)(resources.GetObject("pbProductReturn.Image")));
-            this.pbProductReturn.Location = new System.Drawing.Point(335, 364);
+            this.pbProductReturn.Location = new System.Drawing.Point(335, 369);
             this.pbProductReturn.Name = "pbProductReturn";
             this.pbProductReturn.Size = new System.Drawing.Size(100, 98);
             this.pbProductReturn.TabIndex = 16;
             this.pbProductReturn.TabStop = false;
             this.pbProductReturn.Click += new System.EventHandler(this.pbProductReturn_Click);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label6.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(150, 465);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 33);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Receipts";
-            // 
-            // pbReceipts
-            // 
-            this.pbReceipts.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pbReceipts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pbReceipts.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbReceipts.Image = ((System.Drawing.Image)(resources.GetObject("pbReceipts.Image")));
-            this.pbReceipts.Location = new System.Drawing.Point(152, 364);
-            this.pbReceipts.Name = "pbReceipts";
-            this.pbReceipts.Size = new System.Drawing.Size(100, 98);
-            this.pbReceipts.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbReceipts.TabIndex = 11;
-            this.pbReceipts.TabStop = false;
             // 
             // pbPersonalization
             // 
@@ -125,7 +133,7 @@
             this.label5.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label5.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(702, 271);
+            this.label5.Location = new System.Drawing.Point(727, 271);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(201, 33);
             this.label5.TabIndex = 8;
@@ -138,7 +146,7 @@
             this.picCompProf.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.picCompProf.Cursor = System.Windows.Forms.Cursors.Hand;
             this.picCompProf.Image = ((System.Drawing.Image)(resources.GetObject("picCompProf.Image")));
-            this.picCompProf.Location = new System.Drawing.Point(760, 170);
+            this.picCompProf.Location = new System.Drawing.Point(785, 170);
             this.picCompProf.Name = "picCompProf";
             this.picCompProf.Size = new System.Drawing.Size(100, 98);
             this.picCompProf.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -178,7 +186,7 @@
             this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label2.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(146, 268);
+            this.label2.Location = new System.Drawing.Point(113, 268);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 33);
             this.label2.TabIndex = 4;
@@ -190,7 +198,7 @@
             this.pbModules.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbModules.Cursor = System.Windows.Forms.Cursors.Hand;
             this.pbModules.Image = ((System.Drawing.Image)(resources.GetObject("pbModules.Image")));
-            this.pbModules.Location = new System.Drawing.Point(151, 170);
+            this.pbModules.Location = new System.Drawing.Point(118, 170);
             this.pbModules.Name = "pbModules";
             this.pbModules.Size = new System.Drawing.Size(100, 98);
             this.pbModules.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -224,42 +232,6 @@
             this.lblTitle.Text = "         SYSTEM SETTINGS";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(481, 465);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 33);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Tax and Discounts";
-            // 
-            // picTax
-            // 
-            this.picTax.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.picTax.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Banknotes;
-            this.picTax.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picTax.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picTax.Location = new System.Drawing.Point(539, 364);
-            this.picTax.Name = "picTax";
-            this.picTax.Size = new System.Drawing.Size(100, 98);
-            this.picTax.TabIndex = 20;
-            this.picTax.TabStop = false;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(290, 271);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(189, 33);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "Personalization";
-            // 
             // SystemSettings
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -271,8 +243,6 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.pbProductReturn);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.pbReceipts);
             this.Controls.Add(this.pbPersonalization);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.picCompProf);
@@ -285,14 +255,13 @@
             this.Name = "SystemSettings";
             this.Size = new System.Drawing.Size(1194, 583);
             this.Load += new System.EventHandler(this.UserSettings_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.picTax)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductReturn)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbReceipts)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonalization)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCompProf)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbBackupDB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbModules)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picTax)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,8 +277,6 @@
         private System.Windows.Forms.PictureBox picCompProf;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.PictureBox pbPersonalization;
-        private System.Windows.Forms.PictureBox pbReceipts;
-        private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox pbProductReturn;
         private System.Windows.Forms.Label lblTitle;

@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Randy.GraphicsLibrary;
 using System.Runtime.InteropServices;
 using System.IO;
+using System.Reflection;
 
 namespace PetvetPOS_Inventory_System
 {
@@ -36,6 +37,7 @@ namespace PetvetPOS_Inventory_System
             InitializeComponent();
         }
 
+
         public Titlebar(Panel panel, MasterController masterController):base(masterController, panel, true)
         {
             InitializeComponent();
@@ -56,6 +58,8 @@ namespace PetvetPOS_Inventory_System
             if (File.Exists(companyLogoImagePath))
                 companyLogo = Renderer.resizeImage(Image.FromFile(companyLogoImagePath) as Bitmap, panelImage.Width, panelImage.Height) as Image;
 
+            // Avoid flickering
+            MyExtension.Graphics_.avoidPanelFlickering(panelImage);
         }
 
         void initColors()
@@ -91,14 +95,12 @@ namespace PetvetPOS_Inventory_System
         void whenNotLogin()
         {
             button1.Visible = false;
-            button3.Visible = false;
             setImage = defaultIcon;
         }
 
         void whenLogin()
         {
             button1.Visible = true;
-            button3.Visible = true;
         }
 
         void masterController_ContentChange(object sender, ContentArgs e)

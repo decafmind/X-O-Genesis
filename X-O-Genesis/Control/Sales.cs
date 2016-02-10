@@ -70,7 +70,7 @@ namespace PetvetPOS_Inventory_System
         public Sales(MasterController masterController):base(masterController)
         {
             InitializeComponent();
-            this.dbController = masterController.DataBaseController;
+            MyExtension.Graphics_.avoidPanelFlickering(panelChart);
         }
 
         void masterController_ServerClock(object sender, EventArgs e)

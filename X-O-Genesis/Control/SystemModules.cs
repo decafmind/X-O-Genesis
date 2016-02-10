@@ -61,6 +61,11 @@ namespace PetvetPOS_Inventory_System
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
+            if (isInSimpleMode)
+                dbController.systemSettingsMapper.updateSettings("mode", "simple");
+            else
+                dbController.systemSettingsMapper.updateSettings("mode", "advance");
+
             Properties.Settings.Default.SimpleMode = isInSimpleMode;
             Properties.Settings.Default.Save();
             MessageBox.Show("You need to restart the application to apply changes.",  "Applying changes", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);

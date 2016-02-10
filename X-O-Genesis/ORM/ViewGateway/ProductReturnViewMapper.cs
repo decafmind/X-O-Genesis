@@ -13,14 +13,21 @@ namespace PetvetPOS_Inventory_System
         {
             tableName = "product_return_view";
             fieldsname = new string[]{
-                "description",
-                "Qty_returned",
-                "Price_refunded",
+                "transaction_no",
+                "product",
+                "qty_returned",
+                "date_returned",
+                "supplier",
+                "reason",
             };
+
             fieldsname_forselect = new string[]{
-                "Description AS Name",
-                "Qty_returned AS 'Qty returned'",
-                "Price_refunded AS 'Price refunded'",
+                "transaction_no as 'Transaction no.'",
+                "product AS 'Product'",
+                "qty_returned AS 'Qty'",
+                "date_returned AS 'Date returned'",
+                "supplier AS 'Supplier'",
+                "reason AS 'Reason'",
             };
         }
     }

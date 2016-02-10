@@ -21,7 +21,6 @@ namespace PetvetPOS_Inventory_System
 
         public Supplier(Entity entity)
         {
-            ID = (int)entity.getField("id");
             Name = (string)entity.getField("name");
             Address = (string)entity.getField("address");
             ContactNo = (string)entity.getField("contact_number");

@@ -28,17 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelCanvas = new System.Windows.Forms.Panel();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelCanvas
             // 
-            this.panel1.Location = new System.Drawing.Point(316, 71);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(463, 342);
-            this.panel1.TabIndex = 1;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            this.panelCanvas.Location = new System.Drawing.Point(316, 71);
+            this.panelCanvas.Name = "panelCanvas";
+            this.panelCanvas.Size = new System.Drawing.Size(463, 342);
+            this.panelCanvas.TabIndex = 1;
+            this.panelCanvas.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // listBox1
             // 
@@ -47,12 +47,13 @@
             this.listBox1.Name = "listBox1";
             this.listBox1.Size = new System.Drawing.Size(204, 329);
             this.listBox1.TabIndex = 0;
+            this.listBox1.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // SupplierControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panelCanvas);
             this.Controls.Add(this.listBox1);
             this.Name = "SupplierControl";
             this.Size = new System.Drawing.Size(863, 445);
@@ -64,6 +65,6 @@
         #endregion
 
         private System.Windows.Forms.ListBox listBox1;
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelCanvas;
     }
 }

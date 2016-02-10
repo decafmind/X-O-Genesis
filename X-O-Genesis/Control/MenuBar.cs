@@ -125,9 +125,9 @@ namespace PetvetPOS_Inventory_System
         {
             MenuList list;
             Menu menu;
-
-            bool SimpleMode = Properties.Settings.Default.SimpleMode;
-
+            bool SimpleMode = true;
+            SimpleMode = dbController.systemSettingsMapper.isInSimpleMode();
+            
             switch (e.employee.Position)
             {
                 case UserLevel.ADMIN:

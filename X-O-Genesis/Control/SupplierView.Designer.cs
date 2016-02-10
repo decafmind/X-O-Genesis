@@ -32,9 +32,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblSupplierName = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lblSupplierAddress = new System.Windows.Forms.Label();
+            this.lblContactNumber = new System.Windows.Forms.Label();
+            this.lblContactPerson = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label3
@@ -78,43 +78,43 @@
             this.lblSupplierName.Text = "Supplier name";
             this.lblSupplierName.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label4
+            // lblSupplierAddress
             // 
-            this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label4.Location = new System.Drawing.Point(180, 132);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(244, 58);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Address";
+            this.lblSupplierAddress.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblSupplierAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblSupplierAddress.Location = new System.Drawing.Point(180, 132);
+            this.lblSupplierAddress.Name = "lblSupplierAddress";
+            this.lblSupplierAddress.Size = new System.Drawing.Size(244, 58);
+            this.lblSupplierAddress.TabIndex = 10;
+            this.lblSupplierAddress.Text = "Address";
             // 
-            // label5
+            // lblContactNumber
             // 
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label5.Location = new System.Drawing.Point(180, 203);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(244, 19);
-            this.label5.TabIndex = 11;
-            this.label5.Text = "Address";
+            this.lblContactNumber.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblContactNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblContactNumber.Location = new System.Drawing.Point(180, 203);
+            this.lblContactNumber.Name = "lblContactNumber";
+            this.lblContactNumber.Size = new System.Drawing.Size(244, 19);
+            this.lblContactNumber.TabIndex = 11;
+            this.lblContactNumber.Text = "Address";
             // 
-            // label6
+            // lblContactPerson
             // 
-            this.label6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
-            this.label6.Location = new System.Drawing.Point(180, 243);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(244, 19);
-            this.label6.TabIndex = 12;
-            this.label6.Text = "Address";
+            this.lblContactPerson.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblContactPerson.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.lblContactPerson.Location = new System.Drawing.Point(180, 243);
+            this.lblContactPerson.Name = "lblContactPerson";
+            this.lblContactPerson.Size = new System.Drawing.Size(244, 19);
+            this.lblContactPerson.TabIndex = 12;
+            this.lblContactPerson.Text = "Address";
             // 
             // SupplierView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblContactPerson);
+            this.Controls.Add(this.lblContactNumber);
+            this.Controls.Add(this.lblSupplierAddress);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -132,8 +132,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblSupplierName;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblSupplierAddress;
+        private System.Windows.Forms.Label lblContactNumber;
+        private System.Windows.Forms.Label lblContactPerson;
     }
 }

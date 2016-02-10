@@ -146,7 +146,7 @@
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.btnSave.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Save;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(121, 312);
+            this.btnSave.Location = new System.Drawing.Point(121, 343);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(133, 61);
             this.btnSave.TabIndex = 8;

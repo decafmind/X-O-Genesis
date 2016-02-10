@@ -156,6 +156,15 @@ namespace PetvetPOS_Inventory_System
             timer1.Stop();
             
             if (user != null && !dbController.isAlreadyLogin(user)){
+                
+                // Disable the Sales Order when on simple/convenience mode
+                if (dbController.systemSettingsMapper.isInSimpleMode() && user.getUserLevel() == UserLevel.STAFF)
+                {
+                    denyLogin();
+                    btnLogin.Enabled = true;
+                    return;
+                }
+
                 if (loginPane.isLock){
                     if (user.getUserLevel() == UserLevel.ADMIN)
                         authorizeLogin();

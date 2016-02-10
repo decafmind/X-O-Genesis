@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
     <PublishUrl>E:\Documents\Soft Eng Project 2014\Software\Deploy\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -27,7 +28,6 @@
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>x86</PlatformTarget>
@@ -158,6 +158,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Control\AddSupplier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\AddSupplier.Designer.cs">
+      <DependentUpon>AddSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\Back.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -316,6 +322,7 @@
       <DependentUpon>modalPayment.cs</DependentUpon>
     </Compile>
     <Compile Include="MyExtension\ErrorLog.cs" />
+    <Compile Include="MyExtension\Graphics.cs" />
     <Compile Include="MyExtension\Path.cs" />
     <Compile Include="ORM\TableGateway\AuditTrailMapper.cs" />
     <Compile Include="ORM\TableGateway\CompanyProfileMapper.cs" />
@@ -323,6 +330,7 @@
     <Compile Include="ORM\TableGateway\ProductInspectionMapper.cs" />
     <Compile Include="ORM\TableGateway\ProductReturnMapper.cs" />
     <Compile Include="ORM\TableGateway\SupplierMapper.cs" />
+    <Compile Include="ORM\TableGateway\SystemSettingMapper.cs" />
     <Compile Include="ORM\ViewGateway\AuditTrailView.cs" />
     <Compile Include="ORM\ViewGateway\LoginTrailViewMapper.cs" />
     <Compile Include="ORM\ViewGateway\ProductReturnViewMapper.cs" />
@@ -543,12 +551,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="SplashScreen.cs">
+    <Compile Include="Forms\SplashScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SplashScreen.Designer.cs">
+    <Compile Include="Forms\SplashScreen.Designer.cs">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Control\AddSupplier.resx">
+      <DependentUpon>AddSupplier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\Back.resx">
       <DependentUpon>Back.cs</DependentUpon>
     </EmbeddedResource>
@@ -581,6 +592,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\SupplierControl.resx">
       <DependentUpon>SupplierControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\SupplierView.resx">
+      <DependentUpon>SupplierView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\SystemModules.resx">
       <DependentUpon>SystemModules.cs</DependentUpon>
@@ -709,10 +723,9 @@
     <EmbeddedResource Include="Control\ValidationMarks.resx">
       <DependentUpon>ValidationMarks.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SplashScreen.resx">
+    <EmbeddedResource Include="Forms\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="PetvetPOS_Inventory_System_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
