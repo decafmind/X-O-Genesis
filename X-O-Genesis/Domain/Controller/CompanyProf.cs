@@ -14,6 +14,8 @@ namespace PetvetPOS_Inventory_System
         public string Contact { get; set; }
         public string Email { get; set; }
         public string Logo { get; set; }
+        public string VatRegTin { get; set; }
+        public double Tax { get; set; }
 
         public void Save()
         {

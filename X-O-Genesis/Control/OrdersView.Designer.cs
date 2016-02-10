@@ -33,13 +33,13 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.txtQuantity = new System.Windows.Forms.TextBox();
             this.btnQuantity = new System.Windows.Forms.Button();
+            this.btnEncode = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.txtEncode = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.lblTransactionno = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnEncode = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblPOSmsg = new System.Windows.Forms.Label();
             this.poSlbl2 = new PetvetPOS_Inventory_System.POSlbl();
@@ -56,6 +56,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.chkSCPWD = new System.Windows.Forms.CheckBox();
             this.dgTransaction = new System.Windows.Forms.DataGridView();
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -77,7 +78,6 @@
             this.panel11.Controls.Add(this.lblTransactionno);
             this.panel11.Controls.Add(this.label2);
             this.panel11.Controls.Add(this.label5);
-            this.panel11.Controls.Add(this.btnEncode);
             this.panel11.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel11.Location = new System.Drawing.Point(0, 0);
             this.panel11.Name = "panel11";
@@ -92,10 +92,11 @@
             this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.panel10.Controls.Add(this.txtQuantity);
             this.panel10.Controls.Add(this.btnQuantity);
+            this.panel10.Controls.Add(this.btnEncode);
             this.panel10.Location = new System.Drawing.Point(175, 61);
             this.panel10.Name = "panel10";
             this.panel10.Padding = new System.Windows.Forms.Padding(2);
-            this.panel10.Size = new System.Drawing.Size(161, 30);
+            this.panel10.Size = new System.Drawing.Size(161, 32);
             this.panel10.TabIndex = 6;
             // 
             // txtQuantity
@@ -121,6 +122,21 @@
             this.btnQuantity.UseVisualStyleBackColor = true;
             this.btnQuantity.Click += new System.EventHandler(this.btnQuantity_Click);
             // 
+            // btnEncode
+            // 
+            this.btnEncode.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnEncode.BackColor = System.Drawing.Color.White;
+            this.btnEncode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEncode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnEncode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEncode.Location = new System.Drawing.Point(30, 2);
+            this.btnEncode.Name = "btnEncode";
+            this.btnEncode.Size = new System.Drawing.Size(125, 27);
+            this.btnEncode.TabIndex = 2;
+            this.btnEncode.Text = "OK";
+            this.btnEncode.UseVisualStyleBackColor = false;
+            this.btnEncode.Click += new System.EventHandler(this.btnEncode_Click);
+            // 
             // panel3
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -131,7 +147,7 @@
             this.panel3.Location = new System.Drawing.Point(175, 99);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(2);
-            this.panel3.Size = new System.Drawing.Size(159, 30);
+            this.panel3.Size = new System.Drawing.Size(159, 29);
             this.panel3.TabIndex = 1;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -171,7 +187,7 @@
             this.lblTransactionno.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTransactionno.Location = new System.Drawing.Point(145, 27);
             this.lblTransactionno.Name = "lblTransactionno";
-            this.lblTransactionno.Size = new System.Drawing.Size(191, 23);
+            this.lblTransactionno.Size = new System.Drawing.Size(191, 32);
             this.lblTransactionno.TabIndex = 3;
             this.lblTransactionno.Text = "0";
             this.lblTransactionno.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -201,21 +217,6 @@
             this.label5.Size = new System.Drawing.Size(173, 25);
             this.label5.TabIndex = 4;
             this.label5.Text = "PRODUCT CODE";
-            // 
-            // btnEncode
-            // 
-            this.btnEncode.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnEncode.BackColor = System.Drawing.Color.White;
-            this.btnEncode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnEncode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnEncode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEncode.Location = new System.Drawing.Point(203, 104);
-            this.btnEncode.Name = "btnEncode";
-            this.btnEncode.Size = new System.Drawing.Size(125, 23);
-            this.btnEncode.TabIndex = 2;
-            this.btnEncode.Text = "OK";
-            this.btnEncode.UseVisualStyleBackColor = false;
-            this.btnEncode.Click += new System.EventHandler(this.btnEncode_Click);
             // 
             // panel2
             // 
@@ -403,6 +404,7 @@
             // 
             // panel5
             // 
+            this.panel5.Controls.Add(this.chkSCPWD);
             this.panel5.Controls.Add(this.dgTransaction);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 153);
@@ -410,6 +412,19 @@
             this.panel5.Padding = new System.Windows.Forms.Padding(20);
             this.panel5.Size = new System.Drawing.Size(732, 362);
             this.panel5.TabIndex = 46;
+            // 
+            // chkSCPWD
+            // 
+            this.chkSCPWD.AutoSize = true;
+            this.chkSCPWD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.chkSCPWD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.chkSCPWD.Location = new System.Drawing.Point(488, 313);
+            this.chkSCPWD.Name = "chkSCPWD";
+            this.chkSCPWD.Padding = new System.Windows.Forms.Padding(5);
+            this.chkSCPWD.Size = new System.Drawing.Size(231, 34);
+            this.chkSCPWD.TabIndex = 47;
+            this.chkSCPWD.Text = "Less: SC/PWD Discount";
+            this.chkSCPWD.UseVisualStyleBackColor = false;
             // 
             // dgTransaction
             // 
@@ -430,14 +445,14 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgTransaction.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgTransaction.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgTransaction.Dock = System.Windows.Forms.DockStyle.Top;
             this.dgTransaction.Location = new System.Drawing.Point(20, 20);
             this.dgTransaction.MultiSelect = false;
             this.dgTransaction.Name = "dgTransaction";
             this.dgTransaction.ReadOnly = true;
             this.dgTransaction.RowHeadersVisible = false;
             this.dgTransaction.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgTransaction.Size = new System.Drawing.Size(692, 322);
+            this.dgTransaction.Size = new System.Drawing.Size(692, 265);
             this.dgTransaction.TabIndex = 46;
             this.dgTransaction.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgTransaction_CellContentClick);
             // 
@@ -464,6 +479,7 @@
             this.panel6.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgTransaction)).EndInit();
             this.ResumeLayout(false);
 
@@ -499,5 +515,6 @@
         private System.Windows.Forms.Panel panel6;
         private KeyButton keyButton1;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox chkSCPWD;
     }
 }

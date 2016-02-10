@@ -27,6 +27,8 @@ namespace PetvetPOS_Inventory_System
         private static int FROM = 0;
         private static int TO = 1;
 
+        private decimal tax;
+
         reportType checkReportType()
         {
             reportType report = reportType.UNKNOWN;
@@ -119,24 +121,51 @@ namespace PetvetPOS_Inventory_System
 
         void showDailySales()
         {
+            dt = new DataTable();
+
             decimal sales = dbController.getTodaySales().Sales;
-            lblTodaysales.Text = String.Format("Php {0}", sales.ToString("N"));
+            decimal vat = sales * tax;
+            decimal totalSales = sales - vat;
+
+            lblTodaysales.Text = String.Format("Php {0}", totalSales.ToString("N"));
+        }
+
+        void vatableSalesReport(DataTable dt, decimal tax)
+        {
+            foreach (DataRow row in dt.Rows)
+            {
+                decimal vat = Convert.ToDecimal(row["Sales"]) * tax;
+                foreach (DataColumn column in dt.Columns)
+                {
+                    row.SetField("Sales", (Convert.ToDecimal(row["Sales"]) - vat).ToString("N"));
+                }
+            }
         }
 
         void selectReport()
         {
             dt = new DataTable();
+            DataTable taxTable = new DataTable();
+
+            dbController.loadCompanyProfile(taxTable);
+            foreach (DataRow dr in taxTable.Rows)
+            {
+                tax = Convert.ToDecimal(dr["tax"]);
+            }
 
             switch (currentReport)
             {
                 case reportType.DAILY:
                     dbController.filterDailySalesReport(dt, dateRange[FROM], dateRange[TO]);
+                    vatableSalesReport(dt, tax);
                     break;
                 case reportType.WEEKLY:
                     dbController.filterWeeklySalesReport(dt, dateRange[FROM], dateRange[TO]);
+                    vatableSalesReport(dt, tax);
                     break;
                 case reportType.MONTHLY:
                     dbController.filterMonthlySalesReport(dt, dateRange[FROM], dateRange[TO]);
+                    vatableSalesReport(dt, tax);
                     break;
                 case reportType.UNKNOWN:
                     break;

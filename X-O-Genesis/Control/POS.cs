@@ -24,6 +24,7 @@ namespace PetvetPOS_Inventory_System
         decimal totalAmount;
         decimal totalAmountWithService;
         decimal change;
+        decimal _scPwd;
        
         private const int QTY_INDEX = 1;
         private const int DESCRIPTION_INDEX = 0;
@@ -352,9 +353,9 @@ namespace PetvetPOS_Inventory_System
                     Document = receipt,
                 };
 
-                receipt.Print();
-                //preview.ShowDialog(this);
-                //preview.SetDesktopLocation(masterController.getFrmMain.Width - preview.Width, preview.DesktopLocation.Y);
+                //receipt.Print();
+                preview.ShowDialog(this);
+                preview.SetDesktopLocation(masterController.getFrmMain.Width - preview.Width, preview.DesktopLocation.Y);
             }
         }
 
@@ -411,25 +412,37 @@ namespace PetvetPOS_Inventory_System
             DataTable companyProfile = new DataTable();
             dbController.loadCompanyProfile(companyProfile);
 
-            string title = "Guardtech";
-            string tin = " ****-****-****-****";
-            string address = "G44 Abbey Road Bagbag, Novaliches Quezon City";
-            string cont = "09195558866";
-            string web = "www.google.com";
+            string title = "Company Name";
+            string tin = " Company VAT Registered TIN";
+            string address = "Company Address";
+            string cont = "Company Contact Number";
+            string web = "Company Email / Website";
 
-
+            decimal _vat;
+            decimal _vatableSales;
+            decimal tax = 0;      
+                
             foreach (DataRow dr in companyProfile.Rows)
             {
                 title = dr["compname"].ToString();
                 address = dr["address"].ToString();
                 cont = dr["contactno"].ToString();
                 web = dr["email"].ToString();
+                tin = dr["vat_reg_tin"].ToString();
+                tax = Convert.ToDecimal(dr["tax"]);
             }
+
+            _vat = tax * Convert.ToDecimal(poSlbl2.Text);
+            _vatableSales = Convert.ToDecimal(poSlbl2.Text) - _vat;
 
             Graphics g = e.Graphics;
             using(Font font = new Font("MS San Serif", 11 , FontStyle.Regular))
             using(Pen pen = new Pen(Brushes.Black, 1))
             {
+
+                string vatReg = String.Format("VAT Reg. TIN: {0}", tin);
+                string contactNo = String.Format("Contact No.: {0}", cont);
+                string webSite = String.Format("Website: {0}", web);
 
                 int documentWidth = e.PageBounds.Width;
                 int Y = 20;
@@ -482,9 +495,33 @@ namespace PetvetPOS_Inventory_System
 
                 Y += 20;
                 string total = poSlbl2.Text;
-                g.DrawString("TOTAL", font, Brushes.Black, new PointF(10, Y));
+                g.DrawString("Total Sales (VAT Inclusive)", font, Brushes.Black, new PointF(10, Y));
                 stringSize = g.MeasureString(total, font);
                 g.DrawString(total, font, Brushes.Black, new PointF((documentWidth - 10) - stringSize.Width, Y));
+                Y += (int)stringSize.Height + yIncrement;
+
+                string ScPwdDiscount = _scPwd.ToString("N");
+                g.DrawString("Less: SC/PWD Discount", font, Brushes.Black, new PointF(10, Y));
+                stringSize = g.MeasureString(ScPwdDiscount, font);
+                g.DrawString(ScPwdDiscount, font, Brushes.Black, new PointF((documentWidth - 10) - stringSize.Width, Y));
+                Y += (int)stringSize.Height + yIncrement;
+
+                string vatableSales = _vatableSales.ToString("N");
+                g.DrawString("VATable Sales", font, Brushes.Black, new PointF(10, Y));
+                stringSize = g.MeasureString(vatableSales, font);
+                g.DrawString(vatableSales, font, Brushes.Black, new PointF((documentWidth - 10) - stringSize.Width, Y));
+                Y += (int)stringSize.Height + yIncrement;
+
+                string vatAmount = _vat.ToString("N");
+                g.DrawString("VAT Amount", font, Brushes.Black, new PointF(10, Y));
+                stringSize = g.MeasureString(vatAmount, font);
+                g.DrawString(vatAmount, font, Brushes.Black, new PointF((documentWidth - 10) - stringSize.Width, Y));
+                Y += (int)stringSize.Height + yIncrement;
+
+                string totalSales = poSlbl2.Text;
+                g.DrawString("Total Sales", font, Brushes.Black, new PointF(10, Y));
+                stringSize = g.MeasureString(totalSales, font);
+                g.DrawString(totalSales, font, Brushes.Black, new PointF((documentWidth - 10) - stringSize.Width, Y));
                 Y += (int)stringSize.Height + yIncrement;
 
                 g.DrawString("AMOUNT TENDERED", font, Brushes.Black, new PointF(10, Y));

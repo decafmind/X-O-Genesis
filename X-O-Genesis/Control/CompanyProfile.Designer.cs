@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.lblPath = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
@@ -42,13 +43,20 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.txtVATRegTin = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtTax = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbCompanyLogo)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txtTax);
+            this.panel1.Controls.Add(this.label7);
+            this.panel1.Controls.Add(this.txtVATRegTin);
+            this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.lblPath);
             this.panel1.Controls.Add(this.btnCancel);
@@ -66,13 +74,23 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(409, 413);
+            this.panel1.Size = new System.Drawing.Size(409, 504);
             this.panel1.TabIndex = 0;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(153, 388);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 26;
+            this.button1.Text = "upload";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lblPath
             // 
             this.lblPath.AutoSize = true;
-            this.lblPath.Location = new System.Drawing.Point(292, 248);
+            this.lblPath.Location = new System.Drawing.Point(292, 322);
             this.lblPath.Name = "lblPath";
             this.lblPath.Size = new System.Drawing.Size(53, 13);
             this.lblPath.TabIndex = 25;
@@ -87,7 +105,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnCancel.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Cancel_2;
-            this.btnCancel.Location = new System.Drawing.Point(212, 335);
+            this.btnCancel.Location = new System.Drawing.Point(212, 409);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(147, 58);
             this.btnCancel.TabIndex = 24;
@@ -103,7 +121,7 @@
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnSave.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Save;
-            this.btnSave.Location = new System.Drawing.Point(38, 335);
+            this.btnSave.Location = new System.Drawing.Point(38, 409);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(147, 58);
             this.btnSave.TabIndex = 23;
@@ -117,7 +135,7 @@
             this.pbCompanyLogo.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Shop;
             this.pbCompanyLogo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbCompanyLogo.ImageLocation = "";
-            this.pbCompanyLogo.Location = new System.Drawing.Point(136, 208);
+            this.pbCompanyLogo.Location = new System.Drawing.Point(136, 282);
             this.pbCompanyLogo.Name = "pbCompanyLogo";
             this.pbCompanyLogo.Size = new System.Drawing.Size(115, 100);
             this.pbCompanyLogo.TabIndex = 22;
@@ -125,7 +143,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(136, 166);
+            this.txtEmail.Location = new System.Drawing.Point(136, 154);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(237, 20);
             this.txtEmail.TabIndex = 21;
@@ -156,7 +174,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label5.Location = new System.Drawing.Point(15, 217);
+            this.label5.Location = new System.Drawing.Point(15, 291);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(120, 20);
             this.label5.TabIndex = 17;
@@ -166,7 +184,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(15, 166);
+            this.label4.Location = new System.Drawing.Point(15, 154);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(114, 20);
             this.label4.TabIndex = 16;
@@ -202,15 +220,39 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "Company Name:";
             // 
-            // button1
+            // txtVATRegTin
             // 
-            this.button1.Location = new System.Drawing.Point(153, 314);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 26;
-            this.button1.Text = "upload";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.txtVATRegTin.Location = new System.Drawing.Point(136, 199);
+            this.txtVATRegTin.Name = "txtVATRegTin";
+            this.txtVATRegTin.Size = new System.Drawing.Size(237, 20);
+            this.txtVATRegTin.TabIndex = 28;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label6.Location = new System.Drawing.Point(15, 199);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(107, 20);
+            this.label6.TabIndex = 27;
+            this.label6.Text = "VAT Reg. TIN";
+            // 
+            // txtTax
+            // 
+            this.txtTax.Location = new System.Drawing.Point(136, 242);
+            this.txtTax.Name = "txtTax";
+            this.txtTax.Size = new System.Drawing.Size(237, 20);
+            this.txtTax.TabIndex = 30;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label7.Location = new System.Drawing.Point(15, 242);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 20);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "TAX %";
             // 
             // CompanyProfile
             // 
@@ -219,7 +261,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.panel1);
             this.Name = "CompanyProfile";
-            this.Size = new System.Drawing.Size(409, 413);
+            this.Size = new System.Drawing.Size(409, 504);
             this.Load += new System.EventHandler(this.CompanyProfile_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -245,6 +287,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox txtTax;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtVATRegTin;
+        private System.Windows.Forms.Label label6;
 
     }
 }

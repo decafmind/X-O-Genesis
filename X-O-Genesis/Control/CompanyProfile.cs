@@ -73,6 +73,8 @@ namespace PetvetPOS_Inventory_System
                     Contact = txtCont.Text,
                     Email = txtEmail.Text,
                     Logo = lblPath.Text,
+                    VatRegTin = txtVATRegTin.Text,
+                    Tax = Convert.ToDouble(txtTax.Text) / 100,
                 };
 
                 if (hasPictureChanged)
@@ -103,6 +105,7 @@ namespace PetvetPOS_Inventory_System
                 banner.ForeColor = System.Drawing.Color.White;
                 banner.Show();
             }
+            loadCompanyProfile();
         }
 
         void loadCompanyProfile()
@@ -117,10 +120,15 @@ namespace PetvetPOS_Inventory_System
                 txtCont.Text = dr["contactno"].ToString();
                 txtEmail.Text = dr["email"].ToString();
                 lblPath.Text = dr["logo_path"].ToString();
+                txtVATRegTin.Text = dr["vat_reg_tin"].ToString();
+                txtTax.Text = (Convert.ToDouble(dr["tax"]) * 100).ToString();
             }
 
             if (File.Exists(lblPath.Text))
                pbCompanyLogo.Image = Renderer.resizeImage(Image.FromFile(lblPath.Text) as Bitmap, pbCompanyLogo.Width, pbCompanyLogo.Height) as Image;
+            
+            //For future transaction purposes
+            companyProfile.Tax = Convert.ToDouble(txtTax.Text);
         }
 
         public void initializePage()

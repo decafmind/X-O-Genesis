@@ -25,6 +25,10 @@ namespace PetvetPOS_Inventory_System
         decimal totalAmount;
         decimal totalAmountWithService;
 
+        decimal _vatableSales;
+        decimal _vat;
+        decimal _scpwd;
+
         private const int QTY_INDEX = 0;
         private const int DESCRIPTION_INDEX = 1;
         private const int PRICE_INDEX = 2;
@@ -158,7 +162,7 @@ namespace PetvetPOS_Inventory_System
                 {
                     if (!string.IsNullOrWhiteSpace(currentProduct.Barcode))
                     {
-                        Decimal totalPrice = currentProduct.UnitPrice * quantity;
+                        decimal totalPrice = currentProduct.UnitPrice * quantity;
                         lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, quantity, currentProduct.UnitPrice);
                         success = true;
                         addRowInDatagrid(quantity);
@@ -182,7 +186,7 @@ namespace PetvetPOS_Inventory_System
         public void addRowInDatagrid(int quantity)
         {
             bool success = false;
-
+                    
             ProductInvoice productTransaction = new ProductInvoice(){
                 invoice = currentTransaction,
                 product = currentProduct,
@@ -270,6 +274,8 @@ namespace PetvetPOS_Inventory_System
             if (success)
                 totalAmount += productTransaction.GroupPrice;
 
+            //_scpwd = chkSCPWD.Checked ? totalAmount * Convert.ToDecimal(0.20) : 0; ---Fix this
+
             poSlbl2.Text = totalAmount.ToString("N");
             txtEncode.Clear();
             txtQuantity.Clear();
@@ -281,8 +287,8 @@ namespace PetvetPOS_Inventory_System
         {
             dt.Columns.Add("Quantity", typeof(Int32));
             dt.Columns.Add("Product", typeof(string));
-            dt.Columns.Add("Unit Price", typeof(Decimal));
-            dt.Columns.Add("Sub-Total", typeof(Decimal));
+            dt.Columns.Add("Unit Price", typeof(decimal));
+            dt.Columns.Add("Sub-Total", typeof(decimal));
             dgTransaction.DataSource = dt;
 
             dgTransaction.ColumnHeadersDefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
@@ -316,6 +322,7 @@ namespace PetvetPOS_Inventory_System
             txtQuantity.Text = "1";
             poSlbl2.Text = "0";
             lblPOSmsg.Text = "No current transaction";
+            chkSCPWD.Checked = false;
             MyExtension.Validation.clearFields(panel1);
         }
 
@@ -383,9 +390,9 @@ namespace PetvetPOS_Inventory_System
                     Document = invoice,
                 };
               
-                //preview.ShowDialog(this);
-                //preview.SetDesktopLocation(masterController.getFrmMain.Width - preview.Width, preview.DesktopLocation.Y);
-                invoice.Print();
+                preview.ShowDialog(this);
+                preview.SetDesktopLocation(masterController.getFrmMain.Width - preview.Width, preview.DesktopLocation.Y);
+                //invoice.Print();
             }
         }
 
@@ -399,7 +406,7 @@ namespace PetvetPOS_Inventory_System
               {
                   if (item.product.Description == selectedRow.Cells[DESCRIPTION_INDEX].Value.ToString())
                   {
-                      totalAmount -= item.GroupPrice;
+                      totalAmount -= item.GroupPrice - _scpwd;
                       carts.Remove(item);
 
                       if (totalAmountWithService != 0)
@@ -420,11 +427,14 @@ namespace PetvetPOS_Inventory_System
             DataTable companyProfile = new DataTable();
             dbController.loadCompanyProfile(companyProfile);
 
-            string title = "Guardtech";
-            string tin = " ****-****-****-****";
-            string address = "G44 Abbey Road Bagbag, Novaliches Quezon City";
-            string cont = "09195558866";
-            string web = "www.google.com";
+            string title = "Company Name";
+            string tin = " Company VAT Registered TIN";
+            string address = "Company Address";
+            string cont = "Company Contact Number";
+            string web = "Company Email / Website";
+
+            decimal tax = 0;
+            
           
 
             foreach (DataRow dr in companyProfile.Rows)
@@ -433,8 +443,13 @@ namespace PetvetPOS_Inventory_System
                 address = dr["address"].ToString();
                 cont = dr["contactno"].ToString();
                 web = dr["email"].ToString();
+                tin = dr["vat_reg_tin"].ToString();
+                tax = Convert.ToDecimal(dr["tax"]);
             }
-
+     
+            _vat = tax * Convert.ToDecimal(poSlbl2.Text);  
+            _vatableSales = Convert.ToDecimal(poSlbl2.Text) - _vat;
+                      
             Graphics g = e.Graphics;
             using(Font font = new Font("MS San Serif", 11, FontStyle.Regular))
             using (Pen pen = new Pen(Brushes.Black, 1))
@@ -512,7 +527,47 @@ namespace PetvetPOS_Inventory_System
                     g.DrawString(dr[2].ToString(), font, Brushes.Black, new PointF(XUPrice, Y));
                     g.DrawString(dr[3].ToString(), font, Brushes.Black, new PointF(XSubTotal, Y));
                     Y += (int)stringSize.Height + yIncrement;
-                }   
+                }
+
+                Y += 50;
+                string total = poSlbl2.Text;
+                g.DrawString("Total Sales (VAT Inclusive)", font, Brushes.Black, new PointF(XQty, Y));
+                stringSize = g.MeasureString(total, font);
+                g.DrawString(total, font, Brushes.Black, new PointF(XSubTotal, Y));
+                Y += (int)stringSize.Height + yIncrement;
+
+                string ScPwdDiscount = _scpwd.ToString("N");
+                g.DrawString("Less: SC/PWD Discount", font, Brushes.Black, new PointF(XQty, Y));
+                stringSize = g.MeasureString(ScPwdDiscount, font);
+                g.DrawString(ScPwdDiscount, font, Brushes.Black, new PointF(XSubTotal, Y));
+                Y += (int)stringSize.Height + yIncrement;
+
+                string vatableSales = _vatableSales.ToString("N");
+                g.DrawString("VATable Sales", font, Brushes.Black, new PointF(XQty, Y));
+                stringSize = g.MeasureString(vatableSales, font);
+                g.DrawString(vatableSales, font, Brushes.Black, new PointF(XSubTotal, Y));
+                Y += (int)stringSize.Height + yIncrement;
+
+                string vatAmount = _vat.ToString("N");
+                g.DrawString("VAT Amount", font, Brushes.Black, new PointF(XQty, Y));
+                stringSize = g.MeasureString(vatAmount, font);
+                g.DrawString(vatAmount, font, Brushes.Black, new PointF(XSubTotal, Y));
+                Y += (int)stringSize.Height + yIncrement;
+
+                string totalSales = poSlbl2.Text;
+                g.DrawString("Total Sales", font, Brushes.Black, new PointF(XQty, Y));
+                stringSize = g.MeasureString(totalSales, font);
+                g.DrawString(totalSales, font, Brushes.Black, new PointF(XSubTotal, Y));
+                Y += (int)stringSize.Height + yIncrement;
+                Y += 20;
+
+                string countItems = String.Format("** {0} item(s) **", carts.Count);
+                stringSize = g.MeasureString(countItems, font);
+                g.DrawString(countItems, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
+                Y += (int)stringSize.Height + yIncrement;
+
+                g.DrawLine(pen, new Point(10, Y), new Point(documentWidth - 10, Y));
+                Y += yIncrement;          
                          
             }
         }
