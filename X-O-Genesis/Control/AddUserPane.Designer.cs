@@ -77,11 +77,11 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(468, 102);
             this.button1.Name = "button1";
@@ -116,11 +116,11 @@
             // 
             // upload
             // 
-            this.upload.BackColor = System.Drawing.Color.White;
+            this.upload.BackColor = System.Drawing.Color.WhiteSmoke;
             this.upload.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("upload.BackgroundImage")));
             this.upload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.upload.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.upload.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.upload.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.upload.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.upload.Location = new System.Drawing.Point(415, 107);
             this.upload.Name = "upload";
@@ -133,6 +133,7 @@
             // 
             // panel_AddUser
             // 
+            this.panel_AddUser.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel_AddUser.Controls.Add(this.txtImagepath);
             this.panel_AddUser.Controls.Add(this.label1);
             this.panel_AddUser.Controls.Add(this.txtAnswer);
@@ -209,10 +210,10 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.Location = new System.Drawing.Point(28, 271);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(102, 19);
+            this.lblPassword.Size = new System.Drawing.Size(116, 20);
             this.lblPassword.TabIndex = 106;
             this.lblPassword.Text = "PASSWORD:";
             // 
@@ -261,7 +262,7 @@
             // 
             // label11
             // 
-            this.label11.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.Location = new System.Drawing.Point(29, 384);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(110, 18);
@@ -271,10 +272,10 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(29, 139);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(118, 19);
+            this.label8.Size = new System.Drawing.Size(125, 20);
             this.label8.TabIndex = 104;
             this.label8.Text = "CONTACT NO:";
             // 
@@ -298,7 +299,7 @@
             // 
             // label10
             // 
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(29, 340);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(110, 49);
@@ -328,26 +329,28 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(28, 235);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(105, 19);
+            this.label6.Size = new System.Drawing.Size(114, 20);
             this.label6.TabIndex = 105;
             this.label6.Text = "USERNAME:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.Location = new System.Drawing.Point(28, 168);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(67, 19);
+            this.label7.Size = new System.Drawing.Size(68, 20);
             this.label7.TabIndex = 128;
             this.label7.Text = "EMAIL:";
             // 
             // btnSave
             // 
+            this.btnSave.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Save;
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSave.Location = new System.Drawing.Point(254, 406);
             this.btnSave.Name = "btnSave";
@@ -360,10 +363,10 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.Location = new System.Drawing.Point(28, 203);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(89, 19);
+            this.label9.Size = new System.Drawing.Size(101, 20);
             this.label9.TabIndex = 108;
             this.label9.Text = "ADDRESS:";
             // 
@@ -380,7 +383,7 @@
             // 
             // lblRepassword
             // 
-            this.lblRepassword.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRepassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRepassword.Location = new System.Drawing.Point(29, 296);
             this.lblRepassword.Name = "lblRepassword";
             this.lblRepassword.Size = new System.Drawing.Size(110, 49);

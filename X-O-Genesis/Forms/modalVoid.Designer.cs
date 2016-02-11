@@ -30,12 +30,12 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.btnOK = new System.Windows.Forms.Button();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnOK = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,43 +67,6 @@
             this.lblTitle.TabIndex = 20;
             this.lblTitle.Text = "INPUT ADMIN CREDENTIALS";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // button2
-            // 
-            this.button2.AutoSize = true;
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.button2.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Cancel_2;
-            this.button2.Location = new System.Drawing.Point(169, 132);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(135, 58);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "CANCEL";
-            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // btnOK
-            // 
-            this.btnOK.AutoSize = true;
-            this.btnOK.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOK.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnOK.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnOK.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Ok;
-            this.btnOK.Location = new System.Drawing.Point(24, 132);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(93, 58);
-            this.btnOK.TabIndex = 5;
-            this.btnOK.Text = "OK";
-            this.btnOK.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtPassword
             // 
@@ -141,6 +104,43 @@
             this.label2.Size = new System.Drawing.Size(101, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "USERNAME";
+            // 
+            // btnOK
+            // 
+            this.btnOK.AutoSize = true;
+            this.btnOK.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOK.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnOK.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnOK.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Ok;
+            this.btnOK.Location = new System.Drawing.Point(24, 132);
+            this.btnOK.Name = "btnOK";
+            this.btnOK.Size = new System.Drawing.Size(93, 58);
+            this.btnOK.TabIndex = 5;
+            this.btnOK.Text = "OK";
+            this.btnOK.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.AutoSize = true;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.button2.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Cancel_2;
+            this.button2.Location = new System.Drawing.Point(169, 132);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(135, 58);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "CANCEL";
+            this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // modalVoid
             // 

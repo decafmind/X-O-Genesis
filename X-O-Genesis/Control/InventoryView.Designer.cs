@@ -541,7 +541,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(3)))), ((int)(((byte)(2)))), ((int)(((byte)(3)))));
+            this.panel4.BackColor = System.Drawing.Color.DimGray;
             this.panel4.Controls.Add(this.dgInventory);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(5, 100);
@@ -556,7 +556,7 @@
             this.dgInventory.AllowUserToDeleteRows = false;
             this.dgInventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgInventory.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgInventory.BackgroundColor = System.Drawing.Color.White;
+            this.dgInventory.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgInventory.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgInventory.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -819,17 +819,17 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.label9.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label9.Location = new System.Drawing.Point(798, 23);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 20);
+            this.label9.Size = new System.Drawing.Size(46, 18);
             this.label9.TabIndex = 31;
             this.label9.Text = "Print";
             // 
             // label4
             // 
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label4.Location = new System.Drawing.Point(517, 8);
             this.label4.Name = "label4";
@@ -841,22 +841,22 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.label6.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label6.Location = new System.Drawing.Point(311, 15);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 40);
+            this.label6.Size = new System.Drawing.Size(72, 36);
             this.label6.TabIndex = 36;
             this.label6.Text = "Update \r\nProduct";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.label3.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label3.Location = new System.Drawing.Point(128, 26);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(62, 20);
+            this.label3.Size = new System.Drawing.Size(68, 18);
             this.label3.TabIndex = 19;
             this.label3.Text = "Inspect";
             // 
@@ -892,7 +892,7 @@
             // 
             this.keyButton7.accessKeyChar = "P";
             this.keyButton7.accessMasterController = null;
-            this.keyButton7.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton7.BackColor = System.Drawing.Color.WhiteSmoke;
             this.keyButton7.dbController = null;
             this.keyButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.keyButton7.ForeColor = System.Drawing.Color.Transparent;

@@ -93,6 +93,16 @@ namespace PetvetPOS_Inventory_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Advance {
+            get {
+                object obj = ResourceManager.GetObject("Advance", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap AkiraGIF {
             get {
                 object obj = ResourceManager.GetObject("AkiraGIF", resourceCulture);
@@ -653,6 +663,16 @@ namespace PetvetPOS_Inventory_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap payment {
+            get {
+                object obj = ResourceManager.GetObject("payment", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Pclick {
             get {
                 object obj = ResourceManager.GetObject("Pclick", resourceCulture);
@@ -856,6 +876,26 @@ namespace PetvetPOS_Inventory_System.Properties {
         internal static System.Drawing.Bitmap shopIcon {
             get {
                 object obj = ResourceManager.GetObject("shopIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Simple {
+            get {
+                object obj = ResourceManager.GetObject("Simple", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap simple2 {
+            get {
+                object obj = ResourceManager.GetObject("simple2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

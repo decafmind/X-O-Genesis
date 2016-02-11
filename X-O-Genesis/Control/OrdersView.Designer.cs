@@ -72,6 +72,7 @@
             // 
             // panel11
             // 
+            this.panel11.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel11.Controls.Add(this.panel10);
             this.panel11.Controls.Add(this.panel3);
             this.panel11.Controls.Add(this.label3);
@@ -220,6 +221,7 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel2.Controls.Add(this.lblPOSmsg);
             this.panel2.Controls.Add(this.poSlbl2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
@@ -267,7 +269,7 @@
             // 
             // panel8
             // 
-            this.panel8.BackColor = System.Drawing.Color.White;
+            this.panel8.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel8.Controls.Add(this.keyButton4);
             this.panel8.Controls.Add(this.label9);
             this.panel8.Controls.Add(this.keyButton3);
@@ -331,7 +333,7 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel6.Controls.Add(this.keyButton1);
             this.panel6.Controls.Add(this.label7);
             this.panel6.Controls.Add(this.keyButton2);
@@ -404,6 +406,7 @@
             // 
             // panel5
             // 
+            this.panel5.BackColor = System.Drawing.Color.DimGray;
             this.panel5.Controls.Add(this.chkSCPWD);
             this.panel5.Controls.Add(this.dgTransaction);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -416,8 +419,9 @@
             // chkSCPWD
             // 
             this.chkSCPWD.AutoSize = true;
-            this.chkSCPWD.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.chkSCPWD.BackColor = System.Drawing.Color.DimGray;
             this.chkSCPWD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.chkSCPWD.ForeColor = System.Drawing.Color.White;
             this.chkSCPWD.Location = new System.Drawing.Point(488, 313);
             this.chkSCPWD.Name = "chkSCPWD";
             this.chkSCPWD.Padding = new System.Windows.Forms.Padding(5);
@@ -434,7 +438,7 @@
             this.dgTransaction.AllowUserToResizeRows = false;
             this.dgTransaction.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgTransaction.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgTransaction.BackgroundColor = System.Drawing.Color.White;
+            this.dgTransaction.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgTransaction.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;

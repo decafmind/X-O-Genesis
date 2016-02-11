@@ -40,10 +40,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.userImage = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblPosition = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
+            this.userImage = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userImage)).BeginInit();
@@ -193,17 +193,6 @@
             this.panel1.Size = new System.Drawing.Size(482, 140);
             this.panel1.TabIndex = 0;
             // 
-            // userImage
-            // 
-            this.userImage.BackColor = System.Drawing.Color.Transparent;
-            this.userImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.userImage.Location = new System.Drawing.Point(368, 16);
-            this.userImage.Name = "userImage";
-            this.userImage.Size = new System.Drawing.Size(100, 100);
-            this.userImage.TabIndex = 0;
-            this.userImage.TabStop = false;
-            this.userImage.Click += new System.EventHandler(this.userImage_Click);
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -235,6 +224,17 @@
             this.lblName.Size = new System.Drawing.Size(337, 83);
             this.lblName.TabIndex = 0;
             this.lblName.Text = "FULLNAME";
+            // 
+            // userImage
+            // 
+            this.userImage.BackColor = System.Drawing.Color.Transparent;
+            this.userImage.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.userImage.Location = new System.Drawing.Point(368, 16);
+            this.userImage.Name = "userImage";
+            this.userImage.Size = new System.Drawing.Size(100, 100);
+            this.userImage.TabIndex = 0;
+            this.userImage.TabStop = false;
+            this.userImage.Click += new System.EventHandler(this.userImage_Click);
             // 
             // UserView
             // 

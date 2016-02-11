@@ -929,6 +929,10 @@
     <None Include="Resources\settings3-48.png" />
     <None Include="Resources\play.png" />
     <None Include="Resources\stop.png" />
+    <None Include="Resources\Simple.png" />
+    <None Include="Resources\simple2.png" />
+    <None Include="Resources\Advance.png" />
+    <None Include="Resources\payment.png" />
     <Content Include="SystemIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

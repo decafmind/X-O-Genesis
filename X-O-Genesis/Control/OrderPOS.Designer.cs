@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrderPOS));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.barcodeIndicator = new System.Windows.Forms.Timer(this.components);
             this.paymentTimer = new System.Windows.Forms.Timer(this.components);
@@ -52,21 +53,21 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblPOSmsg = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.poSlbl2 = new PetvetPOS_Inventory_System.POSlbl();
             this.sidePanel = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.keyButton1 = new PetvetPOS_Inventory_System.KeyButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.keyButton4 = new PetvetPOS_Inventory_System.KeyButton();
             this.label8 = new System.Windows.Forms.Label();
+            this.keyButton3 = new PetvetPOS_Inventory_System.KeyButton();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.poSlbl2 = new PetvetPOS_Inventory_System.POSlbl();
-            this.keyButton1 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton4 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton3 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgTransaction)).BeginInit();
             this.panel1.SuspendLayout();
@@ -88,6 +89,7 @@
             // 
             // panel6
             // 
+            this.panel6.BackColor = System.Drawing.Color.DimGray;
             this.panel6.Controls.Add(this.dgTransaction);
             this.panel6.Controls.Add(this.shapeContainer1);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -106,7 +108,7 @@
             this.dgTransaction.AllowUserToResizeRows = false;
             this.dgTransaction.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgTransaction.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dgTransaction.BackgroundColor = System.Drawing.Color.White;
+            this.dgTransaction.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgTransaction.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -175,7 +177,7 @@
             // btnEncode
             // 
             this.btnEncode.BackColor = System.Drawing.Color.White;
-            this.btnEncode.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.barcodeSearch;
+            this.btnEncode.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEncode.BackgroundImage")));
             this.btnEncode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnEncode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
             this.btnEncode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -252,10 +254,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(13, 120);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label2.Location = new System.Drawing.Point(9, 120);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(109, 22);
+            this.label2.Size = new System.Drawing.Size(114, 25);
             this.label2.TabIndex = 10;
             this.label2.Text = "QUANTITY";
             // 
@@ -265,10 +267,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(12, 68);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label5.Location = new System.Drawing.Point(8, 68);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(158, 22);
+            this.label5.Size = new System.Drawing.Size(173, 25);
             this.label5.TabIndex = 9;
             this.label5.Text = "PRODUCT CODE";
             // 
@@ -289,10 +291,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(12, 18);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label3.Location = new System.Drawing.Point(8, 18);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 22);
+            this.label3.Size = new System.Drawing.Size(97, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "ORDER #";
             // 
@@ -330,9 +332,17 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Total Amount";
             // 
+            // poSlbl2
+            // 
+            this.poSlbl2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.poSlbl2.Location = new System.Drawing.Point(13, 104);
+            this.poSlbl2.Name = "poSlbl2";
+            this.poSlbl2.Size = new System.Drawing.Size(435, 46);
+            this.poSlbl2.TabIndex = 13;
+            // 
             // sidePanel
             // 
-            this.sidePanel.BackColor = System.Drawing.Color.White;
+            this.sidePanel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.sidePanel.Controls.Add(this.panel4);
             this.sidePanel.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.sidePanel.Location = new System.Drawing.Point(0, 519);
@@ -343,8 +353,8 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.panel4.Controls.Add(this.label7);
             this.panel4.Controls.Add(this.pictureBox4);
             this.panel4.Controls.Add(this.keyButton1);
@@ -366,7 +376,8 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.label7.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.label7.Location = new System.Drawing.Point(129, 19);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(48, 18);
@@ -375,77 +386,13 @@
             // 
             // pictureBox4
             // 
+            this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox4.Location = new System.Drawing.Point(685, 9);
+            this.pictureBox4.Location = new System.Drawing.Point(634, 6);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(60, 42);
+            this.pictureBox4.Size = new System.Drawing.Size(54, 45);
             this.pictureBox4.TabIndex = 27;
             this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(65, 8);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(60, 42);
-            this.pictureBox1.TabIndex = 21;
-            this.pictureBox1.TabStop = false;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(323, 19);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(78, 18);
-            this.label8.TabIndex = 22;
-            this.label8.Text = "Payment";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(751, 20);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(111, 18);
-            this.label10.TabIndex = 26;
-            this.label10.Text = "Void Product";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(257, 8);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(60, 42);
-            this.pictureBox2.TabIndex = 23;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(478, 8);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(60, 42);
-            this.pictureBox3.TabIndex = 25;
-            this.pictureBox3.TabStop = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(544, 20);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 18);
-            this.label9.TabIndex = 24;
-            this.label9.Text = "Reset";
-            // 
-            // poSlbl2
-            // 
-            this.poSlbl2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.poSlbl2.Location = new System.Drawing.Point(13, 104);
-            this.poSlbl2.Name = "poSlbl2";
-            this.poSlbl2.Size = new System.Drawing.Size(435, 46);
-            this.poSlbl2.TabIndex = 13;
             // 
             // keyButton1
             // 
@@ -454,12 +401,22 @@
             this.keyButton1.BackColor = System.Drawing.Color.Transparent;
             this.keyButton1.dbController = null;
             this.keyButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton1.Location = new System.Drawing.Point(3, 5);
+            this.keyButton1.Location = new System.Drawing.Point(66, 6);
             this.keyButton1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.keyButton1.masterController = null;
             this.keyButton1.Name = "keyButton1";
             this.keyButton1.Size = new System.Drawing.Size(61, 50);
             this.keyButton1.TabIndex = 16;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(8, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(54, 45);
+            this.pictureBox1.TabIndex = 21;
+            this.pictureBox1.TabStop = false;
             // 
             // keyButton4
             // 
@@ -468,12 +425,23 @@
             this.keyButton4.BackColor = System.Drawing.Color.Transparent;
             this.keyButton4.dbController = null;
             this.keyButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton4.Location = new System.Drawing.Point(621, 7);
+            this.keyButton4.Location = new System.Drawing.Point(693, 4);
             this.keyButton4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.keyButton4.masterController = null;
             this.keyButton4.Name = "keyButton4";
             this.keyButton4.Size = new System.Drawing.Size(61, 50);
             this.keyButton4.TabIndex = 19;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.label8.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label8.Location = new System.Drawing.Point(323, 19);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(78, 18);
+            this.label8.TabIndex = 22;
+            this.label8.Text = "Payment";
             // 
             // keyButton3
             // 
@@ -482,12 +450,33 @@
             this.keyButton3.BackColor = System.Drawing.Color.Transparent;
             this.keyButton3.dbController = null;
             this.keyButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton3.Location = new System.Drawing.Point(416, 6);
+            this.keyButton3.Location = new System.Drawing.Point(479, 6);
             this.keyButton3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.keyButton3.masterController = null;
             this.keyButton3.Name = "keyButton3";
             this.keyButton3.Size = new System.Drawing.Size(61, 50);
             this.keyButton3.TabIndex = 18;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.label10.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label10.Location = new System.Drawing.Point(751, 20);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(111, 18);
+            this.label10.TabIndex = 26;
+            this.label10.Text = "Void Product";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.payment;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(201, 6);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(54, 45);
+            this.pictureBox2.TabIndex = 23;
+            this.pictureBox2.TabStop = false;
             // 
             // keyButton2
             // 
@@ -496,12 +485,33 @@
             this.keyButton2.BackColor = System.Drawing.Color.Transparent;
             this.keyButton2.dbController = null;
             this.keyButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton2.Location = new System.Drawing.Point(196, 5);
+            this.keyButton2.Location = new System.Drawing.Point(260, 6);
             this.keyButton2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.keyButton2.masterController = null;
             this.keyButton2.Name = "keyButton2";
             this.keyButton2.Size = new System.Drawing.Size(61, 50);
             this.keyButton2.TabIndex = 17;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Refresh;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(419, 7);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(54, 45);
+            this.pictureBox3.TabIndex = 25;
+            this.pictureBox3.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.label9.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label9.Location = new System.Drawing.Point(544, 20);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 18);
+            this.label9.TabIndex = 24;
+            this.label9.Text = "Reset";
             // 
             // OrderPOS
             // 

@@ -30,9 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(modalChangePass));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnChangeCancel = new System.Windows.Forms.Button();
-            this.btnChangePass = new System.Windows.Forms.Button();
             this.txtPass2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,9 +42,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lblUser = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnChangeCancel = new System.Windows.Forms.Button();
+            this.btnChangePass = new System.Windows.Forms.Button();
             this.btnSubmit = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -69,6 +69,19 @@
             this.panel1.Size = new System.Drawing.Size(433, 465);
             this.panel1.TabIndex = 0;
             // 
+            // lblTitle
+            // 
+            this.lblTitle.BackColor = System.Drawing.Color.DimGray;
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTitle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(433, 47);
+            this.lblTitle.TabIndex = 20;
+            this.lblTitle.Text = "CHANGE PASSWORD?";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DimGray;
@@ -83,44 +96,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(433, 195);
             this.panel2.TabIndex = 8;
-            // 
-            // btnChangeCancel
-            // 
-            this.btnChangeCancel.AutoSize = true;
-            this.btnChangeCancel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChangeCancel.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.btnChangeCancel.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnChangeCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangeCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnChangeCancel.ForeColor = System.Drawing.Color.White;
-            this.btnChangeCancel.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Cancel_2;
-            this.btnChangeCancel.Location = new System.Drawing.Point(258, 127);
-            this.btnChangeCancel.Name = "btnChangeCancel";
-            this.btnChangeCancel.Size = new System.Drawing.Size(120, 58);
-            this.btnChangeCancel.TabIndex = 12;
-            this.btnChangeCancel.Text = "Cancel";
-            this.btnChangeCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnChangeCancel.UseVisualStyleBackColor = true;
-            this.btnChangeCancel.Click += new System.EventHandler(this.btnChangeCancel_Click);
-            // 
-            // btnChangePass
-            // 
-            this.btnChangePass.AutoSize = true;
-            this.btnChangePass.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnChangePass.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
-            this.btnChangePass.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnChangePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnChangePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.btnChangePass.ForeColor = System.Drawing.Color.White;
-            this.btnChangePass.Image = ((System.Drawing.Image)(resources.GetObject("btnChangePass.Image")));
-            this.btnChangePass.Location = new System.Drawing.Point(52, 127);
-            this.btnChangePass.Name = "btnChangePass";
-            this.btnChangePass.Size = new System.Drawing.Size(200, 58);
-            this.btnChangePass.TabIndex = 11;
-            this.btnChangePass.Text = "Change Password";
-            this.btnChangePass.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnChangePass.UseVisualStyleBackColor = true;
-            this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
             // 
             // txtPass2
             // 
@@ -222,6 +197,44 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "USER:";
             // 
+            // btnChangeCancel
+            // 
+            this.btnChangeCancel.AutoSize = true;
+            this.btnChangeCancel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangeCancel.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btnChangeCancel.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnChangeCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangeCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnChangeCancel.ForeColor = System.Drawing.Color.White;
+            this.btnChangeCancel.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Cancel_2;
+            this.btnChangeCancel.Location = new System.Drawing.Point(258, 127);
+            this.btnChangeCancel.Name = "btnChangeCancel";
+            this.btnChangeCancel.Size = new System.Drawing.Size(120, 58);
+            this.btnChangeCancel.TabIndex = 12;
+            this.btnChangeCancel.Text = "Cancel";
+            this.btnChangeCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnChangeCancel.UseVisualStyleBackColor = true;
+            this.btnChangeCancel.Click += new System.EventHandler(this.btnChangeCancel_Click);
+            // 
+            // btnChangePass
+            // 
+            this.btnChangePass.AutoSize = true;
+            this.btnChangePass.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnChangePass.FlatAppearance.BorderColor = System.Drawing.Color.DimGray;
+            this.btnChangePass.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnChangePass.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnChangePass.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnChangePass.ForeColor = System.Drawing.Color.White;
+            this.btnChangePass.Image = ((System.Drawing.Image)(resources.GetObject("btnChangePass.Image")));
+            this.btnChangePass.Location = new System.Drawing.Point(52, 127);
+            this.btnChangePass.Name = "btnChangePass";
+            this.btnChangePass.Size = new System.Drawing.Size(200, 58);
+            this.btnChangePass.TabIndex = 11;
+            this.btnChangePass.Text = "Change Password";
+            this.btnChangePass.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnChangePass.UseVisualStyleBackColor = true;
+            this.btnChangePass.Click += new System.EventHandler(this.btnChangePass_Click);
+            // 
             // btnSubmit
             // 
             this.btnSubmit.AutoSize = true;
@@ -257,19 +270,6 @@
             this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.BackColor = System.Drawing.Color.DimGray;
-            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(0, 0);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(433, 47);
-            this.lblTitle.TabIndex = 20;
-            this.lblTitle.Text = "CHANGE PASSWORD?";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // modalChangePass
             // 

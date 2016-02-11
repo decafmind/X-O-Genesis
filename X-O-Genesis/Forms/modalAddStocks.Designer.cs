@@ -36,9 +36,9 @@
             this.txtStocks = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.lblNewStocks = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.lblTitle = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label2
@@ -119,6 +119,19 @@
             this.lblNewStocks.TabIndex = 8;
             this.lblNewStocks.Text = "New stocks:";
             // 
+            // lblTitle
+            // 
+            this.lblTitle.BackColor = System.Drawing.Color.DimGray;
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTitle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(347, 47);
+            this.lblTitle.TabIndex = 20;
+            this.lblTitle.Text = "BARCODE";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // btnOK
             // 
             this.btnOK.AutoSize = true;
@@ -148,25 +161,12 @@
             this.btnCancel.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Cancel_2;
             this.btnCancel.Location = new System.Drawing.Point(194, 271);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(120, 58);
+            this.btnCancel.Size = new System.Drawing.Size(135, 58);
             this.btnCancel.TabIndex = 10;
-            this.btnCancel.Text = "Cancel";
+            this.btnCancel.Text = "CANCEL";
             this.btnCancel.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.BackColor = System.Drawing.Color.DimGray;
-            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(0, 0);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(347, 47);
-            this.lblTitle.TabIndex = 20;
-            this.lblTitle.Text = "BARCODE";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // modalAddStocks
             // 

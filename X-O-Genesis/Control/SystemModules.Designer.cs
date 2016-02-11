@@ -28,33 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnUpdate = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.advanceBorder = new System.Windows.Forms.Panel();
-            this.pbAdvance = new System.Windows.Forms.PictureBox();
             this.simpleBorder = new System.Windows.Forms.Panel();
-            this.pbSimple = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.centerPanel = new System.Windows.Forms.Panel();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.pbAdvance = new System.Windows.Forms.PictureBox();
+            this.pbSimple = new System.Windows.Forms.PictureBox();
             this.advanceBorder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAdvance)).BeginInit();
             this.simpleBorder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSimple)).BeginInit();
             this.centerPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAdvance)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSimple)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnUpdate
-            // 
-            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnUpdate.Location = new System.Drawing.Point(266, 346);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(203, 45);
-            this.btnUpdate.TabIndex = 3;
-            this.btnUpdate.Text = "Apply System Update";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // label3
             // 
@@ -85,18 +74,6 @@
             this.advanceBorder.Size = new System.Drawing.Size(250, 200);
             this.advanceBorder.TabIndex = 5;
             // 
-            // pbAdvance
-            // 
-            this.pbAdvance.BackColor = System.Drawing.Color.Silver;
-            this.pbAdvance.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbAdvance.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbAdvance.Location = new System.Drawing.Point(10, 10);
-            this.pbAdvance.Name = "pbAdvance";
-            this.pbAdvance.Size = new System.Drawing.Size(230, 180);
-            this.pbAdvance.TabIndex = 0;
-            this.pbAdvance.TabStop = false;
-            this.pbAdvance.Click += new System.EventHandler(this.pbAdvance_Click);
-            // 
             // simpleBorder
             // 
             this.simpleBorder.Controls.Add(this.pbSimple);
@@ -106,22 +83,12 @@
             this.simpleBorder.Size = new System.Drawing.Size(250, 200);
             this.simpleBorder.TabIndex = 4;
             // 
-            // pbSimple
-            // 
-            this.pbSimple.BackColor = System.Drawing.Color.Silver;
-            this.pbSimple.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbSimple.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbSimple.Location = new System.Drawing.Point(10, 10);
-            this.pbSimple.Name = "pbSimple";
-            this.pbSimple.Size = new System.Drawing.Size(230, 180);
-            this.pbSimple.TabIndex = 2;
-            this.pbSimple.TabStop = false;
-            this.pbSimple.Click += new System.EventHandler(this.pbSimple_Click);
-            // 
             // label1
             // 
+            this.label1.BackColor = System.Drawing.Color.DimGray;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F);
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(0, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(877, 63);
@@ -139,7 +106,7 @@
             // 
             // centerPanel
             // 
-            this.centerPanel.BackColor = System.Drawing.Color.White;
+            this.centerPanel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.centerPanel.Controls.Add(this.label3);
             this.centerPanel.Controls.Add(this.btnUpdate);
             this.centerPanel.Controls.Add(this.label2);
@@ -152,10 +119,56 @@
             this.centerPanel.SizeChanged += new System.EventHandler(this.centerPanel_Resize);
             this.centerPanel.Resize += new System.EventHandler(this.centerPanel_Resize);
             // 
+            // btnUpdate
+            // 
+            this.btnUpdate.AutoSize = true;
+            this.btnUpdate.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUpdate.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUpdate.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.btnUpdate.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Ok;
+            this.btnUpdate.Location = new System.Drawing.Point(266, 307);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(224, 82);
+            this.btnUpdate.TabIndex = 3;
+            this.btnUpdate.Text = "Apply System Update";
+            this.btnUpdate.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnUpdate.UseVisualStyleBackColor = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // pbAdvance
+            // 
+            this.pbAdvance.BackColor = System.Drawing.Color.Transparent;
+            this.pbAdvance.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbAdvance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbAdvance.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Advance;
+            this.pbAdvance.Location = new System.Drawing.Point(10, 10);
+            this.pbAdvance.Name = "pbAdvance";
+            this.pbAdvance.Size = new System.Drawing.Size(230, 180);
+            this.pbAdvance.TabIndex = 0;
+            this.pbAdvance.TabStop = false;
+            this.pbAdvance.Click += new System.EventHandler(this.pbAdvance_Click);
+            // 
+            // pbSimple
+            // 
+            this.pbSimple.BackColor = System.Drawing.Color.Transparent;
+            this.pbSimple.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbSimple.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbSimple.Image = global::PetvetPOS_Inventory_System.Properties.Resources.simple2;
+            this.pbSimple.Location = new System.Drawing.Point(10, 10);
+            this.pbSimple.Name = "pbSimple";
+            this.pbSimple.Size = new System.Drawing.Size(230, 180);
+            this.pbSimple.TabIndex = 2;
+            this.pbSimple.TabStop = false;
+            this.pbSimple.Click += new System.EventHandler(this.pbSimple_Click);
+            // 
             // SystemModules
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.centerPanel);
@@ -164,11 +177,11 @@
             this.Load += new System.EventHandler(this.SystemModules_Load);
             this.SizeChanged += new System.EventHandler(this.SystemModules_SizeChanged);
             this.advanceBorder.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbAdvance)).EndInit();
             this.simpleBorder.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbSimple)).EndInit();
             this.centerPanel.ResumeLayout(false);
             this.centerPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAdvance)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbSimple)).EndInit();
             this.ResumeLayout(false);
 
         }
