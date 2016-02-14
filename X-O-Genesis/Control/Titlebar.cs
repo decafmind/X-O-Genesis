@@ -70,6 +70,7 @@ namespace PetvetPOS_Inventory_System
         {
             panelTitle.BackColor = Properties.Settings.Default.headerColor;
             panel4.BackColor = Properties.Settings.Default.headerColor;
+            panelImage.BackColor = Properties.Settings.Default.iconColor;
             panelBackIcon.BackColor = Properties.Settings.Default.iconColor;
         }
 

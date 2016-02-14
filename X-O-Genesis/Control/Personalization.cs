@@ -113,6 +113,21 @@ namespace PetvetPOS_Inventory_System
         private void btnSave_Click(object sender, EventArgs e)
         {
             theme.Save(masterController);
+            string message = string.Empty;
+            if (theme.HeaderColor != null && theme.IconColor != null && theme.SideBarColor != null)
+            {
+                message = "Theme has been changed.";
+            }
+            else{
+                if (theme.HeaderColor != null)
+                    message = "Header color has been changed.";
+                else if (theme.SideBarColor != null)
+                    message = "Sidebar color has been changed.";
+                else
+                    message = "Icon color has been changed.";
+            }
+            MessageBanner banner = new MessageBanner(message);
+            banner.Show();
         }
     }
 }
