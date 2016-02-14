@@ -28,6 +28,7 @@ namespace PetvetPOS_Inventory_System
         decimal _vatableSales;
         decimal _vat;
         decimal _scpwd;
+        int currentQty = 0;
 
         private const int QTY_INDEX = 0;
         private const int DESCRIPTION_INDEX = 1;
@@ -145,37 +146,46 @@ namespace PetvetPOS_Inventory_System
         string barcode;
         public bool queryProduct()
         {
-            bool success = false;
+            bool success = false;          
             try
             {
                 barcode = txtEncode.Text;
+                currentProduct = dbController.getProductFromBarcode(barcode);
                 int quantity = 1;
-
+                int stock = dbController.getCurrentStockCountFromBarCode(currentProduct);
+                 
                 if (string.IsNullOrWhiteSpace(txtQuantity.Text))
                     MessageBox.Show("Please enter quantity");
                 else
-                    quantity = int.Parse(txtQuantity.Text);
-
-                currentProduct = dbController.getProductFromBarcode(barcode);
-                int stock = dbController.getCurrentStockCountFromBarCode(currentProduct);
-                if (stock >= quantity)
                 {
-                    if (!string.IsNullOrWhiteSpace(currentProduct.Barcode))
+                    quantity = int.Parse(txtQuantity.Text);
+                    if (stock >= currentQty)
                     {
-                        decimal totalPrice = currentProduct.UnitPrice * quantity;
-                        lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, quantity, currentProduct.UnitPrice);
-                        success = true;
-                        addRowInDatagrid(quantity);
+                        if (stock >= (currentQty + quantity))
+                        {
+                            if (!string.IsNullOrWhiteSpace(currentProduct.Barcode))
+                            {
+                                decimal totalPrice = currentProduct.UnitPrice * quantity;
+                                lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, quantity, currentProduct.UnitPrice);
+                                success = true;
+                                addRowInDatagrid(quantity);
+                                currentQty += quantity;
+                            }
+                            else
+                            {
+                                lblPOSmsg.Text = "Item not found";
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Out of stock. Only " + stock + " left");
+                        }
                     }
                     else
                     {
-                        lblPOSmsg.Text = "Item not found";
+                        MessageBox.Show("Out of stock. Only " + stock + " left");
                     }
-                }
-                else
-                {
-                    MessageBox.Show("Out of stock. Only " + stock + " left");
-                }
+                }                                                  
 
             }
             catch (Exception) { lblPOSmsg.Text = "Item not found";  }
