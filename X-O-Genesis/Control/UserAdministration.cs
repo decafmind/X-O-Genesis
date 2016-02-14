@@ -30,7 +30,6 @@ namespace PetvetPOS_Inventory_System
         Dictionary<string, Employee> userEmployeeMap = new Dictionary<string, Employee>();
         public List<string> usernames = new List<string>();
 
-
         public void changedTab(int index)
         {
             tabControl1.SelectedIndex = index;
@@ -108,10 +107,6 @@ namespace PetvetPOS_Inventory_System
             dbController.InsertEntity += dbController_InsertEntity;
             dbController.UpdateEntity += dbController_UpdateEntity;
             dbController.DeleteEntity += dbController_DeleteEntity;
-
-         //   tabControl1.SelectedIndex = 1;
-
-         //   timer1.Start();
         }
         
 
@@ -183,7 +178,14 @@ namespace PetvetPOS_Inventory_System
   
         public Menu accessMenuName
         {
-            get { return Menu.User; }
+            get {
+                if (tabControl1.SelectedTab == tabPage1)
+                    return Menu.User;
+                else if (tabControl1.SelectedTab == tabPage3)
+                    return Menu.LoginTrail;
+                else
+                    return Menu.AuditTrail;
+            }
         }
 
         public Bitmap accessImage
@@ -257,6 +259,18 @@ namespace PetvetPOS_Inventory_System
             {
                 keyButton3.updateButton();
                 addUser();
+            }
+            else if (e.KeyCode == Keys.Escape)
+            {
+                if (addUserPane != null)
+                {
+                    DialogResult result = MessageBox.Show("Discard Changes", "You're leaving .. ", MessageBoxButtons.YesNo);
+                    if (result == DialogResult.Yes)
+                    {
+                        viewUser();
+                    }
+                }
+
             }
         }
 

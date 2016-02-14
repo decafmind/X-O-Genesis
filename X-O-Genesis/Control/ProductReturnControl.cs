@@ -44,6 +44,7 @@ namespace PetvetPOS_Inventory_System
             }
             dataGridView1.DataSource = dt;
         }
+
         private void listSupplier()
         {
             cbSupplier.Items.Clear();
@@ -66,7 +67,7 @@ namespace PetvetPOS_Inventory_System
         {
             get
             {
-                return Menu.Settings;
+                return Menu.Product_Return;
             }
         }
 

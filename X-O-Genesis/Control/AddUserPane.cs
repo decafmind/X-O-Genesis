@@ -291,11 +291,14 @@ namespace PetvetPOS_Inventory_System
                 }
                 this.disappear();
             }else{
-                MessageBanner banner1 = new MessageBanner("Please fill up all the fields and try again.", 2000);
-                banner1.BackColor = System.Drawing.Color.DarkRed;
-                banner1.ForeColor = System.Drawing.Color.White;
-                banner1.Opacity = 1;
-                banner1.Show();
+                if (userAdministration.mode != UserAdminMode.View_user)
+                {
+                    MessageBanner banner1 = new MessageBanner("Please fill up all the fields and try again.", 2000);
+                    banner1.BackColor = System.Drawing.Color.DarkRed;
+                    banner1.ForeColor = System.Drawing.Color.White;
+                    banner1.Opacity = 1;
+                    banner1.Show();
+                }
             }
          
         }

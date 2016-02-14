@@ -26,5 +26,6 @@ namespace PetvetPOS_Inventory_System
         Company_Profile,
         Supplier,
         Modules,
+        Product_Return,
     }
 }

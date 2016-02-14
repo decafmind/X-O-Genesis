@@ -47,7 +47,7 @@ namespace PetvetPOS_Inventory_System
             : base(masterController)
         {
             InitializeComponent();
-
+            this.masterController.EmployeeLogin += masterController_EmployeeLogin;
             this.dbController = masterController.DataBaseController;
             sliderPane = productSliderPane1;
             sliderPane.accessMasterController = masterController;
@@ -83,6 +83,15 @@ namespace PetvetPOS_Inventory_System
             dgInventory.DefaultCellStyle.ApplyStyle(normal);
         }
 
+        void masterController_EmployeeLogin(object sender, EmployeeArgs e)
+        {
+            if (masterController.LoginEmployee.Position != UserLevel.ADMIN)
+            {
+                updateKeyPanel.Visible = false;
+                addKeyPanel.Visible = false;
+            }
+        }
+
 
         public void initializePage()
         {
@@ -98,6 +107,7 @@ namespace PetvetPOS_Inventory_System
             txtSearch.Focus();
             cbCategory.Items.AddRange(dbController.categoryMapper.getListOfCategory().ToArray());
             cbCategory.Items.Add("ALL");
+
         }
 
         public void finalizePage()
@@ -140,8 +150,6 @@ namespace PetvetPOS_Inventory_System
             MessageBanner banner = new MessageBanner(message, 2000);
             banner.Show();
             dbController.insertAuditTrail(action);
-
-            
         }
 
         void highlighRowOfDatagridView(params string[] args)
