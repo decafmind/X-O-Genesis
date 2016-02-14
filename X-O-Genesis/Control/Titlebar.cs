@@ -199,6 +199,9 @@ namespace PetvetPOS_Inventory_System
                 case Menu.System_Operation:
                     titlename = "System Operation";
                     break;
+                case Menu.Company_Profile:
+                    title = "Company Profile";
+                    break;
                 default:
                     titlename = menuname.ToString();
                     break;
