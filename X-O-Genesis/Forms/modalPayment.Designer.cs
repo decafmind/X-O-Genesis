@@ -42,15 +42,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 23);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(35, 59);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
+            this.label1.Size = new System.Drawing.Size(100, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cash tender:";
             // 
             // txtCash
             // 
-            this.txtCash.Location = new System.Drawing.Point(129, 20);
+            this.txtCash.Location = new System.Drawing.Point(166, 57);
             this.txtCash.Name = "txtCash";
             this.txtCash.Size = new System.Drawing.Size(171, 20);
             this.txtCash.TabIndex = 1;
@@ -59,7 +60,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(35, 59);
+            this.label2.Location = new System.Drawing.Point(35, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(126, 20);
             this.label2.TabIndex = 2;
@@ -67,7 +68,7 @@
             // 
             // txtCustomerName
             // 
-            this.txtCustomerName.Location = new System.Drawing.Point(167, 61);
+            this.txtCustomerName.Location = new System.Drawing.Point(167, 91);
             this.txtCustomerName.Name = "txtCustomerName";
             this.txtCustomerName.Size = new System.Drawing.Size(171, 20);
             this.txtCustomerName.TabIndex = 3;
@@ -76,7 +77,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(35, 94);
+            this.label3.Location = new System.Drawing.Point(35, 124);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 20);
             this.label3.TabIndex = 4;
@@ -84,7 +85,7 @@
             // 
             // txtCustomerAddress
             // 
-            this.txtCustomerAddress.Location = new System.Drawing.Point(167, 96);
+            this.txtCustomerAddress.Location = new System.Drawing.Point(167, 126);
             this.txtCustomerAddress.Multiline = true;
             this.txtCustomerAddress.Name = "txtCustomerAddress";
             this.txtCustomerAddress.Size = new System.Drawing.Size(171, 49);
@@ -99,7 +100,7 @@
             this.btnConfirm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConfirm.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnConfirm.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Ok;
-            this.btnConfirm.Location = new System.Drawing.Point(39, 169);
+            this.btnConfirm.Location = new System.Drawing.Point(39, 193);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(145, 58);
             this.btnConfirm.TabIndex = 6;
@@ -118,7 +119,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnCancel.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Cancel_2;
-            this.btnCancel.Location = new System.Drawing.Point(220, 169);
+            this.btnCancel.Location = new System.Drawing.Point(220, 193);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(135, 58);
             this.btnCancel.TabIndex = 7;
@@ -147,7 +148,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.CancelButton = this.btnCancel;
-            this.ClientSize = new System.Drawing.Size(388, 245);
+            this.ClientSize = new System.Drawing.Size(388, 266);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnConfirm);
@@ -159,6 +160,7 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "modalPayment";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "modalPayment";
             this.Load += new System.EventHandler(this.modalPayment_Load);
             this.ResumeLayout(false);

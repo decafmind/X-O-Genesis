@@ -52,6 +52,8 @@ namespace PetvetPOS_Inventory_System
         {
             if (e.KeyCode == Keys.F1)
                 viewSupplier();
+            else if (e.Shift && e.KeyCode == Keys.F2)
+                removeSupplier();
             else if (e.KeyCode == Keys.F2)
                 updateSupplier();
             else if (e.KeyCode == Keys.F3)
@@ -104,7 +106,12 @@ namespace PetvetPOS_Inventory_System
 
         private void updateSupplier()
         {
-
+            if (!string.IsNullOrEmpty(listBox1.Text))
+            {
+                UpdateSupplier updateSupplier = new UpdateSupplier(masterController, panelCanvas);
+                Supplier supplier = dbController.supplierMapper.getSupplierByName(listBox1.Text);
+                updateSupplier.mapSupplier(supplier);
+            }
         }
 
         private void addSupplier()
@@ -116,12 +123,14 @@ namespace PetvetPOS_Inventory_System
         void add_SupplierAdded(object sender, EventArgs e)
         {
             listSupplier();
-           // viewSupplier();
         }
 
         private void removeSupplier()
         {
-
+            int id = dbController.supplierMapper.getSupplierIdByName(listBox1.Text);
+            if (id != 0)
+                dbController.supplierMapper.removeSupplier(id);
+            listSupplier();
         }
     }
 }

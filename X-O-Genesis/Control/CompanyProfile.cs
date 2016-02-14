@@ -82,6 +82,9 @@ namespace PetvetPOS_Inventory_System
 
                 if (dbController.updateCompanyProfile(companyProfile))
                 {
+                    SettingArgs s = new SettingArgs(Settings.COMPANY_PROFILE);
+                    masterController.OnSettingsChanged(s);
+
                     banner = new MessageBanner("Successful updating company profile.", 2000);
                     banner.Opacity = 1;
                     banner.BackColor = System.Drawing.Color.Green;
@@ -127,8 +130,6 @@ namespace PetvetPOS_Inventory_System
             if (File.Exists(lblPath.Text))
                pbCompanyLogo.Image = Renderer.resizeImage(Image.FromFile(lblPath.Text) as Bitmap, pbCompanyLogo.Width, pbCompanyLogo.Height) as Image;
             
-            //For future transaction purposes
-            companyProfile.Tax = Convert.ToDouble(txtTax.Text);
         }
 
         public void initializePage()

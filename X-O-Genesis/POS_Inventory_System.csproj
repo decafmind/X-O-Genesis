@@ -255,6 +255,12 @@
     <Compile Include="Control\SystemSettings.Designer.cs">
       <DependentUpon>SystemSettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\UpdateSupplier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\UpdateSupplier.Designer.cs">
+      <DependentUpon>UpdateSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="Domain\Client.cs" />
     <Compile Include="Domain\Constants.cs" />
     <Compile Include="Domain\Controller\CompanyProf.cs" />
@@ -605,6 +611,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\SystemSettings.resx">
       <DependentUpon>SystemSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Control\UpdateSupplier.resx">
+      <DependentUpon>UpdateSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\modalAddStocks.resx">
       <DependentUpon>modalAddStocks.cs</DependentUpon>

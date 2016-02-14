@@ -54,12 +54,16 @@ namespace PetvetPOS_Inventory_System
             whenNotLogin();
             initColors();
 
-            companyLogoImagePath = Properties.Settings.Default.CompanyLogoImagPath;
-            if (File.Exists(companyLogoImagePath))
-                companyLogo = Renderer.resizeImage(Image.FromFile(companyLogoImagePath) as Bitmap, panelImage.Width, panelImage.Height) as Image;
+            loadCompanyLogoImagePath();
 
             // Avoid flickering
             MyExtension.Graphics_.avoidPanelFlickering(panelImage);
+        }
+
+        void loadCompanyLogoImagePath(){
+            companyLogoImagePath = Properties.Settings.Default.CompanyLogoImagPath;
+            if (File.Exists(companyLogoImagePath))
+                companyLogo = Renderer.resizeImage(Image.FromFile(companyLogoImagePath) as Bitmap, panelImage.Width, panelImage.Height) as Image;
         }
 
         void initColors()
@@ -74,6 +78,9 @@ namespace PetvetPOS_Inventory_System
             if (e.settings == Settings.PERSONALIZATION)
             {
                 initColors();
+            } else if (e.settings == Settings.COMPANY_PROFILE){
+                loadCompanyLogoImagePath();
+                panelImage.Invalidate();
             }
         }
 

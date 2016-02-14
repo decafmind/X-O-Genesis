@@ -83,7 +83,7 @@ namespace PetvetPOS_Inventory_System
 
         private void pbSimple_Click(object sender, EventArgs e)
         {
-            simpleBorder.BackColor = SystemColors.menuLightBlue;
+            simpleBorder.BackColor = SystemColors.jetBlackTitleBar;
             advanceBorder.BackColor = Color.White;
             isInSimpleMode = true;
         }
@@ -91,7 +91,7 @@ namespace PetvetPOS_Inventory_System
         private void pbAdvance_Click(object sender, EventArgs e)
         {
             simpleBorder.BackColor = Color.White;
-            advanceBorder.BackColor = SystemColors.menuLightBlue;
+            advanceBorder.BackColor = SystemColors.jetBlackTitleBar;
             isInSimpleMode = false;
         }
 

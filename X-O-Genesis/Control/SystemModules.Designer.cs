@@ -31,18 +31,18 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.advanceBorder = new System.Windows.Forms.Panel();
+            this.pbAdvance = new System.Windows.Forms.PictureBox();
             this.simpleBorder = new System.Windows.Forms.Panel();
+            this.pbSimple = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.centerPanel = new System.Windows.Forms.Panel();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.pbAdvance = new System.Windows.Forms.PictureBox();
-            this.pbSimple = new System.Windows.Forms.PictureBox();
             this.advanceBorder.SuspendLayout();
-            this.simpleBorder.SuspendLayout();
-            this.centerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdvance)).BeginInit();
+            this.simpleBorder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbSimple)).BeginInit();
+            this.centerPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -70,18 +70,44 @@
             this.advanceBorder.Controls.Add(this.pbAdvance);
             this.advanceBorder.Location = new System.Drawing.Point(404, 48);
             this.advanceBorder.Name = "advanceBorder";
-            this.advanceBorder.Padding = new System.Windows.Forms.Padding(10);
+            this.advanceBorder.Padding = new System.Windows.Forms.Padding(5);
             this.advanceBorder.Size = new System.Drawing.Size(250, 200);
             this.advanceBorder.TabIndex = 5;
+            // 
+            // pbAdvance
+            // 
+            this.pbAdvance.BackColor = System.Drawing.Color.Transparent;
+            this.pbAdvance.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbAdvance.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbAdvance.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Advance;
+            this.pbAdvance.Location = new System.Drawing.Point(5, 5);
+            this.pbAdvance.Name = "pbAdvance";
+            this.pbAdvance.Size = new System.Drawing.Size(240, 190);
+            this.pbAdvance.TabIndex = 0;
+            this.pbAdvance.TabStop = false;
+            this.pbAdvance.Click += new System.EventHandler(this.pbAdvance_Click);
             // 
             // simpleBorder
             // 
             this.simpleBorder.Controls.Add(this.pbSimple);
             this.simpleBorder.Location = new System.Drawing.Point(75, 48);
             this.simpleBorder.Name = "simpleBorder";
-            this.simpleBorder.Padding = new System.Windows.Forms.Padding(10);
+            this.simpleBorder.Padding = new System.Windows.Forms.Padding(5);
             this.simpleBorder.Size = new System.Drawing.Size(250, 200);
             this.simpleBorder.TabIndex = 4;
+            // 
+            // pbSimple
+            // 
+            this.pbSimple.BackColor = System.Drawing.Color.Transparent;
+            this.pbSimple.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pbSimple.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pbSimple.Image = global::PetvetPOS_Inventory_System.Properties.Resources.simple2;
+            this.pbSimple.Location = new System.Drawing.Point(5, 5);
+            this.pbSimple.Name = "pbSimple";
+            this.pbSimple.Size = new System.Drawing.Size(240, 190);
+            this.pbSimple.TabIndex = 2;
+            this.pbSimple.TabStop = false;
+            this.pbSimple.Click += new System.EventHandler(this.pbSimple_Click);
             // 
             // label1
             // 
@@ -138,32 +164,6 @@
             this.btnUpdate.UseVisualStyleBackColor = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
-            // pbAdvance
-            // 
-            this.pbAdvance.BackColor = System.Drawing.Color.Transparent;
-            this.pbAdvance.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbAdvance.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbAdvance.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Advance;
-            this.pbAdvance.Location = new System.Drawing.Point(10, 10);
-            this.pbAdvance.Name = "pbAdvance";
-            this.pbAdvance.Size = new System.Drawing.Size(230, 180);
-            this.pbAdvance.TabIndex = 0;
-            this.pbAdvance.TabStop = false;
-            this.pbAdvance.Click += new System.EventHandler(this.pbAdvance_Click);
-            // 
-            // pbSimple
-            // 
-            this.pbSimple.BackColor = System.Drawing.Color.Transparent;
-            this.pbSimple.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbSimple.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pbSimple.Image = global::PetvetPOS_Inventory_System.Properties.Resources.simple2;
-            this.pbSimple.Location = new System.Drawing.Point(10, 10);
-            this.pbSimple.Name = "pbSimple";
-            this.pbSimple.Size = new System.Drawing.Size(230, 180);
-            this.pbSimple.TabIndex = 2;
-            this.pbSimple.TabStop = false;
-            this.pbSimple.Click += new System.EventHandler(this.pbSimple_Click);
-            // 
             // SystemModules
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -177,11 +177,11 @@
             this.Load += new System.EventHandler(this.SystemModules_Load);
             this.SizeChanged += new System.EventHandler(this.SystemModules_SizeChanged);
             this.advanceBorder.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbAdvance)).EndInit();
             this.simpleBorder.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pbSimple)).EndInit();
             this.centerPanel.ResumeLayout(false);
             this.centerPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAdvance)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbSimple)).EndInit();
             this.ResumeLayout(false);
 
         }
