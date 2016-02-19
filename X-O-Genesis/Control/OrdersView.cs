@@ -20,6 +20,8 @@ namespace PetvetPOS_Inventory_System
         Inventory inventory;
         DataTable dt = new DataTable();
         List<ProductInvoice> carts = new List<ProductInvoice>();
+        List<Discounts> discounts = new List<Discounts>();
+        DiscountList discountListForm;
 
         bool concludeTransaction;
         decimal totalAmount;
@@ -40,8 +42,6 @@ namespace PetvetPOS_Inventory_System
         {
             if (e.KeyCode == Keys.F1){
                 toggleEncoding(true);
-                //concludeTransaction = true;
-                //printInvoice();
                 keyButton1.updateButton();
             }
             else if (e.KeyCode == Keys.F2){ 
@@ -332,7 +332,6 @@ namespace PetvetPOS_Inventory_System
             txtQuantity.Text = "1";
             poSlbl2.Text = "0";
             lblPOSmsg.Text = "No current transaction";
-            chkSCPWD.Checked = false;
             MyExtension.Validation.clearFields(panel1);
         }
 
@@ -341,8 +340,10 @@ namespace PetvetPOS_Inventory_System
             if (dgTransaction.Rows.Count > 0)
             {
                 concludeTransaction = true;
-                conclusion();
-                printInvoice();
+                discountListForm = new DiscountList(dbController);
+                discountListForm.ShowDialog();
+                //conclusion();
+                //printInvoice();
                 resetTransaction();
             }
         }
@@ -354,6 +355,7 @@ namespace PetvetPOS_Inventory_System
             toggleEncoding(false);
           
             inventory = null;
+            
             foreach (ProductInvoice item in carts)
             {
                 dbController.insertProductInvoice(item);

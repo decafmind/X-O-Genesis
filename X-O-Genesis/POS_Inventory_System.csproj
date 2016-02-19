@@ -177,6 +177,12 @@
     <Compile Include="Control\CompanyProfile.Designer.cs">
       <DependentUpon>CompanyProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Control\DiscountsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\DiscountsControl.Designer.cs">
+      <DependentUpon>DiscountsControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Control\FBUser.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -265,6 +271,7 @@
     <Compile Include="Domain\Constants.cs" />
     <Compile Include="Domain\Controller\CompanyProf.cs" />
     <Compile Include="Domain\Controller\Service.cs" />
+    <Compile Include="Domain\Discounts.cs" />
     <Compile Include="Domain\Enums\Settings.cs" />
     <Compile Include="Domain\LoginTrail.cs" />
     <Compile Include="Domain\MenuList\DynamicMenuList.cs" />
@@ -280,6 +287,12 @@
     <Compile Include="Domain\MenuList\InventoryPersonnelMenuList.cs" />
     <Compile Include="Domain\MenuList\StaffMenuList.cs" />
     <Compile Include="Domain\Enums\InventoryMode.cs" />
+    <Compile Include="Forms\DiscountList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DiscountList.Designer.cs">
+      <DependentUpon>DiscountList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\modalAddStocks.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,6 +346,7 @@
     <Compile Include="MyExtension\Path.cs" />
     <Compile Include="ORM\TableGateway\AuditTrailMapper.cs" />
     <Compile Include="ORM\TableGateway\CompanyProfileMapper.cs" />
+    <Compile Include="ORM\TableGateway\DiscountsMapper.cs" />
     <Compile Include="ORM\TableGateway\FallbackMapper.cs" />
     <Compile Include="ORM\TableGateway\ProductInspectionMapper.cs" />
     <Compile Include="ORM\TableGateway\ProductReturnMapper.cs" />
@@ -573,6 +587,9 @@
     <EmbeddedResource Include="Control\CompanyProfile.resx">
       <DependentUpon>CompanyProfile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\DiscountsControl.resx">
+      <DependentUpon>DiscountsControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\FBUser.resx">
       <DependentUpon>FBUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -614,6 +631,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\UpdateSupplier.resx">
       <DependentUpon>UpdateSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DiscountList.resx">
+      <DependentUpon>DiscountList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\modalAddStocks.resx">
       <DependentUpon>modalAddStocks.cs</DependentUpon>

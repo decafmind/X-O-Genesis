@@ -109,5 +109,10 @@ namespace PetvetPOS_Inventory_System
         {
             masterController.changeCurrentContent(new SystemModules(base.masterController));
         }
+
+        private void picTax_Click(object sender, EventArgs e)
+        {
+            masterController.changeCurrentContent(new DiscountsControl(base.masterController));
+        }
     }
 }

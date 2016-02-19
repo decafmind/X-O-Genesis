@@ -56,7 +56,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.chkSCPWD = new System.Windows.Forms.CheckBox();
             this.dgTransaction = new System.Windows.Forms.DataGridView();
             this.panel11.SuspendLayout();
             this.panel10.SuspendLayout();
@@ -407,7 +406,6 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.DimGray;
-            this.panel5.Controls.Add(this.chkSCPWD);
             this.panel5.Controls.Add(this.dgTransaction);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 153);
@@ -415,20 +413,6 @@
             this.panel5.Padding = new System.Windows.Forms.Padding(20);
             this.panel5.Size = new System.Drawing.Size(732, 362);
             this.panel5.TabIndex = 46;
-            // 
-            // chkSCPWD
-            // 
-            this.chkSCPWD.AutoSize = true;
-            this.chkSCPWD.BackColor = System.Drawing.Color.DimGray;
-            this.chkSCPWD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.chkSCPWD.ForeColor = System.Drawing.Color.White;
-            this.chkSCPWD.Location = new System.Drawing.Point(488, 313);
-            this.chkSCPWD.Name = "chkSCPWD";
-            this.chkSCPWD.Padding = new System.Windows.Forms.Padding(5);
-            this.chkSCPWD.Size = new System.Drawing.Size(231, 34);
-            this.chkSCPWD.TabIndex = 47;
-            this.chkSCPWD.Text = "Less: SC/PWD Discount";
-            this.chkSCPWD.UseVisualStyleBackColor = false;
             // 
             // dgTransaction
             // 
@@ -456,7 +440,7 @@
             this.dgTransaction.ReadOnly = true;
             this.dgTransaction.RowHeadersVisible = false;
             this.dgTransaction.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgTransaction.Size = new System.Drawing.Size(692, 265);
+            this.dgTransaction.Size = new System.Drawing.Size(692, 319);
             this.dgTransaction.TabIndex = 46;
             this.dgTransaction.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgTransaction_CellContentClick);
             // 
@@ -483,7 +467,6 @@
             this.panel6.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgTransaction)).EndInit();
             this.ResumeLayout(false);
 
@@ -519,6 +502,5 @@
         private System.Windows.Forms.Panel panel6;
         private KeyButton keyButton1;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.CheckBox chkSCPWD;
     }
 }

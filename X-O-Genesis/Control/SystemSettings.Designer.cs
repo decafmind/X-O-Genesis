@@ -30,19 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SystemSettings));
             this.label3 = new System.Windows.Forms.Label();
-            this.picTax = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.picTax = new System.Windows.Forms.PictureBox();
             this.pbProductReturn = new System.Windows.Forms.PictureBox();
             this.pbPersonalization = new System.Windows.Forms.PictureBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.picCompProf = new System.Windows.Forms.PictureBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.pbBackupDB = new System.Windows.Forms.PictureBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.pbModules = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.lblTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picTax)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProductReturn)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbPersonalization)).BeginInit();
@@ -64,29 +64,17 @@
             this.label3.TabIndex = 21;
             this.label3.Text = "Personalization";
             // 
-            // picTax
-            // 
-            this.picTax.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.picTax.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Banknotes;
-            this.picTax.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picTax.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picTax.Location = new System.Drawing.Point(555, 369);
-            this.picTax.Name = "picTax";
-            this.picTax.Size = new System.Drawing.Size(100, 98);
-            this.picTax.TabIndex = 20;
-            this.picTax.TabStop = false;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(497, 470);
+            this.label1.Location = new System.Drawing.Point(547, 470);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(213, 33);
+            this.label1.Size = new System.Drawing.Size(124, 33);
             this.label1.TabIndex = 19;
-            this.label1.Text = "Tax and Discounts";
+            this.label1.Text = "Discounts";
             // 
             // label9
             // 
@@ -99,6 +87,70 @@
             this.label9.Size = new System.Drawing.Size(190, 33);
             this.label9.TabIndex = 17;
             this.label9.Text = "Product Return ";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label5.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(727, 271);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(201, 33);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Company Profile";
+            this.label5.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label4.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(538, 271);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(133, 33);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Backup DB";
+            this.label4.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label2.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(113, 268);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 33);
+            this.label2.TabIndex = 4;
+            this.label2.Text = "Modules";
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.BackColor = System.Drawing.Color.DimGray;
+            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblTitle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(1194, 114);
+            this.lblTitle.TabIndex = 18;
+            this.lblTitle.Text = "         SYSTEM SETTINGS";
+            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // picTax
+            // 
+            this.picTax.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.picTax.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Banknotes;
+            this.picTax.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picTax.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picTax.Location = new System.Drawing.Point(555, 369);
+            this.picTax.Name = "picTax";
+            this.picTax.Size = new System.Drawing.Size(100, 98);
+            this.picTax.TabIndex = 20;
+            this.picTax.TabStop = false;
+            this.picTax.Click += new System.EventHandler(this.picTax_Click);
             // 
             // pbProductReturn
             // 
@@ -127,19 +179,6 @@
             this.pbPersonalization.TabStop = false;
             this.pbPersonalization.Click += new System.EventHandler(this.pbPersonalization_Click);
             // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(727, 271);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(201, 33);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Company Profile";
-            this.label5.Click += new System.EventHandler(this.label6_Click);
-            // 
             // picCompProf
             // 
             this.picCompProf.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -154,19 +193,6 @@
             this.picCompProf.TabStop = false;
             this.picCompProf.Click += new System.EventHandler(this.picCompProf_Click);
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(538, 271);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 33);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Backup DB";
-            this.label4.Click += new System.EventHandler(this.label5_Click);
-            // 
             // pbBackupDB
             // 
             this.pbBackupDB.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -179,18 +205,6 @@
             this.pbBackupDB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbBackupDB.TabIndex = 5;
             this.pbBackupDB.TabStop = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(113, 268);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 33);
-            this.label2.TabIndex = 4;
-            this.label2.Text = "Modules";
             // 
             // pbModules
             // 
@@ -218,19 +232,6 @@
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.BackColor = System.Drawing.Color.DimGray;
-            this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.lblTitle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(0, 0);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(1194, 114);
-            this.lblTitle.TabIndex = 18;
-            this.lblTitle.Text = "         SYSTEM SETTINGS";
-            this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // SystemSettings
             // 

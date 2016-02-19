@@ -27,5 +27,6 @@ namespace PetvetPOS_Inventory_System
         Supplier,
         Modules,
         Product_Return,
+        Discounts,
     }
 }
