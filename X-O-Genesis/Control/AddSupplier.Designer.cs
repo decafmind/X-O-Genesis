@@ -74,20 +74,23 @@
             // 
             // txtPerson
             // 
+            this.txtPerson.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtPerson.Location = new System.Drawing.Point(180, 222);
             this.txtPerson.Name = "txtPerson";
-            this.txtPerson.Size = new System.Drawing.Size(224, 20);
+            this.txtPerson.Size = new System.Drawing.Size(224, 23);
             this.txtPerson.TabIndex = 17;
             // 
             // txtNumber
             // 
+            this.txtNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtNumber.Location = new System.Drawing.Point(180, 184);
             this.txtNumber.Name = "txtNumber";
-            this.txtNumber.Size = new System.Drawing.Size(224, 20);
+            this.txtNumber.Size = new System.Drawing.Size(224, 23);
             this.txtNumber.TabIndex = 16;
             // 
             // txtAddress
             // 
+            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtAddress.Location = new System.Drawing.Point(180, 109);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
@@ -96,9 +99,10 @@
             // 
             // txtName
             // 
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtName.Location = new System.Drawing.Point(180, 74);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(224, 20);
+            this.txtName.Size = new System.Drawing.Size(224, 23);
             this.txtName.TabIndex = 14;
             // 
             // label4

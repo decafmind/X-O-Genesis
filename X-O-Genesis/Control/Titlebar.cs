@@ -170,13 +170,13 @@ namespace PetvetPOS_Inventory_System
                     titlename = "Account Settings";
                     break;
                 case Menu.AuditTrail:
-                    titlename = "Audit Trail";
-                    break;
-                case Menu.LoginTrail:
                     titlename = "Login Trail";
                     break;
+                case Menu.LoginTrail:
+                    titlename = "Audit Trail";
+                    break;
                 case Menu.Login:
-                    titlename = "POS";
+                    titlename = "";
                     break;
                 case Menu.Home:
                     titlename = "Dashboard";
@@ -200,8 +200,13 @@ namespace PetvetPOS_Inventory_System
                     titlename = "System Operation";
                     break;
                 case Menu.Company_Profile:
-                    title = "Company Profile";
+                    titlename = "Company Profile";
                     break;
+                case Menu.Product_Return:
+                    titlename = "Product Return";
+                    break;
+
+                    
                 default:
                     titlename = menuname.ToString();
                     break;

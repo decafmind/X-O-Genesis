@@ -130,7 +130,7 @@
   <data name="btnEncode.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADMAAAArCAYAAADVJLDcAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw8AAAsPAZL5A6UAAAPqSURBVGhD7VlZqE1RGL6max5T
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAAAPqSURBVGhD7VlZqE1RGL6max5T
         lCHkwfQgUSLhQZRMD5RCXGSWZAi53XSRqFskEh5keOAFUbd4ECLjgyk8yQNC5pA4vq/20n+/u/a+e9/s
         s8+p8/B39lrr/9f6v/Wv9Q/rlA2sqr0Gem9oJb7LDO2ScfLOEp6FAU+t9HdA+5nIP0C7teHrje9XAc8k
         kT8gsvNkfJMZr6bST0E5QxtE4KCMk3e+8KwKeG5Lf0e0P4g8FW9j+Pri+0/AM1XkT4jsEhmvNuN7CeaR
@@ -153,7 +153,7 @@
   <data name="pictureBox4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAR8AAAEPCAYAAAB7gcDWAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw4AAAsOAUC+4UEAADSbSURBVHhe7Z153C5Fce+9xh3w
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAADSbSURBVHhe7Z153C5Fce+9xh3w
         oF7FKApoxI0I4YqogEAUd8XdsMSDGzGaCIped0BBYlxyNJq4Imgk7ohLwLhx3FAjARQUTFSORqNGCLgk
         MZp7SX3N0zo8PM8zPU9V9fTM1B/1ec973unumeqqX1dXV1Vf7YorrrhaUPAgZCBkoLQMBPAE+IYMhAz0
         IgO9DFoaYWO8WNVDBuqTgQCfWPVCBkIGepGBXgaNVai+VSjmJOaktAwE+MSqFzIQMtCLDPQyaGmEjfFi
@@ -384,7 +384,7 @@
   <data name="pictureBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAR8AAAEPCAYAAAB7gcDWAAAAIGNIUk0AAHolAACAgwAA+f8AAIDpAAB1
-        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACw0AAAsNAe0HwCwAACsPSURBVHhe7Z17lBxVnccnCSTh
+        MAAA6mAAADqYAAAXb5JfxUYAAAAJcEhZcwAACwwAAAsMAT9AIsgAACsPSURBVHhe7Z17lBxVnccnCSTh
         IYQYwlMyeUwmYHwsgqDo8cXTNbLi46y4uKuo7Cq77IrPhOkeH+ie1VVB1iw+YFV0jx6f7BGSzPRMEg4K
         ARRkQXARZMMS8UFMIgTymv3+btXtuVNd1VXVXdV1b9X3jzo9011d3V31u5/6/n739/vdvomJiT5uPAe0
         AdpAr22A4CF8aQO0gUJsoJAP7TVh+Xm8q9MG7LMBwod3PdoAbaAQGyjkQ3kXsu8uxGvCa9JrGyB8eNej

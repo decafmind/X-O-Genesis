@@ -112,5 +112,10 @@ namespace PetvetPOS_Inventory_System
 
         }
 
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

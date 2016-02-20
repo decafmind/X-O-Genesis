@@ -108,6 +108,16 @@ namespace PetvetPOS_Inventory_System
         private void pictureBox1_MouseLeave(object sender, EventArgs e)
         {
             panel3.BackColor = Color.White;
+        }
+
+        private void loginName_MouseEnter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void loginName_Click(object sender, EventArgs e)
+        {
+
         } 
 
     }

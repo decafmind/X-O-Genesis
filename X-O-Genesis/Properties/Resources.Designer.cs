@@ -83,6 +83,16 @@ namespace PetvetPOS_Inventory_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap addDiscount2 {
+            get {
+                object obj = ResourceManager.GetObject("addDiscount2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap addUser {
             get {
                 object obj = ResourceManager.GetObject("addUser", resourceCulture);
@@ -643,6 +653,16 @@ namespace PetvetPOS_Inventory_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap NoDISCOUNTS2 {
+            get {
+                object obj = ResourceManager.GetObject("NoDISCOUNTS2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Ok {
             get {
                 object obj = ResourceManager.GetObject("Ok", resourceCulture);
@@ -927,6 +947,16 @@ namespace PetvetPOS_Inventory_System.Properties {
             get {
                 object obj = ResourceManager.GetObject("SystemIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        /// </summary>
+        internal static System.Drawing.Icon SystemIcon_New {
+            get {
+                object obj = ResourceManager.GetObject("SystemIcon_New", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         
