@@ -13,6 +13,8 @@ namespace PetvetPOS_Inventory_System
         public int QuantitySold { get; set; }
         public Decimal GroupPrice { get; set; }
         public DateTime date { get; set; }
+        public Decimal DiscPercent { get; set; }
+        public Decimal DiscFixed { get; set; }
 
         public ProductInvoice()
         {

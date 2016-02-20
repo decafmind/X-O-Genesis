@@ -15,7 +15,9 @@ namespace PetvetPOS_Inventory_System
         DatabaseController dbController;
         List<Discounts> discountList = new List<Discounts>();
         DataTable discountTable;
-        DiscountList dcList = new DiscountList();
+
+        private const int PERCENT_TYPE = 1;
+        private const int FIXED_TYPE = 2;
 
         public DiscountList()
         {
@@ -59,6 +61,55 @@ namespace PetvetPOS_Inventory_System
                 y += 30;
                 i++;    
             }
+        }
+
+        private Decimal[] getDiscounts()
+        {
+            List<string> selectedDiscounts = new List<string>();
+            Decimal[] discounts = new Decimal[2];
+            Decimal totalPercentage = 0;
+            Decimal totalFixed = 0;
+
+            foreach (Control c in panel_Discounts.Controls)
+            {
+                if (c is CheckBox)
+                {
+                    CheckBox chk = c as CheckBox;
+                    if (chk.Checked)
+                    {
+                        selectedDiscounts.Add(chk.Text);
+                    }
+                }
+            }
+
+            discountTable = new DataTable();
+            dbController.discountsMapper.loadTable(discountTable);
+            foreach (DataRow dr in discountTable.Rows)
+            {
+                if(selectedDiscounts.Contains(dr["title"].ToString()))
+                {
+                    if(Convert.ToInt32(dr["type"]).Equals(FIXED_TYPE))
+                        totalFixed += Convert.ToDecimal(dr["less"].ToString());
+                    else if(Convert.ToInt32(dr["type"]).Equals(PERCENT_TYPE))
+                        totalPercentage += Convert.ToDecimal(dr["less"].ToString());
+                }
+            }
+
+            //Still working with the proper precedence of discount deduction
+            discounts[0] = totalPercentage;
+            discounts[1] = totalFixed;
+
+            return discounts;
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            getDiscounts();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

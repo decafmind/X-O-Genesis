@@ -30,8 +30,8 @@
         {
             this.panel_Discounts = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.panel_Discounts.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -56,15 +56,6 @@
             this.panel1.Size = new System.Drawing.Size(272, 73);
             this.panel1.TabIndex = 0;
             // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(14, 20);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(90, 39);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.Text = "Add Discounts";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
             // btnClose
             // 
             this.btnClose.Location = new System.Drawing.Point(164, 20);
@@ -73,6 +64,17 @@
             this.btnClose.TabIndex = 1;
             this.btnClose.Text = "No Discount";
             this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(14, 20);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(90, 39);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.Text = "Add Discounts";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // DiscountList
             // 

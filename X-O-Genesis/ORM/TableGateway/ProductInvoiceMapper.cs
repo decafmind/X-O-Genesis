@@ -19,6 +19,8 @@ namespace PetvetPOS_Inventory_System
                 "product_id",
                 "quantity",
                 "subtotal",
+                "discount_percent",
+                "discount_fixed",
             };
         }
 
