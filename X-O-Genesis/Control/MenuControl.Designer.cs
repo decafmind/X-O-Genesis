@@ -125,8 +125,6 @@
             // 
             // icon
             // 
-            this.icon.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.icon.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(128)))), ((int)(((byte)(185)))));
             this.icon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.icon.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;

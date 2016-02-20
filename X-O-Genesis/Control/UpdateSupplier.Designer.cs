@@ -56,20 +56,23 @@
             // 
             // txtPerson
             // 
+            this.txtPerson.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtPerson.Location = new System.Drawing.Point(190, 221);
             this.txtPerson.Name = "txtPerson";
-            this.txtPerson.Size = new System.Drawing.Size(224, 20);
+            this.txtPerson.Size = new System.Drawing.Size(224, 23);
             this.txtPerson.TabIndex = 27;
             // 
             // txtNumber
             // 
+            this.txtNumber.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtNumber.Location = new System.Drawing.Point(190, 183);
             this.txtNumber.Name = "txtNumber";
-            this.txtNumber.Size = new System.Drawing.Size(224, 20);
+            this.txtNumber.Size = new System.Drawing.Size(224, 23);
             this.txtNumber.TabIndex = 26;
             // 
             // txtAddress
             // 
+            this.txtAddress.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtAddress.Location = new System.Drawing.Point(190, 108);
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
@@ -78,9 +81,10 @@
             // 
             // txtName
             // 
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.txtName.Location = new System.Drawing.Point(190, 73);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(224, 20);
+            this.txtName.Size = new System.Drawing.Size(224, 23);
             this.txtName.TabIndex = 24;
             // 
             // label4
@@ -130,7 +134,7 @@
             // button1
             // 
             this.button1.AutoSize = true;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);

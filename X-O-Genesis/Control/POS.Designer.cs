@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(POS));
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.barcodeIndicator = new System.Windows.Forms.Timer(this.components);
@@ -38,7 +38,6 @@
             this.dgTransaction = new System.Windows.Forms.DataGridView();
             this.panel8 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
-            this.txtPayment = new System.Windows.Forms.TextBox();
             this.lblChange = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
@@ -63,21 +62,22 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblPOSmsg = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.poSlbl2 = new PetvetPOS_Inventory_System.POSlbl();
             this.sidePanel = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.keyButton1 = new PetvetPOS_Inventory_System.KeyButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.keyButton4 = new PetvetPOS_Inventory_System.KeyButton();
             this.label8 = new System.Windows.Forms.Label();
-            this.keyButton3 = new PetvetPOS_Inventory_System.KeyButton();
             this.label10 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.poSlbl2 = new PetvetPOS_Inventory_System.POSlbl();
+            this.keyButton1 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton4 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton3 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
+            this.txtPayment = new System.Windows.Forms.TextBox();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgTransaction)).BeginInit();
             this.panel8.SuspendLayout();
@@ -130,14 +130,14 @@
             this.dgTransaction.BackgroundColor = System.Drawing.Color.WhiteSmoke;
             this.dgTransaction.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgTransaction.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgTransaction.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgTransaction.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgTransaction.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgTransaction.Location = new System.Drawing.Point(10, 10);
             this.dgTransaction.MultiSelect = false;
@@ -150,6 +150,7 @@
             // 
             // panel8
             // 
+            this.panel8.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel8.Controls.Add(this.panel9);
             this.panel8.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel8.Location = new System.Drawing.Point(10, 257);
@@ -172,19 +173,6 @@
             this.panel9.Name = "panel9";
             this.panel9.Size = new System.Drawing.Size(444, 92);
             this.panel9.TabIndex = 6;
-            // 
-            // txtPayment
-            // 
-            this.txtPayment.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPayment.Location = new System.Drawing.Point(114, 14);
-            this.txtPayment.Name = "txtPayment";
-            this.txtPayment.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.txtPayment.Size = new System.Drawing.Size(121, 26);
-            this.txtPayment.TabIndex = 4;
-            this.txtPayment.TextAlignChanged += new System.EventHandler(this.textChanged);
-            this.txtPayment.EnabledChanged += new System.EventHandler(this.txtPayment_EnabledChanged);
-            this.txtPayment.TextChanged += new System.EventHandler(this.txtPayment_TextChanged);
-            this.txtPayment.Enter += new System.EventHandler(this.txtPayment_Enter);
             // 
             // lblChange
             // 
@@ -445,15 +433,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Total Amount";
             // 
-            // poSlbl2
-            // 
-            this.poSlbl2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.poSlbl2.Location = new System.Drawing.Point(13, 104);
-            this.poSlbl2.Name = "poSlbl2";
-            this.poSlbl2.Size = new System.Drawing.Size(435, 46);
-            this.poSlbl2.TabIndex = 13;
-            this.poSlbl2.Load += new System.EventHandler(this.poSlbl2_Load);
-            // 
             // sidePanel
             // 
             this.sidePanel.BackColor = System.Drawing.Color.White;
@@ -508,20 +487,6 @@
             this.pictureBox4.TabIndex = 27;
             this.pictureBox4.TabStop = false;
             // 
-            // keyButton1
-            // 
-            this.keyButton1.accessKeyChar = "F1";
-            this.keyButton1.accessMasterController = null;
-            this.keyButton1.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton1.dbController = null;
-            this.keyButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton1.Location = new System.Drawing.Point(64, 8);
-            this.keyButton1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton1.masterController = null;
-            this.keyButton1.Name = "keyButton1";
-            this.keyButton1.Size = new System.Drawing.Size(61, 50);
-            this.keyButton1.TabIndex = 16;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
@@ -531,20 +496,6 @@
             this.pictureBox1.Size = new System.Drawing.Size(54, 45);
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
-            // 
-            // keyButton4
-            // 
-            this.keyButton4.accessKeyChar = "F4";
-            this.keyButton4.accessMasterController = null;
-            this.keyButton4.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton4.dbController = null;
-            this.keyButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton4.Location = new System.Drawing.Point(685, 8);
-            this.keyButton4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton4.masterController = null;
-            this.keyButton4.Name = "keyButton4";
-            this.keyButton4.Size = new System.Drawing.Size(61, 50);
-            this.keyButton4.TabIndex = 19;
             // 
             // label8
             // 
@@ -556,20 +507,6 @@
             this.label8.Size = new System.Drawing.Size(78, 18);
             this.label8.TabIndex = 22;
             this.label8.Text = "Payment";
-            // 
-            // keyButton3
-            // 
-            this.keyButton3.accessKeyChar = "F3";
-            this.keyButton3.accessMasterController = null;
-            this.keyButton3.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton3.dbController = null;
-            this.keyButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton3.Location = new System.Drawing.Point(484, 8);
-            this.keyButton3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton3.masterController = null;
-            this.keyButton3.Name = "keyButton3";
-            this.keyButton3.Size = new System.Drawing.Size(61, 50);
-            this.keyButton3.TabIndex = 18;
             // 
             // label10
             // 
@@ -592,20 +529,6 @@
             this.pictureBox2.TabIndex = 23;
             this.pictureBox2.TabStop = false;
             // 
-            // keyButton2
-            // 
-            this.keyButton2.accessKeyChar = "F2";
-            this.keyButton2.accessMasterController = null;
-            this.keyButton2.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton2.dbController = null;
-            this.keyButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton2.Location = new System.Drawing.Point(257, 8);
-            this.keyButton2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton2.masterController = null;
-            this.keyButton2.Name = "keyButton2";
-            this.keyButton2.Size = new System.Drawing.Size(61, 50);
-            this.keyButton2.TabIndex = 17;
-            // 
             // pictureBox3
             // 
             this.pictureBox3.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Refresh;
@@ -626,6 +549,84 @@
             this.label9.Size = new System.Drawing.Size(55, 18);
             this.label9.TabIndex = 24;
             this.label9.Text = "Reset";
+            // 
+            // poSlbl2
+            // 
+            this.poSlbl2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.poSlbl2.Location = new System.Drawing.Point(13, 104);
+            this.poSlbl2.Name = "poSlbl2";
+            this.poSlbl2.Size = new System.Drawing.Size(435, 46);
+            this.poSlbl2.TabIndex = 13;
+            this.poSlbl2.Load += new System.EventHandler(this.poSlbl2_Load);
+            // 
+            // keyButton1
+            // 
+            this.keyButton1.accessKeyChar = "F1";
+            this.keyButton1.accessMasterController = null;
+            this.keyButton1.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton1.dbController = null;
+            this.keyButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton1.Location = new System.Drawing.Point(64, 8);
+            this.keyButton1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton1.masterController = null;
+            this.keyButton1.Name = "keyButton1";
+            this.keyButton1.Size = new System.Drawing.Size(61, 50);
+            this.keyButton1.TabIndex = 16;
+            // 
+            // keyButton4
+            // 
+            this.keyButton4.accessKeyChar = "F4";
+            this.keyButton4.accessMasterController = null;
+            this.keyButton4.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton4.dbController = null;
+            this.keyButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton4.Location = new System.Drawing.Point(685, 8);
+            this.keyButton4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton4.masterController = null;
+            this.keyButton4.Name = "keyButton4";
+            this.keyButton4.Size = new System.Drawing.Size(61, 50);
+            this.keyButton4.TabIndex = 19;
+            // 
+            // keyButton3
+            // 
+            this.keyButton3.accessKeyChar = "F3";
+            this.keyButton3.accessMasterController = null;
+            this.keyButton3.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton3.dbController = null;
+            this.keyButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton3.Location = new System.Drawing.Point(484, 8);
+            this.keyButton3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton3.masterController = null;
+            this.keyButton3.Name = "keyButton3";
+            this.keyButton3.Size = new System.Drawing.Size(61, 50);
+            this.keyButton3.TabIndex = 18;
+            // 
+            // keyButton2
+            // 
+            this.keyButton2.accessKeyChar = "F2";
+            this.keyButton2.accessMasterController = null;
+            this.keyButton2.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton2.dbController = null;
+            this.keyButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton2.Location = new System.Drawing.Point(257, 8);
+            this.keyButton2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton2.masterController = null;
+            this.keyButton2.Name = "keyButton2";
+            this.keyButton2.Size = new System.Drawing.Size(61, 50);
+            this.keyButton2.TabIndex = 17;
+            // 
+            // txtPayment
+            // 
+            this.txtPayment.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPayment.Location = new System.Drawing.Point(114, 14);
+            this.txtPayment.Name = "txtPayment";
+            this.txtPayment.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.txtPayment.Size = new System.Drawing.Size(121, 26);
+            this.txtPayment.TabIndex = 4;
+            this.txtPayment.TextAlignChanged += new System.EventHandler(this.textChanged);
+            this.txtPayment.EnabledChanged += new System.EventHandler(this.txtPayment_EnabledChanged);
+            this.txtPayment.TextChanged += new System.EventHandler(this.txtPayment_TextChanged);
+            this.txtPayment.Enter += new System.EventHandler(this.txtPayment_Enter);
             // 
             // POS
             // 
@@ -700,7 +701,6 @@
         private System.Windows.Forms.Panel panel9;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private Microsoft.VisualBasic.PowerPacks.RectangleShape rectangleShape1;
-        private System.Windows.Forms.TextBox txtPayment;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Button btnPayment;
@@ -715,6 +715,7 @@
         private System.Windows.Forms.TextBox txtName;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnEncode;
+        private System.Windows.Forms.TextBox txtPayment;
 
     }
 }

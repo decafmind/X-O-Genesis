@@ -317,5 +317,10 @@ namespace PetvetPOS_Inventory_System
                     MessageBox.Show("Failed to delete discount.");
             }
         }
+
+        private void group_Type_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

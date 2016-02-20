@@ -963,6 +963,10 @@
     <None Include="Resources\simple2.png" />
     <None Include="Resources\Advance.png" />
     <None Include="Resources\payment.png" />
+    <None Include="Resources\addDiscount21.png" />
+    <None Include="Resources\NoDISCOUNTS21.png" />
+    <None Include="Resources\SystemIcon New.ico" />
+    <None Include="Resources\SystemIcon_New.ico" />
     <Content Include="SystemIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

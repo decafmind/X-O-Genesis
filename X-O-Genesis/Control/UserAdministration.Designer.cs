@@ -126,9 +126,10 @@
             // 
             this.userPanel.BackColor = System.Drawing.Color.Transparent;
             this.userPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.userPanel.Location = new System.Drawing.Point(4, 3);
+            this.userPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.userPanel.Location = new System.Drawing.Point(8, 42);
             this.userPanel.Name = "userPanel";
-            this.userPanel.Size = new System.Drawing.Size(551, 479);
+            this.userPanel.Size = new System.Drawing.Size(551, 467);
             this.userPanel.TabIndex = 2;
             this.userPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.userPanel_Paint);
             // 

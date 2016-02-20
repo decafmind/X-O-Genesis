@@ -51,15 +51,15 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.DimGray;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(158)))), ((int)(((byte)(150)))));
             this.button1.FlatAppearance.BorderSize = 2;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(0, 248);
+            this.button1.Location = new System.Drawing.Point(0, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(253, 50);
+            this.button1.Size = new System.Drawing.Size(254, 50);
             this.button1.TabIndex = 0;
             this.button1.TabStop = false;
             this.button1.Text = "Product";
@@ -69,122 +69,122 @@
             // cmbCategory
             // 
             this.cmbCategory.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbCategory.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.cmbCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cmbCategory.FormattingEnabled = true;
-            this.cmbCategory.Location = new System.Drawing.Point(98, 133);
+            this.cmbCategory.Location = new System.Drawing.Point(90, 201);
             this.cmbCategory.Name = "cmbCategory";
-            this.cmbCategory.Size = new System.Drawing.Size(121, 27);
+            this.cmbCategory.Size = new System.Drawing.Size(121, 24);
             this.cmbCategory.TabIndex = 5;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(153)))), ((int)(((byte)(203)))));
-            this.label7.Location = new System.Drawing.Point(3, 137);
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(4, 199);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(97, 19);
+            this.label7.Size = new System.Drawing.Size(77, 20);
             this.label7.TabIndex = 9;
-            this.label7.Text = "CATEGORY";
+            this.label7.Text = "Category:";
             // 
             // txtCompany
             // 
-            this.txtCompany.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCompany.Location = new System.Drawing.Point(98, 165);
+            this.txtCompany.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtCompany.Location = new System.Drawing.Point(90, 233);
             this.txtCompany.Name = "txtCompany";
-            this.txtCompany.Size = new System.Drawing.Size(151, 26);
+            this.txtCompany.Size = new System.Drawing.Size(151, 23);
             this.txtCompany.TabIndex = 6;
             this.txtCompany.TextChanged += new System.EventHandler(this.textChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(153)))), ((int)(((byte)(203)))));
-            this.label6.Location = new System.Drawing.Point(4, 168);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(4, 233);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(89, 19);
+            this.label6.Size = new System.Drawing.Size(80, 20);
             this.label6.TabIndex = 7;
-            this.label6.Text = "COMPANY";
+            this.label6.Text = "Company:";
             // 
             // txtQuantity
             // 
-            this.txtQuantity.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQuantity.Location = new System.Drawing.Point(97, 7);
+            this.txtQuantity.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtQuantity.Location = new System.Drawing.Point(89, 75);
             this.txtQuantity.Name = "txtQuantity";
-            this.txtQuantity.Size = new System.Drawing.Size(151, 26);
+            this.txtQuantity.Size = new System.Drawing.Size(151, 23);
             this.txtQuantity.TabIndex = 1;
             this.txtQuantity.TextChanged += new System.EventHandler(this.textChanged);
             // 
             // txtPrice
             // 
-            this.txtPrice.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrice.Location = new System.Drawing.Point(97, 100);
+            this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtPrice.Location = new System.Drawing.Point(89, 168);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(151, 26);
+            this.txtPrice.Size = new System.Drawing.Size(151, 23);
             this.txtPrice.TabIndex = 4;
             this.txtPrice.TextChanged += new System.EventHandler(this.textChanged);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(153)))), ((int)(((byte)(203)))));
-            this.label4.Location = new System.Drawing.Point(2, 10);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(2, 75);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 19);
+            this.label4.Size = new System.Drawing.Size(72, 20);
             this.label4.TabIndex = 4;
-            this.label4.Text = "QUANTITY";
+            this.label4.Text = "Quantity:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(153)))), ((int)(((byte)(203)))));
-            this.label3.Location = new System.Drawing.Point(2, 102);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(4, 168);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 19);
+            this.label3.Size = new System.Drawing.Size(48, 20);
             this.label3.TabIndex = 3;
-            this.label3.Text = "PRICE";
+            this.label3.Text = "Price:";
             // 
             // txtBarcode
             // 
-            this.txtBarcode.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBarcode.Location = new System.Drawing.Point(97, 38);
+            this.txtBarcode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtBarcode.Location = new System.Drawing.Point(89, 106);
             this.txtBarcode.MaxLength = 20;
             this.txtBarcode.Name = "txtBarcode";
-            this.txtBarcode.Size = new System.Drawing.Size(151, 26);
+            this.txtBarcode.Size = new System.Drawing.Size(151, 23);
             this.txtBarcode.TabIndex = 2;
             this.txtBarcode.TextChanged += new System.EventHandler(this.textChanged);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(153)))), ((int)(((byte)(203)))));
-            this.label2.Location = new System.Drawing.Point(3, 40);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(3, 105);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(91, 19);
+            this.label2.Size = new System.Drawing.Size(73, 20);
             this.label2.TabIndex = 2;
-            this.label2.Text = "BARCODE";
+            this.label2.Text = "Barcode:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(153)))), ((int)(((byte)(203)))));
-            this.label1.Location = new System.Drawing.Point(3, 70);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(3, 135);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(56, 19);
+            this.label1.Size = new System.Drawing.Size(55, 20);
             this.label1.TabIndex = 1;
-            this.label1.Text = "NAME";
+            this.label1.Text = "Name:";
             // 
             // txtDescription
             // 
-            this.txtDescription.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDescription.Location = new System.Drawing.Point(97, 69);
+            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtDescription.Location = new System.Drawing.Point(89, 137);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(151, 26);
+            this.txtDescription.Size = new System.Drawing.Size(151, 23);
             this.txtDescription.TabIndex = 3;
             this.txtDescription.TextChanged += new System.EventHandler(this.textChanged);
             // 
@@ -193,8 +193,10 @@
             this.plusButton.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Plus;
             this.plusButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.plusButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.plusButton.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.plusButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.plusButton.Location = new System.Drawing.Point(225, 134);
+            this.plusButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.plusButton.Location = new System.Drawing.Point(218, 201);
             this.plusButton.Name = "plusButton";
             this.plusButton.Size = new System.Drawing.Size(23, 23);
             this.plusButton.TabIndex = 11;
@@ -222,7 +224,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtDescription);
             this.Name = "ProductPaneScroll";
-            this.Size = new System.Drawing.Size(253, 298);
+            this.Size = new System.Drawing.Size(254, 286);
             this.ResumeLayout(false);
             this.PerformLayout();
 
