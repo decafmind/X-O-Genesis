@@ -19,13 +19,16 @@ namespace PetvetPOS_Inventory_System
         Product currentProduct;
         Inventory inventory;
         DataTable dt = new DataTable();
-        List<ProductInvoice> carts = new List<ProductInvoice>();
+       
         List<Discounts> discounts = new List<Discounts>();
         DiscountList discountListForm;
-        public ProductInvoice productTransaction;
 
-        bool concludeTransaction;
-        decimal totalAmount;
+        public ProductInvoice productTransaction;
+        public List<ProductInvoice> carts = new List<ProductInvoice>();
+        public bool withDiscounts = false;
+        public decimal totalAmount;
+
+        bool concludeTransaction;             
         decimal totalAmountWithService;
 
         decimal _vatableSales;
@@ -202,6 +205,7 @@ namespace PetvetPOS_Inventory_System
         {
             bool success = false;
             discountListForm = new DiscountList();
+
             productTransaction = new ProductInvoice(){
                 invoice = currentTransaction,
                 product = currentProduct,
@@ -347,7 +351,7 @@ namespace PetvetPOS_Inventory_System
             if (dgTransaction.Rows.Count > 0)
             {
                 concludeTransaction = true;
-                discountListForm = new DiscountList(this);
+                discountListForm = new DiscountList(this, dbController);
                 discountListForm.ShowDialog();
                 conclusion();
                 printInvoice();
@@ -365,6 +369,7 @@ namespace PetvetPOS_Inventory_System
             
             foreach (ProductInvoice item in carts)
             {
+
                 dbController.insertProductInvoice(item);
                 inventory = new Inventory(){
                     Barcode = item.product.Barcode,
@@ -555,11 +560,13 @@ namespace PetvetPOS_Inventory_System
                 g.DrawString(total, font, Brushes.Black, new PointF(XSubTotal, Y));
                 Y += (int)stringSize.Height + yIncrement;
 
+
                 string ScPwdDiscount = _scpwd.ToString("N");
                 g.DrawString("Less: SC/PWD Discount", font, Brushes.Black, new PointF(XQty, Y));
                 stringSize = g.MeasureString(ScPwdDiscount, font);
                 g.DrawString(ScPwdDiscount, font, Brushes.Black, new PointF(XSubTotal, Y));
                 Y += (int)stringSize.Height + yIncrement;
+
 
                 string vatableSales = _vatableSales.ToString("N");
                 g.DrawString("VATable Sales", font, Brushes.Black, new PointF(XQty, Y));
