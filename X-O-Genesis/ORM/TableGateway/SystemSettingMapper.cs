@@ -27,7 +27,15 @@ namespace PetvetPOS_Inventory_System
 
         public string getValue(string name)
         {
-            return (string)readScalar("value", string.Format("name = '{0}'", name));
+            try
+            {
+                return (string)readScalar("value", string.Format("name = '{0}'", name));
+            }
+            catch (Exception)
+            {
+                return string.Empty;
+            }
+         
         }
 
         public bool isInSimpleMode()

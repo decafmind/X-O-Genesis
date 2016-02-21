@@ -28,7 +28,7 @@ namespace PetvetPOS_Inventory_System
         {
             Decimal grpPrice = product.UnitPrice * quantity;
             return create(
-                insertValues(transaction.InvoiceId, product.Barcode, quantity, grpPrice));
+                insertValues(transaction.InvoiceId, product.Barcode, quantity, grpPrice, 0, 0));//Temporary for discounts
         }
 
         public bool updateDescription(string barcode, string newDescription)

@@ -340,10 +340,10 @@ namespace PetvetPOS_Inventory_System
             if (dgTransaction.Rows.Count > 0)
             {
                 concludeTransaction = true;
-                discountListForm = new DiscountList(dbController);
-                discountListForm.ShowDialog();
-                //conclusion();
-                //printInvoice();
+                //discountListForm = new DiscountList(dbController);
+                //discountListForm.ShowDialog();
+                conclusion();
+                printInvoice();
                 resetTransaction();
             }
         }
