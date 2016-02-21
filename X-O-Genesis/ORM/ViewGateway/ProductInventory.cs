@@ -66,10 +66,10 @@ namespace PetvetPOS_Inventory_System
             try
             {
                 string condition = string.Format("Name = '{0}'", product.Name);
-                decimal qty_received = (decimal)readScalar("Qty_Received", condition);
+                int maintaining_stocks = (int)readScalar("MaintainingStocks", condition);
                 decimal qty_onhand = (decimal)readScalar("Qty_On_Hand", condition);
 
-                if (qty_onhand <= (qty_received * .10M))
+                if (qty_onhand <= maintaining_stocks)
                 {
                     masterController.displayCriticalNotif(product, (int)qty_onhand);
                 }

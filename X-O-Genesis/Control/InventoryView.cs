@@ -1060,6 +1060,7 @@ namespace PetvetPOS_Inventory_System
             Product product = dbController.productMapper.getProductFromName(getValueFromDatagridCell(PRODUCT_NAME_INDEX));
             return product.Barcode;
         }
+
         private void filterNames(object sender, EventArgs e)
         {
             Validation.filterToNames(sender as TextBox);

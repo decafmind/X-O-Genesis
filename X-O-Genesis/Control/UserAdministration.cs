@@ -332,14 +332,15 @@ namespace PetvetPOS_Inventory_System
         {
             if (tabControl1.SelectedIndex == 0)
                 masterController.updateTitle(Menu.AccountSettings, null);
-            else if (tabControl1.SelectedIndex == 1)
-                masterController.updateTitle(Menu.LoginTrail, null);
             else if (tabControl1.SelectedIndex == 2)
+                masterController.updateTitle(Menu.LoginTrail, null);
+            else if (tabControl1.SelectedIndex == 1)
                 masterController.updateTitle(Menu.AuditTrail, null);
         }
 
         private void loginTrail_Load(object sender, EventArgs e)
         {
+            reloadUsers();
             loginTrail.cmbEmployee.Items.AddRange(userEmployeeMap.Keys.ToArray());
             loginTrail.cmbEmployee.SelectedIndex = 0;
             filterLoginTrail();
@@ -395,6 +396,7 @@ namespace PetvetPOS_Inventory_System
 
         private void auditTrail_Load(object sender, EventArgs e)
         {
+            reloadUsers();
             auditTrail.cmbEmployee.Items.AddRange(userEmployeeMap.Keys.ToArray());
             auditTrail.cmbEmployee.SelectedIndex = 0;
             filterAuditTrail();
