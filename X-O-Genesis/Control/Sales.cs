@@ -286,7 +286,6 @@ namespace PetvetPOS_Inventory_System
             }
             else if (e.KeyCode == Keys.F5)
             {
-                keyButton3.updateButton();
                 initTable();
             }
         }

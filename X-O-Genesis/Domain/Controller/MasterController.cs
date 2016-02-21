@@ -159,6 +159,7 @@ namespace PetvetPOS_Inventory_System
 
         public void OnEmployeeLogout(EventArgs e)
         {
+
             EventHandler onEmployeeLogout = EmployeeLogout;
             if (onEmployeeLogout != null)
                 onEmployeeLogout(this, e);
@@ -182,6 +183,7 @@ namespace PetvetPOS_Inventory_System
             DialogResult result = MessageBox.Show("Are you sure you want to logout?", "Confirmation", MessageBoxButtons.YesNo);
             if (result == DialogResult.Yes){               
                 userSettingsControl.returnHome();
+                history.Clear();
                 return true;
             }
             return false;
@@ -235,11 +237,6 @@ namespace PetvetPOS_Inventory_System
         }
 
         public Form getFrmMain { get { return mainForm; } }
-        public void reloadUsers()
-        {
-            //
-        }
-
 
         CriticalNotif notif = null;
 

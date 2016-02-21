@@ -546,6 +546,7 @@
             this.panel2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
             this.panel2.Size = new System.Drawing.Size(839, 473);
             this.panel2.TabIndex = 5;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel4
             // 
@@ -947,7 +948,7 @@
             // 
             this.pictureBox3.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Edit;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(6, 10);
+            this.pictureBox3.Location = new System.Drawing.Point(6, 11);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(54, 45);
             this.pictureBox3.TabIndex = 35;
@@ -958,7 +959,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.label6.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label6.Location = new System.Drawing.Point(118, 13);
+            this.label6.Location = new System.Drawing.Point(117, 15);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 36);
             this.label6.TabIndex = 36;
@@ -971,7 +972,7 @@
             this.keyButton9.BackColor = System.Drawing.Color.Transparent;
             this.keyButton9.dbController = null;
             this.keyButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton9.Location = new System.Drawing.Point(56, 8);
+            this.keyButton9.Location = new System.Drawing.Point(58, 9);
             this.keyButton9.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.keyButton9.masterController = null;
             this.keyButton9.Name = "keyButton9";

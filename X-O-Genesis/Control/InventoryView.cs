@@ -87,8 +87,8 @@ namespace PetvetPOS_Inventory_System
         {
             if (masterController.LoginEmployee.Position != UserLevel.ADMIN)
             {
-                updateKeyPanel.Visible = false;
-                addKeyPanel.Visible = false;
+                this.updateKeyPanel.Visible = false;
+                this.addKeyPanel.Visible = false;
             }
         }
 
@@ -1105,6 +1105,11 @@ namespace PetvetPOS_Inventory_System
         }
 
         private void keyButton6_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
         }
