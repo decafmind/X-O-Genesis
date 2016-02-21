@@ -12,9 +12,14 @@ namespace PetvetPOS_Inventory_System
 {
     public partial class DiscountList : Form
     {
+
         DatabaseController dbController;
         List<Discounts> discountList = new List<Discounts>();
         DataTable discountTable;
+
+        public Decimal[] discounts { get; set; } //For database recording (total discount)
+        public Decimal[] accumulatedPercentageDiscount { get; set; } //For Net Price computation from List Price
+        public Decimal[] accumulatedFixedDiscount { get; set; } //For Net Price computation from List Price
 
         private const int PERCENT_TYPE = 1;
         private const int FIXED_TYPE = 2;
@@ -63,14 +68,14 @@ namespace PetvetPOS_Inventory_System
             }
         }
 
-<<<<<<< HEAD
         private Decimal[] getDiscounts()
         {
             List<string> selectedDiscounts = new List<string>();
-            Decimal[] discounts = new Decimal[2];
             Decimal totalPercentage = 0;
             Decimal totalFixed = 0;
 
+            discounts = new Decimal[2];
+            
             foreach (Control c in panel_Discounts.Controls)
             {
                 if (c is CheckBox)
@@ -83,20 +88,33 @@ namespace PetvetPOS_Inventory_System
                 }
             }
 
+            accumulatedPercentageDiscount = new Decimal[selectedDiscounts.Count];
+            accumulatedFixedDiscount = new Decimal[selectedDiscounts.Count];
+
+            int iterator_a = 0;
+            int iterator_b = 0;
             discountTable = new DataTable();
             dbController.discountsMapper.loadTable(discountTable);
+
             foreach (DataRow dr in discountTable.Rows)
             {
                 if(selectedDiscounts.Contains(dr["title"].ToString()))
                 {
-                    if(Convert.ToInt32(dr["type"]).Equals(FIXED_TYPE))
+                    if (Convert.ToInt32(dr["type"]).Equals(FIXED_TYPE))
+                    {
                         totalFixed += Convert.ToDecimal(dr["less"].ToString());
-                    else if(Convert.ToInt32(dr["type"]).Equals(PERCENT_TYPE))
+                        accumulatedFixedDiscount[iterator_a] = Convert.ToDecimal(dr["less"]);
+                        iterator_a++;
+                    }
+                    else if (Convert.ToInt32(dr["type"]).Equals(PERCENT_TYPE))
+                    {
                         totalPercentage += Convert.ToDecimal(dr["less"].ToString());
+                        accumulatedPercentageDiscount[iterator_b] = Convert.ToDecimal(dr["less"]);
+                        iterator_b++;
+                    }
                 }
             }
 
-            //Still working with the proper precedence of discount deduction
             discounts[0] = totalPercentage;
             discounts[1] = totalFixed;
 
@@ -110,12 +128,13 @@ namespace PetvetPOS_Inventory_System
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-=======
-        private void btnAdd_Click(object sender, EventArgs e)
-        {
->>>>>>> 61fd68746845b4ff7ce006bfcd239c6d4c3f4f3b
-
+<<<<<<< HEAD
+            this.Close();
         }
 
+=======
+
+        }
+>>>>>>> decafmind/PerfectTimes
     }
 }
