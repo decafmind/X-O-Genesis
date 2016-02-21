@@ -191,7 +191,7 @@ namespace PetvetPOS_Inventory_System
                     titlename = "Customer Information";
                     break;
                 case Menu.Orders:
-                    titlename = "Purchase Order";
+                    titlename = "Sales Order";
                     break;
                 case Menu.Stock_Control:
                     titlename = "Stock Control";
