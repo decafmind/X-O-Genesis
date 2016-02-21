@@ -31,12 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SystemOperation));
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pbAuditTrail = new System.Windows.Forms.PictureBox();
             this.pbLoginTrail = new System.Windows.Forms.PictureBox();
-            this.pbPromoAndDiscount = new System.Windows.Forms.PictureBox();
             this.pbUserManagement = new System.Windows.Forms.PictureBox();
             this.pbSystemSettings = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
@@ -45,7 +43,6 @@
             this.pbSupplier = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbAuditTrail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoginTrail)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPromoAndDiscount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserManagement)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSystemSettings)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -56,10 +53,10 @@
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(132, 467);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(136, 36);
+            this.label5.Size = new System.Drawing.Size(148, 33);
             this.label5.TabIndex = 9;
             this.label5.Text = "Audit trail";
             // 
@@ -67,34 +64,22 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(973, 270);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(660, 270);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(134, 36);
+            this.label4.Size = new System.Drawing.Size(138, 33);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Login trail";
+            this.label4.Text = "Log Trail";
             this.label4.Click += new System.EventHandler(this.label4_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label3.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(624, 270);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(275, 36);
-            this.label3.TabIndex = 7;
-            this.label3.Text = "Promos and Discount";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label2.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(359, 270);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(241, 36);
+            this.label2.Size = new System.Drawing.Size(269, 33);
             this.label2.TabIndex = 6;
             this.label2.Text = "User Management";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -103,10 +88,10 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label1.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(104, 270);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(208, 36);
+            this.label1.Size = new System.Drawing.Size(241, 33);
             this.label1.TabIndex = 5;
             this.label1.Text = "System Settings";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -130,24 +115,12 @@
             this.pbLoginTrail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbLoginTrail.BackgroundImage")));
             this.pbLoginTrail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbLoginTrail.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbLoginTrail.Location = new System.Drawing.Point(990, 169);
+            this.pbLoginTrail.Location = new System.Drawing.Point(677, 169);
             this.pbLoginTrail.Name = "pbLoginTrail";
             this.pbLoginTrail.Size = new System.Drawing.Size(100, 98);
             this.pbLoginTrail.TabIndex = 3;
             this.pbLoginTrail.TabStop = false;
             this.pbLoginTrail.Click += new System.EventHandler(this.pbLoginTrail_Click);
-            // 
-            // pbPromoAndDiscount
-            // 
-            this.pbPromoAndDiscount.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.pbPromoAndDiscount.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbPromoAndDiscount.BackgroundImage")));
-            this.pbPromoAndDiscount.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pbPromoAndDiscount.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbPromoAndDiscount.Location = new System.Drawing.Point(706, 169);
-            this.pbPromoAndDiscount.Name = "pbPromoAndDiscount";
-            this.pbPromoAndDiscount.Size = new System.Drawing.Size(100, 98);
-            this.pbPromoAndDiscount.TabIndex = 2;
-            this.pbPromoAndDiscount.TabStop = false;
             // 
             // pbUserManagement
             // 
@@ -204,10 +177,10 @@
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label6.Font = new System.Drawing.Font("Calibri", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(425, 467);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 36);
+            this.label6.Size = new System.Drawing.Size(130, 33);
             this.label6.TabIndex = 16;
             this.label6.Text = "Supplier";
             this.label6.Click += new System.EventHandler(this.label6_Click);
@@ -235,12 +208,10 @@
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pbAuditTrail);
             this.Controls.Add(this.pbLoginTrail);
-            this.Controls.Add(this.pbPromoAndDiscount);
             this.Controls.Add(this.pbUserManagement);
             this.Controls.Add(this.pbSystemSettings);
             this.Controls.Add(this.lblTitle);
@@ -249,7 +220,6 @@
             this.Load += new System.EventHandler(this.SystemOperation_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbAuditTrail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLoginTrail)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbPromoAndDiscount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserManagement)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSystemSettings)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -263,12 +233,10 @@
 
         private System.Windows.Forms.PictureBox pbSystemSettings;
         private System.Windows.Forms.PictureBox pbUserManagement;
-        private System.Windows.Forms.PictureBox pbPromoAndDiscount;
         private System.Windows.Forms.PictureBox pbAuditTrail;
         private System.Windows.Forms.PictureBox pbLoginTrail;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblTitle;
