@@ -35,6 +35,7 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel8 = new System.Windows.Forms.Panel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel6 = new System.Windows.Forms.Panel();
             this.cbCharttype = new System.Windows.Forms.ComboBox();
             this.lblType = new System.Windows.Forms.Label();
@@ -44,7 +45,6 @@
             this.dtTo = new System.Windows.Forms.DateTimePicker();
             this.dtFrom = new System.Windows.Forms.DateTimePicker();
             this.cmType = new System.Windows.Forms.ComboBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panelChart = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -54,11 +54,8 @@
             this.keyButton1 = new PetvetPOS_Inventory_System.KeyButton();
             this.label2 = new System.Windows.Forms.Label();
             this.keyButton4 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton3 = new PetvetPOS_Inventory_System.KeyButton();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
             this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -70,13 +67,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel8.SuspendLayout();
-            this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.panel6.SuspendLayout();
             this.panelChart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.salesChart)).BeginInit();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -100,6 +96,32 @@
             this.panel8.Padding = new System.Windows.Forms.Padding(0, 0, 10, 0);
             this.panel8.Size = new System.Drawing.Size(872, 183);
             this.panel8.TabIndex = 7;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView2.Location = new System.Drawing.Point(268, 0);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(594, 183);
+            this.dataGridView2.TabIndex = 0;
             // 
             // panel6
             // 
@@ -211,32 +233,6 @@
             this.cmType.DisplayMemberChanged += new System.EventHandler(this.cmType_DisplayMemberChanged);
             this.cmType.TextChanged += new System.EventHandler(this.cmType_TextChanged);
             // 
-            // dataGridView2
-            // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.White;
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(268, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(594, 183);
-            this.dataGridView2.TabIndex = 0;
-            // 
             // panelChart
             // 
             this.panelChart.BackColor = System.Drawing.Color.White;
@@ -293,11 +289,8 @@
             this.panel7.Controls.Add(this.keyButton1);
             this.panel7.Controls.Add(this.label2);
             this.panel7.Controls.Add(this.keyButton4);
-            this.panel7.Controls.Add(this.keyButton3);
-            this.panel7.Controls.Add(this.pictureBox2);
             this.panel7.Controls.Add(this.pictureBox1);
             this.panel7.Controls.Add(this.label7);
-            this.panel7.Controls.Add(this.label8);
             this.panel7.Controls.Add(this.keyButton2);
             this.panel7.Controls.Add(this.label9);
             this.panel7.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -348,42 +341,18 @@
             this.keyButton4.BackColor = System.Drawing.Color.Transparent;
             this.keyButton4.dbController = null;
             this.keyButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton4.Location = new System.Drawing.Point(656, 4);
+            this.keyButton4.Location = new System.Drawing.Point(375, 3);
             this.keyButton4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.keyButton4.masterController = null;
             this.keyButton4.Name = "keyButton4";
             this.keyButton4.Size = new System.Drawing.Size(61, 50);
             this.keyButton4.TabIndex = 28;
             // 
-            // keyButton3
-            // 
-            this.keyButton3.accessKeyChar = "F5";
-            this.keyButton3.accessMasterController = null;
-            this.keyButton3.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton3.dbController = null;
-            this.keyButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton3.Location = new System.Drawing.Point(337, 6);
-            this.keyButton3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton3.masterController = null;
-            this.keyButton3.Name = "keyButton3";
-            this.keyButton3.Size = new System.Drawing.Size(61, 50);
-            this.keyButton3.TabIndex = 24;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Refresh;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(278, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(54, 45);
-            this.pictureBox2.TabIndex = 25;
-            this.pictureBox2.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Print;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(527, 7);
+            this.pictureBox1.Location = new System.Drawing.Point(246, 6);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(54, 45);
             this.pictureBox1.TabIndex = 27;
@@ -393,23 +362,12 @@
             // 
             this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label7.Location = new System.Drawing.Point(723, 8);
+            this.label7.Location = new System.Drawing.Point(442, 7);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(53, 45);
             this.label7.TabIndex = 23;
             this.label7.Text = "Print";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label8
-            // 
-            this.label8.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label8.Location = new System.Drawing.Point(396, 8);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(108, 45);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "Refresh";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // keyButton2
             // 
@@ -418,7 +376,7 @@
             this.keyButton2.BackColor = System.Drawing.Color.Transparent;
             this.keyButton2.dbController = null;
             this.keyButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton2.Location = new System.Drawing.Point(586, 4);
+            this.keyButton2.Location = new System.Drawing.Point(305, 3);
             this.keyButton2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.keyButton2.masterController = null;
             this.keyButton2.Name = "keyButton2";
@@ -429,7 +387,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(644, 19);
+            this.label9.Location = new System.Drawing.Point(363, 18);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(17, 18);
             this.label9.TabIndex = 29;
@@ -543,15 +501,14 @@
             this.Size = new System.Drawing.Size(877, 583);
             this.Load += new System.EventHandler(this.Reports_Load);
             this.panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.panelChart.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.salesChart)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -586,9 +543,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label7;
         private KeyButton keyButton2;
-        private KeyButton keyButton3;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.DataVisualization.Charting.Chart salesChart;
         private KeyButton keyButton4;
