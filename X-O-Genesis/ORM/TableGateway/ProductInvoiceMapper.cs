@@ -24,11 +24,12 @@ namespace PetvetPOS_Inventory_System
             };
         }
 
-        public bool insertProductInvoice(Invoice transaction, Product product, int quantity)
+        public bool insertProductInvoice(Invoice transaction, Product product, int quantity,
+            decimal disc_percent, decimal disc_fixed)
         {
             Decimal grpPrice = product.UnitPrice * quantity;
             return create(
-                insertValues(transaction.InvoiceId, product.Barcode, quantity, grpPrice, 0, 0));//Temporary for discounts
+                insertValues(transaction.InvoiceId, product.Barcode, quantity, grpPrice, disc_percent, disc_fixed));//Temporary for discounts
         }
 
         public bool updateDescription(string barcode, string newDescription)
@@ -40,7 +41,8 @@ namespace PetvetPOS_Inventory_System
 
         public bool insertProductInvoice(ProductInvoice productInvoice)
         {
-            return insertProductInvoice(productInvoice.invoice, productInvoice.product, productInvoice.QuantitySold);
+            return insertProductInvoice(productInvoice.invoice, productInvoice.product, productInvoice.QuantitySold,
+                productInvoice.DiscPercent, productInvoice.DiscFixed);
         }
 
         public List<string> getListOfProductOnInvoice(Invoice invoice)

@@ -16,6 +16,8 @@ namespace PetvetPOS_Inventory_System
         DatabaseController dbController;
         List<Discounts> discountList = new List<Discounts>();
         DataTable discountTable;
+        MasterController masterController;
+        OrdersView ordersView;
 
         public Decimal[] discounts { get; set; } //For database recording (total discount)
         public Decimal[] accumulatedPercentageDiscount { get; set; } //For Net Price computation from List Price
@@ -28,9 +30,9 @@ namespace PetvetPOS_Inventory_System
         {
             InitializeComponent();
         }
-        public DiscountList(DatabaseController dbController)
+        public DiscountList(OrdersView ordersView)
         {
-            this.dbController = dbController;
+            this.ordersView = ordersView;
             InitializeComponent();
         }
 
@@ -124,6 +126,9 @@ namespace PetvetPOS_Inventory_System
         private void btnAdd_Click(object sender, EventArgs e)
         {
             getDiscounts();
+            ordersView.productTransaction.DiscPercent = discounts[0];
+            ordersView.productTransaction.DiscFixed = discounts[1];
+            this.Close();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

@@ -22,6 +22,7 @@ namespace PetvetPOS_Inventory_System
         List<ProductInvoice> carts = new List<ProductInvoice>();
         List<Discounts> discounts = new List<Discounts>();
         DiscountList discountListForm;
+        public ProductInvoice productTransaction;
 
         bool concludeTransaction;
         decimal totalAmount;
@@ -193,15 +194,21 @@ namespace PetvetPOS_Inventory_System
             return success;
         }
 
+        public void updateViewWithDiscount()
+        {
+
+        }
         public void addRowInDatagrid(int quantity)
         {
             bool success = false;
-                    
-            ProductInvoice productTransaction = new ProductInvoice(){
+            discountListForm = new DiscountList();
+            productTransaction = new ProductInvoice(){
                 invoice = currentTransaction,
                 product = currentProduct,
                 QuantitySold = quantity,
                 GroupPrice = (currentProduct.UnitPrice * quantity),
+                DiscPercent = 0,
+                DiscFixed = 0,
             };
 
             bool items_already_in_cart = false;
@@ -340,8 +347,8 @@ namespace PetvetPOS_Inventory_System
             if (dgTransaction.Rows.Count > 0)
             {
                 concludeTransaction = true;
-                //discountListForm = new DiscountList(dbController);
-                //discountListForm.ShowDialog();
+                discountListForm = new DiscountList(this);
+                discountListForm.ShowDialog();
                 conclusion();
                 printInvoice();
                 resetTransaction();
