@@ -370,6 +370,7 @@ namespace PetvetPOS_Inventory_System
             }
 
             return value;
+            
         }
 
         protected List<string> getList(string field){

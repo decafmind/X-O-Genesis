@@ -41,7 +41,7 @@
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(266, 87);
+            this.label1.Size = new System.Drawing.Size(331, 107);
             this.label1.TabIndex = 0;
             this.label1.Text = "Product - is already in critical level";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -53,7 +53,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(15, 15);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(266, 87);
+            this.panel1.Size = new System.Drawing.Size(331, 107);
             this.panel1.TabIndex = 1;
             // 
             // timer1
@@ -66,7 +66,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkRed;
-            this.ClientSize = new System.Drawing.Size(296, 117);
+            this.ClientSize = new System.Drawing.Size(361, 137);
             this.Controls.Add(this.panel1);
             this.ForeColor = System.Drawing.Color.White;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -74,7 +74,7 @@
             this.Opacity = 0.9D;
             this.Padding = new System.Windows.Forms.Padding(15);
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
             this.Text = "CriticalNotif";
             this.TopMost = true;
             this.Load += new System.EventHandler(this.CriticalNotif_Load);

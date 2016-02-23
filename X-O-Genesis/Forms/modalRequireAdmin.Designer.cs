@@ -1,6 +1,6 @@
 ﻿namespace PetvetPOS_Inventory_System
 {
-    partial class modalVoid
+    partial class modalRequireAdmin
     {
         /// <summary>
         /// Required designer variable.

@@ -19,6 +19,7 @@ namespace PetvetPOS_Inventory_System
         InventoryView invView = new InventoryView();
 
         public string bcode;
+
         public modalInspectProduct(DatabaseController dbController)
         {
             InitializeComponent();

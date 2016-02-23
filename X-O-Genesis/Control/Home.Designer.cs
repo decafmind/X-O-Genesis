@@ -29,13 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelPie = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.chartBestSellers = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.bestSellerPanel = new System.Windows.Forms.Panel();
+            this.dGBestSellers = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.dgReturnedProduct = new System.Windows.Forms.DataGridView();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.criticalPanel = new System.Windows.Forms.Panel();
             this.dgCritical = new System.Windows.Forms.DataGridView();
@@ -48,22 +57,8 @@
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.rectangleShape2 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
             this.rectangleShape1 = new Microsoft.VisualBasic.PowerPacks.RectangleShape();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.bestSellerPanel = new System.Windows.Forms.Panel();
-            this.dGBestSellers = new System.Windows.Forms.DataGridView();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.dgReturnedProduct = new System.Windows.Forms.DataGridView();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
             this.panelPie.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartBestSellers)).BeginInit();
-            this.mainPanel.SuspendLayout();
-            this.criticalPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgCritical)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
             this.bestSellerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGBestSellers)).BeginInit();
@@ -71,6 +66,11 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgReturnedProduct)).BeginInit();
             this.panel5.SuspendLayout();
+            this.mainPanel.SuspendLayout();
+            this.criticalPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgCritical)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // timer1
@@ -101,22 +101,143 @@
             // chartBestSellers
             // 
             this.chartBestSellers.BackColor = System.Drawing.Color.Transparent;
-            chartArea1.Name = "ChartArea1";
-            this.chartBestSellers.ChartAreas.Add(chartArea1);
+            chartArea2.Name = "ChartArea1";
+            this.chartBestSellers.ChartAreas.Add(chartArea2);
             this.chartBestSellers.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend1.Name = "Legend1";
-            this.chartBestSellers.Legends.Add(legend1);
+            legend2.Name = "Legend1";
+            this.chartBestSellers.Legends.Add(legend2);
             this.chartBestSellers.Location = new System.Drawing.Point(0, 0);
             this.chartBestSellers.Name = "chartBestSellers";
-            series1.ChartArea = "ChartArea1";
-            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chartBestSellers.Series.Add(series1);
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartBestSellers.Series.Add(series2);
             this.chartBestSellers.Size = new System.Drawing.Size(576, 329);
             this.chartBestSellers.TabIndex = 5;
             this.chartBestSellers.Text = "chart1";
             this.chartBestSellers.Click += new System.EventHandler(this.chartBestSellers_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.panel6.Controls.Add(this.bestSellerPanel);
+            this.panel6.Controls.Add(this.panel3);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(576, 254);
+            this.panel6.TabIndex = 7;
+            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
+            // 
+            // bestSellerPanel
+            // 
+            this.bestSellerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(158)))), ((int)(((byte)(99)))));
+            this.bestSellerPanel.Controls.Add(this.dGBestSellers);
+            this.bestSellerPanel.Controls.Add(this.panel4);
+            this.bestSellerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.bestSellerPanel.Location = new System.Drawing.Point(0, 0);
+            this.bestSellerPanel.Name = "bestSellerPanel";
+            this.bestSellerPanel.Padding = new System.Windows.Forms.Padding(5);
+            this.bestSellerPanel.Size = new System.Drawing.Size(198, 254);
+            this.bestSellerPanel.TabIndex = 4;
+            // 
+            // dGBestSellers
+            // 
+            this.dGBestSellers.AllowUserToAddRows = false;
+            this.dGBestSellers.AllowUserToDeleteRows = false;
+            this.dGBestSellers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dGBestSellers.BackgroundColor = System.Drawing.Color.White;
+            this.dGBestSellers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dGBestSellers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGBestSellers.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.dGBestSellers.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dGBestSellers.Location = new System.Drawing.Point(5, 50);
+            this.dGBestSellers.Name = "dGBestSellers";
+            this.dGBestSellers.ReadOnly = true;
+            this.dGBestSellers.RowHeadersVisible = false;
+            this.dGBestSellers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dGBestSellers.Size = new System.Drawing.Size(188, 199);
+            this.dGBestSellers.TabIndex = 4;
+            this.dGBestSellers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGBestSellers_CellContentClick);
+            this.dGBestSellers.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dGBestSellers_Scroll);
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(5, 5);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(188, 45);
+            this.panel4.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(158)))), ((int)(((byte)(99)))));
+            this.label5.Location = new System.Drawing.Point(0, 0);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(188, 45);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "Best Sellers";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(148)))), ((int)(((byte)(157)))));
+            this.panel3.Controls.Add(this.dgReturnedProduct);
+            this.panel3.Controls.Add(this.panel5);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(198, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Padding = new System.Windows.Forms.Padding(5);
+            this.panel3.Size = new System.Drawing.Size(378, 254);
+            this.panel3.TabIndex = 5;
+            // 
+            // dgReturnedProduct
+            // 
+            this.dgReturnedProduct.AllowUserToAddRows = false;
+            this.dgReturnedProduct.AllowUserToDeleteRows = false;
+            this.dgReturnedProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgReturnedProduct.BackgroundColor = System.Drawing.Color.White;
+            this.dgReturnedProduct.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.dgReturnedProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgReturnedProduct.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.dgReturnedProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgReturnedProduct.Location = new System.Drawing.Point(5, 47);
+            this.dgReturnedProduct.Name = "dgReturnedProduct";
+            this.dgReturnedProduct.ReadOnly = true;
+            this.dgReturnedProduct.RowHeadersVisible = false;
+            this.dgReturnedProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgReturnedProduct.Size = new System.Drawing.Size(368, 202);
+            this.dgReturnedProduct.TabIndex = 4;
+            this.dgReturnedProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgReturnedProduct_CellContentClick);
+            // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.label7);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(5, 5);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(368, 42);
+            this.panel5.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(148)))), ((int)(((byte)(157)))));
+            this.label7.Location = new System.Drawing.Point(0, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(368, 42);
+            this.label7.TabIndex = 1;
+            this.label7.Text = "Returned product";
+            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // mainPanel
             // 
@@ -255,125 +376,6 @@
             this.rectangleShape1.Name = "rectangleShape1";
             this.rectangleShape1.Size = new System.Drawing.Size(29, 23);
             // 
-            // panel6
-            // 
-            this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.panel6.Controls.Add(this.bestSellerPanel);
-            this.panel6.Controls.Add(this.panel3);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(576, 254);
-            this.panel6.TabIndex = 7;
-            this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
-            // 
-            // bestSellerPanel
-            // 
-            this.bestSellerPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(158)))), ((int)(((byte)(99)))));
-            this.bestSellerPanel.Controls.Add(this.dGBestSellers);
-            this.bestSellerPanel.Controls.Add(this.panel4);
-            this.bestSellerPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.bestSellerPanel.Location = new System.Drawing.Point(0, 0);
-            this.bestSellerPanel.Name = "bestSellerPanel";
-            this.bestSellerPanel.Padding = new System.Windows.Forms.Padding(5);
-            this.bestSellerPanel.Size = new System.Drawing.Size(198, 254);
-            this.bestSellerPanel.TabIndex = 4;
-            // 
-            // dGBestSellers
-            // 
-            this.dGBestSellers.AllowUserToAddRows = false;
-            this.dGBestSellers.AllowUserToDeleteRows = false;
-            this.dGBestSellers.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dGBestSellers.BackgroundColor = System.Drawing.Color.White;
-            this.dGBestSellers.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dGBestSellers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGBestSellers.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.dGBestSellers.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGBestSellers.Location = new System.Drawing.Point(5, 50);
-            this.dGBestSellers.Name = "dGBestSellers";
-            this.dGBestSellers.ReadOnly = true;
-            this.dGBestSellers.RowHeadersVisible = false;
-            this.dGBestSellers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGBestSellers.Size = new System.Drawing.Size(188, 199);
-            this.dGBestSellers.TabIndex = 4;
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.label5);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel4.Location = new System.Drawing.Point(5, 5);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(188, 45);
-            this.panel4.TabIndex = 0;
-            // 
-            // label5
-            // 
-            this.label5.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(158)))), ((int)(((byte)(99)))));
-            this.label5.Location = new System.Drawing.Point(0, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(188, 45);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Best Sellers";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(148)))), ((int)(((byte)(157)))));
-            this.panel3.Controls.Add(this.dgReturnedProduct);
-            this.panel3.Controls.Add(this.panel5);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(198, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Padding = new System.Windows.Forms.Padding(5);
-            this.panel3.Size = new System.Drawing.Size(378, 254);
-            this.panel3.TabIndex = 5;
-            // 
-            // dgReturnedProduct
-            // 
-            this.dgReturnedProduct.AllowUserToAddRows = false;
-            this.dgReturnedProduct.AllowUserToDeleteRows = false;
-            this.dgReturnedProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgReturnedProduct.BackgroundColor = System.Drawing.Color.White;
-            this.dgReturnedProduct.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dgReturnedProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgReturnedProduct.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.dgReturnedProduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgReturnedProduct.Location = new System.Drawing.Point(5, 47);
-            this.dgReturnedProduct.Name = "dgReturnedProduct";
-            this.dgReturnedProduct.ReadOnly = true;
-            this.dgReturnedProduct.RowHeadersVisible = false;
-            this.dgReturnedProduct.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgReturnedProduct.Size = new System.Drawing.Size(368, 202);
-            this.dgReturnedProduct.TabIndex = 4;
-            this.dgReturnedProduct.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgReturnedProduct_CellContentClick);
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel5.Location = new System.Drawing.Point(5, 5);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(368, 42);
-            this.panel5.TabIndex = 0;
-            // 
-            // label7
-            // 
-            this.label7.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.label7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label7.Font = new System.Drawing.Font("Arial Rounded MT Bold", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(106)))), ((int)(((byte)(148)))), ((int)(((byte)(157)))));
-            this.label7.Location = new System.Drawing.Point(0, 0);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(368, 42);
-            this.label7.TabIndex = 1;
-            this.label7.Text = "Returned product";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
             // Home
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -389,12 +391,6 @@
             this.panelPie.ResumeLayout(false);
             this.panelPie.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartBestSellers)).EndInit();
-            this.mainPanel.ResumeLayout(false);
-            this.criticalPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgCritical)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.bestSellerPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dGBestSellers)).EndInit();
@@ -402,6 +398,12 @@
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgReturnedProduct)).EndInit();
             this.panel5.ResumeLayout(false);
+            this.mainPanel.ResumeLayout(false);
+            this.criticalPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgCritical)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }

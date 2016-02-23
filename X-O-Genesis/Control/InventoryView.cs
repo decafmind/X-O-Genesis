@@ -21,16 +21,15 @@ namespace PetvetPOS_Inventory_System
         DataTable inventoryTable;
 
         private const int PRODUCT_NAME_INDEX = 0;
-        private const int SERVICE_NAME_INDEX = 0;
-        private const int QUANTITY_ONHAND_INDEX = 1;
-        private const int QUANTITY_RECEIVED_INDEX = 2;
-        private const int GROOMING_PETSIZE_INDEX = 1;
+        private const int PRODUCT_DESCRIPTION_INDEX = 1;
+        private const int QUANTITY_ONHAND_INDEX = 2;
+        private const int MAINTAINING_STOCKS_INDEX = 3;
+       
 
         public int currentSelection;
         string barcode;
 
         DataGridViewCellStyle critical, normal, highlighted;
-        private const decimal CRITICAL_LEVEL = .10M;
 
         private enum SelectedTab
         {
@@ -163,8 +162,7 @@ namespace PetvetPOS_Inventory_System
             {
                 if (args.Length > 1)
                 {
-                    if (row.Cells[NAME_INDEX].Value.ToString() == args[0] && 
-                        row.Cells[GROOMING_PETSIZE_INDEX].Value.ToString() == args[1])
+                    if (row.Cells[NAME_INDEX].Value.ToString() == args[0])
                     {
                         row.Selected = true;
                         break;
@@ -222,13 +220,25 @@ namespace PetvetPOS_Inventory_System
             else if (rbPurchased.Checked)
                 highlightQtySoldCells();
 
-            string product_name;
-            foreach (DataGridViewRow row in dgInventory.Rows)
+            string product_name, product_desc;
+
+            if (rbInventory.Checked)
             {
-                product_name = (string)row.Cells[PRODUCT_NAME_INDEX].Value;
-                Product product = dbController.getProductThroughName(product_name);
-                if (rbInventory.Checked && mainTab.SelectedTab == tabPage1)
-                    dbController.checkProductCriticalLevel(product);
+                foreach (DataGridViewRow row in dgInventory.Rows)
+                {
+                    int noOfCriticalProducts = 0;
+                    product_name = (string)row.Cells[PRODUCT_NAME_INDEX].Value;
+                    product_desc = (string)row.Cells[PRODUCT_DESCRIPTION_INDEX].Value;
+                    Product product = dbController.productMapper.getProductFromNameAndDesc(product_name, product_desc);
+                    if (rbInventory.Checked && mainTab.SelectedTab == tabPage1){
+                        if (dbController.productInventory.checkIfProductIsCritical(product))
+                        {
+                            noOfCriticalProducts += 1;
+                        }
+                    }
+                    if (noOfCriticalProducts > 0)
+                        masterController.displayCriticalNotif(noOfCriticalProducts);
+                }
             }
         }
 
@@ -264,16 +274,23 @@ namespace PetvetPOS_Inventory_System
 
         void colorCodedRows()
         {
-            decimal qty_onhand, qty_received;
-            foreach (DataGridViewRow row in dgInventory.Rows)
+            try
             {
-                qty_received = (decimal)row.Cells[QUANTITY_RECEIVED_INDEX].Value;
-                qty_onhand = (decimal)row.Cells[QUANTITY_ONHAND_INDEX].Value;
-                if (qty_onhand <= qty_received * CRITICAL_LEVEL)
-                    row.DefaultCellStyle.ApplyStyle(critical);
+                int qty_onhand, maintainingStocks;
+                foreach (DataGridViewRow row in dgInventory.Rows)
+                {
+                    qty_onhand = (int)(decimal)row.Cells[QUANTITY_ONHAND_INDEX].Value;
+                    maintainingStocks = (int)row.Cells[MAINTAINING_STOCKS_INDEX].Value;
 
-                row.Cells[QUANTITY_ONHAND_INDEX].Style = highlighted;
+                    if (qty_onhand <= maintainingStocks)
+                        row.DefaultCellStyle.ApplyStyle(critical);
+
+                    row.Cells[QUANTITY_ONHAND_INDEX].Style = highlighted;
+                }
+            }catch(Exception ex){
+
             }
+            
         }
 
         void highlightQtySoldCells()
@@ -1057,7 +1074,9 @@ namespace PetvetPOS_Inventory_System
         /// <returns>string - barcode</returns>
         private string getBarcodeFromRow()
         {
-            Product product = dbController.productMapper.getProductFromName(getValueFromDatagridCell(PRODUCT_NAME_INDEX));
+            string product_name = getValueFromDatagridCell(PRODUCT_NAME_INDEX);
+            string product_description = getValueFromDatagridCell(PRODUCT_DESCRIPTION_INDEX);
+            Product product = dbController.productMapper.getProductFromNameAndDesc(product_name, product_description);
             return product.Barcode;
         }
 

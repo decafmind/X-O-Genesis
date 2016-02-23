@@ -36,10 +36,10 @@ namespace PetvetPOS_Inventory_System
 
             fieldsname_forselect = new string[]{
                 "Name",
+                "Description",
                 "Qty_on_Hand AS 'Qty on Hand'",
-                "Qty_Received AS 'Qty received'",
+                "MaintainingStocks AS 'Maintaining Stocks'",
                 "Category",
-                "Stock_since AS 'Stock since'",
             };
         }
 
@@ -61,31 +61,61 @@ namespace PetvetPOS_Inventory_System
             return new ProductInventoryDomain(product, inventory);
         }
 
-        public void checkProductCriticalLevel(Product product, MasterController masterController)
+        public bool checkIfProductIsCritical(Product product)
+        {
+            string condition = string.Format("barcode = '{0}'", product.Barcode);
+            int maintaining_stocks = (int)readScalar("MaintainingStocks", condition);
+            int qty_onhand = (int)(decimal)readScalar("Qty_on_Hand", condition);
+
+            if (qty_onhand <= maintaining_stocks)
+                return true;
+            else
+                return false;
+        }
+
+        public bool checkProductCriticalLevel(Product product, MasterController masterController)
         {
             try
             {
-                string condition = string.Format("Name = '{0}'", product.Name);
+                string condition = string.Format("barcode = '{0}'", product.Barcode);
                 int maintaining_stocks = (int)readScalar("MaintainingStocks", condition);
-                decimal qty_onhand = (decimal)readScalar("Qty_On_Hand", condition);
+                int qty_onhand = (int)(decimal)readScalar("Qty_on_Hand", condition);
 
                 if (qty_onhand <= maintaining_stocks)
                 {
                     masterController.displayCriticalNotif(product, (int)qty_onhand);
+                    return true;
+                }
+                else
+                {
+                    return false;
                 }
             }
             catch (NullReferenceException)
             {
 
             }
-            
+            return false;
         }
 
         public decimal getStockQuantity(Product product)
         {
-            string condition = string.Format("Name = '{0}'", product.Name);
+            string condition = string.Format("barcode = '{0}'", product.Barcode);
             decimal qty_onhand = (decimal)readScalar("Qty_On_Hand", condition);
             return qty_onhand;
+        }
+
+        public decimal getMaintainingStocks(Product product)
+        {
+            decimal maintaining_stocks;
+            try{
+                string condition = string.Format("id = '{0}'", product.Barcode);
+                maintaining_stocks = (decimal)readScalar("MaintainingStocks", condition);
+            }catch (Exception e){
+                ErrorLog.Log(e);
+                maintaining_stocks = 0;
+            }
+            return maintaining_stocks;
         }
     }
 }

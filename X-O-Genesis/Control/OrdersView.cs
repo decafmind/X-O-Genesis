@@ -103,6 +103,7 @@ namespace PetvetPOS_Inventory_System
                 toggleEncoding(true);
             }
         }
+
         public void toggleEncoding(bool flag)
         {
             txtEncode.Enabled = flag;
@@ -154,43 +155,44 @@ namespace PetvetPOS_Inventory_System
                 currentProduct = dbController.getProductFromBarcode(barcode);
                 int quantity = 1;
                 int stock = dbController.getCurrentStockCountFromBarCode(currentProduct);
-                 
+                int maintaining_stock = (int)dbController.productInventory.getMaintainingStocks(currentProduct);
+
                 if (string.IsNullOrWhiteSpace(txtQuantity.Text))
                     MessageBox.Show("Please enter quantity");
                 else
                 {
                     quantity = int.Parse(txtQuantity.Text);
-                    if (stock >= currentQty)
+                    
+                    if (stock >= (currentQty + quantity))
                     {
-                        if (stock >= (currentQty + quantity))
+                        if (!string.IsNullOrWhiteSpace(currentProduct.Barcode))
                         {
-                            if (!string.IsNullOrWhiteSpace(currentProduct.Barcode))
-                            {
-                                decimal totalPrice = currentProduct.UnitPrice * quantity;
-                                lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, quantity, currentProduct.UnitPrice);
-                                success = true;
-                                addRowInDatagrid(quantity);
-                                currentQty += quantity;
-                            }
-                            else
-                            {
-                                lblPOSmsg.Text = "Item not found";
-                            }
+                            decimal totalPrice = currentProduct.UnitPrice * quantity;
+                            lblPOSmsg.Text = String.Format("{0} x{1} @{2}", currentProduct.Description, quantity, currentProduct.UnitPrice);
+                            success = true;
+                            addRowInDatagrid(quantity);
+                            currentQty += quantity;
                         }
                         else
                         {
-                            MessageBox.Show("Out of stock. Only " + stock + " left");
+                            lblPOSmsg.Text = "Item not found";
                         }
                     }
                     else
                     {
-                        MessageBox.Show("Out of stock. Only " + stock + " left");
+                        if (stock == 0)
+                        {
+                            MessageBox.Show("Out of stock.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Insufficient stock. Only " + stock + " left");
+                        }
                     }
                 }                                                  
 
             }
             catch (Exception) { lblPOSmsg.Text = "Item not found";  }
-
             return success;
         }
 
@@ -417,28 +419,38 @@ namespace PetvetPOS_Inventory_System
 
         void voidProduct()
         {
-            DataGridViewRow selectedRow = new DataGridViewRow();
-            if (dgTransaction.Rows.Count > 0)
+            modalRequireAdmin modalRequireAdmin = new modalRequireAdmin(dbController);
+            DialogResult result = modalRequireAdmin.ShowDialog();
+            if (result == DialogResult.OK)
             {
-              selectedRow  = dgTransaction.SelectedRows[0];
-              foreach (ProductInvoice item in carts)
-              {
-                  if (item.product.Description == selectedRow.Cells[DESCRIPTION_INDEX].Value.ToString())
-                  {
-                      totalAmount -= item.GroupPrice - _scpwd;
-                      carts.Remove(item);
+                DataGridViewRow selectedRow = new DataGridViewRow();
+                if (dgTransaction.Rows.Count > 0)
+                {
+                    selectedRow = dgTransaction.SelectedRows[0];
+                    foreach (ProductInvoice item in carts)
+                    {
+                        if (item.product.Description == selectedRow.Cells[DESCRIPTION_INDEX].Value.ToString())
+                        {
+                            totalAmount -= item.GroupPrice - _scpwd;
+                            carts.Remove(item);
 
-                      if (totalAmountWithService != 0)
-                          poSlbl2.Text = totalAmountWithService.ToString("N");
-                      else
-                          poSlbl2.Text = totalAmount.ToString("N");
+                            if (totalAmountWithService != 0)
+                                poSlbl2.Text = totalAmountWithService.ToString("N");
+                            else
+                                poSlbl2.Text = totalAmount.ToString("N");
 
-                      lblPOSmsg.Text = string.Format("Void {0}", item.product.Name);
-                      break;
-                  }
-              }
-              dgTransaction.Rows.Remove(selectedRow);
-            }                               
+                            lblPOSmsg.Text = string.Format("Void {0}", item.product.Name);
+                            break;
+                        }
+                    }
+                    dgTransaction.Rows.Remove(selectedRow);
+                }
+                else
+                {
+                    MessageBox.Show("Wrong admin credentials.");
+                }           
+            }
+
         }
 
         void invoice_Layout(object sender, PrintPageEventArgs e)
@@ -619,12 +631,11 @@ namespace PetvetPOS_Inventory_System
 
             // The minimum character of a barcode should be 8 (EAN-8)
             // And max of 13 (EAN-13)
-            if (txtEncode.Enabled && txtEncode.TextLength > 7)
+            if (txtEncode.Enabled && txtEncode.TextLength > 6)
             {
                 if (queryProduct())
                 {
-                    //rightSidePane.BackgroundImage = Properties.Resources.barcodeBlack;
-                    //barcodeIndicator.Start();
+ 
                 }
                 else
                 {

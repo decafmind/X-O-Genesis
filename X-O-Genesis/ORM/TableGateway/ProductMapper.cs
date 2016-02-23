@@ -61,6 +61,11 @@ namespace PetvetPOS_Inventory_System
             return new Product(getEntityWhere(String.Format("name = '{0}'", name)));
         }
 
+        public Product getProductFromNameAndDesc(string name, string desc)
+        {
+            return new Product(getEntityWhere(String.Format("name = '{0}' AND description = '{1}'", name, desc)));
+        }
+
         public Product getProductFromBarcode(string barcode)
         {
             return new Product(getEntityFromId(barcode));

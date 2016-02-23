@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace PetvetPOS_Inventory_System
 {
-    public partial class modalVoid : Form
+    public partial class modalRequireAdmin : Form
     {
 
         private DialogResult selectedResult;
@@ -28,12 +28,12 @@ namespace PetvetPOS_Inventory_System
             }
         }
 
-        public modalVoid()
+        public modalRequireAdmin()
         {
             InitializeComponent();
         }
 
-        public modalVoid(DatabaseController dbController)
+        public modalRequireAdmin(DatabaseController dbController)
         {
             InitializeComponent();
             this.dbController = dbController;
@@ -47,22 +47,17 @@ namespace PetvetPOS_Inventory_System
             User user = dbController.authenticateUser(username, password);
 
             if (user != null && user.getUserLevel() == UserLevel.ADMIN)
-                selectedResult = DialogResult.OK;
+                DialogResult = DialogResult.OK;
             else
-                selectedResult = DialogResult.Cancel;
-
-            Close();
+                DialogResult = DialogResult.Cancel;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            selectedResult = DialogResult.Cancel;
-            Close();
+            DialogResult = DialogResult.Cancel;
         }
 
         public DialogResult getResult { get { return selectedResult; } }
-
-
 
     }
 }

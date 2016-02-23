@@ -191,9 +191,9 @@ namespace PetvetPOS_Inventory_System
             return userMapper.validate(user_id, password);
         }
 
-        public void checkProductCriticalLevel(Product product)
+        public bool checkProductCriticalLevel(Product product)
         {
-            productInventory.checkProductCriticalLevel(product, masterController);
+            return productInventory.checkProductCriticalLevel(product, masterController);
         }
 
         public bool updateTotalPrice(string transaction_id, decimal new_total_price)

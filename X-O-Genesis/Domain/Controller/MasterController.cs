@@ -243,12 +243,17 @@ namespace PetvetPOS_Inventory_System
         public void displayCriticalNotif(Product product, int qty_onhand)
         {
             notif = new CriticalNotif(product, qty_onhand);
-            notif.Location = new Point(getFrmMain.Height - notif.Height,
-                                        getFrmMain.Width - notif.Width
-                                        );
             Form form = Application.OpenForms["CriticalNotif"];
             if (form == null)
-                notif.Show();
+                notif.Show(mainForm);
+        }
+
+        public void displayCriticalNotif(int numberOfProductsInCritical)
+        {
+            notif = new CriticalNotif(numberOfProductsInCritical);
+            Form form = Application.OpenForms["CriticalNotif"];
+            if (form == null)
+                notif.Show(mainForm);
         }
 
         public void returnToPreviousPage()

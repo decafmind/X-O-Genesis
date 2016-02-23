@@ -196,9 +196,7 @@ namespace PetvetPOS_Inventory_System
 
         private void frmMain_KeyUp(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F11)
-                masterController.toogleMaximize();
-            else if (e.Alt && e.KeyCode == Keys.Left)
+            if (e.Alt && e.KeyCode == Keys.Left)
                 masterController.returnToPreviousPage();
 
             if (isLogin){

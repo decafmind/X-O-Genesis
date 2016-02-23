@@ -33,6 +33,8 @@ namespace PetvetPOS_Inventory_System
         public DiscountList(OrdersView ordersView)
         {
             this.ordersView = ordersView;
+            this.masterController = ordersView.masterController;
+            this.dbController = ordersView.dbController;
             InitializeComponent();
         }
 
@@ -40,6 +42,7 @@ namespace PetvetPOS_Inventory_System
         {
             LoadDiscounts();
         }
+
         void LoadDiscounts()
         {
             discountTable = new DataTable();

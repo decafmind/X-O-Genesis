@@ -198,5 +198,15 @@ namespace PetvetPOS_Inventory_System
         {
 
         }
+
+        private void dGBestSellers_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dGBestSellers_Scroll(object sender, ScrollEventArgs e)
+        {
+            
+        }
     }
 }

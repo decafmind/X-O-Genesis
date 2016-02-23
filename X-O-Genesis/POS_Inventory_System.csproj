@@ -454,11 +454,11 @@
     <Compile Include="Forms\modalAddCategory.Designer.cs">
       <DependentUpon>modalAddCategory.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\modalVoid.cs">
+    <Compile Include="Forms\modalRequireAdmin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\modalVoid.Designer.cs">
-      <DependentUpon>modalVoid.cs</DependentUpon>
+    <Compile Include="Forms\modalRequireAdmin.Designer.cs">
+      <DependentUpon>modalRequireAdmin.cs</DependentUpon>
     </Compile>
     <Compile Include="ORM\ViewGateway\MonthlySaleReportMapper.cs" />
     <Compile Include="MyExtension\Validation.cs" />
@@ -702,8 +702,8 @@
     <EmbeddedResource Include="Forms\modalPayment.resx">
       <DependentUpon>modalPayment.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\modalVoid.resx">
-      <DependentUpon>modalVoid.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\modalRequireAdmin.resx">
+      <DependentUpon>modalRequireAdmin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Control\MyUserControl.resx">
       <DependentUpon>MyUserControl.cs</DependentUpon>

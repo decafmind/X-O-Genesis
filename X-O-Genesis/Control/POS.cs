@@ -359,21 +359,14 @@ namespace PetvetPOS_Inventory_System
             }
         }
 
-        modalVoid modalFrm;
+        modalRequireAdmin modalFrm;
 
         void voidProduct()
         {
-            modalFrm = new modalVoid(dbController);
-            modalFrm.btnOK.Click += btnOK_Click;
-            modalFrm.Show();
-        }
-
-
-        void btnOK_Click(object sender, EventArgs e)
-        {
             try
             {
-                DialogResult result = modalFrm.getResult;
+                modalFrm = new modalRequireAdmin(dbController);
+                DialogResult result = modalFrm.ShowDialog();
                 if (result == DialogResult.OK)
                 {
                     DataGridViewRow selectedRow = dgTransaction.SelectedRows[0];
@@ -402,9 +395,11 @@ namespace PetvetPOS_Inventory_System
             }
             catch (Exception)
             {
-                
+
             }
         }
+
+
 
         
         void receipt_PrintPage(object sender, PrintPageEventArgs e)

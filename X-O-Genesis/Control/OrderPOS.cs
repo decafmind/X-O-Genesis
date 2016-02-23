@@ -406,25 +406,36 @@ namespace PetvetPOS_Inventory_System
 
         void voidProduct()
         {
-            DataGridViewRow selectedRow = new DataGridViewRow();
-            if (dgTransaction.Rows.Count > 0)
+            modalRequireAdmin modalRequireAdmin = new modalRequireAdmin(dbController);
+            DialogResult result = modalRequireAdmin.ShowDialog();
+            if (result == DialogResult.OK)
             {
-                selectedRow = dgTransaction.SelectedRows[0];
-                foreach (ProductInvoice item in carts)
+                DataGridViewRow selectedRow = new DataGridViewRow();
+
+                if (dgTransaction.Rows.Count > 0)
                 {
-                    if (item.product.Description == selectedRow.Cells[DESCRIPTION_INDEX].Value.ToString())
+                    selectedRow = dgTransaction.SelectedRows[0];
+                    foreach (ProductInvoice item in carts)
                     {
-                        totalAmount -= item.GroupPrice;
-                        carts.Remove(item);
+                        if (item.product.Description == selectedRow.Cells[DESCRIPTION_INDEX].Value.ToString())
+                        {
+                            totalAmount -= item.GroupPrice;
+                            carts.Remove(item);
 
-                        poSlbl2.Text = totalAmount.ToString("N");
+                            poSlbl2.Text = totalAmount.ToString("N");
 
-                        lblPOSmsg.Text = string.Format("Void {0}", item.product.Name);
-                        break;
+                            lblPOSmsg.Text = string.Format("Void {0}", item.product.Name);
+                            break;
+                        }
                     }
+                    dgTransaction.Rows.Remove(selectedRow);
                 }
-                dgTransaction.Rows.Remove(selectedRow);
             }
+            else
+            {
+                MessageBox.Show("Wrong admin credentials.");
+            }
+            
         }
 
         void clearDataGrid()

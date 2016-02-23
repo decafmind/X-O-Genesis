@@ -17,6 +17,20 @@ namespace PetvetPOS_Inventory_System
             InitializeComponent();
         }
 
+        public CriticalNotif(int numberOfProductsInCritical)
+        {
+            InitializeComponent();
+            if (numberOfProductsInCritical == 1)
+                label1.Text = numberOfProductsInCritical + " product is in critical level.";
+            else
+                label1.Text = numberOfProductsInCritical + " products are in critical level.";
+
+            this.StartPosition = FormStartPosition.Manual;
+            this.Height /= 2;
+            int y = Screen.PrimaryScreen.Bounds.Height - this.Height;
+            this.Location = new Point(Screen.PrimaryScreen.Bounds.Right - this.Width, y);
+        }
+
         public CriticalNotif(Product product, int qty_left)
         {
             InitializeComponent();
@@ -27,10 +41,15 @@ namespace PetvetPOS_Inventory_System
             }
             else
             {
-                message = string.Format("Product {0} is already in critical level. {1} left.", product.Description, qty_left);
+                message = string.Format("Product {0} is in critical level. {1} left.", product.Description, qty_left);
             }
              
             label1.Text = message;
+
+
+            this.StartPosition = FormStartPosition.Manual;
+            int y = Screen.PrimaryScreen.Bounds.Height - this.Height;
+            this.Location = new Point(Screen.PrimaryScreen.Bounds.Right - this.Width, y);
         }
 
         private void CriticalNotif_Load(object sender, EventArgs e)
