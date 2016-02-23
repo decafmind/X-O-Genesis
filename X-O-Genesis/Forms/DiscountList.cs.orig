@@ -14,23 +14,38 @@ namespace PetvetPOS_Inventory_System
     {
 
         DatabaseController dbController;
-        List<Discounts> discountList = new List<Discounts>();
+        
         DataTable discountTable;
+        OrdersView ordersView;
 
+        public Decimal totalDiscountedAmount;
+        public List<string> selectedDiscounts;
+        public List<Discounts> discountList = new List<Discounts>();
         public Decimal[] discounts { get; set; } //For database recording (total discount)
         public Decimal[] accumulatedPercentageDiscount { get; set; } //For Net Price computation from List Price
         public Decimal[] accumulatedFixedDiscount { get; set; } //For Net Price computation from List Price
 
+        List<decimal> percentage;
+        List<decimal> fixedPrice;
+           
         private const int PERCENT_TYPE = 1;
         private const int FIXED_TYPE = 2;
+
+        decimal totalAmount = 0;
 
         public DiscountList()
         {
             InitializeComponent();
         }
-        public DiscountList(DatabaseController dbController)
+        public DiscountList(OrdersView ordersView, DatabaseController dbController)
         {
-            this.dbController = dbController;
+            this.ordersView = ordersView;
+<<<<<<< HEAD
+            this.masterController = ordersView.masterController;
+            this.dbController = ordersView.dbController;
+=======
+            this.dbController = dbController;          
+>>>>>>> origin/PerfectTimes
             InitializeComponent();
         }
 
@@ -38,8 +53,11 @@ namespace PetvetPOS_Inventory_System
         {
             LoadDiscounts();
         }
+
         void LoadDiscounts()
         {
+            lblDiscountedTotal.Text = "0";
+          
             discountTable = new DataTable();
             dbController.discountsMapper.loadTable(discountTable);
             foreach (DataRow dr in discountTable.Rows)
@@ -55,10 +73,12 @@ namespace PetvetPOS_Inventory_System
             int i = 0;
             int x = 10;
             int y = 10;
+
             CheckBox[] cbDiscounts = new CheckBox[discountList.Count];
             foreach (Discounts discounts in discountList)
             {
                 cbDiscounts[i] = new CheckBox();
+
                 cbDiscounts[i].Text = discounts.Title;
                 cbDiscounts[i].Name = "cbDiscounts_" + i;
                 panel_Discounts.Controls.Add(cbDiscounts[i]);
@@ -70,7 +90,7 @@ namespace PetvetPOS_Inventory_System
 
         private Decimal[] getDiscounts()
         {
-            List<string> selectedDiscounts = new List<string>();
+            selectedDiscounts = new List<string>();
             Decimal totalPercentage = 0;
             Decimal totalFixed = 0;
 
@@ -80,10 +100,10 @@ namespace PetvetPOS_Inventory_System
             {
                 if (c is CheckBox)
                 {
-                    CheckBox chk = c as CheckBox;
-                    if (chk.Checked)
+                    CheckBox ch = c as CheckBox;                  
+                    if (ch.Checked)
                     {
-                        selectedDiscounts.Add(chk.Text);
+                        selectedDiscounts.Add(ch.Text);
                     }
                 }
             }
@@ -124,17 +144,87 @@ namespace PetvetPOS_Inventory_System
         private void btnAdd_Click(object sender, EventArgs e)
         {
             getDiscounts();
+            foreach (ProductInvoice items in ordersView.carts)
+            {
+                items.DiscPercent = discounts[0];
+                items.DiscFixed = discounts[1];
+                ordersView.withDiscounts = true;
+            }        
+            this.Close();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
-            this.Close();
+            this.Dispose();
         }
 
-=======
+        void showDiscountedTotal()
+        {
+            totalAmount = ordersView.totalAmount;
 
+            percentage = new List<decimal>();
+            fixedPrice = new List<decimal>();
+
+            discountTable = new DataTable();
+            dbController.discountsMapper.loadTable(discountTable);
+
+            bool hasDiscount = false;
+
+            //Process values
+            foreach (Control c in panel_Discounts.Controls)
+            {
+                if (c is CheckBox)
+                {
+                    CheckBox chk = c as CheckBox;
+                    if (chk.Checked)
+                    {
+                        hasDiscount = discountTable.AsEnumerable()
+                            .Any(row => chk.Text == row.Field<String>("title"));
+
+                        if (hasDiscount)
+                        {
+                            var type = from d in discountTable.AsEnumerable()
+                                       where d.Field<string>("title") == chk.Text
+                                       select d.Field<int>("type");
+                            if (type.Contains(1))
+                            {
+                                var disc = (from d in discountTable.AsEnumerable()
+                                           where d.Field<string>("title") == chk.Text
+                                           select d.Field<decimal>("less")).FirstOrDefault();
+
+                                percentage.Add(disc);
+                            }
+                            else if (type.Contains(2))
+                            {
+                                var disc = (from d in discountTable.AsEnumerable()
+                                           where d.Field<string>("title") == chk.Text
+                                           select d.Field<decimal>("less")).FirstOrDefault();
+
+                                fixedPrice.Add(disc);
+                            }
+                           
+                        }
+                    }
+                }
+            }
+          
+            foreach (Decimal percentDisc in percentage)
+            {
+                totalAmount = totalAmount * (1 - percentDisc / 100);
+            }
+
+            foreach (Decimal percentFixed in fixedPrice)
+            {
+                totalAmount = totalAmount - percentFixed;
+            }
+
+            totalDiscountedAmount = totalAmount;
+            lblDiscountedTotal.Text = totalDiscountedAmount.ToString("N");
         }
->>>>>>> decafmind/PerfectTimes
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            showDiscountedTotal();
+        }
     }
 }
