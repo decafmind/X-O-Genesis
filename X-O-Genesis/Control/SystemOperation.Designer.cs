@@ -54,7 +54,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(132, 467);
+            this.label5.Location = new System.Drawing.Point(1053, 270);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(148, 33);
             this.label5.TabIndex = 9;
@@ -65,7 +65,7 @@
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(660, 270);
+            this.label4.Location = new System.Drawing.Point(761, 270);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(138, 33);
             this.label4.TabIndex = 8;
@@ -77,7 +77,7 @@
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(359, 270);
+            this.label2.Location = new System.Drawing.Point(393, 270);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(269, 33);
             this.label2.TabIndex = 6;
@@ -102,7 +102,7 @@
             this.pbAuditTrail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbAuditTrail.BackgroundImage")));
             this.pbAuditTrail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbAuditTrail.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbAuditTrail.Location = new System.Drawing.Point(149, 366);
+            this.pbAuditTrail.Location = new System.Drawing.Point(1070, 169);
             this.pbAuditTrail.Name = "pbAuditTrail";
             this.pbAuditTrail.Size = new System.Drawing.Size(100, 98);
             this.pbAuditTrail.TabIndex = 4;
@@ -115,7 +115,7 @@
             this.pbLoginTrail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbLoginTrail.BackgroundImage")));
             this.pbLoginTrail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbLoginTrail.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbLoginTrail.Location = new System.Drawing.Point(677, 169);
+            this.pbLoginTrail.Location = new System.Drawing.Point(778, 169);
             this.pbLoginTrail.Name = "pbLoginTrail";
             this.pbLoginTrail.Size = new System.Drawing.Size(100, 98);
             this.pbLoginTrail.TabIndex = 3;
@@ -128,7 +128,7 @@
             this.pbUserManagement.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbUserManagement.BackgroundImage")));
             this.pbUserManagement.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbUserManagement.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbUserManagement.Location = new System.Drawing.Point(427, 169);
+            this.pbUserManagement.Location = new System.Drawing.Point(479, 169);
             this.pbUserManagement.Name = "pbUserManagement";
             this.pbUserManagement.Size = new System.Drawing.Size(100, 98);
             this.pbUserManagement.TabIndex = 1;
@@ -141,7 +141,7 @@
             this.pbSystemSettings.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbSystemSettings.BackgroundImage")));
             this.pbSystemSettings.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbSystemSettings.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbSystemSettings.Location = new System.Drawing.Point(149, 169);
+            this.pbSystemSettings.Location = new System.Drawing.Point(180, 169);
             this.pbSystemSettings.Name = "pbSystemSettings";
             this.pbSystemSettings.Size = new System.Drawing.Size(100, 98);
             this.pbSystemSettings.TabIndex = 0;
@@ -178,7 +178,7 @@
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(425, 467);
+            this.label6.Location = new System.Drawing.Point(163, 466);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(130, 33);
             this.label6.TabIndex = 16;
@@ -191,7 +191,7 @@
             this.pbSupplier.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbSupplier.BackgroundImage")));
             this.pbSupplier.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbSupplier.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbSupplier.Location = new System.Drawing.Point(430, 364);
+            this.pbSupplier.Location = new System.Drawing.Point(180, 364);
             this.pbSupplier.Name = "pbSupplier";
             this.pbSupplier.Size = new System.Drawing.Size(100, 98);
             this.pbSupplier.TabIndex = 15;

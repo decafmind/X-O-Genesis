@@ -897,7 +897,6 @@
     <None Include="Resources\iconmonstr-gear-icon-256.png" />
     <None Include="Resources\Add File.png" />
     <None Include="Resources\Add User.png" />
-    <None Include="Resources\Banknotes.png" />
     <None Include="Resources\Barcode Scanner.png" />
     <None Include="Resources\Buy.png" />
     <None Include="Resources\Cancel 2.png" />
@@ -967,6 +966,9 @@
     <None Include="Resources\NoDISCOUNTS21.png" />
     <None Include="Resources\SystemIcon New.ico" />
     <None Include="Resources\SystemIcon_New.ico" />
+    <None Include="Resources\Banknotes.png" />
+    <None Include="Resources\POSIS_icon.ico" />
+    <None Include="Resources\POSISGIF.gif" />
     <Content Include="SystemIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
