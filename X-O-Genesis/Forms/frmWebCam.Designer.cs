@@ -49,9 +49,9 @@
             this.earTimer = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
+            this.pawPrint1 = new PetvetPOS_Inventory_System.PawPrint();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.pawPrint1 = new PetvetPOS_Inventory_System.PawPrint();
             this.pawPrint2 = new PetvetPOS_Inventory_System.PawPrint();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -60,18 +60,18 @@
             // 
             // ovalEarR
             // 
-            this.ovalEarR.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(158)))), ((int)(((byte)(99)))));
+            this.ovalEarR.BackColor = System.Drawing.Color.Transparent;
             this.ovalEarR.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.ovalEarR.BorderColor = System.Drawing.Color.White;
+            this.ovalEarR.BorderColor = System.Drawing.Color.Transparent;
             this.ovalEarR.Location = new System.Drawing.Point(544, 37);
             this.ovalEarR.Name = "ovalEarR";
             this.ovalEarR.Size = new System.Drawing.Size(53, 46);
             // 
             // ovalEarL
             // 
-            this.ovalEarL.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(158)))), ((int)(((byte)(99)))));
+            this.ovalEarL.BackColor = System.Drawing.Color.Transparent;
             this.ovalEarL.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.ovalEarL.BorderColor = System.Drawing.Color.White;
+            this.ovalEarL.BorderColor = System.Drawing.Color.Transparent;
             this.ovalEarL.Location = new System.Drawing.Point(354, 32);
             this.ovalEarL.Name = "ovalEarL";
             this.ovalEarL.Size = new System.Drawing.Size(53, 46);
@@ -117,18 +117,18 @@
             // 
             // ovalEarHoleR
             // 
-            this.ovalEarHoleR.BackColor = System.Drawing.Color.White;
+            this.ovalEarHoleR.BackColor = System.Drawing.Color.Transparent;
             this.ovalEarHoleR.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.ovalEarHoleR.BorderColor = System.Drawing.Color.White;
+            this.ovalEarHoleR.BorderColor = System.Drawing.Color.Transparent;
             this.ovalEarHoleR.Location = new System.Drawing.Point(547, 53);
             this.ovalEarHoleR.Name = "ovalEarHoleR";
             this.ovalEarHoleR.Size = new System.Drawing.Size(31, 26);
             // 
             // ovalEarHoleL
             // 
-            this.ovalEarHoleL.BackColor = System.Drawing.Color.White;
+            this.ovalEarHoleL.BackColor = System.Drawing.Color.Transparent;
             this.ovalEarHoleL.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.ovalEarHoleL.BorderColor = System.Drawing.Color.White;
+            this.ovalEarHoleL.BorderColor = System.Drawing.Color.Transparent;
             this.ovalEarHoleL.Location = new System.Drawing.Point(373, 50);
             this.ovalEarHoleL.Name = "ovalEarHoleL";
             this.ovalEarHoleL.Size = new System.Drawing.Size(31, 26);
@@ -271,6 +271,15 @@
             this.panel2.TabIndex = 9;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmWebCam_MouseDown);
             // 
+            // pawPrint1
+            // 
+            this.pawPrint1.Location = new System.Drawing.Point(285, 12);
+            this.pawPrint1.Name = "pawPrint1";
+            this.pawPrint1.PawColor = System.Drawing.SystemColors.Control;
+            this.pawPrint1.Size = new System.Drawing.Size(55, 59);
+            this.pawPrint1.TabIndex = 8;
+            this.pawPrint1.Load += new System.EventHandler(this.pawPrint1_Load);
+            // 
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.White;
@@ -295,15 +304,6 @@
             this.shapeContainer3.Size = new System.Drawing.Size(632, 343);
             this.shapeContainer3.TabIndex = 0;
             this.shapeContainer3.TabStop = false;
-            // 
-            // pawPrint1
-            // 
-            this.pawPrint1.Location = new System.Drawing.Point(285, 12);
-            this.pawPrint1.Name = "pawPrint1";
-            this.pawPrint1.PawColor = System.Drawing.SystemColors.Control;
-            this.pawPrint1.Size = new System.Drawing.Size(55, 59);
-            this.pawPrint1.TabIndex = 8;
-            this.pawPrint1.Load += new System.EventHandler(this.pawPrint1_Load);
             // 
             // pawPrint2
             // 

@@ -968,6 +968,7 @@
     <None Include="Resources\SystemIcon_New.ico" />
     <None Include="Resources\Banknotes.png" />
     <None Include="Resources\POSIS_icon.ico" />
+    <None Include="Resources\POSISGIF.gif" />
     <Content Include="SystemIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
