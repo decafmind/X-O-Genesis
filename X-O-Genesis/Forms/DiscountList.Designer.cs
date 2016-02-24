@@ -119,7 +119,7 @@
             this.btnClose.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnClose.Image = global::PetvetPOS_Inventory_System.Properties.Resources.NoDISCOUNTS2;
+            this.btnClose.Image = global::PetvetPOS_Inventory_System.Properties.Resources.NoDISCOUNTS2Ver2_1;
             this.btnClose.Location = new System.Drawing.Point(186, 9);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(181, 58);
@@ -137,7 +137,7 @@
             this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.btnAdd.Image = global::PetvetPOS_Inventory_System.Properties.Resources.addDiscount2;
+            this.btnAdd.Image = global::PetvetPOS_Inventory_System.Properties.Resources.addDiscount21;
             this.btnAdd.Location = new System.Drawing.Point(3, 9);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(165, 58);

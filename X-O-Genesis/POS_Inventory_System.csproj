@@ -855,6 +855,7 @@
     <None Include="Resources\iconmonstr-lock-15-icon-256.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\NoDISCOUNTS2Ver2.1" />
     <None Include="Resources\PETVET LOGO2_cropped.png" />
   </ItemGroup>
   <ItemGroup>
@@ -969,6 +970,8 @@
     <None Include="Resources\Banknotes.png" />
     <None Include="Resources\POSIS_icon.ico" />
     <None Include="Resources\POSISGIF.gif" />
+    <None Include="Resources\NoDISCOUNTS2Ver2_1.png" />
+    <None Include="Resources\addDiscount22.png" />
     <Content Include="SystemIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

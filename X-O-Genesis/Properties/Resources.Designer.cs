@@ -93,6 +93,16 @@ namespace PetvetPOS_Inventory_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap addDiscount21 {
+            get {
+                object obj = ResourceManager.GetObject("addDiscount21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap addUser {
             get {
                 object obj = ResourceManager.GetObject("addUser", resourceCulture);
@@ -656,6 +666,16 @@ namespace PetvetPOS_Inventory_System.Properties {
         internal static System.Drawing.Bitmap NoDISCOUNTS2 {
             get {
                 object obj = ResourceManager.GetObject("NoDISCOUNTS2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap NoDISCOUNTS2Ver2_1 {
+            get {
+                object obj = ResourceManager.GetObject("NoDISCOUNTS2Ver2_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
