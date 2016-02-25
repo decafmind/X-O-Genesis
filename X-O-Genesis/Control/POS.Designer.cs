@@ -487,9 +487,9 @@
             this.panel4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel4.Controls.Add(this.label7);
+            this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Controls.Add(this.pictureBox4);
             this.panel4.Controls.Add(this.keyButton1);
-            this.panel4.Controls.Add(this.pictureBox1);
             this.panel4.Controls.Add(this.keyButton4);
             this.panel4.Controls.Add(this.label8);
             this.panel4.Controls.Add(this.keyButton3);
@@ -519,7 +519,7 @@
             // 
             this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
             this.pictureBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox4.Location = new System.Drawing.Point(626, 9);
+            this.pictureBox4.Location = new System.Drawing.Point(691, 7);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(54, 45);
             this.pictureBox4.TabIndex = 27;
@@ -532,7 +532,7 @@
             this.keyButton1.BackColor = System.Drawing.Color.Transparent;
             this.keyButton1.dbController = null;
             this.keyButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton1.Location = new System.Drawing.Point(64, 8);
+            this.keyButton1.Location = new System.Drawing.Point(5, 4);
             this.keyButton1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.keyButton1.masterController = null;
             this.keyButton1.Name = "keyButton1";
@@ -543,7 +543,7 @@
             // 
             this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(5, 9);
+            this.pictureBox1.Location = new System.Drawing.Point(69, 8);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(54, 45);
             this.pictureBox1.TabIndex = 21;
@@ -556,7 +556,7 @@
             this.keyButton4.BackColor = System.Drawing.Color.Transparent;
             this.keyButton4.dbController = null;
             this.keyButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton4.Location = new System.Drawing.Point(685, 8);
+            this.keyButton4.Location = new System.Drawing.Point(626, 4);
             this.keyButton4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.keyButton4.masterController = null;
             this.keyButton4.Name = "keyButton4";
@@ -581,7 +581,7 @@
             this.keyButton3.BackColor = System.Drawing.Color.Transparent;
             this.keyButton3.dbController = null;
             this.keyButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton3.Location = new System.Drawing.Point(484, 8);
+            this.keyButton3.Location = new System.Drawing.Point(426, 4);
             this.keyButton3.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.keyButton3.masterController = null;
             this.keyButton3.Name = "keyButton3";
@@ -593,7 +593,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label10.Location = new System.Drawing.Point(751, 20);
+            this.label10.Location = new System.Drawing.Point(751, 19);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(111, 18);
             this.label10.TabIndex = 26;
@@ -603,7 +603,7 @@
             // 
             this.pictureBox2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox2.BackgroundImage")));
             this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(198, 9);
+            this.pictureBox2.Location = new System.Drawing.Point(261, 8);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(54, 45);
             this.pictureBox2.TabIndex = 23;
@@ -616,7 +616,7 @@
             this.keyButton2.BackColor = System.Drawing.Color.Transparent;
             this.keyButton2.dbController = null;
             this.keyButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton2.Location = new System.Drawing.Point(257, 8);
+            this.keyButton2.Location = new System.Drawing.Point(197, 7);
             this.keyButton2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.keyButton2.masterController = null;
             this.keyButton2.Name = "keyButton2";
@@ -627,7 +627,7 @@
             // 
             this.pictureBox3.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Refresh;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(425, 9);
+            this.pictureBox3.Location = new System.Drawing.Point(487, 8);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(54, 45);
             this.pictureBox3.TabIndex = 25;
@@ -638,7 +638,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label9.Location = new System.Drawing.Point(544, 20);
+            this.label9.Location = new System.Drawing.Point(547, 19);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 18);
             this.label9.TabIndex = 24;

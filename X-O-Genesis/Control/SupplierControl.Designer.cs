@@ -295,7 +295,7 @@
             // 
             this.panelCanvas.BackColor = System.Drawing.Color.White;
             this.panelCanvas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelCanvas.Location = new System.Drawing.Point(234, 42);
+            this.panelCanvas.Location = new System.Drawing.Point(228, 41);
             this.panelCanvas.Name = "panelCanvas";
             this.panelCanvas.Size = new System.Drawing.Size(510, 342);
             this.panelCanvas.TabIndex = 1;

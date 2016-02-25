@@ -223,6 +223,16 @@ namespace PetvetPOS_Inventory_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CancelORDER {
+            get {
+                object obj = ResourceManager.GetObject("CancelORDER", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap cashRegister {
             get {
                 object obj = ResourceManager.GetObject("cashRegister", resourceCulture);
@@ -316,6 +326,16 @@ namespace PetvetPOS_Inventory_System.Properties {
         internal static System.Drawing.Bitmap Compact_Camera {
             get {
                 object obj = ResourceManager.GetObject("Compact Camera", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap confirmOrder {
+            get {
+                object obj = ResourceManager.GetObject("confirmOrder", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -823,6 +843,26 @@ namespace PetvetPOS_Inventory_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap RemoveITEM {
+            get {
+                object obj = ResourceManager.GetObject("RemoveITEM", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RemoveITEM20 {
+            get {
+                object obj = ResourceManager.GetObject("RemoveITEM20", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap removeUser {
             get {
                 object obj = ResourceManager.GetObject("removeUser", resourceCulture);
@@ -966,6 +1006,16 @@ namespace PetvetPOS_Inventory_System.Properties {
         internal static System.Drawing.Bitmap Splash_screenF4 {
             get {
                 object obj = ResourceManager.GetObject("Splash_screenF4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap start {
+            get {
+                object obj = ResourceManager.GetObject("start", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

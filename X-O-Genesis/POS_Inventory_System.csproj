@@ -983,6 +983,11 @@
     <None Include="Resources\POSISGIF.gif" />
     <None Include="Resources\NoDISCOUNTS2Ver2_1.png" />
     <None Include="Resources\addDiscount22.png" />
+    <None Include="Resources\start.png" />
+    <None Include="Resources\confirmOrder.png" />
+    <None Include="Resources\CancelORDER.png" />
+    <None Include="Resources\RemoveITEM.png" />
+    <None Include="Resources\RemoveITEM20.png" />
     <Content Include="SystemIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
