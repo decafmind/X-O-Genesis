@@ -294,8 +294,6 @@ namespace PetvetPOS_Inventory_System
 
         }
 
-
-
         void initTable()
         {
             dt.Columns.Add("Quantity", typeof(Int32));
