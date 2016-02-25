@@ -51,6 +51,7 @@
             this.lblTransactionno = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblDiscount = new System.Windows.Forms.Label();
             this.lblPOSmsg = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.poSlbl2 = new PetvetPOS_Inventory_System.POSlbl();
@@ -300,6 +301,7 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.lblDiscount);
             this.panel2.Controls.Add(this.lblPOSmsg);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.poSlbl2);
@@ -308,6 +310,18 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(458, 169);
             this.panel2.TabIndex = 1;
+            // 
+            // lblDiscount
+            // 
+            this.lblDiscount.AutoSize = true;
+            this.lblDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDiscount.ForeColor = System.Drawing.Color.DarkGreen;
+            this.lblDiscount.Location = new System.Drawing.Point(7, 70);
+            this.lblDiscount.Name = "lblDiscount";
+            this.lblDiscount.Size = new System.Drawing.Size(233, 31);
+            this.lblDiscount.TabIndex = 15;
+            this.lblDiscount.Text = "***Discounted***";
+            this.lblDiscount.Visible = false;
             // 
             // lblPOSmsg
             // 
@@ -583,5 +597,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnEncode;
+        private System.Windows.Forms.Label lblDiscount;
     }
 }

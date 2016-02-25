@@ -15,8 +15,10 @@ namespace PetvetPOS_Inventory_System
     {
         Invoice currentTransaction;
         Product currentProduct;
+        DiscountsAdv discountListForm;
         DataTable dt = new DataTable();
         List<ProductInvoice> carts = new List<ProductInvoice>();
+
 
         bool concludeTransaction;
         decimal totalAmount;
@@ -41,6 +43,7 @@ namespace PetvetPOS_Inventory_System
             initTable();
         }
 
+
         public void initializePage()
         {
 
@@ -59,7 +62,7 @@ namespace PetvetPOS_Inventory_System
             }
             else if (e.KeyCode == Keys.F2)
             {
-                pay();
+                pay();             
                 keyButton2.updateButton();
             }
             else if (e.KeyCode == Keys.F3)
@@ -332,6 +335,7 @@ namespace PetvetPOS_Inventory_System
 
         private void pay()
         {
+
             payment = 0.0M;
             string customerName = string.Empty, customerAddress = string.Empty;
             if (dgTransaction.Rows.Count > 0)
@@ -449,7 +453,7 @@ namespace PetvetPOS_Inventory_System
             if ((string.IsNullOrWhiteSpace(txtEncode.Text)) || (string.IsNullOrWhiteSpace(txtQuantity.Text)))
                 return;
 
-            if (txtEncode.Enabled && txtEncode.TextLength > 7)
+            if (txtEncode.Enabled && txtEncode.TextLength > 6)
             {
                 if (queryProduct())
                 {

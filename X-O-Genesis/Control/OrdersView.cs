@@ -21,7 +21,7 @@ namespace PetvetPOS_Inventory_System
         DataTable dt = new DataTable();
        
         List<Discounts> discounts = new List<Discounts>();
-        DiscountList discountListForm;
+        DiscountsAdv discountListForm;
 
         public ProductInvoice productTransaction;
         public List<ProductInvoice> carts = new List<ProductInvoice>();
@@ -40,6 +40,9 @@ namespace PetvetPOS_Inventory_System
         private const int DESCRIPTION_INDEX = 1;
         private const int PRICE_INDEX = 2;
         private const int GROUP_PRICE_INDEX = 3;
+
+        const int PERCENT_TYPE = 1;
+        const int FIXED_TYPE = 2;
 
    
         void Orders_KeyFunction(KeyEventArgs e)
@@ -206,7 +209,7 @@ namespace PetvetPOS_Inventory_System
         public void addRowInDatagrid(int quantity)
         {
             bool success = false;
-            discountListForm = new DiscountList();
+            discountListForm = new DiscountsAdv();
 
             productTransaction = new ProductInvoice(){
                 invoice = currentTransaction,
@@ -293,11 +296,8 @@ namespace PetvetPOS_Inventory_System
                 }
             }
 
-            //totalAmount += productTransaction.GroupPrice;
             if (success)
                 totalAmount += productTransaction.GroupPrice;
-
-            //_scpwd = chkSCPWD.Checked ? totalAmount * Convert.ToDecimal(0.20) : 0; ---Fix this
 
             poSlbl2.Text = totalAmount.ToString("N");
             txtEncode.Clear();
@@ -353,7 +353,7 @@ namespace PetvetPOS_Inventory_System
             if (dgTransaction.Rows.Count > 0)
             {
                 concludeTransaction = true;
-                discountListForm = new DiscountList(this, dbController);
+                discountListForm = new DiscountsAdv(this, dbController);
                 discountListForm.ShowDialog();
                 conclusion();
                 printInvoice();
@@ -367,12 +367,12 @@ namespace PetvetPOS_Inventory_System
             concludeTransaction = true;
             toggleEncoding(false);
           
-            inventory = null;
-            
+            inventory = null;   
+            Invoice invoice = new Invoice();
             foreach (ProductInvoice item in carts)
             {
-
                 dbController.insertProductInvoice(item);
+                invoice = item.invoice;
                 inventory = new Inventory(){
                     Barcode = item.product.Barcode,
                     QtyReceived = 0,
@@ -381,7 +381,19 @@ namespace PetvetPOS_Inventory_System
 
                 dbController.checkProductCriticalLevel(item.product);
         	}
-         
+           
+            foreach (Discounts d in discountListForm.availedDiscounts)
+            {
+                AvailedDiscounts availed = new AvailedDiscounts()
+                {
+                    InvoiceID = invoice.InvoiceId,
+                    DiscountTitle = d.Title,
+                    DiscountType = d.Type,
+                    Less = d.Less
+                };
+                dbController.availedDiscountsMapper.insertAvailedDiscounts(availed);
+            }
+                   
             // audit 
             string message = string.Format("completed a transaction: {0}", lblTransactionno.Text);
             dbController.insertAuditTrail(message);
@@ -483,10 +495,10 @@ namespace PetvetPOS_Inventory_System
                 tax = Convert.ToDecimal(dr["tax"]);
             }
      
-            _vat = tax * Convert.ToDecimal(poSlbl2.Text);  
-            _vatableSales = Convert.ToDecimal(poSlbl2.Text) - _vat;
+            
                       
             Graphics g = e.Graphics;
+            Font fontBold = new Font("MS San Serif", 11, FontStyle.Bold);
             using(Font font = new Font("MS San Serif", 11, FontStyle.Regular))
             using (Pen pen = new Pen(Brushes.Black, 1))
             {
@@ -566,36 +578,68 @@ namespace PetvetPOS_Inventory_System
                 }
 
                 Y += 50;
-                string total = poSlbl2.Text;
-                g.DrawString("Total Sales (VAT Inclusive)", font, Brushes.Black, new PointF(XQty, Y));
-                stringSize = g.MeasureString(total, font);
-                g.DrawString(total, font, Brushes.Black, new PointF(XSubTotal, Y));
+
+                string subTotal = totalAmount.ToString("N");
+                g.DrawString("Total: ", font, Brushes.Black, new PointF(XQty, Y));
+                stringSize = g.MeasureString(subTotal, font);
+                g.DrawString(subTotal, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) - 5, Y));
                 Y += (int)stringSize.Height + yIncrement;
 
+                //Display discounts
+                foreach (Discounts d in discountListForm.availedDiscounts)
+                {
+                    string discountName = d.Title;
+                    g.DrawString("Less: " + discountName, font, Brushes.Black, new PointF(XQty, Y));
+                    if (d.Type == FIXED_TYPE)
+                    {
+                        stringSize = g.MeasureString(d.Less.ToString("N"), font);
+                        g.DrawString(d.Less.ToString("N"), font, Brushes.Black, new PointF((documentWidth - stringSize.Width) - 5, Y));
+                        totalAmount = totalAmount - d.Less;                       
+                    }
+                    else if (d.Type == PERCENT_TYPE)
+                    {
+                        decimal percentageDiscValue = totalAmount * (d.Less / 100);
+                        string p = percentageDiscValue.ToString("N");
+                        stringSize = g.MeasureString(p, font);
+                        g.DrawString(p, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) - 5, Y));
+                        totalAmount = totalAmount - percentageDiscValue;
+                    }
+                    poSlbl2.Text = totalAmount.ToString("N");
+                    Y += (int)stringSize.Height + yIncrement;
+                }
 
-                string ScPwdDiscount = _scpwd.ToString("N");
-                g.DrawString("Less: SC/PWD Discount", font, Brushes.Black, new PointF(XQty, Y));
-                stringSize = g.MeasureString(ScPwdDiscount, font);
-                g.DrawString(ScPwdDiscount, font, Brushes.Black, new PointF(XSubTotal, Y));
+                _vat = tax * totalAmount;
+                _vatableSales = totalAmount - _vat;               
+
+                string amountDue = totalAmount.ToString("N");
+                g.DrawString("Amount Due:", font, Brushes.Black, new PointF(XQty, Y));
+                stringSize = g.MeasureString(amountDue, font);
+                g.DrawString(amountDue, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) - 5, Y));
                 Y += (int)stringSize.Height + yIncrement;
 
+                string vatAmount = _vat.ToString("N");
+                g.DrawString("VAT", font, Brushes.Black, new PointF(XQty, Y));
+                stringSize = g.MeasureString(vatAmount, font);
+                g.DrawString(vatAmount, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) - 5, Y));
+                Y += (int)stringSize.Height + yIncrement;
 
                 string vatableSales = _vatableSales.ToString("N");
                 g.DrawString("VATable Sales", font, Brushes.Black, new PointF(XQty, Y));
                 stringSize = g.MeasureString(vatableSales, font);
-                g.DrawString(vatableSales, font, Brushes.Black, new PointF(XSubTotal, Y));
+                g.DrawString(vatableSales, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) - 5, Y));
                 Y += (int)stringSize.Height + yIncrement;
 
-                string vatAmount = _vat.ToString("N");
-                g.DrawString("VAT Amount", font, Brushes.Black, new PointF(XQty, Y));
-                stringSize = g.MeasureString(vatAmount, font);
-                g.DrawString(vatAmount, font, Brushes.Black, new PointF(XSubTotal, Y));
+                string total = totalAmount.ToString("N");
+                g.DrawString("Total Sales (VAT Inclusive)", font, Brushes.Black, new PointF(XQty, Y));
+                stringSize = g.MeasureString(total, font);
+                g.DrawString(total, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) - 5, Y));
                 Y += (int)stringSize.Height + yIncrement;
 
+                Y += 5;
                 string totalSales = poSlbl2.Text;
-                g.DrawString("Total Sales", font, Brushes.Black, new PointF(XQty, Y));
-                stringSize = g.MeasureString(totalSales, font);
-                g.DrawString(totalSales, font, Brushes.Black, new PointF(XSubTotal, Y));
+                g.DrawString("Total Sales", fontBold, Brushes.Black, new PointF(XQty, Y));
+                stringSize = g.MeasureString(totalSales, fontBold);
+                g.DrawString(totalSales, fontBold, Brushes.Black, new PointF((documentWidth - stringSize.Width) - 7, Y));
                 Y += (int)stringSize.Height + yIncrement;
                 Y += 20;
 

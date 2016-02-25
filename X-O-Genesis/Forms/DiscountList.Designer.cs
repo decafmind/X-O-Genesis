@@ -1,6 +1,6 @@
 ﻿namespace PetvetPOS_Inventory_System
 {
-    partial class DiscountList
+    partial class DiscountsAdv
     {
         /// <summary>
         /// Required designer variable.

@@ -35,6 +35,8 @@ namespace PetvetPOS_Inventory_System
 
             QuantitySold = (int)entity.getField("quantity");
             GroupPrice = (Decimal)entity.getField("subtotal");
+            DiscPercent = (Decimal)entity.getField("discount_percent");
+            DiscFixed = (Decimal)entity.getField("discount_fixed");
         }
     }
 }

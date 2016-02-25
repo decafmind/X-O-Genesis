@@ -267,6 +267,7 @@
     <Compile Include="Control\UpdateSupplier.Designer.cs">
       <DependentUpon>UpdateSupplier.cs</DependentUpon>
     </Compile>
+    <Compile Include="Domain\AvailedDiscounts.cs" />
     <Compile Include="Domain\Client.cs" />
     <Compile Include="Domain\Constants.cs" />
     <Compile Include="Domain\Controller\CompanyProf.cs" />
@@ -345,6 +346,7 @@
     <Compile Include="MyExtension\Graphics.cs" />
     <Compile Include="MyExtension\Path.cs" />
     <Compile Include="ORM\TableGateway\AuditTrailMapper.cs" />
+    <Compile Include="ORM\TableGateway\AvailedDiscountsMapper.cs" />
     <Compile Include="ORM\TableGateway\CompanyProfileMapper.cs" />
     <Compile Include="ORM\TableGateway\DiscountsMapper.cs" />
     <Compile Include="ORM\TableGateway\FallbackMapper.cs" />

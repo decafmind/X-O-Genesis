@@ -10,17 +10,18 @@ using System.Windows.Forms;
 
 namespace PetvetPOS_Inventory_System
 {
-    public partial class DiscountList : Form
+    public partial class DiscountsAdv : Form
     {
 
         DatabaseController dbController;
         
         DataTable discountTable;
         OrdersView ordersView;
-
+      
         public Decimal totalDiscountedAmount;
         public List<string> selectedDiscounts;
         public List<Discounts> discountList = new List<Discounts>();
+        public List<Discounts> availedDiscounts = new List<Discounts>();
         public Decimal[] discounts { get; set; } //For database recording (total discount)
         public Decimal[] accumulatedPercentageDiscount { get; set; } //For Net Price computation from List Price
         public Decimal[] accumulatedFixedDiscount { get; set; } //For Net Price computation from List Price
@@ -28,16 +29,17 @@ namespace PetvetPOS_Inventory_System
         List<decimal> percentage;
         List<decimal> fixedPrice;
            
-        private const int PERCENT_TYPE = 1;
-        private const int FIXED_TYPE = 2;
+        const int PERCENT_TYPE = 1;
+        const int FIXED_TYPE = 2;
 
         decimal totalAmount = 0;
 
-        public DiscountList()
+        public DiscountsAdv()
         {
             InitializeComponent();
         }
-        public DiscountList(OrdersView ordersView, DatabaseController dbController)
+
+        public DiscountsAdv(OrdersView ordersView, DatabaseController dbController)
         {
             this.ordersView = ordersView;
             this.dbController = ordersView.dbController;
@@ -47,6 +49,7 @@ namespace PetvetPOS_Inventory_System
         private void DiscountList_Load(object sender, EventArgs e)
         {
             LoadDiscounts();
+            btnAdd.Enabled = false;
         }
 
         void LoadDiscounts()
@@ -54,6 +57,8 @@ namespace PetvetPOS_Inventory_System
             lblDiscountedTotal.Text = "0";
           
             discountTable = new DataTable();
+
+            //Fetch discounts from db
             dbController.discountsMapper.loadTable(discountTable);
             foreach (DataRow dr in discountTable.Rows)
             {
@@ -65,6 +70,7 @@ namespace PetvetPOS_Inventory_System
                 discountList.Add(discounts);
             }
 
+            //Display discounts for selection
             int i = 0;
             int x = 10;
             int y = 10;
@@ -83,14 +89,17 @@ namespace PetvetPOS_Inventory_System
             }
         }
 
-        private Decimal[] getDiscounts()
+        private void getDiscounts()
         {
             selectedDiscounts = new List<string>();
+            Discounts d;
+
             Decimal totalPercentage = 0;
             Decimal totalFixed = 0;
-
+            
             discounts = new Decimal[2];
             
+            //Get all selected discounts
             foreach (Control c in panel_Discounts.Controls)
             {
                 if (c is CheckBox)
@@ -111,6 +120,7 @@ namespace PetvetPOS_Inventory_System
             discountTable = new DataTable();
             dbController.discountsMapper.loadTable(discountTable);
 
+            //Add up all the discounts selected for recording           
             foreach (DataRow dr in discountTable.Rows)
             {
                 if(selectedDiscounts.Contains(dr["title"].ToString()))
@@ -119,21 +129,36 @@ namespace PetvetPOS_Inventory_System
                     {
                         totalFixed += Convert.ToDecimal(dr["less"].ToString());
                         accumulatedFixedDiscount[iterator_a] = Convert.ToDecimal(dr["less"]);
+
+                        d = new Discounts();
+                        d.Type = FIXED_TYPE;
+                        d.Title = dr["title"].ToString();
+                        d.Less = Convert.ToInt32(dr["less"]);
+
+                        availedDiscounts.Add(d);
+
                         iterator_a++;
                     }
                     else if (Convert.ToInt32(dr["type"]).Equals(PERCENT_TYPE))
                     {
                         totalPercentage += Convert.ToDecimal(dr["less"].ToString());
                         accumulatedPercentageDiscount[iterator_b] = Convert.ToDecimal(dr["less"]);
+
+                        d = new Discounts();
+                        d.Type = PERCENT_TYPE;
+                        d.Title = dr["title"].ToString();
+                        d.Less = Convert.ToInt32(dr["less"]);
+
+                        availedDiscounts.Add(d);
+
                         iterator_b++;
                     }
                 }
             }
 
+            //These are the total discounts accumulated to be recorded
             discounts[0] = totalPercentage;
             discounts[1] = totalFixed;
-
-            return discounts;
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
@@ -220,6 +245,7 @@ namespace PetvetPOS_Inventory_System
         private void button1_Click(object sender, EventArgs e)
         {
             showDiscountedTotal();
+            btnAdd.Enabled = true;
         }
     }
 }
