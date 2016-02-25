@@ -10,14 +10,13 @@ using System.Windows.Forms;
 
 namespace PetvetPOS_Inventory_System
 {
-    public partial class DiscountsList : Form
+    public partial class AdvDiscounts : Form
     {
-
         DatabaseController dbController;
-        
+
         DataTable discountTable;
-        OrdersView ordersView;
-      
+        OrderPOS orderPOS;
+
         public Decimal totalDiscountedAmount;
         public List<string> selectedDiscounts;
         public List<Discounts> discountList = new List<Discounts>();
@@ -28,25 +27,25 @@ namespace PetvetPOS_Inventory_System
 
         List<decimal> percentage;
         List<decimal> fixedPrice;
-           
+
         const int PERCENT_TYPE = 1;
         const int FIXED_TYPE = 2;
 
         decimal totalAmount = 0;
 
-        public DiscountsList()
+        public AdvDiscounts()
         {
             InitializeComponent();
         }
 
-        public DiscountsList(OrdersView ordersView, DatabaseController dbController)
+        public AdvDiscounts(OrderPOS orderPOS, DatabaseController dbController)
         {
-            this.ordersView = ordersView;
-            this.dbController = ordersView.dbController;
+            this.orderPOS = orderPOS;
+            this.dbController = dbController;
             InitializeComponent();
         }
 
-        private void DiscountList_Load(object sender, EventArgs e)
+        private void AdvDiscounts_Load(object sender, EventArgs e)
         {
             LoadDiscounts();
             changeChkBoxStatus(true);
@@ -56,7 +55,7 @@ namespace PetvetPOS_Inventory_System
         void LoadDiscounts()
         {
             lblDiscountedTotal.Text = "0";
-          
+
             discountTable = new DataTable();
 
             //Fetch discounts from db
@@ -86,7 +85,7 @@ namespace PetvetPOS_Inventory_System
                 panel_Discounts.Controls.Add(cbDiscounts[i]);
                 cbDiscounts[i].SetBounds(x, y, panel_Discounts.Width, cbDiscounts[i].Height);
                 y += 30;
-                i++;    
+                i++;
             }
         }
 
@@ -97,15 +96,15 @@ namespace PetvetPOS_Inventory_System
 
             Decimal totalPercentage = 0;
             Decimal totalFixed = 0;
-            
+
             discounts = new Decimal[2];
-            
+
             //Get all selected discounts
             foreach (Control c in panel_Discounts.Controls)
             {
                 if (c is CheckBox)
                 {
-                    CheckBox ch = c as CheckBox;                  
+                    CheckBox ch = c as CheckBox;
                     if (ch.Checked)
                     {
                         selectedDiscounts.Add(ch.Text);
@@ -124,7 +123,7 @@ namespace PetvetPOS_Inventory_System
             //Add up all the discounts selected for recording           
             foreach (DataRow dr in discountTable.Rows)
             {
-                if(selectedDiscounts.Contains(dr["title"].ToString()))
+                if (selectedDiscounts.Contains(dr["title"].ToString()))
                 {
                     if (Convert.ToInt32(dr["type"]).Equals(FIXED_TYPE))
                     {
@@ -165,23 +164,24 @@ namespace PetvetPOS_Inventory_System
         private void btnAdd_Click(object sender, EventArgs e)
         {
             getDiscounts();
-            foreach (ProductInvoice items in ordersView.carts)
+            foreach (ProductInvoice items in orderPOS.carts)
             {
                 items.DiscPercent = discounts[0];
                 items.DiscFixed = discounts[1];
-                ordersView.withDiscounts = true;
-            }        
+                orderPOS.withDiscounts = true;
+            }
             this.Close();
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
+            orderPOS.withDiscounts = false;
             this.Dispose();
         }
 
         void showDiscountedTotal()
         {
-            totalAmount = ordersView.totalAmount;
+            totalAmount = orderPOS.totalAmount;
 
             percentage = new List<decimal>();
             fixedPrice = new List<decimal>();
@@ -210,25 +210,25 @@ namespace PetvetPOS_Inventory_System
                             if (type.Contains(1))
                             {
                                 var disc = (from d in discountTable.AsEnumerable()
-                                           where d.Field<string>("title") == chk.Text
-                                           select d.Field<decimal>("less")).FirstOrDefault();
+                                            where d.Field<string>("title") == chk.Text
+                                            select d.Field<decimal>("less")).FirstOrDefault();
 
                                 percentage.Add(disc);
                             }
                             else if (type.Contains(2))
                             {
                                 var disc = (from d in discountTable.AsEnumerable()
-                                           where d.Field<string>("title") == chk.Text
-                                           select d.Field<decimal>("less")).FirstOrDefault();
+                                            where d.Field<string>("title") == chk.Text
+                                            select d.Field<decimal>("less")).FirstOrDefault();
 
                                 fixedPrice.Add(disc);
                             }
-                           
+
                         }
                     }
                 }
             }
-          
+
             foreach (Decimal percentDisc in percentage)
             {
                 totalAmount = totalAmount * (1 - percentDisc / 100);
@@ -240,12 +240,13 @@ namespace PetvetPOS_Inventory_System
             }
 
             totalDiscountedAmount = totalAmount;
+            orderPOS.totalAmount = totalDiscountedAmount;
             lblDiscountedTotal.Text = totalDiscountedAmount.ToString("N");
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            showDiscountedTotal();
+            showDiscountedTotal();          
             changeChkBoxStatus(false);
             btnAdd.Enabled = true;
         }

@@ -288,6 +288,12 @@
     <Compile Include="Domain\MenuList\InventoryPersonnelMenuList.cs" />
     <Compile Include="Domain\MenuList\StaffMenuList.cs" />
     <Compile Include="Domain\Enums\InventoryMode.cs" />
+    <Compile Include="Forms\AdvDiscounts.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdvDiscounts.Designer.cs">
+      <DependentUpon>AdvDiscounts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\DiscountList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -633,6 +639,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Control\UpdateSupplier.resx">
       <DependentUpon>UpdateSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdvDiscounts.resx">
+      <DependentUpon>AdvDiscounts.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DiscountList.resx">
       <DependentUpon>DiscountList.cs</DependentUpon>

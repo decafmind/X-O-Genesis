@@ -1,6 +1,6 @@
 ﻿namespace PetvetPOS_Inventory_System
 {
-    partial class DiscountsList
+    partial class AdvDiscounts
     {
         /// <summary>
         /// Required designer variable.
@@ -51,7 +51,7 @@
             this.panel_Discounts.Name = "panel_Discounts";
             this.panel_Discounts.Padding = new System.Windows.Forms.Padding(10);
             this.panel_Discounts.Size = new System.Drawing.Size(389, 600);
-            this.panel_Discounts.TabIndex = 0;
+            this.panel_Discounts.TabIndex = 1;
             // 
             // panel2
             // 
@@ -147,21 +147,23 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // DiscountList
+            // AdvDiscounts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(389, 600);
+            this.ControlBox = false;
             this.Controls.Add(this.panel_Discounts);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "DiscountList";
+            this.Name = "AdvDiscounts";
             this.ShowIcon = false;
+            this.ShowInTaskbar = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "DiscountList";
-            this.Load += new System.EventHandler(this.DiscountList_Load);
+            this.Text = "AdvDiscounts";
+            this.Load += new System.EventHandler(this.AdvDiscounts_Load);
             this.panel_Discounts.ResumeLayout(false);
             this.panel_Discounts.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -175,12 +177,12 @@
         #endregion
 
         private System.Windows.Forms.Panel panel_Discounts;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lblDiscountedTotal;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lblDiscountedTotal;
     }
 }

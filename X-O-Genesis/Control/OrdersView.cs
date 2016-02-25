@@ -21,7 +21,7 @@ namespace PetvetPOS_Inventory_System
         DataTable dt = new DataTable();
        
         List<Discounts> discounts = new List<Discounts>();
-        DiscountsAdv discountListForm;
+        DiscountsList discountListForm;
 
         public ProductInvoice productTransaction;
         public List<ProductInvoice> carts = new List<ProductInvoice>();
@@ -209,7 +209,7 @@ namespace PetvetPOS_Inventory_System
         public void addRowInDatagrid(int quantity)
         {
             bool success = false;
-            discountListForm = new DiscountsAdv();
+            discountListForm = new DiscountsList();
 
             productTransaction = new ProductInvoice(){
                 invoice = currentTransaction,
@@ -353,7 +353,7 @@ namespace PetvetPOS_Inventory_System
             if (dgTransaction.Rows.Count > 0)
             {
                 concludeTransaction = true;
-                discountListForm = new DiscountsAdv(this, dbController);
+                discountListForm = new DiscountsList(this, dbController);
                 discountListForm.ShowDialog();
                 conclusion();
                 printInvoice();
