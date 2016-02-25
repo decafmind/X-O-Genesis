@@ -322,5 +322,10 @@ namespace PetvetPOS_Inventory_System
         {
 
         }
+
+        private void panel_Contents_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

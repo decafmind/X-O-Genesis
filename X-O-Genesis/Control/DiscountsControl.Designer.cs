@@ -28,6 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.keyButton1 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton5 = new PetvetPOS_Inventory_System.KeyButton();
+            this.label8 = new System.Windows.Forms.Label();
+            this.keyButton4 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
+            this.label9 = new System.Windows.Forms.Label();
             this.panel_Contents = new System.Windows.Forms.Panel();
             this.btnSave = new System.Windows.Forms.Button();
             this.lblStatus = new System.Windows.Forms.Label();
@@ -42,272 +54,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel_Button = new System.Windows.Forms.Panel();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.panel_List = new System.Windows.Forms.Panel();
-            this.lv_Discounts = new System.Windows.Forms.ListView();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.keyButton1 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton5 = new PetvetPOS_Inventory_System.KeyButton();
-            this.label8 = new System.Windows.Forms.Label();
-            this.keyButton4 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
-            this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.lv_Discounts = new System.Windows.Forms.ListView();
+            this.panel2.SuspendLayout();
             this.panel_Contents.SuspendLayout();
             this.group_Type.SuspendLayout();
             this.panel_List.SuspendLayout();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel_Contents
-            // 
-            this.panel_Contents.BackColor = System.Drawing.Color.White;
-            this.panel_Contents.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel_Contents.Controls.Add(this.btnSave);
-            this.panel_Contents.Controls.Add(this.lblStatus);
-            this.panel_Contents.Controls.Add(this.txtLess);
-            this.panel_Contents.Controls.Add(this.txtDesc);
-            this.panel_Contents.Controls.Add(this.group_Type);
-            this.panel_Contents.Controls.Add(this.txtTitle);
-            this.panel_Contents.Controls.Add(this.label5);
-            this.panel_Contents.Controls.Add(this.label4);
-            this.panel_Contents.Controls.Add(this.label3);
-            this.panel_Contents.Controls.Add(this.label2);
-            this.panel_Contents.Location = new System.Drawing.Point(475, 97);
-            this.panel_Contents.Name = "panel_Contents";
-            this.panel_Contents.Padding = new System.Windows.Forms.Padding(5);
-            this.panel_Contents.Size = new System.Drawing.Size(465, 299);
-            this.panel_Contents.TabIndex = 8;
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.White;
-            this.btnSave.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Save;
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSave.Location = new System.Drawing.Point(295, 245);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(140, 42);
-            this.btnSave.TabIndex = 9;
-            this.btnSave.UseVisualStyleBackColor = false;
-            this.btnSave.Visible = false;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // lblStatus
-            // 
-            this.lblStatus.AutoSize = true;
-            this.lblStatus.BackColor = System.Drawing.Color.White;
-            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lblStatus.Location = new System.Drawing.Point(19, 16);
-            this.lblStatus.Name = "lblStatus";
-            this.lblStatus.Size = new System.Drawing.Size(94, 20);
-            this.lblStatus.TabIndex = 8;
-            this.lblStatus.Text = "Discounts:";
-            // 
-            // txtLess
-            // 
-            this.txtLess.BackColor = System.Drawing.Color.White;
-            this.txtLess.Enabled = false;
-            this.txtLess.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtLess.Location = new System.Drawing.Point(134, 220);
-            this.txtLess.Name = "txtLess";
-            this.txtLess.Size = new System.Drawing.Size(75, 23);
-            this.txtLess.TabIndex = 7;
-            this.txtLess.TextChanged += new System.EventHandler(this.txtLess_TextChanged);
-            // 
-            // txtDesc
-            // 
-            this.txtDesc.BackColor = System.Drawing.Color.White;
-            this.txtDesc.Enabled = false;
-            this.txtDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtDesc.Location = new System.Drawing.Point(132, 140);
-            this.txtDesc.Multiline = true;
-            this.txtDesc.Name = "txtDesc";
-            this.txtDesc.Size = new System.Drawing.Size(304, 66);
-            this.txtDesc.TabIndex = 6;
-            // 
-            // group_Type
-            // 
-            this.group_Type.BackColor = System.Drawing.Color.White;
-            this.group_Type.Controls.Add(this.radio_Fixed);
-            this.group_Type.Controls.Add(this.radio_Percent);
-            this.group_Type.Enabled = false;
-            this.group_Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.group_Type.Location = new System.Drawing.Point(132, 81);
-            this.group_Type.Name = "group_Type";
-            this.group_Type.Size = new System.Drawing.Size(304, 45);
-            this.group_Type.TabIndex = 5;
-            this.group_Type.TabStop = false;
-            this.group_Type.Enter += new System.EventHandler(this.group_Type_Enter);
-            // 
-            // radio_Fixed
-            // 
-            this.radio_Fixed.AutoSize = true;
-            this.radio_Fixed.BackColor = System.Drawing.Color.White;
-            this.radio_Fixed.Location = new System.Drawing.Point(121, 17);
-            this.radio_Fixed.Name = "radio_Fixed";
-            this.radio_Fixed.Size = new System.Drawing.Size(111, 21);
-            this.radio_Fixed.TabIndex = 1;
-            this.radio_Fixed.TabStop = true;
-            this.radio_Fixed.Text = "Fixed Amount";
-            this.radio_Fixed.UseVisualStyleBackColor = false;
-            // 
-            // radio_Percent
-            // 
-            this.radio_Percent.AutoSize = true;
-            this.radio_Percent.BackColor = System.Drawing.Color.White;
-            this.radio_Percent.Location = new System.Drawing.Point(24, 17);
-            this.radio_Percent.Name = "radio_Percent";
-            this.radio_Percent.Size = new System.Drawing.Size(38, 21);
-            this.radio_Percent.TabIndex = 0;
-            this.radio_Percent.TabStop = true;
-            this.radio_Percent.Text = "%";
-            this.radio_Percent.UseVisualStyleBackColor = false;
-            // 
-            // txtTitle
-            // 
-            this.txtTitle.BackColor = System.Drawing.Color.White;
-            this.txtTitle.Enabled = false;
-            this.txtTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.txtTitle.Location = new System.Drawing.Point(132, 52);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(304, 23);
-            this.txtTitle.TabIndex = 4;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label5.Location = new System.Drawing.Point(21, 220);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(107, 20);
-            this.label5.TabIndex = 3;
-            this.label5.Text = "Amount Less:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label4.Location = new System.Drawing.Point(21, 140);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(93, 20);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Description:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(21, 53);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(109, 20);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Discount Title:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.White;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label2.Location = new System.Drawing.Point(20, 95);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 20);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Discount Type:";
-            // 
-            // panel_Button
-            // 
-            this.panel_Button.BackColor = System.Drawing.Color.Transparent;
-            this.panel_Button.Location = new System.Drawing.Point(475, 397);
-            this.panel_Button.Name = "panel_Button";
-            this.panel_Button.Size = new System.Drawing.Size(465, 86);
-            this.panel_Button.TabIndex = 7;
-            // 
-            // btnDelete
-            // 
-            this.btnDelete.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDelete.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Delete;
-            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnDelete.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Delete;
-            this.btnDelete.Location = new System.Drawing.Point(530, 12);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(47, 42);
-            this.btnDelete.TabIndex = 2;
-            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDelete.UseVisualStyleBackColor = false;
-            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
-            // 
-            // btnEdit
-            // 
-            this.btnEdit.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnEdit.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Edit;
-            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnEdit.Location = new System.Drawing.Point(270, 13);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(47, 42);
-            this.btnEdit.TabIndex = 1;
-            this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEdit.UseVisualStyleBackColor = false;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAdd.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Add_File;
-            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
-            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnAdd.Location = new System.Drawing.Point(84, 12);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(47, 42);
-            this.btnAdd.TabIndex = 0;
-            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // panel_List
-            // 
-            this.panel_List.BackColor = System.Drawing.Color.White;
-            this.panel_List.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel_List.Controls.Add(this.label6);
-            this.panel_List.Controls.Add(this.lv_Discounts);
-            this.panel_List.Location = new System.Drawing.Point(-1, -1);
-            this.panel_List.Name = "panel_List";
-            this.panel_List.Padding = new System.Windows.Forms.Padding(5);
-            this.panel_List.Size = new System.Drawing.Size(263, 609);
-            this.panel_List.TabIndex = 6;
-            // 
-            // lv_Discounts
-            // 
-            this.lv_Discounts.BackColor = System.Drawing.Color.White;
-            this.lv_Discounts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
-            this.lv_Discounts.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
-            this.lv_Discounts.Location = new System.Drawing.Point(6, 42);
-            this.lv_Discounts.Name = "lv_Discounts";
-            this.lv_Discounts.Size = new System.Drawing.Size(251, 407);
-            this.lv_Discounts.Sorting = System.Windows.Forms.SortOrder.Descending;
-            this.lv_Discounts.TabIndex = 0;
-            this.lv_Discounts.UseCompatibleStateImageBehavior = false;
-            this.lv_Discounts.SelectedIndexChanged += new System.EventHandler(this.lv_Discounts_SelectedIndexChanged);
             // 
             // panel2
             // 
@@ -330,6 +84,24 @@
             this.panel2.Size = new System.Drawing.Size(940, 65);
             this.panel2.TabIndex = 11;
             // 
+            // btnDelete
+            // 
+            this.btnDelete.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDelete.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Delete;
+            this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnDelete.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDelete.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnDelete.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Delete;
+            this.btnDelete.Location = new System.Drawing.Point(530, 12);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(47, 42);
+            this.btnDelete.TabIndex = 2;
+            this.btnDelete.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -341,6 +113,23 @@
             this.label7.TabIndex = 32;
             this.label7.Text = "Add";
             // 
+            // btnEdit
+            // 
+            this.btnEdit.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnEdit.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Edit;
+            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnEdit.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnEdit.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnEdit.Location = new System.Drawing.Point(270, 13);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(47, 42);
+            this.btnEdit.TabIndex = 1;
+            this.btnEdit.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -351,6 +140,23 @@
             this.label1.TabIndex = 29;
             this.label1.Text = "Delete";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAdd.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Add_File;
+            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAdd.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnAdd.Location = new System.Drawing.Point(84, 12);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(47, 42);
+            this.btnAdd.TabIndex = 0;
+            this.btnAdd.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // keyButton1
             // 
@@ -432,6 +238,188 @@
             this.label9.TabIndex = 11;
             this.label9.Text = "+";
             // 
+            // panel_Contents
+            // 
+            this.panel_Contents.BackColor = System.Drawing.Color.White;
+            this.panel_Contents.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_Contents.Controls.Add(this.btnSave);
+            this.panel_Contents.Controls.Add(this.lblStatus);
+            this.panel_Contents.Controls.Add(this.txtLess);
+            this.panel_Contents.Controls.Add(this.txtDesc);
+            this.panel_Contents.Controls.Add(this.group_Type);
+            this.panel_Contents.Controls.Add(this.txtTitle);
+            this.panel_Contents.Controls.Add(this.label5);
+            this.panel_Contents.Controls.Add(this.label4);
+            this.panel_Contents.Controls.Add(this.label3);
+            this.panel_Contents.Controls.Add(this.label2);
+            this.panel_Contents.Location = new System.Drawing.Point(475, 97);
+            this.panel_Contents.Name = "panel_Contents";
+            this.panel_Contents.Padding = new System.Windows.Forms.Padding(5);
+            this.panel_Contents.Size = new System.Drawing.Size(480, 353);
+            this.panel_Contents.TabIndex = 8;
+            this.panel_Contents.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_Contents_Paint);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.White;
+            this.btnSave.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Save;
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSave.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnSave.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnSave.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSave.Location = new System.Drawing.Point(295, 298);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(140, 42);
+            this.btnSave.TabIndex = 9;
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Visible = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // lblStatus
+            // 
+            this.lblStatus.AutoSize = true;
+            this.lblStatus.BackColor = System.Drawing.Color.White;
+            this.lblStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.lblStatus.Location = new System.Drawing.Point(19, 16);
+            this.lblStatus.Name = "lblStatus";
+            this.lblStatus.Size = new System.Drawing.Size(94, 20);
+            this.lblStatus.TabIndex = 8;
+            this.lblStatus.Text = "Discounts:";
+            // 
+            // txtLess
+            // 
+            this.txtLess.BackColor = System.Drawing.Color.White;
+            this.txtLess.Enabled = false;
+            this.txtLess.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtLess.Location = new System.Drawing.Point(134, 249);
+            this.txtLess.Name = "txtLess";
+            this.txtLess.Size = new System.Drawing.Size(75, 26);
+            this.txtLess.TabIndex = 7;
+            this.txtLess.TextChanged += new System.EventHandler(this.txtLess_TextChanged);
+            // 
+            // txtDesc
+            // 
+            this.txtDesc.BackColor = System.Drawing.Color.White;
+            this.txtDesc.Enabled = false;
+            this.txtDesc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDesc.Location = new System.Drawing.Point(132, 161);
+            this.txtDesc.Multiline = true;
+            this.txtDesc.Name = "txtDesc";
+            this.txtDesc.Size = new System.Drawing.Size(304, 66);
+            this.txtDesc.TabIndex = 6;
+            // 
+            // group_Type
+            // 
+            this.group_Type.BackColor = System.Drawing.Color.White;
+            this.group_Type.Controls.Add(this.radio_Fixed);
+            this.group_Type.Controls.Add(this.radio_Percent);
+            this.group_Type.Enabled = false;
+            this.group_Type.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.group_Type.Location = new System.Drawing.Point(132, 93);
+            this.group_Type.Name = "group_Type";
+            this.group_Type.Size = new System.Drawing.Size(304, 45);
+            this.group_Type.TabIndex = 5;
+            this.group_Type.TabStop = false;
+            this.group_Type.Enter += new System.EventHandler(this.group_Type_Enter);
+            // 
+            // radio_Fixed
+            // 
+            this.radio_Fixed.AutoSize = true;
+            this.radio_Fixed.BackColor = System.Drawing.Color.White;
+            this.radio_Fixed.Location = new System.Drawing.Point(121, 17);
+            this.radio_Fixed.Name = "radio_Fixed";
+            this.radio_Fixed.Size = new System.Drawing.Size(125, 24);
+            this.radio_Fixed.TabIndex = 1;
+            this.radio_Fixed.TabStop = true;
+            this.radio_Fixed.Text = "Fixed Amount";
+            this.radio_Fixed.UseVisualStyleBackColor = false;
+            // 
+            // radio_Percent
+            // 
+            this.radio_Percent.AutoSize = true;
+            this.radio_Percent.BackColor = System.Drawing.Color.White;
+            this.radio_Percent.Location = new System.Drawing.Point(24, 17);
+            this.radio_Percent.Name = "radio_Percent";
+            this.radio_Percent.Size = new System.Drawing.Size(41, 24);
+            this.radio_Percent.TabIndex = 0;
+            this.radio_Percent.TabStop = true;
+            this.radio_Percent.Text = "%";
+            this.radio_Percent.UseVisualStyleBackColor = false;
+            // 
+            // txtTitle
+            // 
+            this.txtTitle.BackColor = System.Drawing.Color.White;
+            this.txtTitle.Enabled = false;
+            this.txtTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTitle.Location = new System.Drawing.Point(132, 52);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(304, 31);
+            this.txtTitle.TabIndex = 4;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.White;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label5.Location = new System.Drawing.Point(21, 249);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(107, 20);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Amount Less:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.White;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label4.Location = new System.Drawing.Point(21, 161);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(93, 20);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Description:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.White;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label3.Location = new System.Drawing.Point(21, 53);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(109, 20);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Discount Title:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.White;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label2.Location = new System.Drawing.Point(20, 107);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(114, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Discount Type:";
+            // 
+            // panel_Button
+            // 
+            this.panel_Button.BackColor = System.Drawing.Color.Transparent;
+            this.panel_Button.Location = new System.Drawing.Point(475, 397);
+            this.panel_Button.Name = "panel_Button";
+            this.panel_Button.Size = new System.Drawing.Size(465, 86);
+            this.panel_Button.TabIndex = 7;
+            // 
+            // panel_List
+            // 
+            this.panel_List.BackColor = System.Drawing.Color.White;
+            this.panel_List.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel_List.Controls.Add(this.label6);
+            this.panel_List.Controls.Add(this.lv_Discounts);
+            this.panel_List.Location = new System.Drawing.Point(-1, -1);
+            this.panel_List.Name = "panel_List";
+            this.panel_List.Padding = new System.Windows.Forms.Padding(5);
+            this.panel_List.Size = new System.Drawing.Size(263, 609);
+            this.panel_List.TabIndex = 6;
+            // 
             // label6
             // 
             this.label6.AutoSize = true;
@@ -441,6 +429,19 @@
             this.label6.Size = new System.Drawing.Size(112, 20);
             this.label6.TabIndex = 12;
             this.label6.Text = "DISCOUNTS";
+            // 
+            // lv_Discounts
+            // 
+            this.lv_Discounts.BackColor = System.Drawing.Color.White;
+            this.lv_Discounts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
+            this.lv_Discounts.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.None;
+            this.lv_Discounts.Location = new System.Drawing.Point(6, 42);
+            this.lv_Discounts.Name = "lv_Discounts";
+            this.lv_Discounts.Size = new System.Drawing.Size(251, 407);
+            this.lv_Discounts.Sorting = System.Windows.Forms.SortOrder.Descending;
+            this.lv_Discounts.TabIndex = 0;
+            this.lv_Discounts.UseCompatibleStateImageBehavior = false;
+            this.lv_Discounts.SelectedIndexChanged += new System.EventHandler(this.lv_Discounts_SelectedIndexChanged);
             // 
             // DiscountsControl
             // 
@@ -454,14 +455,14 @@
             this.Controls.Add(this.panel_List);
             this.Name = "DiscountsControl";
             this.Size = new System.Drawing.Size(940, 532);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panel_Contents.ResumeLayout(false);
             this.panel_Contents.PerformLayout();
             this.group_Type.ResumeLayout(false);
             this.group_Type.PerformLayout();
             this.panel_List.ResumeLayout(false);
             this.panel_List.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
