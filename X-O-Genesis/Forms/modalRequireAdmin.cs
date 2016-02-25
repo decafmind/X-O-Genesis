@@ -44,7 +44,7 @@ namespace PetvetPOS_Inventory_System
             string username = txtUsername.Text;
             string password = txtPassword.Text;
 
-            User user = dbController.authenticateUser(username, password);
+            User user = dbController.authorizeAdmin(username, password);
 
             if (user != null && user.getUserLevel() == UserLevel.ADMIN)
                 DialogResult = DialogResult.OK;

@@ -114,5 +114,19 @@ namespace PetvetPOS_Inventory_System
         {
             masterController.changeCurrentContent(new DiscountsControl(base.masterController));
         }
+
+        private void pbBackupDB_Click(object sender, EventArgs e)
+        {
+            modalRequireAdmin modalReq = new modalRequireAdmin(dbController);
+            DialogResult result = modalReq.ShowDialog();
+            if (result == DialogResult.OK)
+            {
+                masterController.changeCurrentContent(new BackUpControl(base.masterController, this.masterController.DataBaseController.mySqlDB));
+            }
+            else
+            {
+                MessageBox.Show("Wrong admin credentials.");
+            }
+        }
     }
 }

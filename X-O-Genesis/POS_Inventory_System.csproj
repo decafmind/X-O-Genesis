@@ -83,11 +83,9 @@
       <Private>True</Private>
       <EmbedInteropTypes>False</EmbedInteropTypes>
     </Reference>
-    <Reference Include="MySql.Data, Version=6.9.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+    <Reference Include="MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Installers (Windows)\MySql Connectors (dll)\v4.0\MySql.Data.dll</HintPath>
-      <Private>True</Private>
-      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\packages\MySql.Data.6.9.8\lib\net45\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data.Entity, Version=6.7.4.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -103,6 +101,9 @@
       <HintPath>..\..\..\..\..\Installers (Windows)\MySql Connectors (dll)\v4.0\MySql.Web.dll</HintPath>
       <Private>True</Private>
       <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="MySqlBackup">
+      <HintPath>..\packages\MySqlBackup.NET.2.0.9.3\lib\net45\MySqlBackup.dll</HintPath>
     </Reference>
     <Reference Include="PasswordHash">
       <HintPath>F:\X-O-Genesis\X-O-Genesis\bin\Debug\PasswordHash.dll</HintPath>
@@ -170,6 +171,12 @@
     </Compile>
     <Compile Include="Control\Back.Designer.cs">
       <DependentUpon>Back.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Control\BackUpControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Control\BackUpControl.Designer.cs">
+      <DependentUpon>BackUpControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Control\CompanyProfile.cs">
       <SubType>UserControl</SubType>
@@ -592,6 +599,9 @@
     <EmbeddedResource Include="Control\Back.resx">
       <DependentUpon>Back.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Control\BackUpControl.resx">
+      <DependentUpon>BackUpControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Control\CompanyProfile.resx">
       <DependentUpon>CompanyProfile.cs</DependentUpon>
     </EmbeddedResource>
@@ -767,6 +777,7 @@
     <EmbeddedResource Include="Forms\SplashScreen.resx">
       <DependentUpon>SplashScreen.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

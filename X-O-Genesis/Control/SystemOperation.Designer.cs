@@ -54,7 +54,7 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(1053, 270);
+            this.label5.Location = new System.Drawing.Point(462, 450);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(148, 33);
             this.label5.TabIndex = 9;
@@ -102,7 +102,7 @@
             this.pbAuditTrail.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pbAuditTrail.BackgroundImage")));
             this.pbAuditTrail.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbAuditTrail.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pbAuditTrail.Location = new System.Drawing.Point(1070, 169);
+            this.pbAuditTrail.Location = new System.Drawing.Point(479, 349);
             this.pbAuditTrail.Name = "pbAuditTrail";
             this.pbAuditTrail.Size = new System.Drawing.Size(100, 98);
             this.pbAuditTrail.TabIndex = 4;
