@@ -193,6 +193,11 @@ namespace PetvetPOS_Inventory_System
             return userMapper.validate(user_id, password);
         }
 
+        public User authorizeAdmin(string user_id, string password)
+        {
+            return userMapper.validateForAuthorization(user_id, password);
+        }
+
         public bool checkProductCriticalLevel(Product product)
         {
             return productInventory.checkProductCriticalLevel(product, masterController);

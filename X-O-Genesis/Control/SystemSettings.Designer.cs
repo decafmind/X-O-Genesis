@@ -161,11 +161,11 @@
             this.label4.BackColor = System.Drawing.Color.WhiteSmoke;
             this.label4.Font = new System.Drawing.Font("Calibri", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(538, 271);
+            this.label4.Location = new System.Drawing.Point(505, 271);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(133, 33);
+            this.label4.Size = new System.Drawing.Size(207, 33);
             this.label4.TabIndex = 6;
-            this.label4.Text = "Backup DB";
+            this.label4.Text = "Backup / Restore";
             this.label4.Click += new System.EventHandler(this.label5_Click);
             // 
             // pbBackupDB
@@ -180,6 +180,7 @@
             this.pbBackupDB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbBackupDB.TabIndex = 5;
             this.pbBackupDB.TabStop = false;
+            this.pbBackupDB.Click += new System.EventHandler(this.pbBackupDB_Click);
             // 
             // label2
             // 

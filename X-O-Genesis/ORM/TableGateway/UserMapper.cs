@@ -83,6 +83,31 @@ namespace PetvetPOS_Inventory_System
             return null;
         }
 
+        public User validateForAuthorization(string user_id, string password)
+        {
+            List<string> usernames = getListOfActiveUsername();
+            if (usernames.Contains(user_id))
+            {
+                try
+                {
+                    string condition = String.Format("id = '{0}'", user_id);
+                    string correctHash = (string)readScalar("password", condition);
+                    bool isValid = PasswordHash.PasswordHash.ValidatePassword(password, correctHash);
+                    if (isValid)
+                    {
+                        condition = String.Format("id = '{0}' AND password = '{1}'", user_id, correctHash);
+                        return getUserFromId((string)readScalar("id", condition));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ErrorLog.Log(ex);
+                    return null;
+                }
+            }
+            return null;
+        }
+
         public bool getSQAnswer(string userName, string sqans)
         {
             try
