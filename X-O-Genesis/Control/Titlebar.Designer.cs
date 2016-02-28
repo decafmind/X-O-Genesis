@@ -51,7 +51,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.button1.BackColor = System.Drawing.Color.Transparent;
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button1.Dock = System.Windows.Forms.DockStyle.Right;
@@ -71,7 +71,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(42)))), ((int)(((byte)(42)))), ((int)(((byte)(42)))));
+            this.button2.BackColor = System.Drawing.Color.Transparent;
             this.button2.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Delete1;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.button2.Dock = System.Windows.Forms.DockStyle.Right;
