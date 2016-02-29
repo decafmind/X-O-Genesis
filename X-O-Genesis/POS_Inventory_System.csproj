@@ -999,6 +999,7 @@
     <None Include="Resources\CancelORDER.png" />
     <None Include="Resources\RemoveITEM.png" />
     <None Include="Resources\RemoveITEM20.png" />
+    <None Include="Resources\border.png" />
     <Content Include="SystemIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

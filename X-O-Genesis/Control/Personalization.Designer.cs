@@ -137,7 +137,7 @@
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
             this.btnSave.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Save;
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSave.Location = new System.Drawing.Point(121, 344);
+            this.btnSave.Location = new System.Drawing.Point(124, 356);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(133, 61);
             this.btnSave.TabIndex = 8;
@@ -168,7 +168,7 @@
             this.groupBox1.Controls.Add(this.button2);
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(411, 99);
+            this.groupBox1.Location = new System.Drawing.Point(430, 102);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(366, 452);
             this.groupBox1.TabIndex = 9;

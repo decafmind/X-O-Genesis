@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdvDiscounts));
             this.panel_Discounts = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblDiscountedTotal = new System.Windows.Forms.Label();
@@ -43,6 +44,8 @@
             // 
             // panel_Discounts
             // 
+            this.panel_Discounts.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel_Discounts.BackgroundImage")));
+            this.panel_Discounts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel_Discounts.Controls.Add(this.panel2);
             this.panel_Discounts.Controls.Add(this.button1);
             this.panel_Discounts.Controls.Add(this.panel1);

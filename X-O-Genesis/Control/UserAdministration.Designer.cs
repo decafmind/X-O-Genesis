@@ -40,21 +40,21 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.keyButton1 = new PetvetPOS_Inventory_System.KeyButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.keyButton5 = new PetvetPOS_Inventory_System.KeyButton();
             this.label4 = new System.Windows.Forms.Label();
-            this.keyButton4 = new PetvetPOS_Inventory_System.KeyButton();
-            this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.keyButton3 = new PetvetPOS_Inventory_System.KeyButton();
             this.tabPage4 = new System.Windows.Forms.TabPage();
-            this.loginTrail = new PetvetPOS_Inventory_System.TrailView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.keyButton1 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton5 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton4 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton3 = new PetvetPOS_Inventory_System.KeyButton();
+            this.loginTrail = new PetvetPOS_Inventory_System.TrailView();
             this.auditTrail = new PetvetPOS_Inventory_System.TrailView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -229,21 +229,6 @@
             this.label5.Text = "Remove user";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // keyButton1
-            // 
-            this.keyButton1.accessKeyChar = "F1";
-            this.keyButton1.accessMasterController = null;
-            this.keyButton1.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton1.dbController = null;
-            this.keyButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton1.Location = new System.Drawing.Point(18, 8);
-            this.keyButton1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton1.masterController = null;
-            this.keyButton1.Name = "keyButton1";
-            this.keyButton1.Size = new System.Drawing.Size(61, 50);
-            this.keyButton1.TabIndex = 30;
-            this.keyButton1.TabStop = false;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.View_File;
@@ -275,6 +260,83 @@
             this.label3.TabIndex = 27;
             this.label3.Text = "Add user";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label4.Location = new System.Drawing.Point(322, 23);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(39, 18);
+            this.label4.TabIndex = 28;
+            this.label4.Text = "Edit";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(661, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(18, 20);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "+";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Add_User;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(454, 12);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(47, 42);
+            this.pictureBox2.TabIndex = 23;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Edit;
+            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox3.Location = new System.Drawing.Point(265, 12);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(45, 42);
+            this.pictureBox3.TabIndex = 24;
+            this.pictureBox3.TabStop = false;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.loginTrail);
+            this.tabPage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage4.Location = new System.Drawing.Point(4, 34);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Size = new System.Drawing.Size(869, 545);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Login Trail";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.White;
+            this.tabPage3.Controls.Add(this.auditTrail);
+            this.tabPage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPage3.Location = new System.Drawing.Point(4, 34);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(869, 545);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Activity Trail";
+            // 
+            // keyButton1
+            // 
+            this.keyButton1.accessKeyChar = "F1";
+            this.keyButton1.accessMasterController = null;
+            this.keyButton1.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton1.dbController = null;
+            this.keyButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton1.Location = new System.Drawing.Point(18, 8);
+            this.keyButton1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton1.masterController = null;
+            this.keyButton1.Name = "keyButton1";
+            this.keyButton1.Size = new System.Drawing.Size(61, 50);
+            this.keyButton1.TabIndex = 30;
+            this.keyButton1.TabStop = false;
+            // 
             // keyButton5
             // 
             this.keyButton5.accessKeyChar = "F2";
@@ -289,17 +351,6 @@
             this.keyButton5.Size = new System.Drawing.Size(61, 50);
             this.keyButton5.TabIndex = 10;
             this.keyButton5.TabStop = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label4.Location = new System.Drawing.Point(322, 23);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 18);
-            this.label4.TabIndex = 28;
-            this.label4.Text = "Edit";
             // 
             // keyButton4
             // 
@@ -331,35 +382,6 @@
             this.keyButton2.TabIndex = 7;
             this.keyButton2.TabStop = false;
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(661, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(18, 20);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "+";
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Add_User;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(454, 12);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(47, 42);
-            this.pictureBox2.TabIndex = 23;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Edit;
-            this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(265, 12);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(45, 42);
-            this.pictureBox3.TabIndex = 24;
-            this.pictureBox3.TabStop = false;
-            // 
             // keyButton3
             // 
             this.keyButton3.accessKeyChar = "F3";
@@ -375,23 +397,12 @@
             this.keyButton3.TabIndex = 8;
             this.keyButton3.TabStop = false;
             // 
-            // tabPage4
-            // 
-            this.tabPage4.Controls.Add(this.loginTrail);
-            this.tabPage4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage4.Location = new System.Drawing.Point(4, 34);
-            this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(869, 545);
-            this.tabPage4.TabIndex = 3;
-            this.tabPage4.Text = "Login Trail";
-            this.tabPage4.UseVisualStyleBackColor = true;
-            // 
             // loginTrail
             // 
             this.loginTrail.accessMasterController = null;
             this.loginTrail.AutoSize = true;
             this.loginTrail.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.loginTrail.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.loginTrail.BackColor = System.Drawing.Color.DimGray;
             this.loginTrail.dbController = null;
             this.loginTrail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.loginTrail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
@@ -405,23 +416,12 @@
             this.loginTrail.Users = null;
             this.loginTrail.Load += new System.EventHandler(this.loginTrail_Load);
             // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.Color.White;
-            this.tabPage3.Controls.Add(this.auditTrail);
-            this.tabPage3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabPage3.Location = new System.Drawing.Point(4, 34);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(869, 545);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Activity Trail";
-            // 
             // auditTrail
             // 
             this.auditTrail.accessMasterController = null;
             this.auditTrail.AutoSize = true;
             this.auditTrail.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.auditTrail.BackColor = System.Drawing.Color.CornflowerBlue;
+            this.auditTrail.BackColor = System.Drawing.Color.DimGray;
             this.auditTrail.dbController = null;
             this.auditTrail.Dock = System.Windows.Forms.DockStyle.Fill;
             this.auditTrail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);

@@ -93,7 +93,7 @@
             this.panel6.BackColor = System.Drawing.Color.DimGray;
             this.panel6.Controls.Add(this.dgTransaction);
             this.panel6.Controls.Add(this.shapeContainer1);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel6.Location = new System.Drawing.Point(0, 169);
             this.panel6.Name = "panel6";
             this.panel6.Padding = new System.Windows.Forms.Padding(10);
@@ -125,7 +125,9 @@
             this.dgTransaction.MultiSelect = false;
             this.dgTransaction.Name = "dgTransaction";
             this.dgTransaction.ReadOnly = true;
+            this.dgTransaction.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgTransaction.RowHeadersVisible = false;
+            this.dgTransaction.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dgTransaction.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgTransaction.Size = new System.Drawing.Size(857, 330);
             this.dgTransaction.TabIndex = 3;
@@ -180,7 +182,7 @@
             this.btnEncode.BackColor = System.Drawing.Color.White;
             this.btnEncode.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEncode.BackgroundImage")));
             this.btnEncode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnEncode.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnEncode.FlatAppearance.BorderColor = System.Drawing.Color.WhiteSmoke;
             this.btnEncode.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEncode.Location = new System.Drawing.Point(184, 65);
             this.btnEncode.Name = "btnEncode";

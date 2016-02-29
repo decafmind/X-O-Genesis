@@ -43,6 +43,8 @@
             // 
             // panel_Discounts
             // 
+            this.panel_Discounts.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.border;
+            this.panel_Discounts.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel_Discounts.Controls.Add(this.panel2);
             this.panel_Discounts.Controls.Add(this.button1);
             this.panel_Discounts.Controls.Add(this.panel1);
@@ -147,7 +149,7 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // DiscountList
+            // DiscountsList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -157,7 +159,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "DiscountList";
+            this.Name = "DiscountsList";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "DiscountList";
