@@ -103,9 +103,8 @@ namespace PetvetPOS_Inventory_System
                             Warranty = txtWarranty.Text.ToString(),
                             Replacement = txtReplacement.Text.ToString(),
                             Category_id = category_id,
-                        };
-
-                        dbController.insertProductInsideInventory(inventory, product);
+                        };                      
+                        dbController.insertProductInsideInventory(inventory, product);                     
                     }
                 }
                 toggle();
@@ -229,12 +228,14 @@ namespace PetvetPOS_Inventory_System
                 };
 
                 dbController.updateProduct(oldProduct, product);
-               
+
                 txtBarcode.Enabled = true;
 
                 toggle();
                 clearTexts();
             }
+            else
+                MessageBox.Show("Please fill up all the remaining fields.");
         }
 
         public void toggle(InventoryMode mode)

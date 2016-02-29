@@ -106,13 +106,14 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgTransaction.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgTransaction.Location = new System.Drawing.Point(252, 4);
+            this.dgTransaction.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgTransaction.Location = new System.Drawing.Point(20, 20);
             this.dgTransaction.MultiSelect = false;
             this.dgTransaction.Name = "dgTransaction";
             this.dgTransaction.ReadOnly = true;
             this.dgTransaction.RowHeadersVisible = false;
             this.dgTransaction.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgTransaction.Size = new System.Drawing.Size(765, 415);
+            this.dgTransaction.Size = new System.Drawing.Size(904, 322);
             this.dgTransaction.TabIndex = 46;
             this.dgTransaction.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgTransaction_CellContentClick);
             // 

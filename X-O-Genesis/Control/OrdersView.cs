@@ -603,11 +603,11 @@ namespace PetvetPOS_Inventory_System
                         stringSize = g.MeasureString(p, font);
                         g.DrawString(p, font, Brushes.Black, new PointF((documentWidth - stringSize.Width) - 5, Y));
                         totalAmount = totalAmount - percentageDiscValue;
-                    }
-                    poSlbl2.Text = totalAmount.ToString("N");
+                    }            
                     Y += (int)stringSize.Height + yIncrement;
                 }
 
+                poSlbl2.Text = totalAmount.ToString("N");
                 _vat = tax * totalAmount;
                 _vatableSales = totalAmount - _vat;               
 
@@ -636,7 +636,7 @@ namespace PetvetPOS_Inventory_System
                 Y += (int)stringSize.Height + yIncrement;
 
                 Y += 5;
-                string totalSales = poSlbl2.Text;
+                string totalSales = totalAmount.ToString("N");
                 g.DrawString("Total Sales", fontBold, Brushes.Black, new PointF(XQty, Y));
                 stringSize = g.MeasureString(totalSales, fontBold);
                 g.DrawString(totalSales, fontBold, Brushes.Black, new PointF((documentWidth - stringSize.Width) - 7, Y));

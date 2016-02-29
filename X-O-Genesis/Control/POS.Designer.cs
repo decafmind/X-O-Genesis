@@ -179,6 +179,7 @@
             // 
             this.txtPayment.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPayment.Location = new System.Drawing.Point(137, 13);
+            this.txtPayment.MaxLength = 16;
             this.txtPayment.Name = "txtPayment";
             this.txtPayment.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.txtPayment.Size = new System.Drawing.Size(121, 26);
@@ -187,6 +188,7 @@
             this.txtPayment.EnabledChanged += new System.EventHandler(this.txtPayment_EnabledChanged);
             this.txtPayment.TextChanged += new System.EventHandler(this.txtPayment_TextChanged);
             this.txtPayment.Enter += new System.EventHandler(this.txtPayment_Enter);
+            this.txtPayment.Leave += new System.EventHandler(this.txtPayment_Leave);
             // 
             // lblChange
             // 
@@ -325,6 +327,7 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(229, 72);
             this.txtAddress.TabIndex = 1;
+            this.txtAddress.TextChanged += new System.EventHandler(this.txtAddress_TextChanged);
             // 
             // label5
             // 
@@ -356,6 +359,8 @@
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(229, 26);
             this.txtName.TabIndex = 1;
+            this.txtName.TabStopChanged += new System.EventHandler(this.txtName_TabStopChanged);
+            this.txtName.TextChanged += new System.EventHandler(this.txtName_TextChanged);
             // 
             // label2
             // 

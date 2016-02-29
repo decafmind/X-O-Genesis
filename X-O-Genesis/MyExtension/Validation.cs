@@ -115,6 +115,23 @@ namespace MyExtension
                 textbox.SelectionLength = 0;
             }
         }
+
+        public static void filterToAddress(TextBox textbox)
+        {
+            string acceptedChar = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ.-#, ";
+            string result = "";
+            foreach (char character in textbox.Text)
+                if (acceptedChar.Contains(character))
+                    if (!string.IsNullOrWhiteSpace(textbox.Text))
+                        result += character;
+            textbox.Text = result;
+            if (textbox.Text.Length > 0)
+            {
+                textbox.SelectionStart = textbox.Text.Length;
+                textbox.SelectionLength = 0;
+            }
+        }
+
         public static void filterToAlphaNumeric(TextBox textbox)
         {
             string acceptedChar = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 ";

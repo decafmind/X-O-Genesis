@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Drawing.Printing;
 using System.Threading;
 using MyExtension;
+using System.Globalization;
 
 namespace PetvetPOS_Inventory_System
 {
@@ -18,6 +19,7 @@ namespace PetvetPOS_Inventory_System
         Invoice currentTransaction;
         Invoice invoice;
         Product currentProduct;
+        StockMovementView stockMovementView;
         DataTable dt = new DataTable();
         List<ProductInvoice> carts = new List<ProductInvoice>();
 
@@ -42,10 +44,14 @@ namespace PetvetPOS_Inventory_System
         {
             if (e.KeyCode == Keys.F1){
                 toggleEncoding(true);
+                txtEncode.Focus();
                 keyButton1.updateButton();
             }
             else if (e.KeyCode == Keys.F2){
-                txtPayment.Focus();
+                if (dgTransaction.Rows.Count > 1)
+                    txtPayment.Focus();
+                else
+                    MessageBox.Show("Current transaction is empty.");
                 keyButton2.updateButton();
             }
             else if (e.KeyCode == Keys.F3){
@@ -73,11 +79,11 @@ namespace PetvetPOS_Inventory_System
         
         private void POS_Load(object sender, EventArgs e)
         {
-   
+            txtPayment.Enabled = false;
         }
 
         private void txtEncode_Enter(object sender, EventArgs e) {
-            masterController.setFormReturnkey = btnEncode;
+            masterController.setFormReturnkey = btnEncode;           
         }
         private void txtEncode_EnabledChanged(object sender, EventArgs e)
         {
@@ -103,12 +109,13 @@ namespace PetvetPOS_Inventory_System
             txtEncode.Enabled = flag;
             txtName.Enabled = flag;
             txtAddress.Enabled = flag;
-
+            txtPayment.Enabled = flag;
             if (flag){
                 txtEncode.Clear();
                 txtName.Clear();
                 txtAddress.Clear();
                 beginTransaction();
+              
             }
         }
 
@@ -128,6 +135,7 @@ namespace PetvetPOS_Inventory_System
             // And max of 13 (EAN-13)
             if (txtEncode.Enabled){
                 if (queryProducts()){
+                    txtName.Focus();
                     barcodeIndicator.Start();
                 }
                 else{                   
@@ -292,6 +300,8 @@ namespace PetvetPOS_Inventory_System
 
             currentTransaction = null;
             toggleEncoding(true);
+            txtPayment.Text = string.Empty;
+            txtPayment.Enabled = true;
 
             lblChange.ResetText();
             lblDiscount.Visible = false;
@@ -308,8 +318,18 @@ namespace PetvetPOS_Inventory_System
             if (payment >= totalAmount)
             {
                 decimal total = totalAmount;
-
                 if (dbController.insertReceipt(currentTransaction, total, payment, txtName.Text, txtAddress.Text)){
+                    foreach (ProductInvoice item in carts)
+                    {
+                        stockMovementView = new StockMovementView();
+                        stockMovementView.SoldItems = item.QuantitySold;
+                        stockMovementView.Product_ID = item.product.Barcode;
+                        stockMovementView.Monthly = DateTime.Now.Month;
+
+                        dbController.stockViewMovementMapper.createStockMovementView(stockMovementView);
+                    }
+
+
                     lblPOSmsg.Text = String.Format("Payment: Php {0:N}", payment);
                     change = payment - total;
                     lblChange.Text = change.ToString("N");
@@ -319,12 +339,14 @@ namespace PetvetPOS_Inventory_System
                     paymentTimer.Start();
                     printReceipt();
                     txtPayment.Clear();
+                    txtPayment.ReadOnly = false;
                     resetTransaction();
                 }
             }
             else
             {
                 MessageBox.Show("Oops.. Insuficient payment");
+                txtPayment.ReadOnly = false;
             }
         }
 
@@ -632,19 +654,37 @@ namespace PetvetPOS_Inventory_System
         }
 
         int btn_click_counter = 0;
-
+        decimal amount = 0;
         private void btnPayment_Click(object sender, EventArgs e)
         {
+            txtPayment.ReadOnly = true;
+            if (dgTransaction.Rows.Count <= 1)
+            {
+                MessageBox.Show("No current transaction.");                
+                txtPayment.Clear();
+                txtEncode.Focus();
+                txtPayment.ReadOnly = false;
+                return;
+            }
+
+            if (btn_click_counter == 0 && !string.IsNullOrWhiteSpace(txtPayment.Text))
+                amount = decimal.Parse(txtPayment.Text);
+           
+
+            txtPayment_Leave(sender, e);           
             swithClickIndicator(++btn_click_counter);
 
-            if (btn_click_counter == 2){
+            if (btn_click_counter == 2){                
                 decimal payment = 0;
                 if (string.IsNullOrWhiteSpace(txtPayment.Text))
+                {
                     MessageBox.Show("Enter payment");
+                    txtPayment.ReadOnly = false;
+                }
                 else
-                    payment = decimal.Parse(txtPayment.Text);
+                    payment = amount;
                 pay(payment);
-                swithClickIndicator(btn_click_counter = 0);
+                swithClickIndicator(btn_click_counter = 0);              
             }
         }
 
@@ -681,10 +721,21 @@ namespace PetvetPOS_Inventory_System
                 btnPayment.Enabled = false;
         }
 
-         private void txtPayment_TextChanged(object sender, EventArgs e)
+        private void txtPayment_TextChanged(object sender, EventArgs e)
         {
-            string charAllowed = "1234567890.";
-            MyExtension.Validation.limitTextbox(txtPayment, charAllowed);
+            if (!string.IsNullOrWhiteSpace(txtPayment.Text))
+            {
+                if (Convert.ToDecimal(txtPayment.Text) <= 1000000000)
+                {
+                    string charAllowed = "1234567890.,";
+                    MyExtension.Validation.limitTextbox(txtPayment, charAllowed);
+                }
+                else
+                {
+                    MessageBox.Show("Sum too large!");
+                    txtPayment.Clear();
+                }
+            }
         }
 
          private void panel8_Paint(object sender, PaintEventArgs e)
@@ -714,7 +765,7 @@ namespace PetvetPOS_Inventory_System
          }
          private void filterAplhaNumeric(object sender, EventArgs e)
          {
-             Validation.filterToAlphaNumeric(sender as TextBox);
+             Validation.filterToNumeric(sender as TextBox);
          }
          private void filterNumeric(object sender, EventArgs e)
          {
@@ -734,6 +785,27 @@ namespace PetvetPOS_Inventory_System
          private void clickIndicator1_Click(object sender, EventArgs e)
          {
 
+         }
+
+         private void txtName_TextChanged(object sender, EventArgs e)
+         {
+             Validation.filterToNames(sender as TextBox);
+         }
+
+         private void txtAddress_TextChanged(object sender, EventArgs e)
+         {
+             Validation.filterToAddress(sender as TextBox);           
+         }
+
+         private void txtPayment_Leave(object sender, EventArgs e)
+         {
+             if (!txtPayment.Text.Contains(",") && !string.IsNullOrWhiteSpace(txtPayment.Text))
+                txtPayment.Text = string.Format("{0:#,##0.00}", double.Parse(txtPayment.Text));
+         }
+
+         private void txtName_TabStopChanged(object sender, EventArgs e)
+         {
+             txtAddress.Focus();
          }
 
     }

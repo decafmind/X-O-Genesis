@@ -116,6 +116,7 @@ namespace PetvetPOS_Inventory_System
         {
             dbController = masterController.DataBaseController;
             txtUsername.Focus();
+            btnForgot.Enabled = true;
             masterController.setFormReturnkey = btnLogin;
             accessLoginMessage = "Welcome! You may now login";
 
@@ -123,7 +124,7 @@ namespace PetvetPOS_Inventory_System
         }
 
         private void btnLogin_Click(object sender, EventArgs e){
-            
+            btnForgot.Enabled = false;
             if (dbController == null)
                 dbController = masterController.DataBaseController;
 
@@ -162,6 +163,7 @@ namespace PetvetPOS_Inventory_System
                 {
                     denyLogin();
                     btnLogin.Enabled = true;
+                    btnForgot.Enabled = true;
                     return;
                 }
 
@@ -176,6 +178,7 @@ namespace PetvetPOS_Inventory_System
             }
             else{
                 denyLogin();
+                btnForgot.Enabled = true;
             }
 
             btnLogin.Enabled = true;

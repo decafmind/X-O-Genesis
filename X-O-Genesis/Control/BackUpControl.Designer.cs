@@ -33,25 +33,21 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.gbRestore = new System.Windows.Forms.GroupBox();
             this.txtSelected = new System.Windows.Forms.TextBox();
+            this.btnRestore = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.gbBackup = new System.Windows.Forms.GroupBox();
             this.txtPath = new System.Windows.Forms.TextBox();
+            this.btnBackup = new System.Windows.Forms.Button();
             this.btnPath = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnRestore = new System.Windows.Forms.Button();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.btnBackup = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             this.gbRestore.SuspendLayout();
             this.panel3.SuspendLayout();
             this.gbBackup.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -82,7 +78,6 @@
             this.gbRestore.Controls.Add(this.btnRestore);
             this.gbRestore.Controls.Add(this.btnSelect);
             this.gbRestore.Controls.Add(this.label7);
-            this.gbRestore.Controls.Add(this.pictureBox2);
             this.gbRestore.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.gbRestore.Location = new System.Drawing.Point(10, 10);
@@ -96,10 +91,28 @@
             // 
             this.txtSelected.Enabled = false;
             this.txtSelected.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSelected.Location = new System.Drawing.Point(275, 81);
+            this.txtSelected.Location = new System.Drawing.Point(29, 81);
             this.txtSelected.Name = "txtSelected";
-            this.txtSelected.Size = new System.Drawing.Size(219, 20);
+            this.txtSelected.Size = new System.Drawing.Size(447, 20);
             this.txtSelected.TabIndex = 13;
+            // 
+            // btnRestore
+            // 
+            this.btnRestore.AutoSize = true;
+            this.btnRestore.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnRestore.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnRestore.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnRestore.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnRestore.Image = ((System.Drawing.Image)(resources.GetObject("btnRestore.Image")));
+            this.btnRestore.Location = new System.Drawing.Point(137, 131);
+            this.btnRestore.Name = "btnRestore";
+            this.btnRestore.Size = new System.Drawing.Size(254, 114);
+            this.btnRestore.TabIndex = 12;
+            this.btnRestore.Text = "RESTORE";
+            this.btnRestore.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnRestore.UseVisualStyleBackColor = true;
+            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
             // 
             // btnSelect
             // 
@@ -109,7 +122,7 @@
             this.btnSelect.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSelect.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSelect.ForeColor = System.Drawing.Color.White;
-            this.btnSelect.Location = new System.Drawing.Point(500, 81);
+            this.btnSelect.Location = new System.Drawing.Point(500, 78);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(72, 23);
             this.btnSelect.TabIndex = 11;
@@ -121,7 +134,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label7.Location = new System.Drawing.Point(271, 44);
+            this.label7.Location = new System.Drawing.Point(25, 58);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(87, 20);
             this.label7.TabIndex = 8;
@@ -144,7 +157,6 @@
             this.gbBackup.Controls.Add(this.btnBackup);
             this.gbBackup.Controls.Add(this.btnPath);
             this.gbBackup.Controls.Add(this.label3);
-            this.gbBackup.Controls.Add(this.pictureBox1);
             this.gbBackup.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.gbBackup.Location = new System.Drawing.Point(10, 10);
@@ -158,10 +170,28 @@
             // 
             this.txtPath.Enabled = false;
             this.txtPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPath.Location = new System.Drawing.Point(286, 67);
+            this.txtPath.Location = new System.Drawing.Point(32, 81);
             this.txtPath.Name = "txtPath";
-            this.txtPath.Size = new System.Drawing.Size(219, 20);
+            this.txtPath.Size = new System.Drawing.Size(462, 20);
             this.txtPath.TabIndex = 8;
+            // 
+            // btnBackup
+            // 
+            this.btnBackup.AutoSize = true;
+            this.btnBackup.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBackup.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.btnBackup.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.btnBackup.Image = ((System.Drawing.Image)(resources.GetObject("btnBackup.Image")));
+            this.btnBackup.Location = new System.Drawing.Point(173, 131);
+            this.btnBackup.Name = "btnBackup";
+            this.btnBackup.Size = new System.Drawing.Size(254, 114);
+            this.btnBackup.TabIndex = 6;
+            this.btnBackup.Text = "BACKUP";
+            this.btnBackup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBackup.UseVisualStyleBackColor = true;
+            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
             // 
             // btnPath
             // 
@@ -171,7 +201,7 @@
             this.btnPath.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPath.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPath.ForeColor = System.Drawing.Color.White;
-            this.btnPath.Location = new System.Drawing.Point(511, 65);
+            this.btnPath.Location = new System.Drawing.Point(500, 78);
             this.btnPath.Name = "btnPath";
             this.btnPath.Size = new System.Drawing.Size(75, 23);
             this.btnPath.TabIndex = 5;
@@ -183,7 +213,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
-            this.label3.Location = new System.Drawing.Point(282, 44);
+            this.label3.Location = new System.Drawing.Point(28, 58);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 20);
             this.label3.TabIndex = 2;
@@ -196,61 +226,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1320, 151);
             this.panel2.TabIndex = 0;
-            // 
-            // btnRestore
-            // 
-            this.btnRestore.AutoSize = true;
-            this.btnRestore.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRestore.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnRestore.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnRestore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestore.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnRestore.Image = ((System.Drawing.Image)(resources.GetObject("btnRestore.Image")));
-            this.btnRestore.Location = new System.Drawing.Point(435, 174);
-            this.btnRestore.Name = "btnRestore";
-            this.btnRestore.Size = new System.Drawing.Size(137, 58);
-            this.btnRestore.TabIndex = 12;
-            this.btnRestore.Text = "RESTORE";
-            this.btnRestore.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRestore.UseVisualStyleBackColor = true;
-            this.btnRestore.Click += new System.EventHandler(this.btnRestore_Click);
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.DimGray;
-            this.pictureBox2.Location = new System.Drawing.Point(56, 42);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(200, 190);
-            this.pictureBox2.TabIndex = 1;
-            this.pictureBox2.TabStop = false;
-            // 
-            // btnBackup
-            // 
-            this.btnBackup.AutoSize = true;
-            this.btnBackup.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBackup.FlatAppearance.BorderColor = System.Drawing.Color.White;
-            this.btnBackup.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.btnBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBackup.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.btnBackup.Image = ((System.Drawing.Image)(resources.GetObject("btnBackup.Image")));
-            this.btnBackup.Location = new System.Drawing.Point(461, 174);
-            this.btnBackup.Name = "btnBackup";
-            this.btnBackup.Size = new System.Drawing.Size(125, 58);
-            this.btnBackup.TabIndex = 6;
-            this.btnBackup.Text = "BACKUP";
-            this.btnBackup.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBackup.UseVisualStyleBackColor = true;
-            this.btnBackup.Click += new System.EventHandler(this.btnBackup_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.DimGray;
-            this.pictureBox1.Location = new System.Drawing.Point(63, 42);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(200, 190);
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Tag = "";
             // 
             // BackUpControl
             // 
@@ -267,8 +242,6 @@
             this.panel3.ResumeLayout(false);
             this.gbBackup.ResumeLayout(false);
             this.gbBackup.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -279,7 +252,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.GroupBox gbRestore;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnRestore;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Label label7;
@@ -290,6 +262,5 @@
         private System.Windows.Forms.Button btnBackup;
         private System.Windows.Forms.Button btnPath;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

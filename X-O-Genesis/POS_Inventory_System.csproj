@@ -288,6 +288,7 @@
     <Compile Include="Domain\ProductInspection.cs" />
     <Compile Include="Domain\ProductInventoryDomain.cs" />
     <Compile Include="Domain\ProductReturned.cs" />
+    <Compile Include="Domain\StockMovementView.cs" />
     <Compile Include="Domain\Supplier.cs" />
     <Compile Include="Domain\Theme.cs" />
     <Compile Include="EventHandler\SettingArgs.cs" />
@@ -358,6 +359,7 @@
     <Compile Include="MyExtension\ErrorLog.cs" />
     <Compile Include="MyExtension\Graphics.cs" />
     <Compile Include="MyExtension\Path.cs" />
+    <Compile Include="ORM\TableGateway\StockMovementViewMapper.cs" />
     <Compile Include="ORM\TableGateway\AuditTrailMapper.cs" />
     <Compile Include="ORM\TableGateway\AvailedDiscountsMapper.cs" />
     <Compile Include="ORM\TableGateway\CompanyProfileMapper.cs" />

@@ -60,6 +60,8 @@ namespace PetvetPOS_Inventory_System
         public DiscountsMapper discountsMapper { get; set; }
         public AvailedDiscountsMapper availedDiscountsMapper { get; set; }
 
+        public StockMovementViewMapper stockViewMovementMapper { get; set; }
+
         public DatabaseController(MasterController masterController)
         {
             this.mySqlDB = new MySqlDB();
@@ -97,6 +99,7 @@ namespace PetvetPOS_Inventory_System
             this.systemSettingsMapper = new SystemSettingMapper(mySqlDB);
             this.discountsMapper = new DiscountsMapper(mySqlDB);
             this.availedDiscountsMapper = new AvailedDiscountsMapper(mySqlDB);
+            this.stockViewMovementMapper = new StockMovementViewMapper(mySqlDB);
 
             // Events hooking
             this.masterController.EmployeeLogin += masterController_EmployeeLogin;

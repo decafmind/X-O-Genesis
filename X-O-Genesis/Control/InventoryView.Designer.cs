@@ -742,9 +742,9 @@
             this.rbArchives.ForeColor = System.Drawing.Color.CornflowerBlue;
             this.rbArchives.Location = new System.Drawing.Point(211, 0);
             this.rbArchives.Name = "rbArchives";
-            this.rbArchives.Size = new System.Drawing.Size(87, 48);
+            this.rbArchives.Size = new System.Drawing.Size(88, 48);
             this.rbArchives.TabIndex = 5;
-            this.rbArchives.Text = "Archives";
+            this.rbArchives.Text = "Archived";
             this.rbArchives.UseVisualStyleBackColor = true;
             this.rbArchives.CheckedChanged += new System.EventHandler(this.checkChanged);
             // 

@@ -74,7 +74,7 @@ namespace PetvetPOS_Inventory_System
         void displayGraph()
         {
             DataTable dt = new DataTable();
-            dt = dbController.getStockMovement(dt, bcode);
+            dbController.stockViewMovementMapper.loadTable(dt);
 
             string chartTitle = "Stock Movement";
             stockMovement.Series.Clear();
@@ -88,14 +88,14 @@ namespace PetvetPOS_Inventory_System
 
             foreach (DataRow row in dt.Rows)
             {
-                int qtySold = Convert.ToInt32(dt.Rows[0]["QTYSold"]);
-
-                int pointX = Convert.ToInt32(dt.Rows[0]["Month"]);
+                int qtySold = Convert.ToInt32(dt.Rows[0]["sold_items"]);
+                int year = Convert.ToInt32(dt.Rows[0]["yearly"]);
+                int pointX = Convert.ToInt32(dt.Rows[0]["monthly"]);
                 int months = 12;
                 for(int i = 1; i < months; i++)
                 {                   
-                    if(i == pointX)                       
-                        stockMovement.Series[chartTitle].Points.AddXY(CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(pointX), qtySold);
+                    if(i == pointX)
+                        stockMovement.Series[chartTitle].Points.AddXY(CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(pointX) + " " + year, qtySold);
                     else
                         stockMovement.Series[chartTitle].Points.AddXY(CultureInfo.CurrentCulture.DateTimeFormat.GetAbbreviatedMonthName(i), 0);
                 }

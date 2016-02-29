@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panelPie = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
@@ -85,7 +85,7 @@
             this.panelPie.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPie.Location = new System.Drawing.Point(0, 254);
             this.panelPie.Name = "panelPie";
-            this.panelPie.Size = new System.Drawing.Size(576, 329);
+            this.panelPie.Size = new System.Drawing.Size(679, 275);
             this.panelPie.TabIndex = 8;
             // 
             // label6
@@ -101,19 +101,19 @@
             // chartBestSellers
             // 
             this.chartBestSellers.BackColor = System.Drawing.Color.Transparent;
-            chartArea2.Name = "ChartArea1";
-            this.chartBestSellers.ChartAreas.Add(chartArea2);
+            chartArea1.Name = "ChartArea1";
+            this.chartBestSellers.ChartAreas.Add(chartArea1);
             this.chartBestSellers.Dock = System.Windows.Forms.DockStyle.Fill;
-            legend2.Name = "Legend1";
-            this.chartBestSellers.Legends.Add(legend2);
+            legend1.Name = "Legend1";
+            this.chartBestSellers.Legends.Add(legend1);
             this.chartBestSellers.Location = new System.Drawing.Point(0, 0);
             this.chartBestSellers.Name = "chartBestSellers";
-            series2.ChartArea = "ChartArea1";
-            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chartBestSellers.Series.Add(series2);
-            this.chartBestSellers.Size = new System.Drawing.Size(576, 329);
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Pie;
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartBestSellers.Series.Add(series1);
+            this.chartBestSellers.Size = new System.Drawing.Size(679, 275);
             this.chartBestSellers.TabIndex = 5;
             this.chartBestSellers.Text = "chart1";
             this.chartBestSellers.Click += new System.EventHandler(this.chartBestSellers_Click);
@@ -126,7 +126,7 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(576, 254);
+            this.panel6.Size = new System.Drawing.Size(679, 254);
             this.panel6.TabIndex = 7;
             this.panel6.Paint += new System.Windows.Forms.PaintEventHandler(this.panel6_Paint);
             // 
@@ -139,7 +139,7 @@
             this.bestSellerPanel.Location = new System.Drawing.Point(0, 0);
             this.bestSellerPanel.Name = "bestSellerPanel";
             this.bestSellerPanel.Padding = new System.Windows.Forms.Padding(5);
-            this.bestSellerPanel.Size = new System.Drawing.Size(198, 254);
+            this.bestSellerPanel.Size = new System.Drawing.Size(301, 254);
             this.bestSellerPanel.TabIndex = 4;
             // 
             // dGBestSellers
@@ -157,7 +157,7 @@
             this.dGBestSellers.ReadOnly = true;
             this.dGBestSellers.RowHeadersVisible = false;
             this.dGBestSellers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dGBestSellers.Size = new System.Drawing.Size(188, 199);
+            this.dGBestSellers.Size = new System.Drawing.Size(291, 199);
             this.dGBestSellers.TabIndex = 4;
             this.dGBestSellers.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGBestSellers_CellContentClick);
             this.dGBestSellers.Scroll += new System.Windows.Forms.ScrollEventHandler(this.dGBestSellers_Scroll);
@@ -168,7 +168,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(5, 5);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(188, 45);
+            this.panel4.Size = new System.Drawing.Size(291, 45);
             this.panel4.TabIndex = 0;
             // 
             // label5
@@ -180,7 +180,7 @@
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(79)))), ((int)(((byte)(158)))), ((int)(((byte)(99)))));
             this.label5.Location = new System.Drawing.Point(0, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(188, 45);
+            this.label5.Size = new System.Drawing.Size(291, 45);
             this.label5.TabIndex = 1;
             this.label5.Text = "Best Sellers";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -191,7 +191,7 @@
             this.panel3.Controls.Add(this.dgReturnedProduct);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(198, 0);
+            this.panel3.Location = new System.Drawing.Point(301, 0);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(5);
             this.panel3.Size = new System.Drawing.Size(378, 254);
@@ -245,9 +245,9 @@
             this.mainPanel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.mainPanel.Controls.Add(this.criticalPanel);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Right;
-            this.mainPanel.Location = new System.Drawing.Point(576, 0);
+            this.mainPanel.Location = new System.Drawing.Point(679, 0);
             this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(301, 583);
+            this.mainPanel.Size = new System.Drawing.Size(301, 529);
             this.mainPanel.TabIndex = 0;
             // 
             // criticalPanel
@@ -260,7 +260,7 @@
             this.criticalPanel.Location = new System.Drawing.Point(0, 0);
             this.criticalPanel.Name = "criticalPanel";
             this.criticalPanel.Padding = new System.Windows.Forms.Padding(5);
-            this.criticalPanel.Size = new System.Drawing.Size(301, 583);
+            this.criticalPanel.Size = new System.Drawing.Size(301, 529);
             this.criticalPanel.TabIndex = 3;
             // 
             // dgCritical
@@ -278,7 +278,7 @@
             this.dgCritical.ReadOnly = true;
             this.dgCritical.RowHeadersVisible = false;
             this.dgCritical.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgCritical.Size = new System.Drawing.Size(291, 388);
+            this.dgCritical.Size = new System.Drawing.Size(291, 334);
             this.dgCritical.TabIndex = 0;
             this.dgCritical.Sorted += new System.EventHandler(this.dataGridView1_Sorted);
             // 
@@ -312,7 +312,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.shapeContainer1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(5, 466);
+            this.panel2.Location = new System.Drawing.Point(5, 412);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(291, 112);
             this.panel2.TabIndex = 2;
@@ -386,7 +386,7 @@
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.mainPanel);
             this.Name = "Home";
-            this.Size = new System.Drawing.Size(877, 583);
+            this.Size = new System.Drawing.Size(980, 529);
             this.Resize += new System.EventHandler(this.Home_Resize);
             this.panelPie.ResumeLayout(false);
             this.panelPie.PerformLayout();

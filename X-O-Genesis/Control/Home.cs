@@ -116,15 +116,20 @@ namespace PetvetPOS_Inventory_System
 
             chartBestSellers.Series[chartTitle].ChartType = SeriesChartType.Pie;
             chartBestSellers.Series[chartTitle].Font = new Font("Times New Roman", 8, FontStyle.Bold);
-            chartBestSellers.Series[chartTitle].LabelForeColor = Color.White;
+            chartBestSellers.Series[chartTitle]["PieLabelStyle"] = "Outside";
+            chartBestSellers.Series[chartTitle]["PieLineColor"] = "Black";
             chartBestSellers.Series[chartTitle].SetCustomProperty("DrawingStyle", "lightToDark");
+            chartBestSellers.Series[chartTitle].IsVisibleInLegend = false;
 
+            chartBestSellers.ChartAreas[0].Area3DStyle.Enable3D = true;
+            chartBestSellers.ChartAreas[0].Area3DStyle.IsRightAngleAxes = true;
+   
             foreach (DataGridViewRow row in dGBestSellers.Rows)
             {
                 string productName = row.Cells[0].Value.ToString();
                 decimal percentage = (decimal)row.Cells[2].Value;
 
-                string pointX = String.Format("{0} {1}%", productName.ToUpper(), (int)(percentage * 100));
+                string pointX = String.Format("{0} {1}%", productName, (int)percentage);
                 chartBestSellers.Series[chartTitle].Points.AddXY(pointX, percentage);
             }
         }
