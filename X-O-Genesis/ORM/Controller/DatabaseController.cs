@@ -61,6 +61,7 @@ namespace PetvetPOS_Inventory_System
         public AvailedDiscountsMapper availedDiscountsMapper { get; set; }
 
         public StockMovementViewMapper stockViewMovementMapper { get; set; }
+        public AnnualSalesReport annualSalesReport { get; set; }
 
         public DatabaseController(MasterController masterController)
         {
@@ -98,8 +99,10 @@ namespace PetvetPOS_Inventory_System
             this.companyProfileMapper = new CompanyProfileMapper(mySqlDB);
             this.systemSettingsMapper = new SystemSettingMapper(mySqlDB);
             this.discountsMapper = new DiscountsMapper(mySqlDB);
+
             this.availedDiscountsMapper = new AvailedDiscountsMapper(mySqlDB);
             this.stockViewMovementMapper = new StockMovementViewMapper(mySqlDB);
+            this.annualSalesReport = new AnnualSalesReport(mySqlDB);
 
             // Events hooking
             this.masterController.EmployeeLogin += masterController_EmployeeLogin;
@@ -284,6 +287,15 @@ namespace PetvetPOS_Inventory_System
  
         public DataTable loadAuditTrail(DataTable dt){
             return auditTrailView.loadTable(dt);
+        }
+
+        public DataTable filterAnnualSalesReport(DataTable dt, DateTime from, DateTime to)
+        {
+            string condition = String.Format("Year BETWEEN Year('{0}') AND Year('{1}')",
+                MyExtension.MySqlToCSharp.convertDate(from),
+                MyExtension.MySqlToCSharp.convertDate(to)
+                );
+            return annualSalesReport.loadTable(dt, condition);
         }
 
         public DataTable filterWeeklySalesReport(DataTable dt, DateTime from, DateTime to)

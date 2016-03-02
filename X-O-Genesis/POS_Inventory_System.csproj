@@ -369,6 +369,7 @@
     <Compile Include="ORM\TableGateway\ProductReturnMapper.cs" />
     <Compile Include="ORM\TableGateway\SupplierMapper.cs" />
     <Compile Include="ORM\TableGateway\SystemSettingMapper.cs" />
+    <Compile Include="ORM\ViewGateway\AnnualSalesReport.cs" />
     <Compile Include="ORM\ViewGateway\AuditTrailView.cs" />
     <Compile Include="ORM\ViewGateway\LoginTrailViewMapper.cs" />
     <Compile Include="ORM\ViewGateway\ProductReturnViewMapper.cs" />

@@ -19,7 +19,7 @@ namespace PetvetPOS_Inventory_System
         private int typeOfReporIndex;
         private DataTable dt;
 
-        enum reportType { DAILY, WEEKLY, MONTHLY, UNKNOWN }
+        enum reportType { DAILY, WEEKLY, MONTHLY, ANNUAL, UNKNOWN }
         
         reportType currentReport;
         DateTime[] dateRange = new DateTime[2];
@@ -39,6 +39,8 @@ namespace PetvetPOS_Inventory_System
                 report = reportType.WEEKLY;
             else if (cmType.Text == "MONTHLY")
                 report = reportType.MONTHLY;
+            else if (cmType.Text == "ANNUAL")
+                report = reportType.ANNUAL;
             else
             {
                 report = reportType.DAILY;
@@ -167,6 +169,10 @@ namespace PetvetPOS_Inventory_System
                     dbController.filterMonthlySalesReport(dt, dateRange[FROM], dateRange[TO]);
                     vatableSalesReport(dt, tax);
                     break;
+                case reportType.ANNUAL:
+                    dbController.filterAnnualSalesReport(dt, dateRange[FROM], dateRange[TO]);
+                    vatableSalesReport(dt, tax);
+                    break;
                 case reportType.UNKNOWN:
                     break;
                 default:
@@ -216,6 +222,8 @@ namespace PetvetPOS_Inventory_System
                 seriesName = "Weekly Sales Report";
             else if (cmType.Text == "MONTHLY")
                 seriesName = "Monthly Sales Report";
+            else if (cmType.Text == "ANNUAL")
+                seriesName = "Annual Sales Report";
 
             salesChart.Series.Add(seriesName);
             salesChart.Series[seriesName].ChartType = checkChartType();
@@ -292,7 +300,7 @@ namespace PetvetPOS_Inventory_System
 
         void selectNextSalesReport()
         {
-            const int MAX_INDEX = 2;
+            const int MAX_INDEX = 3;
             if (typeOfReporIndex >= MAX_INDEX)
                 typeOfReporIndex = 0;
             else
