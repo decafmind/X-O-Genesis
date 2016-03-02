@@ -36,6 +36,7 @@ namespace PetvetPOS_Inventory_System
             
             txtPassword.ForeColor = SystemColors.posGray;
             txtPassword.PasswordChar = '*';
+            txtPassword.Clear();
             txtPassword.Text = "Enter your password";
             this.txtPassword.Leave += new System.EventHandler(this.txtPassword_Leave);
             this.txtPassword.Enter += new System.EventHandler(this.txtPassword_Enter);

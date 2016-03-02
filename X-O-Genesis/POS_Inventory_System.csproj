@@ -1003,6 +1003,10 @@
     <None Include="Resources\RemoveITEM20.png" />
     <None Include="Resources\border.png" />
     <Content Include="POSIS_icon.ico" />
+    <None Include="Resources\Add_Stocks.png" />
+    <None Include="Resources\archive3.png" />
+    <None Include="Resources\BACKUPVER3.png" />
+    <None Include="Resources\SplashLatest.gif" />
     <Content Include="SystemIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

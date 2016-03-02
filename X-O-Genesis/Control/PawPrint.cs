@@ -34,5 +34,10 @@ namespace PetvetPOS_Inventory_System
                 ovalShape12.BackColor = thisColor;
             }
         }
+
+        private void ovalShape12_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

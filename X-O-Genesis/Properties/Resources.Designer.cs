@@ -73,6 +73,16 @@ namespace PetvetPOS_Inventory_System.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Add_Stocks {
+            get {
+                object obj = ResourceManager.GetObject("Add_Stocks", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Add_User {
             get {
                 object obj = ResourceManager.GetObject("Add User", resourceCulture);
@@ -126,6 +136,26 @@ namespace PetvetPOS_Inventory_System.Properties {
         internal static System.Drawing.Bitmap AkiraGIF {
             get {
                 object obj = ResourceManager.GetObject("AkiraGIF", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap archive3 {
+            get {
+                object obj = ResourceManager.GetObject("archive3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap BACKUPVER3 {
+            get {
+                object obj = ResourceManager.GetObject("BACKUPVER3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1016,6 +1046,16 @@ namespace PetvetPOS_Inventory_System.Properties {
         internal static System.Drawing.Bitmap Splash_screenF4 {
             get {
                 object obj = ResourceManager.GetObject("Splash_screenF4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap SplashLatest {
+            get {
+                object obj = ResourceManager.GetObject("SplashLatest", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

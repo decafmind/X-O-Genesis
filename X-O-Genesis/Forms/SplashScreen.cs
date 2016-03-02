@@ -82,5 +82,10 @@ namespace PetvetPOS_Inventory_System
         {
             lblTitle.Text = anagram[random.Next(anagram.Length)];
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

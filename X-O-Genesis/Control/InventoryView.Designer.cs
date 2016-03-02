@@ -86,14 +86,20 @@
             this.bottomPanel = new System.Windows.Forms.Panel();
             this.panel16 = new System.Windows.Forms.Panel();
             this.panel19 = new System.Windows.Forms.Panel();
+            this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.keyButton16 = new PetvetPOS_Inventory_System.KeyButton();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.keyButton17 = new PetvetPOS_Inventory_System.KeyButton();
             this.panel18 = new System.Windows.Forms.Panel();
+            this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.keyButton15 = new PetvetPOS_Inventory_System.KeyButton();
             this.panel15 = new System.Windows.Forms.Panel();
+            this.addKeyPanel = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.keyButton8 = new PetvetPOS_Inventory_System.KeyButton();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel17 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.keyButton11 = new PetvetPOS_Inventory_System.KeyButton();
@@ -104,10 +110,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.keyButton9 = new PetvetPOS_Inventory_System.KeyButton();
-            this.addKeyPanel = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.keyButton8 = new PetvetPOS_Inventory_System.KeyButton();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.keyButton6 = new PetvetPOS_Inventory_System.KeyButton();
             this.picSearch = new System.Windows.Forms.PictureBox();
@@ -143,14 +145,16 @@
             this.bottomPanel.SuspendLayout();
             this.panel16.SuspendLayout();
             this.panel19.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             this.panel18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             this.panel15.SuspendLayout();
+            this.addKeyPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             this.updateKeyPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.addKeyPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
             this.mainTab.SuspendLayout();
@@ -838,6 +842,7 @@
             // 
             // panel19
             // 
+            this.panel19.Controls.Add(this.pictureBox9);
             this.panel19.Controls.Add(this.keyButton16);
             this.panel19.Controls.Add(this.label15);
             this.panel19.Controls.Add(this.label16);
@@ -845,8 +850,18 @@
             this.panel19.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel19.Location = new System.Drawing.Point(200, 0);
             this.panel19.Name = "panel19";
-            this.panel19.Size = new System.Drawing.Size(262, 61);
+            this.panel19.Size = new System.Drawing.Size(274, 61);
             this.panel19.TabIndex = 1;
+            // 
+            // pictureBox9
+            // 
+            this.pictureBox9.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.archive3;
+            this.pictureBox9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox9.Location = new System.Drawing.Point(6, 9);
+            this.pictureBox9.Name = "pictureBox9";
+            this.pictureBox9.Size = new System.Drawing.Size(54, 45);
+            this.pictureBox9.TabIndex = 27;
+            this.pictureBox9.TabStop = false;
             // 
             // keyButton16
             // 
@@ -899,6 +914,7 @@
             // 
             // panel18
             // 
+            this.panel18.Controls.Add(this.pictureBox8);
             this.panel18.Controls.Add(this.label14);
             this.panel18.Controls.Add(this.keyButton15);
             this.panel18.Dock = System.Windows.Forms.DockStyle.Left;
@@ -906,6 +922,16 @@
             this.panel18.Name = "panel18";
             this.panel18.Size = new System.Drawing.Size(200, 61);
             this.panel18.TabIndex = 0;
+            // 
+            // pictureBox8
+            // 
+            this.pictureBox8.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Add_Stocks;
+            this.pictureBox8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox8.Location = new System.Drawing.Point(8, 7);
+            this.pictureBox8.Name = "pictureBox8";
+            this.pictureBox8.Size = new System.Drawing.Size(54, 45);
+            this.pictureBox8.TabIndex = 25;
+            this.pictureBox8.TabStop = false;
             // 
             // label14
             // 
@@ -934,15 +960,61 @@
             // 
             // panel15
             // 
+            this.panel15.Controls.Add(this.addKeyPanel);
             this.panel15.Controls.Add(this.panel17);
             this.panel15.Controls.Add(this.updateKeyPanel);
-            this.panel15.Controls.Add(this.addKeyPanel);
             this.panel15.Controls.Add(this.panel14);
             this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel15.Location = new System.Drawing.Point(0, 0);
             this.panel15.Name = "panel15";
             this.panel15.Size = new System.Drawing.Size(835, 59);
             this.panel15.TabIndex = 38;
+            // 
+            // addKeyPanel
+            // 
+            this.addKeyPanel.Controls.Add(this.pictureBox2);
+            this.addKeyPanel.Controls.Add(this.keyButton8);
+            this.addKeyPanel.Controls.Add(this.label4);
+            this.addKeyPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.addKeyPanel.Location = new System.Drawing.Point(400, 0);
+            this.addKeyPanel.Name = "addKeyPanel";
+            this.addKeyPanel.Size = new System.Drawing.Size(205, 59);
+            this.addKeyPanel.TabIndex = 39;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Add_File;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 7);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(54, 45);
+            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabStop = false;
+            // 
+            // keyButton8
+            // 
+            this.keyButton8.accessKeyChar = "F3";
+            this.keyButton8.accessMasterController = null;
+            this.keyButton8.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton8.dbController = null;
+            this.keyButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton8.Location = new System.Drawing.Point(62, 7);
+            this.keyButton8.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton8.masterController = null;
+            this.keyButton8.Name = "keyButton8";
+            this.keyButton8.Size = new System.Drawing.Size(61, 50);
+            this.keyButton8.TabIndex = 26;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label4.Location = new System.Drawing.Point(119, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(86, 47);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Add product";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel17
             // 
@@ -951,10 +1023,9 @@
             this.panel17.Controls.Add(this.label5);
             this.panel17.Controls.Add(this.keyButton7);
             this.panel17.Controls.Add(this.label9);
-            this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel17.Location = new System.Drawing.Point(602, 0);
+            this.panel17.Location = new System.Drawing.Point(611, 0);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(233, 59);
+            this.panel17.Size = new System.Drawing.Size(253, 59);
             this.panel17.TabIndex = 38;
             // 
             // pictureBox5
@@ -1022,7 +1093,7 @@
             this.updateKeyPanel.Controls.Add(this.label6);
             this.updateKeyPanel.Controls.Add(this.keyButton9);
             this.updateKeyPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.updateKeyPanel.Location = new System.Drawing.Point(402, 0);
+            this.updateKeyPanel.Location = new System.Drawing.Point(200, 0);
             this.updateKeyPanel.Name = "updateKeyPanel";
             this.updateKeyPanel.Size = new System.Drawing.Size(200, 59);
             this.updateKeyPanel.TabIndex = 37;
@@ -1061,52 +1132,6 @@
             this.keyButton9.Name = "keyButton9";
             this.keyButton9.Size = new System.Drawing.Size(61, 50);
             this.keyButton9.TabIndex = 34;
-            // 
-            // addKeyPanel
-            // 
-            this.addKeyPanel.Controls.Add(this.pictureBox2);
-            this.addKeyPanel.Controls.Add(this.keyButton8);
-            this.addKeyPanel.Controls.Add(this.label4);
-            this.addKeyPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.addKeyPanel.Location = new System.Drawing.Point(200, 0);
-            this.addKeyPanel.Name = "addKeyPanel";
-            this.addKeyPanel.Size = new System.Drawing.Size(202, 59);
-            this.addKeyPanel.TabIndex = 27;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Add_File;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(3, 7);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(54, 45);
-            this.pictureBox2.TabIndex = 16;
-            this.pictureBox2.TabStop = false;
-            // 
-            // keyButton8
-            // 
-            this.keyButton8.accessKeyChar = "F3";
-            this.keyButton8.accessMasterController = null;
-            this.keyButton8.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton8.dbController = null;
-            this.keyButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton8.Location = new System.Drawing.Point(62, 7);
-            this.keyButton8.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton8.masterController = null;
-            this.keyButton8.Name = "keyButton8";
-            this.keyButton8.Size = new System.Drawing.Size(61, 50);
-            this.keyButton8.TabIndex = 26;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label4.Location = new System.Drawing.Point(119, 5);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 47);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Add product";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel14
             // 
@@ -1264,16 +1289,18 @@
             this.panel16.ResumeLayout(false);
             this.panel19.ResumeLayout(false);
             this.panel19.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             this.panel18.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             this.panel15.ResumeLayout(false);
+            this.addKeyPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             this.updateKeyPanel.ResumeLayout(false);
             this.updateKeyPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.addKeyPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
@@ -1334,16 +1361,13 @@
         private System.Windows.Forms.Panel parentPanel;
         private System.Windows.Forms.Panel bottomPanel;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label3;
         private KeyButton keyButton11;
-        private KeyButton keyButton8;
         private KeyButton keyButton7;
         private KeyButton keyButton9;
         private KeyButton keyButton6;
         private System.Windows.Forms.PictureBox pictureBox5;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox picSearch;
         private System.Windows.Forms.Label label5;
@@ -1357,7 +1381,6 @@
         public System.Windows.Forms.RadioButton rbArchives;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Panel panel17;
-        private System.Windows.Forms.Panel addKeyPanel;
         private System.Windows.Forms.Panel updateKeyPanel;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Panel panel16;
@@ -1369,5 +1392,11 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private KeyButton keyButton17;
+        private System.Windows.Forms.PictureBox pictureBox8;
+        private System.Windows.Forms.Panel addKeyPanel;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private KeyButton keyButton8;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.PictureBox pictureBox9;
     }
 }

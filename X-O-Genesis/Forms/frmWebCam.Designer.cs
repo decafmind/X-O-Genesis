@@ -49,7 +49,6 @@
             this.earTimer = new System.Windows.Forms.Timer(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
-            this.pawPrint1 = new PetvetPOS_Inventory_System.PawPrint();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.shapeContainer3 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.pawPrint2 = new PetvetPOS_Inventory_System.PawPrint();
@@ -261,7 +260,6 @@
             // 
             this.panel2.BackColor = System.Drawing.Color.DimGray;
             this.panel2.Controls.Add(this.button5);
-            this.panel2.Controls.Add(this.pawPrint1);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.shapeContainer3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -270,15 +268,6 @@
             this.panel2.Size = new System.Drawing.Size(632, 343);
             this.panel2.TabIndex = 9;
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.frmWebCam_MouseDown);
-            // 
-            // pawPrint1
-            // 
-            this.pawPrint1.Location = new System.Drawing.Point(285, 12);
-            this.pawPrint1.Name = "pawPrint1";
-            this.pawPrint1.PawColor = System.Drawing.SystemColors.Control;
-            this.pawPrint1.Size = new System.Drawing.Size(55, 59);
-            this.pawPrint1.TabIndex = 8;
-            this.pawPrint1.Load += new System.EventHandler(this.pawPrint1_Load);
             // 
             // pictureBox1
             // 
@@ -367,7 +356,6 @@
         private PawPrint pawPrint2;
         private System.Windows.Forms.Panel panel2;
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer3;
-        private PawPrint pawPrint1;
 
     }
 }

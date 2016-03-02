@@ -37,36 +37,37 @@
             // 
             // ovalShape12
             // 
-            this.ovalShape12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ovalShape12.BackColor = System.Drawing.Color.Transparent;
             this.ovalShape12.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.ovalShape12.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ovalShape12.BorderColor = System.Drawing.Color.Transparent;
             this.ovalShape12.Location = new System.Drawing.Point(9, 18);
             this.ovalShape12.Name = "ovalShape12";
             this.ovalShape12.Size = new System.Drawing.Size(33, 29);
+            this.ovalShape12.Click += new System.EventHandler(this.ovalShape12_Click);
             // 
             // ovalShape11
             // 
-            this.ovalShape11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ovalShape11.BackColor = System.Drawing.Color.Transparent;
             this.ovalShape11.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.ovalShape11.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ovalShape11.BorderColor = System.Drawing.Color.Transparent;
             this.ovalShape11.Location = new System.Drawing.Point(35, 12);
             this.ovalShape11.Name = "ovalShape11";
             this.ovalShape11.Size = new System.Drawing.Size(10, 23);
             // 
             // ovalShape9
             // 
-            this.ovalShape9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ovalShape9.BackColor = System.Drawing.Color.Transparent;
             this.ovalShape9.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.ovalShape9.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ovalShape9.BorderColor = System.Drawing.Color.Transparent;
             this.ovalShape9.Location = new System.Drawing.Point(22, 5);
             this.ovalShape9.Name = "ovalShape9";
             this.ovalShape9.Size = new System.Drawing.Size(10, 23);
             // 
             // ovalShape10
             // 
-            this.ovalShape10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ovalShape10.BackColor = System.Drawing.Color.Transparent;
             this.ovalShape10.BackStyle = Microsoft.VisualBasic.PowerPacks.BackStyle.Opaque;
-            this.ovalShape10.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.ovalShape10.BorderColor = System.Drawing.Color.Transparent;
             this.ovalShape10.Location = new System.Drawing.Point(8, 12);
             this.ovalShape10.Name = "ovalShape10";
             this.ovalShape10.Size = new System.Drawing.Size(10, 23);
@@ -89,6 +90,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.shapeContainer1);
             this.DoubleBuffered = true;
             this.Name = "PawPrint";
