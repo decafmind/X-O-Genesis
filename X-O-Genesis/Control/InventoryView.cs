@@ -610,19 +610,116 @@ namespace PetvetPOS_Inventory_System
             dialog.ShowDialog();
         }
 
+        /// <summary>
+        /// A method that simplifies the text wrapping on PrintPage
+        /// </summary>
+        /// <param name="g"></param>
+        /// <param name="X"></param>
+        /// <param name="Y"></param>
+        /// <param name="field"></param>
+        /// <param name="font"></param>
+        /// <param name="columnWidth"></param>
+        /// <returns>The Y location</returns>
+        int textWrap(Graphics g, int X, int Y, string field, Font font, int columnWidth)
+        {
+
+            int tempY = Y;
+            string[] divideAndConquer = field.Split(' ');
+            List<string> lines = new List<string>();
+            string foo = "";
+            string bar = "";
+            for (int k = 0; k < divideAndConquer.Length; k++)
+            {
+                if (k == 0)
+                    bar += divideAndConquer[k];
+                else
+                    bar += " " + divideAndConquer[k];
+
+                if (g.MeasureString(bar, font).Width > columnWidth)
+                {
+                    lines.Add(foo);
+                    foo = bar = divideAndConquer[k];
+
+                    if (k == (divideAndConquer.Length - 1))
+                    {
+                        lines.Add(foo);
+                    }
+                }
+                else
+                {
+                    if (k == 0)
+                        foo += divideAndConquer[k];
+                    else
+                        foo += " " + divideAndConquer[k];
+
+                    if (k == (divideAndConquer.Length - 1))
+                    {
+                        lines.Add(foo);
+                    }
+                }
+            }
+
+            int totalLineHeight = 0;
+            foreach (string line in lines)
+            {
+                SizeF stringSize = g.MeasureString(line, font);
+                totalLineHeight += (int)stringSize.Height + 10;
+            }
+
+            if (tempY + totalLineHeight < 1000)
+            {
+                for (int lineIndex = 0; lineIndex < lines.Count; lineIndex++)
+                {
+                    g.DrawString(lines[lineIndex], font, Brushes.Black, new PointF(X, tempY));
+                    if (lineIndex != (lines.Count - 1))
+                    {
+                        SizeF stringSize = g.MeasureString(lines[lineIndex], font);
+                        tempY += (int)stringSize.Height + 10;
+                    }
+
+                }
+            }
+            else
+            {
+                tempY += totalLineHeight;
+            }
+
+            return tempY;
+        }
+
         void document_PrintPage(object sender, PrintPageEventArgs e)
         {
             Graphics g = e.Graphics;
 
-            using (Font arialRoundedMt = new Font("Arial Rounded MT", 16, FontStyle.Italic))
-            using (Font arial = new Font("Arial", 14, FontStyle.Bold))
-            using (Font timesNewRoman = new Font("Times New Roman", 14, FontStyle.Regular))
+            using (Font arialRoundedMt = new Font("Arial Rounded MT", 14, FontStyle.Italic))
+            using (Font arial = new Font("Arial", 12, FontStyle.Bold))
+            using (Font timesNewRoman = new Font("Times New Roman", 12, FontStyle.Regular))
             {
+                DataTable companyProfile = new DataTable();
+                dbController.loadCompanyProfile(companyProfile);
+
+                string storeName = "Exogenesis";
+                string tin = " Company VAT Registered TIN";
+                string address = "Company Address";
+                string cont = "Company Contact Number";
+                string web = "Company Email / Website";
+                decimal tax = 0;
+
+                foreach (DataRow dr in companyProfile.Rows)
+                {
+                    storeName = dr["compname"].ToString();
+                    address = dr["address"].ToString();
+                    cont = dr["contactno"].ToString();
+                    web = dr["email"].ToString();
+                    tin = dr["vat_reg_tin"].ToString();
+                    tax = Convert.ToDecimal(dr["tax"]);
+                }
+
                 string title = "";
                 if (rbInventory.Checked)
-                    title = "INVENTORY REPORT";
+                    title = "Inventory Report";
                 else if (rbPurchased.Checked)
-                    title = "PURCHASED PRODUCT REPORT";
+                    title = "Purchased Product Report";
 
                 int Y = 50;
 
@@ -634,9 +731,8 @@ namespace PetvetPOS_Inventory_System
                 g.DrawString(title, arialRoundedMt, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
                 Y += (int)stringSize.Height + 10;
 
-                string petvetStore = "Exogenesis";
-                stringSize = g.MeasureString(petvetStore, arialRoundedMt);
-                g.DrawString(petvetStore, arialRoundedMt, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
+                stringSize = g.MeasureString(storeName, arialRoundedMt);
+                g.DrawString(storeName, arialRoundedMt, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
                 Y += (int)stringSize.Height + 10;
 
                 string addressL1 = "2/f Nova Square Shopping Center,";
@@ -665,42 +761,114 @@ namespace PetvetPOS_Inventory_System
                     headers[i] = dgInventory.Columns[i].HeaderText;
 
                 int documentWithMargin = documentWidth + 50;
+                int columnWidth = (documentWidth - 50) / numberOfColumns;
 
-                g.DrawString(headers[0], arial, Brushes.Black, new PointF(50, Y));
-                g.DrawString(headers[1], arial, Brushes.Black, new PointF((documentWithMargin * (float).25) + 100, Y));
-                g.DrawString(headers[2], arial, Brushes.Black, new PointF((documentWithMargin * (float).50) + 100, Y));
-                stringSize = g.MeasureString(headers[3], arial);
-                g.DrawString(headers[3], arial, Brushes.Black, new PointF((documentWidth - stringSize.Width - 50), Y));
-                Y += (int)stringSize.Height + 10;
-
-                // Draw data
-                foreach (DataGridViewRow row in dgInventory.Rows)
+                int locationX = 50;
+                int tempY = Y;
+                for (int i = 0; i < numberOfColumns; i++)
                 {
-                    string field1 = row.Cells[0].Value.ToString();
-                    string field2 = row.Cells[1].Value.ToString();
-                    string field3 = row.Cells[2].Value.ToString();
-                    string field4 = "";
-                    if (row.Cells[3].Value is DateTime)
+                    stringSize = g.MeasureString(headers[i], arial);
+                    if (stringSize.Width < columnWidth)
                     {
-                        DateTime foo = (DateTime)row.Cells[3].Value;
-                        field4 = foo.Date.ToShortDateString();
+                        g.DrawString(headers[i], arial, Brushes.Black, new PointF(locationX, Y));
                     }
                     else
                     {
-                        field4 = row.Cells[3].Value.ToString();
+                        tempY = textWrap(g, locationX, Y, headers[i], arial, columnWidth);
                     }
 
-                    g.DrawString(field1, timesNewRoman, Brushes.Black, new PointF(50, Y));
-                    g.DrawString(field2, timesNewRoman, Brushes.Black, new PointF((documentWithMargin * (float).25) + 100, Y));
-                    g.DrawString(field3, timesNewRoman, Brushes.Black, new PointF((documentWithMargin * (float).50) + 100, Y));
-                    stringSize = g.MeasureString(field4, timesNewRoman);
-                    g.DrawString(field4, timesNewRoman, Brushes.Black, new PointF((documentWidth - stringSize.Width - 50), Y));
+                    locationX += columnWidth;
+                }
 
-                    stringSize = g.MeasureString(field1, timesNewRoman);
-                    Y += (int)stringSize.Height + 10;
+                Y = tempY;
+                Y += (int)stringSize.Height + 10;
+
+                string[] fields = new string[numberOfColumns];
+
+                // Draw data
+                int stop = indexCounter + linesPerPage;
+                for (int rowIndex = indexCounter; rowIndex < stop; rowIndex++)
+                {
+                    if (rowIndex >= dgInventory.Rows.Count)
+                        break;
+
+                    for (int columnIndex = 0; columnIndex < numberOfColumns; columnIndex++)
+                    {
+                        if (dgInventory.Rows[rowIndex].Cells[columnIndex].Value is DateTime)
+                        {
+                            DateTime dt = (DateTime)dgInventory.Rows[rowIndex].Cells[columnIndex].Value;
+                            fields[columnIndex] = dt.Date.ToShortDateString();
+                        }
+                        else if (dgInventory.Rows[rowIndex].Cells[columnIndex].Value is Decimal)
+                        {
+                            Decimal dc = (Decimal)dgInventory.Rows[rowIndex].Cells[columnIndex].Value;
+                            fields[columnIndex] = dc.ToString("N");
+                        }
+                        else
+                        {
+                            fields[columnIndex] = dgInventory.Rows[rowIndex].Cells[columnIndex].Value.ToString();
+                        }
+
+                    }
+
+                    tempY = Y;
+                    int anotherLocationX = 50;
+
+                    foreach (string field in fields)
+                    {
+                        stringSize = g.MeasureString(field, timesNewRoman);
+
+                        if (stringSize.Width <= columnWidth)
+                        {
+                            if (tempY + stringSize.Height >= 1000)
+                            {
+                                g.FillRectangle(Brushes.White, 50, Y, documentWidth, stringSize.Height + 200);
+                                break;
+                            }
+
+                            g.DrawString(field, timesNewRoman, Brushes.Black, new PointF(anotherLocationX, Y));
+                        }
+                        else
+                        {
+                            tempY = textWrap(g, anotherLocationX, Y, field, timesNewRoman, columnWidth);
+                            if (tempY > 1000)
+                            {
+                                g.FillRectangle(Brushes.White, 50, Y, documentWidth, stringSize.Height + 200);
+                                break;
+                            }
+                        }
+                        anotherLocationX += columnWidth;
+                    }
+
+                    stringSize = g.MeasureString(fields[0], timesNewRoman);
+                    Y = tempY;
+
+                    if (Y >= 1000)
+                    {
+                        g.FillRectangle(Brushes.White, 50, Y, documentWidth, stringSize.Height + 200);
+                        break;
+                    }
+
+                    Y += (int)((stringSize.Height + 10) * 2);
+                    indexCounter++;
                 }
             }
+
+            if (indexCounter < dgInventory.Rows.Count)
+            {
+                e.HasMorePages = true;
+            }
+            else
+            {
+                e.HasMorePages = false;
+                linesPerPage = 24;
+                indexCounter = 0;
+            }
+           
         }
+
+        int indexCounter = 0;
+        int linesPerPage = 24;
 
         private void parentPanel_Resize(object sender, EventArgs e)
         {
