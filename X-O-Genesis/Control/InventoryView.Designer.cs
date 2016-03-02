@@ -82,23 +82,32 @@
             this.rbArchives = new System.Windows.Forms.RadioButton();
             this.rbPurchased = new System.Windows.Forms.RadioButton();
             this.rbInventory = new System.Windows.Forms.RadioButton();
-            this.productSliderPane1 = new PetvetPOS_Inventory_System.ProductSliderPane();
             this.parentPanel = new System.Windows.Forms.Panel();
             this.bottomPanel = new System.Windows.Forms.Panel();
+            this.panel16 = new System.Windows.Forms.Panel();
+            this.panel19 = new System.Windows.Forms.Panel();
+            this.keyButton16 = new PetvetPOS_Inventory_System.KeyButton();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.keyButton17 = new PetvetPOS_Inventory_System.KeyButton();
+            this.panel18 = new System.Windows.Forms.Panel();
+            this.label14 = new System.Windows.Forms.Label();
+            this.keyButton15 = new PetvetPOS_Inventory_System.KeyButton();
+            this.panel15 = new System.Windows.Forms.Panel();
             this.panel17 = new System.Windows.Forms.Panel();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.keyButton11 = new PetvetPOS_Inventory_System.KeyButton();
             this.label5 = new System.Windows.Forms.Label();
             this.keyButton7 = new PetvetPOS_Inventory_System.KeyButton();
             this.label9 = new System.Windows.Forms.Label();
-            this.addKeyPanel = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.keyButton8 = new PetvetPOS_Inventory_System.KeyButton();
-            this.label4 = new System.Windows.Forms.Label();
             this.updateKeyPanel = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label6 = new System.Windows.Forms.Label();
             this.keyButton9 = new PetvetPOS_Inventory_System.KeyButton();
+            this.addKeyPanel = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.keyButton8 = new PetvetPOS_Inventory_System.KeyButton();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel14 = new System.Windows.Forms.Panel();
             this.keyButton6 = new PetvetPOS_Inventory_System.KeyButton();
             this.picSearch = new System.Windows.Forms.PictureBox();
@@ -107,6 +116,7 @@
             this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.productSliderPane1 = new PetvetPOS_Inventory_System.ProductSliderPane();
             this.mainTab = new System.Windows.Forms.TabControl();
             this.tabPage2.SuspendLayout();
             this.panel11.SuspendLayout();
@@ -131,12 +141,16 @@
             this.panel5.SuspendLayout();
             this.parentPanel.SuspendLayout();
             this.bottomPanel.SuspendLayout();
+            this.panel16.SuspendLayout();
+            this.panel19.SuspendLayout();
+            this.panel18.SuspendLayout();
+            this.panel15.SuspendLayout();
             this.panel17.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            this.addKeyPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.updateKeyPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            this.addKeyPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel14.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
             this.mainTab.SuspendLayout();
@@ -539,8 +553,8 @@
             // tabPage1
             // 
             this.tabPage1.Controls.Add(this.panel2);
-            this.tabPage1.Controls.Add(this.productSliderPane1);
             this.tabPage1.Controls.Add(this.parentPanel);
+            this.tabPage1.Controls.Add(this.productSliderPane1);
             this.tabPage1.Location = new System.Drawing.Point(4, 34);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(0, 3, 0, 0);
@@ -558,7 +572,7 @@
             this.panel2.Location = new System.Drawing.Point(0, 3);
             this.panel2.Name = "panel2";
             this.panel2.Padding = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.panel2.Size = new System.Drawing.Size(839, 473);
+            this.panel2.Size = new System.Drawing.Size(839, 418);
             this.panel2.TabIndex = 5;
             this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
@@ -570,7 +584,7 @@
             this.panel4.Location = new System.Drawing.Point(5, 100);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(10);
-            this.panel4.Size = new System.Drawing.Size(829, 373);
+            this.panel4.Size = new System.Drawing.Size(829, 318);
             this.panel4.TabIndex = 1;
             // 
             // dgInventory
@@ -607,7 +621,7 @@
             this.dgInventory.ReadOnly = true;
             this.dgInventory.RowHeadersVisible = false;
             this.dgInventory.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgInventory.Size = new System.Drawing.Size(809, 353);
+            this.dgInventory.Size = new System.Drawing.Size(809, 298);
             this.dgInventory.TabIndex = 0;
             this.dgInventory.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgInventory_CellContentClick);
             this.dgInventory.CellEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgInventory_CellEnter);
@@ -788,46 +802,147 @@
             this.rbInventory.UseVisualStyleBackColor = false;
             this.rbInventory.CheckedChanged += new System.EventHandler(this.checkChanged);
             // 
-            // productSliderPane1
-            // 
-            this.productSliderPane1.accessMasterController = null;
-            this.productSliderPane1.BackColor = System.Drawing.Color.White;
-            this.productSliderPane1.dbController = null;
-            this.productSliderPane1.Dock = System.Windows.Forms.DockStyle.Right;
-            this.productSliderPane1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.productSliderPane1.Location = new System.Drawing.Point(839, 3);
-            this.productSliderPane1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.productSliderPane1.masterController = null;
-            this.productSliderPane1.MaximumSize = new System.Drawing.Size(300, 100);
-            this.productSliderPane1.MinimumSize = new System.Drawing.Size(30, 600);
-            this.productSliderPane1.Name = "productSliderPane1";
-            this.productSliderPane1.Size = new System.Drawing.Size(30, 600);
-            this.productSliderPane1.TabIndex = 6;
-            // 
             // parentPanel
             // 
             this.parentPanel.BackColor = System.Drawing.Color.WhiteSmoke;
             this.parentPanel.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.parentPanel.Controls.Add(this.bottomPanel);
             this.parentPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.parentPanel.Location = new System.Drawing.Point(0, 476);
+            this.parentPanel.Location = new System.Drawing.Point(0, 421);
             this.parentPanel.Name = "parentPanel";
-            this.parentPanel.Size = new System.Drawing.Size(869, 69);
+            this.parentPanel.Size = new System.Drawing.Size(839, 124);
             this.parentPanel.TabIndex = 1;
             // 
             // bottomPanel
             // 
             this.bottomPanel.BackColor = System.Drawing.Color.Transparent;
-            this.bottomPanel.Controls.Add(this.panel17);
-            this.bottomPanel.Controls.Add(this.addKeyPanel);
-            this.bottomPanel.Controls.Add(this.updateKeyPanel);
-            this.bottomPanel.Controls.Add(this.panel14);
+            this.bottomPanel.Controls.Add(this.panel16);
+            this.bottomPanel.Controls.Add(this.panel15);
             this.bottomPanel.Controls.Add(this.shapeContainer2);
-            this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.bottomPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.bottomPanel.Location = new System.Drawing.Point(0, 0);
             this.bottomPanel.Name = "bottomPanel";
-            this.bottomPanel.Size = new System.Drawing.Size(859, 65);
+            this.bottomPanel.Size = new System.Drawing.Size(835, 120);
             this.bottomPanel.TabIndex = 1;
+            // 
+            // panel16
+            // 
+            this.panel16.Controls.Add(this.panel19);
+            this.panel16.Controls.Add(this.panel18);
+            this.panel16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel16.Location = new System.Drawing.Point(0, 59);
+            this.panel16.Name = "panel16";
+            this.panel16.Size = new System.Drawing.Size(835, 61);
+            this.panel16.TabIndex = 0;
+            this.panel16.Paint += new System.Windows.Forms.PaintEventHandler(this.panel16_Paint);
+            // 
+            // panel19
+            // 
+            this.panel19.Controls.Add(this.keyButton16);
+            this.panel19.Controls.Add(this.label15);
+            this.panel19.Controls.Add(this.label16);
+            this.panel19.Controls.Add(this.keyButton17);
+            this.panel19.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel19.Location = new System.Drawing.Point(200, 0);
+            this.panel19.Name = "panel19";
+            this.panel19.Size = new System.Drawing.Size(262, 61);
+            this.panel19.TabIndex = 1;
+            // 
+            // keyButton16
+            // 
+            this.keyButton16.accessKeyChar = "Shift";
+            this.keyButton16.accessMasterController = null;
+            this.keyButton16.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton16.dbController = null;
+            this.keyButton16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton16.Location = new System.Drawing.Point(65, 5);
+            this.keyButton16.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton16.masterController = null;
+            this.keyButton16.Name = "keyButton16";
+            this.keyButton16.Size = new System.Drawing.Size(61, 50);
+            this.keyButton16.TabIndex = 34;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(122, 18);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(18, 20);
+            this.label15.TabIndex = 36;
+            this.label15.Text = "+";
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.label16.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label16.Location = new System.Drawing.Point(192, 20);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(70, 18);
+            this.label16.TabIndex = 35;
+            this.label16.Text = "Archive";
+            // 
+            // keyButton17
+            // 
+            this.keyButton17.accessKeyChar = "F2";
+            this.keyButton17.accessMasterController = null;
+            this.keyButton17.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.keyButton17.dbController = null;
+            this.keyButton17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton17.ForeColor = System.Drawing.Color.Transparent;
+            this.keyButton17.Location = new System.Drawing.Point(135, 4);
+            this.keyButton17.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton17.masterController = null;
+            this.keyButton17.Name = "keyButton17";
+            this.keyButton17.Size = new System.Drawing.Size(61, 50);
+            this.keyButton17.TabIndex = 37;
+            // 
+            // panel18
+            // 
+            this.panel18.Controls.Add(this.label14);
+            this.panel18.Controls.Add(this.keyButton15);
+            this.panel18.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel18.Location = new System.Drawing.Point(0, 0);
+            this.panel18.Name = "panel18";
+            this.panel18.Size = new System.Drawing.Size(200, 61);
+            this.panel18.TabIndex = 0;
+            // 
+            // label14
+            // 
+            this.label14.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.label14.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label14.Location = new System.Drawing.Point(122, 7);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(70, 47);
+            this.label14.TabIndex = 26;
+            this.label14.Text = "Add stocks";
+            this.label14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // keyButton15
+            // 
+            this.keyButton15.accessKeyChar = "F4";
+            this.keyButton15.accessMasterController = null;
+            this.keyButton15.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton15.dbController = null;
+            this.keyButton15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton15.Location = new System.Drawing.Point(64, 5);
+            this.keyButton15.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton15.masterController = null;
+            this.keyButton15.Name = "keyButton15";
+            this.keyButton15.Size = new System.Drawing.Size(61, 50);
+            this.keyButton15.TabIndex = 25;
+            // 
+            // panel15
+            // 
+            this.panel15.Controls.Add(this.panel17);
+            this.panel15.Controls.Add(this.updateKeyPanel);
+            this.panel15.Controls.Add(this.addKeyPanel);
+            this.panel15.Controls.Add(this.panel14);
+            this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel15.Location = new System.Drawing.Point(0, 0);
+            this.panel15.Name = "panel15";
+            this.panel15.Size = new System.Drawing.Size(835, 59);
+            this.panel15.TabIndex = 38;
             // 
             // panel17
             // 
@@ -836,17 +951,17 @@
             this.panel17.Controls.Add(this.label5);
             this.panel17.Controls.Add(this.keyButton7);
             this.panel17.Controls.Add(this.label9);
-            this.panel17.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel17.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel17.Location = new System.Drawing.Point(602, 0);
             this.panel17.Name = "panel17";
-            this.panel17.Size = new System.Drawing.Size(254, 65);
+            this.panel17.Size = new System.Drawing.Size(233, 59);
             this.panel17.TabIndex = 38;
             // 
             // pictureBox5
             // 
             this.pictureBox5.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Print;
             this.pictureBox5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox5.Location = new System.Drawing.Point(3, 9);
+            this.pictureBox5.Location = new System.Drawing.Point(3, 7);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(54, 45);
             this.pictureBox5.TabIndex = 30;
@@ -859,7 +974,7 @@
             this.keyButton11.BackColor = System.Drawing.Color.Transparent;
             this.keyButton11.dbController = null;
             this.keyButton11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton11.Location = new System.Drawing.Point(59, 7);
+            this.keyButton11.Location = new System.Drawing.Point(59, 5);
             this.keyButton11.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.keyButton11.masterController = null;
             this.keyButton11.Name = "keyButton11";
@@ -869,7 +984,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(116, 20);
+            this.label5.Location = new System.Drawing.Point(116, 18);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(18, 20);
             this.label5.TabIndex = 32;
@@ -883,7 +998,7 @@
             this.keyButton7.dbController = null;
             this.keyButton7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.keyButton7.ForeColor = System.Drawing.Color.Transparent;
-            this.keyButton7.Location = new System.Drawing.Point(129, 6);
+            this.keyButton7.Location = new System.Drawing.Point(129, 4);
             this.keyButton7.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.keyButton7.masterController = null;
             this.keyButton7.Name = "keyButton7";
@@ -895,57 +1010,11 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.label9.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label9.Location = new System.Drawing.Point(186, 22);
+            this.label9.Location = new System.Drawing.Point(186, 20);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(46, 18);
             this.label9.TabIndex = 31;
             this.label9.Text = "Print";
-            // 
-            // addKeyPanel
-            // 
-            this.addKeyPanel.Controls.Add(this.pictureBox2);
-            this.addKeyPanel.Controls.Add(this.keyButton8);
-            this.addKeyPanel.Controls.Add(this.label4);
-            this.addKeyPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.addKeyPanel.Location = new System.Drawing.Point(400, 0);
-            this.addKeyPanel.Name = "addKeyPanel";
-            this.addKeyPanel.Size = new System.Drawing.Size(202, 65);
-            this.addKeyPanel.TabIndex = 27;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Add_File;
-            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox2.Location = new System.Drawing.Point(4, 9);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(54, 45);
-            this.pictureBox2.TabIndex = 16;
-            this.pictureBox2.TabStop = false;
-            // 
-            // keyButton8
-            // 
-            this.keyButton8.accessKeyChar = "F3";
-            this.keyButton8.accessMasterController = null;
-            this.keyButton8.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton8.dbController = null;
-            this.keyButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton8.Location = new System.Drawing.Point(63, 9);
-            this.keyButton8.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton8.masterController = null;
-            this.keyButton8.Name = "keyButton8";
-            this.keyButton8.Size = new System.Drawing.Size(61, 50);
-            this.keyButton8.TabIndex = 26;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
-            this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label4.Location = new System.Drawing.Point(120, 7);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 47);
-            this.label4.TabIndex = 20;
-            this.label4.Text = "Add product";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // updateKeyPanel
             // 
@@ -953,16 +1022,16 @@
             this.updateKeyPanel.Controls.Add(this.label6);
             this.updateKeyPanel.Controls.Add(this.keyButton9);
             this.updateKeyPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.updateKeyPanel.Location = new System.Drawing.Point(200, 0);
+            this.updateKeyPanel.Location = new System.Drawing.Point(402, 0);
             this.updateKeyPanel.Name = "updateKeyPanel";
-            this.updateKeyPanel.Size = new System.Drawing.Size(200, 65);
+            this.updateKeyPanel.Size = new System.Drawing.Size(200, 59);
             this.updateKeyPanel.TabIndex = 37;
             // 
             // pictureBox3
             // 
             this.pictureBox3.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Edit;
             this.pictureBox3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox3.Location = new System.Drawing.Point(6, 11);
+            this.pictureBox3.Location = new System.Drawing.Point(6, 8);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(54, 45);
             this.pictureBox3.TabIndex = 35;
@@ -973,7 +1042,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
             this.label6.ForeColor = System.Drawing.Color.CornflowerBlue;
-            this.label6.Location = new System.Drawing.Point(117, 15);
+            this.label6.Location = new System.Drawing.Point(117, 12);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(72, 36);
             this.label6.TabIndex = 36;
@@ -986,12 +1055,58 @@
             this.keyButton9.BackColor = System.Drawing.Color.Transparent;
             this.keyButton9.dbController = null;
             this.keyButton9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton9.Location = new System.Drawing.Point(58, 9);
+            this.keyButton9.Location = new System.Drawing.Point(58, 6);
             this.keyButton9.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
             this.keyButton9.masterController = null;
             this.keyButton9.Name = "keyButton9";
             this.keyButton9.Size = new System.Drawing.Size(61, 50);
             this.keyButton9.TabIndex = 34;
+            // 
+            // addKeyPanel
+            // 
+            this.addKeyPanel.Controls.Add(this.pictureBox2);
+            this.addKeyPanel.Controls.Add(this.keyButton8);
+            this.addKeyPanel.Controls.Add(this.label4);
+            this.addKeyPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.addKeyPanel.Location = new System.Drawing.Point(200, 0);
+            this.addKeyPanel.Name = "addKeyPanel";
+            this.addKeyPanel.Size = new System.Drawing.Size(202, 59);
+            this.addKeyPanel.TabIndex = 27;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Add_File;
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox2.Location = new System.Drawing.Point(3, 7);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(54, 45);
+            this.pictureBox2.TabIndex = 16;
+            this.pictureBox2.TabStop = false;
+            // 
+            // keyButton8
+            // 
+            this.keyButton8.accessKeyChar = "F3";
+            this.keyButton8.accessMasterController = null;
+            this.keyButton8.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton8.dbController = null;
+            this.keyButton8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton8.Location = new System.Drawing.Point(62, 7);
+            this.keyButton8.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton8.masterController = null;
+            this.keyButton8.Name = "keyButton8";
+            this.keyButton8.Size = new System.Drawing.Size(61, 50);
+            this.keyButton8.TabIndex = 26;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F);
+            this.label4.ForeColor = System.Drawing.Color.CornflowerBlue;
+            this.label4.Location = new System.Drawing.Point(119, 5);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(86, 47);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Add product";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel14
             // 
@@ -1001,7 +1116,7 @@
             this.panel14.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel14.Location = new System.Drawing.Point(0, 0);
             this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(200, 65);
+            this.panel14.Size = new System.Drawing.Size(200, 59);
             this.panel14.TabIndex = 37;
             // 
             // keyButton6
@@ -1049,7 +1164,7 @@
             this.lineShape3,
             this.lineShape2,
             this.lineShape1});
-            this.shapeContainer2.Size = new System.Drawing.Size(859, 65);
+            this.shapeContainer2.Size = new System.Drawing.Size(835, 120);
             this.shapeContainer2.TabIndex = 37;
             this.shapeContainer2.TabStop = false;
             // 
@@ -1079,6 +1194,22 @@
             this.lineShape1.X2 = 198;
             this.lineShape1.Y1 = 2;
             this.lineShape1.Y2 = 66;
+            // 
+            // productSliderPane1
+            // 
+            this.productSliderPane1.accessMasterController = null;
+            this.productSliderPane1.BackColor = System.Drawing.Color.White;
+            this.productSliderPane1.dbController = null;
+            this.productSliderPane1.Dock = System.Windows.Forms.DockStyle.Right;
+            this.productSliderPane1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.productSliderPane1.Location = new System.Drawing.Point(839, 3);
+            this.productSliderPane1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.productSliderPane1.masterController = null;
+            this.productSliderPane1.MaximumSize = new System.Drawing.Size(300, 100);
+            this.productSliderPane1.MinimumSize = new System.Drawing.Size(30, 600);
+            this.productSliderPane1.Name = "productSliderPane1";
+            this.productSliderPane1.Size = new System.Drawing.Size(30, 600);
+            this.productSliderPane1.TabIndex = 6;
             // 
             // mainTab
             // 
@@ -1130,14 +1261,19 @@
             this.panel5.PerformLayout();
             this.parentPanel.ResumeLayout(false);
             this.bottomPanel.ResumeLayout(false);
+            this.panel16.ResumeLayout(false);
+            this.panel19.ResumeLayout(false);
+            this.panel19.PerformLayout();
+            this.panel18.ResumeLayout(false);
+            this.panel15.ResumeLayout(false);
             this.panel17.ResumeLayout(false);
             this.panel17.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            this.addKeyPanel.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.updateKeyPanel.ResumeLayout(false);
             this.updateKeyPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            this.addKeyPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel14.ResumeLayout(false);
             this.panel14.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
@@ -1223,5 +1359,15 @@
         private System.Windows.Forms.Panel panel17;
         private System.Windows.Forms.Panel addKeyPanel;
         private System.Windows.Forms.Panel updateKeyPanel;
+        private System.Windows.Forms.Panel panel15;
+        private System.Windows.Forms.Panel panel16;
+        private System.Windows.Forms.Panel panel18;
+        private System.Windows.Forms.Label label14;
+        private KeyButton keyButton15;
+        private System.Windows.Forms.Panel panel19;
+        private KeyButton keyButton16;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label16;
+        private KeyButton keyButton17;
     }
 }

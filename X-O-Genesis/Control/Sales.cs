@@ -333,14 +333,33 @@ namespace PetvetPOS_Inventory_System
                 else if (cmType.Text == "MONTHLY")
                     titleName = "Monthly Sales Report";
 
+                DataTable companyProfile = new DataTable();
+                dbController.loadCompanyProfile(companyProfile);
+
+                string storeName = "Exogenesis";
+                string tin = " Company VAT Registered TIN";
+                string address = "Company Address";
+                string cont = "Company Contact Number";
+                string web = "Company Email / Website";
+                decimal tax = 0;
+
+                foreach (DataRow dr in companyProfile.Rows)
+                {
+                    storeName = dr["compname"].ToString();
+                    address = dr["address"].ToString();
+                    cont = dr["contactno"].ToString();
+                    web = dr["email"].ToString();
+                    tin = dr["vat_reg_tin"].ToString();
+                    tax = Convert.ToDecimal(dr["tax"]);
+                }
+
                 int Y = 50;
                 SizeF stringSize = g.MeasureString(titleName, arialRoundedMT);
                 g.DrawString(titleName, arialRoundedMT, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
                 Y+= (int)stringSize.Height + 10;
 
-                string petvetStore = "Exogenesis";
-                stringSize = g.MeasureString(petvetStore, arialRoundedMT);
-                g.DrawString(petvetStore, arialRoundedMT, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
+                stringSize = g.MeasureString(storeName, arialRoundedMT);
+                g.DrawString(storeName, arialRoundedMT, Brushes.Black, new PointF((documentWidth - stringSize.Width) / 2, Y));
                 Y += (int)stringSize.Height + 10;
 
                 string dateFrom = dtFrom.Value.ToLongDateString();

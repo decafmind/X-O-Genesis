@@ -50,9 +50,11 @@
             this.label10 = new System.Windows.Forms.Label();
             this.salesChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.picSearch = new System.Windows.Forms.PictureBox();
             this.keyButton1 = new PetvetPOS_Inventory_System.KeyButton();
             this.label2 = new System.Windows.Forms.Label();
             this.keyButton4 = new PetvetPOS_Inventory_System.KeyButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
             this.label9 = new System.Windows.Forms.Label();
@@ -64,20 +66,18 @@
             this.lblTodaysales = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.picSearch = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel6.SuspendLayout();
             this.panelChart.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.salesChart)).BeginInit();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // timer1
@@ -299,6 +299,16 @@
             this.panel7.Size = new System.Drawing.Size(872, 65);
             this.panel7.TabIndex = 6;
             // 
+            // picSearch
+            // 
+            this.picSearch.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.More_Than;
+            this.picSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.picSearch.Location = new System.Drawing.Point(11, 6);
+            this.picSearch.Name = "picSearch";
+            this.picSearch.Size = new System.Drawing.Size(54, 45);
+            this.picSearch.TabIndex = 16;
+            this.picSearch.TabStop = false;
+            // 
             // keyButton1
             // 
             this.keyButton1.accessKeyChar = "F1";
@@ -337,6 +347,16 @@
             this.keyButton4.Name = "keyButton4";
             this.keyButton4.Size = new System.Drawing.Size(61, 50);
             this.keyButton4.TabIndex = 28;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Print;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.pictureBox1.Location = new System.Drawing.Point(246, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(54, 45);
+            this.pictureBox1.TabIndex = 27;
+            this.pictureBox1.TabStop = false;
             // 
             // label7
             // 
@@ -401,7 +421,7 @@
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(0, 0);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(588, 114);
+            this.lblTitle.Size = new System.Drawing.Size(496, 114);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "TITLE OF SALES";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -411,10 +431,10 @@
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(100)))), ((int)(((byte)(120)))));
             this.panel4.Controls.Add(this.panel1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel4.Location = new System.Drawing.Point(588, 0);
+            this.panel4.Location = new System.Drawing.Point(496, 0);
             this.panel4.Name = "panel4";
             this.panel4.Padding = new System.Windows.Forms.Padding(5);
-            this.panel4.Size = new System.Drawing.Size(284, 114);
+            this.panel4.Size = new System.Drawing.Size(376, 114);
             this.panel4.TabIndex = 2;
             // 
             // panel1
@@ -428,7 +448,7 @@
             this.panel1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.Location = new System.Drawing.Point(5, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(274, 104);
+            this.panel1.Size = new System.Drawing.Size(366, 104);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
@@ -438,7 +458,7 @@
             this.lblTodaysales.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTodaysales.Location = new System.Drawing.Point(66, 48);
             this.lblTodaysales.Name = "lblTodaysales";
-            this.lblTodaysales.Size = new System.Drawing.Size(202, 45);
+            this.lblTodaysales.Size = new System.Drawing.Size(295, 45);
             this.lblTodaysales.TabIndex = 4;
             this.lblTodaysales.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
@@ -460,31 +480,11 @@
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(274, 38);
+            this.label1.Size = new System.Drawing.Size(366, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "TODAY\'S SALES";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // picSearch
-            // 
-            this.picSearch.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.More_Than;
-            this.picSearch.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.picSearch.Location = new System.Drawing.Point(11, 6);
-            this.picSearch.Name = "picSearch";
-            this.picSearch.Size = new System.Drawing.Size(54, 45);
-            this.picSearch.TabIndex = 16;
-            this.picSearch.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackgroundImage = global::PetvetPOS_Inventory_System.Properties.Resources.Print;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(246, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(54, 45);
-            this.pictureBox1.TabIndex = 27;
-            this.pictureBox1.TabStop = false;
             // 
             // Sales
             // 
@@ -508,14 +508,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.salesChart)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picSearch)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

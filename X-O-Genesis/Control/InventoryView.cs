@@ -48,6 +48,7 @@ namespace PetvetPOS_Inventory_System
             InitializeComponent();
             this.masterController.EmployeeLogin += masterController_EmployeeLogin;
             this.dbController = masterController.DataBaseController;
+
             sliderPane = productSliderPane1;
             sliderPane.accessMasterController = masterController;
             sliderPane.dbController = masterController.DataBaseController;
@@ -80,14 +81,16 @@ namespace PetvetPOS_Inventory_System
             };
 
             dgInventory.DefaultCellStyle.ApplyStyle(normal);
+
         }
 
         void masterController_EmployeeLogin(object sender, EmployeeArgs e)
         {
-            if (masterController.LoginEmployee.Position != UserLevel.ADMIN)
+            if (masterController.LoginEmployee.Position == UserLevel.ADMIN)
             {
-                this.updateKeyPanel.Visible = false;
-                this.addKeyPanel.Visible = false;
+                this.updateKeyPanel.Visible = true;
+                this.addKeyPanel.Visible = true;
+                keyButton1.Visible = true;
             }
         }
 
@@ -344,8 +347,21 @@ namespace PetvetPOS_Inventory_System
             {
                 if (masterController.LoginEmployee.Position == UserLevel.ADMIN)
                 {
-                    dbController.productMapper.deactiveProduct(getBarcodeFromRow());
-                    fillgdInventory();
+                    keyButton16.updateButton();
+                    keyButton17.updateButton();
+
+                    modalRequireAdmin modalFrm = new modalRequireAdmin(dbController);
+                    DialogResult result = modalFrm.ShowDialog();
+
+                    if (result == DialogResult.OK)
+                    {
+                        dbController.productMapper.deactiveProduct(getBarcodeFromRow());
+                        fillgdInventory();
+
+                        MessageBanner banner = new MessageBanner("You successfully archived the product.");
+                        banner.Show();
+                    }
+
                 }
                 else
                 {
@@ -393,6 +409,7 @@ namespace PetvetPOS_Inventory_System
             }
             else if (e.KeyCode == Keys.F4)
             {
+                keyButton15.updateButton();
                 addStocks();
             }
             else if (e.Control && e.KeyCode == Keys.P)
@@ -1298,6 +1315,11 @@ namespace PetvetPOS_Inventory_System
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel16_Paint(object sender, PaintEventArgs e)
         {
 
         }

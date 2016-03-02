@@ -31,25 +31,24 @@ namespace PetvetPOS_Inventory_System
 
         public void updateButton()
         {
-            rectangleShape1.FillColor = Color.White;
+            rectangleShape1.FillColor = Color.Black;
             rectangleShape1.BorderColor = Color.Black;
-            lblKeyChar.BackColor = Color.White;
-            lblKeyChar.ForeColor = Color.Black;
+            lblKeyChar.BackColor = Color.Black;
+            lblKeyChar.ForeColor = Color.White;
 
             timer1.Start();
         }
 
         private void label1_Click(object sender, EventArgs e)
         {
-            updateButton();
-            onClick();
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            rectangleShape1.FillColor = Color.Black;
+            rectangleShape1.FillColor = Color.CornflowerBlue;
             rectangleShape1.BorderColor = Color.White;
-            lblKeyChar.BackColor = Color.Black;
+            lblKeyChar.BackColor = Color.CornflowerBlue;
             lblKeyChar.ForeColor = Color.White;
             timer1.Stop();
         }
