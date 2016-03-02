@@ -69,7 +69,7 @@
     <StartupObject>PetvetPOS_Inventory_System.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>SystemIcon.ico</ApplicationIcon>
+    <ApplicationIcon>POSIS_icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ListNetworkComputerNames">
@@ -1002,6 +1002,7 @@
     <None Include="Resources\RemoveITEM.png" />
     <None Include="Resources\RemoveITEM20.png" />
     <None Include="Resources\border.png" />
+    <Content Include="POSIS_icon.ico" />
     <Content Include="SystemIcon.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

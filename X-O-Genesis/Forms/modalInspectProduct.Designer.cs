@@ -175,56 +175,62 @@
             // 
             // txtCategory
             // 
-            this.txtCategory.Enabled = false;
-            this.txtCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtCategory.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtCategory.Location = new System.Drawing.Point(536, 12);
             this.txtCategory.Name = "txtCategory";
-            this.txtCategory.Size = new System.Drawing.Size(251, 23);
+            this.txtCategory.ReadOnly = true;
+            this.txtCategory.Size = new System.Drawing.Size(251, 19);
             this.txtCategory.TabIndex = 41;
             // 
             // txtMaintaining
             // 
-            this.txtMaintaining.Enabled = false;
-            this.txtMaintaining.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtMaintaining.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtMaintaining.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtMaintaining.Location = new System.Drawing.Point(142, 227);
             this.txtMaintaining.Name = "txtMaintaining";
-            this.txtMaintaining.Size = new System.Drawing.Size(251, 23);
+            this.txtMaintaining.ReadOnly = true;
+            this.txtMaintaining.Size = new System.Drawing.Size(251, 19);
             this.txtMaintaining.TabIndex = 55;
             // 
             // txtUCost
             // 
-            this.txtUCost.Enabled = false;
-            this.txtUCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtUCost.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUCost.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtUCost.Location = new System.Drawing.Point(536, 48);
             this.txtUCost.Name = "txtUCost";
-            this.txtUCost.Size = new System.Drawing.Size(251, 23);
+            this.txtUCost.ReadOnly = true;
+            this.txtUCost.Size = new System.Drawing.Size(251, 19);
             this.txtUCost.TabIndex = 40;
             // 
             // txtQty
             // 
-            this.txtQty.Enabled = false;
-            this.txtQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtQty.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtQty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtQty.Location = new System.Drawing.Point(536, 189);
             this.txtQty.Name = "txtQty";
-            this.txtQty.Size = new System.Drawing.Size(251, 23);
+            this.txtQty.ReadOnly = true;
+            this.txtQty.Size = new System.Drawing.Size(251, 19);
             this.txtQty.TabIndex = 44;
             // 
             // txtUnit
             // 
-            this.txtUnit.Enabled = false;
-            this.txtUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtUnit.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtUnit.Location = new System.Drawing.Point(142, 189);
             this.txtUnit.Name = "txtUnit";
-            this.txtUnit.Size = new System.Drawing.Size(251, 23);
+            this.txtUnit.ReadOnly = true;
+            this.txtUnit.Size = new System.Drawing.Size(251, 19);
             this.txtUnit.TabIndex = 54;
             // 
             // txtWarranty
             // 
-            this.txtWarranty.Enabled = false;
-            this.txtWarranty.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtWarranty.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtWarranty.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtWarranty.Location = new System.Drawing.Point(536, 117);
             this.txtWarranty.Name = "txtWarranty";
-            this.txtWarranty.Size = new System.Drawing.Size(251, 23);
+            this.txtWarranty.ReadOnly = true;
+            this.txtWarranty.Size = new System.Drawing.Size(251, 19);
             this.txtWarranty.TabIndex = 39;
             // 
             // label1
@@ -279,29 +285,32 @@
             // 
             // txtReplacement
             // 
-            this.txtReplacement.Enabled = false;
-            this.txtReplacement.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtReplacement.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtReplacement.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtReplacement.Location = new System.Drawing.Point(536, 152);
             this.txtReplacement.Name = "txtReplacement";
-            this.txtReplacement.Size = new System.Drawing.Size(251, 23);
+            this.txtReplacement.ReadOnly = true;
+            this.txtReplacement.Size = new System.Drawing.Size(251, 19);
             this.txtReplacement.TabIndex = 38;
             // 
             // txtSupplier
             // 
-            this.txtSupplier.Enabled = false;
-            this.txtSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtSupplier.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSupplier.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtSupplier.Location = new System.Drawing.Point(142, 152);
             this.txtSupplier.Name = "txtSupplier";
-            this.txtSupplier.Size = new System.Drawing.Size(251, 23);
+            this.txtSupplier.ReadOnly = true;
+            this.txtSupplier.Size = new System.Drawing.Size(251, 19);
             this.txtSupplier.TabIndex = 52;
             // 
             // txtUnitPrice
             // 
-            this.txtUnitPrice.Enabled = false;
-            this.txtUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtUnitPrice.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtUnitPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtUnitPrice.Location = new System.Drawing.Point(536, 83);
             this.txtUnitPrice.Name = "txtUnitPrice";
-            this.txtUnitPrice.Size = new System.Drawing.Size(251, 23);
+            this.txtUnitPrice.ReadOnly = true;
+            this.txtUnitPrice.Size = new System.Drawing.Size(251, 19);
             this.txtUnitPrice.TabIndex = 46;
             // 
             // label12
@@ -328,11 +337,12 @@
             // 
             // txtDescription
             // 
-            this.txtDescription.Enabled = false;
-            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtDescription.Location = new System.Drawing.Point(142, 115);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(251, 23);
+            this.txtDescription.ReadOnly = true;
+            this.txtDescription.Size = new System.Drawing.Size(251, 19);
             this.txtDescription.TabIndex = 50;
             // 
             // label8
@@ -370,11 +380,12 @@
             // 
             // txtSerialCode
             // 
-            this.txtSerialCode.Enabled = false;
-            this.txtSerialCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtSerialCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtSerialCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtSerialCode.Location = new System.Drawing.Point(142, 45);
             this.txtSerialCode.Name = "txtSerialCode";
-            this.txtSerialCode.Size = new System.Drawing.Size(251, 23);
+            this.txtSerialCode.ReadOnly = true;
+            this.txtSerialCode.Size = new System.Drawing.Size(251, 19);
             this.txtSerialCode.TabIndex = 48;
             // 
             // label4
@@ -412,20 +423,22 @@
             // 
             // txtItemCode
             // 
-            this.txtItemCode.Enabled = false;
-            this.txtItemCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtItemCode.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtItemCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtItemCode.Location = new System.Drawing.Point(142, 12);
             this.txtItemCode.Name = "txtItemCode";
-            this.txtItemCode.Size = new System.Drawing.Size(251, 23);
+            this.txtItemCode.ReadOnly = true;
+            this.txtItemCode.Size = new System.Drawing.Size(251, 19);
             this.txtItemCode.TabIndex = 43;
             // 
             // txtName
             // 
-            this.txtName.Enabled = false;
-            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.txtName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold);
             this.txtName.Location = new System.Drawing.Point(142, 80);
             this.txtName.Name = "txtName";
-            this.txtName.Size = new System.Drawing.Size(251, 23);
+            this.txtName.ReadOnly = true;
+            this.txtName.Size = new System.Drawing.Size(251, 19);
             this.txtName.TabIndex = 42;
             // 
             // lblTitle

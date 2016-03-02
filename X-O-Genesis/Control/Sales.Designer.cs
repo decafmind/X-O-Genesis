@@ -51,12 +51,9 @@
             this.salesChart = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.panel7 = new System.Windows.Forms.Panel();
             this.picSearch = new System.Windows.Forms.PictureBox();
-            this.keyButton1 = new PetvetPOS_Inventory_System.KeyButton();
             this.label2 = new System.Windows.Forms.Label();
-            this.keyButton4 = new PetvetPOS_Inventory_System.KeyButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
             this.label9 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -66,6 +63,9 @@
             this.lblTodaysales = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.keyButton1 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton4 = new PetvetPOS_Inventory_System.KeyButton();
+            this.keyButton2 = new PetvetPOS_Inventory_System.KeyButton();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.panel6.SuspendLayout();
@@ -147,9 +147,9 @@
             this.cbCharttype.Items.AddRange(new object[] {
             "BAR",
             "LINE"});
-            this.cbCharttype.Location = new System.Drawing.Point(71, 44);
+            this.cbCharttype.Location = new System.Drawing.Point(80, 44);
             this.cbCharttype.Name = "cbCharttype";
-            this.cbCharttype.Size = new System.Drawing.Size(189, 27);
+            this.cbCharttype.Size = new System.Drawing.Size(180, 27);
             this.cbCharttype.TabIndex = 7;
             this.cbCharttype.Text = "BAR";
             this.cbCharttype.SelectedIndexChanged += new System.EventHandler(this.cbCharttype_SelectedIndexChanged);
@@ -199,9 +199,9 @@
             this.dtTo.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtTo.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtTo.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtTo.Location = new System.Drawing.Point(71, 114);
+            this.dtTo.Location = new System.Drawing.Point(80, 114);
             this.dtTo.Name = "dtTo";
-            this.dtTo.Size = new System.Drawing.Size(189, 26);
+            this.dtTo.Size = new System.Drawing.Size(180, 26);
             this.dtTo.TabIndex = 2;
             this.dtTo.ValueChanged += new System.EventHandler(this.dt_ValueChanged);
             // 
@@ -210,9 +210,9 @@
             this.dtFrom.DropDownAlign = System.Windows.Forms.LeftRightAlignment.Right;
             this.dtFrom.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtFrom.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFrom.Location = new System.Drawing.Point(71, 79);
+            this.dtFrom.Location = new System.Drawing.Point(80, 79);
             this.dtFrom.Name = "dtFrom";
-            this.dtFrom.Size = new System.Drawing.Size(189, 26);
+            this.dtFrom.Size = new System.Drawing.Size(180, 26);
             this.dtFrom.TabIndex = 1;
             this.dtFrom.ValueChanged += new System.EventHandler(this.dt_ValueChanged);
             // 
@@ -224,9 +224,9 @@
             "DAILY",
             "WEEKLY",
             "MONTHLY"});
-            this.cmType.Location = new System.Drawing.Point(71, 11);
+            this.cmType.Location = new System.Drawing.Point(80, 11);
             this.cmType.Name = "cmType";
-            this.cmType.Size = new System.Drawing.Size(189, 27);
+            this.cmType.Size = new System.Drawing.Size(180, 27);
             this.cmType.TabIndex = 0;
             this.cmType.Text = "DAILY";
             this.cmType.SelectedIndexChanged += new System.EventHandler(this.cmType_SelectedIndexChanged);
@@ -309,20 +309,6 @@
             this.picSearch.TabIndex = 16;
             this.picSearch.TabStop = false;
             // 
-            // keyButton1
-            // 
-            this.keyButton1.accessKeyChar = "F1";
-            this.keyButton1.accessMasterController = null;
-            this.keyButton1.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton1.dbController = null;
-            this.keyButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton1.Location = new System.Drawing.Point(67, 6);
-            this.keyButton1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton1.masterController = null;
-            this.keyButton1.Name = "keyButton1";
-            this.keyButton1.Size = new System.Drawing.Size(61, 50);
-            this.keyButton1.TabIndex = 0;
-            // 
             // label2
             // 
             this.label2.Font = new System.Drawing.Font("Arial Rounded MT Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -333,20 +319,6 @@
             this.label2.TabIndex = 20;
             this.label2.Text = "Next sales report";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // keyButton4
-            // 
-            this.keyButton4.accessKeyChar = "P";
-            this.keyButton4.accessMasterController = null;
-            this.keyButton4.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton4.dbController = null;
-            this.keyButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton4.Location = new System.Drawing.Point(375, 3);
-            this.keyButton4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton4.masterController = null;
-            this.keyButton4.Name = "keyButton4";
-            this.keyButton4.Size = new System.Drawing.Size(61, 50);
-            this.keyButton4.TabIndex = 28;
             // 
             // pictureBox1
             // 
@@ -368,20 +340,6 @@
             this.label7.TabIndex = 23;
             this.label7.Text = "Print";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // keyButton2
-            // 
-            this.keyButton2.accessKeyChar = "Ctrl";
-            this.keyButton2.accessMasterController = null;
-            this.keyButton2.BackColor = System.Drawing.Color.Transparent;
-            this.keyButton2.dbController = null;
-            this.keyButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.keyButton2.Location = new System.Drawing.Point(305, 3);
-            this.keyButton2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
-            this.keyButton2.masterController = null;
-            this.keyButton2.Name = "keyButton2";
-            this.keyButton2.Size = new System.Drawing.Size(61, 50);
-            this.keyButton2.TabIndex = 21;
             // 
             // label9
             // 
@@ -485,6 +443,48 @@
             this.label1.Text = "TODAY\'S SALES";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // keyButton1
+            // 
+            this.keyButton1.accessKeyChar = "F1";
+            this.keyButton1.accessMasterController = null;
+            this.keyButton1.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton1.dbController = null;
+            this.keyButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton1.Location = new System.Drawing.Point(67, 6);
+            this.keyButton1.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton1.masterController = null;
+            this.keyButton1.Name = "keyButton1";
+            this.keyButton1.Size = new System.Drawing.Size(61, 50);
+            this.keyButton1.TabIndex = 0;
+            // 
+            // keyButton4
+            // 
+            this.keyButton4.accessKeyChar = "P";
+            this.keyButton4.accessMasterController = null;
+            this.keyButton4.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton4.dbController = null;
+            this.keyButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton4.Location = new System.Drawing.Point(375, 3);
+            this.keyButton4.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton4.masterController = null;
+            this.keyButton4.Name = "keyButton4";
+            this.keyButton4.Size = new System.Drawing.Size(61, 50);
+            this.keyButton4.TabIndex = 28;
+            // 
+            // keyButton2
+            // 
+            this.keyButton2.accessKeyChar = "Ctrl";
+            this.keyButton2.accessMasterController = null;
+            this.keyButton2.BackColor = System.Drawing.Color.Transparent;
+            this.keyButton2.dbController = null;
+            this.keyButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.keyButton2.Location = new System.Drawing.Point(305, 3);
+            this.keyButton2.Margin = new System.Windows.Forms.Padding(2, 3, 2, 3);
+            this.keyButton2.masterController = null;
+            this.keyButton2.Name = "keyButton2";
+            this.keyButton2.Size = new System.Drawing.Size(61, 50);
+            this.keyButton2.TabIndex = 21;
             // 
             // Sales
             // 

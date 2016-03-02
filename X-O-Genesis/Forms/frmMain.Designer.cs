@@ -118,7 +118,9 @@ namespace PetvetPOS_Inventory_System
             // back1
             // 
             this.back1.accessMasterController = null;
+            this.back1.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.back1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.back1.dbController = null;
             this.back1.Dock = System.Windows.Forms.DockStyle.Left;
             this.back1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.back1.Location = new System.Drawing.Point(10, 0);

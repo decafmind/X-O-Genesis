@@ -267,8 +267,20 @@ namespace PetvetPOS_Inventory_System
             base.doWhenVisible();
             loadCategoryList();
             loadSupplierList();
+            loadUnits();
         }
 
+        public void loadUnits()
+        {
+            cbUnit.Items.AddRange(
+                new string[]{
+                    "PIECE",
+                    "BOX",
+                    "CASE",
+                    "SET",
+                }
+                );
+        }
         public void loadCategoryList()
         {
             cbCategory.Items.Clear();

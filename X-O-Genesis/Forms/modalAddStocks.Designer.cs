@@ -45,7 +45,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(16, 70);
+            this.label2.Location = new System.Drawing.Point(18, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(105, 18);
             this.label2.TabIndex = 1;
@@ -64,7 +64,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(15, 129);
+            this.label4.Location = new System.Drawing.Point(17, 131);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 18);
             this.label4.TabIndex = 3;
@@ -74,7 +74,7 @@
             // 
             this.lblCurrentStocks.AutoSize = true;
             this.lblCurrentStocks.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCurrentStocks.Location = new System.Drawing.Point(128, 129);
+            this.lblCurrentStocks.Location = new System.Drawing.Point(130, 131);
             this.lblCurrentStocks.Name = "lblCurrentStocks";
             this.lblCurrentStocks.Size = new System.Drawing.Size(108, 18);
             this.lblCurrentStocks.TabIndex = 4;
@@ -84,7 +84,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(15, 185);
+            this.label6.Location = new System.Drawing.Point(17, 187);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 18);
             this.label6.TabIndex = 5;
@@ -103,7 +103,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(15, 238);
+            this.label7.Location = new System.Drawing.Point(17, 240);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(91, 18);
             this.label7.TabIndex = 7;
@@ -113,7 +113,7 @@
             // 
             this.lblNewStocks.AutoSize = true;
             this.lblNewStocks.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewStocks.Location = new System.Drawing.Point(128, 238);
+            this.lblNewStocks.Location = new System.Drawing.Point(130, 240);
             this.lblNewStocks.Name = "lblNewStocks";
             this.lblNewStocks.Size = new System.Drawing.Size(91, 18);
             this.lblNewStocks.TabIndex = 8;
@@ -125,9 +125,9 @@
             this.lblTitle.Dock = System.Windows.Forms.DockStyle.Top;
             this.lblTitle.Font = new System.Drawing.Font("Arial Rounded MT Bold", 14F);
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(0, 0);
+            this.lblTitle.Location = new System.Drawing.Point(2, 2);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(347, 47);
+            this.lblTitle.Size = new System.Drawing.Size(343, 47);
             this.lblTitle.TabIndex = 20;
             this.lblTitle.Text = "BARCODE";
             this.lblTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -140,7 +140,7 @@
             this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnOK.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Ok;
-            this.btnOK.Location = new System.Drawing.Point(35, 271);
+            this.btnOK.Location = new System.Drawing.Point(37, 273);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(93, 58);
             this.btnOK.TabIndex = 9;
@@ -159,7 +159,7 @@
             this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             this.btnCancel.Image = global::PetvetPOS_Inventory_System.Properties.Resources.Cancel_2;
-            this.btnCancel.Location = new System.Drawing.Point(194, 271);
+            this.btnCancel.Location = new System.Drawing.Point(196, 273);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(135, 58);
             this.btnCancel.TabIndex = 10;
@@ -192,6 +192,7 @@
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "modalAddStocks";
+            this.Padding = new System.Windows.Forms.Padding(2);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "modalAddStocks";
             this.Load += new System.EventHandler(this.modalAddStocks_Load);
