@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <configSections>
+    <sectionGroup name="userSettings" type="System.Configuration.UserSettingsGroup, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+      <section name="PetvetPOS_Inventory_System.Properties.Settings" type="System.Configuration.ClientSettingsSection, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" allowExeDefinition="MachineToLocalUser" requirePermission="false" />
+    </sectionGroup>
+  </configSections>
+  <startup>
+    <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.5" />
+  </startup>
+  <userSettings>
+    <PetvetPOS_Inventory_System.Properties.Settings>
+      <setting name="headerColor" serializeAs="String">
+        <value />
+      </setting>
+      <setting name="sidebarColor" serializeAs="String">
+        <value />
+      </setting>
+      <setting name="iconColor" serializeAs="String">
+        <value />
+      </setting>
+      <setting name="isSystemConfigured" serializeAs="String">
+        <value>False</value>
+      </setting>
+      <setting name="CompanyName" serializeAs="String">
+        <value />
+      </setting>
+      <setting name="CompanyAddress" serializeAs="String">
+        <value />
+      </setting>
+      <setting name="CompanyContact" serializeAs="String">
+        <value />
+      </setting>
+      <setting name="CompanyEmail" serializeAs="String">
+        <value />
+      </setting>
+      <setting name="CompanyLogoImagPath" serializeAs="String">
+        <value />
+      </setting>
+      <setting name="SimpleMode" serializeAs="String">
+        <value>True</value>
+      </setting>
+    </PetvetPOS_Inventory_System.Properties.Settings>
+  </userSettings>
+  <system.data>
+    <DbProviderFactories>
+      <remove invariant="MySql.Data.MySqlClient" />
+      <add name="MySQL Data Provider" invariant="MySql.Data.MySqlClient" description=".Net Framework Data Provider for MySQL" type="MySql.Data.MySqlClient.MySqlClientFactory, MySql.Data, Version=6.9.8.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d" />
+    </DbProviderFactories>
+  </system.data>
+  <runtime>
+    <assemblyBinding xmlns="urn:schemas-microsoft-com:asm.v1">
+      <dependentAssembly>
+        <assemblyIdentity name="Microsoft.VisualBasic" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-10.0.0.0" newVersion="10.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Drawing" publicKeyToken="b03f5f7f11d50a3a" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System" publicKeyToken="b77a5c561934e089" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="System.Windows.Forms" publicKeyToken="b77a5c561934e089" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-4.0.0.0" newVersion="4.0.0.0" />
+      </dependentAssembly>
+      <dependentAssembly>
+        <assemblyIdentity name="MySql.Data" publicKeyToken="c5687fc88969c44d" culture="neutral" />
+        <bindingRedirect oldVersion="0.0.0.0-6.9.8.0" newVersion="6.9.8.0" />
+      </dependentAssembly>
+    </assemblyBinding>
+  </runtime>
+</configuration>
