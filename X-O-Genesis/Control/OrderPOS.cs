@@ -628,6 +628,8 @@ namespace PetvetPOS_Inventory_System
                 g.DrawString(subTotal, font, Brushes.Black, new PointF((documentWidth - 10) - stringSize.Width, Y));
                 Y += (int)stringSize.Height + yIncrement;
 
+                decimal discountedTotal = formerTotal;
+
                 //Display discounts
                 foreach (Discounts d in advDiscounts.availedDiscounts)
                 {
@@ -637,7 +639,7 @@ namespace PetvetPOS_Inventory_System
                     {
                         stringSize = g.MeasureString(d.Less.ToString("N"), font);
                         g.DrawString(d.Less.ToString("N"), font, Brushes.Black, new PointF((documentWidth - 10) - stringSize.Width, Y));
-                        formerTotal = formerTotal - d.Less;
+                        discountedTotal = formerTotal - d.Less;
                     }
                     else if (d.Type == PERCENTAGE_TYPE)
                     {
@@ -645,16 +647,16 @@ namespace PetvetPOS_Inventory_System
                         string p = percentageDiscValue.ToString("N");
                         stringSize = g.MeasureString(p, font);
                         g.DrawString(p, font, Brushes.Black, new PointF((documentWidth - 10) - stringSize.Width, Y));
-                        formerTotal = formerTotal - percentageDiscValue;
+                        discountedTotal = formerTotal - percentageDiscValue;
                     }
-                    poSlbl2.Text = formerTotal.ToString("N");
+                    poSlbl2.Text = discountedTotal.ToString("N");
                     Y += (int)stringSize.Height + yIncrement;
                 }
 
                 _vat = tax * formerTotal;
                 _vatableSales = formerTotal - _vat;
 
-                string amountDue = formerTotal.ToString("N");
+                string amountDue = discountedTotal.ToString("N");
                 g.DrawString("Amount Due:", font, Brushes.Black, new PointF(10, Y));
                 stringSize = g.MeasureString(amountDue, font);
                 g.DrawString(amountDue, font, Brushes.Black, new PointF((documentWidth - 10) - stringSize.Width, Y));
@@ -672,14 +674,8 @@ namespace PetvetPOS_Inventory_System
                 g.DrawString(vatableSales, font, Brushes.Black, new PointF((documentWidth - 10) - stringSize.Width, Y));
                 Y += (int)stringSize.Height + yIncrement;
 
-                string total = totalAmount.ToString("N");
-                g.DrawString("Total Sales (VAT Inclusive)", font, Brushes.Black, new PointF(10, Y));
-                stringSize = g.MeasureString(total, font);
-                g.DrawString(total, font, Brushes.Black, new PointF((documentWidth - 10) - stringSize.Width, Y));
-                Y += (int)stringSize.Height + yIncrement;
-
                 Y += 5;
-                string totalSales = totalAmount.ToString("N");
+                string totalSales = discountedTotal.ToString("N");
                 g.DrawString("Total Sales", fontBold, Brushes.Black, new PointF(10, Y));
                 stringSize = g.MeasureString(totalSales, fontBold);
                 g.DrawString(totalSales, fontBold, Brushes.Black, new PointF((documentWidth - 12) - stringSize.Width, Y));
